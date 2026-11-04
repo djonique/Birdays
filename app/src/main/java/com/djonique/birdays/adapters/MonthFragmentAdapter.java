@@ -1,17 +1,7 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.adapters;
@@ -21,16 +11,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
-import android.preference.PreferenceManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
@@ -70,8 +62,9 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<MonthFragmentAdap
         }
     }
 
+    @NonNull
     @Override
-    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         View view = LayoutInflater.from(context).inflate(
@@ -80,7 +73,7 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<MonthFragmentAdap
     }
 
     @Override
-    public void onBindViewHolder(final CardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final CardViewHolder holder, int position) {
         final Person person = persons.get(position);
         long date = person.getDate();
         final String email = person.getEmail();
@@ -100,29 +93,21 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<MonthFragmentAdap
             changeCardViewBackgroundColor(date, holder.cardView, holder.tvDaysLeft);
         }
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(context, DetailActivity.class)
-                        .putExtra(Constants.TIME_STAMP, person.getTimeStamp()));
-                if (context instanceof MainActivity) {
-                    ((MainActivity) context).overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
-                }
+        holder.relativeLayout.setOnClickListener(v -> {
+            context.startActivity(new Intent(context, DetailActivity.class)
+                    .putExtra(Constants.TIME_STAMP, person.getTimeStamp()));
+            if (context instanceof MainActivity) {
+                ((MainActivity) context).overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
             }
         });
 
         if (email != null && !email.equals("")) {
             enableButton(holder.btnEmail);
-            holder.btnEmail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_SENDTO)
-                            .setType(Constants.TYPE_EMAIL)
-                            .putExtra(Intent.EXTRA_EMAIL, new String[]{email})
-                            .putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.happy_birthday))
-                            .setData(Uri.parse(Constants.MAILTO + email)), null));
-                }
-            });
+            holder.btnEmail.setOnClickListener(v -> context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_SENDTO)
+                    .setType(Constants.TYPE_EMAIL)
+                    .putExtra(Intent.EXTRA_EMAIL, new String[]{email})
+                    .putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.happy_birthday))
+                    .setData(Uri.parse(Constants.MAILTO + email)), null)));
         } else {
             disableButton(holder.btnEmail);
         }
@@ -130,23 +115,13 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<MonthFragmentAdap
         if (phoneNumber != null && !phoneNumber.equals("")) {
             enableButton(holder.btnCall);
             enableButton(holder.btnChat);
-            holder.btnCall.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_DIAL,
-                            Uri.parse(Constants.TEL + phoneNumber)), null));
-                }
-            });
+            holder.btnCall.setOnClickListener(v -> context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_DIAL,
+                    Uri.parse(Constants.TEL + phoneNumber)), null)));
 
-            holder.btnChat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_VIEW)
-                            .setType(Constants.TYPE_SMS)
-                            .putExtra(Constants.ADDRESS, phoneNumber)
-                            .setData(Uri.parse(Constants.SMSTO + phoneNumber)), null));
-                }
-            });
+            holder.btnChat.setOnClickListener(v -> context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_VIEW)
+                    .setType(Constants.TYPE_SMS)
+                    .putExtra(Constants.ADDRESS, phoneNumber)
+                    .setData(Uri.parse(Constants.SMSTO + phoneNumber)), null)));
         } else {
             disableButton(holder.btnCall);
             disableButton(holder.btnChat);

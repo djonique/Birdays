@@ -1,17 +1,7 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.alarm;
@@ -26,10 +16,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.TaskStackBuilder;
+import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
@@ -50,14 +42,18 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
-        // Extras from intent
         String name = intent.getStringExtra(Constants.NAME);
         String when = intent.getStringExtra(Constants.WHEN);
         long timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
 
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            flags |= PendingIntent.FLAG_IMMUTABLE;
+        }
+
         PendingIntent pendingIntent = TaskStackBuilder.create(context)
                 .addNextIntentWithParentStack(getResultIntent(context, timeStamp, intent))
-                .getPendingIntent(((int) timeStamp), PendingIntent.FLAG_UPDATE_CURRENT);
+                .getPendingIntent(((int) timeStamp), flags);
 
         createNotificationChannel(context);
 
@@ -75,9 +71,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
     }
 
-    /**
-     * Creates intent to open DetailActivity on notification click
-     */
     private Intent getResultIntent(Context context, long timeStamp, Intent intent) {
         Intent resultIntent = new Intent(context, DetailActivity.class);
         resultIntent.putExtra(Constants.TIME_STAMP, timeStamp);
@@ -88,9 +81,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         return resultIntent;
     }
 
-    /**
-     * Creates notification channel for Android API 26+
-     */
     private void createNotificationChannel(Context context) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
@@ -104,24 +94,18 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
     }
 
-    /**
-     * Builds default notification
-     */
     private NotificationCompat.Builder buildNotification(Context context, String title, String text) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         builder.setContentTitle(title);
         builder.setContentText(text);
         builder.setSmallIcon(R.drawable.ic_notification);
-        builder.setColor(context.getResources().getColor(R.color.accent_green_200));
+        builder.setColor(ContextCompat.getColor(context, R.color.accent_green_200));
         builder.setCategory(NotificationCompat.CATEGORY_EVENT);
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
         return builder;
     }
 
-    /**
-     * Avoids FileUriExposedException on Android API 24+
-     */
     private void setDefaultsAndRingtone(NotificationCompat.Builder builder) {
         String ringtone = preferences.getString(Constants.RINGTONE_KEY,
                 Settings.System.DEFAULT_NOTIFICATION_URI.toString());
@@ -136,9 +120,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
     }
 
-    /**
-     * Set up notification tone, vibration and lights for notification
-     */
     private void setRingtone(NotificationCompat.Builder builder, Uri ringtoneUri) {
         builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE | NotificationCompat.DEFAULT_LIGHTS);
         builder.setSound(ringtoneUri);

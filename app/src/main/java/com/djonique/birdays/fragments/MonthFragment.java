@@ -1,31 +1,22 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.MainActivity;
@@ -42,8 +33,8 @@ public class MonthFragment extends Fragment {
     private MonthFragmentAdapter adapter;
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         if (getActivity() != null) {
             activity = (MainActivity) getActivity();
@@ -65,7 +56,7 @@ public class MonthFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        adapter.notifyDataSetChanged();
+        if (adapter != null) adapter.notifyDataSetChanged();
     }
 
     public void addPerson(Person newPerson) {
@@ -87,9 +78,9 @@ public class MonthFragment extends Fragment {
     }
 
     public void addMonthPersonsFromDb() {
+        if (adapter == null || activity == null) return;
         adapter.removeAllPersons();
-        List<Person> persons = new ArrayList<>();
-        persons.addAll(activity.dbHelper.query().getThisMonthPersons());
+        List<Person> persons = new ArrayList<>(activity.dbHelper.query().getThisMonthPersons());
 
         for (int i = 0; i < persons.size(); i++) {
             addPerson(persons.get(i));
@@ -97,13 +88,13 @@ public class MonthFragment extends Fragment {
     }
 
     public void deleteRecord(long timeStamp) {
-        adapter.removePerson(timeStamp);
+        if (adapter != null) adapter.removePerson(timeStamp);
     }
 
     public void findPerson(String name) {
+        if (adapter == null || activity == null) return;
         adapter.removeAllPersons();
-        List<Person> persons = new ArrayList<>();
-        persons.addAll(activity.dbHelper.query().getSearchMonthPerson(DbHelper.SELECTION_LIKE_NAME,
+        List<Person> persons = new ArrayList<>(activity.dbHelper.query().getSearchMonthPerson(DbHelper.SELECTION_LIKE_NAME,
                 new String[]{"%" + name + "%"}, DbHelper.COLUMN_NAME));
 
         for (int i = 0; i < persons.size(); i++) {
@@ -114,6 +105,6 @@ public class MonthFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        adapter.notifyDataSetChanged();
+        if (adapter != null) adapter.notifyDataSetChanged();
     }
 }

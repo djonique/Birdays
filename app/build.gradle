@@ -1,100 +1,86 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.firebase.firebase-perf'
-apply plugin: 'io.fabric'
+//apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'com.google.firebase.crashlytics'
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+def getProp(Properties props, String key, String defaultValue) {
+    return props.containsKey(key) ? props[key] : defaultValue
+}
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.2'
+    namespace 'com.djonique.birdays'
+    compileSdkVersion 37
 
     defaultConfig {
         applicationId "com.djonique.birdays"
-        minSdkVersion 16
-        targetSdkVersion 27
-        versionCode 18
-        versionName "1.5.1"
-        resConfigs "auto"
+        minSdkVersion 24
+        targetSdkVersion 37
+        versionCode 19
+        versionName "1.6.0"
         vectorDrawables.useSupportLibrary = true
         resValue "string", "version_name", versionName
-        manifestPlaceholders = [fabric_api_key: keystoreProperties['FabricApiKey']]
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
         debug {
             minifyEnabled false
-            resValue "string", "banner_ad_id", keystoreProperties['BannerAdIdDebug']
-            buildConfigField "String", "INTERSTITIAL_AD_ID", keystoreProperties['InterstitialAdIdDebug']
+            def adId = getProp(keystoreProperties, 'InterstitialAdIdDebug', 'ca-app-pub-3940256099942544/1033173712').replace('"', '')
+            resValue "string", "banner_ad_id", getProp(keystoreProperties, 'BannerAdIdDebug', "ca-app-pub-3940256099942544/6300978111")
+            buildConfigField "String", "INTERSTITIAL_AD_ID", "\"${adId}\""
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            resValue "string", "banner_ad_id", keystoreProperties['BannerAdIdRelease']
-            buildConfigField "String", "INTERSTITIAL_AD_ID", keystoreProperties['InterstitialAdIdRelease']
+            def adId = getProp(keystoreProperties, 'InterstitialAdIdRelease', 'ca-app-pub-3940256099942544/1033173712').replace('"', '')
+            resValue "string", "banner_ad_id", getProp(keystoreProperties, 'BannerAdIdRelease', "ca-app-pub-3940256099942544/6300978111")
+            buildConfigField "String", "INTERSTITIAL_AD_ID", "\"${adId}\""
         }
     }
-}
 
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
-
-def androidSupportVersion = '27.0.2'
-def firebaseVersion = '11.6.2'
-def butterKnifeVersion = '8.8.1'
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    // Android support library
-    compile "com.android.support:appcompat-v7:${androidSupportVersion}"
-    compile "com.android.support:design:${androidSupportVersion}"
-    compile "com.android.support:recyclerview-v7:${androidSupportVersion}"
-    compile "com.android.support:cardview-v7:${androidSupportVersion}"
-    compile "com.android.support:support-v4:${androidSupportVersion}"
-    compile "com.android.support:support-vector-drawable:${androidSupportVersion}"
+    // AndroidX
+    implementation 'androidx.appcompat:appcompat:1.8.0'
+    implementation 'com.google.android.material:material:1.14.0'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.2.0'
+    implementation 'androidx.preference:preference:1.2.1'
 
-    // Firebase
-    compile "com.google.firebase:firebase-core:${firebaseVersion}"
-    compile "com.google.firebase:firebase-ads:${firebaseVersion}"
-    compile "com.google.firebase:firebase-perf:${firebaseVersion}"
+    // Google Play Services Ads & Firebase
+    implementation 'com.google.android.gms:play-services-ads:23.6.0'
+    implementation platform('com.google.firebase:firebase-bom:35.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-perf'
+    implementation 'com.google.firebase:firebase-crashlytics'
 
-    // ButterKnife
-    compile "com.jakewharton:butterknife:${butterKnifeVersion}"
-    annotationProcessor "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
 
-    // Material date and time picker
-    compile 'com.wdullaer:materialdatetimepicker:3.4.1'
-
-    // Rate this app
-    compile 'io.github.kobakei:ratethisapp:1.2.0'
-
-    // Crashlytics
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
-        transitive = true
-    }
-
-    // JUnit
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -1,45 +1,37 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.activities;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.preference.PreferenceManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.BuildConfig;
 import com.djonique.birdays.R;
@@ -50,15 +42,13 @@ import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.Utils;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kobakei.ratethisapp.RateThisApp;
 
 import java.util.Calendar;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -66,38 +56,26 @@ public class DetailActivity extends AppCompatActivity {
     private static final int LAUNCH_TIMES = 5;
     private static final int EDIT_ACTIVITY = 4;
 
-    @BindView(R.id.container_detail)
-    CoordinatorLayout container;
-    @BindView(R.id.toolbar_detail)
-    Toolbar toolbar;
-    @BindView(R.id.imageview_detail_picture)
-    ImageView ivSeasonPicture;
-    @BindView(R.id.textview_detail_age)
-    TextView tvAge;
-    @BindView(R.id.textview_detail_date)
-    TextView tvDate;
-    @BindView(R.id.textview_detail_left)
-    TextView tvDaysLeft;
-    @BindView(R.id.relativelayout_detail_since)
-    RelativeLayout rlDaysSinceBirthday;
-    @BindView(R.id.textview_detail_since)
-    TextView tvDaysSinceBirthday;
-    @BindView(R.id.imageview_detail_zodiac)
-    ImageView ivZodiacSign;
-    @BindView(R.id.textview_detail_zodiac)
-    TextView tvZodiacSign;
-    @BindView(R.id.cardview_detail_info)
-    CardView cardViewInfo;
-    @BindView(R.id.relativelayout_detail_phone)
-    RelativeLayout rlPhoneNumber;
-    @BindView(R.id.textview_detail_phone)
-    TextView tvPhoneNumber;
-    @BindView(R.id.relativelayout_detail_email)
-    RelativeLayout rlEmail;
-    @BindView(R.id.textview_detail_email)
-    TextView tvEmail;
-    @BindView(R.id.recyclerview_detail)
-    RecyclerView recyclerView;
+    private CoordinatorLayout container;
+    private Toolbar toolbar;
+    private ImageView ivSeasonPicture;
+    private TextView tvAge;
+    private TextView tvDate;
+    private TextView tvDaysLeft;
+    private RelativeLayout rlDaysSinceBirthday;
+    private TextView tvDaysSinceBirthday;
+    private ImageView ivZodiacSign;
+    private TextView tvZodiacSign;
+    private CardView cardViewInfo;
+    private RelativeLayout rlPhoneNumber;
+    private TextView tvPhoneNumber;
+    private RelativeLayout rlEmail;
+    private TextView tvEmail;
+    private RecyclerView recyclerView;
+    private FloatingActionButton fabDetail;
+    private ImageButton btnPhone;
+    private ImageButton btnChat;
+    private ImageButton btnEmail;
 
     private InterstitialAd mInterstitialAd;
     private DbHelper dbHelper;
@@ -110,20 +88,40 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        ButterKnife.bind(this);
+
+        container = findViewById(R.id.container_detail);
+        toolbar = findViewById(R.id.toolbar_detail);
+        ivSeasonPicture = findViewById(R.id.imageview_detail_picture);
+        tvAge = findViewById(R.id.textview_detail_age);
+        tvDate = findViewById(R.id.textview_detail_date);
+        tvDaysLeft = findViewById(R.id.textview_detail_left);
+        rlDaysSinceBirthday = findViewById(R.id.relativelayout_detail_since);
+        tvDaysSinceBirthday = findViewById(R.id.textview_detail_since);
+        ivZodiacSign = findViewById(R.id.imageview_detail_zodiac);
+        tvZodiacSign = findViewById(R.id.textview_detail_zodiac);
+        cardViewInfo = findViewById(R.id.cardview_detail_info);
+        rlPhoneNumber = findViewById(R.id.relativelayout_detail_phone);
+        tvPhoneNumber = findViewById(R.id.textview_detail_phone);
+        rlEmail = findViewById(R.id.relativelayout_detail_email);
+        tvEmail = findViewById(R.id.textview_detail_email);
+        recyclerView = findViewById(R.id.recyclerview_detail);
+        fabDetail = findViewById(R.id.fab_detail);
+        btnPhone = findViewById(R.id.imagebutton_detail_phone);
+        btnChat = findViewById(R.id.imagebutton_detail_chat);
+        btnEmail = findViewById(R.id.imagebutton_detail_email);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean adEnabled = preferences.getBoolean(getString(R.string.ad_interstitial_key), true);
         displayedAge = preferences.getString(Constants.DISPLAYED_AGE_KEY, "0");
 
-        /*
-        * Interstitial doesn't work on Android API 26+
-        * java.lang.IllegalStateException: Only fullscreen activities can request orientation
-        */
-        mInterstitialAd = new InterstitialAd(this);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O && adEnabled) {
-            mInterstitialAd.setAdUnitId(BuildConfig.INTERSTITIAL_AD_ID);
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            InterstitialAd.load(this, BuildConfig.INTERSTITIAL_AD_ID, new AdRequest.Builder().build(),
+                    new InterstitialAdLoadCallback() {
+                        @Override
+                        public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                            mInterstitialAd = interstitialAd;
+                        }
+                    });
         }
 
         dbHelper = new DbHelper(this);
@@ -150,6 +148,11 @@ public class DetailActivity extends AppCompatActivity {
         recyclerView.setFocusable(false);
 
         rateThisAppInit(this);
+
+        if (fabDetail != null) fabDetail.setOnClickListener(v -> starEditActivity());
+        if (btnPhone != null) btnPhone.setOnClickListener(v -> makeCall());
+        if (btnChat != null) btnChat.setOnClickListener(v -> sendMessage());
+        if (btnEmail != null) btnEmail.setOnClickListener(v -> sendEmail());
     }
 
     @Override
@@ -161,21 +164,19 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
-            case R.id.menu_detail_delete:
-                deletePersonDialog(person);
-                break;
+        int itemId = item.getItemId();
+        if (itemId == android.R.id.home) {
+            onBackPressed();
+        } else if (itemId == R.id.menu_detail_delete) {
+            deletePersonDialog(person);
         }
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
+        if (mInterstitialAd != null) {
+            mInterstitialAd.show(this);
         }
         finish();
         overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
@@ -186,7 +187,6 @@ public class DetailActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (data == null) return;
         if (requestCode == EDIT_ACTIVITY && resultCode == RESULT_OK) {
-            // Refreshes activity after editing
             Toast.makeText(this, R.string.record_edited, Toast.LENGTH_SHORT).show();
             Intent refresh = new Intent(this, DetailActivity.class);
             refresh.putExtra(Constants.TIME_STAMP, timeStamp);
@@ -195,9 +195,6 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Set up UI depending on person's data
-     */
     private void setupUI() {
         setSeasonImage();
 
@@ -237,9 +234,6 @@ public class DetailActivity extends AppCompatActivity {
         return text == null || text.equals("");
     }
 
-    /**
-     * Loads list of famous persons born certain day
-     */
     private void loadBornThisDay() {
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
@@ -253,17 +247,13 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.fab_detail)
-    void starEditActivity() {
+    private void starEditActivity() {
         Intent intent = new Intent(this, EditActivity.class);
         intent.putExtra(Constants.TIME_STAMP, timeStamp);
         startActivityForResult(intent, EDIT_ACTIVITY);
         overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
     }
 
-    /**
-     * Set up image depending on month
-     */
     private void setSeasonImage() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(date);
@@ -280,30 +270,18 @@ public class DetailActivity extends AppCompatActivity {
     private void deletePersonDialog(final Person person) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(getString(R.string.delete_record_text) + person.getName() + "?");
-        builder.setPositiveButton(getString(R.string.ok_button), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                new AlarmHelper(getApplicationContext()).removeAlarms(timeStamp);
-                dbHelper.removeRecord(timeStamp);
-                Utils.notifyWidget(getApplicationContext());
-                dialog.dismiss();
-                finish();
-                overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
-            }
+        builder.setPositiveButton(getString(R.string.ok_button), (dialog, which) -> {
+            new AlarmHelper(getApplicationContext()).removeAlarms(timeStamp);
+            dbHelper.removeRecord(timeStamp);
+            Utils.notifyWidget(getApplicationContext());
+            dialog.dismiss();
+            finish();
+            overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
         });
-        builder.setNegativeButton(R.string.cancel_button, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+        builder.setNegativeButton(R.string.cancel_button, (dialog, which) -> dialog.cancel());
         builder.show();
     }
 
-    /**
-     * «Rate this app» dialog initialization
-     */
     private void rateThisAppInit(Context context) {
         RateThisApp.onCreate(context);
         RateThisApp.Config config = new RateThisApp.Config(INSTALL_DAYS, LAUNCH_TIMES);
@@ -311,14 +289,12 @@ public class DetailActivity extends AppCompatActivity {
         RateThisApp.showRateDialogIfNeeded(context);
     }
 
-    @OnClick(R.id.imagebutton_detail_phone)
-    void makeCall() {
+    private void makeCall() {
         startActivity(Intent.createChooser(new Intent(Intent.ACTION_DIAL,
                 Uri.parse(Constants.TEL + phoneNumber)), null));
     }
 
-    @OnClick(R.id.imagebutton_detail_chat)
-    void sendMessage() {
+    private void sendMessage() {
         Intent intent = new Intent(Intent.ACTION_VIEW)
                 .setType(Constants.TYPE_SMS)
                 .putExtra(Constants.ADDRESS, phoneNumber)
@@ -326,8 +302,7 @@ public class DetailActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(intent, null));
     }
 
-    @OnClick(R.id.imagebutton_detail_email)
-    void sendEmail() {
+    private void sendEmail() {
         Intent intent = new Intent(Intent.ACTION_SENDTO)
                 .setType(Constants.TYPE_EMAIL)
                 .putExtra(Intent.EXTRA_EMAIL, new String[]{email})

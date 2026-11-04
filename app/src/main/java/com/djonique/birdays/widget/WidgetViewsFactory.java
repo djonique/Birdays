@@ -1,27 +1,18 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.widget;
 
 import android.content.Context;
 import android.content.Intent;
-import android.preference.PreferenceManager;
-import android.support.v4.content.ContextCompat;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
+
+import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.database.DbHelper;
@@ -63,7 +54,6 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
 
         int position = 0;
 
-        // Finds the position of the Person with closest date
         for (int i = 0; i < persons.size(); i++) {
             Person person = persons.get(i);
             if (person.getMonth() == month && person.getDay() >= day || person.getMonth() > month) {
@@ -72,7 +62,6 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
             }
         }
 
-        // Shifts list
         for (int i = position; i < persons.size(); i++) {
             widgetList.add(persons.get(i));
         }
@@ -95,11 +84,12 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
         RemoteViews view = new RemoteViews(context.getPackageName(),
                 R.layout.description_widget_list_view);
 
+        if (i < 0 || i >= widgetList.size()) return view;
+
         String name = widgetList.get(i).getName();
         long date = widgetList.get(i).getDate();
         boolean yearUnknown = widgetList.get(i).isYearUnknown();
 
-        // Age column
         if (!yearUnknown) {
             String displayedAge = PreferenceManager.getDefaultSharedPreferences(context)
                     .getString(Constants.DISPLAYED_AGE_KEY, "0");
@@ -109,10 +99,8 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
             view.setTextViewText(R.id.textview_widget_age, "");
         }
 
-        // Name column
         view.setTextViewText(R.id.textview_widget_name, name);
 
-        // Date column
         String today = context.getString(R.string.today);
         if (Utils.daysLeft(context, date).equals(today)) {
             view.setTextViewText(R.id.textview_widget_date, today);
@@ -122,7 +110,6 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
             setTextColor(view, ContextCompat.getColor(context, android.R.color.white));
         }
 
-        // OnClick handling
         Intent clickIntent = new Intent();
         clickIntent.putExtra(Constants.TIME_STAMP, widgetList.get(i).getTimeStamp());
         view.setOnClickFillInIntent(R.id.relativelayout_widget, clickIntent);

@@ -1,31 +1,23 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatCheckBox;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.DatePicker;
 import android.widget.EditText;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatCheckBox;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.alarm.AlarmHelper;
@@ -34,34 +26,22 @@ import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.DatePickerManager;
 import com.djonique.birdays.utils.Utils;
+import com.google.android.material.textfield.TextInputLayout;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.Calendar;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnCheckedChanged;
-import butterknife.OnClick;
-import butterknife.OnTextChanged;
 
 public class EditActivity extends AppCompatActivity implements
         android.app.DatePickerDialog.OnDateSetListener,
         com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener {
 
-    @BindView(R.id.til_edit_name)
-    TextInputLayout tilEditName;
-    @BindView(R.id.edittext_edit_name)
-    EditText etName;
-    @BindView(R.id.til_edit_date)
-    TextInputLayout tilEditDate;
-    @BindView(R.id.edittext_edit_date)
-    EditText etDate;
-    @BindView(R.id.checkbox_edit)
-    AppCompatCheckBox checkBox;
-    @BindView(R.id.edittext_edit_phone)
-    EditText etPhoneNumber;
-    @BindView(R.id.edittext_edit_email)
-    EditText etEmail;
+    private TextInputLayout tilEditName;
+    private EditText etName;
+    private TextInputLayout tilEditDate;
+    private EditText etDate;
+    private AppCompatCheckBox checkBox;
+    private EditText etPhoneNumber;
+    private EditText etEmail;
 
     private DbHelper dbHelper;
     private Person person;
@@ -74,7 +54,14 @@ public class EditActivity extends AppCompatActivity implements
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
-        ButterKnife.bind(this);
+
+        tilEditName = findViewById(R.id.til_edit_name);
+        etName = findViewById(R.id.edittext_edit_name);
+        tilEditDate = findViewById(R.id.til_edit_date);
+        etDate = findViewById(R.id.edittext_edit_date);
+        checkBox = findViewById(R.id.checkbox_edit);
+        etPhoneNumber = findViewById(R.id.edittext_edit_phone);
+        etEmail = findViewById(R.id.edittext_edit_email);
 
         Intent intent = getIntent();
         long timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
@@ -87,6 +74,36 @@ public class EditActivity extends AppCompatActivity implements
         calendar.setTimeInMillis(person.getDate());
 
         setupUI();
+
+        etDate.setOnClickListener(v -> pickDate());
+
+        etName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                validateName();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        etDate.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                validateDate();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> checkBoxListener());
     }
 
     @Override
@@ -98,20 +115,20 @@ public class EditActivity extends AppCompatActivity implements
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-            case R.id.menu_edit_ok:
-                updatePerson();
-                setAlarms(person);
-                Utils.notifyWidget(this);
-                setResult(RESULT_OK, new Intent());
-                finish();
-                this.overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
-            default:
-                return super.onOptionsItemSelected(item);
+        int itemId = item.getItemId();
+        if (itemId == android.R.id.home) {
+            onBackPressed();
+            return true;
+        } else if (itemId == R.id.menu_edit_ok) {
+            updatePerson();
+            setAlarms(person);
+            Utils.notifyWidget(this);
+            setResult(RESULT_OK, new Intent());
+            finish();
+            this.overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -120,9 +137,6 @@ public class EditActivity extends AppCompatActivity implements
         overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
     }
 
-    /**
-     * Set up UI depending on person's data
-     */
     private void setupUI() {
         etName.setText(person.getName());
         etName.setSelection(etName.getText().length());
@@ -139,9 +153,6 @@ public class EditActivity extends AppCompatActivity implements
         etEmail.setText(person.getEmail());
     }
 
-    /**
-     * Updates person's data after editing
-     */
     private void updatePerson() {
         person.setName(updateText(etName));
         person.setDate(calendar.getTimeInMillis());
@@ -151,9 +162,6 @@ public class EditActivity extends AppCompatActivity implements
         dbHelper.updateRecord(person);
     }
 
-    /**
-     * Used to update text in updatePerson() method
-     */
     private String updateText(EditText editText) {
         String result = "";
         if (editText != null && editText.length() != 0) {
@@ -168,8 +176,7 @@ public class EditActivity extends AppCompatActivity implements
         alarmHelper.setAlarms(person);
     }
 
-    @OnClick(R.id.edittext_edit_date)
-    void pickDate() {
+    private void pickDate() {
         new DatePickerManager(this, calendar).showDialog(this, this);
     }
 
@@ -188,7 +195,6 @@ public class EditActivity extends AppCompatActivity implements
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         date = calendar.getTimeInMillis();
-        // Checks state of CheckBox whenever date is picked
         if (!checkBox.isChecked()) {
             etDate.setText(Utils.getDate(date));
         } else {
@@ -196,8 +202,7 @@ public class EditActivity extends AppCompatActivity implements
         }
     }
 
-    @OnTextChanged(value = R.id.edittext_edit_name, callback = OnTextChanged.Callback.TEXT_CHANGED)
-    void validateName() {
+    private void validateName() {
         if (etName.length() == 0) {
             tilEditName.setError(getString(R.string.error_hint));
             hideOkButton = true;
@@ -210,8 +215,7 @@ public class EditActivity extends AppCompatActivity implements
         invalidateOptionsMenu();
     }
 
-    @OnTextChanged(value = R.id.edittext_edit_date, callback = OnTextChanged.Callback.TEXT_CHANGED)
-    void validateDate() {
+    private void validateDate() {
         if (fieldsValid()) {
             tilEditDate.setErrorEnabled(false);
             if (etName.length() != 0) {
@@ -224,8 +228,7 @@ public class EditActivity extends AppCompatActivity implements
         invalidateOptionsMenu();
     }
 
-    @OnCheckedChanged(R.id.checkbox_edit)
-    void checkBoxListener() {
+    private void checkBoxListener() {
         if (checkBox.isChecked()) {
             etDate.setText(Utils.getDateWithoutYear(date));
         } else {

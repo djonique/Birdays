@@ -1,17 +1,7 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.utils;
@@ -23,10 +13,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.models.Person;
@@ -49,9 +40,6 @@ public class Utils {
         return DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.getDefault()).format(date);
     }
 
-    /**
-     * Returns date without year
-     */
     public static String getDateWithoutYear(long date) {
         Locale locale = Locale.getDefault();
         SimpleDateFormat sdf = ((SimpleDateFormat) DateFormat.getDateInstance(DateFormat.DEFAULT, locale));
@@ -89,9 +77,6 @@ public class Utils {
         return TimeZone.getDefault().getOffset(today.getTimeInMillis());
     }
 
-    /**
-     * Returns current age
-     */
     public static int getCurrentAge(long date) {
         dayOfBirthday.setTimeInMillis(date);
         int age = getYear(today) - getYear(dayOfBirthday);
@@ -104,9 +89,6 @@ public class Utils {
         return age;
     }
 
-    /**
-     * Returns future age
-     */
     public static int getFutureAge(long date) {
         dayOfBirthday.setTimeInMillis(date);
         int age = getYear(today) - getYear(dayOfBirthday);
@@ -147,19 +129,13 @@ public class Utils {
     }
 
     public static boolean isEmptyDate(EditText editText) {
-        return TextUtils.isEmpty(editText.getText().toString());
+        return editText == null || TextUtils.isEmpty(editText.getText().toString());
     }
 
-    /**
-     * Checks if date of person's birthday is not in the future
-     */
     public static boolean isRightDate(Calendar calendar) {
         return Calendar.getInstance().getTimeInMillis() >= calendar.getTimeInMillis();
     }
 
-    /**
-     * Checks if today is the same month with given date
-     */
     public static boolean isCurrentMonth(long date) {
         boolean thisMonth = false;
 
@@ -175,9 +151,6 @@ public class Utils {
         return getDay(today) > getDay(date);
     }
 
-    /**
-     * Returns zodiac name of certain date
-     */
     public static int getZodiacId(long date) {
         int resId = 0;
         dayOfBirthday.setTimeInMillis(date);
@@ -223,62 +196,39 @@ public class Utils {
         return resId;
     }
 
-    /**
-     * Returns image of certain zodiac
-     */
     public static int getZodiacImage(int resId) {
-        int zodiacImage = 0;
-        switch (resId) {
-            case R.string.aries:
-                zodiacImage = R.drawable.ic_aries;
-                break;
-            case R.string.taurus:
-                zodiacImage = R.drawable.ic_taurus;
-                break;
-            case R.string.gemini:
-                zodiacImage = R.drawable.ic_gemini;
-                break;
-            case R.string.cancer:
-                zodiacImage = R.drawable.ic_cancer;
-                break;
-            case R.string.leo:
-                zodiacImage = R.drawable.ic_leo;
-                break;
-            case R.string.virgo:
-                zodiacImage = R.drawable.ic_virgo;
-                break;
-            case R.string.libra:
-                zodiacImage = R.drawable.ic_libra;
-                break;
-            case R.string.scorpio:
-                zodiacImage = R.drawable.ic_scorpio;
-                break;
-            case R.string.sagittarius:
-                zodiacImage = R.drawable.ic_sagittarius;
-                break;
-            case R.string.capricorn:
-                zodiacImage = R.drawable.ic_capricorn;
-                break;
-            case R.string.aquarius:
-                zodiacImage = R.drawable.ic_aquarius;
-                break;
-            case R.string.pisces:
-                zodiacImage = R.drawable.ic_pisces;
-                break;
+        if (resId == R.string.aries) {
+            return R.drawable.ic_aries;
+        } else if (resId == R.string.taurus) {
+            return R.drawable.ic_taurus;
+        } else if (resId == R.string.gemini) {
+            return R.drawable.ic_gemini;
+        } else if (resId == R.string.cancer) {
+            return R.drawable.ic_cancer;
+        } else if (resId == R.string.leo) {
+            return R.drawable.ic_leo;
+        } else if (resId == R.string.virgo) {
+            return R.drawable.ic_virgo;
+        } else if (resId == R.string.libra) {
+            return R.drawable.ic_libra;
+        } else if (resId == R.string.scorpio) {
+            return R.drawable.ic_scorpio;
+        } else if (resId == R.string.sagittarius) {
+            return R.drawable.ic_sagittarius;
+        } else if (resId == R.string.capricorn) {
+            return R.drawable.ic_capricorn;
+        } else if (resId == R.string.aquarius) {
+            return R.drawable.ic_aquarius;
+        } else if (resId == R.string.pisces) {
+            return R.drawable.ic_pisces;
         }
-        return zodiacImage;
+        return 0;
     }
 
-    /**
-     * Converts boolean to int
-     */
     public static int boolToInt(boolean isYearKnown) {
         return isYearKnown ? 1 : 0;
     }
 
-    /**
-     * Formats contacts birthday date from "yyyy-MM-dd" to long
-     */
     static long formatDateToLong(String dateString) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(0);
@@ -300,9 +250,6 @@ public class Utils {
         return dateArray[0].equals("");
     }
 
-    /**
-     * Checks if person with the same name already exists in database
-     */
     public static boolean isPersonAlreadyInDb(Person person, List<Person> list) {
         boolean found = false;
         for (Person dbPerson : list) {
@@ -334,7 +281,7 @@ public class Utils {
 
     public static void notifyWidget(Context context) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-        int[] appWidgetI‌​ds = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
-        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetI‌​ds, R.id.listview_widget);
+        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
+        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.listview_widget);
     }
 }

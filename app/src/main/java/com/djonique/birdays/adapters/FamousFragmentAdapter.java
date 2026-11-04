@@ -1,27 +1,19 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.adapters;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.models.Person;
@@ -55,8 +47,9 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
         }
     }
 
+    @NonNull
     @Override
-    public ListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         View view = LayoutInflater.from(context).inflate(R.layout.description_famous_list_view,
                 parent, false);
@@ -64,7 +57,7 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
     }
 
     @Override
-    public void onBindViewHolder(final ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         holder.itemView.setEnabled(true);
         View itemView = holder.itemView;
         final Person person = getPerson(position);
@@ -73,12 +66,7 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
         holder.tvName.setText(name);
         holder.tvDate.setText(Utils.getDate(person.getDate()));
 
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Utils.openBrowser(context, context.getString(R.string.google_search) + name);
-            }
-        });
+        itemView.setOnClickListener(view -> Utils.openBrowser(context, context.getString(R.string.google_search) + name));
     }
 
     @Override

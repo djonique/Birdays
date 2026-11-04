@@ -1,17 +1,7 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.adapters;
@@ -19,13 +9,15 @@ package com.djonique.birdays.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
-import android.preference.PreferenceManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
@@ -157,8 +149,9 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         displayedAge = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(Constants.DISPLAYED_AGE_KEY, "0");
@@ -168,16 +161,15 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                         parent, false);
                 return new ListViewHolder(view);
             case TYPE_SEPARATOR:
+            default:
                 View separator = LayoutInflater.from(context).inflate(R.layout.model_separator,
                         parent, false);
                 return new SeparatorViewHolder(separator);
-            default:
-                return null;
         }
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         Item item = getItem(position);
 
@@ -201,27 +193,23 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 final int age = (displayedAge.equals("0") ? Utils.getCurrentAge(date) : Utils.getFutureAge(date));
                 listViewHolder.tvDate.setText(Utils.getDate(date));
                 GradientDrawable ageCircle = (GradientDrawable) listViewHolder.tvAge.getBackground();
-                ageCircle.setColor(ContextCompat.getColor(context, getAgeCircleColor(age)));
+                if (ageCircle != null) {
+                    ageCircle.setColor(ContextCompat.getColor(context, getAgeCircleColor(age)));
+                }
                 listViewHolder.tvAge.setText(String.valueOf(age));
             }
 
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    getAllFragment().removePersonDialog(listViewHolder.getLayoutPosition());
-                    return true;
-                }
+            itemView.setOnLongClickListener(v -> {
+                getAllFragment().removePersonDialog(listViewHolder.getLayoutPosition());
+                return true;
             });
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    allFragment.startActivity(new Intent(context, DetailActivity.class).
-                            putExtra(Constants.TIME_STAMP, person.getTimeStamp()));
-                    if (context instanceof MainActivity) {
-                        ((MainActivity) context).overridePendingTransition(R.anim.activity_secondary_in,
-                                R.anim.activity_primary_out);
-                    }
+            itemView.setOnClickListener(v -> {
+                allFragment.startActivity(new Intent(context, DetailActivity.class).
+                        putExtra(Constants.TIME_STAMP, person.getTimeStamp()));
+                if (context instanceof MainActivity) {
+                    ((MainActivity) context).overridePendingTransition(R.anim.activity_secondary_in,
+                            R.anim.activity_primary_out);
                 }
             });
         } else {
@@ -255,9 +243,6 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 
-    /**
-     * Selects certain color depending on person's age
-     */
     private int getAgeCircleColor(int age) {
         int colorResId;
         if (age < 10) colorResId = R.color.age1;
@@ -287,7 +272,7 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 
-    private class SeparatorViewHolder extends RecyclerView.ViewHolder {
+    private static class SeparatorViewHolder extends RecyclerView.ViewHolder {
         TextView separatorView;
 
         SeparatorViewHolder(View itemView) {

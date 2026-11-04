@@ -1,44 +1,29 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.activities;
 
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.crashlytics.android.Crashlytics;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.preference.PreferenceManager;
+import androidx.viewpager.widget.ViewPager;
+
 import com.djonique.birdays.R;
 import com.djonique.birdays.ad.Ad;
 import com.djonique.birdays.adapters.PagerAdapter;
@@ -51,13 +36,11 @@ import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.ContactsHelper;
 import com.djonique.birdays.utils.Utils;
 import com.google.android.gms.ads.AdView;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.OnPageChange;
-import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements
         NewPersonDialogFragment.AddingPersonListener,
@@ -65,26 +48,17 @@ public class MainActivity extends AppCompatActivity implements
         ContactsHelper.LoadingContactsListener {
 
     private static final String NEW_PERSON_DIALOG_TAG = "NEW_PERSON_DIALOG_TAG";
-    // private static final String BOTTOM_SHEET_DIALOG_TAG = "BOTTOM_SHEET_DIALOG_TAG";
 
     public DbHelper dbHelper;
 
-    @BindView(R.id.container_main)
-    CoordinatorLayout container;
-    @BindView(R.id.appbar_main)
-    AppBarLayout appBarLayout;
-    @BindView(R.id.toolbar_main)
-    Toolbar toolbar;
-    @BindView(R.id.searchview_main)
-    SearchView searchView;
-    @BindView(R.id.tablayout_main)
-    TabLayout tabLayout;
-    @BindView(R.id.viewpager_main)
-    ViewPager viewPager;
-    @BindView(R.id.fab_main)
-    FloatingActionButton fab;
-    @BindView(R.id.banner_main)
-    AdView adView;
+    private CoordinatorLayout container;
+    private AppBarLayout appBarLayout;
+    private Toolbar toolbar;
+    private SearchView searchView;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private FloatingActionButton fab;
+    private AdView adView;
 
     private SharedPreferences preferences;
     private PagerAdapter pagerAdapter;
@@ -92,9 +66,17 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+        container = findViewById(R.id.container_main);
+        appBarLayout = findViewById(R.id.appbar_main);
+        toolbar = findViewById(R.id.toolbar_main);
+        searchView = findViewById(R.id.searchview_main);
+        tabLayout = findViewById(R.id.tablayout_main);
+        viewPager = findViewById(R.id.viewpager_main);
+        fab = findViewById(R.id.fab_main);
+        adView = findViewById(R.id.banner_main);
+
         FirebaseAnalytics.getInstance(this);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -127,6 +109,15 @@ public class MainActivity extends AppCompatActivity implements
                 return false;
             }
         });
+
+        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                MainActivity.this.onPageSelected(position);
+            }
+        });
+
+        fab.setOnClickListener(v -> showDialog());
 
         if (preferences.getBoolean(getString(R.string.ad_banner_key), true)) {
             Ad.showBannerAd(container, adView, fab);
@@ -165,9 +156,6 @@ public class MainActivity extends AppCompatActivity implements
         if (item.getItemId() == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
             overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
-        /*} else if (item.getItemId() == R.id.action_sync) {
-            ModalBottomSheet modalBottomSheet = new ModalBottomSheet();
-            modalBottomSheet.show(getSupportFragmentManager(), Constants.BOTTOM_SHEET_DIALOG_TAG);*/
         }
         return super.onOptionsItemSelected(item);
     }
@@ -189,8 +177,7 @@ public class MainActivity extends AppCompatActivity implements
         Utils.notifyWidget(this);
     }
 
-    @OnPageChange(R.id.viewpager_main)
-    void onPageSelected(int position) {
+    private void onPageSelected(int position) {
         appBarLayout.setExpanded(true, true);
         if (position == PagerAdapter.FAMOUS_FRAGMENT_POSITION) {
             fab.hide();
@@ -201,10 +188,9 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-    @OnClick(R.id.fab_main)
-    void showDialog() {
-        DialogFragment newPersonDialogFragment = new NewPersonDialogFragment();
-        newPersonDialogFragment.show(getFragmentManager(), NEW_PERSON_DIALOG_TAG);
+    private void showDialog() {
+        NewPersonDialogFragment newPersonDialogFragment = new NewPersonDialogFragment();
+        newPersonDialogFragment.show(getSupportFragmentManager(), NEW_PERSON_DIALOG_TAG);
     }
 
     @Override
@@ -220,12 +206,7 @@ public class MainActivity extends AppCompatActivity implements
             } else {
                 Snackbar.make(container, R.string.permission_required,
                         Snackbar.LENGTH_LONG)
-                        .setAction(R.string.snackbar_allow_text, new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                openApplicationSettings();
-                            }
-                        })
+                        .setAction(R.string.snackbar_allow_text, v -> openApplicationSettings())
                         .show();
             }
         }

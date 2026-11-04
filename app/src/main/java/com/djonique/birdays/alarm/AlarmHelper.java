@@ -1,17 +1,7 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.alarm;
@@ -23,8 +13,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.preference.PreferenceManager;
 import android.widget.Toast;
+
+import androidx.preference.PreferenceManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.models.Person;
@@ -49,9 +40,6 @@ public class AlarmHelper {
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
-    /**
-     * Set up both alarms main and additional
-     */
     public void setAlarms(Person person) {
         try {
             setAlarm(person);
@@ -61,19 +49,12 @@ public class AlarmHelper {
             }
         } catch (SecurityException e) {
             if (context instanceof Activity) {
-                ((Activity) context).runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(context, R.string.security_exception, Toast.LENGTH_LONG).show();
-                    }
-                });
+                ((Activity) context).runOnUiThread(() ->
+                        Toast.makeText(context, R.string.security_exception, Toast.LENGTH_LONG).show());
             }
         }
     }
 
-    /**
-     * Set up main alarm
-     */
     private void setAlarm(Person person) {
         Intent intent = new Intent(context, AlarmReceiver.class);
         intent.putExtra(Constants.NAME, person.getName());
@@ -82,15 +63,17 @@ public class AlarmHelper {
 
         long triggerAtMillis = setupCalendarYear(person, 0);
 
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            flags |= PendingIntent.FLAG_IMMUTABLE;
+        }
+
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context.getApplicationContext(),
-                (int) person.getTimeStamp(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                (int) person.getTimeStamp(), intent, flags);
 
         setAlarmDependingOnApi(alarmManager, triggerAtMillis, pendingIntent);
     }
 
-    /**
-     * Set up additional alarm
-     */
     private void setAdditionalAlarm(Person person) {
         additionalNotificationOffset = Long.parseLong(preferences.getString(Constants.ADDITIONAL_NOTIFICATION_KEY, "0"));
 
@@ -103,19 +86,29 @@ public class AlarmHelper {
 
         int requestCode = (int) person.getTimeStamp() + REQUEST_CODE_OFFSET;
 
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            flags |= PendingIntent.FLAG_IMMUTABLE;
+        }
+
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context.getApplicationContext(),
-                requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                requestCode, intent, flags);
 
         setAlarmDependingOnApi(alarmManager, triggerAtMillis, pendingIntent);
     }
 
-    /**
-     * Set up correct alarm for Android API 19 (without delay) and Android API 23+ with Doze
-     */
     private void setAlarmDependingOnApi(AlarmManager alarmManager,
                                         long triggerAtMillis,
                                         PendingIntent pendingIntent) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (alarmManager == null) return;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (alarmManager.canScheduleExactAlarms()) {
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
+            } else {
+                alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
@@ -124,9 +117,6 @@ public class AlarmHelper {
         }
     }
 
-    /**
-     * Configures text for additional notification
-     */
     private String setWhen(long offset) {
         String[] dates = context.getResources().getStringArray(R.array.additional_notification_delay);
         String[] entryValues = context.getResources().getStringArray(R.array.additional_notification_entry_values);
@@ -139,9 +129,6 @@ public class AlarmHelper {
         return when;
     }
 
-    /**
-     * Removes all alarms
-     */
     public void removeAlarms(long timeStamp) {
         removeAlarm(timeStamp);
         additionalNotificationOffset = Long.parseLong(preferences.getString(Constants.ADDITIONAL_NOTIFICATION_KEY, "0"));
@@ -150,35 +137,34 @@ public class AlarmHelper {
         }
     }
 
-    /**
-     * Removes main alarm
-     */
     private void removeAlarm(long timeStamp) {
         Intent intent = new Intent(context, AlarmReceiver.class);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, (int) timeStamp, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            flags |= PendingIntent.FLAG_IMMUTABLE;
+        }
 
-        alarmManager.cancel(pendingIntent);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, (int) timeStamp, intent, flags);
+
+        if (alarmManager != null) alarmManager.cancel(pendingIntent);
     }
 
-    /**
-     * Removes additional alarm
-     */
     private void removeAdditionalAlarm(long timeStamp) {
         Intent intent = new Intent(context, AlarmReceiver.class);
 
         int requestCode = (int) timeStamp + REQUEST_CODE_OFFSET;
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            flags |= PendingIntent.FLAG_IMMUTABLE;
+        }
 
-        alarmManager.cancel(pendingIntent);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, flags);
+
+        if (alarmManager != null) alarmManager.cancel(pendingIntent);
     }
 
-    /**
-     * Set up time for triggering alarm
-     */
     private long setupCalendarYear(Person person, long offset) {
         long now = Calendar.getInstance().getTimeInMillis();
         long notificationTime = preferences.getLong(Constants.NOTIFICATION_TIME_KEY, defaultNotificationTime);

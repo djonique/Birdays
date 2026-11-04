@@ -1,34 +1,24 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.fragments;
 
 import android.content.Context;
-import android.content.DialogInterface;
+
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.MainActivity;
@@ -37,6 +27,7 @@ import com.djonique.birdays.alarm.AlarmHelper;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.models.Separator;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 import java.util.List;
@@ -49,7 +40,7 @@ public class AllFragment extends Fragment {
     private AlarmHelper alarmHelper;
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         try {
             deletingPersonListener = (MainActivity) getActivity();
@@ -58,8 +49,8 @@ public class AllFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         if (getActivity() != null) {
             activity = (MainActivity) getActivity();
@@ -98,18 +89,16 @@ public class AllFragment extends Fragment {
                     break;
                 } else if (newPersonMonth == month) {
                     if (newPersonDay <= day) {
-                        // If date before
                         position = i;
                         break;
-                    } else { // If date after
-                        if (adapter.getItemCount() > (i + 1) && adapter.getItem(i + 1).isPerson()) { // If after person, not adapter
+                    } else {
+                        if (adapter.getItemCount() > (i + 1) && adapter.getItem(i + 1).isPerson()) {
                             Person nextPerson = ((Person) adapter.getItem(i + 1));
                             if (newPersonDay <= nextPerson.getDay()) {
-                                // If date before, else if date after - continue
                                 position = i + 1;
                                 break;
                             }
-                        } else { // If after adapter, not person
+                        } else {
                             position = i + 1;
                             break;
                         }
@@ -137,13 +126,14 @@ public class AllFragment extends Fragment {
             adapter.addItem(newPerson);
         }
 
-        if (saveToDb) {
+        if (saveToDb && activity != null) {
             activity.dbHelper.addRecord(newPerson);
         }
     }
 
     public void addAllPersonsFromDb() {
         adapter.removeAllPersons();
+        if (activity == null) return;
         List<Person> persons = activity.dbHelper.query().getPersons();
 
         for (Person person : persons) {
@@ -231,6 +221,7 @@ public class AllFragment extends Fragment {
     }
 
     public void removePersonDialog(final int location) {
+        if (activity == null) return;
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
 
         Person person = (Person) adapter.getItem(location);
@@ -240,53 +231,42 @@ public class AllFragment extends Fragment {
 
         final boolean[] isRemoved = {false};
 
-        builder.setPositiveButton(getString(R.string.ok_button), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        builder.setPositiveButton(getString(R.string.ok_button), (dialog, which) -> {
+            adapter.removePerson(location);
+            isRemoved[0] = true;
+            Snackbar snackbar = Snackbar.make(activity.findViewById(R.id.container_main),
+                    R.string.record_deleted, Snackbar.LENGTH_SHORT);
 
-                adapter.removePerson(location);
-                isRemoved[0] = true;
-                Snackbar snackbar = Snackbar.make(activity.findViewById(R.id.container_main),
-                        R.string.record_deleted, Snackbar.LENGTH_SHORT);
+            snackbar.setAction(getString(R.string.undo), v -> {
+                addPerson(activity.dbHelper.query().getPerson(timeStamp), false);
+                isRemoved[0] = false;
+            });
 
-                snackbar.setAction(getString(R.string.undo), new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        addPerson(activity.dbHelper.query().getPerson(timeStamp), false);
-                        isRemoved[0] = false;
-                    }
-                });
+            snackbar.getView().addOnAttachStateChangeListener(
+                    new View.OnAttachStateChangeListener() {
+                        @Override
+                        public void onViewAttachedToWindow(@NonNull View v) {
+                        }
 
-                snackbar.getView().addOnAttachStateChangeListener(
-                        new View.OnAttachStateChangeListener() {
-                            @Override
-                            public void onViewAttachedToWindow(View v) {
+                        @Override
+                        public void onViewDetachedFromWindow(@NonNull View v) {
+                            if (isRemoved[0]) {
+                                alarmHelper.removeAlarms(timeStamp);
+                                activity.dbHelper.removeRecord(timeStamp);
+                                deletingPersonListener.onPersonDeleted(timeStamp);
                             }
-
-                            @Override
-                            public void onViewDetachedFromWindow(View v) {
-                                if (isRemoved[0]) {
-                                    alarmHelper.removeAlarms(timeStamp);
-                                    activity.dbHelper.removeRecord(timeStamp);
-                                    deletingPersonListener.onPersonDeleted(timeStamp);
-                                }
-                            }
-                        });
-                snackbar.show();
-                dialog.dismiss();
-            }
+                        }
+                    });
+            snackbar.show();
+            dialog.dismiss();
         });
-        builder.setNegativeButton(R.string.cancel_button, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+        builder.setNegativeButton(R.string.cancel_button, (dialog, which) -> dialog.cancel());
         builder.show();
     }
 
     public void findPerson(String name) {
         adapter.removeAllPersons();
+        if (activity == null) return;
         List<Person> persons = activity.dbHelper.query().getSearchPerson(DbHelper.SELECTION_LIKE_NAME,
                 new String[]{"%" + name + "%"}, DbHelper.COLUMN_NAME);
 

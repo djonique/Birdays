@@ -1,47 +1,33 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.activities;
 
 import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
+
 import com.djonique.birdays.R;
 import com.djonique.birdays.utils.Constants;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HelpActivity extends AppCompatActivity {
 
@@ -51,12 +37,9 @@ public class HelpActivity extends AppCompatActivity {
     private static final String ALERT_SHOWED = "ALERT_SHOWED";
     private static final String ACTIVITY_NOT_FOUND_EXCEPTION = "ActivityNotFoundException";
 
-    @BindView(R.id.button_help_whitelist)
-    AppCompatButton btnOpenWhitelist;
-    @BindView(R.id.button_help_settings)
-    AppCompatButton btnOpenSettings;
-    @BindView(R.id.button_help_email)
-    AppCompatButton btnSendEmail;
+    private AppCompatButton btnOpenWhitelist;
+    private AppCompatButton btnOpenSettings;
+    private AppCompatButton btnSendEmail;
 
     private SharedPreferences preferences;
 
@@ -64,27 +47,33 @@ public class HelpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
-        ButterKnife.bind(this);
-        btnOpenWhitelist.setText(R.string.help_whitelist);
-        btnOpenSettings.setText(R.string.help_settings);
-        btnSendEmail.setText(R.string.send_email);
+
+        btnOpenWhitelist = findViewById(R.id.button_help_whitelist);
+        btnOpenSettings = findViewById(R.id.button_help_settings);
+        btnSendEmail = findViewById(R.id.button_help_email);
+
+        if (btnOpenWhitelist != null) btnOpenWhitelist.setText(R.string.help_whitelist);
+        if (btnOpenSettings != null) btnOpenSettings.setText(R.string.help_settings);
+        if (btnSendEmail != null) btnSendEmail.setText(R.string.send_email);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (!preferences.getBoolean(ALERT_SHOWED, false)) {
             checkManufacturer(Build.MANUFACTURER.toLowerCase());
         }
+
+        if (btnOpenWhitelist != null) btnOpenWhitelist.setOnClickListener(v -> openBatteryOptimization());
+        if (btnOpenSettings != null) btnOpenSettings.setOnClickListener(v -> openSettings());
+        if (btnSendEmail != null) btnSendEmail.setOnClickListener(v -> sendEmail());
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -109,18 +98,15 @@ public class HelpActivity extends AppCompatActivity {
 
     private void showAlertSnackbar(final String title, final String message) {
         Snackbar snackbar = Snackbar.make(findViewById(R.id.ll_help_activity), title, Snackbar.LENGTH_INDEFINITE)
-                .setAction(R.string.show_button, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        showAlertDialog(title, message);
-                        preferences.edit().putBoolean(ALERT_SHOWED, true).apply();
-                    }
+                .setAction(R.string.show_button, view -> {
+                    showAlertDialog(title, message);
+                    preferences.edit().putBoolean(ALERT_SHOWED, true).apply();
                 });
         snackbar.setActionTextColor(Color.WHITE);
         View snackbarView = snackbar.getView();
         snackbarView.setBackgroundColor(ContextCompat.getColor(this, R.color.red_alert));
-        TextView textView = snackbarView.findViewById(android.support.design.R.id.snackbar_text);
-        textView.setAllCaps(true);
+        TextView textView = snackbarView.findViewById(com.google.android.material.R.id.snackbar_text);
+        if (textView != null) textView.setAllCaps(true);
         snackbar.show();
     }
 
@@ -128,17 +114,11 @@ public class HelpActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(title);
         builder.setMessage(message);
-        builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+        builder.setPositiveButton(R.string.ok_button, (dialog, which) -> dialog.dismiss());
         builder.show();
     }
 
-    @OnClick(R.id.button_help_whitelist)
-    void openBatteryOptimization() {
+    private void openBatteryOptimization() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             try {
                 startActivity(Intent.createChooser(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS), null));
@@ -150,13 +130,11 @@ public class HelpActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.button_help_settings)
-    void openSettings() {
-        startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
+    private void openSettings() {
+        startActivity(new Intent(Settings.ACTION_SETTINGS));
     }
 
-    @OnClick(R.id.button_help_email)
-    void sendEmail() {
+    private void sendEmail() {
         String email = getString(R.string.birdays_email);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType(Constants.TYPE_EMAIL);

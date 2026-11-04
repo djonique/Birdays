@@ -1,27 +1,18 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.fragments.AllFragment;
@@ -39,23 +30,20 @@ public class PagerAdapter extends FragmentPagerAdapter {
     private MonthFragment monthFragment;
     private AllFragment allFragment;
 
+    @SuppressWarnings("deprecation")
     public PagerAdapter(FragmentManager fm, Context context) {
-        super(fm);
+        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.context = context;
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                return new MonthFragment();
-            case 1:
-                return new AllFragment();
-            case 2:
-                return new FamousFragment();
-            default:
-                return null;
-        }
+        return switch (position) {
+            case 0 -> new MonthFragment();
+            case 1 -> new AllFragment();
+            default -> new FamousFragment();
+        };
     }
 
     @Override
@@ -70,20 +58,17 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return getMonth();
-            case 1:
-                return context.getString(R.string.all);
-            case 2:
-                return context.getString(R.string.famous);
-        }
-        return null;
+        return switch (position) {
+            case 0 -> getMonth();
+            case 1 -> context.getString(R.string.all);
+            case 2 -> context.getString(R.string.famous);
+            default -> null;
+        };
     }
 
     @NonNull
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
         Fragment createdFragment = (Fragment) super.instantiateItem(container, position);
         switch (position) {
             case 0:

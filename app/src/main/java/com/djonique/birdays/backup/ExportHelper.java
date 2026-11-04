@@ -1,28 +1,18 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.backup;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.support.v7.app.AlertDialog;
 import android.util.Xml;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.database.DbHelper;
@@ -42,7 +32,6 @@ import java.util.List;
 
 public class ExportHelper {
 
-    // XML constants
     private static final String RECORDS = "records";
     private static final String PERSON = "person";
     private static final String NAME = "name";
@@ -53,7 +42,6 @@ public class ExportHelper {
     private static final String BACKUP = "backup";
     private static final String UTF_8 = "UTF-8";
 
-    // Exceptions constants
     private static final String ILLEGAL_ARGUMENT_EXCEPTION = "IllegalArgumentException";
     private static final String ILLEGAL_STATE_EXCEPTION = "IllegalStateException";
     private static final String IO_EXCEPTION = "IOException";
@@ -89,24 +77,19 @@ public class ExportHelper {
             xmlSerializer.startTag(null, RECORDS);
             for (Person person : persons) {
                 xmlSerializer.startTag(null, PERSON);
-                // name
                 xmlSerializer.startTag(null, NAME);
                 xmlSerializer.text(person.getName());
                 xmlSerializer.endTag(null, NAME);
-                // date
                 xmlSerializer.startTag(null, DATE);
                 xmlSerializer.text(String.valueOf(person.getDate()));
                 xmlSerializer.endTag(null, DATE);
-                // year unknown
                 xmlSerializer.startTag(null, YEAR_UNKNOWN);
                 xmlSerializer.text(String.valueOf(person.isYearUnknown()));
                 xmlSerializer.endTag(null, YEAR_UNKNOWN);
-                // phone number
                 xmlSerializer.startTag(null, PHONE_NUMBER);
                 String phoneNumber = person.getPhoneNumber() == null ? "" : person.getPhoneNumber();
                 xmlSerializer.text(phoneNumber);
                 xmlSerializer.endTag(null, PHONE_NUMBER);
-                // email
                 xmlSerializer.startTag(null, EMAIL);
                 String email = person.getEmail() == null ? "" : person.getEmail();
                 xmlSerializer.text(email);
@@ -127,19 +110,11 @@ public class ExportHelper {
     }
 
     private void showAlertDialog(final Activity activity, final String text) {
-        activity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-                builder.setMessage(text);
-                builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
-            }
+        activity.runOnUiThread(() -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+            builder.setMessage(text);
+            builder.setPositiveButton(R.string.ok_button, (dialog, which) -> dialog.cancel());
+            builder.show();
         });
     }
 
@@ -154,7 +129,7 @@ public class ExportHelper {
             progressDialogHelper.startProgressDialog(activity.getString(R.string.exporting_records));
         }
 
-        @SuppressWarnings("ResultOfMethodCallIgnored")
+        @SuppressWarnings({"ResultOfMethodCallIgnored", "deprecation"})
         @Override
         protected Void doInBackground(Void... params) {
             File sd = Environment.getExternalStorageDirectory();

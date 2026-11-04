@@ -1,17 +1,7 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.utils;
@@ -21,7 +11,9 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.preference.PreferenceManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import java.util.Calendar;
 
@@ -39,9 +31,6 @@ public class DatePickerManager {
         preferences = PreferenceManager.getDefaultSharedPreferences(activity);
     }
 
-    /**
-     * Shows material calendar on API 24 devices instead of spinner
-     */
     public void showDialog(DatePickerDialog.OnDateSetListener androidCallback,
                            com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener libCallback) {
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) {
@@ -51,9 +40,6 @@ public class DatePickerManager {
         }
     }
 
-    /**
-     * Configures android DatePickerDialog
-     */
     private void showDatePickerDialog(DatePickerDialog.OnDateSetListener callback) {
         android.app.DatePickerDialog datePickerDialog = new android.app.DatePickerDialog(
                 activity,
@@ -65,9 +51,6 @@ public class DatePickerManager {
         datePickerDialog.show();
     }
 
-    /**
-     * Configures DatePickerDialog by Wouter Dullaert
-     */
     private void showMdtpDialog(com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener callback) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
         com.wdullaer.materialdatetimepicker.date.DatePickerDialog dpd =
@@ -79,12 +62,12 @@ public class DatePickerManager {
                 );
         dpd.setVersion(com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version.VERSION_1);
         dpd.setThemeDark(preferences.getBoolean(Constants.NIGHT_MODE_KEY, false));
-        dpd.show(activity.getFragmentManager(), DATE_PICKER_FRAGMENT_TAG);
+        if (activity instanceof AppCompatActivity) {
+            dpd.show(((AppCompatActivity) activity).getSupportFragmentManager(), DATE_PICKER_FRAGMENT_TAG);
+        }
     }
 
-    /**
-     * Set correct theme for day/night modes
-     */
+    @SuppressWarnings("deprecation")
     private int setTheme(boolean nightMode) {
         if (nightMode) {
             return AlertDialog.THEME_HOLO_DARK;

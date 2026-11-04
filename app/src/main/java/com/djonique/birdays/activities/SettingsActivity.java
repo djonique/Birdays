@@ -1,17 +1,7 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.activities;
@@ -19,7 +9,6 @@ package com.djonique.birdays.activities;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.RingtoneManager;
@@ -27,20 +16,20 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatCheckBox;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatCheckBox;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.alarm.AlarmHelper;
@@ -68,7 +57,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         super.onCreate(savedInstanceState);
 
         BirdaysPreferenceFragment fragment = new BirdaysPreferenceFragment();
-        getFragmentManager().beginTransaction().replace(android.R.id.content, fragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, fragment).commit();
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
@@ -97,26 +86,19 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         cbDoNotShowAgain = view.findViewById(R.id.checkbox_alert);
 
         builder.setMessage(R.string.optimization_description);
-        builder.setPositiveButton(R.string.disable_button, new DialogInterface.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                try {
-                    startActivity(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
-                    if (cbDoNotShowAgain.isChecked()) {
-                        preferences.edit().putBoolean(DO_NOT_SHOW_OPTIMIZATION_ALERT, true).apply();
-                    }
-                } catch (ActivityNotFoundException ignored) {
-                }
-            }
-        });
-        builder.setNegativeButton(R.string.cancel_button, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
+        builder.setPositiveButton(R.string.disable_button, (dialog, which) -> {
+            try {
+                startActivity(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
                 if (cbDoNotShowAgain.isChecked()) {
                     preferences.edit().putBoolean(DO_NOT_SHOW_OPTIMIZATION_ALERT, true).apply();
                 }
+            } catch (ActivityNotFoundException ignored) {
+            }
+        });
+        builder.setNegativeButton(R.string.cancel_button, (dialog, which) -> {
+            dialog.cancel();
+            if (cbDoNotShowAgain.isChecked()) {
+                preferences.edit().putBoolean(DO_NOT_SHOW_OPTIMIZATION_ALERT, true).apply();
             }
         });
         builder.show();
@@ -124,13 +106,11 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -143,6 +123,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE && PermissionManager.readingContactsPermissionGranted(this)) {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
             if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
@@ -177,53 +158,46 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
     public void onContactsUploaded() {
     }
 
-    public static class BirdaysPreferenceFragment extends PreferenceFragment
+    public static class BirdaysPreferenceFragment extends PreferenceFragmentCompat
             implements SharedPreferences.OnSharedPreferenceChangeListener {
 
         private SharedPreferences preferences;
 
         @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.preferences);
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            setPreferencesFromResource(R.xml.preferences, rootKey);
 
+            if (getActivity() == null) return;
             preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-            /*
-            * Set summary for additional notification
-            */
-            findPreference(Constants.ADDITIONAL_NOTIFICATION_KEY).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
+            Preference addNotifPref = findPreference(Constants.ADDITIONAL_NOTIFICATION_KEY);
+            if (addNotifPref != null) {
+                addNotifPref.setOnPreferenceChangeListener((preference, newValue) -> {
                     ((ListPreference) preference).setValue(newValue.toString());
                     preference.setSummary(((ListPreference) preference).getEntry());
                     return true;
-                }
-            });
-
-            /*
-            * Set summary for ringtone
-            */
-            Preference ringtonePreference = findPreference(Constants.RINGTONE_KEY);
-            try {
-                String defaultRingtoneString = Settings.System.DEFAULT_NOTIFICATION_URI.toString();
-                String ringtoneString = preferences.getString(ringtonePreference.getKey(), defaultRingtoneString);
-                if (ringtoneString.equals(defaultRingtoneString)) {
-                    preferences.edit().putString(Constants.RINGTONE_KEY, defaultRingtoneString).apply();
-                }
-                if (ringtoneString.equals("")) {
-                    ringtonePreference.setSummary(getString(R.string.silent));
-                } else {
-                    String ringtoneName = RingtoneManager.getRingtone(getActivity(),
-                            Uri.parse(ringtoneString)).getTitle(getActivity());
-                    ringtonePreference.setSummary(ringtoneName);
-                }
-            } catch (Exception ignored) {
+                });
             }
 
-            ringtonePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
+            Preference ringtonePreference = findPreference(Constants.RINGTONE_KEY);
+            if (ringtonePreference != null) {
+                try {
+                    String defaultRingtoneString = Settings.System.DEFAULT_NOTIFICATION_URI.toString();
+                    String ringtoneString = preferences.getString(ringtonePreference.getKey(), defaultRingtoneString);
+                    if (ringtoneString.equals(defaultRingtoneString)) {
+                        preferences.edit().putString(Constants.RINGTONE_KEY, defaultRingtoneString).apply();
+                    }
+                    if (ringtoneString.equals("")) {
+                        ringtonePreference.setSummary(getString(R.string.silent));
+                    } else {
+                        String ringtoneName = RingtoneManager.getRingtone(getActivity(),
+                                Uri.parse(ringtoneString)).getTitle(getActivity());
+                        ringtonePreference.setSummary(ringtoneName);
+                    }
+                } catch (Exception ignored) {
+                }
+
+                ringtonePreference.setOnPreferenceChangeListener((preference, newValue) -> {
                     try {
                         if (newValue.toString().equals("")) {
                             preference.setSummary(getString(R.string.silent));
@@ -235,210 +209,174 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                     } catch (Exception ignored) {
                     }
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Opens HelpActivity
-            */
-            findPreference(getString(R.string.help_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
+            Preference helpPref = findPreference(getString(R.string.help_key));
+            if (helpPref != null) {
+                helpPref.setOnPreferenceClickListener(preference -> {
                     SettingsActivity activity = (SettingsActivity) getActivity();
                     if (activity != null) {
                         startActivity(new Intent(activity, HelpActivity.class));
                         activity.overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
                     }
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Imports contacts
-            */
-            findPreference(getString(R.string.import_contacts_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
+            Preference importPref = findPreference(getString(R.string.import_contacts_key));
+            if (importPref != null) {
+                importPref.setOnPreferenceClickListener(preference -> {
+                    if (getActivity() != null && !preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
                         ContactsHelper contactsHelper = new ContactsHelper(getActivity(), getActivity().getContentResolver());
                         contactsHelper.loadContacts(preferences);
                     }
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Exports records to XML file
-            */
-            findPreference(getString(R.string.export_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    if (PermissionManager.writingSdPermissionGranted(getActivity())) {
-                        new ExportHelper(getActivity()).exportRecords();
-                    } else {
-                        PermissionManager.requestWritingSdPermission(getActivity());
-                    }
-                    return true;
-                }
-            });
-
-            /*
-            * Recovers records from XML file
-            */
-            findPreference(getString(R.string.recover_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    if (PermissionManager.writingSdPermissionGranted(getActivity())) {
-                        try {
-                            Intent intent = new Intent(Intent.ACTION_GET_CONTENT)
-                                    .setType("text/xml")
-                                    .addCategory(Intent.CATEGORY_OPENABLE)
-                                    .putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                            startActivityForResult(intent, FILE_MANAGER);
-                        } catch (ActivityNotFoundException e) {
-                            Toast.makeText(getActivity(), R.string.recover_records_error,
-                                    Toast.LENGTH_LONG).show();
+            Preference exportPref = findPreference(getString(R.string.export_key));
+            if (exportPref != null) {
+                exportPref.setOnPreferenceClickListener(preference -> {
+                    if (getActivity() != null) {
+                        if (PermissionManager.writingSdPermissionGranted(getActivity())) {
+                            new ExportHelper(getActivity()).exportRecords();
+                        } else {
+                            PermissionManager.requestWritingSdPermission(getActivity());
                         }
-                    } else {
-                        PermissionManager.requestReadingSdPermission(getActivity());
                     }
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Start page
-            */
-            findPreference(getString(R.string.start_page_key)).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
+            Preference recoverPref = findPreference(getString(R.string.recover_key));
+            if (recoverPref != null) {
+                recoverPref.setOnPreferenceClickListener(preference -> {
+                    if (getActivity() != null) {
+                        if (PermissionManager.writingSdPermissionGranted(getActivity())) {
+                            try {
+                                Intent intent = new Intent(Intent.ACTION_GET_CONTENT)
+                                        .setType("text/xml")
+                                        .addCategory(Intent.CATEGORY_OPENABLE)
+                                        .putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                                startActivityForResult(intent, FILE_MANAGER);
+                            } catch (ActivityNotFoundException e) {
+                                Toast.makeText(getActivity(), R.string.recover_records_error,
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            PermissionManager.requestReadingSdPermission(getActivity());
+                        }
+                    }
+                    return true;
+                });
+            }
+
+            Preference startPagePref = findPreference(getString(R.string.start_page_key));
+            if (startPagePref != null) {
+                startPagePref.setOnPreferenceChangeListener((preference, newValue) -> {
                     ((ListPreference) preference).setValue(newValue.toString());
                     preference.setSummary(((ListPreference) preference).getEntry());
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Displayed age
-            */
-            findPreference(getString(R.string.displayed_age_key)).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
+            Preference displayedAgePref = findPreference(getString(R.string.displayed_age_key));
+            if (displayedAgePref != null) {
+                displayedAgePref.setOnPreferenceChangeListener((preference, newValue) -> {
                     ((ListPreference) preference).setValue(newValue.toString());
                     preference.setSummary(((ListPreference) preference).getEntry());
                     showRestartAppDialog();
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-             * Rate app
-             */
-            findPreference(getString(R.string.rate_app_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    Utils.openBrowser(getActivity(), getString(R.string.play_market_app_link));
+            Preference ratePref = findPreference(getString(R.string.rate_app_key));
+            if (ratePref != null) {
+                ratePref.setOnPreferenceClickListener(preference -> {
+                    if (getActivity() != null) Utils.openBrowser(getActivity(), getString(R.string.play_market_app_link));
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Share app
-            */
-            findPreference(getString(R.string.share_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
+            Preference sharePref = findPreference(getString(R.string.share_key));
+            if (sharePref != null) {
+                sharePref.setOnPreferenceClickListener(preference -> {
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
                     intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + getString(R.string.play_market_app_link));
                     startActivity(Intent.createChooser(intent, null));
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Ad banner
-            */
-            findPreference(getString(R.string.ad_banner_key)).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
+            Preference adBannerPref = findPreference(getString(R.string.ad_banner_key));
+            if (adBannerPref != null) {
+                adBannerPref.setOnPreferenceChangeListener((preference, newValue) -> {
                     showRestartAppDialog();
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Source code
-            */
-            findPreference(getString(R.string.source_code_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    Utils.openBrowser(getActivity(), getString(R.string.github_url));
+            Preference sourcePref = findPreference(getString(R.string.source_code_key));
+            if (sourcePref != null) {
+                sourcePref.setOnPreferenceClickListener(preference -> {
+                    if (getActivity() != null) Utils.openBrowser(getActivity(), getString(R.string.github_url));
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Privacy policy
-            */
-            findPreference(getString(R.string.privacy_policy_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    Utils.openBrowser(getActivity(), getString(R.string.privacy_policy_link));
+            Preference privacyPref = findPreference(getString(R.string.privacy_policy_key));
+            if (privacyPref != null) {
+                privacyPref.setOnPreferenceClickListener(preference -> {
+                    if (getActivity() != null) Utils.openBrowser(getActivity(), getString(R.string.privacy_policy_link));
                     return true;
-                }
-            });
+                });
+            }
 
-            /*
-            * Opens LicensesActivity
-            */
-            findPreference(getString(R.string.licenses_key)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
+            Preference licensesPref = findPreference(getString(R.string.licenses_key));
+            if (licensesPref != null) {
+                licensesPref.setOnPreferenceClickListener(preference -> {
                     SettingsActivity activity = (SettingsActivity) getActivity();
                     if (activity != null) {
                         startActivity(new Intent(activity, LicensesActivity.class));
                         activity.overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
                     }
                     return true;
-                }
-            });
+                });
+            }
         }
 
         @Override
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode == FILE_MANAGER && resultCode == RESULT_OK) {
+            if (requestCode == FILE_MANAGER && resultCode == RESULT_OK && getActivity() != null && data != null) {
                 new RecoverHelper(getActivity()).recoverRecords(getActivity(), data.getData());
             }
         }
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if (getActivity() == null) return;
             final AlarmHelper alarmHelper = new AlarmHelper(getActivity());
             DbHelper dbHelper = new DbHelper(getActivity());
             final List<Person> persons = dbHelper.query().getPersons();
             switch (key) {
                 case Constants.NOTIFICATIONS_KEY:
                     final boolean isChecked = sharedPreferences.getBoolean(Constants.NOTIFICATIONS_KEY, false);
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (isChecked) {
-                                for (Person person : persons) {
-                                    alarmHelper.setAlarms(person);
-                                }
-                            } else {
-                                for (Person person : persons) {
-                                    alarmHelper.removeAlarms(person.getTimeStamp());
-                                }
+                    new Thread(() -> {
+                        if (isChecked) {
+                            for (Person person : persons) {
+                                alarmHelper.setAlarms(person);
+                            }
+                        } else {
+                            for (Person person : persons) {
+                                alarmHelper.removeAlarms(person.getTimeStamp());
                             }
                         }
                     }).start();
                     break;
                 case Constants.NOTIFICATION_TIME_KEY:
-                    restartAlarms(alarmHelper, persons);
-                    break;
                 case Constants.ADDITIONAL_NOTIFICATION_KEY:
                     restartAlarms(alarmHelper, persons);
                     break;
@@ -464,18 +402,16 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         }
 
         private void restartAlarms(final AlarmHelper alarmHelper, final List<Person> persons) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (Person person : persons) {
-                        alarmHelper.removeAlarms(person.getTimeStamp());
-                        alarmHelper.setAlarms(person);
-                    }
+            new Thread(() -> {
+                for (Person person : persons) {
+                    alarmHelper.removeAlarms(person.getTimeStamp());
+                    alarmHelper.setAlarms(person);
                 }
             }).start();
         }
 
         private void restartApp() {
+            if (getActivity() == null) return;
             Intent intent = getActivity().getPackageManager()
                     .getLaunchIntentForPackage(getActivity().getPackageName());
             if (intent != null) {
@@ -485,21 +421,12 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         }
 
         private void showRestartAppDialog() {
+            if (getActivity() == null) return;
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle(getString(R.string.action_settings));
             builder.setMessage(R.string.displayed_age_changes);
-            builder.setPositiveButton(R.string.restart_now, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    restartApp();
-                }
-            });
-            builder.setNegativeButton(R.string.later, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
+            builder.setPositiveButton(R.string.restart_now, (dialog, which) -> restartApp());
+            builder.setNegativeButton(R.string.later, (dialog, which) -> dialog.cancel());
             builder.show();
         }
     }

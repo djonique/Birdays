@@ -1,29 +1,21 @@
 /*
- * Copyright 2017 Evgeny Timofeev
+ * Copyright 2017-2026 Evgenii Timofeev
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.djonique.birdays.widget;
 
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.widget.RemoteViews;
+
+import androidx.core.app.TaskStackBuilder;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
@@ -59,8 +51,15 @@ public class WidgetProvider extends AppWidgetProvider {
             Intent clickIntent = new Intent(context, WidgetProvider.class);
             clickIntent.setAction(ACTION_ON_CLICK);
 
+            int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                flags |= PendingIntent.FLAG_MUTABLE;
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                flags |= PendingIntent.FLAG_IMMUTABLE;
+            }
+
             PendingIntent clickPendingIntent = PendingIntent.getBroadcast(context, 0,
-                    clickIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    clickIntent, flags);
             remoteViews.setPendingIntentTemplate(R.id.listview_widget, clickPendingIntent);
 
             appWidgetManager.updateAppWidget(i, remoteViews);
@@ -68,7 +67,6 @@ public class WidgetProvider extends AppWidgetProvider {
         }
     }
 
-    // Opens DetailActivity
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
