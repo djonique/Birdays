@@ -19,13 +19,13 @@ def getProp(Properties props, String key, String defaultValue) {
 }
 
 android {
-    namespace 'com.djonique.birdays'
-    compileSdkVersion 37
+    namespace = 'com.djonique.birdays'
+    compileSdk = 37
 
     defaultConfig {
-        applicationId "com.djonique.birdays"
-        minSdkVersion 24
-        targetSdkVersion 37
+        applicationId = "com.djonique.birdays"
+        minSdk = 24
+        targetSdk = 37
         versionCode 19
         versionName "1.6.0"
         vectorDrawables.useSupportLibrary = true
@@ -38,14 +38,14 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled = false
             def adId = getProp(keystoreProperties, 'InterstitialAdIdDebug', 'ca-app-pub-3940256099942544/1033173712').replace('"', '')
             resValue "string", "banner_ad_id", getProp(keystoreProperties, 'BannerAdIdDebug', "ca-app-pub-3940256099942544/6300978111")
             buildConfigField "String", "INTERSTITIAL_AD_ID", "\"${adId}\""
         }
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled = true
+            shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             def adId = getProp(keystoreProperties, 'InterstitialAdIdRelease', 'ca-app-pub-3940256099942544/1033173712').replace('"', '')
             resValue "string", "banner_ad_id", getProp(keystoreProperties, 'BannerAdIdRelease', "ca-app-pub-3940256099942544/6300978111")
