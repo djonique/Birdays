@@ -20,12 +20,12 @@ def getProp(Properties props, String key, String defaultValue) {
 
 android {
     namespace = 'com.djonique.birdays'
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.djonique.birdays"
         minSdk = 24
-        targetSdk = 37
+        targetSdk = 36
         versionCode 19
         versionName "1.6.0"
         vectorDrawables.useSupportLibrary = true
