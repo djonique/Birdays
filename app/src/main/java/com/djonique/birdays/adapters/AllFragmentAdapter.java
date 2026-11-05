@@ -208,7 +208,7 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 allFragment.startActivity(new Intent(context, DetailActivity.class).
                         putExtra(Constants.TIME_STAMP, person.getTimeStamp()));
                 if (context instanceof MainActivity) {
-                    ((MainActivity) context).overridePendingTransition(R.anim.activity_secondary_in,
+                    Utils.overrideOpenTransition((MainActivity) context, R.anim.activity_secondary_in,
                             R.anim.activity_primary_out);
                 }
             });

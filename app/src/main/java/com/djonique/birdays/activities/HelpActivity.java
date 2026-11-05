@@ -28,6 +28,7 @@ import androidx.preference.PreferenceManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.utils.Constants;
+import com.djonique.birdays.utils.Utils;
 import com.google.android.material.snackbar.Snackbar;
 
 public class HelpActivity extends AppCompatActivity {
@@ -72,7 +73,7 @@ public class HelpActivity extends AppCompatActivity {
             public void handleOnBackPressed() {
                 setEnabled(false);
                 getOnBackPressedDispatcher().onBackPressed();
-                overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+                Utils.overrideCloseTransition(HelpActivity.this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
             }
         });
     }

@@ -6,6 +6,7 @@
 
 package com.djonique.birdays.utils;
 
+import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -13,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -283,5 +285,29 @@ public class Utils {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
         appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.listview_widget);
+    }
+
+    /**
+     * Applies the custom transition for an activity that is opening another one.
+     */
+    @SuppressWarnings("deprecation")
+    public static void overrideOpenTransition(Activity activity, int enterAnim, int exitAnim) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            activity.overrideActivityTransition(Activity.OVERRIDE_TRANSITION_OPEN, enterAnim, exitAnim);
+        } else {
+            activity.overridePendingTransition(enterAnim, exitAnim);
+        }
+    }
+
+    /**
+     * Applies the custom transition for an activity that is closing.
+     */
+    @SuppressWarnings("deprecation")
+    public static void overrideCloseTransition(Activity activity, int enterAnim, int exitAnim) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            activity.overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, enterAnim, exitAnim);
+        } else {
+            activity.overridePendingTransition(enterAnim, exitAnim);
+        }
     }
 }

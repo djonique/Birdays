@@ -111,7 +111,7 @@ public class EditActivity extends AppCompatActivity implements
             public void handleOnBackPressed() {
                 setEnabled(false);
                 getOnBackPressedDispatcher().onBackPressed();
-                overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+                Utils.overrideCloseTransition(EditActivity.this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
             }
         });
     }
@@ -135,7 +135,7 @@ public class EditActivity extends AppCompatActivity implements
             Utils.notifyWidget(this);
             setResult(RESULT_OK, new Intent());
             finish();
-            this.overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+            Utils.overrideCloseTransition(this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
             return true;
         }
         return super.onOptionsItemSelected(item);

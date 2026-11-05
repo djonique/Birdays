@@ -96,7 +96,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
             public void handleOnBackPressed() {
                 setEnabled(false);
                 getOnBackPressedDispatcher().onBackPressed();
-                overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+                Utils.overrideCloseTransition(SettingsActivity.this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
             }
         });
     }
@@ -228,7 +228,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                     SettingsActivity activity = (SettingsActivity) getActivity();
                     if (activity != null) {
                         startActivity(new Intent(activity, HelpActivity.class));
-                        activity.overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
+                        Utils.overrideOpenTransition(activity, R.anim.activity_secondary_in, R.anim.activity_primary_out);
                     }
                     return true;
                 });
@@ -357,7 +357,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                     SettingsActivity activity = (SettingsActivity) getActivity();
                     if (activity != null) {
                         startActivity(new Intent(activity, LicensesActivity.class));
-                        activity.overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
+                        Utils.overrideOpenTransition(activity, R.anim.activity_secondary_in, R.anim.activity_primary_out);
                     }
                     return true;
                 });

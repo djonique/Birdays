@@ -235,7 +235,7 @@ public class DetailActivity extends AppCompatActivity {
     private void closeActivity() {
         if (isFinishing()) return;
         finish();
-        overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+        Utils.overrideCloseTransition(this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
     }
 
     @Override
@@ -325,7 +325,7 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EditActivity.class);
         intent.putExtra(Constants.TIME_STAMP, timeStamp);
         editActivityLauncher.launch(intent);
-        overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
+        Utils.overrideOpenTransition(this, R.anim.activity_secondary_in, R.anim.activity_primary_out);
     }
 
     private void setSeasonImage() {
@@ -350,7 +350,7 @@ public class DetailActivity extends AppCompatActivity {
             Utils.notifyWidget(getApplicationContext());
             dialog.dismiss();
             finish();
-            overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+            Utils.overrideCloseTransition(this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
         });
         builder.setNegativeButton(R.string.cancel_button, (dialog, which) -> dialog.cancel());
         builder.show();
