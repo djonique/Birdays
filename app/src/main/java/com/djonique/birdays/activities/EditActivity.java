@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
@@ -104,6 +105,15 @@ public class EditActivity extends AppCompatActivity implements
         });
 
         checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> checkBoxListener());
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+                overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+            }
+        });
     }
 
     @Override
@@ -117,7 +127,7 @@ public class EditActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == android.R.id.home) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
             return true;
         } else if (itemId == R.id.menu_edit_ok) {
             updatePerson();
@@ -129,12 +139,6 @@ public class EditActivity extends AppCompatActivity implements
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
     }
 
     private void setupUI() {

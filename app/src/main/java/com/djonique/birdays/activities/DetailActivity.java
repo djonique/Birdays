@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -155,6 +156,13 @@ public class DetailActivity extends AppCompatActivity {
         if (btnPhone != null) btnPhone.setOnClickListener(v -> makeCall());
         if (btnChat != null) btnChat.setOnClickListener(v -> sendMessage());
         if (btnEmail != null) btnEmail.setOnClickListener(v -> sendEmail());
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                handleBackPressed();
+            }
+        });
     }
 
     @Override
@@ -168,15 +176,14 @@ public class DetailActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         int itemId = item.getItemId();
         if (itemId == android.R.id.home) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
         } else if (itemId == R.id.menu_detail_delete) {
             deletePersonDialog(person);
         }
         return true;
     }
 
-    @Override
-    public void onBackPressed() {
+    private void handleBackPressed() {
         if (mInterstitialAd != null && !interstitialShown) {
             interstitialShown = true;
             mInterstitialAd.setAdEventListener(new InterstitialAdEventListener() {

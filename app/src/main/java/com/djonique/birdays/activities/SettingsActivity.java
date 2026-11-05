@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -73,6 +74,15 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                 }
             }
         }
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+                overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+            }
+        });
     }
 
     private void showWarningMessage(Context context) {
@@ -108,16 +118,10 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
     }
 
     @Override

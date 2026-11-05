@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -65,21 +66,24 @@ public class HelpActivity extends AppCompatActivity {
         if (btnOpenWhitelist != null) btnOpenWhitelist.setOnClickListener(v -> openBatteryOptimization());
         if (btnOpenSettings != null) btnOpenSettings.setOnClickListener(v -> openSettings());
         if (btnSendEmail != null) btnSendEmail.setOnClickListener(v -> sendEmail());
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+                overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
+            }
+        });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
     }
 
     private void checkManufacturer(String manufacturer) {
