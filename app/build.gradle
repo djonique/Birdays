@@ -45,6 +45,7 @@ android {
             minifyEnabled = false
             buildConfigField "String", "BANNER_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexBannerAdUnitIdDebug', 'demo-banner-yandex')}\""
             buildConfigField "String", "INTERSTITIAL_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexInterstitialAdUnitIdDebug', 'demo-interstitial-yandex')}\""
+            buildConfigField "String", "REWARDED_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexRewardedAdUnitIdDebug', 'demo-rewarded-yandex')}\""
         }
         release {
             minifyEnabled = true
@@ -52,6 +53,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BANNER_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexBannerAdUnitIdRelease', 'demo-banner-yandex')}\""
             buildConfigField "String", "INTERSTITIAL_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexInterstitialAdUnitIdRelease', 'demo-interstitial-yandex')}\""
+            buildConfigField "String", "REWARDED_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexRewardedAdUnitIdRelease', 'demo-rewarded-yandex')}\""
         }
     }
 

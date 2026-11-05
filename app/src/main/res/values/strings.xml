@@ -111,6 +111,7 @@
     <string name="share_key" translatable="false">share_key</string>
     <string name="ad_interstitial_key" translatable="false">ad_interstitial_key</string>
     <string name="ad_banner_key" translatable="false">ad_banner_key</string>
+    <string name="ad_rewarded_key" translatable="false">ad_rewarded_key</string>
     <string name="source_code_key" translatable="false">source_code_key</string>
     <string name="privacy_policy_key" translatable="false">privacy_policy_key</string>
     <string name="licenses_key" translatable="false">licenses_key</string>
@@ -215,6 +216,9 @@
     <string name="ad_interstitial_title">Interstitial ad</string>
     <string name="ad_interstitial_summary">This type of ad is limited to 1 show per day. Not so often, isn\'t it?</string>
     <string name="ad_banner">Banner</string>
+    <string name="ad_rewarded_title">Support the project</string>
+    <string name="ad_rewarded_summary">Watch a short video — the revenue from it goes to the development of the app</string>
+    <string name="ad_rewarded_unavailable">Video is not available right now, please try again later</string>
     <!-- About app -->
     <string name="about_app">About app</string>
     <string name="menu_github">Source code</string>

@@ -169,6 +169,9 @@
     <string name="ad_interstitial_title">Межстраничное объявление</string>
     <string name="ad_interstitial_summary">Показ этого объявления ограничен одним разом в день. Не так часто, не правда ли?</string>
     <string name="ad_banner">Баннер</string>
+    <string name="ad_rewarded_title">Поддержать проект</string>
+    <string name="ad_rewarded_summary">Посмотрите короткое видео — доход от него идёт на развитие приложения</string>
+    <string name="ad_rewarded_unavailable">Видео сейчас недоступно, попробуйте позже</string>
     <!-- About app -->
     <string name="about_app">О приложении</string>
     <string name="menu_github">Исходный код</string>

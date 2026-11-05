@@ -91,6 +91,10 @@
             android:selectable="false"
             android:summary="@string/about_ad_summary"
             android:title="@string/about_ad_title" />
+        <Preference
+            android:key="@string/ad_rewarded_key"
+            android:summary="@string/ad_rewarded_summary"
+            android:title="@string/ad_rewarded_title" />
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/ad_interstitial_key"

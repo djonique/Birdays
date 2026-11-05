@@ -32,6 +32,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import com.djonique.birdays.R;
+import com.djonique.birdays.ad.RewardedVideo;
 import com.djonique.birdays.alarm.AlarmHelper;
 import com.djonique.birdays.backup.ExportHelper;
 import com.djonique.birdays.backup.RecoverHelper;
@@ -162,6 +163,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
             implements SharedPreferences.OnSharedPreferenceChangeListener {
 
         private SharedPreferences preferences;
+        private RewardedVideo rewardedVideo;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -318,6 +320,18 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                 });
             }
 
+            Preference adRewardedPref = findPreference(getString(R.string.ad_rewarded_key));
+            if (adRewardedPref != null) {
+                rewardedVideo = new RewardedVideo(getActivity());
+                rewardedVideo.preload();
+                adRewardedPref.setOnPreferenceClickListener(preference -> {
+                    if (getActivity() != null) {
+                        rewardedVideo.show(getActivity());
+                    }
+                    return true;
+                });
+            }
+
             Preference sourcePref = findPreference(getString(R.string.source_code_key));
             if (sourcePref != null) {
                 sourcePref.setOnPreferenceClickListener(preference -> {
@@ -399,6 +413,14 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
             super.onPause();
             getPreferenceScreen().getSharedPreferences()
                     .unregisterOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onDestroy() {
+            if (rewardedVideo != null) {
+                rewardedVideo.destroy();
+            }
+            super.onDestroy();
         }
 
         private void restartAlarms(final AlarmHelper alarmHelper, final List<Person> persons) {
