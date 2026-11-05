@@ -22,6 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -49,10 +51,24 @@ import java.util.List;
 public class SettingsActivity extends AppCompatActivity implements ContactsHelper.LoadingContactsListener {
 
     private static final String DO_NOT_SHOW_OPTIMIZATION_ALERT = "DO_NOT_SHOW_OPTIMIZATION_ALERT";
-    private static final int FILE_MANAGER = 5;
+
+    private final ActivityResultLauncher<Intent> recoverFileLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    new RecoverHelper(this).recoverRecords(this, result.getData().getData());
+                }
+            });
 
     private AppCompatCheckBox cbDoNotShowAgain;
     private SharedPreferences preferences;
+
+    void launchRecoverFilePicker(Intent intent) {
+        try {
+            recoverFileLauncher.launch(intent);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.recover_records_error, Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,24 +154,12 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
             if (requestCode == Constants.WRITE_EXTERNAL_STORAGE_PERMISSION_CODE) {
                 new ExportHelper(this).exportRecords();
             } else if (requestCode == Constants.READ_EXTERNAL_STORAGE_PERMISSION_CODE) {
-                try {
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT)
-                            .setType("text/xml")
-                            .addCategory(Intent.CATEGORY_OPENABLE)
-                            .putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                    startActivityForResult(Intent.createChooser(intent, null), FILE_MANAGER);
-                } catch (ActivityNotFoundException e) {
-                    Toast.makeText(this, R.string.recover_records_error, Toast.LENGTH_LONG).show();
-                }
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT)
+                        .setType("text/xml")
+                        .addCategory(Intent.CATEGORY_OPENABLE)
+                        .putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                launchRecoverFilePicker(Intent.createChooser(intent, null));
             }
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == FILE_MANAGER && resultCode == RESULT_OK) {
-            new RecoverHelper(this).recoverRecords(this, data.getData());
         }
     }
 
@@ -260,16 +264,11 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                 recoverPref.setOnPreferenceClickListener(preference -> {
                     if (getActivity() != null) {
                         if (PermissionManager.writingSdPermissionGranted(getActivity())) {
-                            try {
-                                Intent intent = new Intent(Intent.ACTION_GET_CONTENT)
-                                        .setType("text/xml")
-                                        .addCategory(Intent.CATEGORY_OPENABLE)
-                                        .putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-                                startActivityForResult(intent, FILE_MANAGER);
-                            } catch (ActivityNotFoundException e) {
-                                Toast.makeText(getActivity(), R.string.recover_records_error,
-                                        Toast.LENGTH_LONG).show();
-                            }
+                            Intent intent = new Intent(Intent.ACTION_GET_CONTENT)
+                                    .setType("text/xml")
+                                    .addCategory(Intent.CATEGORY_OPENABLE)
+                                    .putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                            ((SettingsActivity) getActivity()).launchRecoverFilePicker(intent);
                         } else {
                             PermissionManager.requestReadingSdPermission(getActivity());
                         }
@@ -362,14 +361,6 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                     }
                     return true;
                 });
-            }
-        }
-
-        @Override
-        public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode == FILE_MANAGER && resultCode == RESULT_OK && getActivity() != null && data != null) {
-                new RecoverHelper(getActivity()).recoverRecords(getActivity(), data.getData());
             }
         }
 

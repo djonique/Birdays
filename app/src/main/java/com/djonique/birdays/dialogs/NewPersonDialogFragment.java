@@ -27,6 +27,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -56,6 +58,14 @@ public class NewPersonDialogFragment extends DialogFragment implements
     private Calendar calendar;
     private String name;
     private long date;
+
+    private final ActivityResultLauncher<Intent> contactPickerLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+                if (result.getResultCode() == Activity.RESULT_OK && getActivity() != null
+                        && result.getData() != null) {
+                    fillFromContact(result.getData());
+                }
+            });
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -87,7 +97,7 @@ public class NewPersonDialogFragment extends DialogFragment implements
                     Intent intent = new Intent(Intent.ACTION_PICK,
                             ContactsContract.Contacts.CONTENT_URI);
                     try {
-                        startActivityForResult(intent, Constants.READ_CONTACTS_PERMISSION_CODE);
+                        contactPickerLauncher.launch(intent);
                     } catch (ActivityNotFoundException e) {
                         Toast.makeText(getActivity(), R.string.open_contacts_error, Toast.LENGTH_LONG).show();
                     }
@@ -271,29 +281,25 @@ public class NewPersonDialogFragment extends DialogFragment implements
         }
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK && getActivity() != null && data != null) {
-            Uri contactData = data.getData();
-            ContentResolver contentResolver = getActivity().getContentResolver();
-            ContactsHelper contactsHelper = new ContactsHelper(getActivity(), contentResolver);
-            Cursor cursor = null;
-            if (contactData != null) {
-                cursor = contentResolver.query(contactData, null, null, null, null);
+    private void fillFromContact(Intent data) {
+        Uri contactData = data.getData();
+        ContentResolver contentResolver = getActivity().getContentResolver();
+        ContactsHelper contactsHelper = new ContactsHelper(getActivity(), contentResolver);
+        Cursor cursor = null;
+        if (contactData != null) {
+            cursor = contentResolver.query(contactData, null, null, null, null);
+        }
+        if (cursor != null && cursor.getCount() > 0) {
+            if (cursor.moveToFirst()) {
+                @SuppressLint("Range") String id = cursor.getString(
+                        cursor.getColumnIndex(ContactsContract.Contacts._ID));
+                if (etName != null) etName.setText(contactsHelper.getContactName(contentResolver, id));
+                if (etPhone != null) etPhone.setText(contactsHelper.getContactPhoneNumber(contentResolver, id));
+                if (etEmail != null) etEmail.setText(contactsHelper.getContactEmail(contentResolver, id));
             }
-            if (cursor != null && cursor.getCount() > 0) {
-                if (cursor.moveToFirst()) {
-                    @SuppressLint("Range") String id = cursor.getString(
-                            cursor.getColumnIndex(ContactsContract.Contacts._ID));
-                    if (etName != null) etName.setText(contactsHelper.getContactName(contentResolver, id));
-                    if (etPhone != null) etPhone.setText(contactsHelper.getContactPhoneNumber(contentResolver, id));
-                    if (etEmail != null) etEmail.setText(contactsHelper.getContactEmail(contentResolver, id));
-                }
-            }
-            if (cursor != null) {
-                cursor.close();
-            }
+        }
+        if (cursor != null) {
+            cursor.close();
         }
     }
 

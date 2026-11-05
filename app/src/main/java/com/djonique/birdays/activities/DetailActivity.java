@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -60,7 +62,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private static final int INSTALL_DAYS = 7;
     private static final int LAUNCH_TIMES = 5;
-    private static final int EDIT_ACTIVITY = 4;
     private static final long INTERSTITIAL_INTERVAL = TimeUnit.DAYS.toMillis(1);
 
     private CoordinatorLayout container;
@@ -92,6 +93,18 @@ public class DetailActivity extends AppCompatActivity {
     private long timeStamp, date;
     private String phoneNumber, email, displayedAge;
     private boolean yearUnknown;
+
+    private final ActivityResultLauncher<Intent> editActivityLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+                if (result.getData() == null) return;
+                if (result.getResultCode() == RESULT_OK) {
+                    Toast.makeText(this, R.string.record_edited, Toast.LENGTH_SHORT).show();
+                    Intent refresh = new Intent(this, DetailActivity.class);
+                    refresh.putExtra(Constants.TIME_STAMP, timeStamp);
+                    startActivity(refresh);
+                    this.finish();
+                }
+            });
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -226,19 +239,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (data == null) return;
-        if (requestCode == EDIT_ACTIVITY && resultCode == RESULT_OK) {
-            Toast.makeText(this, R.string.record_edited, Toast.LENGTH_SHORT).show();
-            Intent refresh = new Intent(this, DetailActivity.class);
-            refresh.putExtra(Constants.TIME_STAMP, timeStamp);
-            startActivity(refresh);
-            this.finish();
-        }
-    }
-
-    @Override
     protected void onDestroy() {
         if (interstitialAdLoader != null) {
             interstitialAdLoader.cancelLoading();
@@ -324,7 +324,7 @@ public class DetailActivity extends AppCompatActivity {
     private void starEditActivity() {
         Intent intent = new Intent(this, EditActivity.class);
         intent.putExtra(Constants.TIME_STAMP, timeStamp);
-        startActivityForResult(intent, EDIT_ACTIVITY);
+        editActivityLauncher.launch(intent);
         overridePendingTransition(R.anim.activity_secondary_in, R.anim.activity_primary_out);
     }
 

@@ -6,7 +6,6 @@
 
 package com.djonique.birdays.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,11 +99,5 @@ public class MonthFragment extends Fragment {
         for (int i = 0; i < persons.size(); i++) {
             addPerson(persons.get(i));
         }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (adapter != null) adapter.notifyDataSetChanged();
     }
 }
