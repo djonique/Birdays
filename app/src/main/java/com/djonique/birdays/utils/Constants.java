@@ -19,6 +19,7 @@ public interface Constants {
     int READ_CONTACTS_PERMISSION_CODE = 1;
     int WRITE_EXTERNAL_STORAGE_PERMISSION_CODE = 2;
     int READ_EXTERNAL_STORAGE_PERMISSION_CODE = 3;
+    int NOTIFICATIONS_PERMISSION_CODE = 4;
 
     // Alarm
     String NAME = "NAME";

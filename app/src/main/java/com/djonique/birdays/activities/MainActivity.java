@@ -34,6 +34,7 @@ import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.BirdaysApplication;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.ContactsHelper;
+import com.djonique.birdays.utils.PermissionManager;
 import com.djonique.birdays.utils.Utils;
 import com.yandex.mobile.ads.banner.BannerAdView;
 import com.google.android.material.appbar.AppBarLayout;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private SharedPreferences preferences;
     private PagerAdapter pagerAdapter;
+    private boolean notificationsPermissionRequested;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +133,18 @@ public class MainActivity extends AppCompatActivity implements
     protected void onResume() {
         super.onResume();
         BirdaysApplication.activityResumed();
+        requestNotificationsPermissionIfNeeded();
+    }
+
+    private void requestNotificationsPermissionIfNeeded() {
+        if (notificationsPermissionRequested
+                || !preferences.getBoolean(getString(R.string.notifications_key), true)
+                || PermissionManager.notificationsPermissionGranted(this)
+                || !preferences.getBoolean(Constants.CONTACTS_UPLOADED, false)) {
+            return;
+        }
+        notificationsPermissionRequested = true;
+        PermissionManager.requestNotificationsPermission(this);
     }
 
     @Override

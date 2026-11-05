@@ -378,6 +378,9 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
             switch (key) {
                 case Constants.NOTIFICATIONS_KEY:
                     final boolean isChecked = sharedPreferences.getBoolean(Constants.NOTIFICATIONS_KEY, false);
+                    if (isChecked && !PermissionManager.notificationsPermissionGranted(getActivity())) {
+                        PermissionManager.requestNotificationsPermission(getActivity());
+                    }
                     new Thread(() -> {
                         if (isChecked) {
                             for (Person person : persons) {

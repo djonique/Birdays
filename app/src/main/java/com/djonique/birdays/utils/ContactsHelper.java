@@ -161,7 +161,7 @@ public class ContactsHelper {
                 Toast.makeText(activity, R.string.loading_contacts_error, Toast.LENGTH_LONG).show();
             }
         } else {
-            PermissionManager.requestReadingContactsPermission(activity);
+            PermissionManager.requestReadingContactsAndNotificationsPermission(activity);
         }
     }
 
