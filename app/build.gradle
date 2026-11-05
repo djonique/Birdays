@@ -75,7 +75,6 @@ dependencies {
     implementation 'androidx.preference:preference:1.2.1'
 
     // Ads
-    implementation 'com.google.android.gms:play-services-ads:23.6.0'
     implementation 'com.yandex.android:mobileads:8.6.0'
 
     // Firebase

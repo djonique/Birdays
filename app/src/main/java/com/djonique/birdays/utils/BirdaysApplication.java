@@ -7,7 +7,6 @@
 package com.djonique.birdays.utils;
 
 import android.app.Application;
-import com.google.android.gms.ads.MobileAds;
 import com.yandex.mobile.ads.common.YandexAds;
 
 public class BirdaysApplication extends Application {
@@ -17,7 +16,6 @@ public class BirdaysApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        MobileAds.initialize(this, initializationStatus -> {});
         YandexAds.initialize(this, () -> {});
     }
 

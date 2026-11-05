@@ -29,15 +29,6 @@
         android:supportsRtl="true"
         android:theme="@style/BirdaysTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <!-- AdMob App ID (Sample Test ID) -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
-
         <!-- Firebase Messaging icon -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
@@ -95,13 +86,6 @@
             android:label="@string/licenses"
             android:parentActivityName=".activities.SettingsActivity"
             android:theme="@style/BirdaysTheme" />
-
-        <!-- AdActivity -->
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent" />
 
         <!-- AlarmReceiver -->
         <receiver
