@@ -18,6 +18,10 @@ def getProp(Properties props, String key, String defaultValue) {
     return props.containsKey(key) ? props[key] : defaultValue
 }
 
+def getAdUnitId(Properties props, String key, String defaultValue) {
+    return getProp(props, key, defaultValue).replace('"', '')
+}
+
 android {
     namespace = 'com.djonique.birdays'
     compileSdk = 36
@@ -39,17 +43,15 @@ android {
     buildTypes {
         debug {
             minifyEnabled = false
-            def adId = getProp(keystoreProperties, 'InterstitialAdIdDebug', 'ca-app-pub-3940256099942544/1033173712').replace('"', '')
-            resValue "string", "banner_ad_id", getProp(keystoreProperties, 'BannerAdIdDebug', "ca-app-pub-3940256099942544/6300978111")
-            buildConfigField "String", "INTERSTITIAL_AD_ID", "\"${adId}\""
+            buildConfigField "String", "BANNER_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexBannerAdUnitIdDebug', 'demo-banner-yandex')}\""
+            buildConfigField "String", "INTERSTITIAL_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexInterstitialAdUnitIdDebug', 'demo-interstitial-yandex')}\""
         }
         release {
             minifyEnabled = true
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            def adId = getProp(keystoreProperties, 'InterstitialAdIdRelease', 'ca-app-pub-3940256099942544/1033173712').replace('"', '')
-            resValue "string", "banner_ad_id", getProp(keystoreProperties, 'BannerAdIdRelease', "ca-app-pub-3940256099942544/6300978111")
-            buildConfigField "String", "INTERSTITIAL_AD_ID", "\"${adId}\""
+            buildConfigField "String", "BANNER_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexBannerAdUnitIdRelease', 'demo-banner-yandex')}\""
+            buildConfigField "String", "INTERSTITIAL_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexInterstitialAdUnitIdRelease', 'demo-interstitial-yandex')}\""
         }
     }
 

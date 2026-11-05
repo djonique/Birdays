@@ -115,7 +115,7 @@ public class DetailActivity extends AppCompatActivity {
         displayedAge = preferences.getString(Constants.DISPLAYED_AGE_KEY, "0");
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O && adEnabled) {
-            InterstitialAd.load(this, BuildConfig.INTERSTITIAL_AD_ID, new AdRequest.Builder().build(),
+            InterstitialAd.load(this, BuildConfig.INTERSTITIAL_AD_UNIT_ID, new AdRequest.Builder().build(),
                     new InterstitialAdLoadCallback() {
                         @Override
                         public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

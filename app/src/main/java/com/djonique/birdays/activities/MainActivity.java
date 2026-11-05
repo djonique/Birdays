@@ -35,7 +35,7 @@ import com.djonique.birdays.utils.BirdaysApplication;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.ContactsHelper;
 import com.djonique.birdays.utils.Utils;
-import com.google.android.gms.ads.AdView;
+import com.yandex.mobile.ads.banner.BannerAdView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private FloatingActionButton fab;
-    private AdView adView;
+    private BannerAdView adView;
 
     private SharedPreferences preferences;
     private PagerAdapter pagerAdapter;
@@ -143,6 +143,12 @@ public class MainActivity extends AppCompatActivity implements
     protected void onPause() {
         super.onPause();
         BirdaysApplication.activityPaused();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (adView != null) adView.destroy();
+        super.onDestroy();
     }
 
     @Override
