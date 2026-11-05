@@ -6,10 +6,10 @@
 
 package com.djonique.birdays.backup;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.os.AsyncTask;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Xml;
 
 import androidx.appcompat.app.AlertDialog;
@@ -29,6 +29,8 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ExportHelper {
 
@@ -50,13 +52,29 @@ public class ExportHelper {
     private Activity activity;
     private File folder;
     private boolean storageAvailable = true;
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public ExportHelper(Activity activity) {
         this.activity = activity;
     }
 
     public void exportRecords() {
-        new ExportAsyncTask().execute();
+        final ProgressDialogHelper progressDialogHelper = new ProgressDialogHelper(activity);
+        progressDialogHelper.startProgressDialog(activity.getString(R.string.exporting_records));
+        final ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.execute(() -> {
+            try {
+                exportRecordsInBackground();
+            } finally {
+                executor.shutdown();
+            }
+            mainHandler.post(() -> {
+                progressDialogHelper.dismissProgressDialog();
+                if (storageAvailable) {
+                    showAlertDialog(activity, activity.getString(R.string.backup_finished) + folder);
+                }
+            });
+        });
     }
 
     private boolean isExternalStorageWritable() {
@@ -118,52 +136,29 @@ public class ExportHelper {
         });
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class ExportAsyncTask extends AsyncTask<Void, Void, Void> {
-
-        ProgressDialogHelper progressDialogHelper = new ProgressDialogHelper(activity);
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialogHelper.startProgressDialog(activity.getString(R.string.exporting_records));
-        }
-
-        @SuppressWarnings({"ResultOfMethodCallIgnored", "deprecation"})
-        @Override
-        protected Void doInBackground(Void... params) {
-            File sd = Environment.getExternalStorageDirectory();
-            if (isExternalStorageWritable()) {
-                try {
-                    folder = new File(sd.getPath() + File.separator + activity.getString(R.string.app_name));
-                    if (!folder.exists()) {
-                        folder.mkdir();
-                    }
-                    File backupFile = new File(folder + File.separator + getBackupFileName());
-                    backupFile.createNewFile();
-                    FileOutputStream outputStream = new FileOutputStream(backupFile);
-                    List<Person> persons = new DbHelper(activity).query().getPersons();
-                    outputStream.write(writeXml(persons).getBytes());
-                    outputStream.close();
-                } catch (FileNotFoundException e) {
-                    showAlertDialog(activity, FILE_NOT_FOUND_EXCEPTION);
-                } catch (IOException e) {
-                    showAlertDialog(activity, IO_EXCEPTION);
+    @SuppressWarnings({"ResultOfMethodCallIgnored", "deprecation"})
+    private void exportRecordsInBackground() {
+        File sd = Environment.getExternalStorageDirectory();
+        if (isExternalStorageWritable()) {
+            try {
+                folder = new File(sd.getPath() + File.separator + activity.getString(R.string.app_name));
+                if (!folder.exists()) {
+                    folder.mkdir();
                 }
-            } else {
-                storageAvailable = false;
-                showAlertDialog(activity, activity.getString(R.string.ext_storage_error));
+                File backupFile = new File(folder + File.separator + getBackupFileName());
+                backupFile.createNewFile();
+                FileOutputStream outputStream = new FileOutputStream(backupFile);
+                List<Person> persons = new DbHelper(activity).query().getPersons();
+                outputStream.write(writeXml(persons).getBytes());
+                outputStream.close();
+            } catch (FileNotFoundException e) {
+                showAlertDialog(activity, FILE_NOT_FOUND_EXCEPTION);
+            } catch (IOException e) {
+                showAlertDialog(activity, IO_EXCEPTION);
             }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            progressDialogHelper.dismissProgressDialog();
-            if (storageAvailable) {
-                showAlertDialog(activity, activity.getString(R.string.backup_finished) + folder);
-            }
+        } else {
+            storageAvailable = false;
+            showAlertDialog(activity, activity.getString(R.string.ext_storage_error));
         }
     }
 }

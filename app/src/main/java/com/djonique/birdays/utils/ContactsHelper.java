@@ -11,7 +11,8 @@ import android.content.ContentResolver;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.ContactsContract;
 import android.widget.Toast;
 
@@ -22,12 +23,15 @@ import com.djonique.birdays.models.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ContactsHelper {
 
     private Activity activity;
     private ContentResolver contentResolver;
     private LoadingContactsListener loadingContactsListener;
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public ContactsHelper(Activity activity, ContentResolver contentResolver) {
         this.activity = activity;
@@ -154,7 +158,7 @@ public class ContactsHelper {
     public void loadContacts(SharedPreferences preferences) {
         if (PermissionManager.readingContactsPermissionGranted(activity)) {
             try {
-                new ContactsAsyncLoading().execute();
+                loadContactsInBackground();
                 preferences.edit().putBoolean(Constants.CONTACTS_UPLOADED, true).apply();
             } catch (Exception e) {
                 preferences.edit().putBoolean(Constants.WRONG_CONTACTS_FORMAT, true).apply();
@@ -169,40 +173,34 @@ public class ContactsHelper {
         void onContactsUploaded();
     }
 
-    private class ContactsAsyncLoading extends AsyncTask<Void, Void, Void> {
+    private void loadContactsInBackground() {
+        final ProgressDialogHelper progressDialogHelper = new ProgressDialogHelper(activity);
+        progressDialogHelper.startProgressDialog(activity.getString(R.string.loading_contacts));
+        final ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.execute(() -> {
+            try {
+                DbHelper dbHelper = new DbHelper(activity);
+                AlarmHelper alarmHelper = new AlarmHelper(activity);
 
-        ProgressDialogHelper progressDialogHelper = new ProgressDialogHelper(activity);
+                List<Person> dbPersons = dbHelper.query().getPersons();
+                List<Person> contacts = getAllContactsWithBirthdays(contentResolver);
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialogHelper.startProgressDialog(activity.getString(R.string.loading_contacts));
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            DbHelper dbHelper = new DbHelper(activity);
-            AlarmHelper alarmHelper = new AlarmHelper(activity);
-
-            List<Person> dbPersons = dbHelper.query().getPersons();
-            List<Person> contacts = getAllContactsWithBirthdays(contentResolver);
-
-            for (Person person : contacts) {
-                if (!Utils.isPersonAlreadyInDb(person, dbPersons)) {
-                    dbHelper.addRecord(person);
-                    alarmHelper.setAlarms(person);
+                for (Person person : contacts) {
+                    if (!Utils.isPersonAlreadyInDb(person, dbPersons)) {
+                        dbHelper.addRecord(person);
+                        alarmHelper.setAlarms(person);
+                    }
                 }
+            } finally {
+                executor.shutdown();
             }
-            return null;
-        }
 
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            progressDialogHelper.dismissProgressDialog();
-            loadingContactsListener.onContactsUploaded();
-            Utils.notifyWidget(activity);
-            Toast.makeText(activity, R.string.contacts_uploaded, Toast.LENGTH_SHORT).show();
-        }
+            mainHandler.post(() -> {
+                progressDialogHelper.dismissProgressDialog();
+                loadingContactsListener.onContactsUploaded();
+                Utils.notifyWidget(activity);
+                Toast.makeText(activity, R.string.contacts_uploaded, Toast.LENGTH_SHORT).show();
+            });
+        });
     }
 }
