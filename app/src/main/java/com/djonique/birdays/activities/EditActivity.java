@@ -55,6 +55,7 @@ public class EditActivity extends AppCompatActivity implements
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+        Utils.setupSystemBarAppearance(this);
 
         tilEditName = findViewById(R.id.til_edit_name);
         etName = findViewById(R.id.edittext_edit_name);

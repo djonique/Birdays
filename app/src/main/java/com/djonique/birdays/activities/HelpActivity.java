@@ -49,6 +49,7 @@ public class HelpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
+        Utils.setupSystemBarAppearance(this);
 
         btnOpenWhitelist = findViewById(R.id.button_help_whitelist);
         btnOpenSettings = findViewById(R.id.button_help_settings);

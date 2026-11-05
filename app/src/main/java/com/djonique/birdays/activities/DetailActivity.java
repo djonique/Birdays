@@ -110,6 +110,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        Utils.setupSystemBarAppearance(this);
 
         container = findViewById(R.id.container_detail);
         toolbar = findViewById(R.id.toolbar_detail);

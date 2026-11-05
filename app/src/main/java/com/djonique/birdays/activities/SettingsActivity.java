@@ -74,6 +74,8 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Utils.setupSystemBarAppearance(this);
+
         BirdaysPreferenceFragment fragment = new BirdaysPreferenceFragment();
         getSupportFragmentManager().beginTransaction().replace(android.R.id.content, fragment).commit();
 

@@ -13,6 +13,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
@@ -20,6 +21,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.models.Person;
@@ -309,5 +312,20 @@ public class Utils {
         } else {
             activity.overridePendingTransition(enterAnim, exitAnim);
         }
+    }
+
+    /**
+     * Keeps the status and navigation bar icons readable on Android 15+, where the app is drawn
+     * edge-to-edge and the bars are transparent. AppCompat already insets the content, so only the
+     * icon colour has to follow the current day/night theme.
+     */
+    public static void setupSystemBarAppearance(Activity activity) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) return;
+        boolean nightMode = (activity.getResources().getConfiguration().uiMode
+                & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(
+                activity.getWindow(), activity.getWindow().getDecorView());
+        controller.setAppearanceLightStatusBars(!nightMode);
+        controller.setAppearanceLightNavigationBars(!nightMode);
     }
 }

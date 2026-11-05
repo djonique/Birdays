@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Utils.setupSystemBarAppearance(this);
 
         container = findViewById(R.id.container_main);
         appBarLayout = findViewById(R.id.appbar_main);
