@@ -1,28 +1,46 @@
+/*
+ * Copyright 2017-2026 Evgenii Timofeev
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 package com.djonique.birdays.utils;
 
-import android.app.ProgressDialog;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+
+import com.djonique.birdays.R;
 
 public class ProgressDialogHelper {
 
     private static final String ILLEGAL_ARGUMENT_EXCEPTION = "IllegalArgumentException";
 
-    private Context context;
-    private ProgressDialog progressDialog;
+    private final Context context;
+    private AlertDialog progressDialog;
 
     public ProgressDialogHelper(Context context) {
         this.context = context;
-        progressDialog = new ProgressDialog(context);
     }
 
     /**
      * Starts progress dialog
      */
+    @SuppressLint("InflateParams")
     public void startProgressDialog(String message) {
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage(message);
-        progressDialog.setCancelable(false);
+        View view = LayoutInflater.from(context).inflate(R.layout.dialog_progress, null);
+        TextView messageView = view.findViewById(R.id.textview_progress_message);
+        messageView.setText(message);
+
+        progressDialog = new AlertDialog.Builder(context)
+                .setView(view)
+                .setCancelable(false)
+                .create();
         progressDialog.show();
     }
 
