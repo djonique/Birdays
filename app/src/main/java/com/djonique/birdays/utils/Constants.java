@@ -12,6 +12,9 @@ public interface Constants {
     String CONTACTS_UPLOADED = "CONTACTS_UPLOADED";
     String WRONG_CONTACTS_FORMAT = "WRONG_CONTACTS_FORMAT";
 
+    // Ads
+    String INTERSTITIAL_LAST_SHOWN = "interstitial_last_shown";
+
     // Permission requests
     int READ_CONTACTS_PERMISSION_CODE = 1;
     int WRITE_EXTERNAL_STORAGE_PERMISSION_CODE = 2;

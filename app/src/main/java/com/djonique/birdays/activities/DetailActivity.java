@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,20 +40,27 @@ import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.Utils;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kobakei.ratethisapp.RateThisApp;
+import com.yandex.mobile.ads.common.AdError;
+import com.yandex.mobile.ads.common.AdRequest;
+import com.yandex.mobile.ads.common.AdRequestError;
+import com.yandex.mobile.ads.common.ImpressionData;
+import com.yandex.mobile.ads.interstitial.InterstitialAd;
+import com.yandex.mobile.ads.interstitial.InterstitialAdEventListener;
+import com.yandex.mobile.ads.interstitial.InterstitialAdLoadListener;
+import com.yandex.mobile.ads.interstitial.InterstitialAdLoader;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class DetailActivity extends AppCompatActivity {
 
     private static final int INSTALL_DAYS = 7;
     private static final int LAUNCH_TIMES = 5;
     private static final int EDIT_ACTIVITY = 4;
+    private static final long INTERSTITIAL_INTERVAL = TimeUnit.DAYS.toMillis(1);
 
     private CoordinatorLayout container;
     private Toolbar toolbar;
@@ -77,7 +83,9 @@ public class DetailActivity extends AppCompatActivity {
     private ImageButton btnChat;
     private ImageButton btnEmail;
 
+    private InterstitialAdLoader interstitialAdLoader;
     private InterstitialAd mInterstitialAd;
+    private boolean interstitialShown;
     private DbHelper dbHelper;
     private Person person;
     private long timeStamp, date;
@@ -114,14 +122,8 @@ public class DetailActivity extends AppCompatActivity {
         boolean adEnabled = preferences.getBoolean(getString(R.string.ad_interstitial_key), true);
         displayedAge = preferences.getString(Constants.DISPLAYED_AGE_KEY, "0");
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O && adEnabled) {
-            InterstitialAd.load(this, BuildConfig.INTERSTITIAL_AD_UNIT_ID, new AdRequest.Builder().build(),
-                    new InterstitialAdLoadCallback() {
-                        @Override
-                        public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                            mInterstitialAd = interstitialAd;
-                        }
-                    });
+        if (adEnabled && canShowInterstitial(preferences)) {
+            loadInterstitialAd();
         }
 
         dbHelper = new DbHelper(this);
@@ -175,9 +177,43 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mInterstitialAd != null) {
+        if (mInterstitialAd != null && !interstitialShown) {
+            interstitialShown = true;
+            mInterstitialAd.setAdEventListener(new InterstitialAdEventListener() {
+                @Override
+                public void onAdShown() {
+                    PreferenceManager.getDefaultSharedPreferences(DetailActivity.this)
+                            .edit()
+                            .putLong(Constants.INTERSTITIAL_LAST_SHOWN, System.currentTimeMillis())
+                            .apply();
+                }
+
+                @Override
+                public void onAdFailedToShow(@NonNull AdError adError) {
+                    closeActivity();
+                }
+
+                @Override
+                public void onAdDismissed() {
+                    closeActivity();
+                }
+
+                @Override
+                public void onAdClicked() {
+                }
+
+                @Override
+                public void onAdImpression(@NonNull ImpressionData impressionData) {
+                }
+            });
             mInterstitialAd.show(this);
+        } else {
+            closeActivity();
         }
+    }
+
+    private void closeActivity() {
+        if (isFinishing()) return;
         finish();
         overridePendingTransition(R.anim.activity_primary_in, R.anim.activity_secondary_out);
     }
@@ -193,6 +229,37 @@ public class DetailActivity extends AppCompatActivity {
             startActivity(refresh);
             this.finish();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (interstitialAdLoader != null) {
+            interstitialAdLoader.cancelLoading();
+        }
+        if (mInterstitialAd != null) {
+            mInterstitialAd.setAdEventListener(null);
+        }
+        super.onDestroy();
+    }
+
+    private boolean canShowInterstitial(SharedPreferences preferences) {
+        long lastShown = preferences.getLong(Constants.INTERSTITIAL_LAST_SHOWN, 0);
+        return System.currentTimeMillis() - lastShown >= INTERSTITIAL_INTERVAL;
+    }
+
+    private void loadInterstitialAd() {
+        interstitialAdLoader = new InterstitialAdLoader(this);
+        interstitialAdLoader.loadAd(new AdRequest.Builder(BuildConfig.INTERSTITIAL_AD_UNIT_ID).build(),
+                new InterstitialAdLoadListener() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        mInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {
+                    }
+                });
     }
 
     private void setupUI() {
