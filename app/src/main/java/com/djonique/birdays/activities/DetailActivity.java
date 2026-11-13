@@ -49,28 +49,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
-import com.yandex.mobile.ads.common.AdError;
 import com.yandex.mobile.ads.common.AdRequest;
 import com.yandex.mobile.ads.common.AdRequestError;
-import com.yandex.mobile.ads.common.ImpressionData;
-import com.yandex.mobile.ads.interstitial.InterstitialAd;
-import com.yandex.mobile.ads.interstitial.InterstitialAdEventListener;
-import com.yandex.mobile.ads.interstitial.InterstitialAdLoadListener;
-import com.yandex.mobile.ads.interstitial.InterstitialAdLoader;
 import com.yandex.mobile.ads.nativeads.NativeAd;
 import com.yandex.mobile.ads.nativeads.NativeAdLoadListener;
 import com.yandex.mobile.ads.nativeads.NativeAdView;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 public class DetailActivity extends AppCompatActivity {
-
-    private static final long INTERSTITIAL_INTERVAL = TimeUnit.DAYS.toMillis(1);
 
     private ImageView ivSeasonPicture;
     private TextView tvAge;
@@ -87,10 +75,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvEmail;
     private RecyclerView recyclerView;
 
-    private InterstitialAdLoader interstitialAdLoader;
-    private InterstitialAd mInterstitialAd;
     private com.yandex.mobile.ads.nativeads.NativeAd mNativeAd;
-    private boolean interstitialShown;
     private DbHelper dbHelper;
     private Person person;
     private long timeStamp, date;
@@ -139,12 +124,6 @@ public class DetailActivity extends AppCompatActivity {
             Log.d("DetailActivity", "adEnabled = " + adEnabled);
         }
         displayedAge = preferences.getString(Constants.DISPLAYED_AGE_KEY, "0");
-
-        incrementDetailVisitCount(preferences);
-
-        if (adEnabled && canShowInterstitial(preferences)) {
-            loadInterstitialAd();
-        }
 
         NativeAdView nativeAdView = findViewById(R.id.native_ad_card);
         if (nativeAdView != null) {
@@ -218,39 +197,9 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void handleBackPressed() {
-        if (mInterstitialAd != null && !interstitialShown) {
-            interstitialShown = true;
-            mInterstitialAd.setAdEventListener(new InterstitialAdEventListener() {
-                @Override
-                public void onAdShown() {
-                    PreferenceManager.getDefaultSharedPreferences(DetailActivity.this)
-                            .edit()
-                            .putLong(Constants.INTERSTITIAL_LAST_SHOWN, System.currentTimeMillis())
-                            .apply();
-                }
-
-                @Override
-                public void onAdFailedToShow(@NonNull AdError adError) {
-                    closeActivity();
-                }
-
-                @Override
-                public void onAdDismissed() {
-                    closeActivity();
-                }
-
-                @Override
-                public void onAdClicked() {
-                }
-
-                @Override
-                public void onAdImpression(@Nullable ImpressionData impressionData) {
-                }
-            });
-            mInterstitialAd.show(this);
-        } else {
-            closeActivity();
-        }
+        // Closing a record must not be interrupted by a full-screen ad: interstitials on Back
+        // are both a poor experience and against the ad network's placement policy.
+        closeActivity();
     }
 
     private void closeActivity() {
@@ -261,12 +210,6 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        if (interstitialAdLoader != null) {
-            interstitialAdLoader.cancelLoading();
-        }
-        if (mInterstitialAd != null) {
-            mInterstitialAd.setAdEventListener(null);
-        }
         if (mNativeAd != null) {
             mNativeAd.setNativeAdEventListener(null);
         }
@@ -276,58 +219,17 @@ public class DetailActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private boolean canShowInterstitial(SharedPreferences preferences) {
-        long lastShown = preferences.getLong(Constants.INTERSTITIAL_LAST_SHOWN, 0);
-        boolean intervalPassed = System.currentTimeMillis() - lastShown >= INTERSTITIAL_INTERVAL;
-        int visitCount = preferences.getInt(Constants.INTERSTITIAL_VISIT_COUNT, 0);
-        boolean reachedThirdVisit = visitCount >= 3;
-        return intervalPassed && reachedThirdVisit;
-    }
-
-    private void incrementDetailVisitCount(SharedPreferences preferences) {
-        String today = new SimpleDateFormat("yyyyMMdd", Locale.US).format(new Date());
-        String lastVisitDate = preferences.getString(Constants.INTERSTITIAL_LAST_VISIT_DATE, "");
-        int visitCount = preferences.getInt(Constants.INTERSTITIAL_VISIT_COUNT, 0);
-        if (!today.equals(lastVisitDate)) {
-            visitCount = 1;
-            preferences.edit()
-                    .putString(Constants.INTERSTITIAL_LAST_VISIT_DATE, today)
-                    .putInt(Constants.INTERSTITIAL_VISIT_COUNT, visitCount)
-                    .apply();
-        } else {
-            visitCount++;
-            preferences.edit()
-                    .putInt(Constants.INTERSTITIAL_VISIT_COUNT, visitCount)
-                    .apply();
-        }
-        if (BuildConfig.DEBUG) {
-            Log.d("DetailActivity", "DetailActivity visit count today: " + visitCount);
-        }
-    }
-
-    private void loadInterstitialAd() {
-        interstitialAdLoader = new InterstitialAdLoader(this);
-        interstitialAdLoader.loadAd(new AdRequest.Builder(BuildConfig.INTERSTITIAL_AD_UNIT_ID).build(),
-                new InterstitialAdLoadListener() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        mInterstitialAd = interstitialAd;
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {
-                    }
-                });
-    }
-
     private void loadNativeAd(@NonNull NativeAdView nativeAdView) {
         nativeAdView.setVisibility(View.GONE);
         com.djonique.birdays.ad.NativeAdCache.getInstance().loadAd(this, new NativeAdLoadListener() {
             @Override
             public void onAdLoaded(@NonNull NativeAd nativeAd) {
                 mNativeAd = nativeAd;
-                NativeAdHelper.bindNativeAd(nativeAdView, nativeAd);
-                nativeAdView.setVisibility(View.VISIBLE);
+                if (NativeAdHelper.bindNativeAd(nativeAdView, nativeAd)) {
+                    nativeAdView.setVisibility(View.VISIBLE);
+                } else {
+                    nativeAdView.setVisibility(View.GONE);
+                }
             }
 
             @Override

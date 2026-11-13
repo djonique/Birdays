@@ -7,7 +7,6 @@
 package com.djonique.birdays.ad;
 
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +23,13 @@ public class NativeAdHelper {
 
     private static final String TAG = "NativeAdHelper";
 
-    public static void bindNativeAd(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
+    /**
+     * Binds the ad assets to the view.
+     *
+     * @return {@code true} when the ad was bound and the view can be shown, {@code false} when
+     * binding failed or the SDK reported a missing asset.
+     */
+    public static boolean bindNativeAd(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
         TextView titleView = nativeAdView.findViewById(R.id.native_ad_title);
         TextView bodyView = nativeAdView.findViewById(R.id.native_ad_body);
         ImageView iconView = nativeAdView.findViewById(R.id.native_ad_icon);
@@ -52,15 +57,15 @@ public class NativeAdHelper {
         try {
             NativeAdViewBinder binder = binderBuilder.build();
             AdBindingResult result = nativeAd.bindNativeAd(binder);
-            nativeAdView.setVisibility(View.VISIBLE);
             if (result instanceof AdBindingResult.Failure failure) {
                 Log.e(TAG, "Ad binding failure for asset: " + failure.getMissingAssetName(), failure.getException());
-            } else {
-                Log.d(TAG, "Ad binding succeeded");
+                return false;
             }
+            Log.d(TAG, "Ad binding succeeded");
+            return true;
         } catch (Exception e) {
             Log.e(TAG, "Failed to bind native ad", e);
-            nativeAdView.setVisibility(View.VISIBLE);
+            return false;
         }
     }
 }

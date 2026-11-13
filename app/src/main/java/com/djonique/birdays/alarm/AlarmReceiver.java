@@ -123,6 +123,21 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     private void createNotificationChannel(Context context, Uri ringtoneUri) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (manager == null) return;
+
+            NotificationChannel existing = manager.getNotificationChannel(CHANNEL_ID);
+            if (existing != null) {
+                // A channel's sound cannot be changed after it is created. Recreate it only when
+                // the user picked a different ringtone, so the channel keeps its settings (and
+                // the user's importance choice) on every other notification.
+                Uri currentSound = existing.getSound();
+                boolean soundChanged = ringtoneUri == null
+                        ? currentSound != null
+                        : !ringtoneUri.equals(currentSound);
+                if (!soundChanged) return;
+                manager.deleteNotificationChannel(CHANNEL_ID);
+            }
+
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
                     context.getString(R.string.channel_name), NotificationManager.IMPORTANCE_HIGH);
             channel.enableLights(true);
@@ -135,9 +150,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                         .build();
                 channel.setSound(ringtoneUri, audioAttributes);
             }
-            if (manager != null) {
-                manager.createNotificationChannel(channel);
-            }
+            manager.createNotificationChannel(channel);
         }
     }
 
