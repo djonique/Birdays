@@ -7,17 +7,12 @@
 package com.djonique.birdays.utils;
 
 import android.app.Application;
+
 import com.yandex.mobile.ads.common.YandexAds;
 
 public class BirdaysApplication extends Application {
 
     private static boolean activityVisible;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        YandexAds.initialize(this, () -> {});
-    }
 
     public static boolean isActivityVisible() {
         return activityVisible;
@@ -29,5 +24,12 @@ public class BirdaysApplication extends Application {
 
     public static void activityPaused() {
         activityVisible = false;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        YandexAds.initialize(this, () -> {
+        });
     }
 }

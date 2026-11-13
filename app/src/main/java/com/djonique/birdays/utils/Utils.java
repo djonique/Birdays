@@ -13,15 +13,21 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 
 import com.djonique.birdays.R;
@@ -38,8 +44,12 @@ import java.util.TimeZone;
 public class Utils {
 
     private static final int MILLISECONDS_IN_A_DAY = 86400000;
-    private static Calendar today = Calendar.getInstance();
-    private static Calendar dayOfBirthday = Calendar.getInstance();
+    private static final String STATUS_BAR_SCRIM_TAG = "STATUS_BAR_SCRIM";
+    private static final String NAV_BAR_SCRIM_TAG = "NAV_BAR_SCRIM_";
+    private static final String CUTOUT_SCRIM_LEFT_TAG = "CUTOUT_SCRIM_LEFT";
+    private static final String CUTOUT_SCRIM_RIGHT_TAG = "CUTOUT_SCRIM_RIGHT";
+    private static final Calendar today = Calendar.getInstance();
+    private static final Calendar dayOfBirthday = Calendar.getInstance();
 
     public static String getDate(long date) {
         return DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.getDefault()).format(date);
@@ -49,9 +59,9 @@ public class Utils {
         Locale locale = Locale.getDefault();
         SimpleDateFormat sdf = ((SimpleDateFormat) DateFormat.getDateInstance(DateFormat.DEFAULT, locale));
         String pattern = sdf.toPattern();
-        String yearlessPattern = pattern.replaceAll("([^\\p{Alpha}']|('[\\p{Alpha}]+'))*y+([^\\p{Alpha}']|('[\\p{Alpha}]+'))*", "");
-        SimpleDateFormat yearlessFormat = new SimpleDateFormat(yearlessPattern, locale);
-        return yearlessFormat.format(date);
+        String noYearPattern = pattern.replaceAll("([^\\p{Alpha}']|('\\p{Alpha}+'))*y+([^\\p{Alpha}']|('\\p{Alpha}+'))*", "");
+        SimpleDateFormat noYearFormat = new SimpleDateFormat(noYearPattern, locale);
+        return noYearFormat.format(date);
     }
 
     private static int getYear(Calendar calendar) {
@@ -133,6 +143,7 @@ public class Utils {
         return String.valueOf(diffDays);
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean isEmptyDate(EditText editText) {
         return editText == null || TextUtils.isEmpty(editText.getText().toString());
     }
@@ -160,44 +171,25 @@ public class Utils {
         int resId = 0;
         dayOfBirthday.setTimeInMillis(date);
 
-        switch (getMonth(dayOfBirthday)) {
-            case Calendar.JANUARY:
-                resId = getDay(dayOfBirthday) < 21 ? R.string.capricorn : R.string.aquarius;
-                break;
-            case Calendar.FEBRUARY:
-                resId = getDay(dayOfBirthday) < 20 ? R.string.aquarius : R.string.pisces;
-                break;
-            case Calendar.MARCH:
-                resId = getDay(dayOfBirthday) < 21 ? R.string.pisces : R.string.aries;
-                break;
-            case Calendar.APRIL:
-                resId = getDay(dayOfBirthday) < 21 ? R.string.aries : R.string.taurus;
-                break;
-            case Calendar.MAY:
-                resId = getDay(dayOfBirthday) < 22 ? R.string.taurus : R.string.gemini;
-                break;
-            case Calendar.JUNE:
-                resId = getDay(dayOfBirthday) < 22 ? R.string.gemini : R.string.cancer;
-                break;
-            case Calendar.JULY:
-                resId = getDay(dayOfBirthday) < 23 ? R.string.cancer : R.string.leo;
-                break;
-            case Calendar.AUGUST:
-                resId = getDay(dayOfBirthday) < 23 ? R.string.leo : R.string.virgo;
-                break;
-            case Calendar.SEPTEMBER:
-                resId = getDay(dayOfBirthday) < 24 ? R.string.virgo : R.string.libra;
-                break;
-            case Calendar.OCTOBER:
-                resId = getDay(dayOfBirthday) < 24 ? R.string.libra : R.string.scorpio;
-                break;
-            case Calendar.NOVEMBER:
-                resId = getDay(dayOfBirthday) < 23 ? R.string.scorpio : R.string.sagittarius;
-                break;
-            case Calendar.DECEMBER:
-                resId = getDay(dayOfBirthday) < 22 ? R.string.sagittarius : R.string.capricorn;
-                break;
-        }
+        resId = switch (getMonth(dayOfBirthday)) {
+            case Calendar.JANUARY ->
+                    getDay(dayOfBirthday) < 21 ? R.string.capricorn : R.string.aquarius;
+            case Calendar.FEBRUARY ->
+                    getDay(dayOfBirthday) < 20 ? R.string.aquarius : R.string.pisces;
+            case Calendar.MARCH -> getDay(dayOfBirthday) < 21 ? R.string.pisces : R.string.aries;
+            case Calendar.APRIL -> getDay(dayOfBirthday) < 21 ? R.string.aries : R.string.taurus;
+            case Calendar.MAY -> getDay(dayOfBirthday) < 22 ? R.string.taurus : R.string.gemini;
+            case Calendar.JUNE -> getDay(dayOfBirthday) < 22 ? R.string.gemini : R.string.cancer;
+            case Calendar.JULY -> getDay(dayOfBirthday) < 23 ? R.string.cancer : R.string.leo;
+            case Calendar.AUGUST -> getDay(dayOfBirthday) < 23 ? R.string.leo : R.string.virgo;
+            case Calendar.SEPTEMBER -> getDay(dayOfBirthday) < 24 ? R.string.virgo : R.string.libra;
+            case Calendar.OCTOBER -> getDay(dayOfBirthday) < 24 ? R.string.libra : R.string.scorpio;
+            case Calendar.NOVEMBER ->
+                    getDay(dayOfBirthday) < 23 ? R.string.scorpio : R.string.sagittarius;
+            case Calendar.DECEMBER ->
+                    getDay(dayOfBirthday) < 22 ? R.string.sagittarius : R.string.capricorn;
+            default -> resId;
+        };
         return resId;
     }
 
@@ -239,7 +231,7 @@ public class Utils {
         calendar.setTimeInMillis(0);
         String[] dateArray = dateString.split("-");
 
-        if (dateArray[0].equals("")) {
+        if (dateArray[0].isEmpty()) {
             calendar.set(Calendar.MONTH, Integer.parseInt(dateArray[2]) - 1);
             calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(dateArray[3]));
         } else if (Integer.parseInt(dateArray[2]) < 32) {
@@ -252,9 +244,10 @@ public class Utils {
 
     static boolean isYearUnknown(String dateString) {
         String[] dateArray = dateString.split("-");
-        return dateArray[0].equals("");
+        return dateArray[0].isEmpty();
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean isPersonAlreadyInDb(Person person, List<Person> list) {
         boolean found = false;
         for (Person dbPerson : list) {
@@ -284,6 +277,7 @@ public class Utils {
         }
     }
 
+    @SuppressWarnings("deprecation")
     public static void notifyWidget(Context context) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
@@ -315,17 +309,238 @@ public class Utils {
     }
 
     /**
-     * Keeps the status and navigation bar icons readable on Android 15+, where the app is drawn
-     * edge-to-edge and the bars are transparent. AppCompat already insets the content, so only the
-     * icon colour has to follow the current day/night theme.
+     * Dynamically configures the status and navigation bar background colors and icon themes
+     * based on light/dark mode and activity type.
      */
+    @SuppressWarnings("deprecation")
     public static void setupSystemBarAppearance(Activity activity) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) return;
-        boolean nightMode = (activity.getResources().getConfiguration().uiMode
-                & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        boolean isDarkTheme = (activity.getResources().getConfiguration().uiMode
+                & android.content.res.Configuration.UI_MODE_NIGHT_MASK) == android.content.res.Configuration.UI_MODE_NIGHT_YES;
+
+        android.view.Window window = activity.getWindow();
+        window.addFlags(android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(android.graphics.Color.BLACK);
+        window.setNavigationBarColor(androidx.core.content.ContextCompat.getColor(activity, R.color.md_theme_background));
+
         WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(
-                activity.getWindow(), activity.getWindow().getDecorView());
-        controller.setAppearanceLightStatusBars(!nightMode);
-        controller.setAppearanceLightNavigationBars(!nightMode);
+                window, window.getDecorView());
+
+        // The status bar is always black, so its icons have to stay light in both schemes.
+        controller.setAppearanceLightStatusBars(false);
+        controller.setAppearanceLightNavigationBars(!isDarkTheme);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            addNavigationBarScrims(activity);
+            addStatusBarScrim(activity);
+        }
+        addCutoutScrims(activity);
+    }
+
+    /**
+     * On Android 15+ the window is edge-to-edge and the system navigation bar is transparent, so
+     * the content behind it is visible. The bar is painted with the app background colour instead:
+     * nothing shines through the navigation bar and it looks opaque on every screen.
+     */
+    private static void addNavigationBarScrims(Activity activity) {
+        ViewGroup content = activity.findViewById(android.R.id.content);
+        if (content == null) return;
+        int color = androidx.core.content.ContextCompat.getColor(activity, R.color.md_theme_background);
+        addNavigationBarScrim(activity, content, Gravity.BOTTOM, color);
+        addNavigationBarScrim(activity, content, Gravity.START, color);
+        addNavigationBarScrim(activity, content, Gravity.END, color);
+    }
+
+    private static void addNavigationBarScrim(Activity activity, ViewGroup content,
+                                              int gravity, int color) {
+        String tag = NAV_BAR_SCRIM_TAG + gravity;
+        if (content.findViewWithTag(tag) != null) return;
+
+        View scrim = new View(activity);
+        scrim.setTag(tag);
+        scrim.setBackgroundColor(color);
+        scrim.setClickable(false);
+        scrim.setFocusable(false);
+        scrim.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+
+        FrameLayout.LayoutParams params = gravity == Gravity.BOTTOM
+                ? new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, gravity)
+                : new FrameLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, gravity);
+        content.addView(scrim, params);
+
+        ViewCompat.setOnApplyWindowInsetsListener(scrim, (view, windowInsets) -> {
+            Insets bars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            int size = gravity == Gravity.BOTTOM ? bars.bottom
+                    : gravity == Gravity.START ? bars.left : bars.right;
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            int current = gravity == Gravity.BOTTOM ? layoutParams.height : layoutParams.width;
+            if (current != size) {
+                if (gravity == Gravity.BOTTOM) {
+                    layoutParams.height = size;
+                } else {
+                    layoutParams.width = size;
+                }
+                view.setLayoutParams(layoutParams);
+            }
+            return windowInsets;
+        });
+        ViewCompat.requestApplyInsets(scrim);
+    }
+
+    /**
+     * On Android 15+ the window is edge-to-edge and the system status bar is transparent, so its
+     * colour has to be painted by the app. A fixed black view is laid over the top of the activity
+     * instead of colouring the app bar: the app bar scrolls (in fragments and on the detail screen),
+     * while this scrim stays in place and keeps the status bar black everywhere.
+     */
+    private static void addStatusBarScrim(Activity activity) {
+        ViewGroup content = activity.findViewById(android.R.id.content);
+        if (content == null || content.findViewWithTag(STATUS_BAR_SCRIM_TAG) != null) return;
+
+        View scrim = new View(activity);
+        scrim.setTag(STATUS_BAR_SCRIM_TAG);
+        scrim.setBackgroundColor(android.graphics.Color.BLACK);
+        scrim.setClickable(false);
+        scrim.setFocusable(false);
+        scrim.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, 0, Gravity.TOP);
+        content.addView(scrim, params);
+
+        ViewCompat.setOnApplyWindowInsetsListener(scrim, (view, windowInsets) -> {
+            int top = windowInsets.getInsets(
+                    WindowInsetsCompat.Type.systemBars()
+                            | WindowInsetsCompat.Type.displayCutout()).top;
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            if (layoutParams.height != top) {
+                layoutParams.height = top;
+                view.setLayoutParams(layoutParams);
+            }
+            return windowInsets;
+        });
+        ViewCompat.requestApplyInsets(scrim);
+    }
+
+    /**
+     * In landscape the camera cutout sits on the left (or right) edge and the app cannot draw there,
+     * so the strip next to the content would otherwise stay the window background colour. A fixed
+     * black strip of exactly the cutout width is painted over it, which keeps the cutout area black
+     * in both themes and in every activity.
+     */
+    private static void addCutoutScrims(Activity activity) {
+        ViewGroup content = activity.findViewById(android.R.id.content);
+        if (content == null) return;
+        addCutoutScrim(activity, content, Gravity.START, CUTOUT_SCRIM_LEFT_TAG);
+        addCutoutScrim(activity, content, Gravity.END, CUTOUT_SCRIM_RIGHT_TAG);
+    }
+
+    private static void addCutoutScrim(Activity activity, ViewGroup content, int gravity, String tag) {
+        if (content.findViewWithTag(tag) != null) return;
+
+        View scrim = new View(activity);
+        scrim.setTag(tag);
+        scrim.setBackgroundColor(android.graphics.Color.BLACK);
+        scrim.setClickable(false);
+        scrim.setFocusable(false);
+        scrim.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                0, ViewGroup.LayoutParams.MATCH_PARENT, gravity);
+        content.addView(scrim, params);
+
+        ViewCompat.setOnApplyWindowInsetsListener(scrim, (view, windowInsets) -> {
+            Insets cutout = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout());
+            int width = gravity == Gravity.START ? cutout.left : cutout.right;
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            if (layoutParams.width != width) {
+                layoutParams.width = width;
+                view.setLayoutParams(layoutParams);
+            }
+            return windowInsets;
+        });
+        ViewCompat.requestApplyInsets(scrim);
+    }
+
+    public static void applySystemBarsInsets(View rootView, View topView, View bottomMarginView, View bottomPaddingView) {
+        if (rootView == null) return;
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, windowInsets) -> {
+            // Combine system bars and the display cutout: in landscape the navigation bar and
+            // the camera cutout sit on the side, so the content has to keep clear of both.
+            Insets insets = windowInsets.getInsets(
+                    WindowInsetsCompat.Type.systemBars()
+                            | WindowInsetsCompat.Type.displayCutout());
+            if (topView != null) {
+                Object tag = topView.getTag(R.id.tag_initial_top_padding);
+                int initialTopPadding;
+                if (tag instanceof Integer) {
+                    initialTopPadding = (Integer) tag;
+                } else {
+                    initialTopPadding = topView.getPaddingTop();
+                    topView.setTag(R.id.tag_initial_top_padding, initialTopPadding);
+                }
+                topView.setPadding(
+                        topView.getPaddingLeft(),
+                        initialTopPadding + insets.top,
+                        topView.getPaddingRight(),
+                        topView.getPaddingBottom()
+                );
+            }
+            applySideInsets(rootView, insets);
+            if (bottomMarginView != null) {
+                ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) bottomMarginView.getLayoutParams();
+                if (params != null) {
+                    Object tag = bottomMarginView.getTag(R.id.tag_initial_bottom_margin);
+                    int initialMargin;
+                    if (tag instanceof Integer) {
+                        initialMargin = (Integer) tag;
+                    } else {
+                        initialMargin = params.bottomMargin;
+                        bottomMarginView.setTag(R.id.tag_initial_bottom_margin, initialMargin);
+                    }
+                    params.bottomMargin = initialMargin + insets.bottom;
+                    bottomMarginView.setLayoutParams(params);
+                }
+            }
+            if (bottomPaddingView != null) {
+                Object tag = bottomPaddingView.getTag(R.id.tag_initial_bottom_padding);
+                int initialBottomPadding;
+                if (tag instanceof Integer) {
+                    initialBottomPadding = (Integer) tag;
+                } else {
+                    initialBottomPadding = bottomPaddingView.getPaddingBottom();
+                    bottomPaddingView.setTag(R.id.tag_initial_bottom_padding, initialBottomPadding);
+                }
+                bottomPaddingView.setPadding(
+                        bottomPaddingView.getPaddingLeft(),
+                        bottomPaddingView.getPaddingTop(),
+                        bottomPaddingView.getPaddingRight(),
+                        initialBottomPadding + insets.bottom
+                );
+            }
+            return windowInsets;
+        });
+        ViewCompat.requestApplyInsets(rootView);
+    }
+
+    private static void applySideInsets(View view, Insets insets) {
+        Object leftTag = view.getTag(R.id.tag_initial_left_padding);
+        Object rightTag = view.getTag(R.id.tag_initial_right_padding);
+        int initialLeftPadding;
+        int initialRightPadding;
+        if (leftTag instanceof Integer && rightTag instanceof Integer) {
+            initialLeftPadding = (Integer) leftTag;
+            initialRightPadding = (Integer) rightTag;
+        } else {
+            initialLeftPadding = view.getPaddingLeft();
+            initialRightPadding = view.getPaddingRight();
+            view.setTag(R.id.tag_initial_left_padding, initialLeftPadding);
+            view.setTag(R.id.tag_initial_right_padding, initialRightPadding);
+        }
+        view.setPadding(
+                initialLeftPadding + insets.left,
+                view.getPaddingTop(),
+                initialRightPadding + insets.right,
+                view.getPaddingBottom()
+        );
     }
 }

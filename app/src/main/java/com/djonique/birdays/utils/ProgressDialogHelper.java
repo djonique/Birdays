@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
 import com.djonique.birdays.R;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class ProgressDialogHelper {
 
@@ -37,7 +38,7 @@ public class ProgressDialogHelper {
         TextView messageView = view.findViewById(R.id.textview_progress_message);
         messageView.setText(message);
 
-        progressDialog = new AlertDialog.Builder(context)
+        progressDialog = new MaterialAlertDialogBuilder(context)
                 .setView(view)
                 .setCancelable(false)
                 .create();

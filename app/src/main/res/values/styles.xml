@@ -7,12 +7,36 @@
 -->
 
 <resources>
-
-    <style name="BirdaysTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark</item>
-        <item name="colorAccent">@color/color_accent</item>
+    <!--
+        Material 3 theme configuration and component styles.
+    -->
+    <style name="BirdaysTheme" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_on_primary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_on_primary_container</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_on_secondary_container</item>
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_on_surface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_on_surface_variant</item>
+        <item name="colorOutline">@color/md_theme_outline</item>
+        <item name="colorOutlineVariant">@color/md_theme_outline_variant</item>
+        <item name="colorError">@color/md_theme_error</item>
+        <item name="colorOnError">@color/md_theme_on_error</item>
+        <item name="colorErrorContainer">@color/md_theme_error_container</item>
+        <item name="colorOnErrorContainer">@color/md_theme_on_error_container</item>
+        <item name="android:colorBackground">@color/md_theme_background</item>
+        <item name="colorOnBackground">@color/md_theme_on_background</item>
+        <item name="android:textColorPrimary">@color/md_theme_on_surface</item>
+        <item name="android:textColorSecondary">@color/md_theme_on_surface_variant</item>
         <item name="colorControlHighlight">@color/ripple</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@color/md_theme_background</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
     <style name="BirdaysTheme.NoActionBar" parent="BirdaysTheme">
@@ -20,11 +44,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.Material3.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.Material3.Light">
+        <item name="android:colorBackground">@color/md_theme_surface</item>
+        <item name="colorOnBackground">@color/md_theme_on_surface</item>
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_on_surface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_on_surface_variant</item>
+        <item name="colorError">@color/md_theme_error</item>
+        <item name="colorOnError">@color/md_theme_on_error</item>
+        <item name="android:textColorPrimary">@color/md_theme_on_surface</item>
+        <item name="android:textColorSecondary">@color/md_theme_on_surface_variant</item>
+    </style>
 
-    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+    <style name="MyCustomTabLayout" parent="Widget.Material3.TabLayout">
         <item name="tabIndicatorColor">@color/tab_color_main</item>
         <item name="tabSelectedTextColor">@color/tab_color_main</item>
         <item name="tabTextColor">@color/tab_text_disabled</item>
@@ -35,59 +70,105 @@
         <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
     </style>
 
-    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:textSize">@dimen/tab_text_size</item>
-        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="textAllCaps">true</item>
     </style>
 
-    <style name="primaryTextStyle">
-        <item name="android:textColor">@color/primary_text</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-
-    <style name="Primary.TextView" parent="primaryTextStyle">
+    <!-- Typography: Material 3 type scale mapping -->
+    <style name="TextAppearance.Birdays.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textSize">@dimen/primary_text</item>
+        <item name="android:lineSpacingMultiplier">1.3</item>
     </style>
 
-    <style name="Primary.CardView" parent="primaryTextStyle">
+    <style name="TextAppearance.Birdays.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">@dimen/secondary_text</item>
+        <item name="android:lineSpacingMultiplier">1.3</item>
+    </style>
+
+    <style name="TextAppearance.Birdays.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">@dimen/primary_text</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.Birdays.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
         <item name="android:textSize">@dimen/card_primary_text</item>
     </style>
 
+    <style name="TextAppearance.Birdays.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">@dimen/caption_text</item>
+    </style>
+
+    <style name="TextAppearance.Birdays.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.Birdays.CollapsingToolbar.Collapsed" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.Birdays.CollapsingToolbar.Expanded" parent="TextAppearance.Birdays.HeadlineSmall">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="primaryTextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.Birdays.BodyLarge</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="Primary.TextView" parent="primaryTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="SectionHeader.TextView" parent="Primary.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Birdays.TitleMedium</item>
+    </style>
+
+    <style name="Card.Primary.TextView" parent="Primary.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Birdays.HeadlineSmall</item>
+    </style>
+
     <style name="Material.Primary.TextView" parent="Primary.TextView">
-        <item name="android:layout_marginLeft">@dimen/default_left_margin_56sp</item>
+        <item name="android:layout_marginLeft">@dimen/default_left_margin_56dp</item>
+        <item name="android:layout_marginStart">@dimen/default_left_margin_56dp</item>
     </style>
 
     <style name="EditActivity.Primary.TextView" parent="Material.Primary.TextView">
         <item name="android:layout_marginLeft">@dimen/edit_textview_left_padding</item>
+        <item name="android:layout_marginStart">@dimen/edit_textview_left_padding</item>
     </style>
 
     <style name="secondaryTextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.Birdays.BodyMedium</item>
         <item name="android:textColor">@color/secondary_text</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="Secondary.TextView" parent="secondaryTextStyle">
-        <item name="android:textSize">@dimen/secondary_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:textAlignment">viewStart</item>
     </style>
 
     <style name="Material.Secondary.TextView" parent="Secondary.TextView">
-        <item name="android:layout_marginLeft">@dimen/default_left_margin_56sp</item>
+        <item name="android:layout_marginLeft">@dimen/default_left_margin_56dp</item>
+        <item name="android:layout_marginStart">@dimen/default_left_margin_56dp</item>
     </style>
 
     <style name="EditActivity.Secondary.TextView" parent="Material.Secondary.TextView">
         <item name="android:layout_marginLeft">@dimen/edit_textview_left_padding</item>
+        <item name="android:layout_marginStart">@dimen/edit_textview_left_padding</item>
     </style>
 
     <style name="detailActivityIcons">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingLeft">@dimen/detail_activity_icon_padding</item>
-        <item name="android:paddingTop">@dimen/detail_activity_icon_padding</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:padding">@dimen/detail_icon_padding</item>
+        <item name="android:scaleType">fitCenter</item>
     </style>
 
     <style name="materialRL">
@@ -96,27 +177,19 @@
         <item name="android:padding">@dimen/default_padding</item>
     </style>
 
-    <style name="contactsInfoRL">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/default_layout_height</item>
-        <item name="android:paddingBottom">@dimen/default_padding</item>
-        <item name="android:paddingTop">@dimen/default_padding</item>
-    </style>
+
 
     <style name="dialogTextStyle">
-        <item name="android:textSize">@dimen/primary_text</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAppearance">@style/TextAppearance.Birdays.BodyLarge</item>
     </style>
 
-    <style name="cardViewStyle" parent="CardView">
+    <style name="cardViewStyle" parent="Widget.Material3.CardView.Elevated">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="cardCornerRadius">2dp</item>
+        <item name="cardCornerRadius">12dp</item>
         <item name="cardUseCompatPadding">true</item>
         <item name="cardPreventCornerOverlap">true</item>
-        <item name="elevation">2dp</item>
+        <item name="elevation">1dp</item>
         <item name="android:layout_margin">@dimen/card_layout_margin</item>
     </style>
 
@@ -125,28 +198,27 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:minWidth">@dimen/min_touch_target_size</item>
+        <item name="android:minHeight">@dimen/min_touch_target_size</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
 
-    <style name="DialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/dialog_grow_in</item>
-        <item name="android:windowExitAnimation">@anim/dialog_grow_out</item>
-    </style>
+
 
     <style name="CollapsingToolbarStyle">
         <item name="collapsedTitleGravity">left|center_horizontal</item>
         <item name="expandedTitleGravity">left|bottom</item>
+        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Birdays.CollapsingToolbar.Collapsed</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.Birdays.CollapsingToolbar.Expanded</item>
+        <item name="expandedTitleTextColor">@android:color/white</item>
+        <item name="collapsedTitleTextColor">@color/on_app_bar</item>
     </style>
 
-    <style name="BottomSheetIcons">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">32dp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_margin">32dp</item>
-        <item name="android:layout_weight">1</item>
-    </style>
 
-    <style name="HelpButtonStyle">
+
+    <style name="ButtonStyle">
+        <item name="android:backgroundTint">@color/button_background</item>
+        <item name="android:textColor">@color/button_text</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
@@ -156,6 +228,12 @@
     <style name="Licenses.Primary.TextView" parent="Primary.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Licenses.Header.TextView" parent="Licenses.Primary.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Birdays.TitleMedium</item>
+        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:paddingBottom">@dimen/default_padding</item>
     </style>
 
     <style name="Licenses.Secondary.TextView" parent="Secondary.TextView">
@@ -176,8 +254,8 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textColor">@color/accent_green_200</item>
-        <item name="android:textSize">@dimen/widget_text_size</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/accent_green</item>
+        <item name="android:textSize">@dimen/widget_header_text_size</item>
     </style>
 </resources>

@@ -6,7 +6,7 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview_card"
     style="@style/cardViewStyle">
@@ -21,28 +21,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/card_default_padding"
-            android:paddingEnd="@dimen/card_default_padding"
-            android:paddingLeft="@dimen/card_left_padding"
-            android:paddingRight="@dimen/card_default_padding"
             android:paddingStart="@dimen/card_left_padding"
-            android:paddingTop="@dimen/card_default_padding">
+            android:paddingTop="@dimen/card_default_padding"
+            android:paddingEnd="@dimen/card_default_padding"
+            android:paddingBottom="@dimen/card_default_padding">
 
+            <!--Name-->
             <TextView
                 android:id="@+id/textview_card_name"
-                style="@style/Primary.CardView"
+                style="@style/Card.Primary.TextView"
                 android:layout_marginBottom="@dimen/card_text_view_bottom_margin" />
 
+            <!--Birthdate-->
             <TextView
                 android:id="@+id/textview_card_date"
                 style="@style/Secondary.TextView"
                 android:layout_below="@+id/textview_card_name" />
 
+            <!--Age-->
             <TextView
                 android:id="@+id/textview_card_age"
                 style="@style/Secondary.TextView"
                 android:layout_below="@+id/textview_card_date" />
 
+            <!--Days left till next birthday-->
             <TextView
                 android:id="@+id/textview_card_left"
                 style="@style/Secondary.TextView"
@@ -60,12 +62,13 @@
             android:layout_height="48dp"
             android:orientation="horizontal">
 
+            <!--Send email button-->
             <ImageButton
                 android:id="@+id/imagebutton_card_email"
                 style="@style/cardImageButtonStyle"
-                android:contentDescription="@string/email"
-                android:tint="@color/blue_to_green"
-                app:srcCompat="@drawable/ic_email_blue_24dp" />
+                android:contentDescription="@string/send_email"
+                app:srcCompat="@drawable/ic_email_blue_24dp"
+                app:tint="@color/blue_to_green" />
 
             <!--Divider-->
             <View
@@ -73,12 +76,13 @@
                 android:layout_height="match_parent"
                 android:background="@color/divider_color" />
 
+            <!--Chat button-->
             <ImageButton
                 android:id="@+id/imagebutton_card_chat"
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/chat"
-                android:tint="@color/blue_to_green"
-                app:srcCompat="@drawable/ic_chat_blue_24dp" />
+                app:srcCompat="@drawable/ic_chat_blue_24dp"
+                app:tint="@color/blue_to_green" />
 
             <!--Divider-->
             <View
@@ -86,12 +90,13 @@
                 android:layout_height="match_parent"
                 android:background="@color/divider_color" />
 
+            <!--Call button-->
             <ImageButton
                 android:id="@+id/imagebutton_card_call"
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/call"
-                android:tint="@color/blue_to_green"
-                app:srcCompat="@drawable/ic_call_blue_24dp" />
+                app:srcCompat="@drawable/ic_call_blue_24dp"
+                app:tint="@color/blue_to_green" />
         </LinearLayout>
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

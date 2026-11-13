@@ -12,17 +12,18 @@
     <!-- MainActivity -->
     <string name="loading_contacts">Se încarcă contactele…</string>
     <string name="contacts_uploaded">Contacte încărcate</string>
-    <string name="loading_contacts_error">Nu se pot importa contanctele, formatul de date este nonstandard</string>
+    <string name="loading_contacts_error">Nu se pot importa contactele, formatul de date este nonstandard</string>
     <string name="permission_required">Este necesară permisiunea pentru importarea contactelor</string>
     <string name="snackbar_allow_text">Permite</string>
     <string name="all">Toate</string>
-    <string name="famous">Celebru</string>
+    <string name="famous">Celebri</string>
     <string name="age">Vârsta actuală:\u0020</string>
     <string name="happy_birthday">La mulți ani!</string>
-    <string name="web_search_error">Nu se poate efectua acțiunea, vă rugăm instalați web browser-ul</string>
-    <string name="delete_record_text">Sunteți sigur că vreți să ștergeți această înregistrare:\u0020</string>
+    <string name="web_search_error">Nu se poate efectua acțiunea, vă rugăm să instalați un browser web</string>
+    <string name="delete_record_confirm">Sunteți sigur că doriți să ștergeți %1$s?</string>
     <string name="record_deleted">Înregistrare ștearsă</string>
     <string name="undo">Anulează ultima comandă</string>
+    <string name="add_record">Adaugă înregistrare</string>
 
     <string-array name="months">
         <item>Ianuarie</item>
@@ -40,11 +41,10 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_sync">Sincronizare</string>
     <string name="action_settings">Setări</string>
     <string name="action_delete">Șterge</string>
 
-    <!-- NewPersonDialogFragment -->
+    <!-- NewPersonActivity -->
     <string name="new_record">Înregistrare nouă</string>
     <string name="add_from_contacts">Adaugă de la contacte</string>
     <string name="open_contacts_error">Nu se poate efectua acțiunea din cauza caracteristicilor aparatului</string>
@@ -55,14 +55,13 @@
     <string name="wrong_date">Dată greșită</string>
     <string name="year_unknown">Nu știu anul</string>
     <string name="cancel_button">Anulează</string>
-    <string name="record_added">Înregistrare adăugată</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Ziua de naștere</string>
     <string name="days_left">Numărul de zile până la următoarea aniversare</string>
     <string name="today">Astăzi</string>
     <string name="days_since_birth">Numărul de zile de la naștere</string>
-    <string name="zodiac_sign">Semn zodical</string>
+    <string name="zodiac_sign">Semn zodiacal</string>
     <string name="season_picture">Poză pentru sezon</string>
     <string name="calendar">Calendar</string>
     <string name="call">Apel</string>
@@ -72,9 +71,10 @@
     <!-- EditActivity -->
     <string name="editing_label">Editare</string>
     <string name="record_edited">Înregistrare editată</string>
+    <string name="edit_record">Editează înregistrarea</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException, aparatele Samsung restricționează numărul de alarme pe care le puteți înregistra</string>
+    <string name="security_exception">SecurityException: aparatele Samsung limitează numărul de notificări la 500</string>
     <string name="channel_name">Zile de naștere</string>
 
     <!-- Zodiac signs -->
@@ -92,23 +92,24 @@
     <string name="pisces">Pești</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Optimizare activată!</string>
-    <string name="optimization_description">\nÎncepând de la versiunea 6.0, Android introduce opțiunea de economisirea a batriei, care gestionează aplicațiile prin amânarea procesorului de fundal. \n\nPentru a face aplicații care dezactivează optimizarea pentu Birdays.</string>
-    <string name="do_not_show_again">Nu mai afișa</string>
-    <string name="disable_button">Dezactivează</string>
+    <string name="optimization_enabled">Dezactivați optimizarea bateriei pentru aplicație</string>
+    <string name="optimization_description">Pentru ca aplicația să funcționeze corect, deschideți Setări și permiteți aplicației să ruleze în fundal fără restricții</string>
+    <string name="do_not_show_again">Nu mai afișați</string>
+    <string name="disable_button">Dezactivați</string>
+
     <!-- Notifications -->
     <string name="notifications">Notificări</string>
-    <string name="allow_notification">Permite aplicației să trimită notificări pentru viitoarele aniversări</string>
+    <string name="allow_notification">Permiteți aplicației să trimită notificări despre zilele de naștere viitoare</string>
     <string name="notifications_time">Timp notificare</string>
     <string name="additional_notification">Notificări suplimentare</string>
 
     <string-array name="additional_notification_entries">
         <item>Niciodată</item>
-        <item>Cu o zi înainte</item>
+        <item>Cu 1 zi înainte</item>
         <item>Cu 2 zile înainte</item>
         <item>Cu 3 zile înainte</item>
-        <item>Cu o săptămână înainte</item>
-        <item>Cu două săptămâni înainte</item>
+        <item>Cu 1 săptămână înainte</item>
+        <item>Cu 2 săptămâni înainte</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
@@ -117,27 +118,15 @@
         <item>În 2 zile</item>
         <item>În 3 zile</item>
         <item>Într-o săptămână</item>
-        <item>În două săptămâni</item>
+        <item>În 2 săptămâni</item>
     </string-array>
 
     <string name="notification_tone">Tonul notificării</string>
-    <string name="ringtone_summary">Alege un ton pentru notificare. În mod implicit este folosit tonul de la setările aparatului</string>
-    <string name="silent">Nici un sunet</string>
+    <string name="ringtone_summary">Alegeți un sunet pentru notificare. În mod implicit se folosește tonul din setările aparatului</string>
+    <string name="silent">Niciun sunet</string>
     <string name="help">Ajutor</string>
-    <string name="tap_here">Dacă nu primiți notificații, apăsați aici</string>
-    <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Sincronizare și copie de rezervă</string>
-    <string name="contacts_import_title">Importați contacte</string>
-    <string name="contacts_import_summary">Apăsați aici pentru a importa contactele de pe aparatul dumneavoastră (suportă ISO 8601)</string>
-    <string name="export_records">Exportați înregistrările (Beta)</string>
-    <string name="export_records_summary">Creați docmentul XML cu o copie de rezervă</string>
-    <string name="ext_storage_error">Stocarea externă nu este disponibilă</string>
-    <string name="exporting_records">Se exportă înregistrări…</string>
-    <string name="backup_finished">S-a efectuat copia de rezervă, documentul XML in\u0020</string>
-    <string name="recover_records">Recuperați înregistrările (Beta)</string>
-    <string name="recover_records_summary">Alegeți documentul XML cu o copie de rezervă</string>
-    <string name="recover_records_error">Nu se poate efectua acțiunea, vă rugăm instalați managerul de fișiere</string>
-    <string name="records_recovered">Înregistrările recuperate</string>
+    <string name="tap_here">Dacă nu primiți notificări, apăsați aici</string>
+
     <!-- General -->
     <string name="general">General</string>
     <string name="night_mode">Mod nocturn</string>
@@ -146,52 +135,69 @@
     <string-array name="start_page_entries">
         <item>Luna curentă</item>
         <item>Toate</item>
-        <item>Celebru</item>
+        <item>Celebri</item>
     </string-array>
 
     <string name="displayed_age">Vârsta afișată</string>
 
     <string-array name="displayed_age_entries">
         <item>Actuală</item>
-        <item>Viitor</item>
+        <item>Viitoare</item>
     </string-array>
 
-    <string name="displayed_age_changes">Pentru ca schimbările să aibe loc, vă rugăm reporniți aplicația</string>
+    <string name="displayed_age_changes">Trebuie să reporniți aplicația pentru ca aceste modificări să aibă efect</string>
     <string name="restart_now">Reporniți acum</string>
     <string name="later">Mai târziu</string>
-    <string name="rate_app">Votați aplicația</string>
+    <string name="rate_app">Evaluați aplicația</string>
     <string name="share_app">Distribuiți aplicația</string>
-    <string name="share_text">Uitați să vă felicitați rudele, prietenii sau colegii de ziua lor? Birdays vă va aminti de o sărbătoare importantă!\n\n</string>
+    <string name="share_text">"Uitați adesea să vă felicitați familia, prietenii sau colegii de ziua lor? Birdays vă va reaminti de o dată importantă!  "</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">Sincronizare și copie de rezervă</string>
+    <string name="contacts_import_title">Importați contacte</string>
+    <string name="contacts_import_summary">Apăsați aici pentru a importa contactele de pe dispozitiv (acceptă ISO 8601)</string>
+    <string name="google_drive_backup">Copie de rezervă în Google Drive</string>
+    <string name="google_drive_backup_summary">Încărcați copia de rezervă a bazei de date în Google Drive</string>
+    <string name="google_drive_backup_progress">Se creează copia de rezervă în Google Drive…</string>
+    <string name="backup_complete">Copie de rezervă finalizată</string>
+    <string name="google_drive_restore">Restaurare din Google Drive</string>
+    <string name="google_drive_restore_summary">Restaurați baza de date din Google Drive</string>
+    <string name="google_drive_restore_progress">Se restaurează din Google Drive…</string>
+    <string name="recover_records_error">Nu s-au putut recupera înregistrările</string>
+    <string name="records_recovered">Înregistrări recuperate</string>
+
     <!-- Advertising -->
     <string name="advertising">Publicitate</string>
     <string name="about_ad_title">De ce văd reclame?</string>
-    <string name="about_ad_summary">Veniturile din anunțurile publicitare contribuie la dezvoltarea proiectului și traducerea lui în alte limbi. Dezactivarea anunțurilor publicitare este gratuită</string>
-    <string name="ad_interstitial_title">Anunț</string>
-    <string name="ad_interstitial_summary">Acest tip de anunț este limitat la o singură afișare pe zi. Nu este atât de des, nu-i așa?</string>
-    <string name="ad_banner">Banner</string>
-    <!-- About app -->
-    <string name="about_app">Despre aplicație</string>
-    <string name="menu_github">Sursa codului</string>
-    <string name="privacy_policy">Politica de confidențialitate</string>
-    <string name="software_licenses">Licență open source</string>
+    <string name="about_ad_summary">Toate veniturile din publicitate sunt folosite pentru dezvoltarea proiectului</string>
+    <string name="show_ads">Afișați reclamele</string>
+    <string name="show_ads_summary">Puteți dezactiva reclamele vizionând o scurtă reclamă video</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">Sprijiniți proiectul</string>
+    <string name="watch_video_title">Vizionați o reclamă video</string>
+    <string name="ad_rewarded_summary">Vizionați o reclamă scurtă — veniturile sunt folosite pentru dezvoltarea aplicației</string>
+    <string name="ad_rewarded_unavailable">Videoclipul nu este disponibil acum, vă rugăm să încercați din nou mai târziu</string>
+    <string name="ad_disabled_success">Reclamele sunt acum dezactivate</string>
+    <string name="ad_watch_full_video_to_disable">Vizionați videoclipul până la sfârșit pentru a dezactiva reclamele</string>
+    <string name="donate_title">Faceți o contribuție</string>
+    <string name="donate_summary">Sprijin financiar pentru dezvoltarea aplicației</string>
+
+    <!-- About -->
+    <string name="about">Despre aplicație</string>
     <string name="licenses">Licențe</string>
+    <string name="software_licenses">Licențe open source</string>
+    <string name="third_party_sdks">SDK-uri terțe</string>
+    <string name="menu_github">Cod sursă</string>
+    <string name="privacy_policy">Politica de confidențialitate</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">De ce nu funcționează alarma?</string>
-    <string name="help_description">La unele aparate, modul de economisirea al bateriei ar putea bloca sau dezactiva procesle de fundal ale aplicației și aceasta nu mai rulează la deschidere. \nPentru ca aplicația să funcționeze corect, vă rugăm să efectuați pașii de mai jos:\n\n1. Asigurați-vă că notificările pentru aplicația Birdays sunt activate (Setări > Aplicații > Birdays).\n\n2. Dacă aveți instalate programe de gestionare pentru task-uri sau optimizări de RAM (ex «Battery Saver», «Clean Master»), care ar putea bloca procesele de fundal ale aplicației, adăugați Birdays pe lista lor albă.\n\n3. Închideți-vă modul de economisire al bateriei sau adăugați Birdays la lista lor albă (Setări > Baterie > Optimizarea bateriei).\nNumai pentru aparate care au Android 6.0 (Marshmallow) sau o versiune mai nouă.</string>
-    <string name="help_whitelist">Deschide lista albă</string>
-    <string name="help_whitelist_error">Doar pentru aparatele care rulează pe Android 6.0 (Marshmallow) sau pe o versiune mai nouă</string>
-    <string name="help_delay_text">Se poate ca pe unele aparate, notificările să aibe întârzieri.</string>
-    <string name="help_settings">Deschideți Setările</string>
-    <string name="huawei_header">Pentru deținători de Huawei</string>
-    <string name="huawei_description">Descideți «Setări», duceți-vă la «Economisire energie» și accesați «Aplicații protejate». Asigurați-vă că această opțiune este activată pentru Birdays.</string>
-    <string name="samsung_header">Pentru deținători de Samsung</string>
-    <string name="samsung_description">Deschideți «Smart Manager», apăsați pe «Baterie», apoi pe «Detaliu». Dezactivați această opțiune pentru aplicația Birdays.</string>
-    <string name="xiaomi_header">Pentru deținători de Xiaomi</string>
-    <string name="xiaomi_description">Deschideți «Setări», duceți-vă la «Baterie», apoi «Gestionați utilizarea bateriei de către aplicații», deschideți «Alege aplicațiile», alegeți «Fără restricții» pentru Birdays.</string>
-    <string name="show_button">Arată</string>
-    <string name="help_email_description">În cazul în care alarma nu funcționează, mă puteți contacta la birdaysapp@gmail.com</string>
-    <string name="send_email">Trimite email</string>
+    <string name="help_header">De ce nu funcționează memento-ul?</string>
+    <string name="help_description">Dispozitivele Android au un mod de economisire a energiei care blochează aplicația să ruleze în fundal sau împiedică pornirea automată. Pentru ca notificările să funcționeze corect, urmați acești pași simpli:\n\n1. Asigurați-vă că notificările sunt permise pentru aplicația Birdays (Setări &gt; Aplicații &gt; Birdays).\n\n2. Dacă aveți instalate manageri de activități, aplicații de curățare a memoriei sau de economisire a energiei (cum ar fi „Battery Saver”, „Clean Master” și aplicații similare) care blochează funcționarea în fundal, adăugați Birdays la excepții.\n\n3. Dezactivați modul de economisire a energiei pentru Birdays (Setări &gt; Baterie &gt; Optimizarea bateriei).</string>
+    <string name="help_settings">Deschideți setările</string>
+    <string name="help_delay_text">Vă rugăm să rețineți că notificările pot fi întârziate pe unele dispozitive.</string>
+    <string name="help_email_description">Dacă aveți întrebări sau sugestii, contactați-mă la birdaysapp@gmail.com</string>
+    <string name="send_email">Trimiteți email</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->
@@ -599,7 +605,7 @@
     <string name="klenze">Leo von Klenze</string>
     <string name="rossini">Gioachino Rossini</string>
     <string name="john_holland">John Philip Holland</string>
-    <string name="рollerith">Herman Hollerith</string>
+    <string name="hollerith">Herman Hollerith</string>
     <string name="papert">Seymour Papert</string>
     <!-- 1 march -->
     <string name="botticelli">Sandro Botticelli</string>
@@ -1312,7 +1318,7 @@
     <string name="cagliostro">Alessandro Cagliostro</string>
     <string name="akimov">Ivan Akimov</string>
     <string name="hardy">Thomas Hardy</string>
-    <string name="weissmüller">Johnny Weissmuller</string>
+    <string name="weissmuller">Johnny Weissmuller</string>
     <string name="quinto">Zachary Quinto</string>
     <!-- 3 june -->
     <string name="hutton">James Hutton</string>

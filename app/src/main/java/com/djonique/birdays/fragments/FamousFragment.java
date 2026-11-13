@@ -48,13 +48,14 @@ public class FamousFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new FamousFragmentAdapter();
         recyclerView.setAdapter(adapter);
+
         return view;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
+//        setHasOptionsMenu(true);
     }
 
     private void addFamousPersonsFromDb() {

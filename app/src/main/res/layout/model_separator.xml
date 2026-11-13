@@ -11,20 +11,18 @@
     android:layout_height="wrap_content">
 
     <View
+        android:id="@+id/view_separator_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginLeft="@dimen/default_left_margin_72sp"
-        android:layout_marginStart="@dimen/default_left_margin_72sp"
+        android:layout_marginStart="@dimen/default_left_margin_72dp"
         android:background="@color/divider_color" />
 
     <TextView
         android:id="@+id/textview_separator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/default_left_margin_56sp"
-        android:layout_marginStart="@dimen/default_left_margin_56sp"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginStart="@dimen/default_left_margin_56dp"
         android:padding="@dimen/default_padding"
-        android:textColor="@color/blue_to_green"
-        android:textSize="@dimen/separator_text" />
+        android:textAppearance="@style/TextAppearance.Birdays.TitleMedium"
+        android:textColor="@color/color_accent" />
 </RelativeLayout>

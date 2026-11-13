@@ -6,31 +6,20 @@
 
 package com.djonique.birdays.backup;
 
-import android.app.Activity;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Looper;
+import android.content.Context;
 import android.util.Xml;
 
-import androidx.appcompat.app.AlertDialog;
-
-import com.djonique.birdays.R;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
-import com.djonique.birdays.utils.ProgressDialogHelper;
-import com.djonique.birdays.utils.Utils;
 
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.util.Calendar;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class ExportHelper {
 
@@ -41,124 +30,53 @@ public class ExportHelper {
     private static final String YEAR_UNKNOWN = "year_unknown";
     private static final String PHONE_NUMBER = "phone_number";
     private static final String EMAIL = "email";
-    private static final String BACKUP = "backup";
     private static final String UTF_8 = "UTF-8";
 
-    private static final String ILLEGAL_ARGUMENT_EXCEPTION = "IllegalArgumentException";
-    private static final String ILLEGAL_STATE_EXCEPTION = "IllegalStateException";
-    private static final String IO_EXCEPTION = "IOException";
-    private static final String FILE_NOT_FOUND_EXCEPTION = "FileNotFoundException";
+    public static File createBackupFile(Context context) throws IOException {
+        File file = new File(context.getCacheDir(), "database_backup.xml");
+        List<Person> persons;
 
-    private Activity activity;
-    private File folder;
-    private boolean storageAvailable = true;
-    private final Handler mainHandler = new Handler(Looper.getMainLooper());
+        try (DbHelper dbHelper = new DbHelper(context)) {
+            persons = dbHelper.query().getPersons();
+        }
 
-    public ExportHelper(Activity activity) {
-        this.activity = activity;
+        String xml = writeXml(persons);
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            fos.write(xml.getBytes(StandardCharsets.UTF_8));
+        }
+        return file;
     }
 
-    public void exportRecords() {
-        final ProgressDialogHelper progressDialogHelper = new ProgressDialogHelper(activity);
-        progressDialogHelper.startProgressDialog(activity.getString(R.string.exporting_records));
-        final ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.execute(() -> {
-            try {
-                exportRecordsInBackground();
-            } finally {
-                executor.shutdown();
-            }
-            mainHandler.post(() -> {
-                progressDialogHelper.dismissProgressDialog();
-                if (storageAvailable) {
-                    showAlertDialog(activity, activity.getString(R.string.backup_finished) + folder);
-                }
-            });
-        });
-    }
-
-    private boolean isExternalStorageWritable() {
-        return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
-    }
-
-    private String getBackupFileName() {
-        long now = Calendar.getInstance().getTimeInMillis();
-        return BACKUP + "_" + Utils.getDate(now) + "_" + String.valueOf(now) + ".xml";
-    }
-
-    private String writeXml(List<Person> persons) {
+    public static String writeXml(List<Person> persons) throws IOException {
         XmlSerializer xmlSerializer = Xml.newSerializer();
         StringWriter stringWriter = new StringWriter();
-        try {
-            xmlSerializer.setOutput(stringWriter);
-            xmlSerializer.startDocument(UTF_8, true);
-            xmlSerializer.startTag(null, RECORDS);
-            for (Person person : persons) {
-                xmlSerializer.startTag(null, PERSON);
-                xmlSerializer.startTag(null, NAME);
-                xmlSerializer.text(person.getName());
-                xmlSerializer.endTag(null, NAME);
-                xmlSerializer.startTag(null, DATE);
-                xmlSerializer.text(String.valueOf(person.getDate()));
-                xmlSerializer.endTag(null, DATE);
-                xmlSerializer.startTag(null, YEAR_UNKNOWN);
-                xmlSerializer.text(String.valueOf(person.isYearUnknown()));
-                xmlSerializer.endTag(null, YEAR_UNKNOWN);
-                xmlSerializer.startTag(null, PHONE_NUMBER);
-                String phoneNumber = person.getPhoneNumber() == null ? "" : person.getPhoneNumber();
-                xmlSerializer.text(phoneNumber);
-                xmlSerializer.endTag(null, PHONE_NUMBER);
-                xmlSerializer.startTag(null, EMAIL);
-                String email = person.getEmail() == null ? "" : person.getEmail();
-                xmlSerializer.text(email);
-                xmlSerializer.endTag(null, EMAIL);
-                xmlSerializer.endTag(null, PERSON);
-            }
-            xmlSerializer.endTag(null, RECORDS);
-            xmlSerializer.endDocument();
-            xmlSerializer.flush();
-        } catch (IllegalArgumentException e) {
-            showAlertDialog(activity, ILLEGAL_ARGUMENT_EXCEPTION);
-        } catch (IllegalStateException e) {
-            showAlertDialog(activity, ILLEGAL_STATE_EXCEPTION);
-        } catch (IOException e) {
-            showAlertDialog(activity, IO_EXCEPTION);
+        xmlSerializer.setOutput(stringWriter);
+        xmlSerializer.startDocument(UTF_8, true);
+        xmlSerializer.startTag(null, RECORDS);
+        for (Person person : persons) {
+            xmlSerializer.startTag(null, PERSON);
+            xmlSerializer.startTag(null, NAME);
+            xmlSerializer.text(person.getName() != null ? person.getName() : "");
+            xmlSerializer.endTag(null, NAME);
+            xmlSerializer.startTag(null, DATE);
+            xmlSerializer.text(String.valueOf(person.getDate()));
+            xmlSerializer.endTag(null, DATE);
+            xmlSerializer.startTag(null, YEAR_UNKNOWN);
+            xmlSerializer.text(String.valueOf(person.isYearUnknown()));
+            xmlSerializer.endTag(null, YEAR_UNKNOWN);
+            xmlSerializer.startTag(null, PHONE_NUMBER);
+            String phoneNumber = person.getPhoneNumber() == null ? "" : person.getPhoneNumber();
+            xmlSerializer.text(phoneNumber);
+            xmlSerializer.endTag(null, PHONE_NUMBER);
+            xmlSerializer.startTag(null, EMAIL);
+            String email = person.getEmail() == null ? "" : person.getEmail();
+            xmlSerializer.text(email);
+            xmlSerializer.endTag(null, EMAIL);
+            xmlSerializer.endTag(null, PERSON);
         }
+        xmlSerializer.endTag(null, RECORDS);
+        xmlSerializer.endDocument();
+        xmlSerializer.flush();
         return stringWriter.toString();
-    }
-
-    private void showAlertDialog(final Activity activity, final String text) {
-        activity.runOnUiThread(() -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-            builder.setMessage(text);
-            builder.setPositiveButton(R.string.ok_button, (dialog, which) -> dialog.cancel());
-            builder.show();
-        });
-    }
-
-    @SuppressWarnings({"ResultOfMethodCallIgnored", "deprecation"})
-    private void exportRecordsInBackground() {
-        File sd = Environment.getExternalStorageDirectory();
-        if (isExternalStorageWritable()) {
-            try {
-                folder = new File(sd.getPath() + File.separator + activity.getString(R.string.app_name));
-                if (!folder.exists()) {
-                    folder.mkdir();
-                }
-                File backupFile = new File(folder + File.separator + getBackupFileName());
-                backupFile.createNewFile();
-                FileOutputStream outputStream = new FileOutputStream(backupFile);
-                List<Person> persons = new DbHelper(activity).query().getPersons();
-                outputStream.write(writeXml(persons).getBytes());
-                outputStream.close();
-            } catch (FileNotFoundException e) {
-                showAlertDialog(activity, FILE_NOT_FOUND_EXCEPTION);
-            } catch (IOException e) {
-                showAlertDialog(activity, IO_EXCEPTION);
-            }
-        } else {
-            storageAvailable = false;
-            showAlertDialog(activity, activity.getString(R.string.ext_storage_error));
-        }
     }
 }

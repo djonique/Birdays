@@ -10,6 +10,7 @@
     style="@style/materialRL"
     android:background="?android:attr/selectableItemBackground">
 
+    <!--Age round icon-->
     <TextView
         android:id="@+id/textview_all_age"
         android:layout_width="@dimen/age_circle_size"

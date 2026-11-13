@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017-2026 Evgenii Timofeev
+
+    SPDX-License-Identifier: Apache-2.0
+-->
+
+<com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/button_add_from_contacts"
+    style="@style/ButtonStyle"
+    android:layout_marginBottom="@dimen/button_add_from_contacts_bottom_margin"
+    android:text="@string/add_from_contacts" />

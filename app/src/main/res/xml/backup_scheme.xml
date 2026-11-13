@@ -9,6 +9,6 @@
 <full-backup-content>
     <include
         domain="database"
-        path="my_db.db" />
+        path="my_db" />
     <include domain="sharedpref" />
 </full-backup-content>

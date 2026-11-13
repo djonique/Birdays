@@ -6,7 +6,7 @@
 
 package com.djonique.birdays.models;
 
-public class Separator implements Item {
+public record Separator(int type) implements Item {
 
     public static final int TYPE_JANUARY = 0;
     public static final int TYPE_FEBRUARY = 1;
@@ -21,17 +21,7 @@ public class Separator implements Item {
     public static final int TYPE_NOVEMBER = 10;
     public static final int TYPE_DECEMBER = 11;
 
-    private int type;
-
-    public Separator(int type) {
-        this.type = type;
-    }
-
     public boolean isPerson() {
         return false;
-    }
-
-    public int getType() {
-        return type;
     }
 }

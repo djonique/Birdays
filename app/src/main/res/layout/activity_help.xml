@@ -6,107 +6,84 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_help"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.djonique.birdays.activities.HelpActivity">
 
-    <LinearLayout
-        android:id="@+id/ll_help_activity"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/default_padding">
+        android:background="@color/app_bar"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <!-- Header -->
-        <TextView
-            style="@style/Primary.TextView"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_help"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app_bar"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextAppearance="@style/TextAppearance.Birdays.ToolbarTitle" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/ll_help_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/default_padding"
-            android:text="@string/help_header" />
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding">
 
-        <TextView
-            style="@style/Secondary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/default_padding"
-            android:text="@string/help_description" />
+            <!-- Header -->
+            <TextView
+                style="@style/SectionHeader.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/help_header" />
 
-        <!-- Open Battery optimization settings -->
-        <include
-            android:id="@+id/button_help_whitelist"
-            layout="@layout/button_help_activity" />
+            <TextView
+                style="@style/Secondary.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/help_description" />
 
-        <TextView
-            style="@style/Primary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/default_padding"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/help_delay_text" />
+            <!-- Open Battery optimization settings -->
+            <include
+                android:id="@+id/button_help_open_settings"
+                layout="@layout/button_help_activity" />
 
-        <!-- Open settings button -->
-        <include
-            android:id="@+id/button_help_settings"
-            layout="@layout/button_help_activity" />
+            <TextView
+                style="@style/SectionHeader.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/help_delay_text" />
 
-        <!-- Huawei -->
-        <TextView
-            style="@style/Primary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/default_padding"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/huawei_header" />
+            <TextView
+                style="@style/SectionHeader.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/help_email_description" />
 
-        <TextView
-            style="@style/Secondary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/huawei_description" />
+            <!-- Send email button -->
+            <include
+                android:id="@+id/button_help_send_email"
+                layout="@layout/button_help_activity" />
 
-        <!-- Samsung -->
-        <TextView
-            style="@style/Primary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/default_padding"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/samsung_header" />
-
-        <TextView
-            style="@style/Secondary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/samsung_description" />
-
-        <!-- Xiaomi -->
-        <TextView
-            style="@style/Primary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/default_padding"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/xiaomi_header" />
-
-        <TextView
-            style="@style/Secondary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/xiaomi_description" />
-
-        <TextView
-            style="@style/Primary.TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/default_padding"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/help_email_description" />
-
-        <!-- Send email button -->
-        <include
-            android:id="@+id/button_help_email"
-            layout="@layout/button_help_activity" />
-
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

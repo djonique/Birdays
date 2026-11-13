@@ -6,72 +6,78 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.djonique.birdays.activities.MainActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/container_main"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_bar"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app_bar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextAppearance="@style/TextAppearance.Birdays.ToolbarTitle">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchview_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                app:searchIcon="@drawable/ic_search_white_24dp" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- Tab labels are provided by the tabs themselves -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout_main"
+            style="@style/MyCustomTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_layout_height"
+            android:background="@color/app_bar"
+            app:tabGravity="fill"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Speakable text comes from the current page, not from the pager itself.
+         The pager is wrapped so that the navigation bar inset can be applied as padding:
+         ViewPager2 itself ignores its own padding when the window is edge-to-edge. -->
+    <FrameLayout
+        android:id="@+id/container_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.djonique.birdays.activities.MainActivity">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_main"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/AppTheme.PopupOverlay">
-
-                <androidx.appcompat.widget.SearchView
-                    android:id="@+id/searchview_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    app:searchIcon="@drawable/ic_search_white_24dp" />
-            </androidx.appcompat.widget.Toolbar>
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout_main"
-                style="@style/MyCustomTabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/tab_layout_height"
-                android:background="?attr/colorPrimary"
-                app:tabGravity="fill" />
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.viewpager.widget.ViewPager
+        <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:orientation="horizontal"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </FrameLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin_default"
-            app:backgroundTint="@color/accent_green_200"
-            app:elevation="6dp"
-            app:layout_behavior="com.djonique.birdays.behaviors.ScrollAwareFABBehavior"
-            app:pressedTranslationZ="12dp"
-            app:rippleColor="@color/ripple"
-            app:srcCompat="@drawable/ic_add_grey_24dp" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <com.yandex.mobile.ads.banner.BannerAdView
-        android:id="@+id/banner_main"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_main"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
-</RelativeLayout>
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin_default"
+        android:contentDescription="@string/add_record"
+        app:backgroundTint="@color/fab_background"
+        app:elevation="6dp"
+        app:layout_behavior="com.djonique.birdays.behaviors.ScrollAwareFABBehavior"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@color/ripple"
+        app:srcCompat="@drawable/ic_add_grey_24dp"
+        app:tint="@color/fab_icon" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -20,14 +20,11 @@
     <TextView
         android:id="@+id/textview_widget_name"
         style="@style/WidgetTextView"
-        android:layout_marginEnd="80dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginStart="32dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="80dp" />
 
     <TextView
         android:id="@+id/textview_widget_date"
         style="@style/WidgetTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

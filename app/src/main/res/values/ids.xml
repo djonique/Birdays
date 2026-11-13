@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2017-2026 Evgenii Timofeev
+
+    SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <item name="tag_initial_top_padding" type="id" />
+    <item name="tag_initial_bottom_padding" type="id" />
+    <item name="tag_initial_bottom_margin" type="id" />
+    <item name="tag_initial_left_padding" type="id" />
+    <item name="tag_initial_right_padding" type="id" />
+</resources>

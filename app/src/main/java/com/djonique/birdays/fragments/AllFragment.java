@@ -7,15 +7,14 @@
 package com.djonique.birdays.fragments;
 
 import android.content.Context;
-
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +26,7 @@ import com.djonique.birdays.alarm.AlarmHelper;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.models.Separator;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
@@ -35,6 +35,7 @@ import java.util.List;
 public class AllFragment extends Fragment {
 
     private MainActivity activity;
+    private RecyclerView recyclerView;
     private AllFragmentAdapter adapter;
     private DeletingPersonListener deletingPersonListener;
     private AlarmHelper alarmHelper;
@@ -63,10 +64,11 @@ public class AllFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_recycler_view, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new AllFragmentAdapter(this);
         recyclerView.setAdapter(adapter);
+
         return view;
     }
 
@@ -132,12 +134,22 @@ public class AllFragment extends Fragment {
     }
 
     public void addAllPersonsFromDb() {
-        adapter.removeAllPersons();
         if (activity == null) return;
+
+        Parcelable listState = null;
+        if (recyclerView != null && recyclerView.getLayoutManager() != null) {
+            listState = recyclerView.getLayoutManager().onSaveInstanceState();
+        }
+
+        adapter.removeAllPersons();
         List<Person> persons = activity.dbHelper.query().getPersons();
 
         for (Person person : persons) {
             addPerson(person, false);
+        }
+
+        if (listState != null && recyclerView != null && recyclerView.getLayoutManager() != null) {
+            recyclerView.getLayoutManager().onRestoreInstanceState(listState);
         }
     }
 
@@ -222,12 +234,12 @@ public class AllFragment extends Fragment {
 
     public void removePersonDialog(final int location) {
         if (activity == null) return;
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
 
         Person person = (Person) adapter.getItem(location);
         final long timeStamp = person.getTimeStamp();
 
-        builder.setMessage(getString(R.string.delete_record_text) + person.getName() + "?");
+        builder.setMessage(getString(R.string.delete_record_confirm, person.getName()));
 
         final boolean[] isRemoved = {false};
 

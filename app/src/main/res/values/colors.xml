@@ -6,35 +6,68 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 
+<!--
+    Material 3 color roles and consolidated semantic tokens - light scheme.
+-->
 <resources>
-    <color name="color_primary">#2196F3</color>
-    <color name="color_primary_dark">#1976D2</color>
-    <color name="color_accent">#43AF84</color>
-    <color name="accent_green_200">#68EFAD</color>
-    <color name="tab_color_main">@android:color/white</color>
-    <color name="tab_text_disabled">#BBDEFB</color>
-    <color name="primary_text">#DE000000</color>
-    <color name="secondary_text">#8A000000</color>
-    <color name="blue_to_green">#2196F3</color>
-    <color name="disabled">#61000000</color>
-    <color name="divider_color">#1F000000</color>
-    <color name="scrim_color">#4d000000</color>
-    <color name="ripple">#90CAF9</color>
-    <color name="button_background_v16">#2196F3</color>
-    <color name="button_background_v21">@android:color/white</color>
-    <color name="button_text_v16">@android:color/white</color>
-    <color name="button_text_v21">#2196F3</color>
-    <color name="cardview_background">@color/cardview_light_background</color>
-    <color name="cardview_birthday">#EF9A9A</color>
-    <color name="red_alert">#EF5350</color>
+    <!-- Primary: raspberry -->
+    <color name="md_theme_primary">#C2185B</color>
+    <color name="md_theme_on_primary">#FFFFFF</color>
+    <color name="md_theme_primary_container">#FFD9E1</color>
+    <color name="md_theme_on_primary_container">#3F001D</color>
 
-    <!-- age colors -->
-    <color name="age1">#F06292</color>
-    <color name="age2">#4A7BA7</color>
-    <color name="age3">#04B4B3</color>
-    <color name="age4">#009688</color>
-    <color name="age5">#F5A623</color>
-    <color name="age6">#FF7D50</color>
-    <color name="age7">#FC6644</color>
-    <color name="age8">#EF5350</color>
+    <!-- Secondary: teal / mint -->
+    <color name="md_theme_secondary">#00695C</color>
+    <color name="md_theme_on_secondary">#FFFFFF</color>
+    <color name="md_theme_secondary_container">#8CF8DF</color>
+    <color name="md_theme_on_secondary_container">#00201B</color>
+
+    <!-- Neutrals -->
+    <color name="md_theme_surface">#FFFBFF</color>
+    <color name="md_theme_on_surface">#201A1B</color>
+    <color name="md_theme_surface_variant">#F5DDE2</color>
+    <color name="md_theme_on_surface_variant">#524346</color>
+    <color name="md_theme_outline">#857376</color>
+    <color name="md_theme_outline_variant">#D7C1C5</color>
+    <color name="md_theme_background">#FFF6F8</color>
+    <color name="md_theme_on_background">#201A1B</color>
+
+    <!-- Error -->
+    <color name="md_theme_error">#BA1A1A</color>
+    <color name="md_theme_on_error">#FFFFFF</color>
+    <color name="md_theme_error_container">#FFDAD6</color>
+    <color name="md_theme_on_error_container">#410002</color>
+
+    <!-- State layer (12% of onSurface) -->
+    <color name="md_theme_ripple">#1F201A1B</color>
+
+    <!-- Consolidated Semantic Tokens -->
+    <color name="app_bar">@color/md_theme_primary</color>
+    <color name="on_app_bar">@color/md_theme_on_primary</color>
+
+    <!-- Tabs -->
+    <color name="tab_color_main">@color/on_app_bar</color>
+    <color name="tab_text_disabled">#CCFFFFFF</color>
+
+    <!-- Text -->
+    <color name="primary_text">@color/md_theme_on_surface</color>
+    <color name="secondary_text">@color/md_theme_on_surface_variant</color>
+    <color name="color_accent">@color/md_theme_secondary</color>
+
+    <!-- Controls -->
+    <color name="button_background">@color/md_theme_primary</color>
+    <color name="button_text">@color/md_theme_on_primary</color>
+    <color name="fab_background">@color/md_theme_secondary_container</color>
+    <color name="fab_icon">@color/md_theme_on_secondary_container</color>
+    <color name="ripple">@color/md_theme_ripple</color>
+
+    <!-- Containers -->
+    <color name="cardview_background">@color/md_theme_surface</color>
+    <color name="cardview_birthday">@color/md_theme_primary_container</color>
+    <color name="divider_color">@color/md_theme_outline_variant</color>
+
+    <!-- Legacy / Decorative aliases -->
+    <color name="blue_to_green">@color/md_theme_primary</color>
+    <color name="accent_green">#8CF8DF</color>
+    <color name="red_alert">#FFB4AB</color>
 </resources>

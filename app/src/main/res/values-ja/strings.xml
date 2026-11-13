@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!--
     Copyright 2017-2026 Evgenii Timofeev
@@ -12,17 +12,18 @@
     <!-- MainActivity -->
     <string name="loading_contacts">連絡先の読み込み中…</string>
     <string name="contacts_uploaded">連絡先をアップロードしました</string>
-    <string name="loading_contacts_error">連絡先をインポートできない、非標準の日付形式</string>
+    <string name="loading_contacts_error">連絡先をインポートできません。標準外の日付形式です</string>
     <string name="permission_required">連絡先のインポートには許可が必要です</string>
     <string name="snackbar_allow_text">許可する</string>
     <string name="all">すべて</string>
-    <string name="famous">有名な</string>
+    <string name="famous">有名人</string>
     <string name="age">現在の年齢:\u0020</string>
     <string name="happy_birthday">お誕生日おめでとうございます！</string>
     <string name="web_search_error">アクションを実行できません。ウェブブラウザをインストールしてください。</string>
-    <string name="delete_record_text">このレコードを削除してもよろしいですか：\u0020</string>
-    <string name="record_deleted">レコードが削除された</string>
+    <string name="delete_record_confirm">%1$sを削除してもよろしいですか？</string>
+    <string name="record_deleted">記録を削除しました</string>
     <string name="undo">元に戻す</string>
+    <string name="add_record">記録を追加</string>
 
     <string-array name="months">
         <item>1月</item>
@@ -40,41 +41,40 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_sync">同期</string>
     <string name="action_settings">設定</string>
     <string name="action_delete">削除</string>
 
-    <!-- NewPersonDialogFragment -->
-    <string name="new_record">新記録</string>
+    <!-- NewPersonActivity -->
+    <string name="new_record">新規記録</string>
     <string name="add_from_contacts">連絡先から追加</string>
-    <string name="open_contacts_error">デバイス機能のためにアクションを実行できません</string>
-    <string name="name">名</string>
+    <string name="open_contacts_error">デバイスの機能により操作を実行できません</string>
+    <string name="name">名前</string>
     <string name="error_hint">名前を入力してください</string>
     <string name="phone_number">電話番号</string>
     <string name="pick_date">日付を選択</string>
-    <string name="wrong_date">間違った日付</string>
-    <string name="year_unknown">私は年を知らない</string>
+    <string name="wrong_date">日付が正しくありません</string>
+    <string name="year_unknown">年は不明です</string>
     <string name="cancel_button">キャンセル</string>
-    <string name="record_added">レコード追加</string>
 
     <!-- DetailActivity -->
-    <string name="birthday">お誕生日</string>
+    <string name="birthday">誕生日</string>
     <string name="days_left">次の誕生日までの日数</string>
     <string name="today">今日</string>
     <string name="days_since_birth">誕生からの日数</string>
     <string name="zodiac_sign">星座</string>
-    <string name="season_picture">シーズンピクチャーズ</string>
+    <string name="season_picture">季節の画像</string>
     <string name="calendar">カレンダー</string>
-    <string name="call">コール</string>
+    <string name="call">電話</string>
     <string name="chat">チャット</string>
-    <string name="born_on_this_day">この日に生まれる</string>
+    <string name="born_on_this_day">この日に生まれた人</string>
 
     <!-- EditActivity -->
     <string name="editing_label">編集</string>
-    <string name="record_edited">編集済みのレコード</string>
+    <string name="record_edited">記録を編集しました</string>
+    <string name="edit_record">記録を編集</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException、Samsungデバイスは登録可能なアラームの数を制限します</string>
+    <string name="security_exception">SecurityException: Samsungデバイスでは通知数が500件に制限されています</string>
     <string name="channel_name">誕生日</string>
 
     <!-- Zodiac signs -->
@@ -92,10 +92,11 @@
     <string name="pisces">魚座</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">最適化が有効になりました！</string>
-    <string name="optimization_description">\nバージョン6.0以降、Androidは、バックグラウンドCPUを延期することによってアプリケーションの動作を管理する省電力モードDozeを導入しました。\n\nアプリの動作を正しくするために、Birdaysの最適化を無効にします。</string>
-    <string name="do_not_show_again">再び表示しない</string>
+    <string name="optimization_enabled">アプリのバッテリー最適化を無効にする</string>
+    <string name="optimization_description">アプリを正しく動作させるには、設定を開き、アプリが制限なくバックグラウンドで実行できるようにしてください</string>
+    <string name="do_not_show_again">今後表示しない</string>
     <string name="disable_button">無効にする</string>
+
     <!-- Notifications -->
     <string name="notifications">通知</string>
     <string name="allow_notification">アプリが誕生日の通知を送信することを許可します</string>
@@ -103,7 +104,7 @@
     <string name="additional_notification">追加通知</string>
 
     <string-array name="additional_notification_entries">
-        <item>決して</item>
+        <item>なし</item>
         <item>1日前</item>
         <item>2日前</item>
         <item>3日前</item>
@@ -116,40 +117,28 @@
         <item>明日</item>
         <item>2日後</item>
         <item>3日後</item>
-        <item>一週間以内に</item>
+        <item>1週間後</item>
         <item>2週間後</item>
     </string-array>
 
     <string name="notification_tone">通知音</string>
-    <string name="ringtone_summary">通知するサウンドを選択します。 デフォルトでは、デバイス設定のトーンが使用されます</string>
+    <string name="ringtone_summary">通知音を選択します。デフォルトでは端末設定の通知音が使用されます</string>
     <string name="silent">なし</string>
-    <string name="help">助けて</string>
-    <string name="tap_here">通知を受け取らない場合はここをタップしてください</string>
-    <!-- Synchronization and backup -->
-    <string name="sync_and_backup">同期とバックアップ</string>
-    <string name="contacts_import_title">コンタクトをインポートする</string>
-    <string name="contacts_import_summary">デバイスから連絡先をインポートするにはここをクリック（ISO 8601をサポート）</string>
-    <string name="export_records">レコードのエクスポート（ベータ版）</string>
-    <string name="export_records_summary">バックアップを使用してXMLファイルを作成する</string>
-    <string name="ext_storage_error">外部ストレージは利用できません</string>
-    <string name="exporting_records">レコードのエクスポート中…</string>
-    <string name="backup_finished">バックアップが完了しました。のXMLファイル\u0020</string>
-    <string name="recover_records">レコードの回復（ベータ版）</string>
-    <string name="recover_records_summary">バックアップを含むXMLファイルを選択する</string>
-    <string name="recover_records_error">アクションを実行できません。ファイルマネージャをインストールしてください。</string>
-    <string name="records_recovered">記録が回復しました</string>
+    <string name="help">ヘルプ</string>
+    <string name="tap_here">通知が届かない場合はここをタップしてください</string>
+
     <!-- General -->
     <string name="general">一般</string>
     <string name="night_mode">ナイトモード</string>
-    <string name="start_page">ホームページ</string>
+    <string name="start_page">開始ページ</string>
 
     <string-array name="start_page_entries">
         <item>今月</item>
         <item>すべて</item>
-        <item>有名な</item>
+        <item>有名人</item>
     </string-array>
 
-    <string name="displayed_age">表示された年齢</string>
+    <string name="displayed_age">表示する年齢</string>
 
     <string-array name="displayed_age_entries">
         <item>現在</item>
@@ -160,38 +149,55 @@
     <string name="restart_now">今すぐ再起動</string>
     <string name="later">後で</string>
     <string name="rate_app">アプリを評価</string>
-    <string name="share_app">シェア</string>
-    <string name="share_text">彼らの誕生日にあなたの親戚、友人、または同僚を祝福することを忘れますか？ Birdaysはあなたに重要な休日を思い出させます！\n\n</string>
+    <string name="share_app">アプリを共有</string>
+    <string name="share_text">"家族、友人、同僚の誕生日を祝うのをよく忘れていませんか？Birdaysが大切な日を知らせます！  "</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">同期とバックアップ</string>
+    <string name="contacts_import_title">連絡先をインポート</string>
+    <string name="contacts_import_summary">端末から連絡先をインポートするにはここをタップしてください（ISO 8601対応）</string>
+    <string name="google_drive_backup">Google Driveバックアップ</string>
+    <string name="google_drive_backup_summary">データベースのバックアップをGoogle Driveにアップロードします</string>
+    <string name="google_drive_backup_progress">Google Driveにバックアップ中…</string>
+    <string name="backup_complete">バックアップが完了しました</string>
+    <string name="google_drive_restore">Google Driveから復元</string>
+    <string name="google_drive_restore_summary">Google Driveからデータベースを復元します</string>
+    <string name="google_drive_restore_progress">Google Driveから復元中…</string>
+    <string name="recover_records_error">記録を復元できませんでした</string>
+    <string name="records_recovered">記録を復元しました</string>
+
     <!-- Advertising -->
     <string name="advertising">広告</string>
     <string name="about_ad_title">広告が表示されるのはなぜですか？</string>
-    <string name="about_ad_summary">広告からの収入は、プロジェクトの開発と他の言語への翻訳に行きます。 無料で広告を削除できます</string>
-    <string name="ad_interstitial_title">インタースティシャル広告</string>
-    <string name="ad_interstitial_summary">このタイプの広告は1日1回のショーに限定されています。 それほど頻繁ではないですか？</string>
-    <string name="ad_banner">バナー</string>
-    <!-- About app -->
-    <string name="about_app">アプリについて</string>
-    <string name="menu_github">ソースコード</string>
-    <string name="privacy_policy">個人情報保護方針</string>
-    <string name="software_licenses">フリーソフトウェアライセンス</string>
+    <string name="about_ad_summary">広告収入はすべてプロジェクトの開発に充てられます</string>
+    <string name="show_ads">広告を表示</string>
+    <string name="show_ads_summary">短い動画広告を見ると広告を無効にできます</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">プロジェクトを支援</string>
+    <string name="watch_video_title">動画広告を見る</string>
+    <string name="ad_rewarded_summary">短い動画を見ると、収益がアプリの開発に充てられます</string>
+    <string name="ad_rewarded_unavailable">現在動画を利用できません。後でもう一度お試しください</string>
+    <string name="ad_disabled_success">広告が無効になりました</string>
+    <string name="ad_watch_full_video_to_disable">広告を無効にするには、動画を最後まで視聴してください</string>
+    <string name="donate_title">寄付をする</string>
+    <string name="donate_summary">アプリ開発への資金援助</string>
+
+    <!-- About -->
+    <string name="about">アプリについて</string>
     <string name="licenses">ライセンス</string>
+    <string name="software_licenses">オープンソースライセンス</string>
+    <string name="third_party_sdks">サードパーティSDK</string>
+    <string name="menu_github">ソースコード</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">なぜアラームが機能していないのですか？</string>
-    <string name="help_description">一部の端末では、アプリのバックグラウンドプロセスをブロックしたり、起動時にアプリケーションが実行されないようにする節電モードがあります。\nアラームを正常に動作させるには、以下の簡単な手順を実行します：\n\n1。Birdaysアプリの通知が有効になっていることを確認する（設定 > アプリ > Birdays）。\n\n2。もしあなたがアプリケーションのバックグラウンドプロセスをブロックする可能性のあるタスクマネージャー、タスクキラー、またはRAMオプティマイザ（例えば、«バッテリーセーバー»、«クリーンマスター»）をインストールした場合、ホワイトリストにBirdaysを追加して。\n\n3。パワーセーブモードをオフにするか、ホワイトリストにBirdaysを追加して（設定 > バッテリー > バッテリー最適化）。\nAndroid 6.0（Marshmallow）以上を搭載するデバイスのみ。</string>
-    <string name="help_whitelist">オープンホワイトリスト</string>
-    <string name="help_whitelist_error">Android 6.0（Marshmallow）以上を搭載するデバイスのみ</string>
-    <string name="help_delay_text">一部の端末では通知が遅れることがありますのでご注意ください。</string>
+    <string name="help_header">リマインダーが機能しないのはなぜですか？</string>
+    <string name="help_description">Android端末には、アプリのバックグラウンド実行をブロックしたり、自動起動を防いだりする省電力モードがあります。通知を正しく動作させるには、次の簡単な手順に従ってください:\n\n1. Birdaysアプリの通知が許可されていることを確認します（設定 > アプリ > Birdays）。\n\n2. バックグラウンド動作をブロックするタスクマネージャー、メモリクリーニング、省電力アプリ（「バッテリーセーバー」「Clean Master」など）をインストールしている場合は、Birdaysを例外に追加します。\n\n3. Birdaysの省電力モードをオフにします（設定 > バッテリー > バッテリー最適化）。</string>
     <string name="help_settings">設定を開く</string>
-    <string name="huawei_header">Huaweiオーナーの場合</string>
-    <string name="huawei_description">デバイス«設定»を開き、«節電»に行き、«保護されたアプリケーション»を開きます。 この機能がBirdaysで有効になっていることを確認してください。</string>
-    <string name="samsung_header">Samsungオーナーの方</string>
-    <string name="samsung_description">«スマートマネージャー»を開き、«バッテリー»をタップし、«詳細»をタップします。 Birdaysアプリのこの機能を無効にします。</string>
-    <string name="xiaomi_header">Xiaomiオーナーの場合</string>
-    <string name="xiaomi_description">デバイスの«設定»を開き、«バッテリー» «アプリのバッテリー使用状況を管理する»、«アプリを選択»を開いて、Birdaysの«制限なし»を選択します。</string>
-    <string name="show_button">ショー</string>
-    <string name="help_email_description">それでもアラームが作動しない場合は、私に連絡してください birdaysapp@gmail.com</string>
-    <string name="send_email">メールを送る</string>
+    <string name="help_delay_text">一部の端末では通知が遅れることがありますのでご注意ください。</string>
+    <string name="help_email_description">ご質問やご提案がある場合は、birdaysapp@gmail.comまでお問い合わせください</string>
+    <string name="send_email">メールを送信</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->
@@ -599,7 +605,7 @@
     <string name="klenze">Leo von Klenze</string>
     <string name="rossini">Gioachino Rossini</string>
     <string name="john_holland">John Philip Holland</string>
-    <string name="рollerith">Herman Hollerith</string>
+    <string name="hollerith">Herman Hollerith</string>
     <string name="papert">Seymour Papert</string>
     <!-- 1 march -->
     <string name="botticelli">Sandro Botticelli</string>
@@ -1312,7 +1318,7 @@
     <string name="cagliostro">Alessandro Cagliostro</string>
     <string name="akimov">Ivan Akimov</string>
     <string name="hardy">Thomas Hardy</string>
-    <string name="weissmüller">Johnny Weissmuller</string>
+    <string name="weissmuller">Johnny Weissmuller</string>
     <string name="quinto">Zachary Quinto</string>
     <!-- 3 june -->
     <string name="hutton">James Hutton</string>

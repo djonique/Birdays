@@ -1,42 +1,42 @@
-/*
- * Copyright 2017-2026 Evgenii Timofeev
- *
- * SPDX-License-Identifier: Apache-2.0
- */
-
 package com.djonique.birdays.alarm;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
-import com.djonique.birdays.R;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class AlarmSetter extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            DbHelper dbHelper = new DbHelper(context);
+        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            final PendingResult pendingResult = goAsync();
 
-            AlarmHelper alarmHelper = new AlarmHelper(context);
+            //noinspection resource
+            final ExecutorService executor = Executors.newSingleThreadExecutor();
 
-            List<Person> persons = new ArrayList<>();
-            persons.addAll(dbHelper.query().getPersons());
+            executor.execute(() -> {
+                try (DbHelper dbHelper = new DbHelper(context)) {
+                    AlarmHelper alarmHelper = new AlarmHelper(context);
 
-            for (Person person : persons) {
-                try {
-                    alarmHelper.setAlarms(person);
-                } catch (SecurityException e) {
-                    Toast.makeText(context, R.string.security_exception, Toast.LENGTH_LONG).show();
+                    List<Person> persons = dbHelper.query().getPersons();
+                    for (Person person : persons) {
+                        try {
+                            alarmHelper.setAlarms(person);
+                        } catch (SecurityException ignored) {
+                        }
+                    }
+                } finally {
+                    executor.shutdown();
+                    pendingResult.finish();
                 }
-            }
+            });
         }
     }
 }

@@ -7,76 +7,63 @@
 package com.djonique.birdays.utils;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.content.SharedPreferences;
-import android.os.Build;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceManager;
+
+import com.djonique.birdays.R;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
+/**
+ * Shows the Material date picker. The platform {@code DatePickerDialog} is not used:
+ * it inherits text colours from private framework attributes that AppCompat-based
+ * themes do not resolve, which left the calendar numbers invisible in the dark theme.
+ * {@link MaterialDatePicker} is drawn with the Material theme roles instead, so it
+ * follows the app palette in both schemes.
+ */
 public class DatePickerManager {
 
-    private static final String DATE_PICKER_FRAGMENT_TAG = "DATE_PICKER_FRAGMENT_TAG";
+    private static final String DATE_PICKER_TAG = "DATE_PICKER_TAG";
 
-    private Activity activity;
-    private Calendar calendar;
-    private SharedPreferences preferences;
+    private final Activity activity;
+    private final Calendar calendar;
 
     public DatePickerManager(Activity activity, Calendar calendar) {
         this.activity = activity;
         this.calendar = calendar;
-        preferences = PreferenceManager.getDefaultSharedPreferences(activity);
     }
 
-    public void showDialog(DatePickerDialog.OnDateSetListener androidCallback,
-                           com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener libCallback) {
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.N) {
-            showMdtpDialog(libCallback);
-        } else {
-            showDatePickerDialog(androidCallback);
-        }
+    public void showDialog(OnDatePicked listener) {
+        if (!(activity instanceof AppCompatActivity)) return;
+
+        MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText(R.string.birthday)
+                .setSelection(toUtc(calendar))
+                .build();
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+            // MaterialDatePicker works with UTC midnight, the app stores local dates.
+            Calendar selected = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+            selected.setTimeInMillis(selection);
+            listener.onDatePicked(selected.get(Calendar.YEAR),
+                    selected.get(Calendar.MONTH),
+                    selected.get(Calendar.DAY_OF_MONTH));
+        });
+        datePicker.show(((AppCompatActivity) activity).getSupportFragmentManager(),
+                DATE_PICKER_TAG);
     }
 
-    private void showDatePickerDialog(DatePickerDialog.OnDateSetListener callback) {
-        android.app.DatePickerDialog datePickerDialog = new android.app.DatePickerDialog(
-                activity,
-                setTheme(isNightMode()),
-                callback,
-                calendar.get(Calendar.YEAR),
+    private static long toUtc(Calendar calendar) {
+        Calendar utc = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        utc.clear();
+        utc.set(calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
-        datePickerDialog.show();
+        return utc.getTimeInMillis();
     }
 
-    private void showMdtpDialog(com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener callback) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
-        com.wdullaer.materialdatetimepicker.date.DatePickerDialog dpd =
-                com.wdullaer.materialdatetimepicker.date.DatePickerDialog.newInstance(
-                        callback,
-                        calendar.get(Calendar.YEAR),
-                        calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH)
-                );
-        dpd.setVersion(com.wdullaer.materialdatetimepicker.date.DatePickerDialog.Version.VERSION_1);
-        dpd.setThemeDark(preferences.getBoolean(Constants.NIGHT_MODE_KEY, false));
-        if (activity instanceof AppCompatActivity) {
-            dpd.show(((AppCompatActivity) activity).getSupportFragmentManager(), DATE_PICKER_FRAGMENT_TAG);
-        }
-    }
-
-    @SuppressWarnings("deprecation")
-    private int setTheme(boolean nightMode) {
-        if (nightMode) {
-            return AlertDialog.THEME_HOLO_DARK;
-        } else {
-            return AlertDialog.THEME_HOLO_LIGHT;
-        }
-    }
-
-    private boolean isNightMode() {
-        return preferences.getBoolean(Constants.NIGHT_MODE_KEY, false);
+    public interface OnDatePicked {
+        void onDatePicked(int year, int month, int dayOfMonth);
     }
 }

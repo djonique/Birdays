@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017-2026 Evgenii Timofeev
+
+    SPDX-License-Identifier: Apache-2.0
+-->
+
+<resources>
+    <string name="build_version">Buildversion</string>
+
+    <!-- MainActivity -->
+    <string name="loading_contacts">Indlæser kontakter…</string>
+    <string name="contacts_uploaded">Kontakter uploadet</string>
+    <string name="loading_contacts_error">Kan ikke importere kontakter, ikke-standard datoformat</string>
+    <string name="permission_required">Tilladelse er påkrævet for at importere kontakter</string>
+    <string name="snackbar_allow_text">Tillad</string>
+    <string name="all">Alle</string>
+    <string name="famous">Berømte</string>
+    <string name="age">Nuværende alder:\u0020</string>
+    <string name="happy_birthday">Tillykke med fødselsdagen!</string>
+    <string name="web_search_error">Kan ikke udføre handlingen. Installer en webbrowser</string>
+    <string name="delete_record_confirm">Er du sikker på, at du vil slette %1$s?</string>
+    <string name="record_deleted">Post slettet</string>
+    <string name="undo">Fortryd</string>
+    <string name="add_record">Tilføj post</string>
+
+    <string-array name="months">
+        <item>Januar</item>
+        <item>Februar</item>
+        <item>Marts</item>
+        <item>April</item>
+        <item>Maj</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>August</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <!-- Menu -->
+    <string name="action_settings">Indstillinger</string>
+    <string name="action_delete">Slet</string>
+
+    <!-- NewPersonActivity -->
+    <string name="new_record">Ny post</string>
+    <string name="add_from_contacts">Tilføj fra kontakter</string>
+    <string name="open_contacts_error">Kan ikke udføre handlingen på grund af enhedens funktioner</string>
+    <string name="name">Navn</string>
+    <string name="error_hint">Indtast et navn</string>
+    <string name="phone_number">Telefonnummer</string>
+    <string name="pick_date">Vælg dato</string>
+    <string name="wrong_date">Forkert dato</string>
+    <string name="year_unknown">Jeg kender ikke året</string>
+    <string name="cancel_button">Annuller</string>
+
+    <!-- DetailActivity -->
+    <string name="birthday">Fødselsdag</string>
+    <string name="days_left">Dage til næste fødselsdag</string>
+    <string name="today">I dag</string>
+    <string name="days_since_birth">Dage siden fødslen</string>
+    <string name="zodiac_sign">Stjernetegn</string>
+    <string name="season_picture">Sæsonbillede</string>
+    <string name="calendar">Kalender</string>
+    <string name="call">Ring</string>
+    <string name="chat">Chat</string>
+    <string name="born_on_this_day">Født på denne dag</string>
+
+    <!-- EditActivity -->
+    <string name="editing_label">Redigering</string>
+    <string name="record_edited">Post redigeret</string>
+    <string name="edit_record">Rediger post</string>
+
+    <!-- Alarm -->
+    <string name="security_exception">SecurityException: Samsung-enheder begrænser antallet af notifikationer til 500</string>
+    <string name="channel_name">Fødselsdage</string>
+
+    <!-- Zodiac signs -->
+    <string name="aries">Vædderen</string>
+    <string name="taurus">Tyren</string>
+    <string name="gemini">Tvillingerne</string>
+    <string name="cancer">Krebsen</string>
+    <string name="leo">Løven</string>
+    <string name="virgo">Jomfruen</string>
+    <string name="libra">Vægten</string>
+    <string name="scorpio">Skorpionen</string>
+    <string name="sagittarius">Skytten</string>
+    <string name="capricorn">Stenbukken</string>
+    <string name="aquarius">Vandmanden</string>
+    <string name="pisces">Fiskene</string>
+
+    <!-- SettingsActivity -->
+    <string name="optimization_enabled">Deaktiver batterioptimering for appen</string>
+    <string name="optimization_description">For at sikre, at appen fungerer korrekt, skal du åbne Indstillinger og tillade, at appen kører i baggrunden uden begrænsninger</string>
+    <string name="do_not_show_again">Vis ikke igen</string>
+    <string name="disable_button">Deaktiver</string>
+
+    <!-- Notifications -->
+    <string name="notifications">Notifikationer</string>
+    <string name="allow_notification">Tillad, at appen sender notifikationer om kommende fødselsdage</string>
+    <string name="notifications_time">Tidspunkt for notifikation</string>
+    <string name="additional_notification">Ekstra notifikation</string>
+
+    <string-array name="additional_notification_entries">
+        <item>Aldrig</item>
+        <item>1 dag før</item>
+        <item>2 dage før</item>
+        <item>3 dage før</item>
+        <item>1 uge før</item>
+        <item>2 uger før</item>
+    </string-array>
+
+    <string-array name="additional_notification_delay">
+        <item>I dag</item>
+        <item>I morgen</item>
+        <item>Om 2 dage</item>
+        <item>Om 3 dage</item>
+        <item>Om en uge</item>
+        <item>Om 2 uger</item>
+    </string-array>
+
+    <string name="notification_tone">Notifikationslyd</string>
+    <string name="ringtone_summary">Vælg en notifikationslyd. Som standard bruges lyden fra enhedens indstillinger</string>
+    <string name="silent">Ingen</string>
+    <string name="help">Hjælp</string>
+    <string name="tap_here">Tryk her, hvis du ikke modtager notifikationer</string>
+
+    <!-- General -->
+    <string name="general">Generelt</string>
+    <string name="night_mode">Nattilstand</string>
+    <string name="start_page">Startside</string>
+
+    <string-array name="start_page_entries">
+        <item>Aktuel måned</item>
+        <item>Alle</item>
+        <item>Berømte</item>
+    </string-array>
+
+    <string name="displayed_age">Vist alder</string>
+
+    <string-array name="displayed_age_entries">
+        <item>Nuværende</item>
+        <item>Fremtidig</item>
+    </string-array>
+
+    <string name="displayed_age_changes">Du skal genstarte appen, for at ændringerne træder i kraft</string>
+    <string name="restart_now">Genstart nu</string>
+    <string name="later">Senere</string>
+    <string name="rate_app">Bedøm appen</string>
+    <string name="share_app">Del appen</string>
+    <string name="share_text">"Glemmer du ofte at ønske familie, venner eller kolleger tillykke med fødselsdagen? Birdays minder dig om en vigtig dato!  "</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">Synkronisering og sikkerhedskopiering</string>
+    <string name="contacts_import_title">Importér kontakter</string>
+    <string name="contacts_import_summary">Tryk her for at importere kontakter fra din enhed (understøtter ISO 8601)</string>
+    <string name="google_drive_backup">Google Drive-sikkerhedskopiering</string>
+    <string name="google_drive_backup_summary">Upload database-sikkerhedskopi til Google Drive</string>
+    <string name="google_drive_backup_progress">Sikkerhedskopierer til Google Drive…</string>
+    <string name="backup_complete">Sikkerhedskopiering fuldført</string>
+    <string name="google_drive_restore">Gendan fra Google Drive</string>
+    <string name="google_drive_restore_summary">Gendan database fra Google Drive</string>
+    <string name="google_drive_restore_progress">Gendanner fra Google Drive…</string>
+    <string name="recover_records_error">Kunne ikke gendanne poster</string>
+    <string name="records_recovered">Poster gendannet</string>
+
+    <!-- Advertising -->
+    <string name="advertising">Reklame</string>
+    <string name="about_ad_title">Hvorfor ser jeg reklamer?</string>
+    <string name="about_ad_summary">Alle reklameindtægter går til udviklingen af projektet</string>
+    <string name="show_ads">Vis reklamer</string>
+    <string name="show_ads_summary">Du kan deaktivere reklamer ved at se en kort videoreklame</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">Støt projektet</string>
+    <string name="watch_video_title">Se en videoreklame</string>
+    <string name="ad_rewarded_summary">Se en kort video — indtægterne går til udviklingen af appen</string>
+    <string name="ad_rewarded_unavailable">Videoen er ikke tilgængelig lige nu. Prøv igen senere</string>
+    <string name="ad_disabled_success">Reklamer er nu deaktiveret</string>
+    <string name="ad_watch_full_video_to_disable">Se videoen til ende for at deaktivere reklamer</string>
+    <string name="donate_title">Yd et bidrag</string>
+    <string name="donate_summary">Økonomisk støtte til appens udvikling</string>
+
+    <!-- About -->
+    <string name="about">Om appen</string>
+    <string name="licenses">Licenser</string>
+    <string name="software_licenses">Open source-licenser</string>
+    <string name="third_party_sdks">Tredjeparts-SDK\'er</string>
+    <string name="menu_github">Kildekode</string>
+    <string name="privacy_policy">Privatlivspolitik</string>
+
+    <!-- HelpActivity -->
+    <string name="help_header">Hvorfor virker påmindelsen ikke?</string>
+    <string name="help_description">Android-enheder har en strømsparetilstand, der blokerer appen i at køre i baggrunden eller forhindrer den i at starte automatisk. For at få notifikationer til at virke korrekt skal du følge disse enkle trin:\n\n1. Sørg for, at notifikationer er tilladte for Birdays-appen (Indstillinger &gt; Apps &gt; Birdays).\n\n2. Hvis du har opgaveadministratorer, hukommelsesrensnings- eller strømspareapps installeret (f.eks. “Battery Saver”, “Clean Master” og lignende apps), der blokerer baggrundskørsel, skal du tilføje Birdays til undtagelserne.\n\n3. Slå strømsparetilstand fra for Birdays (Indstillinger &gt; Batteri &gt; Batterioptimering).</string>
+    <string name="help_settings">Åbn indstillinger</string>
+    <string name="help_delay_text">Bemærk, at notifikationer kan blive forsinkede på nogle enheder.</string>
+    <string name="help_email_description">Hvis du har spørgsmål eller forslag, kan du kontakte mig på birdaysapp@gmail.com</string>
+    <string name="send_email">Send e-mail</string>
+
+
+</resources>

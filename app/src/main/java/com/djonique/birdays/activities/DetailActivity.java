@@ -6,11 +6,11 @@
 
 package com.djonique.birdays.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +26,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -37,14 +36,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.BuildConfig;
 import com.djonique.birdays.R;
+import com.djonique.birdays.ad.NativeAdHelper;
 import com.djonique.birdays.adapters.FamousFragmentAdapter;
 import com.djonique.birdays.alarm.AlarmHelper;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Constants;
+import com.djonique.birdays.utils.ReviewHelper;
 import com.djonique.birdays.utils.Utils;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.kobakei.ratethisapp.RateThisApp;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
 import com.yandex.mobile.ads.common.AdError;
 import com.yandex.mobile.ads.common.AdRequest;
 import com.yandex.mobile.ads.common.AdRequestError;
@@ -53,19 +57,21 @@ import com.yandex.mobile.ads.interstitial.InterstitialAd;
 import com.yandex.mobile.ads.interstitial.InterstitialAdEventListener;
 import com.yandex.mobile.ads.interstitial.InterstitialAdLoadListener;
 import com.yandex.mobile.ads.interstitial.InterstitialAdLoader;
+import com.yandex.mobile.ads.nativeads.NativeAd;
+import com.yandex.mobile.ads.nativeads.NativeAdLoadListener;
+import com.yandex.mobile.ads.nativeads.NativeAdView;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private static final int INSTALL_DAYS = 7;
-    private static final int LAUNCH_TIMES = 5;
     private static final long INTERSTITIAL_INTERVAL = TimeUnit.DAYS.toMillis(1);
 
-    private CoordinatorLayout container;
-    private Toolbar toolbar;
     private ImageView ivSeasonPicture;
     private TextView tvAge;
     private TextView tvDate;
@@ -80,13 +86,10 @@ public class DetailActivity extends AppCompatActivity {
     private RelativeLayout rlEmail;
     private TextView tvEmail;
     private RecyclerView recyclerView;
-    private FloatingActionButton fabDetail;
-    private ImageButton btnPhone;
-    private ImageButton btnChat;
-    private ImageButton btnEmail;
 
     private InterstitialAdLoader interstitialAdLoader;
     private InterstitialAd mInterstitialAd;
+    private com.yandex.mobile.ads.nativeads.NativeAd mNativeAd;
     private boolean interstitialShown;
     private DbHelper dbHelper;
     private Person person;
@@ -112,8 +115,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         Utils.setupSystemBarAppearance(this);
 
-        container = findViewById(R.id.container_detail);
-        toolbar = findViewById(R.id.toolbar_detail);
+        CoordinatorLayout container = findViewById(R.id.container_detail);
+        Toolbar toolbar = findViewById(R.id.toolbar_detail);
         ivSeasonPicture = findViewById(R.id.imageview_detail_picture);
         tvAge = findViewById(R.id.textview_detail_age);
         tvDate = findViewById(R.id.textview_detail_date);
@@ -128,17 +131,28 @@ public class DetailActivity extends AppCompatActivity {
         rlEmail = findViewById(R.id.relativelayout_detail_email);
         tvEmail = findViewById(R.id.textview_detail_email);
         recyclerView = findViewById(R.id.recyclerview_detail);
-        fabDetail = findViewById(R.id.fab_detail);
-        btnPhone = findViewById(R.id.imagebutton_detail_phone);
-        btnChat = findViewById(R.id.imagebutton_detail_chat);
-        btnEmail = findViewById(R.id.imagebutton_detail_email);
+        FloatingActionButton fabDetail = findViewById(R.id.fab_detail);
+        ImageButton btnPhone = findViewById(R.id.imagebutton_detail_phone);
+        ImageButton btnChat = findViewById(R.id.imagebutton_detail_chat);
+        ImageButton btnEmail = findViewById(R.id.imagebutton_detail_email);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean adEnabled = preferences.getBoolean(getString(R.string.ad_interstitial_key), true);
+        boolean adEnabled = preferences.getBoolean(getString(R.string.show_ads_key), true);
+        Log.d("DetailActivity", "adEnabled = " + adEnabled);
         displayedAge = preferences.getString(Constants.DISPLAYED_AGE_KEY, "0");
+
+        incrementDetailVisitCount(preferences);
 
         if (adEnabled && canShowInterstitial(preferences)) {
             loadInterstitialAd();
+        }
+
+        NativeAdView nativeAdView = findViewById(R.id.native_ad_card);
+        if (nativeAdView != null) {
+            nativeAdView.setVisibility(View.GONE);
+            if (adEnabled) {
+                loadNativeAd(nativeAdView);
+            }
         }
 
         dbHelper = new DbHelper(this);
@@ -148,6 +162,11 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
         person = dbHelper.query().getPerson(timeStamp);
+        if (person == null) {
+            Toast.makeText(this, R.string.record_deleted, Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
         date = person.getDate();
         yearUnknown = person.isYearUnknown();
         phoneNumber = person.getPhoneNumber();
@@ -158,13 +177,15 @@ public class DetailActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
 
+        Utils.applySystemBarsInsets(container, findViewById(R.id.appbar_detail), null, container);
+
         setupUI();
 
         loadBornThisDay();
 
         recyclerView.setFocusable(false);
 
-        rateThisAppInit(this);
+        requestInAppReview();
 
         if (fabDetail != null) fabDetail.setOnClickListener(v -> starEditActivity());
         if (btnPhone != null) btnPhone.setOnClickListener(v -> makeCall());
@@ -187,14 +208,14 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        super.onOptionsItemSelected(item);
         int itemId = item.getItemId();
         if (itemId == android.R.id.home) {
-            getOnBackPressedDispatcher().onBackPressed();
+            handleBackPressed();
+            return true;
         } else if (itemId == R.id.menu_detail_delete) {
             deletePersonDialog(person);
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void handleBackPressed() {
@@ -224,7 +245,7 @@ public class DetailActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onAdImpression(@NonNull ImpressionData impressionData) {
+                public void onAdImpression(@Nullable ImpressionData impressionData) {
                 }
             });
             mInterstitialAd.show(this);
@@ -247,12 +268,40 @@ public class DetailActivity extends AppCompatActivity {
         if (mInterstitialAd != null) {
             mInterstitialAd.setAdEventListener(null);
         }
+        if (mNativeAd != null) {
+            mNativeAd.setNativeAdEventListener(null);
+        }
+        if (dbHelper != null) {
+            dbHelper.close();
+        }
         super.onDestroy();
     }
 
     private boolean canShowInterstitial(SharedPreferences preferences) {
         long lastShown = preferences.getLong(Constants.INTERSTITIAL_LAST_SHOWN, 0);
-        return System.currentTimeMillis() - lastShown >= INTERSTITIAL_INTERVAL;
+        boolean intervalPassed = System.currentTimeMillis() - lastShown >= INTERSTITIAL_INTERVAL;
+        int visitCount = preferences.getInt(Constants.INTERSTITIAL_VISIT_COUNT, 0);
+        boolean reachedThirdVisit = visitCount >= 3;
+        return intervalPassed && reachedThirdVisit;
+    }
+
+    private void incrementDetailVisitCount(SharedPreferences preferences) {
+        String today = new SimpleDateFormat("yyyyMMdd", Locale.US).format(new Date());
+        String lastVisitDate = preferences.getString(Constants.INTERSTITIAL_LAST_VISIT_DATE, "");
+        int visitCount = preferences.getInt(Constants.INTERSTITIAL_VISIT_COUNT, 0);
+        if (!today.equals(lastVisitDate)) {
+            visitCount = 1;
+            preferences.edit()
+                    .putString(Constants.INTERSTITIAL_LAST_VISIT_DATE, today)
+                    .putInt(Constants.INTERSTITIAL_VISIT_COUNT, visitCount)
+                    .apply();
+        } else {
+            visitCount++;
+            preferences.edit()
+                    .putInt(Constants.INTERSTITIAL_VISIT_COUNT, visitCount)
+                    .apply();
+        }
+        Log.d("DetailActivity", "DetailActivity visit count today: " + visitCount);
     }
 
     private void loadInterstitialAd() {
@@ -268,6 +317,24 @@ public class DetailActivity extends AppCompatActivity {
                     public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {
                     }
                 });
+    }
+
+    private void loadNativeAd(@NonNull NativeAdView nativeAdView) {
+        nativeAdView.setVisibility(View.GONE);
+        com.djonique.birdays.ad.NativeAdCache.getInstance().loadAd(this, new NativeAdLoadListener() {
+            @Override
+            public void onAdLoaded(@NonNull NativeAd nativeAd) {
+                mNativeAd = nativeAd;
+                NativeAdHelper.bindNativeAd(nativeAdView, nativeAd);
+                nativeAdView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {
+                Log.e("DetailActivity", "Native ad failed to load: code=" + adRequestError.getCode() + ", desc=" + adRequestError.getDescription());
+                nativeAdView.setVisibility(View.GONE);
+            }
+        });
     }
 
     private void setupUI() {
@@ -306,7 +373,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private boolean isEmpty(String text) {
-        return text == null || text.equals("");
+        return text == null || text.isEmpty();
     }
 
     private void loadBornThisDay() {
@@ -333,18 +400,20 @@ public class DetailActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(date);
         int month = calendar.get(Calendar.MONTH);
-        if (month >= 0 && month < 2 || month == 11) {
+        if (month < 2 || month == 11) {
             ivSeasonPicture.setImageResource(R.drawable.img_winter);
-        } else if (month >= 2 && month < 5) {
+        } else if (month < 5) {
             ivSeasonPicture.setImageResource(R.drawable.img_spring);
-        } else if (month >= 5 && month < 8) {
+        } else if (month < 8) {
             ivSeasonPicture.setImageResource(R.drawable.img_summer);
-        } else ivSeasonPicture.setImageResource(R.drawable.img_autumn);
+        } else {
+            ivSeasonPicture.setImageResource(R.drawable.img_autumn);
+        }
     }
 
     private void deletePersonDialog(final Person person) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(getString(R.string.delete_record_text) + person.getName() + "?");
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+        builder.setMessage(getString(R.string.delete_record_confirm, person.getName()));
         builder.setPositiveButton(getString(R.string.ok_button), (dialog, which) -> {
             new AlarmHelper(getApplicationContext()).removeAlarms(timeStamp);
             dbHelper.removeRecord(timeStamp);
@@ -357,11 +426,19 @@ public class DetailActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void rateThisAppInit(Context context) {
-        RateThisApp.onCreate(context);
-        RateThisApp.Config config = new RateThisApp.Config(INSTALL_DAYS, LAUNCH_TIMES);
-        RateThisApp.init(config);
-        RateThisApp.showRateDialogIfNeeded(context);
+    private void requestInAppReview() {
+        if (!ReviewHelper.shouldRequestReview(this)) return;
+
+        ReviewManager manager = ReviewManagerFactory.create(this);
+        manager.requestReviewFlow().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()) return;
+
+            ReviewInfo reviewInfo = task.getResult();
+            if (isFinishing() || isDestroyed()) return;
+
+            manager.launchReviewFlow(this, reviewInfo)
+                    .addOnCompleteListener(flowTask -> ReviewHelper.markReviewRequested(this));
+        });
     }
 
     private void makeCall() {
@@ -370,8 +447,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void sendMessage() {
-        Intent intent = new Intent(Intent.ACTION_VIEW)
-                .setType(Constants.TYPE_SMS)
+        Intent intent = new Intent(Intent.ACTION_SENDTO)
                 .putExtra(Constants.ADDRESS, phoneNumber)
                 .setData(Uri.parse(Constants.SMSTO + phoneNumber));
         startActivity(Intent.createChooser(intent, null));
@@ -379,7 +455,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private void sendEmail() {
         Intent intent = new Intent(Intent.ACTION_SENDTO)
-                .setType(Constants.TYPE_EMAIL)
                 .putExtra(Intent.EXTRA_EMAIL, new String[]{email})
                 .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.happy_birthday))
                 .setData(Uri.parse(Constants.MAILTO + email));

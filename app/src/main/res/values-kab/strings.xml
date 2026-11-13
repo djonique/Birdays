@@ -7,22 +7,23 @@
 -->
 
 <resources>
-    <string name="build_version">Lqem n usefsu</string>
+    <string name="build_version">Lqem n usenfaṛ</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">Asali n inermisen…</string>
     <string name="contacts_uploaded">Inermisen ulin-d</string>
-    <string name="loading_contacts_error">Ur izmir ara ad yekter inermisen, amasal n wazemz ur yeḍfir ara ilugan</string>
-    <string name="permission_required">Tlaq tsiregt i uktar n inermisen</string>
+    <string name="loading_contacts_error">Ur yezmir ara ad yekter inermisen, amasal n wazemz ur yeḍfir ara ilugan</string>
+    <string name="permission_required">Tlaq tsiregt i ukter n inermisen</string>
     <string name="snackbar_allow_text">Sireg</string>
     <string name="all">Meṛṛa</string>
     <string name="famous">Ttwassnen</string>
     <string name="age">Awtay amiran:\u0020</string>
     <string name="happy_birthday">Amulli ameggaz!</string>
-    <string name="web_search_error">Ur izmir ara ad iseklem tigawt-a, ma ulac aɣilif sbedd iminig web</string>
-    <string name="delete_record_text">Tebɣiḍ ad tekkseḍ akalas-agi:\u0020</string>
+    <string name="web_search_error">Ur yezmir ara ad yekemmel tigawt-a, ma ulac aɣilif sbedd iminig web</string>
+    <string name="delete_record_confirm">Tebɣiḍ s tidet ad tekkseḍ %1$s?</string>
     <string name="record_deleted">Akalas yettwakkes</string>
     <string name="undo">Uɣal</string>
+    <string name="add_record">Rnu akalas</string>
 
     <string-array name="months">
         <item>Yennayer</item>
@@ -40,14 +41,13 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_sync">Amtawi</string>
     <string name="action_settings">Iɣewwaṛen</string>
     <string name="action_delete">Kkes</string>
 
-    <!-- NewPersonDialogFragment -->
+    <!-- NewPersonActivity -->
     <string name="new_record">Akalas amaynut</string>
     <string name="add_from_contacts">Rnu seg inermisen</string>
-    <string name="open_contacts_error">Ur izmir ara ad iselkem tigawt ɣef sebba n timahilin n yibenk</string>
+    <string name="open_contacts_error">Ur yezmir ara ad yekemmel tigawt-a ɣef sebba n timahilin n yibenk</string>
     <string name="name">Isem</string>
     <string name="error_hint">Ma ulac aɣilif, sekcem isem</string>
     <string name="phone_number">Uṭṭun n tiliɣri</string>
@@ -55,14 +55,13 @@
     <string name="wrong_date">Yir azemz</string>
     <string name="year_unknown">Ur ẓrɣ ara aseggas</string>
     <string name="cancel_button">Sefsex</string>
-    <string name="record_added">Akalas yettwarna</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Amulli</string>
     <string name="days_left">Ussan i d-yeqqimen ar umulli d-iteddun</string>
     <string name="today">Ass-a</string>
-    <string name="days_since_birth">Ussan yezrin sieg umulli</string>
-    <string name="zodiac_sign">Izamulen n uzudyak</string>
+    <string name="days_since_birth">Ussan yezrin seg umulli</string>
+    <string name="zodiac_sign">Azamul n uzudyak</string>
     <string name="season_picture">Tawlaft n tsemhuyt</string>
     <string name="calendar">Awitay</string>
     <string name="call">Asiwel</string>
@@ -72,9 +71,10 @@
     <!-- EditActivity -->
     <string name="editing_label">Taẓrigt</string>
     <string name="record_edited">Akalas yettwaẓreg</string>
+    <string name="edit_record">Taẓrigt n ukalas</string>
 
     <!-- Alarm -->
-    <string name="security_exception">Tasureft n tɣellist, ibenkan Samsung ttarran tilisa i umḍan n iṭenṭunen i tzemreḍ ad teskelseḍ</string>
+    <string name="security_exception">SecurityException: ibenkan Samsung ɣur-sen tilisa n 500 n yilɣa</string>
     <string name="channel_name">Imulliyen</string>
 
     <!-- Zodiac signs -->
@@ -92,10 +92,11 @@
     <string name="pisces">Iselman</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Aseggem yermed!</string>
-    <string name="optimization_description">\nSi lqem 6.0, Android isekcem-d askar n uḥraz n tfasa isefraken amek ara ddun yisnasen s udegger n ukala n ugilal.\n\nAkken ad yeddu usnas amek ilaq, sens aseggem i Birdays.</string>
+    <string name="optimization_enabled">Sens aseggam n tbatri i usnas</string>
+    <string name="optimization_description">Akken ad yeddu usnas akken ilaq, ldi Iɣewwaṛen syen sireg asnas ad yeddu deg ugilal war tilisa.</string>
     <string name="do_not_show_again">Ur d-skan ara tikelt nniḍen</string>
     <string name="disable_button">Sens</string>
+
     <!-- Notifications -->
     <string name="notifications">Ilɣa</string>
     <string name="allow_notification">Sireg asnas akken ad yazen ilɣa n imulliyen i d-iteddun</string>
@@ -103,7 +104,7 @@
     <string name="additional_notification">Ilɣa nniḍen</string>
 
     <string-array name="additional_notification_entries">
-        <item>Wurǧin</item>
+        <item>Werǧin</item>
         <item>Send 1 n wass</item>
         <item>Send 2 n wussan</item>
         <item>Send 3 n wussan</item>
@@ -125,22 +126,18 @@
     <string name="silent">Ula yiwen</string>
     <string name="help">Tallelt</string>
     <string name="tap_here">Senned dagi ma yella ur d-rmiseḍ ara ilɣa</string>
-    <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Amtawi d uḥraz</string>
-    <string name="contacts_import_title">Kter inermisen</string>
-    <string name="contacts_import_summary">Senned dagi akken ad ketreḍ inermisen seg yibenk-ik (imṣada akked ISO 8601)</string>
-    <string name="export_records">Sifeḍ ikalasen (Beta)</string>
-    <string name="export_records_summary">Rnu afaylu XML s uḥraz</string>
-    <string name="ext_storage_error">Asekles azɣaray ulac-it</string>
-    <string name="exporting_records">Asifeḍ n yikalasen…</string>
-    <string name="backup_finished">Aḥraz yemmed, afaylu XML di \u0020</string>
-    <string name="recover_records">Err-d ikalasen (Beta)</string>
-    <string name="recover_records_summary">Fren afaylu XML s uḥraz</string>
-    <string name="recover_records_error">Ur izmir ara ad iseklem tigawt, ma ulac aɣilif sbedd amsefrak n yifuyla</string>
-    <string name="records_recovered">Ikallasen uɣalen-d</string>
+
     <!-- General -->
     <string name="general">Amatu</string>
     <string name="night_mode">Askar n yiḍ</string>
+    <string name="start_page">Asebter n tazwara</string>
+
+    <string-array name="start_page_entries">
+        <item>Aggur amiran</item>
+        <item>Meṛṛa</item>
+        <item>Ttwassnen</item>
+    </string-array>
+
     <string name="displayed_age">Awtay yettwaseknen</string>
 
     <string-array name="displayed_age_entries">
@@ -152,35 +149,55 @@
     <string name="restart_now">Ales asenker tura</string>
     <string name="later">Ticki</string>
     <string name="rate_app">Rnu tazmilt i usnas</string>
-    <string name="share_text">Tettuḍ ad tazned asebɣes i yiqriben-ik, imdukal-ik neɣ wid ukud txeddmeḍ deg umulli-nsen? Birdays ad k-id-yemmekti ɣef timeɣriwin meqqren!\n\n</string>
+    <string name="share_app">Bḍu asnas</string>
+    <string name="share_text">"Tettuḍ ad tazned asebɣes i twacult-ik, imdukal-ik neɣ i wid ukud txeddmeḍ deg umulli-nsen? Birdays ad k-id-yemmekti ɣef wazemz agejdan!  "</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">Amtawi d uḥraz</string>
+    <string name="contacts_import_title">Kter inermisen</string>
+    <string name="contacts_import_summary">Senned dagi akken ad ketreḍ inermisen seg yibenk-ik (imṣada akked ISO 8601)</string>
+    <string name="google_drive_backup">Aḥraz n Google Drive</string>
+    <string name="google_drive_backup_summary">Sali aḥraz n taffa n yisefka ɣer Google Drive</string>
+    <string name="google_drive_backup_progress">Aḥraz ɣer Google Drive…</string>
+    <string name="backup_complete">Aḥraz yemmed</string>
+    <string name="google_drive_restore">Ales seg Google Drive</string>
+    <string name="google_drive_restore_summary">Ales taffa n yisefka seg Google Drive</string>
+    <string name="google_drive_restore_progress">Ales seg Google Drive…</string>
+    <string name="recover_records_error">Ur yezmir ara ad d-yerr ikalasen</string>
+    <string name="records_recovered">Ikallasen uɣalen-d</string>
+
     <!-- Advertising -->
     <string name="advertising">Adellel</string>
     <string name="about_ad_title">Acuɣer tettwaliḍ adellel?</string>
-    <string name="about_ad_summary">Tisidaf i d-itekken seg udellel s bennu n usenfaṛ akked tsuqilt-is ar tutlayin-nniḍen. Tzemreḍ ad tekkseḍ baṭel ilɣa</string>
-    <string name="ad_interstitial_title">Adellel gar isebtar</string>
-    <string name="ad_interstitial_summary">Anaw-agi n udellel ɣur-s talast n 1 n uskan deg ass. Mačči ddeqs, neɣ ala?</string>
-    <string name="ad_banner">Aɣarrac</string>
-    <!-- About app -->
-    <string name="about_app">Ɣef usnas</string>
+    <string name="about_ad_summary">Akk tasidaf i d-itekken seg udellel tettuseqdec i usnerni n usenfaṛ.</string>
+    <string name="show_ads">Sken adellel</string>
+    <string name="show_ads_summary">Tzemreḍ ad tsenseḍ adellel s uɛẓer n tvidyut tamezwarut n udellel</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">Tallalt i usenfaṛ</string>
+    <string name="watch_video_title">Ẓer adellel n tvidyut</string>
+    <string name="ad_rewarded_summary">Ẓer tvidyut tamezwarut — tikci tettuseqdec i usnerni n usnas</string>
+    <string name="ad_rewarded_unavailable">Tvidyut ur tella ara tura, ma ulac aɣilif ɛreḍ tikelt nniḍen ticki</string>
+    <string name="ad_disabled_success">Adellel yettwasens tura</string>
+    <string name="ad_watch_full_video_to_disable">Ẓer tvidyut alammi tifeggig akken ad tsenseḍ adellel</string>
+    <string name="donate_title">Efk tazmilt</string>
+    <string name="donate_summary">Tallelt n yidrimen i usnerni n usnas</string>
+
+    <!-- About -->
+    <string name="about">Ɣef usnas</string>
+    <string name="licenses">Turagin</string>
+    <string name="software_licenses">Turagin n useɣzan ilelli</string>
+    <string name="third_party_sdks">SDK n wis kraḍ</string>
     <string name="menu_github">Tangalt aɣbalu</string>
     <string name="privacy_policy">Tasertit tabaḍnit</string>
-    <string name="software_licenses">Turagin n useɣzan ilelli</string>
-    <string name="licenses">Turagin</string>
 
     <!-- HelpActivity -->
     <string name="help_header">Acuɣer ur iteddu ara uṭenṭen?</string>
-    <string name="help_description">Kra n yibenkan ɣur-sen askar n uḥraz n tfasa izemren ad isewḥel ikalan n ugulal n usnas neɣad yessens aselkem n usnas di tnkera. \n Akken ad teddu teṭenṭunt akken iwata, ddu am akka:\n\n1. Ḍmen d akken ilɣaremden i usnas Birdays (iɣewwaṛen &gt; Isnasen &gt;Birdays).\n\n2. Ma yella tesbeddeḍ imsefraken n tiwuriwin,imenɣawen n tiwuriwin neɣ imseggamen n tkatut RAM (aemdya «Aḥerraz n uẓru», «Clean Master»), i yezmren ad sweḥlen akala n ugilal, rnu Birdays ar tebdart tamellalt..\n\n3. Sens askar n uḥraz n tfasa neɣ rnu Birdays ar tebdart tamellalt (Iɣewwaṛen &gt; Aẓru &gt; Aseggem n uẓru).\nAla i yibenkan uteddun s Android 6.0 (Marshmallow) neɣ ugar.</string>
-    <string name="help_whitelist">Ldi tabdart tamellalt</string>
-    <string name="help_whitelist_error">Ala ibenkan iteddun s Android 6.0 (Marshmallow) neɣ ugar</string>
-    <string name="help_delay_text">Ma ulac aɣilif, ẓer d akken kra n yibenkan, ilɣa zemren ur teddun ara imir imir.</string>
+    <string name="help_description">Ibenkan n Android ɣur-sen askar n uḥraz n tfasa i yessewḥalen asnas ad yeddu deg ugilal neɣ i t-yeswaǧǧen ad yebdu s wudem awurman. Akken ilɣa ad ddun akken iwata, ḍfer isurifen-a:\n\n1. Ḍmen d akken ilɣa ttwasuregen i usnas Birdays (Iɣewwaṛen &gt; Isnasen &gt; Birdays).\n\n2. Ma yella tesbeddeḍ imsefrak n tiwuriwin, imseggamen n tkatut neɣ imseggamen n uḥraz n tfasa (am «Aḥerraz n tbatri», «Clean Master» d wiyaḍ) i yessewḥalen ad yeddu deg ugilal, rnu Birdays ar isurifen.\n\n3. Sens askar n uḥraz n tfasa i Birdays (Iɣewwaṛen &gt; Tbatri &gt; Aseggam n tbatri).</string>
     <string name="help_settings">Ldi iɣewwaṛen</string>
-    <string name="huawei_header">I wi yesɛan Huawei</string>
-    <string name="huawei_description">Ldi «Iɣewwaṛen» n yibenk, ddu ar «Aḥraz n tfasa» sakin ldi «Isnasen yettwammestnen». Ḍmen d akken tamahilt-agi termed i Birdays.</string>
-    <string name="samsung_header">I wi yesɛan Samsung</string>
-    <string name="samsung_description">Ldi «Smart Manager», Si ɣef «Aẓru», sakin ɣef «Talqayt». Sens tamahilt-agi i usnas Birdays.</string>
-    <string name="xiaomi_header">I wi yesɛan Xiaomi</string>
-    <string name="xiaomi_description">Ldi «Iɣewwaṛen» n yibenk, ddu ar «Aẓtu &amp; Amlazmar», sakin « Sefrek aseqdec n uẓru »,« Fren isnasen », fren « Ulac talast » i Birdays.</string>
-    <string name="show_button">Sken</string>
-    <string name="help_email_description">Ma tezga teṭenṭunt ur tetteddu ara, nermes-aɣ-d ar birdaysapp@gmail.com</string>
+    <string name="help_delay_text">Ma ulac aɣilif, ẓer d akken kra n yibenkan, ilɣa zemren ur teddun ara imir imir.</string>
+    <string name="help_email_description">Ma tesriḍ tallelt neɣ ɣur-k isteqsiyen neɣ isumer, ma ulac aɣilif nermes-aɣ-d ar birdaysapp@gmail.com</string>
     <string name="send_email">Azen imayl</string>
+
+
 </resources>

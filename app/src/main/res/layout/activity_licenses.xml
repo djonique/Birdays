@@ -6,55 +6,166 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_licenses"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.djonique.birdays.activities.LicensesActivity">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_licenses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/default_padding">
+        android:background="@color/app_bar"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            style="@style/Licenses.Primary.TextView"
-            android:paddingBottom="@dimen/default_padding"
-            android:text="@string/butter_knife_by_jake_wharton" />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_licenses"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app_bar"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextAppearance="@style/TextAppearance.Birdays.ToolbarTitle" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            style="@style/Licenses.Secondary.TextView"
-            android:text="@string/butter_knife_copyright" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            style="@style/Licenses.Secondary.TextView"
-            android:text="@string/apache_license" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding">
 
-        <TextView
-            style="@style/Licenses.Primary.TextView"
-            android:paddingBottom="@dimen/default_padding"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/mdtp_by_wouter_dullaert" />
+            <TextView
+                style="@style/Licenses.Header.TextView"
+                android:text="@string/software_licenses" />
 
-        <TextView
-            style="@style/Licenses.Secondary.TextView"
-            android:text="@string/mdtp_copyright" />
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/androidx_by_aosp" />
 
-        <TextView
-            style="@style/Licenses.Secondary.TextView"
-            android:text="@string/apache_license" />
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/androidx_copyright" />
 
-        <TextView
-            style="@style/Licenses.Primary.TextView"
-            android:paddingBottom="@dimen/default_padding"
-            android:paddingTop="@dimen/default_padding"
-            android:text="@string/rta_by_keisuke_kobayashi" />
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/apache_license" />
 
-        <TextView
-            style="@style/Licenses.Secondary.TextView"
-            android:text="@string/rta_copyright" />
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/material_components_by_aosp" />
 
-        <TextView
-            style="@style/Licenses.Secondary.TextView"
-            android:text="@string/apache_license" />
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/material_components_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/apache_license" />
+
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/google_api_client_by_google" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/google_api_client_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/apache_license" />
+
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/google_auth_library_by_google" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/google_auth_library_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/bsd_3_clause_license" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginBottom="@dimen/default_padding"
+                android:background="@color/divider_color" />
+
+            <TextView
+                style="@style/Licenses.Header.TextView"
+                android:text="@string/third_party_sdks" />
+
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/yandex_ads_by_yandex" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/yandex_ads_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/yandex_ads_terms" />
+
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/firebase_by_google" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/firebase_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/firebase_terms" />
+
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/play_review_by_google" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/play_review_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/play_review_terms" />
+
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/play_services_by_google" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/play_services_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/play_services_terms" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

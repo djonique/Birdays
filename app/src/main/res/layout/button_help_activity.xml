@@ -6,8 +6,4 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/button_help_settings"
-    style="@style/HelpButtonStyle"
-    android:background="@color/button_background_v16"
-    android:textColor="@color/button_text_v16" />
+<com.google.android.material.button.MaterialButton style="@style/ButtonStyle" />

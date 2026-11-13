@@ -7,7 +7,7 @@
 -->
 
 <resources>
-    <string name="build_version">Δημιουργία έκδοσης</string>
+    <string name="build_version">Έκδοση build</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">Φόρτωση επαφών…</string>
@@ -15,14 +15,15 @@
     <string name="loading_contacts_error">Δεν είναι δυνατή η εισαγωγή επαφών, μη τυπική μορφή ημερομηνίας</string>
     <string name="permission_required">Απαιτείται άδεια για την εισαγωγή επαφών</string>
     <string name="snackbar_allow_text">Επιτρέπω</string>
-    <string name="all">Ολα</string>
-    <string name="famous">Περίφημος</string>
+    <string name="all">Όλα</string>
+    <string name="famous">Διάσημοι</string>
     <string name="age">Τρέχουσα ηλικία:\u0020</string>
     <string name="happy_birthday">Χαρούμενα γενέθλια!</string>
     <string name="web_search_error">Δεν είναι δυνατή η εκτέλεση ενέργειας, εγκαταστήστε το πρόγραμμα περιήγησης ιστού</string>
-    <string name="delete_record_text">Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την εγγραφή:\u0020</string>
+    <string name="delete_record_confirm">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1$s;</string>
     <string name="record_deleted">Η εγγραφή διαγράφηκε</string>
-    <string name="undo">Ξεκάνω</string>
+    <string name="undo">Αναίρεση</string>
+    <string name="add_record">Προσθήκη εγγραφής</string>
 
     <string-array name="months">
         <item>Ιανουάριος</item>
@@ -40,22 +41,20 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_sync">Συγχρονισμός</string>
     <string name="action_settings">Ρυθμίσεις</string>
-    <string name="action_delete">Διαγράφω</string>
+    <string name="action_delete">Διαγραφή</string>
 
-    <!-- NewPersonDialogFragment -->
-    <string name="new_record">Νέο ρεκόρ</string>
+    <!-- NewPersonActivity -->
+    <string name="new_record">Νέα εγγραφή</string>
     <string name="add_from_contacts">Προσθήκη από τις επαφές</string>
     <string name="open_contacts_error">Δεν είναι δυνατή η εκτέλεση ενέργειας λόγω των λειτουργιών της συσκευής</string>
-    <string name="name">Ονομα</string>
+    <string name="name">Όνομα</string>
     <string name="error_hint">Εισαγάγετε το όνομα</string>
     <string name="phone_number">Τηλεφωνικό νούμερο</string>
     <string name="pick_date">Επιλέξτε ημερομηνία</string>
     <string name="wrong_date">Λάθος ημερομηνία</string>
     <string name="year_unknown">Δεν ξέρω το χρόνο</string>
-    <string name="cancel_button">Ματαίωση</string>
-    <string name="record_added">Η εγγραφή προστέθηκε</string>
+    <string name="cancel_button">Άκυρο</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Γενέθλια</string>
@@ -71,10 +70,11 @@
 
     <!-- EditActivity -->
     <string name="editing_label">Επεξεργασία</string>
-    <string name="record_edited">Εγγραφή επεξεργασία</string>
+    <string name="record_edited">Η εγγραφή επεξεργάστηκε</string>
+    <string name="edit_record">Επεξεργασία εγγραφής</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException, οι συσκευές Samsung περιορίζουν τον αριθμό των συναγερμών που μπορείτε να καταχωρίσετε</string>
+    <string name="security_exception">SecurityException: Οι συσκευές Samsung περιορίζουν τον αριθμό των ειδοποιήσεων σε 500</string>
     <string name="channel_name">Γενέθλια</string>
 
     <!-- Zodiac signs -->
@@ -84,7 +84,7 @@
     <string name="cancer">Καρκίνος</string>
     <string name="leo">Λέων</string>
     <string name="virgo">Παρθένος</string>
-    <string name="libra">Ζυγοσ</string>
+    <string name="libra">Ζυγός</string>
     <string name="scorpio">Σκορπιός</string>
     <string name="sagittarius">Τοξότης</string>
     <string name="capricorn">Αιγόκερως</string>
@@ -92,10 +92,11 @@
     <string name="pisces">Ιχθύες</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Η βελτιστοποίηση είναι ενεργοποιημένη!</string>
-    <string name="optimization_description">\nΞεκινώντας από την έκδοση 6.0, το Android εισήγαγε τη λειτουργία εξοικονόμησης ενέργειας Doze που διαχειρίζεται τη συμπεριφορά των εφαρμογών αναβάλλοντας το CPU του παρασκηνίου.\n\nΓια να καταστήσει την εφαρμογή των εφαρμογών να απενεργοποιεί σωστά τη βελτιστοποίηση για τα Birdays.</string>
+    <string name="optimization_enabled">Απενεργοποιήστε τη βελτιστοποίηση μπαταρίας για την εφαρμογή</string>
+    <string name="optimization_description">Για να διασφαλίσετε τη σωστή λειτουργία της εφαρμογής, ανοίξτε τις Ρυθμίσεις και επιτρέψτε στην εφαρμογή να εκτελείται στο παρασκήνιο χωρίς περιορισμούς</string>
     <string name="do_not_show_again">Να μην εμφανιστεί ξανά</string>
-    <string name="disable_button">Καθιστώ ανίκανο</string>
+    <string name="disable_button">Απενεργοποίηση</string>
+
     <!-- Notifications -->
     <string name="notifications">Ειδοποιήσεις</string>
     <string name="allow_notification">Αφήστε την εφαρμογή να στείλει ειδοποιήσεις για τα επερχόμενα γενέθλια</string>
@@ -104,11 +105,11 @@
 
     <string-array name="additional_notification_entries">
         <item>Ποτέ</item>
-        <item>Mία ηέρα πριν</item>
-        <item>Δύο μέρες πριν</item>
-        <item>Τρεις ημέρες πριν</item>
-        <item>Mία εβδομάδα πριν</item>
-        <item>Δύο εβδομάδες πριν</item>
+        <item>1 ημέρα πριν</item>
+        <item>2 ημέρες πριν</item>
+        <item>3 ημέρες πριν</item>
+        <item>1 εβδομάδα πριν</item>
+        <item>2 εβδομάδες πριν</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
@@ -122,22 +123,10 @@
 
     <string name="notification_tone">Ήχος ειδοποίησης</string>
     <string name="ringtone_summary">Επιλέξτε έναν ήχο για ειδοποίηση. Από προεπιλογή χρησιμοποιείται ο τόνος από τις ρυθμίσεις της συσκευής</string>
-    <string name="silent">Κανένας</string>
+    <string name="silent">Καμία</string>
     <string name="help">Βοήθεια</string>
-    <string name="tap_here">Αγγίξτε εδώ αν δεν λαμβάνετε ειδοποιήσεις</string>
-    <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Συγχρονισμός και δημιουργία αντιγράφων ασφαλείας</string>
-    <string name="contacts_import_title">Εισαγωγή επαφών</string>
-    <string name="contacts_import_summary">Αγγίξτε εδώ για να εισαγάγετε επαφές από τη συσκευή σας (υποστηρίζει ISO 8601)</string>
-    <string name="export_records">Εξαγωγή αρχείων (Beta)</string>
-    <string name="export_records_summary">Δημιουργήστε το αρχείο XML με αντίγραφο ασφαλείας</string>
-    <string name="ext_storage_error">Η εξωτερική αποθήκευση δεν είναι διαθέσιμη</string>
-    <string name="exporting_records">Εξαγωγή εγγραφών…</string>
-    <string name="backup_finished">Η δημιουργία αντιγράφων ασφαλείας ολοκληρώθηκε, αρχείο XML στο αρχείο\u0020</string>
-    <string name="recover_records">Ανάκτηση αρχείων (Beta)</string>
-    <string name="recover_records_summary">Επιλέξτε το αρχείο XML με αντίγραφο ασφαλείας</string>
-    <string name="recover_records_error">Δεν είναι δυνατή η εκτέλεση ενέργειας, εγκαταστήστε το αρχείο διαχείρισης</string>
-    <string name="records_recovered">Τα αρχεία ανακτήθηκαν</string>
+    <string name="tap_here">Πατήστε εδώ αν δεν λαμβάνετε ειδοποιήσεις</string>
+
     <!-- General -->
     <string name="general">Γενικός</string>
     <string name="night_mode">Νυχτερινή λειτουργία</string>
@@ -145,52 +134,69 @@
 
     <string-array name="start_page_entries">
         <item>Τρέχων μήνας</item>
-        <item>Ολα</item>
-        <item>Περίφημος</item>
+        <item>Όλα</item>
+        <item>Διάσημοι</item>
     </string-array>
 
     <string name="displayed_age">Εμφανισμένη ηλικία</string>
 
     <string-array name="displayed_age_entries">
-        <item>Ρεύμα</item>
-        <item>Μελλοντικός</item>
+        <item>Τρέχουσα</item>
+        <item>Μελλοντική</item>
     </string-array>
 
-    <string name="displayed_age_changes">Πρέπει να κάνετε επανεκκίνηση μιας εφαρμογής για να εφαρμοστούν αυτές οι αλλαγές</string>
+    <string name="displayed_age_changes">Πρέπει να κάνετε επανεκκίνηση της εφαρμογής για να εφαρμοστούν αυτές οι αλλαγές</string>
     <string name="restart_now">Επανεκκίνηση τώρα</string>
     <string name="later">Αργότερα</string>
-    <string name="rate_app">Βαθμολόγησε την εφαρμογη</string>
-    <string name="share_app">Μερίδιο</string>
-    <string name="share_text">Ξεχάστε να συγχαρείτε τους συγγενείς, τους φίλους ή τους συναδέλφους σας για τα γενέθλιά τους; Τα Birdays θα σας υπενθυμίσουν μια σημαντική γιορτή!\n\n</string>
+    <string name="rate_app">Βαθμολόγησε την εφαρμογή</string>
+    <string name="share_app">Κοινοποίηση εφαρμογής</string>
+    <string name="share_text">"Συχνά ξεχνάτε να συγχαρείτε την οικογένεια, τους φίλους ή τους συναδέλφους σας για τα γενέθλιά τους; Το Birdays θα σας υπενθυμίσει μια σημαντική ημερομηνία!  "</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">Συγχρονισμός και δημιουργία αντιγράφων ασφαλείας</string>
+    <string name="contacts_import_title">Εισαγωγή επαφών</string>
+    <string name="contacts_import_summary">Πατήστε εδώ για να εισαγάγετε επαφές από τη συσκευή σας (υποστηρίζει ISO 8601)</string>
+    <string name="google_drive_backup">Δημιουργία αντιγράφου ασφαλείας στο Google Drive</string>
+    <string name="google_drive_backup_summary">Μεταφόρτωση αντιγράφου ασφαλείας βάσης δεδομένων στο Google Drive</string>
+    <string name="google_drive_backup_progress">Δημιουργία αντιγράφου ασφαλείας στο Google Drive…</string>
+    <string name="backup_complete">Η δημιουργία αντιγράφων ασφαλείας ολοκληρώθηκε</string>
+    <string name="google_drive_restore">Επαναφορά από Google Drive</string>
+    <string name="google_drive_restore_summary">Επαναφορά βάσης δεδομένων από το Google Drive</string>
+    <string name="google_drive_restore_progress">Επαναφορά από το Google Drive…</string>
+    <string name="recover_records_error">Αποτυχία ανάκτησης εγγραφών</string>
+    <string name="records_recovered">Οι εγγραφές ανακτήθηκαν</string>
+
     <!-- Advertising -->
     <string name="advertising">Διαφήμιση</string>
     <string name="about_ad_title">Γιατί βλέπω διαφημίσεις;</string>
-    <string name="about_ad_summary">Τα έσοδα από τη διαφήμιση προορίζονται για την ανάπτυξη του έργου και για τη μετάφραση σε άλλες γλώσσες. Μπορείτε να καταργήσετε δωρεάν τις διαφημίσεις</string>
-    <string name="ad_interstitial_title">Διαμεσολαβητική διαφήμιση</string>
-    <string name="ad_interstitial_summary">Αυτός ο τύπος διαφήμισης περιορίζεται σε 1 προβολή την ημέρα. Όχι τόσο συχνά, έτσι δεν είναι;</string>
-    <string name="ad_banner">Πανό</string>
-    <!-- About app -->
-    <string name="about_app">Σχετικά με την εφαρμογή</string>
+    <string name="about_ad_summary">Όλα τα έσοδα από τη διαφήμιση διατίθενται για την ανάπτυξη του έργου</string>
+    <string name="show_ads">Εμφάνιση διαφημίσεων</string>
+    <string name="show_ads_summary">Μπορείτε να απενεργοποιήσετε τις διαφημίσεις παρακολουθώντας μια σύντομη διαφήμιση βίντεο</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">Υποστηρίξτε το έργο</string>
+    <string name="watch_video_title">Παρακολουθήστε μια διαφήμιση βίντεο</string>
+    <string name="ad_rewarded_summary">Παρακολουθήστε ένα σύντομο βίντεο — τα έσοδα διατίθενται για την ανάπτυξη της εφαρμογής</string>
+    <string name="ad_rewarded_unavailable">Το βίντεο δεν είναι διαθέσιμο αυτή τη στιγμή, δοκιμάστε ξανά αργότερα</string>
+    <string name="ad_disabled_success">Οι διαφημίσεις είναι πλέον απενεργοποιημένες</string>
+    <string name="ad_watch_full_video_to_disable">Παρακολουθήστε το βίντεο μέχρι το τέλος για να απενεργοποιήσετε τις διαφημίσεις</string>
+    <string name="donate_title">Κάντε μια συνεισφορά</string>
+    <string name="donate_summary">Οικονομική υποστήριξη για την ανάπτυξη της εφαρμογής</string>
+
+    <!-- About -->
+    <string name="about">Σχετικά με την εφαρμογή</string>
+    <string name="licenses">Άδειες</string>
+    <string name="software_licenses">Άδειες ανοιχτού κώδικα</string>
+    <string name="third_party_sdks">SDK τρίτων</string>
     <string name="menu_github">Κωδικός πηγής</string>
     <string name="privacy_policy">Πολιτική απορρήτου</string>
-    <string name="software_licenses">Άδειες χρήσης δωρεάν λογισμικού</string>
-    <string name="licenses">Άδειες</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Γιατί ο συναγερμός δεν λειτουργεί;</string>
-    <string name="help_description">Ορισμένες συσκευές διαθέτουν λειτουργία εξοικονόμησης ενέργειας, η οποία μπορεί να αποκλείσει τις διεργασίες παρασκηνίου της εφαρμογής ή να απενεργοποιήσει την εκκίνηση της εφαρμογής κατά την εκκίνηση.\nΓια να πραγματοποιήσετε σωστή λειτουργία συναγερμών, ακολουθήστε μερικά απλά βήματα παρακάτω:\n\n1. Βεβαιωθείτε ότι οι ειδοποιήσεις είναι ενεργοποιημένες για την εφαρμογή Birdays (Ρυθμίσεις > Eφαρμογές > Birdays).\n\n2. Εάν έχετε εγκαταστήσει διαχειριστές εργασιών, προγράμματα αποτροπής εργασιών ή βελτιστοποιητές RAM (π.χ. «Battery Saver», «Clean Master»), οι οποίοι θα μπορούσαν να μπλοκάρουν τις διαδικασίες του παρασκηνίου εφαρμογών, προσθέστε τους Birdays στο whitelist τους.\n\n3. Κλείστε τη λειτουργία εξοικονόμησης ενέργειας ή προσθέστε Birdays το λευκό στοιχείο (Ρυθμίσεις > Mπαταρία > Βελτιστοποίηση μπαταρίας).\nΜόνο για συσκευές με Android 6.0 (Marshmallow) ή νυψηλότερες.</string>
-    <string name="help_whitelist">Άνοιγμα της λευκής λίστας</string>
-    <string name="help_whitelist_error">Μόνο για συσκευές με Android 6.0 (Marshmallow) ή νυψηλότερες</string>
-    <string name="help_delay_text">Λάβετε υπόψη ότι σε ορισμένες συσκευές οι ειδοποιήσεις θα μπορούσαν να λειτουργήσουν με κάποια καθυστέρηση.</string>
+    <string name="help_header">Γιατί δεν λειτουργεί η υπενθύμιση;</string>
+    <string name="help_description">Οι συσκευές Android διαθέτουν λειτουργία εξοικονόμησης ενέργειας που εμποδίζει την εφαρμογή να εκτελείται στο παρασκήνιο ή την εμποδίζει να ξεκινά αυτόματα. Για να λειτουργούν σωστά οι ειδοποιήσεις, ακολουθήστε αυτά τα απλά βήματα:\n\n1. Βεβαιωθείτε ότι επιτρέπονται οι ειδοποιήσεις για την εφαρμογή Birdays (Ρυθμίσεις > Εφαρμογές > Birdays).\n\n2. Εάν έχετε εγκαταστήσει διαχειριστές εργασιών, εφαρμογές καθαρισμού μνήμης ή εξοικονόμησης ενέργειας (όπως «Battery Saver», «Clean Master» και παρόμοιες εφαρμογές) που εμποδίζουν τη λειτουργία στο παρασκήνιο, προσθέστε το Birdays στις εξαιρέσεις.\n\n3. Απενεργοποιήστε τη λειτουργία εξοικονόμησης ενέργειας για το Birdays (Ρυθμίσεις > Μπαταρία > Βελτιστοποίηση μπαταρίας).</string>
     <string name="help_settings">Ανοίξτε τις ρυθμίσεις</string>
-    <string name="huawei_header">Για τους ιδιοκτήτες της Huawei</string>
-    <string name="huawei_description">Ανοίξτε τη συσκευή «Ρυθμίσεις», μεταβείτε στην επιλογή «Εξοικονόμηση ενέργειας» και ανοίξτε «Προστατευμένες εφαρμογές». Βεβαιωθείτε ότι αυτή η λειτουργία είναι ενεργοποιημένη για τα Birdays.</string>
-    <string name="samsung_header">Για τους ιδιοκτήτες της Samsung</string>
-    <string name="samsung_description">Ανοίξτε το «Smart Manager», πιέστε «Μπαταρία», στη συνέχεια «Λεπτομέ». Απενεργοποιήστε αυτήν τη λειτουργία για την εφαρμογή Birdays.</string>
-    <string name="xiaomi_header">Για τους ιδιοκτήτες της Xiaomi</string>
-    <string name="xiaomi_description">Ανοίξτε τη συσκευή «Ρυθμίσεις», μεταβείτε στο «Μπαταρία &amp; απόδοση», στη συνέχεια «Διαχείριση της χρήσης της μπαταρίας των εφαρμογών», ανοίξτε «Επιλογή εφαρμογών», επιλέξτε «Δεν υπάρχουν περιορισμοί» για τα Birdays.</string>
-    <string name="show_button">Προβολή</string>
-    <string name="help_email_description">Εάν ο συναγερμός εξακολουθεί να μην λειτουργεί, επικοινωνήστε μαζί μου στο birdaysapp@gmail.com</string>
+    <string name="help_delay_text">Λάβετε υπόψη ότι σε ορισμένες συσκευές οι ειδοποιήσεις ενδέχεται να καθυστερήσουν.</string>
+    <string name="help_email_description">Εάν έχετε οποιεσδήποτε ερωτήσεις ή προτάσεις, επικοινωνήστε μαζί μου στο birdaysapp@gmail.com</string>
     <string name="send_email">Να στείλετε email</string>
 
     <!-- Famous persons -->
@@ -599,7 +605,7 @@
     <string name="klenze">Leo von Klenze</string>
     <string name="rossini">Gioachino Rossini</string>
     <string name="john_holland">John Philip Holland</string>
-    <string name="рollerith">Herman Hollerith</string>
+    <string name="hollerith">Herman Hollerith</string>
     <string name="papert">Seymour Papert</string>
     <!-- 1 march -->
     <string name="botticelli">Sandro Botticelli</string>
@@ -1312,7 +1318,7 @@
     <string name="cagliostro">Alessandro Cagliostro</string>
     <string name="akimov">Ivan Akimov</string>
     <string name="hardy">Thomas Hardy</string>
-    <string name="weissmüller">Johnny Weissmuller</string>
+    <string name="weissmuller">Johnny Weissmuller</string>
     <string name="quinto">Zachary Quinto</string>
     <!-- 3 june -->
     <string name="hutton">James Hutton</string>

@@ -22,33 +22,28 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.preference.PreferenceManager;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.djonique.birdays.R;
-import com.djonique.birdays.ad.Ad;
 import com.djonique.birdays.adapters.PagerAdapter;
 import com.djonique.birdays.database.DbHelper;
-import com.djonique.birdays.dialogs.NewPersonDialogFragment;
 import com.djonique.birdays.fragments.AllFragment;
-import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.BirdaysApplication;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.ContactsHelper;
 import com.djonique.birdays.utils.PermissionManager;
+import com.djonique.birdays.utils.ReviewHelper;
 import com.djonique.birdays.utils.Utils;
-import com.yandex.mobile.ads.banner.BannerAdView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity implements
-        NewPersonDialogFragment.AddingPersonListener,
         AllFragment.DeletingPersonListener,
         ContactsHelper.LoadingContactsListener {
-
-    private static final String NEW_PERSON_DIALOG_TAG = "NEW_PERSON_DIALOG_TAG";
 
     public DbHelper dbHelper;
 
@@ -57,13 +52,13 @@ public class MainActivity extends AppCompatActivity implements
     private Toolbar toolbar;
     private SearchView searchView;
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private ViewPager2 viewPager;
     private FloatingActionButton fab;
-    private BannerAdView adView;
 
     private SharedPreferences preferences;
     private PagerAdapter pagerAdapter;
     private boolean notificationsPermissionRequested;
+    private boolean contactsPermissionRequestPending;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,25 +73,35 @@ public class MainActivity extends AppCompatActivity implements
         tabLayout = findViewById(R.id.tablayout_main);
         viewPager = findViewById(R.id.viewpager_main);
         fab = findViewById(R.id.fab_main);
-        adView = findViewById(R.id.banner_main);
+
+        Utils.applySystemBarsInsets(container, appBarLayout, fab, findViewById(R.id.container_pager));
+        ReviewHelper.trackLaunch(this);
 
         FirebaseAnalytics.getInstance(this);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean adEnabled = preferences.getBoolean(getString(R.string.show_ads_key), true);
+        if (adEnabled) {
+            com.djonique.birdays.ad.NativeAdCache.getInstance().preload(this);
+        }
 
         Utils.setupDayNightTheme(preferences);
 
         dbHelper = new DbHelper(this);
 
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), this);
+        pagerAdapter = new PagerAdapter(this);
 
         setSupportActionBar(toolbar);
 
         viewPager.setAdapter(pagerAdapter);
         viewPager.setOffscreenPageLimit(2);
-        tabLayout.setupWithViewPager(viewPager);
+        new TabLayoutMediator(tabLayout, viewPager,
+                (tab, position) -> tab.setText(pagerAdapter.getPageTitle(position))).attach();
 
         if (!preferences.getBoolean(Constants.CONTACTS_UPLOADED, false)) {
+            if (!PermissionManager.readingContactsPermissionGranted(this)) {
+                contactsPermissionRequestPending = true;
+            }
             new ContactsHelper(this, getContentResolver()).loadContacts(preferences);
         }
 
@@ -113,35 +118,53 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 MainActivity.this.onPageSelected(position);
             }
         });
 
-        fab.setOnClickListener(v -> showDialog());
+        fab.setOnClickListener(v -> startNewPersonActivity());
 
-        if (preferences.getBoolean(getString(R.string.ad_banner_key), true)) {
-            Ad.showBannerAd(container, adView, fab);
+        // Start page: only on a fresh launch. After a recreation (e.g. a theme change) the pager
+        // restores the page it was showing, and overriding it here would leave the tab bar
+        // pointing at a different page than the content.
+        if (savedInstanceState == null) {
+            viewPager.setCurrentItem(
+                    Integer.parseInt(preferences.getString(Constants.START_PAGE, "1")), false);
         }
-
-        // Start page
-        viewPager.setCurrentItem(Integer.parseInt(preferences.getString(Constants.START_PAGE, "1")));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         BirdaysApplication.activityResumed();
+        syncSelectedPage();
+        // The pager may apply its restored page on the next layout pass.
+        viewPager.post(this::syncSelectedPage);
         requestNotificationsPermissionIfNeeded();
+    }
+
+    /**
+     * After the activity is recreated the pager restores its page itself, while the tab bar may
+     * have restored an older selection. The pager is the source of truth, so the tab bar and the
+     * page-dependent UI are aligned with it every time the screen comes back.
+     */
+    private void syncSelectedPage() {
+        int position = viewPager.getCurrentItem();
+        TabLayout.Tab tab = tabLayout.getTabAt(position);
+        if (tab != null && !tab.isSelected()) {
+            tab.select();
+        }
+        updatePageUi(position);
     }
 
     private void requestNotificationsPermissionIfNeeded() {
         if (notificationsPermissionRequested
+                || contactsPermissionRequestPending
                 || !preferences.getBoolean(getString(R.string.notifications_key), true)
-                || PermissionManager.notificationsPermissionGranted(this)
-                || !preferences.getBoolean(Constants.CONTACTS_UPLOADED, false)) {
+                || !PermissionManager.canRequestNotificationsPermission(this)) {
             return;
         }
         notificationsPermissionRequested = true;
@@ -161,12 +184,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    protected void onDestroy() {
-        if (adView != null) adView.destroy();
-        super.onDestroy();
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -182,17 +199,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onPersonAdded(Person person) {
-        pagerAdapter.addPerson(person);
-        Utils.notifyWidget(this);
-        Snackbar.make(findViewById(R.id.container_main), R.string.record_added, Snackbar.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onPersonAddedCancel() {
-    }
-
-    @Override
     public void onPersonDeleted(long timeStamp) {
         pagerAdapter.deletePerson(timeStamp);
         Utils.notifyWidget(this);
@@ -200,6 +206,10 @@ public class MainActivity extends AppCompatActivity implements
 
     private void onPageSelected(int position) {
         appBarLayout.setExpanded(true, true);
+        updatePageUi(position);
+    }
+
+    private void updatePageUi(int position) {
         if (position == PagerAdapter.FAMOUS_FRAGMENT_POSITION) {
             fab.hide();
             searchView.setVisibility(View.GONE);
@@ -209,16 +219,18 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-    private void showDialog() {
-        NewPersonDialogFragment newPersonDialogFragment = new NewPersonDialogFragment();
-        newPersonDialogFragment.show(getSupportFragmentManager(), NEW_PERSON_DIALOG_TAG);
+    private void startNewPersonActivity() {
+        startActivity(new Intent(this, NewPersonActivity.class));
+        Utils.overrideOpenTransition(this, R.anim.activity_secondary_in, R.anim.activity_primary_out);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE) {
+            contactsPermissionRequestPending = false;
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
@@ -230,6 +242,9 @@ public class MainActivity extends AppCompatActivity implements
                         .setAction(R.string.snackbar_allow_text, v -> openApplicationSettings())
                         .show();
             }
+            // Ask for notifications only after the contacts prompt is dismissed,
+            // so the user does not get two permission dialogs at the same time
+            container.post(this::requestNotificationsPermissionIfNeeded);
         }
     }
 
@@ -243,6 +258,14 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onContactsUploaded() {
-        if (viewPager.getAdapter() != null) viewPager.getAdapter().notifyDataSetChanged();
+        pagerAdapter.addPersonsFromDb();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (dbHelper != null) {
+            dbHelper.close();
+        }
+        super.onDestroy();
     }
 }

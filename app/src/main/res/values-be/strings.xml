@@ -7,191 +7,197 @@
 -->
 
 <resources>
-    <string name="build_version">Версия сборки</string>
+    <string name="build_version">Версія зборкі</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">Загрузка контактов…</string>
-    <string name="contacts_uploaded">Контакты загружены</string>
-    <string name="loading_contacts_error">Невозможно импортировать контакты, нестандартный формат даты</string>
-    <string name="permission_required">Разрешение необходимо для загрузки из справочника контактов</string>
-    <string name="snackbar_allow_text">Разрешить</string>
-    <string name="all">Все</string>
-    <string name="famous">Известные</string>
-    <string name="age">Возраст:\u0020</string>
-    <string name="happy_birthday">С Днем Рождения!</string>
-    <string name="web_search_error">Не удалось выполнить действие, пожалуйста, установите веб-браузер</string>
-    <string name="delete_record_text">Вы действительно хотите удалить эту запись:\u0020</string>
-    <string name="record_deleted">Запись удалена</string>
-    <string name="undo">Отмена</string>
+    <string name="loading_contacts">Загрузка кантактаў…</string>
+    <string name="contacts_uploaded">Кантакты загружаны</string>
+    <string name="loading_contacts_error">Немагчыма імпартаваць кантакты, нестандартны фармат даты</string>
+    <string name="permission_required">Патрабуецца дазвол для імпарту кантактаў</string>
+    <string name="snackbar_allow_text">Дазволіць</string>
+    <string name="all">Усе</string>
+    <string name="famous">Знакамітыя</string>
+    <string name="age">Узрост:\u0020</string>
+    <string name="happy_birthday">З днём нараджэння!</string>
+    <string name="web_search_error">Не ўдалося выканаць дзеянне, усталюйце, калі ласка, вэб-браўзер</string>
+    <string name="delete_record_confirm">Вы ўпэўненыя, што хочаце выдаліць %1$s?</string>
+    <string name="record_deleted">Запіс выдалены</string>
+    <string name="undo">Адмяніць</string>
+    <string name="add_record">Дадаць запіс</string>
 
     <string-array name="months">
-        <item>Январь</item>
-        <item>Февраль</item>
-        <item>Март</item>
-        <item>Апрель</item>
-        <item>Май</item>
-        <item>Июнь</item>
-        <item>Июль</item>
-        <item>Август</item>
-        <item>Сентябрь</item>
-        <item>Октябрь</item>
-        <item>Ноябрь</item>
-        <item>Декабрь</item>
+        <item>Студзень</item>
+        <item>Люты</item>
+        <item>Сакавік</item>
+        <item>Красавік</item>
+        <item>Травень</item>
+        <item>Чэрвень</item>
+        <item>Ліпень</item>
+        <item>Жнівень</item>
+        <item>Верасень</item>
+        <item>Кастрычнік</item>
+        <item>Лістапад</item>
+        <item>Снежань</item>
     </string-array>
 
     <!-- Menu -->
-    <string name="action_sync">Синхронизация</string>
-    <string name="action_settings">Настройки</string>
-    <string name="action_delete">Удалить</string>
+    <string name="action_settings">Налады</string>
+    <string name="action_delete">Выдаліць</string>
 
-    <!-- NewPersonDialogFragment -->
-    <string name="new_record">Новая запись</string>
-    <string name="add_from_contacts">Добавить из контактов</string>
-    <string name="open_contacts_error">Это действие выполнить невозможно из-за особенностей устройства</string>
-    <string name="name">Имя</string>
-    <string name="error_hint">Пожалуйста, введите имя</string>
-    <string name="phone_number">Номер телефона</string>
-    <string name="pick_date">Выберите дату</string>
-    <string name="wrong_date">Неверная дата</string>
-    <string name="year_unknown">Я не знаю год рождения</string>
-    <string name="cancel_button">Отмена</string>
-    <string name="record_added">Запись добавлена</string>
+    <!-- NewPersonActivity -->
+    <string name="new_record">Новы запіс</string>
+    <string name="add_from_contacts">Дадаць з кантактаў</string>
+    <string name="open_contacts_error">Не ўдалося выканаць дзеянне з-за асаблівасцей прылады</string>
+    <string name="name">Імя</string>
+    <string name="error_hint">Калі ласка, увядзіце імя</string>
+    <string name="phone_number">Нумар тэлефона</string>
+    <string name="pick_date">Выберыце дату</string>
+    <string name="wrong_date">Няправільная дата</string>
+    <string name="year_unknown">Я не ведаю год нараджэння</string>
+    <string name="cancel_button">Адмена</string>
 
     <!-- DetailActivity -->
-    <string name="birthday">День рождения</string>
-    <string name="days_left">Дней осталось</string>
-    <string name="today">Сегодня</string>
-    <string name="days_since_birth">Дней с момента рождения</string>
-    <string name="zodiac_sign">Знак зодиака</string>
-    <string name="season_picture">Сезонное изображение</string>
-    <string name="calendar">Календарь</string>
-    <string name="call">Позвонить</string>
-    <string name="chat">Написать</string>
-    <string name="born_on_this_day">В этот день родились</string>
+    <string name="birthday">Дзень нараджэння</string>
+    <string name="days_left">Дзён да наступнага дня нараджэння</string>
+    <string name="today">Сёння</string>
+    <string name="days_since_birth">Дзён з дня нараджэння</string>
+    <string name="zodiac_sign">Знак задыяку</string>
+    <string name="season_picture">Выява сезона</string>
+    <string name="calendar">Каляндар</string>
+    <string name="call">Пазваніць</string>
+    <string name="chat">Напісаць</string>
+    <string name="born_on_this_day">Нарадзіліся ў гэты дзень</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">Редактирование</string>
-    <string name="record_edited">Запись отредактирована</string>
+    <string name="editing_label">Рэдагаванне</string>
+    <string name="record_edited">Запіс адрэдагаваны</string>
+    <string name="edit_record">Рэдагаваць запіс</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException, на устройствах Samsung установлено ограничение в 500 отложенных уведомлений</string>
-    <string name="channel_name">Дни рождения</string>
+    <string name="security_exception">SecurityException: на прыладах Samsung колькасць апавяшчэнняў абмежавана 500</string>
+    <string name="channel_name">Дні нараджэння</string>
 
     <!-- Zodiac signs -->
-    <string name="aries">Овен</string>
-    <string name="taurus">Телец</string>
-    <string name="gemini">Близнецы</string>
+    <string name="aries">Авен</string>
+    <string name="taurus">Цялец</string>
+    <string name="gemini">Блізняты</string>
     <string name="cancer">Рак</string>
-    <string name="leo">Лев</string>
-    <string name="virgo">Дева</string>
-    <string name="libra">Весы</string>
-    <string name="scorpio">Скорпион</string>
-    <string name="sagittarius">Стрелец</string>
-    <string name="capricorn">Козерог</string>
-    <string name="aquarius">Водолей</string>
+    <string name="leo">Леў</string>
+    <string name="virgo">Дзева</string>
+    <string name="libra">Шалі</string>
+    <string name="scorpio">Скарпіён</string>
+    <string name="sagittarius">Стралец</string>
+    <string name="capricorn">Казярог</string>
+    <string name="aquarius">Вадаліў</string>
     <string name="pisces">Рыбы</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Включена оптимизация!</string>
-    <string name="optimization_description">\nНачиная с версии 6.0, Android ввел режим энергосбережения Doze, который управляет поведением приложений, ограничивая фоновые процессы.\n\nЧтобы приложение работало корректно, выключите оптимизацию для Birdays.</string>
-    <string name="do_not_show_again">Больше не показывать</string>
-    <string name="disable_button">Выключить</string>
+    <string name="optimization_enabled">Адключыць аптымізацыю батарэі для прыкладання</string>
+    <string name="optimization_description">Каб прыкладанне працавала карэктна, адкрыйце Налады і дазвольце праграме працаваць у фоне без абмежаванняў</string>
+    <string name="do_not_show_again">Больш не паказваць</string>
+    <string name="disable_button">Адключыць</string>
+
     <!-- Notifications -->
-    <string name="notifications">Уведомления</string>
-    <string name="allow_notification">Разрешить приложению присылать уведомления о предстоящих днях рождения</string>
-    <string name="notifications_time">Время уведомления</string>
-    <string name="additional_notification">Дополнительное уведомление</string>
+    <string name="notifications">Апавяшчэнні</string>
+    <string name="allow_notification">Дазволіць прыкладанню дасылаць апавяшчэнні пра блізкія дні нараджэння</string>
+    <string name="notifications_time">Час апавяшчэння</string>
+    <string name="additional_notification">Дадатковае апавяшчэнне</string>
 
     <string-array name="additional_notification_entries">
-        <item>Никогда</item>
-        <item>За 1 день</item>
-        <item>За 2 дня</item>
-        <item>За 3 дня</item>
-        <item>За неделю</item>
-        <item>За 2 недели</item>
+        <item>Ніколі</item>
+        <item>За 1 дзень</item>
+        <item>За 2 дні</item>
+        <item>За 3 дні</item>
+        <item>За тыдзень</item>
+        <item>За 2 тыдні</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
-        <item>Сегодня</item>
-        <item>Завтра</item>
-        <item>Послезавтра</item>
-        <item>Через 3 дня</item>
-        <item>Через неделю</item>
-        <item>Через 2 недели</item>
+        <item>Сёння</item>
+        <item>Заўтра</item>
+        <item>Праз 2 дні</item>
+        <item>Праз 3 дні</item>
+        <item>Праз тыдзень</item>
+        <item>Праз 2 тыдні</item>
     </string-array>
 
-    <string name="notification_tone">Звук уведомления</string>
-    <string name="ringtone_summary">Выберите звук уведомления. По умолчанию используется звук из настроек устройства</string>
-    <string name="silent">Без звука</string>
-    <string name="help">Помощь</string>
-    <string name="tap_here">Нажмите здесь, если Вам не приходят уведомления</string>
-    <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Синхронизация и резервное копирование</string>
-    <string name="contacts_import_title">Импортировать контакты</string>
-    <string name="contacts_import_summary">Нажмите, чтобы импортировать контакты из адресной книги (поддерживается ISO 8601)</string>
-    <string name="export_records">Экспортировать записи (Beta)</string>
-    <string name="export_records_summary">Создать XML-файл с резервной копией</string>
-    <string name="ext_storage_error">Внешнее хранилище недоступно</string>
-    <string name="exporting_records">Экспортирование…</string>
-    <string name="backup_finished">Резервное копирование завершено, XML-файл находится в\u0020</string>
-    <string name="recover_records">Восстановить записи (Beta)</string>
-    <string name="recover_records_summary">Выберите XML-файл с резервной копией</string>
-    <string name="recover_records_error">Невозможно выполнить действие, пожалуйста, установите диспетчер файлов</string>
-    <string name="records_recovered">Записи восстановлены</string>
+    <string name="notification_tone">Гук апавяшчэння</string>
+    <string name="ringtone_summary">Выберыце гук апавяшчэння. Па змаўчанні выкарыстоўваецца гук з налад прылады</string>
+    <string name="silent">Без гуку</string>
+    <string name="help">Дапамога</string>
+    <string name="tap_here">Націсніце тут, калі вы не атрымліваеце апавяшчэнні</string>
+
     <!-- General -->
-    <string name="general">Общие</string>
-    <string name="night_mode">Ночной режим</string>
-    <string name="start_page">Начальная страница</string>
+    <string name="general">Агульныя</string>
+    <string name="night_mode">Начны рэжым</string>
+    <string name="start_page">Пачатковая старонка</string>
 
     <string-array name="start_page_entries">
-        <item>Текущий месяц</item>
-        <item>Все</item>
-        <item>Известные</item>
+        <item>Бягучы месяц</item>
+        <item>Усе</item>
+        <item>Знакамітыя</item>
     </string-array>
 
-    <string name="displayed_age">Отображаемый возраст</string>
+    <string name="displayed_age">Узрост, які адлюстроўваецца</string>
 
     <string-array name="displayed_age_entries">
-        <item>Текущий</item>
-        <item>Будущий</item>
+        <item>Бягучы</item>
+        <item>Будучы</item>
     </string-array>
 
-    <string name="displayed_age_changes">Чтобы изменения вступили в силу, необходимо перезапустить приложение</string>
-    <string name="restart_now">Перезапустить сейчас</string>
-    <string name="later">Позже</string>
-    <string name="rate_app">Оцените приложение</string>
-    <string name="share_app">Расскажите о приложении</string>
-    <string name="share_text">Забываете поздравить родных, друзей или коллег с днем рождения? Birdays напомнит Вам о важном празднике!\n\n</string>
+    <string name="displayed_age_changes">Каб змены ўступілі ў сілу, трэба перазапусціць прыкладанне</string>
+    <string name="restart_now">Перазапусціць зараз</string>
+    <string name="later">Пазней</string>
+    <string name="rate_app">Ацаніць прыкладанне</string>
+    <string name="share_app">Падзяліцца прыкладаннем</string>
+    <string name="share_text">\"Вы часта забываеце павіншаваць сям\'ю, сяброў ці калег з днём нараджэння? Birdays нагадае вам пра важную дату!  \"</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">Сінхранізацыя і рэзервовае капіраванне</string>
+    <string name="contacts_import_title">Імпарт кантактаў</string>
+    <string name="contacts_import_summary">Націсніце, каб імпартаваць кантакты з адраснай кнігі (падтрымліваецца ISO 8601)</string>
+    <string name="google_drive_backup">Рэзервовая копія ў Google Drive</string>
+    <string name="google_drive_backup_summary">Загрузіць рэзервовую копію базы даных у Google Drive</string>
+    <string name="google_drive_backup_progress">Стварэнне рэзервовай копіі ў Google Drive…</string>
+    <string name="backup_complete">Рэзервовае капіраванне завершана</string>
+    <string name="google_drive_restore">Аднаўленне з Google Drive</string>
+    <string name="google_drive_restore_summary">Аднавіць базу даных з Google Drive</string>
+    <string name="google_drive_restore_progress">Аднаўленне з Google Drive…</string>
+    <string name="recover_records_error">Не ўдалося аднавіць запісы</string>
+    <string name="records_recovered">Запісы адноўлены</string>
+
     <!-- Advertising -->
-    <string name="advertising">Реклама</string>
-    <string name="about_ad_title">Почему я вижу рекламу?</string>
-    <string name="about_ad_summary">Весь доход от рекламы идет на развитие проекта и на перевод на другие языки. Вы можете отключить рекламу бесплатно</string>
-    <string name="ad_interstitial_title">Межстраничное объявление</string>
-    <string name="ad_interstitial_summary">Показ этого объявления ограничен одним разом в день. Не так часто, не правда ли?</string>
-    <string name="ad_banner">Баннер</string>
-    <!-- About app -->
-    <string name="about_app">О приложении</string>
-    <string name="menu_github">Исходный код</string>
-    <string name="privacy_policy">Политика конфиденциальности</string>
-    <string name="software_licenses">Лицензии открытого ПО</string>
-    <string name="licenses">Лицензии</string>
+    <string name="advertising">Рэклама</string>
+    <string name="about_ad_title">Чаму я бачу рэкламу?</string>
+    <string name="about_ad_summary">Увесь даход ад рэкламы ідзе на развіццё праекта</string>
+    <string name="show_ads">Паказваць рэкламу</string>
+    <string name="show_ads_summary">Вы можаце адключыць рэкламу, паглядзеўшы кароткі відэаролік</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">Падтрымаць праект</string>
+    <string name="watch_video_title">Паглядзець рэкламны відэаролік</string>
+    <string name="ad_rewarded_summary">Паглядзіце кароткі відэаролік — даход ідзе на развіццё прыкладання</string>
+    <string name="ad_rewarded_unavailable">Відэа зараз недаступна, паспрабуйце пазней</string>
+    <string name="ad_disabled_success">Рэклама адключана</string>
+    <string name="ad_watch_full_video_to_disable">Дагледзьце відэа да канца, каб адключыць рэкламу</string>
+    <string name="donate_title">Зрабіць унёсак</string>
+    <string name="donate_summary">Фінансавая падтрымка развіцця прыкладання</string>
+
+    <!-- About -->
+    <string name="about">Пра прыкладанне</string>
+    <string name="licenses">Ліцэнзіі</string>
+    <string name="software_licenses">Ліцэнзіі адкрытага ПЗ</string>
+    <string name="third_party_sdks">Староннія SDK</string>
+    <string name="menu_github">Зыходны код</string>
+    <string name="privacy_policy">Палітыка канфідэнцыяльнасці</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Почему мне не приходят уведомления?</string>
-    <string name="help_description">Некоторые устройства имеют режим сбережения энергии, который блокирует работу приложения в фоновом режиме или запрещает автозапуск.\nЧтобы уведомления работали корректно, выполните несколько простых действий:\n\n1. Убедитесь, что для приложения Birdays разрешены уведомления (Настройки > Приложения > Birdays).\n\n2. Если у Вас установлены менеджеры задач, приложения для очистки памяти или сбережения энергии («Battery Saver», «Clean Master» или др.), которые блокируют работу в фоновом режиме, добавьте приложение Birdays в их список защищенных приложений.\n\n3. Отключите режим энергосбережения или добавьте приложение в белый список. (Настройки > Батарея > Экономия заряда батареи).\nТолько для устройств, работающих на Android 6.0 (Marshmallow) или выше.</string>
-    <string name="help_whitelist">Открыть белый список</string>
-    <string name="help_whitelist_error">Только для устройств, работающих на Android 6.0 (Marshmallow) или выше</string>
-    <string name="help_delay_text">Обратите внимание, что на некоторых устройствах уведомления приходят с задержкой.</string>
-    <string name="help_settings">Открыть настройки</string>
-    <string name="huawei_header">Для владельцев Huawei</string>
-    <string name="huawei_description">Откройте настройки телефона, перейдите в «Энергосбережение», затем откройте вкладку «Защищенные приложения» и отметьте в списке Birdays.</string>
-    <string name="samsung_header">Для владельцев Samsung</string>
-    <string name="samsung_description">Найдите приложение «Smart Manager», нажмите на батарею, затем на «Подробно». Убедитесь, что для приложения Birdays отключено энергосбережение.</string>
-    <string name="xiaomi_header">Для владельцев Xiaomi</string>
-    <string name="xiaomi_description">Откройте настройки телефона, перейдите в «Батарея и производительность», затем «Экономия энергии», нажмите «Выбрать приложение», выберите «Нет ограничений» для Birdays.</string>
-    <string name="show_button">Показать</string>
-    <string name="help_email_description">Если уведомления по-прежнему не приходят, пожалуйста, напишите мне на почту birdaysapp@gmail.com</string>
-    <string name="send_email">Отправить письмо</string>
+    <string name="help_header">Чаму напамін не працуе?</string>
+    <string name="help_description">На прыладах Android ёсць рэжым эканоміі энергіі, які блакуе працу прыкладання ў фоне або перашкаджае яго аўтаматычнаму запуску. Каб апавяшчэнні працавалі карэктна, выканайце наступныя простыя крокі:\n\n1. Пераканайцеся, што для прыкладання Birdays дазволены апавяшчэнні (Налады &gt; Прыкладанні &gt; Birdays).\n\n2. Калі ў вас усталяваныя менеджары задач, праграмы для ачысткі памяці або эканоміі энергіі (напрыклад, «Battery Saver», «Clean Master» і падобныя), якія блакуюць фонавую працу, дадайце Birdays у выключэнні.\n\n3. Адключыце рэжым эканоміі энергіі для Birdays (Налады &gt; Батарэя &gt; Эканомія зарада батарэі).</string>
+    <string name="help_settings">Адкрыць налады</string>
+    <string name="help_delay_text">Майце на ўвазе, што на некаторых прыладах апавяшчэнні могуць прыходзіць з затрымкай.</string>
+    <string name="help_email_description">Калі ў вас ёсць пытанні ці прапановы, напішыце мне на birdaysapp@gmail.com</string>
+    <string name="send_email">Даслаць ліст</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->
@@ -599,7 +605,7 @@
     <string name="klenze">Лео фон Кленце</string>
     <string name="rossini">Джоаккино Россини</string>
     <string name="john_holland">Джон Филип Голланд</string>
-    <string name="рollerith">Герман Холлерит</string>
+    <string name="hollerith">Герман Холлерит</string>
     <string name="papert">Сеймур Пейперт</string>
     <!-- 1 march -->
     <string name="botticelli">Сандро Боттичелли</string>
@@ -1312,7 +1318,7 @@
     <string name="cagliostro">Алессандро Калиостро</string>
     <string name="akimov">Иван Акимов</string>
     <string name="hardy">Томас Харди</string>
-    <string name="weissmüller">Джонни Вайсмюллер</string>
+    <string name="weissmuller">Джонни Вайсмюллер</string>
     <string name="quinto">Закари Куинто</string>
     <!-- 3 june -->
     <string name="hutton">Джеймс Геттон</string>

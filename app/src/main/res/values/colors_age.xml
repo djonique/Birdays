@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017-2026 Evgenii Timofeev
+
+    SPDX-License-Identifier: Apache-2.0
+-->
+
+<!--
+    The age palette is decorative, not part of the Material color scheme:
+    the age badge cycles through these eight hues so that neighboring
+    birthdays look different. They are intentionally identical in both
+    themes.
+-->
+
+<resources>
+    <color name="age1">#F06292</color>
+    <color name="age2">#4A7BA7</color>
+    <color name="age3">#04B4B3</color>
+    <color name="age4">#009688</color>
+    <color name="age5">#F5A623</color>
+    <color name="age6">#FF7D50</color>
+    <color name="age7">#FC6644</color>
+    <color name="age8">#EF5350</color>
+</resources>

@@ -6,6 +6,10 @@
 
 package com.djonique.birdays.database;
 
+import static com.djonique.birdays.database.DbHelper.COLUMN_DATE;
+import static com.djonique.birdays.database.DbHelper.COLUMN_NAME;
+import static com.djonique.birdays.database.DbHelper.DB_FAMOUS;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,10 +17,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.djonique.birdays.R;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Utils;
-
-import static com.djonique.birdays.database.DbHelper.COLUMN_DATE;
-import static com.djonique.birdays.database.DbHelper.COLUMN_NAME;
-import static com.djonique.birdays.database.DbHelper.DB_FAMOUS;
 
 class DbFamous {
 
@@ -33,8 +33,9 @@ class DbFamous {
     }
 
     static void createFamousDb(Context context, SQLiteDatabase db) {
-
-        // 1 january
+        db.beginTransaction();
+        try {
+            // 1 january
         addFamous(db, new Person(context.getString(R.string.medici), -16440364800000L));
         addFamous(db, new Person(context.getString(R.string.giordano_bruno), -13316227200000L));
         addFamous(db, new Person(context.getString(R.string.frazer), -3660595200000L));
@@ -498,7 +499,7 @@ class DbFamous {
         addFamous(db, new Person(context.getString(R.string.klenze), -5864486400000L));
         addFamous(db, new Person(context.getString(R.string.rossini), -5612025600000L));
         addFamous(db, new Person(context.getString(R.string.john_holland), -4097347200000L));
-        addFamous(db, new Person(context.getString(R.string.рollerith), -3466195200000L));
+        addFamous(db, new Person(context.getString(R.string.hollerith), -3466195200000L));
         addFamous(db, new Person(context.getString(R.string.papert), -1320364800000L));
 
         // 1 march
@@ -1305,7 +1306,7 @@ class DbFamous {
         addFamous(db, new Person(context.getString(R.string.cagliostro), -7150291200000L));
         addFamous(db, new Person(context.getString(R.string.akimov), -6771600000000L));
         addFamous(db, new Person(context.getString(R.string.hardy), -4089225600000L));
-        addFamous(db, new Person(context.getString(R.string.weissmüller), -2069625600000L));
+        addFamous(db, new Person(context.getString(R.string.weissmuller), -2069625600000L));
         addFamous(db, new Person(context.getString(R.string.quinto), 234057600000L));
 
         // 3 june
@@ -3066,5 +3067,9 @@ class DbFamous {
         addFamous(db, new Person(context.getString(R.string.willis), -757468800000L));
         addFamous(db, new Person(context.getString(R.string.val_kilmer), -315705600000L));
         addFamous(db, new Person(context.getString(R.string.psy), 252374400000L));
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+        }
     }
 }

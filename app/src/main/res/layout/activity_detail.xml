@@ -22,15 +22,19 @@
             android:id="@+id/appbar_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/app_bar"
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 style="@style/CollapsingToolbarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:contentScrim="?attr/colorPrimary"
+                app:contentScrim="@color/app_bar"
+                app:expandedTitleTextColor="@android:color/white"
+                app:collapsedTitleTextColor="@color/on_app_bar"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+                <!--Season picture-->
                 <include layout="@layout/toolbar_detail_image" />
 
                 <View
@@ -38,12 +42,14 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/scrim_gradient" />
 
-                <androidx.appcompat.widget.Toolbar
+                <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar_detail"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+                    app:navigationIconTint="@android:color/white"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:titleTextAppearance="@style/TextAppearance.Birdays.CollapsingToolbar.Collapsed" />
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -58,7 +64,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView style="@style/cardViewStyle">
+                <!--First card with personal information-->
+                <com.google.android.material.card.MaterialCardView style="@style/cardViewStyle">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -68,14 +75,16 @@
                         <!--Date-->
                         <RelativeLayout style="@style/materialRL">
 
+                            <!--Age-->
                             <TextView
                                 android:id="@+id/textview_detail_age"
-                                android:layout_width="@dimen/detail_age_size"
-                                android:layout_height="@dimen/detail_age_size"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center_vertical"
                                 android:gravity="center"
                                 android:textColor="@color/blue_to_green"
-                                android:textSize="24sp" />
+                                android:textSize="@dimen/detail_age_text_size"
+                                tools:ignore="SpUsage" />
 
                             <TextView
                                 android:id="@+id/textview_detail_date"
@@ -87,14 +96,14 @@
                                 android:text="@string/birthday" />
                         </RelativeLayout>
 
-                        <!-- DaysLeft -->
+                        <!-- Days left till birthday -->
                         <RelativeLayout style="@style/materialRL">
 
                             <ImageView
                                 style="@style/detailActivityIcons"
                                 android:contentDescription="@string/calendar"
-                                android:tint="@color/blue_to_green"
-                                app:srcCompat="@drawable/ic_calendar_blue_24dp" />
+                                app:srcCompat="@drawable/ic_calendar_blue_24dp"
+                                app:tint="@color/blue_to_green" />
 
                             <TextView
                                 android:id="@+id/textview_detail_left"
@@ -106,7 +115,7 @@
                                 android:text="@string/days_left" />
                         </RelativeLayout>
 
-                        <!-- DaysSinceBirthdays -->
+                        <!-- Days since birth -->
                         <RelativeLayout
                             android:id="@+id/relativelayout_detail_since"
                             style="@style/materialRL">
@@ -114,8 +123,8 @@
                             <ImageView
                                 style="@style/detailActivityIcons"
                                 android:contentDescription="@string/calendar"
-                                android:tint="@color/blue_to_green"
-                                app:srcCompat="@drawable/ic_calendar_range_blue_24dp" />
+                                app:srcCompat="@drawable/ic_calendar_range_blue_24dp"
+                                app:tint="@color/blue_to_green" />
 
                             <TextView
                                 android:id="@+id/textview_detail_since"
@@ -134,7 +143,7 @@
                                 android:id="@+id/imageview_detail_zodiac"
                                 style="@style/detailActivityIcons"
                                 android:contentDescription="@string/zodiac_sign"
-                                android:tint="@color/blue_to_green" />
+                                app:tint="@color/blue_to_green" />
 
                             <TextView
                                 android:id="@+id/textview_detail_zodiac"
@@ -143,12 +152,14 @@
                             <TextView
                                 style="@style/EditActivity.Secondary.TextView"
                                 android:layout_below="@+id/textview_detail_zodiac"
-                                android:text="@string/zodiac_sign" />
+                                android:text="@string/zodiac_sign"
+                                tools:ignore="TextContrastCheck" />
                         </RelativeLayout>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <!--Second card with contact details-->
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardview_detail_info"
                     style="@style/cardViewStyle">
 
@@ -160,76 +171,67 @@
                         <!-- Phone number -->
                         <RelativeLayout
                             android:id="@+id/relativelayout_detail_phone"
-                            style="@style/contactsInfoRL">
+                            style="@style/materialRL"
+                            android:layout_width="match_parent">
 
                             <ImageButton
                                 android:id="@+id/imagebutton_detail_phone"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                style="@style/detailActivityIcons"
                                 android:background="?attr/selectableItemBackgroundBorderless"
-                                android:contentDescription="@string/phone_number"
-                                android:padding="@dimen/detail_icon_padding"
-                                android:tint="@color/blue_to_green"
-                                app:srcCompat="@drawable/ic_call_blue_24dp" />
+                                android:contentDescription="@string/call"
+                                app:srcCompat="@drawable/ic_call_blue_24dp"
+                                app:tint="@color/blue_to_green" />
 
                             <ImageButton
                                 android:id="@+id/imagebutton_detail_chat"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                style="@style/detailActivityIcons"
                                 android:layout_alignParentEnd="true"
-                                android:layout_alignParentRight="true"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:contentDescription="@string/chat"
-                                android:padding="@dimen/detail_icon_padding"
-                                android:tint="@color/blue_to_green"
-                                app:srcCompat="@drawable/ic_chat_blue_24dp" />
+                                app:srcCompat="@drawable/ic_chat_blue_24dp"
+                                app:tint="@color/blue_to_green" />
 
                             <TextView
                                 android:id="@+id/textview_detail_phone"
-                                style="@style/Primary.TextView"
-                                android:layout_marginLeft="@dimen/detail_textview_padding"
-                                android:layout_marginStart="@dimen/detail_textview_padding" />
+                                style="@style/EditActivity.Primary.TextView" />
 
                             <TextView
-                                style="@style/Secondary.TextView"
+                                style="@style/EditActivity.Secondary.TextView"
                                 android:layout_below="@+id/textview_detail_phone"
-                                android:layout_marginLeft="@dimen/detail_textview_padding"
-                                android:layout_marginStart="@dimen/detail_textview_padding"
                                 android:text="@string/phone_number" />
                         </RelativeLayout>
 
                         <!--Email-->
                         <RelativeLayout
                             android:id="@+id/relativelayout_detail_email"
-                            style="@style/contactsInfoRL">
+                            style="@style/materialRL">
 
                             <ImageButton
                                 android:id="@+id/imagebutton_detail_email"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                style="@style/detailActivityIcons"
                                 android:background="?attr/selectableItemBackgroundBorderless"
-                                android:contentDescription="@string/email"
-                                android:padding="@dimen/detail_icon_padding"
-                                android:tint="@color/blue_to_green"
-                                app:srcCompat="@drawable/ic_email_blue_24dp" />
+                                android:contentDescription="@string/send_email"
+                                app:srcCompat="@drawable/ic_email_blue_24dp"
+                                app:tint="@color/blue_to_green" />
 
                             <TextView
                                 android:id="@+id/textview_detail_email"
-                                style="@style/Primary.TextView"
-                                android:layout_marginLeft="@dimen/detail_textview_padding"
-                                android:layout_marginStart="@dimen/detail_textview_padding" />
+                                style="@style/EditActivity.Primary.TextView" />
 
                             <TextView
-                                style="@style/Secondary.TextView"
+                                style="@style/EditActivity.Secondary.TextView"
                                 android:layout_below="@+id/textview_detail_email"
-                                android:layout_marginLeft="@dimen/detail_textview_padding"
-                                android:layout_marginStart="@dimen/detail_textview_padding"
                                 android:text="@string/email" />
                         </RelativeLayout>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView style="@style/cardViewStyle">
+                <include
+                    android:id="@+id/native_ad_card"
+                    layout="@layout/native_ad_card"
+                    android:visibility="gone" />
+
+                <com.google.android.material.card.MaterialCardView style="@style/cardViewStyle">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -237,20 +239,21 @@
                         android:orientation="vertical">
 
                         <TextView
-                            style="@style/Secondary.TextView"
-                            android:layout_marginEnd="@dimen/detail_textview_famous_padding"
-                            android:layout_marginLeft="@dimen/detail_textview_famous_padding"
-                            android:layout_marginRight="@dimen/detail_textview_famous_padding"
+                            style="@style/SectionHeader.TextView"
                             android:layout_marginStart="@dimen/detail_textview_famous_padding"
+                            android:layout_marginLeft="@dimen/detail_textview_famous_padding"
                             android:layout_marginTop="@dimen/detail_textview_famous_padding"
-                            android:text="@string/born_on_this_day" />
+                            android:layout_marginEnd="@dimen/detail_textview_famous_padding"
+                            android:layout_marginRight="@dimen/detail_textview_famous_padding"
+                            android:text="@string/born_on_this_day"
+                            android:textColor="@color/color_accent" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerview_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
@@ -259,13 +262,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/fab_margin_detail"
-            android:layout_marginRight="@dimen/fab_margin_detail"
-            app:backgroundTint="@color/accent_green_200"
+            android:contentDescription="@string/edit_record"
+            app:backgroundTint="@color/fab_background"
             app:elevation="6dp"
             app:layout_anchor="@id/appbar_detail"
             app:layout_anchorGravity="bottom|right|end"
             app:pressedTranslationZ="12dp"
             app:rippleColor="@color/ripple"
-            app:srcCompat="@drawable/ic_edit_grey_24dp" />
+            app:srcCompat="@drawable/ic_edit_grey_24dp"
+            app:tint="@color/fab_icon" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

@@ -24,15 +24,11 @@ import java.util.List;
 
 public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAdapter.ListViewHolder> {
 
-    private List<Person> famous;
+    private final List<Person> famous;
     private Context context;
 
     public FamousFragmentAdapter() {
         famous = new ArrayList<>();
-    }
-
-    private Person getPerson(int position) {
-        return famous.get(position);
     }
 
     public void addPerson(Person person) {
@@ -41,9 +37,10 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
     }
 
     public void removeAllPersons() {
-        if (getItemCount() != 0) {
-            famous = new ArrayList<>();
-            notifyDataSetChanged();
+        int oldSize = getItemCount();
+        if (oldSize > 0) {
+            famous.clear();
+            notifyItemRangeRemoved(0, oldSize);
         }
     }
 
@@ -58,9 +55,11 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
 
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
+        if (position < 0 || position >= famous.size()) return;
+
         holder.itemView.setEnabled(true);
         View itemView = holder.itemView;
-        final Person person = getPerson(position);
+        final Person person = famous.get(position);
         final String name = person.getName();
 
         holder.tvName.setText(name);
@@ -74,7 +73,7 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
         return famous.size();
     }
 
-    static class ListViewHolder extends RecyclerView.ViewHolder {
+    public static class ListViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvDate;
 
         ListViewHolder(View itemView) {

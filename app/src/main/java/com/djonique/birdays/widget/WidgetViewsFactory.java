@@ -27,7 +27,7 @@ import java.util.List;
 
 public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 
-    private Context context;
+    private final Context context;
     private DbHelper dbHelper;
     private List<Person> widgetList;
 

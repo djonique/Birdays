@@ -14,12 +14,12 @@ public interface Constants {
 
     // Ads
     String INTERSTITIAL_LAST_SHOWN = "interstitial_last_shown";
+    String INTERSTITIAL_VISIT_COUNT = "interstitial_visit_count";
+    String INTERSTITIAL_LAST_VISIT_DATE = "interstitial_last_visit_date";
 
     // Permission requests
     int READ_CONTACTS_PERMISSION_CODE = 1;
-    int WRITE_EXTERNAL_STORAGE_PERMISSION_CODE = 2;
-    int READ_EXTERNAL_STORAGE_PERMISSION_CODE = 3;
-    int NOTIFICATIONS_PERMISSION_CODE = 4;
+    int NOTIFICATIONS_PERMISSION_CODE = 2;
 
     // Alarm
     String NAME = "NAME";
@@ -36,9 +36,7 @@ public interface Constants {
     String DISPLAYED_AGE_KEY = "displayed_age_key";
 
     // Intents
-    String TYPE_EMAIL = "message/rfc822";
     String MAILTO = "mailto:";
-    String TYPE_SMS = "vnd.android-dir/mms-sms";
     String ADDRESS = "address";
     String SMSTO = "smsto:";
     String TEL = "tel: ";

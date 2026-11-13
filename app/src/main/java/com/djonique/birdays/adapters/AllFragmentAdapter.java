@@ -36,7 +36,8 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private static final int TYPE_PERSON = 0;
     private static final int TYPE_SEPARATOR = 1;
-
+    private final List<Item> items;
+    private final AllFragment allFragment;
     public boolean containsSeparatorJanuary;
     public boolean containsSeparatorFebruary;
     public boolean containsSeparatorMarch;
@@ -49,9 +50,6 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public boolean containsSeparatorOctober;
     public boolean containsSeparatorNovember;
     public boolean containsSeparatorDecember;
-
-    private List<Item> items;
-    private AllFragment allFragment;
     private Context context;
     private String displayedAge;
 
@@ -87,20 +85,20 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
                 if (location != getItemCount() && !getItem(location).isPerson() && !getItem(location - 1).isPerson()) {
                     Separator separator = (Separator) getItem(location - 1);
-                    checkSeparator(separator.getType());
+                    checkSeparator(separator.type());
                     items.remove(location - 1);
                     notifyItemRemoved(location - 1);
 
                 } else if (location == getItemCount() && !getItem(location - 1).isPerson()) {
                     Separator separator = (Separator) getItem(location - 1);
-                    checkSeparator(separator.getType());
+                    checkSeparator(separator.type());
                     items.remove(location - 1);
                     notifyItemRemoved(location - 1);
                 }
 
             } else if (getItemCount() - 1 >= 0 && !getItem(getItemCount() - 1).isPerson()) {
                 Separator separator = (Separator) getItem(getItemCount() - 1);
-                checkSeparator(separator.getType());
+                checkSeparator(separator.type());
                 int locationTemp = getItemCount() - 1;
                 items.remove(locationTemp);
                 notifyItemRemoved(locationTemp);
@@ -155,22 +153,17 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         context = parent.getContext();
         displayedAge = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(Constants.DISPLAYED_AGE_KEY, "0");
-        switch (viewType) {
-            case TYPE_PERSON:
-                View view = LayoutInflater.from(context).inflate(R.layout.description_list_view,
-                        parent, false);
-                return new ListViewHolder(view);
-            case TYPE_SEPARATOR:
-            default:
-                View separator = LayoutInflater.from(context).inflate(R.layout.model_separator,
-                        parent, false);
-                return new SeparatorViewHolder(separator);
+        if (viewType == TYPE_PERSON) {
+            View view = LayoutInflater.from(context).inflate(R.layout.description_list_view, parent, false);
+            return new ListViewHolder(view);
+        } else {
+            View separator = LayoutInflater.from(context).inflate(R.layout.model_separator, parent, false);
+            return new SeparatorViewHolder(separator);
         }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
         Item item = getItem(position);
 
         String[] months = holder.itemView.getResources().getStringArray(R.array.months);
@@ -212,9 +205,12 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                             R.anim.activity_primary_out);
                 }
             });
-        } else {
-            Separator separator = ((Separator) item);
-            ((SeparatorViewHolder) holder).separatorView.setText(months[separator.getType()]);
+        } else if (item instanceof Separator separator) {
+            SeparatorViewHolder separatorViewHolder = (SeparatorViewHolder) holder;
+            separatorViewHolder.separatorView.setText(months[separator.type()]);
+            if (separatorViewHolder.dividerLine != null) {
+                separatorViewHolder.dividerLine.setVisibility(position == 0 ? View.GONE : View.VISIBLE);
+            }
         }
     }
 
@@ -224,9 +220,10 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     public void removeAllPersons() {
-        if (getItemCount() != 0) {
-            items = new ArrayList<>();
-            notifyDataSetChanged();
+        int oldSize = getItemCount();
+        if (oldSize != 0) {
+            items.clear();
+            notifyItemRangeRemoved(0, oldSize);
 
             containsSeparatorJanuary = false;
             containsSeparatorFebruary = false;
@@ -246,19 +243,20 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private int getAgeCircleColor(int age) {
         int colorResId;
         if (age < 10) colorResId = R.color.age1;
-        else if (age >= 10 && age < 20) colorResId = R.color.age2;
-        else if (age >= 20 && age < 30) colorResId = R.color.age3;
-        else if (age >= 30 && age < 40) colorResId = R.color.age4;
-        else if (age >= 40 && age < 50) colorResId = R.color.age5;
-        else if (age >= 50 && age < 60) colorResId = R.color.age6;
-        else if (age >= 60 && age < 70) colorResId = R.color.age7;
+        else if (age < 20) colorResId = R.color.age2;
+        else if (age < 30) colorResId = R.color.age3;
+        else if (age < 40) colorResId = R.color.age4;
+        else if (age < 50) colorResId = R.color.age5;
+        else if (age < 60) colorResId = R.color.age6;
+        else if (age < 70) colorResId = R.color.age7;
         else colorResId = R.color.age8;
         return colorResId;
     }
 
     @Override
     public int getItemViewType(int position) {
-        return getItem(position).isPerson() ? TYPE_PERSON : TYPE_SEPARATOR;
+        Item item = getItem(position);
+        return item.isPerson() ? TYPE_PERSON : TYPE_SEPARATOR;
     }
 
     private static class ListViewHolder extends RecyclerView.ViewHolder {
@@ -274,10 +272,12 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private static class SeparatorViewHolder extends RecyclerView.ViewHolder {
         TextView separatorView;
+        View dividerLine;
 
         SeparatorViewHolder(View itemView) {
             super(itemView);
             separatorView = itemView.findViewById(R.id.textview_separator);
+            dividerLine = itemView.findViewById(R.id.view_separator_line);
         }
     }
 }

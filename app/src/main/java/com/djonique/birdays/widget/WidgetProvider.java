@@ -43,6 +43,7 @@ public class WidgetProvider extends AppWidgetProvider {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
             Intent serviceIntent = new Intent(context, WidgetService.class);
             serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
+            //noinspection deprecation
             remoteViews.setRemoteAdapter(R.id.listview_widget, serviceIntent);
 
             remoteViews.setTextViewText(R.id.textview_widget_header_date,
@@ -54,7 +55,7 @@ public class WidgetProvider extends AppWidgetProvider {
             int flags = PendingIntent.FLAG_UPDATE_CURRENT;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 flags |= PendingIntent.FLAG_MUTABLE;
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            } else {
                 flags |= PendingIntent.FLAG_IMMUTABLE;
             }
 
@@ -63,6 +64,7 @@ public class WidgetProvider extends AppWidgetProvider {
             remoteViews.setPendingIntentTemplate(R.id.listview_widget, clickPendingIntent);
 
             appWidgetManager.updateAppWidget(i, remoteViews);
+            //noinspection deprecation
             appWidgetManager.notifyAppWidgetViewDataChanged(i, R.id.listview_widget);
         }
     }
@@ -70,7 +72,7 @@ public class WidgetProvider extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
-        if (intent.getAction() != null && intent.getAction().equals(ACTION_ON_CLICK)) {
+        if (ACTION_ON_CLICK.equals(intent.getAction())) {
             long timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
             Intent resultIntent = new Intent(context, DetailActivity.class);
             resultIntent.putExtra(Constants.TIME_STAMP, timeStamp);

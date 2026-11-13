@@ -8,13 +8,13 @@
 
 <resources>
     <!-- default dimens -->
-    <dimen name="default_padding">24sp</dimen>
-    <dimen name="default_layout_height">96sp</dimen>
-    <dimen name="default_left_margin_56sp">72sp</dimen>
-    <dimen name="default_left_margin_72sp">96sp</dimen>
+    <dimen name="default_padding">24dp</dimen>
+    <dimen name="default_left_margin_56dp">72dp</dimen>
+    <dimen name="default_left_margin_72dp">96dp</dimen>
 
     <!-- fab dimens -->
     <dimen name="fab_margin_default">24dp</dimen>
+    <dimen name="fab_margin_detail">24dp</dimen>
 
     <!-- card dimens -->
     <dimen name="card_layout_margin">8dp</dimen>
@@ -22,31 +22,20 @@
     <dimen name="card_left_padding">36dp</dimen>
     <dimen name="card_text_view_bottom_margin">12dp</dimen>
 
-    <!-- text size -->
-    <dimen name="primary_text">20sp</dimen>
-    <dimen name="secondary_text">16sp</dimen>
-    <dimen name="separator_text">16sp</dimen>
-    <dimen name="card_primary_text">34sp</dimen>
+    <!-- text size is not scaled by screen width (see values/dimens.xml) -->
 
     <!-- age circle -->
-    <dimen name="age_circle_size">48sp</dimen>
-    <dimen name="age_circle_text_size">20sp</dimen>
+    <dimen name="age_circle_size">48dp</dimen>
 
     <!-- MainActivity -->
     <dimen name="tab_layout_height">56dp</dimen>
-    <dimen name="tab_text_size">16sp</dimen>
 
     <!-- DetailActivity -->
-    <dimen name="detail_activity_icon_padding">12dp</dimen>
-    <dimen name="detail_age_size">48dp</dimen>
-    <dimen name="detail_icon_padding">36dp</dimen>
-    <dimen name="detail_textview_padding">96dp</dimen>
     <dimen name="detail_textview_famous_padding">24dp</dimen>
 
     <!-- EditActivity -->
     <dimen name="edit_image_padding">12dp</dimen>
     <dimen name="edit_text_view_left_padding">36dp</dimen>
-    <dimen name="edit_date_text_size">20sp</dimen>
     <dimen name="edit_left_cb_padding">96dp</dimen>
     <dimen name="edit_linear_layout_padding_top">12dp</dimen>
     <dimen name="edit_textview_left_padding">72dp</dimen>
@@ -55,10 +44,6 @@
     <dimen name="licenses_text_view_bottom_padding">12dp</dimen>
 
     <!-- dialog -->
-    <dimen name="dialog_vertical_padding">24dp</dimen>
     <dimen name="dialog_horizontal_padding">24dp</dimen>
-    <dimen name="addfromcontacts_button_bottom_margin">12dp</dimen>
-    <dimen name="dialog_button_text_size">16sp</dimen>
-    <dimen name="dialog_date_top_margin">24dp</dimen>
-    <dimen name="dialog_cb_top_margin">24dp</dimen>
+    <dimen name="button_add_from_contacts_bottom_margin">12dp</dimen>
 </resources>

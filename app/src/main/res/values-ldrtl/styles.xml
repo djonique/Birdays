@@ -7,9 +7,12 @@
 -->
 
 <resources>
-
     <style name="CollapsingToolbarStyle">
         <item name="collapsedTitleGravity">right|center_vertical</item>
         <item name="expandedTitleGravity">right|bottom</item>
+        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Birdays.CollapsingToolbar.Collapsed</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.Birdays.CollapsingToolbar.Expanded</item>
+        <item name="expandedTitleTextColor">@android:color/white</item>
+        <item name="collapsedTitleTextColor">@color/on_app_bar</item>
     </style>
 </resources>

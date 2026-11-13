@@ -39,23 +39,28 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         manager = ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE));
-
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        String ringtone = preferences.getString(Constants.RINGTONE_KEY,
+                Settings.System.DEFAULT_NOTIFICATION_URI.toString());
+        Uri ringtoneUri = null;
+        if (!ringtone.isEmpty()) {
+            try {
+                ringtoneUri = Uri.parse(ringtone);
+            } catch (Exception ignored) {
+            }
+        }
+        createNotificationChannel(context, ringtoneUri);
 
         String name = intent.getStringExtra(Constants.NAME);
         String when = intent.getStringExtra(Constants.WHEN);
         long timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
 
-        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            flags |= PendingIntent.FLAG_IMMUTABLE;
-        }
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
 
         PendingIntent pendingIntent = TaskStackBuilder.create(context)
                 .addNextIntentWithParentStack(getResultIntent(context, timeStamp, intent))
                 .getPendingIntent(((int) timeStamp), flags);
-
-        createNotificationChannel(context);
 
         NotificationCompat.Builder builder = buildNotification(context, name, when);
 
@@ -81,13 +86,20 @@ public class AlarmReceiver extends BroadcastReceiver {
         return resultIntent;
     }
 
-    private void createNotificationChannel(Context context) {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    private void createNotificationChannel(Context context, Uri ringtoneUri) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
                     context.getString(R.string.channel_name), NotificationManager.IMPORTANCE_HIGH);
             channel.enableLights(true);
             channel.enableVibration(true);
             channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+            if (ringtoneUri != null) {
+                android.media.AudioAttributes audioAttributes = new android.media.AudioAttributes.Builder()
+                        .setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .setUsage(android.media.AudioAttributes.USAGE_NOTIFICATION_EVENT)
+                        .build();
+                channel.setSound(ringtoneUri, audioAttributes);
+            }
             if (manager != null) {
                 manager.createNotificationChannel(channel);
             }
@@ -99,7 +111,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         builder.setContentTitle(title);
         builder.setContentText(text);
         builder.setSmallIcon(R.drawable.ic_notification);
-        builder.setColor(ContextCompat.getColor(context, R.color.accent_green_200));
+        builder.setColor(ContextCompat.getColor(context, R.color.md_theme_secondary));
         builder.setCategory(NotificationCompat.CATEGORY_EVENT);
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
@@ -109,14 +121,10 @@ public class AlarmReceiver extends BroadcastReceiver {
     private void setDefaultsAndRingtone(NotificationCompat.Builder builder) {
         String ringtone = preferences.getString(Constants.RINGTONE_KEY,
                 Settings.System.DEFAULT_NOTIFICATION_URI.toString());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            try {
-                setRingtone(builder, Uri.parse(ringtone));
-            } catch (Exception e) {
-                builder.setDefaults(NotificationCompat.DEFAULT_ALL);
-            }
-        } else {
+        try {
             setRingtone(builder, Uri.parse(ringtone));
+        } catch (Exception e) {
+            builder.setDefaults(NotificationCompat.DEFAULT_ALL);
         }
     }
 

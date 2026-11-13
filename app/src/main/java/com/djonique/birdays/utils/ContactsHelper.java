@@ -28,15 +28,17 @@ import java.util.concurrent.Executors;
 
 public class ContactsHelper {
 
-    private Activity activity;
-    private ContentResolver contentResolver;
-    private LoadingContactsListener loadingContactsListener;
+    private final Activity activity;
+    private final ContentResolver contentResolver;
+    private final LoadingContactsListener loadingContactsListener;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public ContactsHelper(Activity activity, ContentResolver contentResolver) {
         this.activity = activity;
         this.contentResolver = contentResolver;
-        loadingContactsListener = (LoadingContactsListener) activity;
+        loadingContactsListener = activity instanceof LoadingContactsListener
+                ? (LoadingContactsListener) activity
+                : null;
     }
 
     /**
@@ -69,7 +71,7 @@ public class ContactsHelper {
                 ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
                 new String[]{id}, null);
         if (phoneCursor != null && phoneCursor.moveToFirst()) {
-            phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex
+            phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndexOrThrow
                     (ContactsContract.CommonDataKinds.Phone.NUMBER));
         }
         if (phoneCursor != null) {
@@ -104,28 +106,29 @@ public class ContactsHelper {
 
         List<Person> contacts = new ArrayList<>();
 
-        Cursor cursor = getContactsCursor(contentResolver);
+        try (Cursor cursor = getContactsCursor(contentResolver)) {
+            if (cursor == null) return contacts;
 
-        while (cursor.moveToNext()) {
-            String id = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Event.CONTACT_ID));
-            String name = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
-            String dateString = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Event.START_DATE));
-            long date;
-            try {
-                date = Utils.formatDateToLong(dateString);
-            } catch (Exception e) {
-                continue;
+            while (cursor.moveToNext()) {
+                String id = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Event.CONTACT_ID));
+                String name = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
+                String dateString = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Event.START_DATE));
+                long date;
+                try {
+                    date = Utils.formatDateToLong(dateString);
+                } catch (Exception e) {
+                    continue;
+                }
+                if (date == 0) continue;
+
+                boolean yearUnknown = Utils.isYearUnknown(dateString);
+                String phoneNumber = getContactPhoneNumber(contentResolver, id);
+                String email = getContactEmail(contentResolver, id);
+
+                Person person = new Person(name, date, yearUnknown, phoneNumber, email);
+                contacts.add(person);
             }
-            if (date == 0) continue;
-
-            boolean yearUnknown = Utils.isYearUnknown(dateString);
-            String phoneNumber = getContactPhoneNumber(contentResolver, id);
-            String email = getContactEmail(contentResolver, id);
-
-            Person person = new Person(name, date, yearUnknown, phoneNumber, email);
-            contacts.add(person);
         }
-        cursor.close();
         return contacts;
     }
 
@@ -134,12 +137,6 @@ public class ContactsHelper {
      */
     private Cursor getContactsCursor(ContentResolver contentResolver) {
         Uri uri = ContactsContract.Data.CONTENT_URI;
-
-       /* String[] projection = new String[]{
-                ContactsContract.Contacts.DISPLAY_NAME,
-                ContactsContract.CommonDataKinds.Event.CONTACT_ID,
-                ContactsContract.CommonDataKinds.Event.START_DATE,
-        };*/
 
         String where =
                 ContactsContract.Data.MIMETYPE
@@ -158,28 +155,29 @@ public class ContactsHelper {
     public void loadContacts(SharedPreferences preferences) {
         if (PermissionManager.readingContactsPermissionGranted(activity)) {
             try {
-                loadContactsInBackground();
-                preferences.edit().putBoolean(Constants.CONTACTS_UPLOADED, true).apply();
+                loadContactsInBackground(preferences);
             } catch (Exception e) {
                 preferences.edit().putBoolean(Constants.WRONG_CONTACTS_FORMAT, true).apply();
                 Toast.makeText(activity, R.string.loading_contacts_error, Toast.LENGTH_LONG).show();
             }
         } else {
-            PermissionManager.requestReadingContactsAndNotificationsPermission(activity);
+            PermissionManager.requestReadingContactsPermission(activity);
         }
     }
 
-    public interface LoadingContactsListener {
-        void onContactsUploaded();
-    }
+    private void loadContactsInBackground(SharedPreferences preferences) {
+        if (activity == null || activity.isFinishing()) return;
 
-    private void loadContactsInBackground() {
         final ProgressDialogHelper progressDialogHelper = new ProgressDialogHelper(activity);
         progressDialogHelper.startProgressDialog(activity.getString(R.string.loading_contacts));
+
+        //noinspection resource
         final ExecutorService executor = Executors.newSingleThreadExecutor();
+
         executor.execute(() -> {
-            try {
-                DbHelper dbHelper = new DbHelper(activity);
+            boolean isSuccess = false;
+
+            try (DbHelper dbHelper = new DbHelper(activity)) {
                 AlarmHelper alarmHelper = new AlarmHelper(activity);
 
                 List<Person> dbPersons = dbHelper.query().getPersons();
@@ -191,16 +189,37 @@ public class ContactsHelper {
                         alarmHelper.setAlarms(person);
                     }
                 }
+                isSuccess = true;
+            } catch (Exception e) {
+                android.util.Log.e("LoadContacts", "Error loading contacts in background", e);
             } finally {
                 executor.shutdown();
             }
 
+            final boolean finalIsSuccess = isSuccess;
             mainHandler.post(() -> {
+                //noinspection ConstantValue
+                if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
+                    return;
+                }
+
                 progressDialogHelper.dismissProgressDialog();
-                loadingContactsListener.onContactsUploaded();
-                Utils.notifyWidget(activity);
-                Toast.makeText(activity, R.string.contacts_uploaded, Toast.LENGTH_SHORT).show();
+
+                if (finalIsSuccess) {
+                    preferences.edit().putBoolean(Constants.CONTACTS_UPLOADED, true).apply();
+                    if (loadingContactsListener != null) {
+                        loadingContactsListener.onContactsUploaded();
+                    }
+                    Utils.notifyWidget(activity);
+                    Toast.makeText(activity, R.string.contacts_uploaded, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(activity, R.string.recover_records_error, Toast.LENGTH_LONG).show();
+                }
             });
         });
+    }
+
+    public interface LoadingContactsListener {
+        void onContactsUploaded();
     }
 }

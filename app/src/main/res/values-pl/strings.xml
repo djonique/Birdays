@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017-2026 Evgenii Timofeev
+
+    SPDX-License-Identifier: Apache-2.0
+-->
+
+<resources>
+    <string name="build_version">Wersja kompilacji</string>
+
+    <!-- MainActivity -->
+    <string name="loading_contacts">Wczytuję kontakty…</string>
+    <string name="contacts_uploaded">Przesłano kontakty</string>
+    <string name="loading_contacts_error">Nie można zaimportować kontaktów, niestandardowy format daty</string>
+    <string name="permission_required">Do importowania kontaktów wymagane jest zezwolenie</string>
+    <string name="snackbar_allow_text">Zezwól</string>
+    <string name="all">Wszyscy</string>
+    <string name="famous">Sławni ludzie</string>
+    <string name="age">Aktualny wiek:\u0020</string>
+    <string name="happy_birthday">Wszystkiego najlepszego z okazji urodzin!</string>
+    <string name="web_search_error">Nie można wykonać akcji, zainstaluj przeglądarkę internetową</string>
+    <string name="delete_record_confirm">Czy na pewno chcesz usunąć %1$s?</string>
+    <string name="record_deleted">Usunięto</string>
+    <string name="undo">Cofnij</string>
+    <string name="add_record">Dodaj wpis</string>
+
+    <string-array name="months">
+        <item>Styczeń</item>
+        <item>Luty</item>
+        <item>Marzec</item>
+        <item>Kwiecień</item>
+        <item>Maj</item>
+        <item>Czerwiec</item>
+        <item>Lipiec</item>
+        <item>Sierpień</item>
+        <item>Wrzesień</item>
+        <item>Październik</item>
+        <item>Listopad</item>
+        <item>Grudzień</item>
+    </string-array>
+
+    <!-- Menu -->
+    <string name="action_settings">Ustawienia</string>
+    <string name="action_delete">Usuń</string>
+
+    <!-- NewPersonActivity -->
+    <string name="new_record">Nowy wpis</string>
+    <string name="add_from_contacts">Dodaj z kontaktów</string>
+    <string name="open_contacts_error">Nie można wykonać czynności z powodu urządzenia</string>
+    <string name="name">Imię i Nazwisko</string>
+    <string name="error_hint">Proszę podać nazwę</string>
+    <string name="phone_number">Numer telefonu</string>
+    <string name="pick_date">Wybierz datę</string>
+    <string name="wrong_date">Zła data</string>
+    <string name="year_unknown">Nie znam roku urodzenia</string>
+    <string name="cancel_button">Anuluj</string>
+
+    <!-- DetailActivity -->
+    <string name="birthday">Urodziny</string>
+    <string name="days_left">Liczba dni do następnych urodzin</string>
+    <string name="today">Dziś</string>
+    <string name="days_since_birth">Liczba dni od urodzenia</string>
+    <string name="zodiac_sign">Znak zodiaku</string>
+    <string name="season_picture">Obraz Pory Roku</string>
+    <string name="calendar">Kalendarz</string>
+    <string name="call">Zadzwoń</string>
+    <string name="chat">Czat</string>
+    <string name="born_on_this_day">W tym dniu urodzili się</string>
+
+    <!-- EditActivity -->
+    <string name="editing_label">Edytuj</string>
+    <string name="record_edited">Zapisano</string>
+    <string name="edit_record">Edytuj wpis</string>
+
+    <!-- Alarm -->
+    <string name="security_exception">SecurityException: urządzenia Samsung ograniczają liczbę powiadomień do 500</string>
+    <string name="channel_name">Urodziny</string>
+
+    <!-- Zodiac signs -->
+    <string name="aries">Baran</string>
+    <string name="taurus">Byk</string>
+    <string name="gemini">Bliźnięta</string>
+    <string name="cancer">Rak</string>
+    <string name="leo">Lew</string>
+    <string name="virgo">Panna</string>
+    <string name="libra">Waga</string>
+    <string name="scorpio">Skorpion</string>
+    <string name="sagittarius">Strzelec</string>
+    <string name="capricorn">Koziorożec</string>
+    <string name="aquarius">Wodnik</string>
+    <string name="pisces">Ryby</string>
+
+    <!-- SettingsActivity -->
+    <string name="optimization_enabled">Wyłącz optymalizację baterii dla aplikacji</string>
+    <string name="optimization_description">Aby aplikacja działała prawidłowo, otwórz Ustawienia i zezwól aplikacji na działanie w tle bez ograniczeń</string>
+    <string name="do_not_show_again">Nie pokazuj ponownie</string>
+    <string name="disable_button">Wyłącz</string>
+
+    <!-- Notifications -->
+    <string name="notifications">Powiadomienia</string>
+    <string name="allow_notification">Zezwól aplikacji na wysyłanie powiadomień o nadchodzących urodzinach</string>
+    <string name="notifications_time">Godzina powiadomienia</string>
+    <string name="additional_notification">Dodatkowe powiadomienie</string>
+
+    <string-array name="additional_notification_entries">
+        <item>Nigdy</item>
+        <item>Dzień wcześniej</item>
+        <item>2 dni wcześniej</item>
+        <item>3 dni wcześniej</item>
+        <item>Tydzień wcześniej</item>
+        <item>2 tygodnie wcześniej</item>
+    </string-array>
+
+    <string-array name="additional_notification_delay">
+        <item>Dziś</item>
+        <item>Jutro</item>
+        <item>Za 2 dni</item>
+        <item>Za 3 dni</item>
+        <item>Za tydzień</item>
+        <item>Za 2 tygodnie</item>
+    </string-array>
+
+    <string name="notification_tone">Dźwięk powiadomienia</string>
+    <string name="ringtone_summary">Wybierz dźwięk do powiadomienia. Domyślnie używany jest dźwięk z ustawień urządzenia</string>
+    <string name="silent">Brak</string>
+    <string name="help">Pomoc</string>
+    <string name="tap_here">Kliknij tutaj, jeśli nie otrzymujesz powiadomień</string>
+
+    <!-- General -->
+    <string name="general">Ogólne</string>
+    <string name="night_mode">Tryb nocny</string>
+    <string name="start_page">Strona startowa</string>
+
+    <string-array name="start_page_entries">
+        <item>Bieżący miesiąc</item>
+        <item>Wszyscy</item>
+        <item>Sławni ludzie</item>
+    </string-array>
+
+    <string name="displayed_age">Wyświetlany wiek</string>
+
+    <string-array name="displayed_age_entries">
+        <item>Aktualny</item>
+        <item>Przyszły</item>
+    </string-array>
+
+    <string name="displayed_age_changes">Aby zmiany zaczęły działać, musisz ponownie uruchomić aplikację</string>
+    <string name="restart_now">Zrestartuj teraz</string>
+    <string name="later">Później</string>
+    <string name="rate_app">Oceń aplikację</string>
+    <string name="share_app">Udostępnij</string>
+    <string name="share_text">Czy często zapominasz złożyć życzenia rodzinie, przyjaciołom lub współpracownikom z okazji urodzin? Birdays przypomni Ci o ważnej dacie!</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">Synchronizacja i kopia zapasowa</string>
+    <string name="contacts_import_title">Importuj kontakty</string>
+    <string name="contacts_import_summary">Kliknij tutaj, aby zaimportować kontakty z urządzenia (obsługuje ISO 8601)</string>
+    <string name="google_drive_backup">Kopia zapasowa Google Drive</string>
+    <string name="google_drive_backup_summary">Prześlij kopię zapasową bazy danych do Google Drive</string>
+    <string name="google_drive_backup_progress">Tworzenie kopii zapasowej w Google Drive…</string>
+    <string name="backup_complete">Kopia zapasowa została utworzona</string>
+    <string name="google_drive_restore">Przywracanie z Google Drive</string>
+    <string name="google_drive_restore_summary">Przywróć bazę danych z Google Drive</string>
+    <string name="google_drive_restore_progress">Przywracanie z Google Drive…</string>
+    <string name="recover_records_error">Nie udało się odzyskać wpisów</string>
+    <string name="records_recovered">Odzyskano</string>
+
+    <!-- Advertising -->
+    <string name="advertising">Reklama</string>
+    <string name="about_ad_title">Dlaczego widzę reklamy?</string>
+    <string name="about_ad_summary">Wszystkie przychody z reklam przeznaczane są na rozwój projektu</string>
+    <string name="show_ads">Pokazuj reklamy</string>
+    <string name="show_ads_summary">Możesz wyłączyć reklamy, oglądając krótką reklamę wideo</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">Wesprzyj projekt</string>
+    <string name="watch_video_title">Obejrzyj reklamę wideo</string>
+    <string name="ad_rewarded_summary">Obejrzyj krótkie wideo — przychody trafiają na rozwój aplikacji</string>
+    <string name="ad_rewarded_unavailable">Wideo jest teraz niedostępne, spróbuj ponownie później</string>
+    <string name="ad_disabled_success">Reklamy zostały wyłączone</string>
+    <string name="ad_watch_full_video_to_disable">Obejrzyj wideo do końca, aby wyłączyć reklamy</string>
+    <string name="donate_title">Wesprzyj finansowo</string>
+    <string name="donate_summary">Wsparcie finansowe rozwoju aplikacji</string>
+
+    <!-- About -->
+    <string name="about">O aplikacji</string>
+    <string name="licenses">Licencje</string>
+    <string name="software_licenses">Licencje open source</string>
+    <string name="third_party_sdks">Zestawy SDK firm trzecich</string>
+    <string name="menu_github">Kod źródłowy</string>
+    <string name="privacy_policy">Polityka prywatności</string>
+
+    <!-- HelpActivity -->
+    <string name="help_header">Dlaczego przypomnienie nie działa?</string>
+    <string name="help_description">Urządzenia Android mają tryb oszczędzania energii, który blokuje działanie aplikacji w tle lub uniemożliwia jej automatyczne uruchamianie. Aby powiadomienia działały prawidłowo, wykonaj następujące proste kroki:\n\n1. Upewnij się, że powiadomienia są dozwolone dla aplikacji Birdays (Ustawienia > Aplikacje > Birdays).\n\n2. Jeśli masz zainstalowane menedżery zadań, aplikacje do czyszczenia pamięci lub oszczędzania energii (takie jak „Battery Saver”, „Clean Master” i podobne), które blokują działanie w tle, dodaj Birdays do wyjątków.\n\n3. Wyłącz tryb oszczędzania energii dla Birdays (Ustawienia > Bateria > Optymalizacja baterii).</string>
+    <string name="help_settings">Otwórz ustawienia</string>
+    <string name="help_delay_text">Pamiętaj, że na niektórych urządzeniach powiadomienia mogą działać z pewnym opóźnieniem.</string>
+    <string name="help_email_description">Jeśli masz pytania lub sugestie, skontaktuj się ze mną pod adresem birdaysapp@gmail.com</string>
+    <string name="send_email">Wyślij email</string>
+
+
+</resources>

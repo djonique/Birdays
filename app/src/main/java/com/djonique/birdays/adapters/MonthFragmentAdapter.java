@@ -6,10 +6,9 @@
 
 package com.djonique.birdays.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,79 +20,120 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
-import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
 import com.djonique.birdays.activities.MainActivity;
+import com.djonique.birdays.ad.NativeAdHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.Utils;
+import com.yandex.mobile.ads.nativeads.NativeAd;
+import com.yandex.mobile.ads.nativeads.NativeAdView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class MonthFragmentAdapter extends RecyclerView.Adapter<MonthFragmentAdapter.CardViewHolder> {
+public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private static final int TYPE_PERSON = 0;
+    private static final int TYPE_AD = 1;
+    private final List<Person> persons;
     private Context context;
-    private SharedPreferences preferences;
-    private List<Person> persons;
+    private NativeAd nativeAd;
 
     public MonthFragmentAdapter() {
         persons = new ArrayList<>();
     }
 
-    public Person getPerson(int position) {
-        return persons.get(position);
+    @SuppressLint("NotifyDataSetChanged")
+    public void setNativeAd(NativeAd nativeAd) {
+        this.nativeAd = nativeAd;
+        notifyDataSetChanged();
     }
 
+    private int getAdPosition() {
+        return Math.min(2, persons.size());
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
     public void addPerson(Person person) {
         if (Utils.isCurrentMonth(person.getDate())) {
             persons.add(person);
-            notifyItemInserted(getItemCount() - 1);
+            Collections.sort(persons);
+            notifyDataSetChanged();
         }
     }
 
-    public void addPerson(int location, Person person) {
-        if (Utils.isCurrentMonth(person.getDate())) {
-            persons.add(location, person);
-            notifyItemInserted(location);
+    @SuppressLint("NotifyDataSetChanged")
+    public void addPersons(List<Person> personList) {
+        for (Person person : personList) {
+            if (Utils.isCurrentMonth(person.getDate())) {
+                persons.add(person);
+            }
         }
+        Collections.sort(persons);
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (nativeAd != null && position == getAdPosition()) {
+            return TYPE_AD;
+        }
+        return TYPE_PERSON;
     }
 
     @NonNull
     @Override
-    public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        if (viewType == TYPE_AD) {
+            View view = LayoutInflater.from(context).inflate(R.layout.native_ad_card, parent, false);
+            return new AdViewHolder(view);
+        }
+
         View view = LayoutInflater.from(context).inflate(
                 R.layout.description_card_view, parent, false);
         return new CardViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CardViewHolder holder, int position) {
-        final Person person = persons.get(position);
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
+        if (holder.getItemViewType() == TYPE_AD) {
+            NativeAdHelper.bindNativeAd((NativeAdView) holder.itemView, nativeAd);
+            holder.itemView.setVisibility(View.VISIBLE);
+            return;
+        }
+
+        int personIndex = (nativeAd != null && position > getAdPosition()) ? position - 1 : position;
+        if (personIndex < 0 || personIndex >= persons.size()) return;
+
+        final Person person = persons.get(personIndex);
         long date = person.getDate();
         final String email = person.getEmail();
         final String phoneNumber = person.getPhoneNumber();
 
-        holder.tvName.setText(person.getName());
+        CardViewHolder cardViewHolder = (CardViewHolder) holder;
+
+        cardViewHolder.tvName.setText(person.getName());
 
         if (person.isYearUnknown()) {
-            holder.tvDate.setText(Utils.getDateWithoutYear(date));
-            holder.tvAge.setVisibility(View.GONE);
-            changeCardViewBackgroundColor(date, holder.cardView, holder.tvDaysLeft);
+            cardViewHolder.tvDate.setText(Utils.getDateWithoutYear(date));
+            cardViewHolder.tvAge.setVisibility(View.GONE);
+            changeCardViewBackgroundColor(date, cardViewHolder.cardView, cardViewHolder.tvDaysLeft);
         } else {
-            holder.tvDate.setText(Utils.getDate(date));
-            holder.tvAge.setVisibility(View.VISIBLE);
+            cardViewHolder.tvDate.setText(Utils.getDate(date));
+            cardViewHolder.tvAge.setVisibility(View.VISIBLE);
             String age = context.getString(R.string.age) + Utils.getCurrentAge(date);
-            holder.tvAge.setText(age);
-            changeCardViewBackgroundColor(date, holder.cardView, holder.tvDaysLeft);
+            cardViewHolder.tvAge.setText(age);
+            changeCardViewBackgroundColor(date, cardViewHolder.cardView, cardViewHolder.tvDaysLeft);
         }
 
-        holder.relativeLayout.setOnClickListener(v -> {
+        cardViewHolder.relativeLayout.setOnClickListener(v -> {
             context.startActivity(new Intent(context, DetailActivity.class)
                     .putExtra(Constants.TIME_STAMP, person.getTimeStamp()));
             if (context instanceof MainActivity) {
@@ -102,76 +142,65 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<MonthFragmentAdap
             }
         });
 
-        if (email != null && !email.equals("")) {
-            enableButton(holder.btnEmail);
-            holder.btnEmail.setOnClickListener(v -> context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_SENDTO)
-                    .setType(Constants.TYPE_EMAIL)
-                    .putExtra(Intent.EXTRA_EMAIL, new String[]{email})
-                    .putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.happy_birthday))
-                    .setData(Uri.parse(Constants.MAILTO + email)), null)));
+        if (email != null && !email.isEmpty()) {
+            enableButton(cardViewHolder.btnEmail);
+            cardViewHolder.btnEmail.setOnClickListener(v ->
+                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_SENDTO)
+                            .putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.happy_birthday))
+                            .setData(Uri.parse(Constants.MAILTO + email)), null)));
         } else {
-            disableButton(holder.btnEmail);
+            disableButton(cardViewHolder.btnEmail);
         }
 
-        if (phoneNumber != null && !phoneNumber.equals("")) {
-            enableButton(holder.btnCall);
-            enableButton(holder.btnChat);
-            holder.btnCall.setOnClickListener(v -> context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_DIAL,
-                    Uri.parse(Constants.TEL + phoneNumber)), null)));
+        if (phoneNumber != null && !phoneNumber.isEmpty()) {
+            enableButton(cardViewHolder.btnCall);
+            enableButton(cardViewHolder.btnChat);
+            cardViewHolder.btnCall.setOnClickListener(v ->
+                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_DIAL,
+                            Uri.parse(Constants.TEL + phoneNumber)), null)));
 
-            holder.btnChat.setOnClickListener(v -> context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_VIEW)
-                    .setType(Constants.TYPE_SMS)
-                    .putExtra(Constants.ADDRESS, phoneNumber)
-                    .setData(Uri.parse(Constants.SMSTO + phoneNumber)), null)));
+            cardViewHolder.btnChat.setOnClickListener(v ->
+                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_SENDTO)
+                            .setData(Uri.parse(Constants.SMSTO + phoneNumber)), null)));
         } else {
-            disableButton(holder.btnCall);
-            disableButton(holder.btnChat);
+            disableButton(cardViewHolder.btnCall);
+            disableButton(cardViewHolder.btnChat);
         }
     }
 
     @Override
     public int getItemCount() {
-        return persons.size();
+        return persons.size() + (nativeAd != null ? 1 : 0);
     }
 
     public void removePerson(long timeStamp) {
-        for (int i = 0; i < getItemCount(); i++) {
-            Person person = getPerson(i);
+        for (int i = 0; i < persons.size(); i++) {
+            Person person = persons.get(i);
 
             if (person.getTimeStamp() == timeStamp) {
                 persons.remove(i);
                 notifyItemRemoved(i);
+                break;
             }
         }
     }
 
     public void removeAllPersons() {
-        if (getItemCount() != 0) {
-            persons = new ArrayList<>();
-            notifyDataSetChanged();
+        int oldSize = persons.size();
+        if (oldSize > 0) {
+            persons.clear();
+            notifyItemRangeRemoved(0, oldSize);
         }
     }
 
     private void enableButton(ImageButton button) {
-        if (nightMode()) {
-            button.setColorFilter(Color.rgb(104, 239, 173));
-        } else {
-            button.setColorFilter(Color.rgb(33, 150, 243));
-        }
+        button.setColorFilter(ContextCompat.getColor(context, R.color.md_theme_secondary));
         button.setClickable(true);
     }
 
     private void disableButton(ImageButton button) {
-        if (nightMode()) {
-            button.setColorFilter(Color.rgb(112, 112, 112));
-        } else {
-            button.setColorFilter(Color.rgb(224, 224, 224));
-        }
+        button.setColorFilter(ContextCompat.getColor(context, R.color.md_theme_outline_variant));
         button.setClickable(false);
-    }
-
-    private boolean nightMode() {
-        return preferences.getBoolean(Constants.NIGHT_MODE_KEY, false);
     }
 
     private void changeCardViewBackgroundColor(long date, CardView cardView, TextView textView) {
@@ -210,6 +239,12 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<MonthFragmentAdap
             btnEmail = itemView.findViewById(R.id.imagebutton_card_email);
             btnChat = itemView.findViewById(R.id.imagebutton_card_chat);
             btnCall = itemView.findViewById(R.id.imagebutton_card_call);
+        }
+    }
+
+    static class AdViewHolder extends RecyclerView.ViewHolder {
+        AdViewHolder(View itemView) {
+            super(itemView);
         }
     }
 }

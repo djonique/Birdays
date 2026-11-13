@@ -11,6 +11,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.djonique.birdays.BuildConfig;
 import com.djonique.birdays.R;
@@ -24,10 +25,6 @@ import com.yandex.mobile.ads.rewarded.RewardedAdEventListener;
 import com.yandex.mobile.ads.rewarded.RewardedAdLoadListener;
 import com.yandex.mobile.ads.rewarded.RewardedAdLoader;
 
-/**
- * Loads and shows Yandex rewarded video. The app does not grant any reward:
- * watching the video only supports the project.
- */
 public class RewardedVideo {
 
     private final RewardedAdLoader rewardedAdLoader;
@@ -57,14 +54,24 @@ public class RewardedVideo {
     }
 
     public void show(@NonNull final Activity activity) {
+        show(activity, null);
+    }
+
+    public void show(@NonNull final Activity activity, @Nullable final RewardCallback callback) {
         if (rewardedAd == null) {
             Toast.makeText(activity, R.string.ad_rewarded_unavailable, Toast.LENGTH_SHORT).show();
+            if (callback != null) {
+                callback.onAdFailed();
+            }
             preload();
             return;
         }
 
         RewardedAd ad = rewardedAd;
         rewardedAd = null;
+
+        final boolean[] rewardEarned = {false};
+
         ad.setAdEventListener(new RewardedAdEventListener() {
             @Override
             public void onAdShown() {
@@ -72,11 +79,17 @@ public class RewardedVideo {
 
             @Override
             public void onAdFailedToShow(@NonNull AdError adError) {
+                if (callback != null) {
+                    callback.onAdFailed();
+                }
                 preload();
             }
 
             @Override
             public void onAdDismissed() {
+                if (callback != null) {
+                    callback.onAdDismissed(rewardEarned[0]);
+                }
                 preload();
             }
 
@@ -85,11 +98,15 @@ public class RewardedVideo {
             }
 
             @Override
-            public void onAdImpression(@NonNull ImpressionData impressionData) {
+            public void onAdImpression(@Nullable ImpressionData impressionData) {
             }
 
             @Override
             public void onRewarded(@NonNull Reward reward) {
+                rewardEarned[0] = true;
+                if (callback != null) {
+                    callback.onRewarded();
+                }
             }
         });
         ad.show(activity);
@@ -101,5 +118,13 @@ public class RewardedVideo {
             rewardedAd.setAdEventListener(null);
             rewardedAd = null;
         }
+    }
+
+    public interface RewardCallback {
+        void onRewarded();
+
+        void onAdDismissed(boolean rewardEarned);
+
+        void onAdFailed();
     }
 }

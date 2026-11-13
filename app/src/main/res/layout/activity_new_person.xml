@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017-2026 Evgenii Timofeev
+
+    SPDX-License-Identifier: Apache-2.0
+-->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_new_person"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.djonique.birdays.activities.NewPersonActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_new_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_bar"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_new_person"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app_bar"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextAppearance="@style/TextAppearance.Birdays.ToolbarTitle" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/new_person_linear_layout_padding_top">
+
+            <!-- Add from contacts -->
+            <include
+                layout="@layout/button_add_from_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dialog_horizontal_padding"
+                android:layout_marginEnd="@dimen/dialog_horizontal_padding" />
+
+            <!--Name-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_padding">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/edit_image_padding"
+                    android:contentDescription="@string/calendar"
+                    app:srcCompat="@drawable/ic_person_blue_24dp"
+                    app:tint="@color/blue_to_green" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_new_person_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_new_person_name"
+                        style="@style/dialogTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords"
+                        android:minHeight="@dimen/min_touch_target_size" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!--Date-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_padding">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/edit_image_padding"
+                    android:contentDescription="@string/calendar"
+                    app:srcCompat="@drawable/ic_calendar_blue_24dp"
+                    app:tint="@color/blue_to_green" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_new_person_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_new_person_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_padding"
+                        android:cursorVisible="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/pick_date"
+                        android:inputType="date"
+                        android:minHeight="@dimen/min_touch_target_size" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox_new_person"
+                style="@style/primaryTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edit_left_cb_padding"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginEnd="@dimen/default_padding"
+                android:layout_marginBottom="@dimen/default_padding"
+                android:minWidth="@dimen/min_touch_target_size"
+                android:minHeight="@dimen/min_touch_target_size"
+                android:text="@string/year_unknown" />
+
+            <!--Phone number-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_padding">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/edit_image_padding"
+                    android:contentDescription="@string/phone_number"
+                    app:srcCompat="@drawable/ic_call_blue_24dp"
+                    app:tint="@color/blue_to_green" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_new_person_phone"
+                        style="@style/dialogTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone_number"
+                        android:importantForAutofill="no"
+                        android:inputType="phone"
+                        android:minHeight="@dimen/min_touch_target_size" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!--Email-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_padding">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/edit_image_padding"
+                    android:contentDescription="@string/email"
+                    app:srcCompat="@drawable/ic_email_blue_24dp"
+                    app:tint="@color/blue_to_green" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_new_person_email"
+                        style="@style/dialogTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:minHeight="@dimen/min_touch_target_size" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

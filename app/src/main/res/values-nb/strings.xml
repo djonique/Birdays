@@ -7,22 +7,23 @@
 -->
 
 <resources>
-    <string name="build_version">Versjon</string>
+    <string name="build_version">Byggeversjon</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">Laster opp kontakter…</string>
-    <string name="contacts_uploaded">Kontakter opplastet</string>
-    <string name="loading_contacts_error">Kunne ikke importere kontakter, ugyldig datoformat</string>
+    <string name="loading_contacts">Laster inn kontakter…</string>
+    <string name="contacts_uploaded">Kontakter lastet opp</string>
+    <string name="loading_contacts_error">Kunne ikke importere kontakter, ikke-standard datoformat</string>
     <string name="permission_required">Tillatelse kreves for å importere kontakter</string>
     <string name="snackbar_allow_text">Tillat</string>
     <string name="all">Alle</string>
     <string name="famous">Berømte</string>
-    <string name="age">Alder:\u0020</string>
+    <string name="age">Nåværende alder:\u0020</string>
     <string name="happy_birthday">Gratulerer med dagen!</string>
-    <string name="web_search_error">Kunne ikke utføre handling, vennligst installér nettleseren</string>
-    <string name="delete_record_text">Er du sikker på at du vil slette denne lappen:\u0020</string>
-    <string name="record_deleted">Lapp slettet</string>
+    <string name="web_search_error">Kunne ikke utføre handlingen, vennligst installer en nettleser</string>
+    <string name="delete_record_confirm">Er du sikker på at du vil slette %1$s?</string>
+    <string name="record_deleted">Oppføring slettet</string>
     <string name="undo">Angre</string>
+    <string name="add_record">Legg til oppføring</string>
 
     <string-array name="months">
         <item>Januar</item>
@@ -40,22 +41,20 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_sync">Synkronisering</string>
     <string name="action_settings">Innstillinger</string>
     <string name="action_delete">Slett</string>
 
-    <!-- NewPersonDialogFragment -->
-    <string name="new_record">Ny lapp</string>
+    <!-- NewPersonActivity -->
+    <string name="new_record">Ny oppføring</string>
     <string name="add_from_contacts">Legg til fra kontakter</string>
-    <string name="open_contacts_error">Kunne ikke utføre handling grunnet enhetsfunksjoner</string>
+    <string name="open_contacts_error">Kunne ikke utføre handlingen på grunn av enhetsfunksjonene</string>
     <string name="name">Navn</string>
-    <string name="error_hint">Vennligst skriv inn navnet</string>
+    <string name="error_hint">Vennligst skriv inn et navn</string>
     <string name="phone_number">Telefonnummer</string>
     <string name="pick_date">Velg dato</string>
     <string name="wrong_date">Feil dato</string>
-    <string name="year_unknown">Jeg kan ikke året</string>
+    <string name="year_unknown">Jeg vet ikke året</string>
     <string name="cancel_button">Avbryt</string>
-    <string name="record_added">Lapp lagt til</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Bursdag</string>
@@ -63,7 +62,7 @@
     <string name="today">I dag</string>
     <string name="days_since_birth">Dager siden fødsel</string>
     <string name="zodiac_sign">Stjernetegn</string>
-    <string name="season_picture">Årstidbilde</string>
+    <string name="season_picture">Årstidsbilde</string>
     <string name="calendar">Kalender</string>
     <string name="call">Ring</string>
     <string name="chat">Chat</string>
@@ -71,10 +70,11 @@
 
     <!-- EditActivity -->
     <string name="editing_label">Redigering</string>
-    <string name="record_edited">Lapp redigert</string>
+    <string name="record_edited">Oppføring redigert</string>
+    <string name="edit_record">Rediger oppføring</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException, Samsung-enheter begrenser antallet numre og alarmer du kan registrere</string>
+    <string name="security_exception">SecurityException: Samsung-enheter begrenser antallet varsler til 500</string>
     <string name="channel_name">Bursdager</string>
 
     <!-- Zodiac signs -->
@@ -92,15 +92,16 @@
     <string name="pisces">Fiskene</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Optimalisering aktivert!</string>
-    <string name="optimization_description">\nFra og med versjon 6.0, introduserte Android strømsparingsmodusen Doze som holder styr på appers oppførsel ved å utsette bakgrunns-CPU.\n\nFor å få appen til å virke normalt, deaktivér optimalisering av Birdays.</string>
+    <string name="optimization_enabled">Deaktiver batterioptimalisering for appen</string>
+    <string name="optimization_description">For at appen skal fungere riktig, åpne Innstillinger og tillat appen å kjøre i bakgrunnen uten begrensninger</string>
     <string name="do_not_show_again">Ikke vis dette igjen</string>
-    <string name="disable_button">Deaktivér</string>
+    <string name="disable_button">Deaktiver</string>
+
     <!-- Notifications -->
-    <string name="notifications">Varslinger</string>
-    <string name="allow_notification">Tillat appen å sende varslinger om kommende bursdager</string>
-    <string name="notifications_time">Varslingsklokkeslett</string>
-    <string name="additional_notification">Ytterlig varsling</string>
+    <string name="notifications">Varsler</string>
+    <string name="allow_notification">Tillat appen å sende varsler om kommende bursdager</string>
+    <string name="notifications_time">Varseltid</string>
+    <string name="additional_notification">Ekstravarsel</string>
 
     <string-array name="additional_notification_entries">
         <item>Aldri</item>
@@ -120,24 +121,12 @@
         <item>Om 2 uker</item>
     </string-array>
 
-    <string name="notification_tone">Varslingstone</string>
-    <string name="ringtone_summary">Velg en tone til varslingen. Standard er tonen fra enhetsinnstillingene</string>
+    <string name="notification_tone">Varsellyd</string>
+    <string name="ringtone_summary">Velg en varsellyd. Som standard brukes lyden fra enhetsinnstillingene</string>
     <string name="silent">Ingen</string>
     <string name="help">Hjelp</string>
-    <string name="tap_here">Trykk her hvis du ikke mottar varslinger</string>
-    <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Synkronisering og sikkerhetskopiering</string>
-    <string name="contacts_import_title">Importér kontakter</string>
-    <string name="contacts_import_summary">Trykk her for å importere kontaktene fra enheten din (støtter ISO 8601)</string>
-    <string name="export_records">Overfør lapper (Beta)</string>
-    <string name="export_records_summary">Lag XML-filen med sikkerhetskopi</string>
-    <string name="ext_storage_error">Ekstern lagring er ikke tilgjengelig</string>
-    <string name="exporting_records">Overfører lapper…</string>
-    <string name="backup_finished">Sikkerhetskopi fullført, XML-filen er i\u0020</string>
-    <string name="recover_records">Gjenopprett lapper (Beta)</string>
-    <string name="recover_records_summary">Velg XML-filen med sikkerhetskopi</string>
-    <string name="recover_records_error">Kunne ikke utføre handling, vennligst installér filbehandleren</string>
-    <string name="records_recovered">Lapper gjenopprettet</string>
+    <string name="tap_here">Trykk her hvis du ikke mottar varsler</string>
+
     <!-- General -->
     <string name="general">Generelt</string>
     <string name="night_mode">Nattmodus</string>
@@ -153,44 +142,61 @@
 
     <string-array name="displayed_age_entries">
         <item>Nåværende</item>
-        <item>Fremtidige</item>
+        <item>Fremtidig</item>
     </string-array>
 
-    <string name="displayed_age_changes">Du må omstarte appen for å merke disse effektene</string>
-    <string name="restart_now">Omstart nå</string>
+    <string name="displayed_age_changes">Du må starte appen på nytt for at disse endringene skal tre i kraft</string>
+    <string name="restart_now">Start på nytt nå</string>
     <string name="later">Senere</string>
-    <string name="rate_app">Vurdér appen</string>
-    <string name="share_app">Del</string>
-    <string name="share_text">Glemmer du å gratulere slektninger, venner eller kolleger med dagen? Birdays vil hjelpe deg med å huske en viktig høytid!\n\n</string>
+    <string name="rate_app">Vurder appen</string>
+    <string name="share_app">Del appen</string>
+    <string name="share_text">"Glemmer du ofte å gratulere familie, venner eller kolleger med bursdagen? Birdays vil minne deg på en viktig dato!  "</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">Synkronisering og sikkerhetskopiering</string>
+    <string name="contacts_import_title">Importer kontakter</string>
+    <string name="contacts_import_summary">Trykk her for å importere kontakter fra enheten din (støtter ISO 8601)</string>
+    <string name="google_drive_backup">Sikkerhetskopiering til Google Drive</string>
+    <string name="google_drive_backup_summary">Last opp sikkerhetskopi av databasen til Google Drive</string>
+    <string name="google_drive_backup_progress">Sikkerhetskopierer til Google Drive…</string>
+    <string name="backup_complete">Sikkerhetskopi fullført</string>
+    <string name="google_drive_restore">Gjenoppretting fra Google Drive</string>
+    <string name="google_drive_restore_summary">Gjenopprett database fra Google Drive</string>
+    <string name="google_drive_restore_progress">Gjenoppretter fra Google Drive…</string>
+    <string name="recover_records_error">Kunne ikke gjenopprette oppføringene</string>
+    <string name="records_recovered">Oppføringene gjenopprettet</string>
+
     <!-- Advertising -->
-    <string name="advertising">Reklamering</string>
+    <string name="advertising">Reklame</string>
     <string name="about_ad_title">Hvorfor ser jeg annonser?</string>
-    <string name="about_ad_summary">Inntektene fra reklameringen går til utviklingen av prosjektet og oversettelse av det til andre språk. Du kan fjerne annonser helt gratis</string>
-    <string name="ad_interstitial_title">Interstitiell annonse</string>
-    <string name="ad_interstitial_summary">Denne typen annonse er begrenset til 1 visning om dagen. Ikke så ofte, eller?</string>
-    <string name="ad_banner">Banner</string>
-    <!-- About app -->
-    <string name="about_app">Om appen</string>
-    <string name="menu_github">Kildekode</string>
-    <string name="privacy_policy">Personvern</string>
-    <string name="software_licenses">Open-source-lisenser</string>
+    <string name="about_ad_summary">Alle reklameinntekter går til utviklingen av prosjektet</string>
+    <string name="show_ads">Vis annonser</string>
+    <string name="show_ads_summary">Du kan deaktivere annonser ved å se en kort videoannonse</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">Støtt prosjektet</string>
+    <string name="watch_video_title">Se en videoannonse</string>
+    <string name="ad_rewarded_summary">Se en kort video – inntektene går til utviklingen av appen</string>
+    <string name="ad_rewarded_unavailable">Videoen er ikke tilgjengelig akkurat nå, prøv igjen senere</string>
+    <string name="ad_disabled_success">Annonser er nå deaktivert</string>
+    <string name="ad_watch_full_video_to_disable">Se videoen til slutt for å deaktivere annonser</string>
+    <string name="donate_title">Gi et bidrag</string>
+    <string name="donate_summary">Økonomisk støtte til appens utvikling</string>
+
+    <!-- About -->
+    <string name="about">Om appen</string>
     <string name="licenses">Lisenser</string>
+    <string name="software_licenses">Lisenser for åpen kildekode</string>
+    <string name="third_party_sdks">Tredjeparts-SDK-er</string>
+    <string name="menu_github">Kildekode</string>
+    <string name="privacy_policy">Personvernerklæring</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Hvorfor virker ikke alarmen?</string>
-    <string name="help_description">Noen enheter har en strømsparingsmodus som kan blokkere appens bakgrunnsaktivitet eller hindre den fra å kjøre ved oppstart.\nFor å få alarmen til å virke ordentlig, utfør de enkle stegene under:\n\n1. Sørg for at varslinger er skrudd på for Birdays-appen (Innstillinger > Apper > Birdays).\n\n2. Hvis du har installert oppgavebehandling, oppdragsmorder eller RAM-optimalisering (f.eks. «Battery Saver», «Clean Master»), noe som også kan blokkere bakgrunnsaktivitet, legg Birdays til hvitelisten deres.\n\n3. Skru av strømsparingsmodusen din eller legg Birdays til hvitelisten (Innstillinger > Batteri > Batterioptimalisering).\nKun for enheter som kjører Android 6.0 (Marshmallow) eller høyere.</string>
-    <string name="help_whitelist">Åpne hviteliste</string>
-    <string name="help_whitelist_error">Kun for enheter som kjører Android 6.0 (Marshmallow) eller høyere</string>
-    <string name="help_delay_text">Vennligst vær oppmerksom på at varslinger kan virke med litt forsinkelse på noen enheter.</string>
+    <string name="help_header">Hvorfor fungerer ikke påminnelsen?</string>
+    <string name="help_description">Android-enheter har en strømsparingsmodus som blokkerer appen fra å kjøre i bakgrunnen eller hindrer den i å starte automatisk. For at varsler skal fungere riktig, følg disse enkle trinnene:\n\n1. Sørg for at varsler er tillatt for Birdays-appen (Innstillinger > Apper > Birdays).\n\n2. Hvis du har oppgavebehandlere, minnerensere eller strømsparingsapper installert (for eksempel «Battery Saver», «Clean Master» og lignende apper) som blokkerer bakgrunnskjøring, legg Birdays til unntakene.\n\n3. Slå av strømsparingsmodus for Birdays (Innstillinger > Batteri > Batterioptimalisering).</string>
     <string name="help_settings">Åpne innstillinger</string>
-    <string name="huawei_header">For Huawei-brukere</string>
-    <string name="huawei_description">Åpne enhets «Innstillinger», gå til «Strømsparing» og åpne «Beskyttede apper». Sørg for at denne funksjonen er aktivert for Birdays.</string>
-    <string name="samsung_header">For Samsung-brukere</string>
-    <string name="samsung_description">Åpne «Smart Manager», trykk på «Batteri», så «Info». Deaktivér denne funksjonen for Birdays-appen.</string>
-    <string name="xiaomi_header">For Xiaomi-brukere</string>
-    <string name="xiaomi_description">Åpne enhets «Innstillinger», gå til «Batteri &amp; ytelse», så «Behandle appers batteriforbruk», åpne «Velg apper», velg «Ingen restriksjoner» for Birdays.</string>
-    <string name="show_button">Vis</string>
-    <string name="help_email_description">Hvis alarmen ikke virker, vennligst kontakt meg via birdaysapp@gmail.com (Engelsk)</string>
+    <string name="help_delay_text">Vær oppmerksom på at varsler kan bli forsinket på enkelte enheter.</string>
+    <string name="help_email_description">Hvis du har spørsmål eller forslag, kontakt meg på birdaysapp@gmail.com</string>
     <string name="send_email">Send e-post</string>
 
     <!-- Famous persons -->
@@ -599,7 +605,7 @@
     <string name="klenze">Leo von Klenze</string>
     <string name="rossini">Gioachino Rossini</string>
     <string name="john_holland">John Philip Holland</string>
-    <string name="рollerith">Herman Hollerith</string>
+    <string name="hollerith">Herman Hollerith</string>
     <string name="papert">Seymour Papert</string>
     <!-- 1 march -->
     <string name="botticelli">Sandro Botticelli</string>
@@ -1312,7 +1318,7 @@
     <string name="cagliostro">Alessandro Cagliostro</string>
     <string name="akimov">Ivan Akimov</string>
     <string name="hardy">Thomas Hardy</string>
-    <string name="weissmüller">Johnny Weissmuller</string>
+    <string name="weissmuller">Johnny Weissmuller</string>
     <string name="quinto">Zachary Quinto</string>
     <!-- 3 june -->
     <string name="hutton">James Hutton</string>

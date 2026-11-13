@@ -7,12 +7,12 @@
 package com.djonique.birdays.adapters;
 
 import android.content.Context;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.fragments.AllFragment;
@@ -22,23 +22,23 @@ import com.djonique.birdays.models.Person;
 
 import java.util.Calendar;
 
-public class PagerAdapter extends FragmentPagerAdapter {
+public class PagerAdapter extends FragmentStateAdapter {
 
+    public static final int PAGE_COUNT = 3;
     public static final int FAMOUS_FRAGMENT_POSITION = 2;
 
-    private Context context;
-    private MonthFragment monthFragment;
-    private AllFragment allFragment;
+    private final Context context;
+    private final FragmentManager fragmentManager;
 
-    @SuppressWarnings("deprecation")
-    public PagerAdapter(FragmentManager fm, Context context) {
-        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        this.context = context;
+    public PagerAdapter(@NonNull FragmentActivity activity) {
+        super(activity);
+        this.context = activity;
+        this.fragmentManager = activity.getSupportFragmentManager();
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
+    public Fragment createFragment(int position) {
         return switch (position) {
             case 0 -> new MonthFragment();
             case 1 -> new AllFragment();
@@ -47,16 +47,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getItemPosition(@NonNull Object object) {
-        return POSITION_NONE;
+    public int getItemCount() {
+        return PAGE_COUNT;
     }
 
-    @Override
-    public int getCount() {
-        return 3;
-    }
-
-    @Override
     public CharSequence getPageTitle(int position) {
         return switch (position) {
             case 0 -> getMonth();
@@ -66,54 +60,55 @@ public class PagerAdapter extends FragmentPagerAdapter {
         };
     }
 
-    @NonNull
-    @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        Fragment createdFragment = (Fragment) super.instantiateItem(container, position);
-        switch (position) {
-            case 0:
-                monthFragment = ((MonthFragment) createdFragment);
-                break;
-            case 1:
-                allFragment = ((AllFragment) createdFragment);
-                break;
-        }
-        return createdFragment;
-    }
-
     private String getMonth() {
         String[] months = context.getResources().getStringArray(R.array.months);
         return months[Calendar.getInstance().get(Calendar.MONTH)];
     }
 
+    private <T extends Fragment> T findFragment(@NonNull Class<T> fragmentClass) {
+        for (Fragment fragment : fragmentManager.getFragments()) {
+            if (fragmentClass.isInstance(fragment)) {
+                return fragmentClass.cast(fragment);
+            }
+        }
+        return null;
+    }
+
     public void search(String text) {
+        AllFragment allFragment = findFragment(AllFragment.class);
         if (allFragment != null) {
             allFragment.findPerson(text);
         }
+        MonthFragment monthFragment = findFragment(MonthFragment.class);
         if (monthFragment != null) {
             monthFragment.findPerson(text);
         }
     }
 
     public void addPersonsFromDb() {
+        MonthFragment monthFragment = findFragment(MonthFragment.class);
         if (monthFragment != null) {
             monthFragment.addMonthPersonsFromDb();
         }
+        AllFragment allFragment = findFragment(AllFragment.class);
         if (allFragment != null) {
             allFragment.addAllPersonsFromDb();
         }
     }
 
     public void addPerson(Person person) {
+        MonthFragment monthFragment = findFragment(MonthFragment.class);
         if (monthFragment != null) {
             monthFragment.addPerson(person);
         }
+        AllFragment allFragment = findFragment(AllFragment.class);
         if (allFragment != null) {
             allFragment.addPerson(person, true);
         }
     }
 
     public void deletePerson(long timeStamp) {
+        MonthFragment monthFragment = findFragment(MonthFragment.class);
         if (monthFragment != null) {
             monthFragment.deleteRecord(timeStamp);
         }

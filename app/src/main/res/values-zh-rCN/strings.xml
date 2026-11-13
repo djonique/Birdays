@@ -7,191 +7,197 @@
 -->
 
 <resources>
-    <string name="build_version">Build version</string>
+    <string name="build_version">编译版本</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">Loading contacts…</string>
-    <string name="contacts_uploaded">Contacts uploaded</string>
-    <string name="loading_contacts_error">Unable to import contacts, nonstandard date format</string>
-    <string name="permission_required">Permission is required for importing contacts</string>
-    <string name="snackbar_allow_text">Allow</string>
-    <string name="all">All</string>
-    <string name="famous">Famous</string>
-    <string name="age">Current age:\u0020</string>
-    <string name="happy_birthday">Happy Birthday!</string>
-    <string name="web_search_error">Unable to perform action, please install web browser</string>
-    <string name="delete_record_text">Are you sure you want to delete this record:\u0020</string>
-    <string name="record_deleted">Record deleted</string>
-    <string name="undo">Undo</string>
+    <string name="loading_contacts">正在加载联系人…</string>
+    <string name="contacts_uploaded">联系人已上传</string>
+    <string name="loading_contacts_error">无法导入联系人，不是标准的日期格式</string>
+    <string name="permission_required">导入联系人需要权限</string>
+    <string name="snackbar_allow_text">允许</string>
+    <string name="all">全部</string>
+    <string name="famous">名人</string>
+    <string name="age">当前年龄:\u0020</string>
+    <string name="happy_birthday">生日快乐！</string>
+    <string name="web_search_error">无法执行操作，请安装网页浏览器</string>
+    <string name="delete_record_confirm">确定要删除 %1$s 吗？</string>
+    <string name="record_deleted">记录已删除</string>
+    <string name="undo">撤销</string>
+    <string name="add_record">添加记录</string>
 
     <string-array name="months">
-        <item>January</item>
-        <item>February</item>
-        <item>March</item>
-        <item>April</item>
-        <item>May</item>
-        <item>June</item>
-        <item>July</item>
-        <item>August</item>
-        <item>September</item>
-        <item>October</item>
-        <item>November</item>
-        <item>December</item>
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
     </string-array>
 
     <!-- Menu -->
-    <string name="action_sync">Synchronization</string>
-    <string name="action_settings">Settings</string>
-    <string name="action_delete">Delete</string>
+    <string name="action_settings">设置</string>
+    <string name="action_delete">删除</string>
 
-    <!-- NewPersonDialogFragment -->
-    <string name="new_record">New record</string>
-    <string name="add_from_contacts">Add from contacts</string>
-    <string name="open_contacts_error">Unable to perform action due to device features</string>
-    <string name="name">Name</string>
-    <string name="error_hint">Please enter the name</string>
-    <string name="phone_number">Phone number</string>
-    <string name="pick_date">Pick date</string>
-    <string name="wrong_date">Wrong date</string>
-    <string name="year_unknown">I don\'t know year</string>
-    <string name="cancel_button">Cancel</string>
-    <string name="record_added">Record added</string>
+    <!-- NewPersonActivity -->
+    <string name="new_record">新建记录</string>
+    <string name="add_from_contacts">从联系人添加</string>
+    <string name="open_contacts_error">由于设备功能而无法执行操作</string>
+    <string name="name">姓名</string>
+    <string name="error_hint">请输入姓名</string>
+    <string name="phone_number">电话号码</string>
+    <string name="pick_date">选择日期</string>
+    <string name="wrong_date">错误的日期</string>
+    <string name="year_unknown">我不知道年份</string>
+    <string name="cancel_button">取消</string>
 
     <!-- DetailActivity -->
-    <string name="birthday">Birthday</string>
-    <string name="days_left">Days until next birthday</string>
-    <string name="today">Today</string>
-    <string name="days_since_birth">Days since birth</string>
-    <string name="zodiac_sign">Zodiac sign</string>
-    <string name="season_picture">Season picture</string>
-    <string name="calendar">Calendar</string>
-    <string name="call">Call</string>
-    <string name="chat">Chat</string>
-    <string name="born_on_this_day">Born on this day</string>
+    <string name="birthday">生日</string>
+    <string name="days_left">到下个生日的天数</string>
+    <string name="today">今天</string>
+    <string name="days_since_birth">出生后的天数</string>
+    <string name="zodiac_sign">星座</string>
+    <string name="season_picture">季节图片</string>
+    <string name="calendar">日历</string>
+    <string name="call">呼叫</string>
+    <string name="chat">聊天</string>
+    <string name="born_on_this_day">在这一天出生</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">Editing</string>
-    <string name="record_edited">Record edited</string>
+    <string name="editing_label">编辑中</string>
+    <string name="record_edited">记录已编辑</string>
+    <string name="edit_record">编辑记录</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException, Samsung devices restrict the number of alarms you can register</string>
-    <string name="channel_name">Birthdays</string>
+    <string name="security_exception">SecurityException：三星设备将通知数量限制为 500 条</string>
+    <string name="channel_name">生日</string>
 
     <!-- Zodiac signs -->
-    <string name="aries">Aries</string>
-    <string name="taurus">Taurus</string>
-    <string name="gemini">Gemini</string>
-    <string name="cancer">Cancer</string>
-    <string name="leo">Leo</string>
-    <string name="virgo">Virgo</string>
-    <string name="libra">Libra</string>
-    <string name="scorpio">Scorpio</string>
-    <string name="sagittarius">Sagittarius</string>
-    <string name="capricorn">Capricorn</string>
-    <string name="aquarius">Aquarius</string>
-    <string name="pisces">Pisces</string>
+    <string name="aries">白羊座</string>
+    <string name="taurus">金牛座</string>
+    <string name="gemini">双子座</string>
+    <string name="cancer">巨蟹座</string>
+    <string name="leo">狮子座</string>
+    <string name="virgo">处女座</string>
+    <string name="libra">天秤座</string>
+    <string name="scorpio">天蝎座</string>
+    <string name="sagittarius">射手座</string>
+    <string name="capricorn">摩羯座</string>
+    <string name="aquarius">水瓶座</string>
+    <string name="pisces">双鱼座</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Optimization enabled!</string>
-    <string name="optimization_description">\nStarting from version 6.0, Android introduced power-saving mode Doze that manage apps behavior by deferring background CPU.\n\nTo make app work correctly disable optimization for Birdays.</string>
-    <string name="do_not_show_again">Do not show again</string>
-    <string name="disable_button">Disable</string>
+    <string name="optimization_enabled">为应用关闭电池优化</string>
+    <string name="optimization_description">为确保应用正常运行，请打开设置并允许应用在后台不受限制地运行</string>
+    <string name="do_not_show_again">不再显示</string>
+    <string name="disable_button">禁用</string>
+
     <!-- Notifications -->
-    <string name="notifications">Notifications</string>
-    <string name="allow_notification">Allow the app to send notifications of upcoming birthdays</string>
-    <string name="notifications_time">Notification time</string>
-    <string name="additional_notification">Additional notification</string>
+    <string name="notifications">通知</string>
+    <string name="allow_notification">允许应用程序发送即将到来的生日通知</string>
+    <string name="notifications_time">通知时间</string>
+    <string name="additional_notification">附加通知</string>
 
     <string-array name="additional_notification_entries">
-        <item>Never</item>
-        <item>1 day before</item>
-        <item>2 days before</item>
-        <item>3 days before</item>
-        <item>1 week before</item>
-        <item>2 weeks before</item>
+        <item>从不</item>
+        <item>1天前</item>
+        <item>2天前</item>
+        <item>3天前</item>
+        <item>1周前</item>
+        <item>2周前</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
-        <item>Today</item>
-        <item>Tomorrow</item>
-        <item>In 2 days</item>
-        <item>In 3 days</item>
-        <item>In a week</item>
-        <item>In 2 weeks</item>
+        <item>今天</item>
+        <item>明天</item>
+        <item>2 天后</item>
+        <item>3 天后</item>
+        <item>1 周后</item>
+        <item>2 周后</item>
     </string-array>
 
-    <string name="notification_tone">Notification tone</string>
-    <string name="ringtone_summary">Choose a sound for notification. By default is used tone from the device settings</string>
-    <string name="silent">None</string>
-    <string name="help">Help</string>
-    <string name="tap_here">Tap here if you don\'t receive notifications</string>
-    <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Synchronization and backup</string>
-    <string name="contacts_import_title">Import contacts</string>
-    <string name="contacts_import_summary">Tap here to import contacts from your device (supports ISO 8601)</string>
-    <string name="export_records">Export records (Beta)</string>
-    <string name="export_records_summary">Create the XML file with backup</string>
-    <string name="ext_storage_error">External storage is not available</string>
-    <string name="exporting_records">Exporting records…</string>
-    <string name="backup_finished">Backup finished, XML file in the\u0020</string>
-    <string name="recover_records">Recover records (Beta)</string>
-    <string name="recover_records_summary">Choose the XML file with backup</string>
-    <string name="recover_records_error">Unable to perform action, please install file manager</string>
-    <string name="records_recovered">Records recovered</string>
+    <string name="notification_tone">通知铃声</string>
+    <string name="ringtone_summary">选择通知的声音。默认使用设备设置的铃声</string>
+    <string name="silent">无</string>
+    <string name="help">帮助</string>
+    <string name="tap_here">如果没有收到通知，请点击此处</string>
+
     <!-- General -->
-    <string name="general">General</string>
-    <string name="night_mode">Night mode</string>
-    <string name="start_page">Start page</string>
+    <string name="general">通用</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="start_page">首页</string>
 
     <string-array name="start_page_entries">
-        <item>Current month</item>
-        <item>All</item>
-        <item>Famous</item>
+        <item>这个月</item>
+        <item>全部</item>
+        <item>名人</item>
     </string-array>
 
-    <string name="displayed_age">Displayed age</string>
+    <string name="displayed_age">显示的年龄</string>
 
     <string-array name="displayed_age_entries">
-        <item>Current</item>
-        <item>Future</item>
+        <item>当前</item>
+        <item>未来</item>
     </string-array>
 
-    <string name="displayed_age_changes">You must restart an app for these changes to take effect</string>
-    <string name="restart_now">Restart now</string>
-    <string name="later">Later</string>
-    <string name="rate_app">Rate app</string>
-    <string name="share_app">Share app</string>
-    <string name="share_text">Do you forget to congratulate your relatives, friends or colleagues on their Birthday? Birdays will remind you of an important holiday!\n\n</string>
+    <string name="displayed_age_changes">要让更改生效，你必须重新启动应用程序</string>
+    <string name="restart_now">立即重启</string>
+    <string name="later">稍后</string>
+    <string name="rate_app">为本软件评分</string>
+    <string name="share_app">分享</string>
+    <string name="share_text">"你是否经常忘记祝家人、朋友或同事生日快乐？Birdays 会提醒你这个重要的日子！"</string>
+
+    <!-- Synchronization and backup -->
+    <string name="sync_and_backup">同步和备份</string>
+    <string name="contacts_import_title">导入联系人</string>
+    <string name="contacts_import_summary">点击此处从设备中导入联系人 (支持 ISO 8601)</string>
+    <string name="google_drive_backup">Google Drive 备份</string>
+    <string name="google_drive_backup_summary">将数据库备份上传到 Google Drive</string>
+    <string name="google_drive_backup_progress">正在备份到 Google Drive…</string>
+    <string name="backup_complete">备份完成</string>
+    <string name="google_drive_restore">Google Drive 恢复</string>
+    <string name="google_drive_restore_summary">从 Google Drive 恢复数据库</string>
+    <string name="google_drive_restore_progress">正在从 Google Drive 恢复…</string>
+    <string name="recover_records_error">恢复记录失败</string>
+    <string name="records_recovered">记录已恢复</string>
+
     <!-- Advertising -->
-    <string name="advertising">Advertising</string>
-    <string name="about_ad_title">Why do I see ads?</string>
-    <string name="about_ad_summary">The revenue from advertising goes to the development of the project and to translation into other languages. You can remove ads for free</string>
-    <string name="ad_interstitial_title">Interstitial ad</string>
-    <string name="ad_interstitial_summary">This type of ad is limited to 1 show per day. Not so often, isn\'t it?</string>
-    <string name="ad_banner">Banner</string>
-    <!-- About app -->
-    <string name="about_app">About app</string>
-    <string name="menu_github">Source code</string>
-    <string name="privacy_policy">Privacy policy</string>
-    <string name="software_licenses">Open-source licenses</string>
-    <string name="licenses">Licenses</string>
+    <string name="advertising">广告</string>
+    <string name="about_ad_title">为什么我会看到广告？</string>
+    <string name="about_ad_summary">所有广告收入都用于项目开发</string>
+    <string name="show_ads">显示广告</string>
+    <string name="show_ads_summary">观看一段短视频广告即可关闭广告</string>
+
+    <!-- Support project -->
+    <string name="support_project_category">支持项目</string>
+    <string name="watch_video_title">观看视频广告</string>
+    <string name="ad_rewarded_summary">观看一段短视频——收入将用于应用开发</string>
+    <string name="ad_rewarded_unavailable">视频当前不可用，请稍后重试</string>
+    <string name="ad_disabled_success">广告已关闭</string>
+    <string name="ad_watch_full_video_to_disable">请观看完整视频以关闭广告</string>
+    <string name="donate_title">进行捐助</string>
+    <string name="donate_summary">为应用开发提供资金支持</string>
+
+    <!-- About -->
+    <string name="about">关于应用程序</string>
+    <string name="licenses">许可证</string>
+    <string name="software_licenses">开源许可证</string>
+    <string name="third_party_sdks">第三方 SDK</string>
+    <string name="menu_github">源代码</string>
+    <string name="privacy_policy">隐私政策</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Why alarm is not working?</string>
-    <string name="help_description">Some devices have Power Saving Mode that could block app background processes or disable application from running on startup.\nTo make alarm work correctly perform a few simple steps below:\n\n1. Make sure that notifications are enabled for Birdays app (Settings > Apps > Birdays).\n\n2. If you have installed task managers, task killers or RAM optimizers (e.g. «Battery Saver», «Clean Master»), which could block app background processes, add Birdays to their whitelist.\n\n3. Turn off your power-saving mode or add Birdays to the whitelist (Settings > Battery > Battery optimization).\nOnly for devices running Android 6.0 (Marshmallow) or higher.</string>
-    <string name="help_whitelist">Open whitelist</string>
-    <string name="help_whitelist_error">Only for devices running Android 6.0 (Marshmallow) or higher</string>
-    <string name="help_delay_text">Please note that on some devices notifications could work with some delay.</string>
-    <string name="help_settings">Open settings</string>
-    <string name="huawei_header">For Huawei owners</string>
-    <string name="huawei_description">Open device «Settings», go to «Power saving» and open «Protected apps». Make sure that this feature is enabled for Birdays.</string>
-    <string name="samsung_header">For Samsung owners</string>
-    <string name="samsung_description">Open «Smart Manager», tap on «Battery», then on «Detail». Disable this feature for Birdays app.</string>
-    <string name="xiaomi_header">For Xiaomi owners</string>
-    <string name="xiaomi_description">Open device «Settings», go to «Battery &amp; performance», then «Manage apps battery usage», open «Choose apps», choose «No restrictions» for Birdays.</string>
-    <string name="show_button">Show</string>
-    <string name="help_email_description">If alarm still not working, please contact me at birdaysapp@gmail.com</string>
-    <string name="send_email">Send email</string>
+    <string name="help_header">为什么提醒不起作用？</string>
+    <string name="help_description">Android 设备有省电模式，会阻止应用在后台运行或阻止其自动启动。要让通知正常工作，请按以下简单步骤操作：\n\n1. 确保已允许 Birdays 应用发送通知（设置 > 应用 > Birdays）。\n\n2. 如果你安装了会阻止后台运行的任务管理器、内存清理或省电应用（例如“Battery Saver”、“Clean Master”及类似应用），请将 Birdays 加入例外列表。\n\n3. 为 Birdays 关闭省电模式（设置 > 电池 > 电池优化）。</string>
+    <string name="help_settings">打开设置</string>
+    <string name="help_delay_text">请注意，在某些设备上，通知可能会有所延迟。</string>
+    <string name="help_email_description">如有任何问题或建议，请通过 birdaysapp@gmail.com 与我联系</string>
+    <string name="send_email">发送邮件</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->
@@ -599,7 +605,7 @@
     <string name="klenze">Leo von Klenze</string>
     <string name="rossini">Gioachino Rossini</string>
     <string name="john_holland">John Philip Holland</string>
-    <string name="рollerith">Herman Hollerith</string>
+    <string name="hollerith">Herman Hollerith</string>
     <string name="papert">Seymour Papert</string>
     <!-- 1 march -->
     <string name="botticelli">Sandro Botticelli</string>
@@ -1312,7 +1318,7 @@
     <string name="cagliostro">Alessandro Cagliostro</string>
     <string name="akimov">Ivan Akimov</string>
     <string name="hardy">Thomas Hardy</string>
-    <string name="weissmüller">Johnny Weissmuller</string>
+    <string name="weissmuller">Johnny Weissmuller</string>
     <string name="quinto">Zachary Quinto</string>
     <!-- 3 june -->
     <string name="hutton">James Hutton</string>

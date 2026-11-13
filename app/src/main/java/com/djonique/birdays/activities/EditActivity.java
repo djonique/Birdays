@@ -12,13 +12,15 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.DatePicker;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
+import androidx.appcompat.widget.Toolbar;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.alarm.AlarmHelper;
@@ -27,14 +29,12 @@ import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.DatePickerManager;
 import com.djonique.birdays.utils.Utils;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.textfield.TextInputLayout;
-import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.Calendar;
 
-public class EditActivity extends AppCompatActivity implements
-        android.app.DatePickerDialog.OnDateSetListener,
-        com.wdullaer.materialdatetimepicker.date.DatePickerDialog.OnDateSetListener {
+public class EditActivity extends AppCompatActivity {
 
     private TextInputLayout tilEditName;
     private EditText etName;
@@ -56,6 +56,15 @@ public class EditActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
         Utils.setupSystemBarAppearance(this);
+        View container = findViewById(R.id.container_edit);
+        AppBarLayout appBarLayout = findViewById(R.id.appbar_edit);
+        Utils.applySystemBarsInsets(container, appBarLayout, null, container);
+
+        Toolbar toolbar = findViewById(R.id.toolbar_edit);
+        toolbar.setTitle(R.string.editing_label);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
 
         tilEditName = findViewById(R.id.til_edit_name);
         etName = findViewById(R.id.edittext_edit_name);
@@ -70,6 +79,11 @@ public class EditActivity extends AppCompatActivity implements
 
         dbHelper = new DbHelper(this);
         person = dbHelper.query().getPerson(timeStamp);
+        if (person == null) {
+            android.widget.Toast.makeText(this, R.string.record_deleted, android.widget.Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
         yearUnknown = person.isYearUnknown();
 
         calendar = Calendar.getInstance();
@@ -81,7 +95,8 @@ public class EditActivity extends AppCompatActivity implements
 
         etName.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -89,12 +104,14 @@ public class EditActivity extends AppCompatActivity implements
             }
 
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         etDate.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -102,7 +119,8 @@ public class EditActivity extends AppCompatActivity implements
             }
 
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> checkBoxListener());
@@ -110,8 +128,7 @@ public class EditActivity extends AppCompatActivity implements
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                setEnabled(false);
-                getOnBackPressedDispatcher().onBackPressed();
+                finish();
                 Utils.overrideCloseTransition(EditActivity.this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
             }
         });
@@ -182,17 +199,7 @@ public class EditActivity extends AppCompatActivity implements
     }
 
     private void pickDate() {
-        new DatePickerManager(this, calendar).showDialog(this, this);
-    }
-
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        setDate(year, month, dayOfMonth);
-    }
-
-    @Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        setDate(year, monthOfYear, dayOfMonth);
+        new DatePickerManager(this, calendar).showDialog(this::setDate);
     }
 
     private void setDate(int year, int month, int dayOfMonth) {
@@ -254,5 +261,13 @@ public class EditActivity extends AppCompatActivity implements
     private boolean fieldsValid() {
         return (!Utils.isEmptyDate(etDate) && Utils.isRightDate(calendar))
                 || (!Utils.isEmptyDate(etDate) && checkBox.isChecked());
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (dbHelper != null) {
+            dbHelper.close();
+        }
+        super.onDestroy();
     }
 }

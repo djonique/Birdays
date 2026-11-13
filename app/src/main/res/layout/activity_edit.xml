@@ -9,13 +9,32 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_edit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.djonique.birdays.activities.EditActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_bar"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_edit"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app_bar"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextAppearance="@style/TextAppearance.Birdays.ToolbarTitle" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,24 +53,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/edit_image_padding"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/calendar"
-                    android:tint="@color/blue_to_green"
-                    app:srcCompat="@drawable/ic_person_blue_24dp" />
+                    app:srcCompat="@drawable/ic_person_blue_24dp"
+                    app:tint="@color/blue_to_green" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_edit_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/edit_text_view_left_padding"
                     android:layout_marginStart="@dimen/edit_text_view_left_padding">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_edit_name"
                         style="@style/dialogTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:hint="@string/name"
-                        android:inputType="textCapWords" />
+                        android:importantForAutofill="no"
+                        android:inputType="textCapWords"
+                        android:minHeight="@dimen/min_touch_target_size" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -66,22 +87,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/edit_image_padding"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/calendar"
-                    android:tint="@color/blue_to_green"
-                    app:srcCompat="@drawable/ic_calendar_blue_24dp" />
+                    app:srcCompat="@drawable/ic_calendar_blue_24dp"
+                    app:tint="@color/blue_to_green" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_edit_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/edit_text_view_left_padding"
                     android:layout_marginStart="@dimen/edit_text_view_left_padding">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_edit_date"
-                        style="@android:style/Widget.Holo.Spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/default_padding"
@@ -89,20 +107,21 @@
                         android:focusableInTouchMode="false"
                         android:hint="@string/pick_date"
                         android:inputType="date"
-                        android:textSize="@dimen/edit_date_text_size" />
+                        android:minHeight="@dimen/min_touch_target_size" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatCheckBox
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/checkbox_edit"
                 style="@style/primaryTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/default_padding"
-                android:layout_marginLeft="@dimen/edit_left_cb_padding"
-                android:layout_marginRight="@dimen/default_padding"
                 android:layout_marginStart="@dimen/edit_left_cb_padding"
                 android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginBottom="@dimen/default_padding"
+                android:layout_marginEnd="@dimen/default_padding"
+                android:minWidth="@dimen/min_touch_target_size"
+                android:minHeight="@dimen/min_touch_target_size"
                 android:text="@string/year_unknown" />
 
             <!--Phone number-->
@@ -116,23 +135,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/edit_image_padding"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/phone_number"
-                    android:tint="@color/blue_to_green"
-                    app:srcCompat="@drawable/ic_call_blue_24dp" />
+                    app:srcCompat="@drawable/ic_call_blue_24dp"
+                    app:tint="@color/blue_to_green" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/edit_text_view_left_padding"
                     android:layout_marginStart="@dimen/edit_text_view_left_padding">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_edit_phone"
                         style="@style/dialogTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:hint="@string/phone_number"
-                        android:inputType="phone" />
+                        android:importantForAutofill="no"
+                        android:inputType="phone"
+                        android:minHeight="@dimen/min_touch_target_size" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -147,23 +168,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/edit_image_padding"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/email"
-                    android:tint="@color/blue_to_green"
-                    app:srcCompat="@drawable/ic_email_blue_24dp" />
+                    app:srcCompat="@drawable/ic_email_blue_24dp"
+                    app:tint="@color/blue_to_green" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/edit_text_view_left_padding"
                     android:layout_marginStart="@dimen/edit_text_view_left_padding">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_edit_email"
                         style="@style/dialogTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:hint="@string/email"
-                        android:inputType="textEmailAddress" />
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:minHeight="@dimen/min_touch_target_size" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </LinearLayout>

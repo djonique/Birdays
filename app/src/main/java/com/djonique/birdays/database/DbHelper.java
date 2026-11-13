@@ -15,7 +15,7 @@ import android.provider.BaseColumns;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.Utils;
 
-public class DbHelper extends SQLiteOpenHelper {
+public class DbHelper extends SQLiteOpenHelper implements AutoCloseable {
 
     public static final String COLUMN_NAME = "name";
     public static final String SELECTION_LIKE_NAME = COLUMN_NAME + " LIKE ?";
@@ -46,8 +46,8 @@ public class DbHelper extends SQLiteOpenHelper {
             + COLUMN_DATE + " INTEGER"
             + ");";
 
-    private DbQueryManager dbQueryManager;
-    private Context context;
+    private final DbQueryManager dbQueryManager;
+    private final Context context;
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DATABASE_VERSION);
@@ -105,5 +105,10 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public void removeRecord(long timeStamp) {
         getWritableDatabase().delete(DB_PERSONS, SELECTION_TIME_STAMP, new String[]{Long.toString(timeStamp)});
+    }
+
+    @Override
+    public void close() {
+        super.close();
     }
 }

@@ -15,7 +15,7 @@
             android:key="@string/notifications_key"
             android:summary="@string/allow_notification"
             android:title="@string/notifications" />
-        <com.djonique.birdays.preferences.TimePreference
+        <Preference
             android:defaultValue="@string/default_time_preference"
             android:dependency="@string/notifications_key"
             android:key="@string/notification_time_key"
@@ -28,34 +28,15 @@
             android:key="@string/additional_notification_key"
             android:summary="%s"
             android:title="@string/additional_notification" />
-        <RingtonePreference
+        <Preference
             android:dependency="@string/notifications_key"
             android:key="@string/ringtone_key"
-            android:ringtoneType="notification|ringtone"
-            android:showDefault="true"
-            android:showSilent="true"
             android:summary="@string/ringtone_summary"
             android:title="@string/notification_tone" />
         <Preference
             android:key="@string/help_key"
             android:summary="@string/tap_here"
             android:title="@string/help" />
-    </PreferenceCategory>
-
-    <!-- Synchronization and Backup -->
-    <PreferenceCategory android:title="@string/sync_and_backup">
-        <Preference
-            android:key="@string/import_contacts_key"
-            android:summary="@string/contacts_import_summary"
-            android:title="@string/contacts_import_title" />
-        <Preference
-            android:key="@string/export_key"
-            android:summary="@string/export_records_summary"
-            android:title="@string/export_records" />
-        <Preference
-            android:key="@string/recover_key"
-            android:summary="@string/recover_records_summary"
-            android:title="@string/recover_records" />
     </PreferenceCategory>
 
     <!-- General -->
@@ -81,8 +62,24 @@
             android:key="@string/rate_app_key"
             android:title="@string/rate_app" />
         <Preference
-            android:key="@string/share_key"
+            android:key="@string/share_app_key"
             android:title="@string/share_app" />
+    </PreferenceCategory>
+
+    <!-- Synchronization and Backup -->
+    <PreferenceCategory android:title="@string/sync_and_backup">
+        <Preference
+            android:key="@string/import_contacts_key"
+            android:summary="@string/contacts_import_summary"
+            android:title="@string/contacts_import_title" />
+        <Preference
+            android:key="@string/google_drive_backup_key"
+            android:summary="@string/google_drive_backup_summary"
+            android:title="@string/google_drive_backup" />
+        <Preference
+            android:key="@string/google_drive_restore_key"
+            android:summary="@string/google_drive_restore_summary"
+            android:title="@string/google_drive_restore" />
     </PreferenceCategory>
 
     <!-- Advertising -->
@@ -91,32 +88,36 @@
             android:selectable="false"
             android:summary="@string/about_ad_summary"
             android:title="@string/about_ad_title" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/show_ads_key"
+            android:summary="@string/show_ads_summary"
+            android:title="@string/show_ads" />
+    </PreferenceCategory>
+
+    <!-- Support project -->
+    <PreferenceCategory android:title="@string/support_project_category">
+        <Preference
+            android:key="@string/donate_key"
+            android:summary="@string/donate_summary"
+            android:title="@string/donate_title" />
         <Preference
             android:key="@string/ad_rewarded_key"
             android:summary="@string/ad_rewarded_summary"
-            android:title="@string/ad_rewarded_title" />
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="@string/ad_interstitial_key"
-            android:summary="@string/ad_interstitial_summary"
-            android:title="@string/ad_interstitial_title" />
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="@string/ad_banner_key"
-            android:title="@string/ad_banner" />
+            android:title="@string/watch_video_title" />
     </PreferenceCategory>
 
-    <!-- About app -->
-    <PreferenceCategory android:title="@string/about_app">
+    <!-- About -->
+    <PreferenceCategory android:title="@string/about">
+        <Preference
+            android:key="@string/licenses_key"
+            android:title="@string/licenses" />
         <Preference
             android:key="@string/source_code_key"
             android:title="@string/menu_github" />
         <Preference
             android:key="@string/privacy_policy_key"
             android:title="@string/privacy_policy" />
-        <Preference
-            android:key="@string/licenses_key"
-            android:title="@string/software_licenses" />
         <Preference
             android:selectable="false"
             android:summary="@string/version_name"
