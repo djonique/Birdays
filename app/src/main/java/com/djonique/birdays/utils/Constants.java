@@ -39,5 +39,5 @@ public interface Constants {
     String MAILTO = "mailto:";
     String ADDRESS = "address";
     String SMSTO = "smsto:";
-    String TEL = "tel: ";
+    String TEL = "tel:";
 }

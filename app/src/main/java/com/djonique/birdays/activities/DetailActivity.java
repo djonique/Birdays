@@ -138,7 +138,9 @@ public class DetailActivity extends AppCompatActivity {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean adEnabled = preferences.getBoolean(getString(R.string.show_ads_key), true);
-        Log.d("DetailActivity", "adEnabled = " + adEnabled);
+        if (BuildConfig.DEBUG) {
+            Log.d("DetailActivity", "adEnabled = " + adEnabled);
+        }
         displayedAge = preferences.getString(Constants.DISPLAYED_AGE_KEY, "0");
 
         incrementDetailVisitCount(preferences);
@@ -301,7 +303,9 @@ public class DetailActivity extends AppCompatActivity {
                     .putInt(Constants.INTERSTITIAL_VISIT_COUNT, visitCount)
                     .apply();
         }
-        Log.d("DetailActivity", "DetailActivity visit count today: " + visitCount);
+        if (BuildConfig.DEBUG) {
+            Log.d("DetailActivity", "DetailActivity visit count today: " + visitCount);
+        }
     }
 
     private void loadInterstitialAd() {
@@ -331,7 +335,9 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {
-                Log.e("DetailActivity", "Native ad failed to load: code=" + adRequestError.getCode() + ", desc=" + adRequestError.getDescription());
+                if (BuildConfig.DEBUG) {
+                    Log.e("DetailActivity", "Native ad failed to load: code=" + adRequestError.getCode() + ", desc=" + adRequestError.getDescription());
+                }
                 nativeAdView.setVisibility(View.GONE);
             }
         });

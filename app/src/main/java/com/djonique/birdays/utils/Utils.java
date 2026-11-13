@@ -48,8 +48,6 @@ public class Utils {
     private static final String NAV_BAR_SCRIM_TAG = "NAV_BAR_SCRIM_";
     private static final String CUTOUT_SCRIM_LEFT_TAG = "CUTOUT_SCRIM_LEFT";
     private static final String CUTOUT_SCRIM_RIGHT_TAG = "CUTOUT_SCRIM_RIGHT";
-    private static final Calendar today = Calendar.getInstance();
-    private static final Calendar dayOfBirthday = Calendar.getInstance();
 
     public static String getDate(long date) {
         return DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.getDefault()).format(date);
@@ -89,10 +87,12 @@ public class Utils {
     }
 
     public static long getTimeOffset() {
-        return TimeZone.getDefault().getOffset(today.getTimeInMillis());
+        return TimeZone.getDefault().getOffset(System.currentTimeMillis());
     }
 
     public static int getCurrentAge(long date) {
+        Calendar today = Calendar.getInstance();
+        Calendar dayOfBirthday = Calendar.getInstance();
         dayOfBirthday.setTimeInMillis(date);
         int age = getYear(today) - getYear(dayOfBirthday);
         if (getMonth(today) < getMonth(dayOfBirthday)) {
@@ -105,6 +105,8 @@ public class Utils {
     }
 
     public static int getFutureAge(long date) {
+        Calendar today = Calendar.getInstance();
+        Calendar dayOfBirthday = Calendar.getInstance();
         dayOfBirthday.setTimeInMillis(date);
         int age = getYear(today) - getYear(dayOfBirthday);
         if (getMonth(today) < getMonth(dayOfBirthday)) {
@@ -117,6 +119,7 @@ public class Utils {
     }
 
     public static String daysLeft(Context context, long date) {
+        Calendar today = Calendar.getInstance();
         Calendar birthday = Calendar.getInstance();
         birthday.setTimeInMillis(date);
         if (getMonth(today) == getMonth(birthday) && getDay(today) == getDay(birthday)) {
@@ -135,6 +138,7 @@ public class Utils {
     }
 
     public static String daysSinceBirthday(long date) {
+        Calendar today = Calendar.getInstance();
         Calendar birthday = Calendar.getInstance();
         birthday.setTimeInMillis(date);
         birthday.set(Calendar.HOUR_OF_DAY, 9);
@@ -153,22 +157,19 @@ public class Utils {
     }
 
     public static boolean isCurrentMonth(long date) {
-        boolean thisMonth = false;
-
+        Calendar today = Calendar.getInstance();
+        Calendar dayOfBirthday = Calendar.getInstance();
         dayOfBirthday.setTimeInMillis(date);
-
-        if (getMonth(dayOfBirthday) == getMonth(today)) {
-            thisMonth = true;
-        }
-        return thisMonth;
+        return getMonth(dayOfBirthday) == getMonth(today);
     }
 
     public static boolean isBirthdayPassed(long date) {
-        return getDay(today) > getDay(date);
+        return getDay(Calendar.getInstance()) > getDay(date);
     }
 
     public static int getZodiacId(long date) {
         int resId = 0;
+        Calendar dayOfBirthday = Calendar.getInstance();
         dayOfBirthday.setTimeInMillis(date);
 
         resId = switch (getMonth(dayOfBirthday)) {
