@@ -108,7 +108,7 @@ public class ContactsHelper {
      * birthday row (2N+1 queries). Both are now fetched in a single query each and joined in
      * memory by contact id, so the import costs three queries in total.</p>
      */
-    private List<Person> getAllContactsWithBirthdays(ContentResolver contentResolver) {
+    public static List<Person> readContactsWithBirthdays(ContentResolver contentResolver) {
 
         List<Person> contacts = new ArrayList<>();
 
@@ -141,7 +141,7 @@ public class ContactsHelper {
         return contacts;
     }
 
-    private Map<String, String> getPhoneNumbers(ContentResolver contentResolver) {
+    private static Map<String, String> getPhoneNumbers(ContentResolver contentResolver) {
         Map<String, String> phoneNumbers = new HashMap<>();
         String[] projection = {
                 ContactsContract.CommonDataKinds.Phone.CONTACT_ID,
@@ -162,7 +162,7 @@ public class ContactsHelper {
         return phoneNumbers;
     }
 
-    private Map<String, String> getEmails(ContentResolver contentResolver) {
+    private static Map<String, String> getEmails(ContentResolver contentResolver) {
         Map<String, String> emails = new HashMap<>();
         String[] projection = {
                 ContactsContract.CommonDataKinds.Email.CONTACT_ID,
@@ -186,7 +186,7 @@ public class ContactsHelper {
     /**
      * Returns cursor with contacts with specified Birthdays
      */
-    private Cursor getContactsCursor(ContentResolver contentResolver) {
+    private static Cursor getContactsCursor(ContentResolver contentResolver) {
         Uri uri = ContactsContract.Data.CONTENT_URI;
 
         String where =
@@ -237,7 +237,7 @@ public class ContactsHelper {
                 AlarmHelper alarmHelper = new AlarmHelper(appContext);
 
                 List<Person> dbPersons = dbHelper.query().getPersons();
-                List<Person> contacts = getAllContactsWithBirthdays(contentResolver);
+                List<Person> contacts = readContactsWithBirthdays(contentResolver);
 
                 for (Person person : contacts) {
                     if (!Utils.isPersonAlreadyInDb(person, dbPersons)) {

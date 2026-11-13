@@ -8,6 +8,7 @@ package com.djonique.birdays.utils;
 
 import android.app.Application;
 
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.yandex.mobile.ads.common.YandexAds;
 
 public class BirdaysApplication extends Application {
@@ -31,5 +32,16 @@ public class BirdaysApplication extends Application {
         super.onCreate();
         YandexAds.initialize(this, () -> {
         });
+    }
+
+    /**
+     * Best-effort cleanup of the repository pool. Not relied on in production — the pool threads
+     * are daemons and every database handle is closed in try-with-resources — but it gives tests
+     * and emulators a deterministic shutdown point.
+     */
+    @Override
+    public void onTerminate() {
+        BirdaysRepository.getInstance(this).shutdown();
+        super.onTerminate();
     }
 }
