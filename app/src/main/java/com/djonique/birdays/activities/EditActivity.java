@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
@@ -23,9 +24,8 @@ import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.Toolbar;
 
 import com.djonique.birdays.R;
-import com.djonique.birdays.alarm.AlarmHelper;
-import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.DatePickerManager;
 import com.djonique.birdays.utils.Utils;
@@ -44,9 +44,8 @@ public class EditActivity extends AppCompatActivity {
     private EditText etPhoneNumber;
     private EditText etEmail;
 
-    private DbHelper dbHelper;
     private Person person;
-    private Calendar calendar;
+    private final Calendar calendar = Calendar.getInstance();
     private long date;
     private boolean yearUnknown;
     private boolean hideOkButton = false;
@@ -77,19 +76,33 @@ public class EditActivity extends AppCompatActivity {
         Intent intent = getIntent();
         long timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
 
-        dbHelper = new DbHelper(this);
-        person = dbHelper.query().getPerson(timeStamp);
-        if (person == null) {
-            android.widget.Toast.makeText(this, R.string.record_deleted, android.widget.Toast.LENGTH_SHORT).show();
-            finish();
-            return;
-        }
-        yearUnknown = person.isYearUnknown();
+        // The record is read on a worker thread. The form is already inflated, so the callback
+        // only has to fill it in — after re-checking that this activity is still alive.
+        BirdaysRepository.getInstance(this).getPerson(timeStamp,
+                new BirdaysRepository.Callback<Person>() {
+                    @Override
+                    public void onSuccess(Person result) {
+                        if (isFinishing() || isDestroyed()) return;
+                        if (result == null) {
+                            Toast.makeText(EditActivity.this, R.string.record_deleted,
+                                    Toast.LENGTH_SHORT).show();
+                            finish();
+                            return;
+                        }
+                        person = result;
+                        yearUnknown = person.isYearUnknown();
+                        calendar.setTimeInMillis(person.getDate());
+                        setupUI();
+                    }
 
-        calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(person.getDate());
-
-        setupUI();
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        Toast.makeText(EditActivity.this, R.string.recover_records_error,
+                                Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                });
 
         etDate.setOnClickListener(v -> pickDate());
 
@@ -149,11 +162,6 @@ public class EditActivity extends AppCompatActivity {
             return true;
         } else if (itemId == R.id.menu_edit_ok) {
             updatePerson();
-            setAlarms(person);
-            Utils.notifyWidget(this);
-            setResult(RESULT_OK, new Intent());
-            finish();
-            Utils.overrideCloseTransition(this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -176,12 +184,34 @@ public class EditActivity extends AppCompatActivity {
     }
 
     private void updatePerson() {
+        if (person == null) return;
         person.setName(updateText(etName));
         person.setDate(calendar.getTimeInMillis());
         person.setYearUnknown(checkBox.isChecked());
         person.setPhoneNumber(updateText(etPhoneNumber));
         person.setEmail(updateText(etEmail));
-        dbHelper.updateRecord(person);
+
+        // The repository also re-schedules the alarm for the new date, so RESULT_OK is reported
+        // only after the write finished — the detail screen then re-reads the committed row.
+        BirdaysRepository.getInstance(this).updatePerson(person,
+                new BirdaysRepository.Callback<Person>() {
+                    @Override
+                    public void onSuccess(Person result) {
+                        if (isFinishing() || isDestroyed()) return;
+                        Utils.notifyWidget(EditActivity.this);
+                        setResult(RESULT_OK, new Intent());
+                        finish();
+                        Utils.overrideCloseTransition(EditActivity.this,
+                                R.anim.activity_primary_in, R.anim.activity_secondary_out);
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        Toast.makeText(EditActivity.this, R.string.recover_records_error,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private String updateText(EditText editText) {
@@ -190,12 +220,6 @@ public class EditActivity extends AppCompatActivity {
             result = editText.getText().toString();
         }
         return result;
-    }
-
-    private void setAlarms(Person person) {
-        AlarmHelper alarmHelper = new AlarmHelper(this);
-        alarmHelper.removeAlarms(person.getTimeStamp());
-        alarmHelper.setAlarms(person);
     }
 
     private void pickDate() {
@@ -261,13 +285,5 @@ public class EditActivity extends AppCompatActivity {
     private boolean fieldsValid() {
         return (!Utils.isEmptyDate(etDate) && Utils.isRightDate(calendar))
                 || (!Utils.isEmptyDate(etDate) && checkBox.isChecked());
-    }
-
-    @Override
-    protected void onDestroy() {
-        if (dbHelper != null) {
-            dbHelper.close();
-        }
-        super.onDestroy();
     }
 }

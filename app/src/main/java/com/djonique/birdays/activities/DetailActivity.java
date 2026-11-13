@@ -38,9 +38,8 @@ import com.djonique.birdays.BuildConfig;
 import com.djonique.birdays.R;
 import com.djonique.birdays.ad.NativeAdHelper;
 import com.djonique.birdays.adapters.FamousFragmentAdapter;
-import com.djonique.birdays.alarm.AlarmHelper;
-import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.ReviewHelper;
 import com.djonique.birdays.utils.Utils;
@@ -76,7 +75,6 @@ public class DetailActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
     private com.yandex.mobile.ads.nativeads.NativeAd mNativeAd;
-    private DbHelper dbHelper;
     private Person person;
     private long timeStamp, date;
     private String phoneNumber, email, displayedAge;
@@ -133,42 +131,58 @@ public class DetailActivity extends AppCompatActivity {
             }
         }
 
-        dbHelper = new DbHelper(this);
-
         Utils.setupDayNightTheme(preferences);
 
         Intent intent = getIntent();
         timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
-        person = dbHelper.query().getPerson(timeStamp);
-        if (person == null) {
-            Toast.makeText(this, R.string.record_deleted, Toast.LENGTH_SHORT).show();
-            finish();
-            return;
-        }
-        date = person.getDate();
-        yearUnknown = person.isYearUnknown();
-        phoneNumber = person.getPhoneNumber();
-        email = person.getEmail();
 
-        toolbar.setTitle(person.getName());
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
 
         Utils.applySystemBarsInsets(container, findViewById(R.id.appbar_detail), null, container);
 
-        setupUI();
-
-        loadBornThisDay();
-
         recyclerView.setFocusable(false);
 
         requestInAppReview();
 
         if (fabDetail != null) fabDetail.setOnClickListener(v -> starEditActivity());
-        if (btnPhone != null) btnPhone.setOnClickListener(v -> makeCall());
-        if (btnChat != null) btnChat.setOnClickListener(v -> sendMessage());
-        if (btnEmail != null) btnEmail.setOnClickListener(v -> sendEmail());
+
+        // The record is read on a worker thread; every view is touched only after the lifecycle
+        // re-check below, so a slow read cannot update a finished screen.
+        BirdaysRepository.getInstance(this).getPerson(timeStamp,
+                new BirdaysRepository.Callback<Person>() {
+                    @Override
+                    public void onSuccess(Person result) {
+                        if (isFinishing() || isDestroyed()) return;
+                        if (result == null) {
+                            Toast.makeText(DetailActivity.this, R.string.record_deleted, Toast.LENGTH_SHORT).show();
+                            finish();
+                            return;
+                        }
+                        person = result;
+                        date = person.getDate();
+                        yearUnknown = person.isYearUnknown();
+                        phoneNumber = person.getPhoneNumber();
+                        email = person.getEmail();
+
+                        toolbar.setTitle(person.getName());
+
+                        setupUI();
+                        loadBornThisDay();
+
+                        if (btnPhone != null) btnPhone.setOnClickListener(v -> makeCall());
+                        if (btnChat != null) btnChat.setOnClickListener(v -> sendMessage());
+                        if (btnEmail != null) btnEmail.setOnClickListener(v -> sendEmail());
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        Toast.makeText(DetailActivity.this, R.string.recover_records_error, Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                });
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
@@ -212,9 +226,6 @@ public class DetailActivity extends AppCompatActivity {
     protected void onDestroy() {
         if (mNativeAd != null) {
             mNativeAd.setNativeAdEventListener(null);
-        }
-        if (dbHelper != null) {
-            dbHelper.close();
         }
         super.onDestroy();
     }
@@ -288,10 +299,21 @@ public class DetailActivity extends AppCompatActivity {
         FamousFragmentAdapter adapter = new FamousFragmentAdapter();
         recyclerView.setAdapter(adapter);
 
-        List<Person> famousPersons = dbHelper.query().getFamousBornThisDay(date);
-        for (int i = 0; i < famousPersons.size(); i++) {
-            adapter.addPerson(famousPersons.get(i));
-        }
+        BirdaysRepository.getInstance(this).getFamousBornThisDay(date,
+                new BirdaysRepository.Callback<List<Person>>() {
+                    @Override
+                    public void onSuccess(List<Person> famousPersons) {
+                        if (isFinishing() || isDestroyed()) return;
+                        for (int i = 0; i < famousPersons.size(); i++) {
+                            adapter.addPerson(famousPersons.get(i));
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        // The "born this day" strip is decorative; an empty list is a valid state.
+                    }
+                });
     }
 
     private void starEditActivity() {
@@ -320,12 +342,25 @@ public class DetailActivity extends AppCompatActivity {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
         builder.setMessage(getString(R.string.delete_record_confirm, person.getName()));
         builder.setPositiveButton(getString(R.string.ok_button), (dialog, which) -> {
-            new AlarmHelper(getApplicationContext()).removeAlarms(timeStamp);
-            dbHelper.removeRecord(timeStamp);
-            Utils.notifyWidget(getApplicationContext());
             dialog.dismiss();
-            finish();
-            Utils.overrideCloseTransition(this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
+            BirdaysRepository.getInstance(this).removePerson(timeStamp,
+                    new BirdaysRepository.Callback<Boolean>() {
+                        @Override
+                        public void onSuccess(Boolean result) {
+                            if (isFinishing() || isDestroyed()) return;
+                            Utils.notifyWidget(getApplicationContext());
+                            finish();
+                            Utils.overrideCloseTransition(DetailActivity.this,
+                                    R.anim.activity_primary_in, R.anim.activity_secondary_out);
+                        }
+
+                        @Override
+                        public void onError(Throwable t) {
+                            if (isFinishing() || isDestroyed()) return;
+                            Toast.makeText(DetailActivity.this, R.string.recover_records_error,
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
         });
         builder.setNegativeButton(R.string.cancel_button, (dialog, which) -> dialog.cancel());
         builder.show();
