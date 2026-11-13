@@ -22,8 +22,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.MainActivity;
 import com.djonique.birdays.adapters.AllFragmentAdapter;
-import com.djonique.birdays.alarm.AlarmHelper;
-import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.models.Separator;
 import com.djonique.birdays.repository.BirdaysRepository;
@@ -39,7 +37,6 @@ public class AllFragment extends Fragment {
     private RecyclerView recyclerView;
     private AllFragmentAdapter adapter;
     private DeletingPersonListener deletingPersonListener;
-    private AlarmHelper alarmHelper;
     /**
      * Guards against an older list load or search landing after a newer one. Both paths rewrite
      * the same adapter, so they share a single sequence number.
@@ -62,7 +59,6 @@ public class AllFragment extends Fragment {
         if (getActivity() != null) {
             activity = (MainActivity) getActivity();
             addAllPersonsFromDb();
-            alarmHelper = new AlarmHelper(activity);
         }
     }
 
@@ -135,7 +131,7 @@ public class AllFragment extends Fragment {
         }
 
         if (saveToDb && activity != null) {
-            activity.dbHelper.addRecord(newPerson);
+            BirdaysRepository.getInstance(activity).addPerson(newPerson, null);
         }
     }
 
@@ -271,8 +267,22 @@ public class AllFragment extends Fragment {
                     R.string.record_deleted, Snackbar.LENGTH_SHORT);
 
             snackbar.setAction(getString(R.string.undo), v -> {
-                addPerson(activity.dbHelper.query().getPerson(timeStamp), false);
+                // Clear the pending-delete flag before the async read: the snackbar dismisses
+                // right after the action, and onViewDetachedFromWindow must not delete the row.
                 isRemoved[0] = false;
+                BirdaysRepository.getInstance(activity).getPerson(timeStamp,
+                        new BirdaysRepository.Callback<Person>() {
+                            @Override
+                            public void onSuccess(Person person) {
+                                if (person == null || !isAdded() || adapter == null) return;
+                                addPerson(person, false);
+                            }
+
+                            @Override
+                            public void onError(Throwable t) {
+                                // The row is already gone from the list; the next refresh resyncs.
+                            }
+                        });
             });
 
             snackbar.getView().addOnAttachStateChangeListener(
@@ -284,8 +294,7 @@ public class AllFragment extends Fragment {
                         @Override
                         public void onViewDetachedFromWindow(@NonNull View v) {
                             if (isRemoved[0]) {
-                                alarmHelper.removeAlarms(timeStamp);
-                                activity.dbHelper.removeRecord(timeStamp);
+                                BirdaysRepository.getInstance(activity).removePerson(timeStamp, null);
                                 if (deletingPersonListener != null) {
                                     deletingPersonListener.onPersonDeleted(timeStamp);
                                 }

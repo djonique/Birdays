@@ -28,7 +28,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.adapters.PagerAdapter;
-import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.fragments.AllFragment;
 import com.djonique.birdays.utils.BirdaysApplication;
 import com.djonique.birdays.utils.Constants;
@@ -49,8 +48,6 @@ public class MainActivity extends AppCompatActivity implements
 
     /** One query per typing burst instead of one per keystroke. */
     private static final long SEARCH_DEBOUNCE_MS = 250;
-
-    public DbHelper dbHelper;
 
     private CoordinatorLayout container;
     private AppBarLayout appBarLayout;
@@ -93,8 +90,6 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         Utils.setupDayNightTheme(preferences);
-
-        dbHelper = new DbHelper(this);
 
         pagerAdapter = new PagerAdapter(this);
 
@@ -289,9 +284,6 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onDestroy() {
         searchHandler.removeCallbacksAndMessages(null);
-        if (dbHelper != null) {
-            dbHelper.close();
-        }
         super.onDestroy();
     }
 }
