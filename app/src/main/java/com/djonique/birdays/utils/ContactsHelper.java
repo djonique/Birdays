@@ -8,6 +8,7 @@ package com.djonique.birdays.utils;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
@@ -22,23 +23,24 @@ import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ContactsHelper {
 
-    private final Activity activity;
-    private final ContentResolver contentResolver;
-    private final LoadingContactsListener loadingContactsListener;
+    private final Context appContext;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    public ContactsHelper(Activity activity, ContentResolver contentResolver) {
-        this.activity = activity;
-        this.contentResolver = contentResolver;
-        loadingContactsListener = activity instanceof LoadingContactsListener
-                ? (LoadingContactsListener) activity
-                : null;
+    /**
+     * Only the application context is retained. An Activity is passed to {@link #loadContacts}
+     * for the permission prompt and the progress dialog and is not stored on the instance, so a
+     * helper cannot keep a destroyed Activity alive.
+     */
+    public ContactsHelper(Context context) {
+        this.appContext = context.getApplicationContext();
     }
 
     /**
@@ -100,11 +102,18 @@ public class ContactsHelper {
     }
 
     /**
-     * Returns all contacts with Birthdays
+     * Returns all contacts with Birthdays.
+     *
+     * <p>The previous implementation queried phone numbers and e-mail addresses once per
+     * birthday row (2N+1 queries). Both are now fetched in a single query each and joined in
+     * memory by contact id, so the import costs three queries in total.</p>
      */
     private List<Person> getAllContactsWithBirthdays(ContentResolver contentResolver) {
 
         List<Person> contacts = new ArrayList<>();
+
+        Map<String, String> phoneNumbers = getPhoneNumbers(contentResolver);
+        Map<String, String> emails = getEmails(contentResolver);
 
         try (Cursor cursor = getContactsCursor(contentResolver)) {
             if (cursor == null) return contacts;
@@ -122,14 +131,56 @@ public class ContactsHelper {
                 if (date == 0) continue;
 
                 boolean yearUnknown = Utils.isYearUnknown(dateString);
-                String phoneNumber = getContactPhoneNumber(contentResolver, id);
-                String email = getContactEmail(contentResolver, id);
+                String phoneNumber = phoneNumbers.containsKey(id) ? phoneNumbers.get(id) : "";
+                String email = emails.containsKey(id) ? emails.get(id) : "";
 
                 Person person = new Person(name, date, yearUnknown, phoneNumber, email);
                 contacts.add(person);
             }
         }
         return contacts;
+    }
+
+    private Map<String, String> getPhoneNumbers(ContentResolver contentResolver) {
+        Map<String, String> phoneNumbers = new HashMap<>();
+        String[] projection = {
+                ContactsContract.CommonDataKinds.Phone.CONTACT_ID,
+                ContactsContract.CommonDataKinds.Phone.NUMBER
+        };
+        try (Cursor cursor = contentResolver.query(
+                ContactsContract.CommonDataKinds.Phone.CONTENT_URI, projection,
+                null, null, null)) {
+            if (cursor == null) return phoneNumbers;
+            while (cursor.moveToNext()) {
+                String id = cursor.getString(0);
+                String number = cursor.getString(1);
+                if (id != null && number != null && !phoneNumbers.containsKey(id)) {
+                    phoneNumbers.put(id, number);
+                }
+            }
+        }
+        return phoneNumbers;
+    }
+
+    private Map<String, String> getEmails(ContentResolver contentResolver) {
+        Map<String, String> emails = new HashMap<>();
+        String[] projection = {
+                ContactsContract.CommonDataKinds.Email.CONTACT_ID,
+                ContactsContract.CommonDataKinds.Email.DATA
+        };
+        try (Cursor cursor = contentResolver.query(
+                ContactsContract.CommonDataKinds.Email.CONTENT_URI, projection,
+                null, null, null)) {
+            if (cursor == null) return emails;
+            while (cursor.moveToNext()) {
+                String id = cursor.getString(0);
+                String email = cursor.getString(1);
+                if (id != null && email != null && !emails.containsKey(id)) {
+                    emails.put(id, email);
+                }
+            }
+        }
+        return emails;
     }
 
     /**
@@ -152,20 +203,24 @@ public class ContactsHelper {
      * Loads all persons with Birthdays from Contacts, compares them with persons from Database and
      * saves them into DB, sets alarm for added persons
      */
-    public void loadContacts(SharedPreferences preferences) {
+    public void loadContacts(Activity activity, SharedPreferences preferences) {
         if (PermissionManager.readingContactsPermissionGranted(activity)) {
             try {
-                loadContactsInBackground(preferences);
+                LoadingContactsListener listener = activity instanceof LoadingContactsListener
+                        ? (LoadingContactsListener) activity
+                        : null;
+                loadContactsInBackground(activity, preferences, listener);
             } catch (Exception e) {
                 preferences.edit().putBoolean(Constants.WRONG_CONTACTS_FORMAT, true).apply();
-                Toast.makeText(activity, R.string.loading_contacts_error, Toast.LENGTH_LONG).show();
+                Toast.makeText(appContext, R.string.loading_contacts_error, Toast.LENGTH_LONG).show();
             }
         } else {
             PermissionManager.requestReadingContactsPermission(activity);
         }
     }
 
-    private void loadContactsInBackground(SharedPreferences preferences) {
+    private void loadContactsInBackground(Activity activity, SharedPreferences preferences,
+                                          LoadingContactsListener loadingContactsListener) {
         if (activity == null || activity.isFinishing()) return;
 
         final ProgressDialogHelper progressDialogHelper = new ProgressDialogHelper(activity);
@@ -173,12 +228,13 @@ public class ContactsHelper {
 
         //noinspection resource
         final ExecutorService executor = Executors.newSingleThreadExecutor();
+        final ContentResolver contentResolver = appContext.getContentResolver();
 
         executor.execute(() -> {
             boolean isSuccess = false;
 
-            try (DbHelper dbHelper = new DbHelper(activity)) {
-                AlarmHelper alarmHelper = new AlarmHelper(activity);
+            try (DbHelper dbHelper = new DbHelper(appContext)) {
+                AlarmHelper alarmHelper = new AlarmHelper(appContext);
 
                 List<Person> dbPersons = dbHelper.query().getPersons();
                 List<Person> contacts = getAllContactsWithBirthdays(contentResolver);
@@ -210,10 +266,10 @@ public class ContactsHelper {
                     if (loadingContactsListener != null) {
                         loadingContactsListener.onContactsUploaded();
                     }
-                    Utils.notifyWidget(activity);
-                    Toast.makeText(activity, R.string.contacts_uploaded, Toast.LENGTH_SHORT).show();
+                    Utils.notifyWidget(appContext);
+                    Toast.makeText(appContext, R.string.contacts_uploaded, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(activity, R.string.recover_records_error, Toast.LENGTH_LONG).show();
+                    Toast.makeText(appContext, R.string.recover_records_error, Toast.LENGTH_LONG).show();
                 }
             });
         });

@@ -230,7 +230,7 @@ public class NewPersonActivity extends AppCompatActivity {
         if (contactData == null) return;
 
         ContentResolver contentResolver = getContentResolver();
-        ContactsHelper contactsHelper = new ContactsHelper(this, contentResolver);
+        ContactsHelper contactsHelper = new ContactsHelper(this);
 
         try (Cursor cursor = contentResolver.query(contactData, null, null, null, null)) {
             if (cursor != null && cursor.moveToFirst()) {

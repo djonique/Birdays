@@ -198,7 +198,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE && PermissionManager.readingContactsPermissionGranted(this)) {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
             if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
-                new ContactsHelper(this, getContentResolver()).loadContacts(preferences);
+                new ContactsHelper(this).loadContacts(this, preferences);
             }
         }
     }
@@ -443,8 +443,8 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
             if (importPref != null) {
                 importPref.setOnPreferenceClickListener(preference -> {
                     if (getActivity() != null && !preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
-                        ContactsHelper contactsHelper = new ContactsHelper(getActivity(), getActivity().getContentResolver());
-                        contactsHelper.loadContacts(preferences);
+                        ContactsHelper contactsHelper = new ContactsHelper(getActivity());
+                        contactsHelper.loadContacts(getActivity(), preferences);
                     }
                     return true;
                 });

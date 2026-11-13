@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements
             if (!PermissionManager.readingContactsPermissionGranted(this)) {
                 contactsPermissionRequestPending = true;
             }
-            new ContactsHelper(this, getContentResolver()).loadContacts(preferences);
+            new ContactsHelper(this).loadContacts(this, preferences);
         }
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
-                    new ContactsHelper(this, getContentResolver()).loadContacts(preferences);
+                    new ContactsHelper(this).loadContacts(this, preferences);
                 }
             } else {
                 Snackbar.make(container, R.string.permission_required,
