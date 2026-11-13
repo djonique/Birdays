@@ -199,5 +199,2662 @@
     <string name="help_email_description">질문이나 제안이 있으면 birdaysapp@gmail.com으로 연락해 주세요</string>
     <string name="send_email">이메일 보내기</string>
 
-
+    <!-- Famous persons -->
+    <!-- 1 january -->
+    <string name="medici">로렌초 데 메디치</string>
+    <string name="giordano_bruno">조르다노 브루노</string>
+    <string name="frazer">제임스 조지 프레이저</string>
+    <string name="coubertin">피에르 드 쿠베르탱</string>
+    <string name="william_fox">윌리엄 폭스</string>
+    <!-- 2 january -->
+    <string name="piero_di_cosimo">피에로 디 코시모</string>
+    <string name="vasily_perov">바실리 페로프</string>
+    <string name="balakirev">밀리 발라키레프</string>
+    <string name="tippett">마이클 티펫</string>
+    <string name="isaac_asimov">아이작 아시모프</string>
+    <!-- 3 january -->
+    <string name="louis_poinsot">루이 푸앵소</string>
+    <string name="dabbadie">앙투안 톰슨 다바디</string>
+    <string name="fletcher">존 굴드 플레처</string>
+    <string name="tolkien">존 로널드 루엘 톨킨</string>
+    <string name="moore">고든 무어</string>
+    <string name="mel_gibson">멜 깁슨</string>
+    <string name="schumacher">미하엘 슈마허</string>
+    <!-- 4 january -->
+    <string name="isaac_newton">아이작 뉴턴</string>
+    <string name="pergolesi">조반니 바티스타 페르골레시</string>
+    <string name="jacob_grimm">야코프 그림</string>
+    <string name="braille">루이 브라유</string>
+    <string name="tsereteli">주라브 체레텔리</string>
+    <string name="josephson">브라이언 데이비드 조지프슨</string>
+    <!-- 5 january -->
+    <string name="eucken">루돌프 크리스토프 오이켄</string>
+    <string name="gillette">킹 캠프 질레트</string>
+    <string name="erlanger">조지프 얼랜저</string>
+    <string name="umberto_eco">움베르토 에코</string>
+    <string name="manson">마릴린 맨슨</string>
+    <string name="bradley_cooper">브래들리 쿠퍼</string>
+    <!-- 6 january -->
+    <string name="darc">잔 다르크</string>
+    <string name="jakob_bernoulli">야코프 베르누이</string>
+    <string name="montgolfier">자크에티엔 몽골피에</string>
+    <string name="schliemann">하인리히 슐리만</string>
+    <string name="scriabin">알렉산드르 스크랴빈</string>
+    <string name="celentano">아드리아노 첼렌타노</string>
+    <string name="atkinson">로언 앳킨슨</string>
+    <string name="redmayne">에디 레드메인</string>
+    <!-- 7 january -->
+    <string name="pope_gregory">교황 그레고리오 13세</string>
+    <string name="fleming">샌퍼드 플레밍</string>
+    <string name="eliezer">엘리에제르 벤예후다</string>
+    <string name="borel">에밀 보렐</string>
+    <string name="nicolas_cage">니콜라스 케이지</string>
+    <!-- 8 january -->
+    <string name="sirani">엘리사베타 시라니</string>
+    <string name="nijinska">브로니슬라바 니진스카</string>
+    <string name="presley">엘비스 프레슬리</string>
+    <string name="hawking">스티븐 호킹</string>
+    <string name="daviw_bowie">데이비드 보위</string>
+    <!-- 9 january -->
+    <string name="simon_vouet">시몽 부에</string>
+    <string name="wrangel">페르디난트 폰 브랑겔</string>
+    <string name="watson">존 브로더스 왓슨</string>
+    <string name="capek">카렐 차페크</string>
+    <string name="beauvoir">시몬 드 보부아르</string>
+    <!-- 10 january -->
+    <string name="birkbeck">조지 버크벡</string>
+    <string name="tolstoy">알렉세이 톨스토이</string>
+    <string name="bertoni">플라미니오 베르토니</string>
+    <string name="wilson">로버트 우드로 윌슨</string>
+    <string name="knuth">도널드 어빈 크누스</string>
+    <!-- 11 january -->
+    <string name="parmigianino">파르미자니노</string>
+    <string name="guidobaldo">구이도발도 델 몬테</string>
+    <string name="stensen">니콜라스 스테노</string>
+    <string name="hofmann">알베르트 호프만</string>
+    <string name="mendoza">에두아르도 멘도사</string>
+    <!-- 12 january -->
+    <string name="helmont">얀 바프티스타 판 헬몬트</string>
+    <string name="perrault">샤를 페로</string>
+    <string name="jack_london">잭 런던</string>
+    <string name="kurchatov">이고리 쿠르차토프</string>
+    <string name="korolev">세르게이 코롤료프</string>
+    <string name="maharishi">마하리시 마헤시 요기</string>
+    <string name="murakami">무라카미 하루키</string>
+    <!-- 13 january -->
+    <string name="beketov">니콜라이 베케토프</string>
+    <string name="wien">빌헬름 빈</string>
+    <string name="soutine">하임 수틴</string>
+    <string name="lifshitz">일리야 리프시츠</string>
+    <string name="feyerabend">파울 파이어아벤트</string>
+    <!-- 14 january -->
+    <string name="semyonov">표트르 세묘노프 티안샨스키</string>
+    <string name="morisot">베르트 모리조</string>
+    <string name="schweitzer">알베르트 슈바이처</string>
+    <string name="mishima">미시마 유키오</string>
+    <string name="kharlamov">발레리 하를라모프</string>
+    <!-- 15 january -->
+    <string name="moliere">몰리에르</string>
+    <string name="griboyedov">알렉산드르 그리보예도프</string>
+    <string name="virtanen">아르투리 일마리 비르타넨</string>
+    <string name="teller">에드워드 텔러</string>
+    <string name="luther_king">마틴 루터 킹</string>
+    <!-- 16 january -->
+    <string name="schoner">요하네스 쇠너</string>
+    <string name="piccinni">니콜로 피치니</string>
+    <string name="alfieri">비토리오 알피에리</string>
+    <string name="veresaev">비켄티 베레사예프</string>
+    <string name="roy_jones">로이 존스 주니어</string>
+    <!-- 17 january -->
+    <string name="franklin">벤저민 프랭클린</string>
+    <string name="zhukovsky">니콜라이 주콥스키</string>
+    <string name="stanislavski">콘스탄틴 스타니슬랍스키</string>
+    <string name="al_capone">알 카포네</string>
+    <string name="muhammad_ali">무하마드 알리</string>
+    <string name="jim_carrey">짐 캐리</string>
+    <!-- 18 january -->
+    <string name="montesquieu">몽테스키외</string>
+    <string name="cesar_cui">체자르 큐이</string>
+    <string name="ehrenfest">파울 에렌페스트</string>
+    <string name="milne">앨런 알렉산더 밀른</string>
+    <string name="kitano">기타노 다케시</string>
+    <string name="costner">케빈 코스트너</string>
+    <string name="guardiola">주제프 과르디올라</string>
+    <!-- 19 january -->
+    <string name="cagnacci">구이도 카냐치</string>
+    <string name="comte">오귀스트 콩트</string>
+    <string name="edgar_poe">에드거 앨런 포</string>
+    <string name="kapteyn">야코뷔스 캅테인</string>
+    <string name="serov">발렌틴 세로프</string>
+    <string name="kantorovich">레오니트 칸토로비치</string>
+    <!-- 20 january -->
+    <string name="gessi">프란체스코 제시</string>
+    <string name="ampere">앙드레마리 앙페르</string>
+    <string name="chausson">에르네스트 쇼송</string>
+    <string name="onassis">아리스토텔레스 오나시스</string>
+    <string name="fellini">페데리코 펠리니</string>
+    <!-- 21 january -->
+    <string name="browning">존 모지스 브라우닝</string>
+    <string name="florensky">파벨 플로렌스키</string>
+    <string name="dior">크리스티앙 디오르</string>
+    <string name="benny_hill">베니 힐</string>
+    <string name="domingo">플라시도 도밍고</string>
+    <!-- 22 january -->
+    <string name="bacon">프랜시스 베이컨</string>
+    <string name="byron">조지 고든 바이런</string>
+    <string name="scoville">윌버 스코빌</string>
+    <string name="picabia">프랑시스 피카비아</string>
+    <string name="landau">레프 란다우</string>
+    <!-- 23 january -->
+    <string name="stendhal">스탕달</string>
+    <string name="manet">에두아르 마네</string>
+    <string name="abbe">에른스트 아베</string>
+    <string name="hilbert">다비트 힐베르트</string>
+    <string name="yukawa">유카와 히데키</string>
+    <string name="hauer">뤼트허르 하우어르</string>
+    <!-- 24 january -->
+    <string name="congreve">윌리엄 콩그리브</string>
+    <string name="beaumarchais">피에르 보마르셰</string>
+    <string name="hoffmann">에른스트 테오도어 아마데우스 호프만</string>
+    <string name="surikov">바실리 수리코프</string>
+    <string name="shechtman">단 셰흐트만</string>
+    <string name="kinski">나스타샤 킨스키</string>
+    <!-- 25 january -->
+    <string name="lagrange">조제프루이 라그랑주</string>
+    <string name="burns">로버트 번스</string>
+    <string name="shishkin">이반 시시킨</string>
+    <string name="maugham">서머싯 몸</string>
+    <string name="woolf">버지니아 울프</string>
+    <string name="prigogine">일리야 프리고진</string>
+    <string name="eusebio">에우제비우</string>
+    <!-- 26 january -->
+    <string name="morita">모리타 아키오</string>
+    <string name="newman">폴 뉴먼</string>
+    <string name="davis">앤절라 데이비스</string>
+    <string name="gretzky">웨인 그레츠키</string>
+    <string name="mourinho">주제 무리뉴</string>
+    <!-- 27 january -->
+    <string name="neumann">요한 발타자어 노이만</string>
+    <string name="mozart">볼프강 아마데우스 모차르트</string>
+    <string name="schelling">프리드리히 셸링</string>
+    <string name="saltykov_shchedrin">미하일 살티코프셰드린</string>
+    <string name="carroll">루이스 캐럴</string>
+    <string name="bjorndalen">올레 에이나르 비에른달렌</string>
+    <!-- 28 january -->
+    <string name="borelli">조반니 알폰소 보렐리</string>
+    <string name="heweliusz">얀 헤벨리우시</string>
+    <string name="baskerville">존 배스커빌</string>
+    <string name="rubinstein">아르투르 루빈스타인</string>
+    <string name="buffon">잔루이지 부폰</string>
+    <!-- 29 january -->
+    <string name="swedenborg">에마누엘 스베덴보리</string>
+    <string name="mohs">프리드리히 모스</string>
+    <string name="auber">다니엘 오베르</string>
+    <string name="shibasaburo">기타사토 시바사부로</string>
+    <string name="chekhov">안톤 체호프</string>
+    <string name="rolland">로맹 롤랑</string>
+    <!-- 30 january -->
+    <string name="watt">제임스 와트</string>
+    <string name="chamisso">아델베르트 폰 샤미소</string>
+    <string name="kotelnikov">글렙 코텔니코프</string>
+    <string name="gaidai">레오니트 가이다이</string>
+    <string name="engelbart">더글러스 엥겔바트</string>
+    <string name="brown">루스 브라운</string>
+    <!-- 31 january -->
+    <string name="schubert">프란츠 슈베르트</string>
+    <string name="richards">시어도어 윌리엄 리처즈</string>
+    <string name="langmuir">어빙 랭뮤어</string>
+    <string name="vanga">반가</string>
+    <string name="timberlake">저스틴 팀버레이크</string>
+    <!-- 1 february -->
+    <string name="bekhterev">블라디미르 베흐테레프</string>
+    <string name="john_ford">존 포드</string>
+    <string name="gable">클라크 게이블</string>
+    <string name="segre">에밀리오 지노 세그레</string>
+    <string name="brandon_lee">브랜든 리</string>
+    <!-- 2 february -->
+    <string name="bourdon">세바스티앙 부르동</string>
+    <string name="boussingault">장 바티스트 부생고</string>
+    <string name="forel">프랑수아 알퐁스 포렐</string>
+    <string name="chkalov">발레리 치칼로프</string>
+    <string name="haasse">헬라 하세</string>
+    <string name="holland">존 헨리 홀랜드</string>
+    <!-- 3 february -->
+    <string name="mendelssohn">펠릭스 멘델스존</string>
+    <string name="trubner">하인리히 빌헬름 트뤼브너</string>
+    <string name="fomin">이반 포민</string>
+    <string name="stein">거트루드 스타인</string>
+    <string name="joachim_low">요아힘 뢰프</string>
+    <!-- 4 february -->
+    <string name="bottger">요한 프리드리히 뵈트거</string>
+    <string name="nemcova">보제나 네므초바</string>
+    <string name="prandtl">루트비히 프란틀</string>
+    <string name="maillard">루이 카미유 마야르</string>
+    <string name="tombaugh">클라이드 톰보</string>
+    <!-- 5 february -->
+    <string name="runeberg">요한 루드비그 루네베리</string>
+    <string name="maxim">하이럼 스티븐스 맥심</string>
+    <string name="dunlop">존 보이드 던롭</string>
+    <string name="teike">카를 타이케</string>
+    <string name="citroen">앙드레 시트로엥</string>
+    <string name="voisin">가브리엘 부아쟁</string>
+    <string name="cristiano_ronaldo">크리스티아누 호날두</string>
+    <string name="neymar">네이마르</string>
+    <!-- 6 february -->
+    <string name="heinecken">크리스티안 하인리히 하이네켄</string>
+    <string name="zelinsky">니콜라이 젤린스키</string>
+    <string name="bragg">폴 브래그</string>
+    <string name="truffaut">프랑수아 트뤼포</string>
+    <string name="bob_marley">밥 말리</string>
+    <!-- 7 february -->
+    <string name="dickens">찰스 디킨스</string>
+    <string name="alfred_adler">알프레트 아들러</string>
+    <string name="sinclair_lewis">싱클레어 루이스</string>
+    <string name="chizhevsky">알렉산드르 치제프스키</string>
+    <string name="euler">울프 폰 오일러</string>
+    <string name="desmond_doss">데스몬드 도스</string>
+    <string name="kutcher">애슈턴 커처</string>
+    <!-- 8 february -->
+    <string name="bernoulli">다니엘 베르누이</string>
+    <string name="courtois">베르나르 쿠르투아</string>
+    <string name="jules_verne">쥘 베른</string>
+    <string name="mendeleev">드미트리 멘델레예프</string>
+    <string name="carlson">체스터 칼슨</string>
+    <string name="williams">존 윌리엄스</string>
+    <!-- 9 february -->
+    <string name="navai">알리시르 나바이</string>
+    <string name="valisy_zhukovsky">바실리 주콥스키</string>
+    <string name="maybach">빌헬름 마이바흐</string>
+    <string name="soseki">나쓰메 소세키</string>
+    <string name="berg">알반 베르크</string>
+    <string name="valier">막스 팔리어</string>
+    <string name="monod">자크 모노</string>
+    <!-- 10 february -->
+    <string name="molter">요한 멜히오어 몰터</string>
+    <string name="lamb">찰스 램</string>
+    <string name="navier">클로드루이 나비에</string>
+    <string name="pasternak">보리스 파스테르나크</string>
+    <string name="brecht">베르톨트 브레히트</string>
+    <!-- 11 february -->
+    <string name="talbot">윌리엄 헨리 폭스 탤벗</string>
+    <string name="edison">토머스 에디슨</string>
+    <string name="henry">벨라 루이스 헨리</string>
+    <string name="sheldon">시드니 셸던</string>
+    <string name="nielsen">레슬리 닐슨</string>
+    <string name="aniston">제니퍼 애니스턴</string>
+    <!-- 12 february -->
+    <string name="gottsched">요한 크리스토프 고트셰트</string>
+    <string name="darwin">찰스 로버트 다윈</string>
+    <string name="lincoln">에이브러햄 링컨</string>
+    <string name="roerich">헬레나 뢰리히</string>
+    <string name="anna_pavlova">안나 파블로바</string>
+    <string name="byung_chul">이병철</string>
+    <!-- 13 february -->
+    <string name="malthus">토머스 맬서스</string>
+    <string name="krylov">이반 크릴로프</string>
+    <string name="chaliapin">표도르 샬랴핀</string>
+    <string name="shockley">윌리엄 브래드퍼드 쇼클리</string>
+    <string name="collina">피에를루이지 콜리나</string>
+    <string name="robbie_williams">로비 윌리엄스</string>
+    <!-- 14 february -->
+    <string name="alberti">레온 바티스타 알베르티</string>
+    <string name="babur">바부르</string>
+    <string name="ferris">조지 페리스</string>
+    <string name="germi">피에트로 제르미</string>
+    <string name="sergey_kapitsa">세르게이 카피차</string>
+    <string name="alan_parker">앨런 파커</string>
+    <!-- 15 february -->
+    <string name="galilei">갈릴레오 갈릴레이</string>
+    <string name="praetorius">프라이토리우스</string>
+    <string name="bentham">제러미 벤담</string>
+    <string name="stoney">조지 존스턴 스토니</string>
+    <string name="guillaume">샤를 에두아르 기욤</string>
+    <string name="whitehead">앨프리드 노스 화이트헤드</string>
+    <string name="barrymore">존 배리모어</string>
+    <!-- 16 february -->
+    <string name="bouguer">피에르 부게르</string>
+    <string name="bodoni">잠바티스타 보도니</string>
+    <string name="galton">프랜시스 골턴</string>
+    <string name="haeckel">에른스트 헤켈</string>
+    <string name="rossi">발렌티노 로시</string>
+    <!-- 17 february -->
+    <string name="laennec">르네 라엔네크</string>
+    <string name="beilstein">프리드리히 콘라트 바일슈타인</string>
+    <string name="john_watson">토머스 존 왓슨</string>
+    <string name="fisher">로널드 피셔</string>
+    <string name="michael_bay">마이클 베이</string>
+    <string name="denise_richards">데니스 리처즈</string>
+    <!-- 18 february -->
+    <string name="volta">알레산드로 볼타</string>
+    <string name="bates">헨리 월터 베이츠</string>
+    <string name="ernst_mach">에른스트 마하</string>
+    <string name="ferrari">엔초 페라리</string>
+    <string name="yoko_ono">오노 요코</string>
+    <string name="travolta">존 트라볼타</string>
+    <!-- 19 february -->
+    <string name="copernicus">니콜라우스 코페르니쿠스</string>
+    <string name="boccherini">루이지 보케리니</string>
+    <string name="murchison">로더릭 머치슨</string>
+    <string name="ducommun">엘리 뒤코뮌</string>
+    <string name="arrhenius">스반테 아레니우스</string>
+    <string name="del_toro">베니치오 델 토로</string>
+    <!-- 20 february -->
+    <string name="reil">요한 크리스티안 라일</string>
+    <string name="boltzmann">루트비히 볼츠만</string>
+    <string name="crawford">신디 크로퍼드</string>
+    <string name="cobain">커트 코베인</string>
+    <string name="rihanna">리한나</string>
+    <!-- 21 february -->
+    <string name="delibes">레오 들리브</string>
+    <string name="calment">잔 칼망</string>
+    <string name="sullivan">해리 스택 설리번</string>
+    <string name="henrik_dam">헨리크 담</string>
+    <string name="givenchy">위베르 드 지방시</string>
+    <string name="palahniuk">척 팔라닉</string>
+    <!-- 22 february -->
+    <string name="washington">조지 워싱턴</string>
+    <string name="schopenhauer">아르투어 쇼펜하우어</string>
+    <string name="quetelet">아돌프 케틀레</string>
+    <string name="janssen">피에르 장센</string>
+    <string name="hertz">하인리히 헤르츠</string>
+    <string name="bronsted">요하네스 니콜라우스 브뢴스테드</string>
+    <string name="drew_barrymore">드루 배리모어</string>
+    <!-- 23 february -->
+    <string name="handel">게오르크 프리드리히 헨델</string>
+    <string name="chambers">윌리엄 체임버스</string>
+    <string name="rothschild">마이어 암셸 로스차일드</string>
+    <string name="malevich">카지미르 말레비치</string>
+    <string name="jaspers">카를 야스퍼스</string>
+    <string name="blunt">에밀리 블런트</string>
+    <!-- 24 february -->
+    <string name="banks">조지프 뱅크스</string>
+    <string name="grimm">빌헬름 그림</string>
+    <string name="borgman">이반 보르그만</string>
+    <string name="freda">리카르도 프레다</string>
+    <string name="legrand">미셸 르그랑</string>
+    <string name="steve_jobs">스티브 잡스</string>
+    <!-- 25 february -->
+    <string name="battuta">이븐 바투타</string>
+    <string name="goldoni">카를로 골도니</string>
+    <string name="renoir">피에르오귀스트 르누아르</string>
+    <string name="karl_may">카를 마이</string>
+    <string name="caruso">엔리코 카루소</string>
+    <string name="burgess">앤서니 버지스</string>
+    <!-- 26 february -->
+    <string name="marlowe">크리스토퍼 말로</string>
+    <string name="arago">프랑수아 아라고</string>
+    <string name="hugo">빅토르 위고</string>
+    <string name="levi_strauss">리바이 스트라우스</string>
+    <string name="flammarion">카미유 플라마리옹</string>
+    <!-- 27 february -->
+    <string name="constantine">콘스탄티누스 대제</string>
+    <string name="longfellow">헨리 워즈워스 롱펠로</string>
+    <string name="ge">니콜라이 게</string>
+    <string name="best">찰스 베스트</string>
+    <string name="steinbeck">존 스타인벡</string>
+    <string name="taylor">엘리자베스 테일러</string>
+    <!-- 28 february -->
+    <string name="montaigne">미셸 드 몽테뉴</string>
+    <string name="reaumur">르네 앙투안 레오뮈르</string>
+    <string name="renan">에르네스트 르낭</string>
+    <string name="pauling">라이너스 폴링</string>
+    <string name="gehry">프랭크 게리</string>
+    <string name="cooper">리언 쿠퍼</string>
+    <string name="vodianova">나탈리아 보디아노바</string>
+    <!-- 29 february -->
+    <string name="klenze">레오 폰 클렌체</string>
+    <string name="rossini">조아키노 로시니</string>
+    <string name="john_holland">존 필립 홀랜드</string>
+    <string name="hollerith">허먼 홀러리스</string>
+    <string name="papert">시모어 페퍼트</string>
+    <!-- 1 march -->
+    <string name="botticelli">산드로 보티첼리</string>
+    <string name="chopin">프레데리크 쇼팽</string>
+    <string name="akutagawa">아쿠타가와 류노스케</string>
+    <string name="miller">글렌 밀러</string>
+    <string name="snyder">잭 스나이더</string>
+    <string name="bieber">저스틴 비버</string>
+    <!-- 2 march -->
+    <string name="dekker">에뒤아르트 다우어스 데커르</string>
+    <string name="smetana">베드르지흐 스메타나</string>
+    <string name="irving">존 어빙</string>
+    <string name="bon_jovi">존 본 조비</string>
+    <string name="craig">대니얼 크레이그</string>
+    <!-- 3 march -->
+    <string name="pullman">조지 풀먼</string>
+    <string name="cantor">게오르크 칸토어</string>
+    <string name="bell">알렉산더 그레이엄 벨</string>
+    <string name="frisch">랑나르 프리슈</string>
+    <string name="kornberg">아서 콘버그</string>
+    <!-- 4 march -->
+    <string name="vivaldi">안토니오 비발디</string>
+    <string name="raeburn">헨리 레번</string>
+    <string name="gamow">조지 가모프</string>
+    <string name="veksler">블라디미르 벡슬레르</string>
+    <string name="mauriat">폴 모리아</string>
+    <!-- 5 march -->
+    <string name="mercator">게라르두스 메르카토르</string>
+    <string name="tiepolo">조반니 바티스타 티에폴로</string>
+    <string name="marey">에티엔 쥘 마레</string>
+    <string name="tarrasch">지크베르트 타라슈</string>
+    <string name="ando">안도 모모후쿠</string>
+    <string name="tobin">제임스 토빈</string>
+    <!-- 6 march -->
+    <string name="michelangelo">미켈란젤로</string>
+    <string name="bergerac">사비니앵 드 시라노 드 베르주라크</string>
+    <string name="elizabeth_browning">엘리자베스 배럿 브라우닝</string>
+    <string name="jerzy_lec">스타니스와프 예지 레츠</string>
+    <string name="marquez">가브리엘 가르시아 마르케스</string>
+    <string name="tereshkova">발렌티나 테레시코바</string>
+    <string name="shaquille">샤킬 오\'닐</string>
+    <!-- 7 march -->
+    <string name="rob_roy">롭 로이</string>
+    <string name="niepce">조제프 니세포르 니에프스</string>
+    <string name="palmer">대니얼 데이비드 파머</string>
+    <string name="montesquiou">로베르 드 몽테스키외</string>
+    <string name="mondrian">피트 몬드리안</string>
+    <string name="ravel">모리스 라벨</string>
+    <string name="kobo_abe">아베 고보</string>
+    <!-- 8 march -->
+    <string name="fothergill">존 포더길</string>
+    <string name="potocki">얀 포토츠키</string>
+    <string name="ignacy">이그나치 우카시에비치</string>
+    <string name="thompson">라마커스 애드나 톰프슨</string>
+    <string name="otto_hahn">오토 한</string>
+    <string name="kendall">에드워드 캘빈 켄들</string>
+    <string name="aiken">하워드 하사웨이 에이컨</string>
+    <!-- 9 march -->
+    <string name="vespucci">아메리고 베스푸치</string>
+    <string name="shevchenko">타라스 셰우첸코</string>
+    <string name="barragan">루이스 바라간</string>
+    <string name="kohn">월터 콘</string>
+    <string name="gagarin">유리 가가린</string>
+    <string name="binoche">줄리엣 비노쉬</string>
+    <!-- 10 march -->
+    <string name="schlegel">프리드리히 슐레겔</string>
+    <string name="eichendorff">요제프 폰 아이헨도르프</string>
+    <string name="blatter">제프 블래터</string>
+    <string name="norris">척 노리스</string>
+    <string name="bin_laden">오사마 빈 라덴</string>
+    <string name="stone">샤론 스톤</string>
+    <!-- 11 march -->
+    <string name="tasso">토르콰토 타소</string>
+    <string name="verrier">위르뱅 르베리에</string>
+    <string name="bertrand">조제프 베르트랑</string>
+    <string name="vannevar_bush">버니바 부시</string>
+    <string name="bloembergen">니콜라스 블룸베르헨</string>
+    <string name="adams">더글러스 애덤스</string>
+    <string name="knoxville">조니 녹스빌</string>
+    <!-- 12 march -->
+    <string name="notre">앙드레 르 노트르</string>
+    <string name="berkeley">조지 버클리</string>
+    <string name="bazhenov">바실리 바제노프</string>
+    <string name="kirchhoff">구스타프 키르히호프</string>
+    <string name="newcomb">사이먼 뉴컴</string>
+    <string name="perkin">윌리엄 헨리 퍼킨</string>
+    <string name="vernadsky">블라디미르 베르나드스키</string>
+    <!-- 13 march -->
+    <string name="bonnet">샤를 보네</string>
+    <string name="lowell">퍼시벌 로웰</string>
+    <string name="eliade">미르체아 엘리아데</string>
+    <string name="hubbard">라파예트 로널드 허버드</string>
+    <string name="scatman">스캣맨 존</string>
+    <!-- 14 march -->
+    <string name="telemann">게오르크 필리프 텔레만</string>
+    <string name="strauss">요한 슈트라우스 1세</string>
+    <string name="banville">테오도르 드 방빌</string>
+    <string name="schiaparelli">조반니 스키아파렐리</string>
+    <string name="ehrlich">파울 에를리히</string>
+    <string name="einstein">알베르트 아인슈타인</string>
+    <string name="caine">마이클 케인</string>
+    <!-- 15 march -->
+    <string name="sylvius">프란키스쿠스 실비우스</string>
+    <string name="loschmidt">요한 요제프 로슈미트</string>
+    <string name="heyse">파울 하이제</string>
+    <string name="behring">에밀 폰 베링</string>
+    <string name="haffkine">발데마르 하프킨</string>
+    <string name="alferov">조레스 알표로프</string>
+    <!-- 16 march -->
+    <string name="georg_ohm">게오르크 시몬 옴</string>
+    <string name="prudhomme">쉴리 프뤼돔</string>
+    <string name="beijerinck">마르티뉘스 베이에링크</string>
+    <string name="yayser">하인리히 카이저</string>
+    <string name="damadian">레이먼드 다마디안</string>
+    <string name="bertolucci">베르나르도 베르톨루치</string>
+    <string name="stallman">리처드 스톨먼</string>
+    <!-- 17 march -->
+    <string name="daimler">고틀리프 다임러</string>
+    <string name="vrubel">미하일 브루벨</string>
+    <string name="hess">발터 루돌프 헤스</string>
+    <string name="nureyev">루돌프 누레예프</string>
+    <string name="gibson">윌리엄 깁슨</string>
+    <string name="russell">커트 러셀</string>
+    <!-- 18 march -->
+    <string name="steiner">야코프 슈타이너</string>
+    <string name="hebbel">프리드리히 헤벨</string>
+    <string name="diesel">루돌프 디젤</string>
+    <string name="stekel">빌헬름 슈테켈</string>
+    <string name="koffka">쿠르트 코프카</string>
+    <string name="besson">뤼크 베송</string>
+    <!-- 19 march -->
+    <string name="burton">리처드 프랜시스 버턴</string>
+    <string name="wheeler">윌리엄 모턴 휠러</string>
+    <string name="reger">막스 레거</string>
+    <string name="haworth">노먼 하워스</string>
+    <string name="joliot_curie">프레데리크 졸리오퀴리</string>
+    <string name="molina">마리오 몰리나</string>
+    <string name="bruce_willis">브루스 윌리스</string>
+    <!-- 20 march -->
+    <string name="ibsen">헨리크 입센</string>
+    <string name="gigli">베니아미노 질리</string>
+    <string name="skinner">버러스 프레더릭 스키너</string>
+    <string name="cattell">레이먼드 캐텔</string>
+    <string name="neher">에르빈 네어</string>
+    <string name="bennington">체스터 베닝턴</string>
+    <!-- 21 march -->
+    <string name="fourier">조제프 푸리에</string>
+    <string name="mozhaysky">알렉산드르 모자이스키</string>
+    <string name="gilbert">월터 길버트</string>
+    <string name="oldman">게리 올드먼</string>
+    <string name="senna">아이르통 세나</string>
+    <string name="ronaldinho">호나우지뉴</string>
+    <!-- 22 march -->
+    <string name="van_dyck">안토니 반 다이크</string>
+    <string name="pelletier">피에르 조제프 펠티에</string>
+    <string name="lysenko">미콜라 리센코</string>
+    <string name="millikan">로버트 앤드루스 밀리컨</string>
+    <string name="richter">버턴 리히터</string>
+    <string name="webber">앤드루 로이드 웨버</string>
+    <!-- 23 march -->
+    <string name="laplace">피에르시몽 라플라스</string>
+    <string name="du_gard">로제 마르탱 뒤 가르</string>
+    <string name="noether">에미 뇌터</string>
+    <string name="juan_gris">후안 그리스</string>
+    <string name="fromm">에리히 프롬</string>
+    <string name="kurosawa">구로사와 아키라</string>
+    <string name="von_braun">베르너 폰 브라운</string>
+    <!-- 24 march -->
+    <string name="agricola">게오르기우스 아그리콜라</string>
+    <string name="priestley">조지프 프리스틀리</string>
+    <string name="morris">윌리엄 모리스</string>
+    <string name="houdini">해리 후디니</string>
+    <string name="dario_fo">다리오 포</string>
+    <string name="ballmer">스티브 발머</string>
+    <string name="jim_parsons">짐 파슨스</string>
+    <!-- 25 march -->
+    <string name="amici">조반니 바티스타 아미치</string>
+    <string name="toscanini">아르투로 토스카니니</string>
+    <string name="aretha_franklin">아레사 프랭클린</string>
+    <string name="elton_john">엘튼 존</string>
+    <string name="parker">사라 제시카 파커</string>
+    <!-- 26 march -->
+    <string name="gesner">콘라트 게스너</string>
+    <string name="prorok_divis">프로코프 디비시</string>
+    <string name="benjamin_thompson">벤저민 톰프슨</string>
+    <string name="feddersen">베렌트 빌헬름 페데르센</string>
+    <string name="frost">로버트 프로스트</string>
+    <string name="tennessee_williams">테네시 윌리엄스</string>
+    <string name="katz">버나드 카츠</string>
+    <string name="anfinsen">크리스천 앤핀센</string>
+    <string name="nimoy">레너드 니모이</string>
+    <string name="tinto_brass">틴토 브라스</string>
+    <string name="tyler">스티븐 타일러</string>
+    <string name="knightley">키이라 나이틀리</string>
+    <!-- 27 march -->
+    <string name="hittorf">요한 빌헬름 히토르프</string>
+    <string name="rontgen">빌헬름 뢴트겐</string>
+    <string name="wallach">오토 발라흐</string>
+    <string name="pearson">카를 피어슨</string>
+    <string name="henry_royce">헨리 로이스</string>
+    <string name="steichen">에드워드 스타이켄</string>
+    <string name="tarantino">쿠엔틴 타란티노</string>
+    <!-- 28 march -->
+    <string name="raphael">라파엘로</string>
+    <string name="comenius">요한 아모스 코메니우스</string>
+    <string name="tamburini">안토니오 탬부리니</string>
+    <string name="maxim_gorky">막심 고리키</string>
+    <string name="heymans">코르네유 하이만스</string>
+    <string name="brzezinski">즈비그뉴 브레진스키</string>
+    <string name="friedman">제롬 아이작 프리드먼</string>
+    <string name="lady_gaga">레이디 가가</string>
+    <!-- 29 march -->
+    <string name="santorio">산토리오 산토리오</string>
+    <string name="musaus">요한 카를 아우구스트 무제우스</string>
+    <string name="schneider">외젠 슈네데르</string>
+    <string name="walton">샘 월턴</string>
+    <string name="vane">존 베인</string>
+    <string name="gleeson">브렌던 글리슨</string>
+    <!-- 30 march -->
+    <string name="goya">프란시스코 고야</string>
+    <string name="rozier">필라트르 드 로지에</string>
+    <string name="bunsen">로버트 분젠</string>
+    <string name="verlaine">폴 베를렌</string>
+    <string name="van_gogh">빈센트 반 고흐</string>
+    <string name="sharpe">톰 샤프</string>
+    <string name="dion">셀린 디온</string>
+    <!-- 31 march -->
+    <string name="descartes">르네 데카르트</string>
+    <string name="marvell">앤드루 마벨</string>
+    <string name="bach">요한 제바스티안 바흐</string>
+    <string name="haydn">요제프 하이든</string>
+    <string name="chukovsky">코르네이 추콥스키</string>
+    <string name="william_bragg">윌리엄 로런스 브래그</string>
+    <string name="walken">크리스토퍼 워컨</string>
+    <!-- 1 april -->
+    <string name="harvey">윌리엄 하비</string>
+    <string name="germain">소피 제르맹</string>
+    <string name="gogol">니콜라이 고골</string>
+    <string name="zsigmondy">리하르트 아돌프 지그몬디</string>
+    <string name="busoni">페루치오 부조니</string>
+    <string name="rachmaninoff">세르게이 라흐마니노프</string>
+    <string name="lon_chaney">론 채니</string>
+    <string name="maslow">에이브러햄 매슬로</string>
+    <!-- 2 april -->
+    <string name="grimaldi">프란체스코 마리아 그리말디</string>
+    <string name="casanova">자코모 카사노바</string>
+    <string name="andersen">한스 크리스티안 안데르센</string>
+    <string name="butler">니컬러스 머리 버틀러</string>
+    <string name="chrysler">월터 크라이슬러</string>
+    <string name="fassbender">마이클 패스벤더</string>
+    <!-- 3 april -->
+    <string name="washington_irving">워싱턴 어빙</string>
+    <string name="velde">헨리 반 더 벨더</string>
+    <string name="jansky">얀 얀스키</string>
+    <string name="brando">말론 브랜도</string>
+    <string name="baldwin">알렉 볼드윈</string>
+    <string name="murphy">에디 머피</string>
+    <!-- 4 april -->
+    <string name="reid">토머스 마인 리드</string>
+    <string name="siemens">카를 빌헬름 지멘스</string>
+    <string name="simmons">댄 시먼스</string>
+    <string name="weaving">휴고 위빙</string>
+    <string name="robert_downey">로버트 다우니 주니어</string>
+    <string name="ledger">히스 레저</string>
+    <!-- 5 april -->
+    <string name="hobbes">토머스 홉스</string>
+    <string name="viviani">빈첸초 비비아니</string>
+    <string name="yale">엘리휴 예일</string>
+    <string name="spohr">루이 슈포어</string>
+    <string name="dupre">쥘 뒤프레</string>
+    <string name="nadar">나다르</string>
+    <string name="lister">조지프 리스터</string>
+    <string name="hailey">아서 헤일리</string>
+    <!-- 6 april -->
+    <string name="gosse">필립 헨리 고스</string>
+    <string name="moreau">귀스타브 모로</string>
+    <string name="douglas">도널드 윌스 더글러스</string>
+    <string name="lynen">페오도어 리넨</string>
+    <string name="fischer">에드먼드 헨리 피셔</string>
+    <string name="james_watson">제임스 왓슨</string>
+    <!-- 7 april -->
+    <string name="gerard_dou">헤라르트 다우</string>
+    <string name="wordsworth">윌리엄 워즈워스</string>
+    <string name="selmi">프란체스코 셀미</string>
+    <string name="christiansen">올레 키르크 크리스티안센</string>
+    <string name="holiday">빌리 홀리데이</string>
+    <string name="coppola">프랜시스 포드 코폴라</string>
+    <string name="chan">성룡</string>
+    <string name="crowe">러셀 크로우</string>
+    <!-- 8 april -->
+    <string name="tartini">주세페 타르티니</string>
+    <string name="von_hofmann">아우구스트 빌헬름 폰 호프만</string>
+    <string name="husserl">에드문트 후설</string>
+    <string name="hicks">존 힉스</string>
+    <string name="calvin">멜빈 캘빈</string>
+    <!-- 9 april -->
+    <string name="timur">티무르</string>
+    <string name="boehm">테오발트 뵘</string>
+    <string name="brunel">이점바드 킹덤 브루넬</string>
+    <string name="muybridge">에드워드 마이브리지</string>
+    <string name="pincus">그레고리 핀커스</string>
+    <string name="eckert">존 프레스퍼 에커트</string>
+    <string name="hefner">휴 헤프너</string>
+    <string name="belmondo">장폴 벨몽도</string>
+    <string name="stewart">크리스틴 스튜어트</string>
+    <!-- 10 april -->
+    <string name="grotius">휘호 흐로티위스</string>
+    <string name="tschirnhaus">에렌프리트 발터 폰 치른하우스</string>
+    <string name="heinicke">자무엘 하이니케</string>
+    <string name="pulitzer">조지프 퓰리처</string>
+    <string name="seagal">스티븐 시걸</string>
+    <string name="canet">기욤 카네</string>
+    <!-- 11 april -->
+    <string name="parkinson">제임스 파킨슨</string>
+    <string name="bertini">프란체스카 베르티니</string>
+    <string name="julian">퍼시 줄리언</string>
+    <string name="lavey">앤턴 라베이</string>
+    <string name="wiles">앤드루 와일스</string>
+    <!-- 12 april -->
+    <string name="meyerhof">오토 프리츠 마이어호프</string>
+    <string name="lily_pons">릴리 폰스</string>
+    <string name="tinbergen">얀 틴베르헌</string>
+    <string name="cabalie">몬세라트 카바예</string>
+    <string name="hancock">허비 행콕</string>
+    <string name="garcia">앤디 가르시아</string>
+    <!-- 13 april -->
+    <string name="favre">피에르 파브르</string>
+    <string name="fawkes">가이 포크스</string>
+    <string name="bramah">조지프 브라마</string>
+    <string name="trevithick">리처드 트레비식</string>
+    <string name="meucci">안토니오 메우치</string>
+    <string name="lacan">자크 라캉</string>
+    <string name="beckett">새뮤얼 베켓</string>
+    <!-- 14 april -->
+    <string name="ortelius">아브라함 오르텔리우스</string>
+    <string name="huygens">크리스티안 하위헌스</string>
+    <string name="fonvizin">데니스 폰비진</string>
+    <string name="rohlfs">게르하르트 롤프스</string>
+    <string name="horsley">빅터 호슬리</string>
+    <string name="matsumoto">마츠모토 유키히로</string>
+    <!-- 15 april -->
+    <string name="da_vinci">레오나르도 다 빈치</string>
+    <string name="leonhard_euler">레온하르트 오일러</string>
+    <string name="cullen">윌리엄 컬런</string>
+    <string name="busch">빌헬름 부슈</string>
+    <string name="gumilyov">니콜라이 구밀료프</string>
+    <string name="emma_thompson">엠마 톰슨</string>
+    <string name="emma_watson">엠마 왓슨</string>
+    <!-- 16 april -->
+    <string name="apianus">페트루스 아피아누스</string>
+    <string name="hadley">존 핸들리</string>
+    <string name="eisenstein">고트홀트 아이젠슈타인</string>
+    <string name="france">아나톨 프랑스</string>
+    <string name="wright">윌버 라이트</string>
+    <string name="chaplin">찰리 채플린</string>
+    <!-- 17 april -->
+    <string name="morgan">존 피어폰트 모건</string>
+    <string name="starling">어니스트 헨리 스탈링</string>
+    <string name="saeverud">하랄 세베루드</string>
+    <string name="kohler">게오르게스 쾰러</string>
+    <string name="garner">제니퍼 가너</string>
+    <string name="beckham">빅토리아 베컴</string>
+    <!-- 18 april -->
+    <string name="ricardo">데이비드 리카도</string>
+    <string name="boisbaudran">폴 에밀 르코크 드 부아보드랑</string>
+    <string name="goldstein">조지프 레너드 골드스타인</string>
+    <string name="sokolov">그리고리 소콜로프</string>
+    <string name="eric_roberts">에릭 로버츠</string>
+    <string name="tennant">데이비드 테넌트</string>
+    <!-- 19 april -->
+    <string name="ehrenberg">크리스티안 고트프리트 에렌베르크</string>
+    <string name="gerstner">프란츠 안톤 폰 게르스트너</string>
+    <string name="fechner">구스타프 테오도어 페히너</string>
+    <string name="hughes">리처드 휴스</string>
+    <string name="seaborg">글렌 시보그</string>
+    <string name="judd">애슐리 저드</string>
+    <string name="christensen">헤이든 크리스텐슨</string>
+    <!-- 20 april -->
+    <string name="aretino">피에트로 아레티노</string>
+    <string name="pinel">필리프 피넬</string>
+    <string name="raffaelli">장프랑수아 라파엘리</string>
+    <string name="hitler">아돌프 히틀러</string>
+    <string name="lloyd">해럴드 로이드</string>
+    <string name="leiris">미셸 레리스</string>
+    <string name="muller">카를 알렉산더 뮐러</string>
+    <string name="sedgwick">이디 세지윅</string>
+    <!-- 21 april -->
+    <string name="riebeeck">얀 판 리벡</string>
+    <string name="kulibin">이반 쿨리빈</string>
+    <string name="frobel">프리드리히 프뢰벨</string>
+    <string name="starley">제임스 스탈리</string>
+    <string name="flemming">발터 플레밍</string>
+    <string name="weber">막스 베버</string>
+    <string name="bridgman">퍼시 윌리엄스 브리지먼</string>
+    <string name="karrer">파울 카러</string>
+    <!-- 22 april -->
+    <string name="fielding">헨리 필딩</string>
+    <string name="kant">임마누엘 칸트</string>
+    <string name="plante">가스통 플랑테</string>
+    <string name="eichler">아우구스트 빌헬름 아이히러</string>
+    <string name="bohr">하랄 보어</string>
+    <string name="mabokov">블라디미르 나보코프</string>
+    <string name="oppenheimer">로버트 오펜하이머</string>
+    <string name="mingus">찰스 밍거스</string>
+    <string name="nicholson">잭 니컬슨</string>
+    <!-- 23 april -->
+    <string name="planck">막스 플랑크</string>
+    <string name="fibiger">요하네스 피비게르</string>
+    <string name="marsh">나이오 마시</string>
+    <string name="ohlin">베르틸 올린</string>
+    <string name="laxness">할도르 락스네스</string>
+    <string name="cena">존 시나</string>
+    <string name="patel">데브 파텔</string>
+    <!-- 24 april -->
+    <string name="martini">조반니 바티스타 마르티니</string>
+    <string name="cartwright">에드먼드 카트라이트</string>
+    <string name="spitteler">카를 슈피텔러</string>
+    <string name="bertillon">알퐁스 베르티용</string>
+    <string name="sundback">기드온 순드백</string>
+    <string name="streisand">바브라 스트라이샌드</string>
+    <!-- 25 april -->
+    <string name="marc_brunel">마크 이점바드 브루넬</string>
+    <string name="klein">펠릭스 클라인</string>
+    <string name="felix_dherelle">펠릭스 데렐</string>
+    <string name="marconi">굴리엘모 마르코니</string>
+    <string name="pauli">볼프강 파울리</string>
+    <string name="fitzgerald">엘라 피츠제럴드</string>
+    <string name="al_pacino">알 파치노</string>
+    <string name="cruyff">요한 크라위프</string>
+    <string name="zellweger">러네이 젤위거</string>
+    <!-- 26 april -->
+    <string name="aurelius">마르쿠스 아우렐리우스</string>
+    <string name="shakespeare">윌리엄 셰익스피어</string>
+    <string name="uhland">루트비히 우란트</string>
+    <string name="delacroix">외젠 들라크루아</string>
+    <string name="krupp">알프레트 크루프</string>
+    <string name="billroth">테오도어 빌로트</string>
+    <string name="richardson">오언 윌런스 리처드슨</string>
+    <string name="wittgenstein">루트비히 비트겐슈타인</string>
+    <string name="charles_richter">찰스 프랜시스 리히터</string>
+    <!-- 27 april -->
+    <string name="kolreuter">요제프 고틀리프 쾰로이터</string>
+    <string name="wollstonecraft">메리 울스턴크래프트</string>
+    <string name="morse">새뮤얼 모스</string>
+    <string name="carothers">월리스 캐러더스</string>
+    <string name="lantz">월터 랜츠</string>
+    <!-- 28 april-->
+    <string name="achard">프란츠 카를 아샤르</string>
+    <string name="kraus">카를 크라우스</string>
+    <string name="godel">쿠르트 괴델</string>
+    <string name="schindler">오스카르 신들러</string>
+    <string name="lamborghini">페루치오 람보르기니</string>
+    <string name="harper_lee">하퍼 리</string>
+    <string name="yves_klein">이브 클랭</string>
+    <string name="cruz">페넬로페 크루스</string>
+    <!-- 29 april -->
+    <string name="drais">카를 드라이스</string>
+    <string name="poincare">앙리 푸앵카레</string>
+    <string name="hearst">윌리엄 랜돌프 허스트</string>
+    <string name="urey">해럴드 유리</string>
+    <string name="jack_williamson">잭 윌리엄슨</string>
+    <string name="pfeiffer">미셸 파이퍼</string>
+    <string name="thurman">우마 서먼</string>
+    <!-- 30 april -->
+    <string name="gauss">카를 프리드리히 가우스</string>
+    <string name="bleuler">오이겐 블로일러</string>
+    <string name="kuznets">사이먼 쿠즈네츠</string>
+    <string name="schultz">시어도어 슐츠</string>
+    <string name="shannon">클로드 섀넌</string>
+    <string name="gal_gadot">갤 가돗</string>
+    <!-- 1 may -->
+    <string name="addison">조지프 애디슨</string>
+    <string name="cajal">산티아고 라몬 이 카할</string>
+    <string name="chardin">피에르 테야르 드 샤르댕</string>
+    <string name="woo">오우삼</string>
+    <string name="dornan">제이미 도넌</string>
+    <!-- 2 may -->
+    <string name="kirche">아타나시우스 키르허</string>
+    <string name="jerome">제롬 K. 제롬</string>
+    <string name="wood">로버트 W. 우드</string>
+    <string name="marshall">앨런 마셜</string>
+    <string name="springer">악셀 슈프링어</string>
+    <string name="johnson">드웨인 존슨</string>
+    <string name="david_beckham">데이비드 베컴</string>
+    <!-- 3 may -->
+    <string name="machiavelli">니콜로 마키아벨리</string>
+    <string name="haldane">존 스콧 홀데인</string>
+    <string name="ekman">반 발프리드 에크만</string>
+    <string name="coty">프랑수아 코티</string>
+    <string name="thomson">조지 패짓 톰슨</string>
+    <string name="kastler">알프레드 카스틀레르</string>
+    <!-- 4 may -->
+    <string name="cristofori">바르톨로메오 크리스토포리</string>
+    <string name="borda">장샤를 드 보르다</string>
+    <string name="brockhaus">프리드리히 아르놀트 브로크하우스</string>
+    <string name="thenard">루이 자크 테나르</string>
+    <string name="liddell">앨리스 리들</string>
+    <string name="mandelstam">레오니드 만델스탐</string>
+    <string name="hepburn">오드리 헵번</string>
+    <!-- 5 may -->
+    <string name="kierkegaard">쇠렌 키르케고르</string>
+    <string name="marx">카를 마르크스</string>
+    <string name="sienkiewicz">헨리크 시엔키에비치</string>
+    <string name="schawlow">아서 레너드 쇼클로</string>
+    <string name="adele">아델</string>
+    <!-- 6 may -->
+    <string name="freud">지그문트 프로이트</string>
+    <string name="peary">로버트 피어리</string>
+    <string name="grignard">빅토르 그리냐르</string>
+    <string name="martinson">하뤼 마틴손</string>
+    <string name="clooney">조지 클루니</string>
+    <!-- 7 may -->
+    <string name="clairaut">알렉시 클레로</string>
+    <string name="robert_browning">로버트 브라우닝</string>
+    <string name="tchaikovsky">표트르 일리치 차이콥스키</string>
+    <string name="tagore">라빈드라나트 타고르</string>
+    <string name="reymont">브와디스와프 레이몬트</string>
+    <string name="land">에드윈 허버트 랜드</string>
+    <!-- 8 may -->
+    <string name="dunant">앙리 뒤낭</string>
+    <string name="lwoff">앙드레 미셸 르보프</string>
+    <string name="fernandel">페르낭델</string>
+    <string name="rossellini">로베르토 로셀리니</string>
+    <string name="iglesias">엔리케 이글레시아스</string>
+    <!-- 9 may -->
+    <string name="monge">가스파르 몽주</string>
+    <string name="opel">아담 오펠</string>
+    <string name="laval">구스타프 드 라발</string>
+    <string name="carter">하워드 카터</string>
+    <string name="gasset">호세 오르테가 이 가세트</string>
+    <string name="richard_day">리처드 데이</string>
+    <string name="eigen">만프레트 아이겐</string>
+    <!-- 10 may -->
+    <string name="lisle">클로드 조제프 루제 드 릴</string>
+    <string name="fresnel">오귀스탱 장 프레넬</string>
+    <string name="killing">빌헬름 킬링</string>
+    <string name="lipton">토머스 리프턴</string>
+    <string name="gaumont">레옹 고몽</string>
+    <string name="barth">카를 바르트</string>
+    <string name="selznick">데이비드 O. 셀즈닉</string>
+    <string name="chapman">마크 데이비드 채프먼</string>
+    <!-- 11 may -->
+    <string name="munchhausen">히어로니무스 카를 프리드리히 폰 뮌히하우젠</string>
+    <string name="blumenbach">요한 프리드리히 블루멘바흐</string>
+    <string name="voynich">에설 릴리언 보이니치</string>
+    <string name="dali">살바도르 달리</string>
+    <string name="feynman">리처드 파인만</string>
+    <string name="dijkstra">에츠허르 베이베르 다이크스트라</string>
+    <string name="iniesta">안드레스 이니에스타</string>
+    <!-- 12 may -->
+    <string name="lear">에드워드 리어</string>
+    <string name="hind">존 러셀 하인드</string>
+    <string name="pirquet">클레멘스 폰 피르케</string>
+    <string name="giauque">윌리엄 지오크</string>
+    <string name="devi">인드라 데비</string>
+    <string name="voznesensky">안드레이 보즈네센스키</string>
+    <!-- 13 may -->
+    <string name="nevsky">알렉산드르 넵스키</string>
+    <string name="daudet">알퐁스 도데</string>
+    <string name="ross">로널드 로스</string>
+    <string name="braque">조르주 브라크</string>
+    <string name="wonder">스티비 원더</string>
+    <string name="rodman">데니스 로드맨</string>
+    <string name="pattinson">로버트 패틴슨</string>
+    <!-- 14 may -->
+    <string name="gainsborough">토머스 게인즈버러</string>
+    <string name="steinitz">빌헬름 슈타이니츠</string>
+    <string name="tsvet">미하일 츠베트</string>
+    <string name="lucas">조지 루카스</string>
+    <string name="zemeckis">로버트 저메키스</string>
+    <string name="tim_roth">팀 로스</string>
+    <string name="blanchett">케이트 블란쳇</string>
+    <string name="zuckerberg">마크 저커버그</string>
+    <!-- 15 may -->
+    <string name="mechnikov">일리야 메치니코프</string>
+    <string name="vasnetsov">빅토르 바스네초프</string>
+    <string name="wernicke">카를 베르니케</string>
+    <string name="baum">라이먼 프랭크 바움</string>
+    <string name="curie">피에르 퀴리</string>
+    <string name="bulgakov">미하일 불가코프</string>
+    <!-- 16 may -->
+    <string name="agnesi">마리아 가에타나 아녜시</string>
+    <string name="vauquelin">루이 니콜라 보클랭</string>
+    <string name="david_hughes">데이비드 에드워드 휴스</string>
+    <string name="fonda">헨리 폰다</string>
+    <string name="herman">우디 허먼</string>
+    <string name="trejo">대니 트레호</string>
+    <string name="brosnan">피어스 브로스넌</string>
+    <string name="megan_fox">메간 폭스</string>
+    <!-- 17 may -->
+    <string name="jenner">에드워드 제너</string>
+    <string name="lockyer">노먼 로키어</string>
+    <string name="hassel">오드 하셀</string>
+    <string name="gabin">장 가뱅</string>
+    <string name="nilsson">비르기트 닐손</string>
+    <string name="hopper">데니스 호퍼</string>
+    <!-- 18 may -->
+    <string name="khayyam">오마르 하이얌</string>
+    <string name="clapperton">휴 클래퍼턴</string>
+    <string name="hofmeister">빌헬름 호프마이스터</string>
+    <string name="heaviside">올리버 헤비사이드</string>
+    <string name="bertrand_russell">버트런드 러셀</string>
+    <string name="vigneaud">빈센트 뒤비뇨</string>
+    <string name="cretu">미하엘 크레투</string>
+    <!-- 19 may -->
+    <string name="evola">율리우스 에볼라</string>
+    <string name="colin_chapman">콜린 채프먼</string>
+    <string name="placido">미켈레 플라치도</string>
+    <string name="karapetyan">샤바르시 카라페탼</string>
+    <string name="oreiro">나탈리아 오레이로</string>
+    <string name="pirlo">안드레아 피를로</string>
+    <string name="sam_smith">샘 스미스</string>
+    <!-- 20 may -->
+    <string name="fabricius">히에로니무스 파브리키우스</string>
+    <string name="balzac">오노레 드 발자크</string>
+    <string name="passy">프레데리크 파시</string>
+    <string name="berliner">에밀 베를리너</string>
+    <string name="hewlett">윌리엄 레딩턴 휴렛</string>
+    <string name="edward_lewis">에드워드 루이스</string>
+    <string name="cher">셰어</string>
+    <!-- 21 may -->
+    <string name="durer">알브레히트 뒤러</string>
+    <string name="coriolis">가스파르 귀스타브 드 코리올리</string>
+    <string name="kock">폴 드 코크</string>
+    <string name="renault">루이 르노</string>
+    <string name="einthoven">빌럼 에인트호번</string>
+    <string name="sakharov">안드레이 사하로프</string>
+    <!-- 22 may -->
+    <string name="wagner">리하르트 바그너</string>
+    <string name="doyle">아서 코난 도일</string>
+    <string name="olivier">로런스 올리비에</string>
+    <string name="herge">에르제</string>
+    <string name="herbert_brown">허버트 찰스 브라운</string>
+    <string name="campbell">나오미 캠벨</string>
+    <!-- 23 may -->
+    <string name="linnaeus">카를 폰 린네</string>
+    <string name="mesmer">프란츠 메스머</string>
+    <string name="lilienthal">오토 릴리엔탈</string>
+    <string name="fairbanks">더글러스 페어뱅크스</string>
+    <string name="lagerkvist">페르 라게르크비스트</string>
+    <string name="bardeen">존 바딘</string>
+    <string name="moog">로버트 무그</string>
+    <!-- 24 may -->
+    <string name="pontormo">폰토르모</string>
+    <string name="fahrenheit">다니엘 가브리엘 파렌하이트</string>
+    <string name="sholokhov">미하일 숄로호프</string>
+    <string name="brodsky">조지프 브로드스키</string>
+    <string name="dylan">밥 딜런</string>
+    <string name="deakins">로저 디킨스</string>
+    <!-- 25 may -->
+    <string name="emerson">랠프 월도 에머슨</string>
+    <string name="burckhardt">야코프 부르크하르트</string>
+    <string name="zeeman">피터르 제만</string>
+    <string name="steinberger">잭 스타인버거</string>
+    <string name="mckellen">이언 매켈런</string>
+    <string name="myers">마이크 마이어스</string>
+    <!-- 26 may -->
+    <string name="petty">윌리엄 페티</string>
+    <string name="moivre">아브라함 드 무아브르</string>
+    <string name="john_wayne">존 웨인</string>
+    <string name="miles_davis">마일스 데이비스</string>
+    <string name="kevorkian">잭 케보키언</string>
+    <string name="kravitz">레니 크래비츠</string>
+    <string name="helena_carter">헬레나 보넘 카터</string>
+    <!-- 27 may -->
+    <string name="vanderbilt">코닐리어스 밴더빌트</string>
+    <string name="duncan">이사도라 덩컨</string>
+    <string name="cockcroft">존 콕크로프트</string>
+    <string name="christopher_lee">크리스토퍼 리</string>
+    <string name="bettany">폴 베타니</string>
+    <!-- 28 may -->
+    <string name="guillotin">조제프 이냐스 기요탱</string>
+    <string name="thomas_moore">토머스 무어</string>
+    <string name="agassiz">루이 아가시</string>
+    <string name="milankovic">밀로틴 밀란코비치</string>
+    <string name="ian_fleming">이언 플레밍</string>
+    <string name="minogue">카일리 미노그</string>
+    <!-- 29 may -->
+    <string name="david_bruce">데이비드 브루스</string>
+    <string name="chesterton">길버트 키스 체스터턴</string>
+    <string name="spengler">오스발트 슈펭글러</string>
+    <string name="bob_hope">밥 호프</string>
+    <string name="goldberg">레아 골드버그</string>
+    <string name="kennedy">존 피츠제럴드 케네디</string>
+    <!-- 30 may -->
+    <string name="hagen">헤르만 아우구스트 하겐</string>
+    <string name="faberge">페테르 카를 파베르제</string>
+    <string name="thalberg">어빙 탈버그</string>
+    <string name="alfven">한네스 알벤</string>
+    <string name="blanc">멜 블랭크</string>
+    <string name="gerrard">스티븐 제라드</string>
+    <!-- 31 may -->
+    <string name="tieck">루트비히 티크</string>
+    <string name="pugni">체사레 푸니</string>
+    <string name="pirrie">윌리엄 제임스 피리</string>
+    <string name="perse">생존 페르스</string>
+    <string name="allais">모리스 알레</string>
+    <string name="eastwood">클린트 이스트우드</string>
+    <string name="jay_miner">제이 마이너</string>
+    <!-- 1 june -->
+    <string name="paer">페르디난도 파에르</string>
+    <string name="carnot">니콜라 레오나르 사디 카르노</string>
+    <string name="glinka">미하일 글린카</string>
+    <string name="monroe">마릴린 먼로</string>
+    <string name="foster">노먼 포스터</string>
+    <string name="freeman">모건 프리먼</string>
+    <string name="persson">마르쿠스 페르손</string>
+    <!-- 2 june -->
+    <string name="de_sade">도나시앵 알퐁스 프랑수아 드 사드</string>
+    <string name="cagliostro">알레산드로 칼리오스트로</string>
+    <string name="akimov">이반 아키모프</string>
+    <string name="hardy">토머스 하디</string>
+    <string name="weissmuller">조니 와이즈뮬러</string>
+    <string name="quinto">재커리 퀸토</string>
+    <!-- 3 june -->
+    <string name="hutton">제임스 허턴</string>
+    <string name="shrapnel">헨리 슈러프널</string>
+    <string name="cobden">리처드 코브던</string>
+    <string name="timiryazev">클리멘트 티미랴제프</string>
+    <string name="pearl">레이먼드 펄</string>
+    <string name="arber">베르너 아르버</string>
+    <string name="nadal">라파엘 나달</string>
+    <!-- 4 june -->
+    <string name="quesnay">프랑수아 케네</string>
+    <string name="nazimova">알라 나지모바</string>
+    <string name="cockerell">크리스토퍼 코커렐</string>
+    <string name="bartoli">체칠리아 바르톨리</string>
+    <string name="jolie">안젤리나 졸리</string>
+    <!-- 5 june -->
+    <string name="chippendale">토머스 치펜데일</string>
+    <string name="keynes">존 메이너드 케인스</string>
+    <string name="lorca">페데리코 가르시아 로르카</string>
+    <string name="gabor">데니스 가보르</string>
+    <string name="peierls">루돌프 파이얼스</string>
+    <string name="wahlberg">마크 월버그</string>
+    <!-- 6 june -->
+    <string name="regiomontanus">레기오몬타누스</string>
+    <string name="velazquez">디에고 벨라스케스</string>
+    <string name="corneille">피에르 코르네유</string>
+    <string name="pushkin">알렉산드르 푸시킨</string>
+    <string name="braun">카를 페르디난트 브라운</string>
+    <string name="mann">토마스 만</string>
+    <!-- 7 june -->
+    <string name="brummell">보 브러멀</string>
+    <string name="auer">레오폴트 아우어</string>
+    <string name="mackintosh">찰스 레니 매킨토시</string>
+    <string name="barkla">찰스 글로버 바클라</string>
+    <string name="mulliken">로버트 샌더슨 멀리컨</string>
+    <string name="apgar">버지니아 에프가</string>
+    <string name="martin">딘 마틴</string>
+    <string name="neeson">리엄 니슨</string>
+    <!-- 8 june -->
+    <string name="cassini">조반니 도메니코 카시니</string>
+    <string name="albinoni">토마소 알비노니</string>
+    <string name="careme">마리앙투안 카렘</string>
+    <string name="schumann">로베르트 슈만</string>
+    <string name="yeste">산티아고 베르나베우 예스테</string>
+    <string name="john_campbell">존 우드 캠벨</string>
+    <string name="kanye_west">카니예 웨스트</string>
+    <!-- 9 june -->
+    <string name="stephenson">조지 스티븐슨</string>
+    <string name="galle">요한 고트프리트 갈레</string>
+    <string name="suttner">베르타 폰 주트너</string>
+    <string name="dale">헨리 핼릿 데일</string>
+    <string name="fox">마이클 J. 폭스</string>
+    <string name="depp">조니 뎁</string>
+    <string name="portman">나탈리 포트만</string>
+    <!-- 10 june -->
+    <string name="courbet">귀스타브 쿠르베</string>
+    <string name="otto">니콜라우스 오토</string>
+    <string name="cook">프레더릭 쿡</string>
+    <string name="mcdaniel">해티 맥대니얼</string>
+    <string name="bellow">솔 벨로</string>
+    <string name="garland">주디 갈런드</string>
+    <!-- 11 june -->
+    <string name="constable">존 컨스터블</string>
+    <string name="fortuny">마리아노 포르투니</string>
+    <string name="richard_strauss">리하르트 슈트라우스</string>
+    <string name="cousteau">자크 이브 쿠스토</string>
+    <string name="styron">윌리엄 스타이런</string>
+    <string name="laurie">휴 로리</string>
+    <string name="dinklage">피터 딘클리지</string>
+    <string name="labeouf">샤이어 러버프</string>
+    <!-- 12 june -->
+    <string name="roebling">존 오거스트 뢰블링</string>
+    <string name="lipmann">프리츠 앨버트 리프만</string>
+    <string name="frank">안네 프랑크</string>
+    <string name="sakmann">베르트 작만</string>
+    <string name="lima">아드리아나 리마</string>
+    <!-- 13 june -->
+    <string name="young">토머스 영</string>
+    <string name="maxwell">제임스 클러크 맥스웰</string>
+    <string name="yeats">윌리엄 버틀러 예이츠</string>
+    <string name="john_nash">존 포브스 내시 주니어</string>
+    <string name="mcdowell">말콤 맥도웰</string>
+    <string name="perelman">그리고리 페렐만</string>
+    <string name="evans">크리스 에번스</string>
+    <!-- 14 june -->
+    <string name="coulomb">샤를 오귀스탱 드 쿨롱</string>
+    <string name="stowe">해리엇 비처 스토</string>
+    <string name="landsteiner">카를 란트슈타이너</string>
+    <string name="tokarev">표도르 토카레프</string>
+    <string name="church">알론조 처치</string>
+    <string name="guevara">에르네스토 체 게바라</string>
+    <string name="graf">슈테피 그라프</string>
+    <!-- 15 june -->
+    <string name="poussin">니콜라 푸생</string>
+    <string name="fourcroy">앙투안 프랑수아 드 푸르크루아</string>
+    <string name="balmont">콘스탄틴 발몬트</string>
+    <string name="belushi">제임스 벨루시</string>
+    <string name="helen_hunt">헬렌 헌트</string>
+    <string name="kahn">올리버 칸</string>
+    <string name="harris">닐 패트릭 해리스</string>
+    <!-- 16 june -->
+    <string name="boccaccio">조반니 보카치오</string>
+    <string name="plucker">율리우스 플뤼커</string>
+    <string name="friedmann">알렉산드르 프리드만</string>
+    <string name="leinster">머리 라인스터</string>
+    <string name="chakraborty">미툰 차크라보르티</string>
+    <string name="shakur">투팍 샤커</string>
+    <string name="john_newman">존 뉴먼</string>
+    <!-- 17 june -->
+    <string name="panini">조반니 파올로 파니니</string>
+    <string name="gounod">샤를 구노</string>
+    <string name="stravinsky">이고르 스트라빈스키</string>
+    <string name="escher">마우리츠 코르넬리스 에셔</string>
+    <string name="wakefield">루스 그레이브스 웨이크필드</string>
+    <string name="jacob">프랑수아 자코브</string>
+    <!-- 18 june -->
+    <string name="goncharov">이반 곤차로프</string>
+    <string name="laveran">샤를 루이 알퐁스 라브랑</string>
+    <string name="flagg">제임스 몽고메리 플래그</string>
+    <string name="macdonald">저넷 맥도널드</string>
+    <string name="mccartney">폴 매카트니</string>
+    <string name="capello">파비오 카펠로</string>
+    <!-- 19 june -->
+    <string name="pascal">블레즈 파스칼</string>
+    <string name="dazai">다자이 오사무</string>
+    <string name="flory">폴 플로리</string>
+    <string name="aage_bohr">오게 닐스 보어</string>
+    <string name="rushdie">살만 루슈디</string>
+    <string name="dujardin">장 뒤자르댕</string>
+    <!-- 20 june -->
+    <string name="rosa">살바토르 로사</string>
+    <string name="offenbach">자크 오펜바흐</string>
+    <string name="bonnat">레옹 보나</string>
+    <string name="kidman">니콜 키드먼</string>
+    <string name="rodriguez">로버트 로드리게스</string>
+    <!-- 21 june -->
+    <string name="poisson">시메옹 드니 푸아송</string>
+    <string name="sartre">장폴 사르트르</string>
+    <string name="mcewan">이언 매큐언</string>
+    <string name="platini">미셸 플라티니</string>
+    <string name="tsoi">빅토르 초이</string>
+    <string name="lana_del_rey">라나 델 레이</string>
+    <!-- 22 june -->
+    <string name="haggard">헨리 라이더 해거드</string>
+    <string name="minkowski">헤르만 민코프스키</string>
+    <string name="huxley">줄리언 헉슬리</string>
+    <string name="remarque">에리히 마리아 레마르크</string>
+    <string name="dillinger">존 딜린저</string>
+    <string name="wilder">빌리 와일더</string>
+    <string name="streep">메릴 스트립</string>
+    <string name="dan_brown">댄 브라운</string>
+    <!-- 23 june -->
+    <string name="vico">잠바티스타 비코</string>
+    <string name="beauharnais">조제핀 드 보아르네</string>
+    <string name="akhmatova">안나 아흐마토바</string>
+    <string name="turing">앨런 튜링</string>
+    <string name="fosse">밥 포시</string>
+    <string name="zidane">지네딘 지단</string>
+    <!-- 24 june -->
+    <string name="victor_hess">빅토어 프란츠 헤스</string>
+    <string name="fangio">후안 마누엘 판히오</string>
+    <string name="perl">마틴 루이스 펄</string>
+    <string name="chabrol">클로드 샤브롤</string>
+    <string name="messi">리오넬 메시</string>
+    <!-- 25 june -->
+    <string name="gaudi">안토니 가우디</string>
+    <string name="nernst">발터 네른스트</string>
+    <string name="orwell">조지 오웰</string>
+    <string name="lumet">시드니 루멧</string>
+    <string name="abrikosov">알렉세이 아브리코소프</string>
+    <string name="michael">조지 마이클</string>
+    <!-- 26 june -->
+    <string name="brandt">게오르크 브란트</string>
+    <string name="kelvin">제1대 켈빈 남작 윌리엄 톰슨</string>
+    <string name="buck">펄 S. 벅</string>
+    <string name="bill_lear">빌 리어</string>
+    <string name="robert_richardson">로버트 콜먼 리처드슨</string>
+    <!-- 27 june -->
+    <string name="mauser">파울 마우저</string>
+    <string name="spemann">한스 슈페만</string>
+    <string name="keller">헬렌 켈러</string>
+    <string name="abrams">J.J. 에이브럼스</string>
+    <string name="maguire">토비 매과이어</string>
+    <string name="raul">라울 곤살레스 블랑코</string>
+    <!-- 28 june -->
+    <string name="rubens">페테르 파울 루벤스</string>
+    <string name="rousseau">장자크 루소</string>
+    <string name="broca">폴 브로카</string>
+    <string name="pirandello">루이지 피란델로</string>
+    <string name="carrel">알렉시 카렐</string>
+    <string name="goeppert_mayer">마리아 괴퍼트메이어</string>
+    <string name="kathy_bates">캐시 베이츠</string>
+    <string name="cusack">존 큐색</string>
+    <string name="musk">일론 머스크</string>
+    <!-- 29 june -->
+    <string name="dodoens">렘베르트 도도엔스</string>
+    <string name="ressel">요제프 레셀</string>
+    <string name="leopardi">자코모 레오파르디</string>
+    <string name="exupery">앙투안 드 생텍쥐페리</string>
+    <string name="fallaci">오리아나 팔라치</string>
+    <string name="scherzinger">니콜 셰르징거</string>
+    <!-- 30 june -->
+    <string name="vernet">오라스 베르네</string>
+    <string name="hooker">조지프 달턴 후커</string>
+    <string name="duhamel">조르주 뒤아멜</string>
+    <string name="milosz">체스와프 미워시</string>
+    <string name="ballard">로버트 밸러드</string>
+    <string name="tyson">마이크 타이슨</string>
+    <string name="phelps">마이클 펠프스</string>
+    <!-- 1 july -->
+    <string name="leibniz">고트프리트 빌헬름 라이프니츠</string>
+    <string name="poncelet">장빅토르 퐁슬레</string>
+    <string name="george_sand">조르주 상드</string>
+    <string name="vierordt">카를 폰 피어오르트</string>
+    <string name="bleriot">루이 블레리오</string>
+    <string name="lauder">에스티 로더</string>
+    <string name="diana">웨일스 공작부인 다이애나</string>
+    <string name="pamela_anderson">패멀라 앤더슨</string>
+    <!-- 2 july -->
+    <string name="gluck">크리스토프 빌리발트 글루크</string>
+    <string name="henry_bragg">윌리엄 헨리 브래그</string>
+    <string name="hesse">헤르만 헤세</string>
+    <string name="lacoste">르네 라코스트</string>
+    <string name="cardin">피에르 가르뎅</string>
+    <string name="lumumba">파트리스 루뭄바</string>
+    <string name="naceri">사미 나세리</string>
+    <string name="robbie">마고 로비</string>
+    <!-- 3 july -->
+    <string name="adam">로버트 애덤</string>
+    <string name="kafka">프란츠 카프카</string>
+    <string name="stoppard">톰 스토파드</string>
+    <string name="cruise">톰 크루즈</string>
+    <string name="selanne">테무 셀랜네</string>
+    <!-- 4 july -->
+    <string name="blanchard">장피에르 블랑샤르</string>
+    <string name="everest">조지 에버리스트</string>
+    <string name="garibaldi">주세페 가리발디</string>
+    <string name="manolete">마놀레테</string>
+    <string name="lollobrigida">지나 롤로브리지다</string>
+    <!-- 5 july -->
+    <string name="bulgarin">파데이 불가린</string>
+    <string name="fitzroy">로버트 피츠로이</string>
+    <string name="rankine">윌리엄 존 랭킨</string>
+    <string name="zetkin">클라라 체트킨</string>
+    <string name="gasser">허버트 스펜서 개서</string>
+    <string name="cocteau">장 콕토</string>
+    <!-- 6 july -->
+    <string name="raffles">스탬퍼드 래플스</string>
+    <string name="heidenstam">베르네르 폰 헤이덴스탐</string>
+    <string name="chagall">마르크 샤갈</string>
+    <string name="bill_haley">빌 헤일리</string>
+    <string name="stallone">실베스터 스탤론</string>
+    <string name="rush">제프리 러시</string>
+    <string name="eva_green">에바 그린</string>
+    <!-- 7 july -->
+    <string name="jacquard">조제프 마리 자카르</string>
+    <string name="golgi">카밀로 골지</string>
+    <string name="mahler">구스타프 말러</string>
+    <string name="feuchtwanger">리온 포이히트방어</string>
+    <string name="ringo_starr">링고 스타</string>
+    <string name="cutugno">토토 쿠투뇨</string>
+    <!-- 8 july -->
+    <string name="fontaine">장 드 라 퐁텐</string>
+    <string name="zeppelin">페르디난트 폰 체펠린</string>
+    <string name="rockefeller">존 D. 록펠러</string>
+    <string name="benardos">니콜라이 베나르도스</string>
+    <string name="arthus_evans">아서 에번스</string>
+    <string name="perls">프리츠 펄스</string>
+    <string name="kapitsa">표트르 카피차</string>
+    <!-- 9 july -->
+    <string name="radcliffe">앤 래드클리프</string>
+    <string name="davenport">토머스 대번포트</string>
+    <string name="elias_howe">엘리어스 하우</string>
+    <string name="boas">프란츠 보아스</string>
+    <string name="chagas">카를루스 샤가스</string>
+    <string name="tom_hanks">톰 행크스</string>
+    <string name="love">코트니 러브</string>
+    <!-- 10 july -->
+    <string name="jean_calvin">장 칼뱅</string>
+    <string name="marryat">프레더릭 매리엇</string>
+    <string name="pissarro">카미유 피사로</string>
+    <string name="tesla">니콜라 테슬라</string>
+    <string name="proust">마르셀 프루스트</string>
+    <string name="chamberlain">오언 체임벌린</string>
+    <!-- 11 july -->
+    <string name="gondora">루이스 데 공고라</string>
+    <string name="lalande">제롬 랄랑드</string>
+    <string name="nelson">레너드 넬슨</string>
+    <string name="abel">루돌프 아벨</string>
+    <string name="brynner">율 브리너</string>
+    <string name="armani">조르조 아르마니</string>
+    <!-- 12 july -->
+    <string name="bernard">클로드 베르나르</string>
+    <string name="eastman">조지 이스트먼</string>
+    <string name="tod_browning">토드 브라우닝</string>
+    <string name="modigliani">아메데오 모딜리아니</string>
+    <string name="meruda">파블로 네루다</string>
+    <string name="wyeth">앤드루 와이어스</string>
+    <string name="michelle_rodriguez">미셸 로드리게스</string>
+    <!-- 13 july -->
+    <string name="john_dee">존 디</string>
+    <string name="cannizzaro">스타니슬라오 칸니차로</string>
+    <string name="otto_wagner">오토 바그너</string>
+    <string name="babel">이사크 바벨</string>
+    <string name="ascari">알베르토 아스카리</string>
+    <string name="ford">해리슨 포드</string>
+    <string name="rubik">러비크 에르뇌</string>
+    <string name="benassi">베니 베나시</string>
+    <!-- 14 july -->
+    <string name="dumas">장바티스트 뒤마</string>
+    <string name="klimt">구스타프 클림트</string>
+    <string name="irving_stone">어빙 스톤</string>
+    <string name="bergman">잉마르 베리만</string>
+    <string name="forrester">제이 라이트 포레스터</string>
+    <!-- 15 july -->
+    <string name="rembrandt">렘브란트</string>
+    <string name="pareto">빌프레도 파레토</string>
+    <string name="harmsworth">제1대 노스클리프 자작 앨프리드 하름스워스</string>
+    <string name="brockhouse">버트럼 브로크하우스</string>
+    <string name="savage">애덤 새비지</string>
+    <string name="kruger">다이앤 크루거</string>
+    <!-- 16 july -->
+    <string name="assisi">아시시의 클라라</string>
+    <string name="amundsen">로알 아문센</string>
+    <string name="stanwyck">바버라 스탠윅</string>
+    <string name="laroche">기 라로슈</string>
+    <string name="sheckley">로버트 셰클리</string>
+    <!-- 17 july -->
+    <string name="friedrich_krupp">프리드리히 크루프</string>
+    <string name="corot">장바티스트 카미유 코로</string>
+    <string name="nicholas">니콜라이 미클루호마클라이</string>
+    <string name="lamaitre">조르주 르메트르</string>
+    <string name="abbott">버니스 애벗</string>
+    <string name="sutherland">도널드 서덜랜드</string>
+    <!-- 18 july -->
+    <string name="thackeray">윌리엄 메이크피스 새커리</string>
+    <string name="viardot">폴린 비아르도</string>
+    <string name="lorentz">헨드릭 로런츠</string>
+    <string name="mandela">넬슨 만델라</string>
+    <string name="hunter_thompson">헌터 S. 톰프슨</string>
+    <string name="branson">리처드 브랜슨</string>
+    <string name="vin_diesel">빈 디젤</string>
+    <!-- 19 july -->
+    <string name="colt">새뮤얼 콜트</string>
+    <string name="degas">에드가르 드가</string>
+    <string name="mayakovsky">블라디미르 마야콥스키</string>
+    <string name="cronin">아치볼드 조지프 크로닌</string>
+    <string name="coloane">프란시스코 콜로아네</string>
+    <string name="yalow">로절린 서스먼 얠로</string>
+    <string name="cumberbatch">베네딕트 컴버배치</string>
+    <!-- 20 july -->
+    <string name="petrarca">프란체스코 페트라르카</string>
+    <string name="owen">리처드 오언</string>
+    <string name="mendel">그레고어 멘델</string>
+    <string name="georg_muller">게오르크 엘리아스 뮐러</string>
+    <string name="morandi">조르조 모란디</string>
+    <string name="dobrev">도브리 도브레프</string>
+    <string name="bundchen">지젤 번천</string>
+    <!-- 21 july -->
+    <string name="picard">장 피카르</string>
+    <string name="regnault">앙리 빅토르 르노</string>
+    <string name="reuter">폴 로이터</string>
+    <string name="hemingway">어니스트 헤밍웨이</string>
+    <string name="robin_williams">로빈 윌리엄스</string>
+    <string name="josh_hartnett">조시 하트넷</string>
+    <!-- 22 july -->
+    <string name="soufflot">자크 제르맹 수플로</string>
+    <string name="gustav_hertz">구스타프 루트비히 헤르츠</string>
+    <string name="mathieu">미레이유 마티외</string>
+    <string name="dafoe">윌럼 더포</string>
+    <string name="selena_gomez">셀레나 고메즈</string>
+    <!-- 23 july -->
+    <string name="vyazemsky">표트르 뱌젬스키</string>
+    <string name="cilea">프란체스코 칠레아</string>
+    <string name="harrelson">우디 해럴슨</string>
+    <string name="hoffman">필립 시모어 호프먼</string>
+    <string name="lewinsky">모니카 르윈스키</string>
+    <string name="daniel_radcliffe">대니얼 래드클리프</string>
+    <!-- 24 july -->
+    <string name="vidocq">외젠 프랑수아 비도크</string>
+    <string name="alexandre_dumas">알렉상드르 뒤마</string>
+    <string name="mucha">알폰스 무하</string>
+    <string name="benson">에드워드 프레더릭 벤슨</string>
+    <string name="lopez">제니퍼 로페즈</string>
+    <!-- 25 july -->
+    <string name="scheiner">크리스토프 샤이너</string>
+    <string name="eakins">토머스 에이킨스</string>
+    <string name="davidson_black">데이비드슨 블랙</string>
+    <string name="canetti">엘리아스 카네티</string>
+    <string name="leblanc">맷 르블랑</string>
+    <!-- 26 july -->
+    <string name="remak">로베르트 레마크</string>
+    <string name="shaw">버나드 쇼</string>
+    <string name="jung">카를 융</string>
+    <string name="maurois">앙드레 모루아</string>
+    <string name="kubrick">스탠리 큐브릭</string>
+    <string name="jagger">믹 재거</string>
+    <string name="spacey">케빈 스페이시</string>
+    <string name="bullock">샌드라 불록</string>
+    <string name="statham">제이슨 스타섬</string>
+    <!-- 27 july -->
+    <string name="corday">샤를로트 코르데</string>
+    <string name="carducci">조수에 카르두치</string>
+    <string name="hans_fischer">한스 피셔</string>
+    <string name="monaco">마리오 델 모나코</string>
+    <string name="nikolaj">니콜라이 코스테르발다우</string>
+    <!-- 28 july -->
+    <string name="hooke">로버트 훅</string>
+    <string name="feuerbach">루트비히 포이어바흐</string>
+    <string name="grisi">줄리아 그리시</string>
+    <string name="duchamp">마르셀 뒤샹</string>
+    <string name="popper">카를 포퍼</string>
+    <string name="burda">아네 부르다</string>
+    <string name="chavez">우고 차베스</string>
+    <!-- 29 july -->
+    <string name="aivazovsky">이반 아이바조프스키</string>
+    <string name="mussolini">베니토 무솔리니</string>
+    <string name="theda_bara">시다 바라</string>
+    <string name="clara_bow">클라라 보</string>
+    <string name="alonso">페르난도 알론소</string>
+    <!-- 30 july -->
+    <string name="vasari">조르조 바사리</string>
+    <string name="bronte">에밀리 브론테</string>
+    <string name="henry_ford">헨리 포드</string>
+    <string name="cyril_parkinson">시릴 노스코트 파킨슨</string>
+    <string name="schwarzenegger">아널드 슈워제네거</string>
+    <string name="jean_reno">장 레노</string>
+    <string name="nolan">크리스토퍼 놀란</string>
+    <!-- 31 july -->
+    <string name="cramer">가브리엘 크라메르</string>
+    <string name="wohler">프리드리히 뵐러</string>
+    <string name="planquette">로베르 플랑케트</string>
+    <string name="milton_friedman">밀턴 프리드먼</string>
+    <string name="de_funes">루이 드 퓌네스</string>
+    <string name="primo_levi">프리모 레비</string>
+    <string name="rowling">J. K. 롤링</string>
+    <!-- 1 august -->
+    <string name="lamarck">장바티스트 라마르크</string>
+    <string name="melville">허먼 멜빌</string>
+    <string name="taro">게르다 타로</string>
+    <string name="laurent">이브 생로랑</string>
+    <string name="mendes">샘 멘데스</string>
+    <string name="momoa">제이슨 모모아</string>
+    <!-- 2 august -->
+    <string name="hoogstraten">사뮈엘 판 호흐스트라턴</string>
+    <string name="tyndall">존 틴들</string>
+    <string name="olcott">헨리 스틸 올콧</string>
+    <string name="bartholdi">프레데리크 오귀스트 바르톨디</string>
+    <string name="loy">미르나 로이</string>
+    <string name="worthington">샘 워싱턴</string>
+    <!-- 3 august -->
+    <string name="otis">엘리샤 오티스</string>
+    <string name="simak">클리퍼드 D. 시맥</string>
+    <string name="james">P. D. 제임스</string>
+    <string name="sheen">마틴 신</string>
+    <string name="lilly">에반젤린 릴리</string>
+    <!-- 4 august -->
+    <string name="shelley">퍼시 비시 셸리</string>
+    <string name="john_venn">존 벤</string>
+    <string name="hamsun">크누트 함순</string>
+    <string name="armstrong">루이 암스트롱</string>
+    <string name="thornton">빌리 밥 손턴</string>
+    <!-- 5 august -->
+    <string name="niels_abel">닐스 헨리크 아벨</string>
+    <string name="repin">일리야 레핀</string>
+    <string name="maupassant">기 드 모파상</string>
+    <string name="wain">루이스 웨인</string>
+    <string name="huston">존 휴스턴</string>
+    <string name="neil_armstrong">닐 암스트롱</string>
+    <!-- 6 august -->
+    <string name="malebranche">니콜라 말브랑슈</string>
+    <string name="johann_bernoulli">요한 베르누이</string>
+    <string name="alexander_fleming">알렉산더 플레밍</string>
+    <string name="lucille_ball">루실 볼</string>
+    <string name="andy_warhol">앤디 워홀</string>
+    <string name="shyamalan">M. 나이트 샤말란</string>
+    <!-- 7 august -->
+    <string name="bathory">바토리 에르제베트</string>
+    <string name="mata_hari">마타 하리</string>
+    <string name="tobin_bell">토빈 벨</string>
+    <string name="duchovny">데이비드 듀코브니</string>
+    <string name="jimmy_wales">지미 웨일스</string>
+    <string name="theron">샤를리즈 테론</string>
+    <!-- 8 august -->
+    <string name="bateson">윌리엄 베이트슨</string>
+    <string name="lawrence">어니스트 로런스</string>
+    <string name="dirac">폴 디랙</string>
+    <string name="dustin_hoffman">더스틴 호프먼</string>
+    <string name="federer">로저 페더러</string>
+    <!-- 9 august -->
+    <string name="avogadro">아메데오 아보가드로</string>
+    <string name="morton_william">윌리엄 T. G. 모턴</string>
+    <string name="huckel">에리히 휘켈</string>
+    <string name="piaget">장 피아제</string>
+    <string name="travers">P. L. 트래버스</string>
+    <string name="jansson">토베 얀손</string>
+    <string name="griffith">멜라니 그리피스</string>
+    <string name="houston">휘트니 휴스턴</string>
+    <string name="tautou">오드리 토투</string>
+    <!-- 10 august -->
+    <string name="nestle">앙리 네슬레</string>
+    <string name="qunanbaiuli">아바이 쿠난바이울리</string>
+    <string name="darrow">찰스 대로</string>
+    <string name="shearer">노마 시어러</string>
+    <string name="tiselius">아르네 티셀리우스</string>
+    <string name="banderas">안토니오 반데라스</string>
+    <!-- 11 august -->
+    <string name="andrew_davis">앤드루 잭슨 데이비스</string>
+    <string name="savant">마릴린 보스 사반트</string>
+    <string name="wozniak">스티브 워즈니악</string>
+    <string name="hogan">헐크 호건</string>
+    <string name="hemsworth">크리스 헴스워스</string>
+    <!-- 12 august -->
+    <string name="bering">비투스 베링</string>
+    <string name="demille">세실 B. 드밀</string>
+    <string name="bendix">빈센트 휴고 벤딕스</string>
+    <string name="schrodinger">에르빈 슈뢰딩거</string>
+    <string name="soros">조지 소로스</string>
+    <string name="delevingne">카라 델레바인</string>
+    <!-- 13 august -->
+    <string name="angstrom">안데르스 요나스 옹스트룀</string>
+    <string name="miescher">프리드리히 미셰르</string>
+    <string name="agnelli">조반니 아넬리</string>
+    <string name="hitchcock">앨프리드 히치콕</string>
+    <string name="wankel">펠릭스 방켈</string>
+    <string name="castro">피델 카스트로</string>
+    <!-- 14 august -->
+    <string name="orsted">한스 크리스티안 외르스테드</string>
+    <string name="holliday">독 홀리데이</string>
+    <string name="merezhkovsky">드미트리 메레시콥스키</string>
+    <string name="galsworthy">존 골즈워디</string>
+    <string name="dempster">아서 제프리 뎀스터</string>
+    <string name="steve_martin">스티브 마틴</string>
+    <string name="berry">핼리 베리</string>
+    <string name="kunis">밀라 쿠니스</string>
+    <!-- 15 august -->
+    <string name="carmontelle">카르몽텔</string>
+    <string name="napoleon">나폴레옹</string>
+    <string name="scott">월터 스콧</string>
+    <string name="broglie">루이 드 브로이</string>
+    <string name="inarritu">알레한드로 곤살레스 이냐리투</string>
+    <string name="affleck">벤 애플렉</string>
+    <string name="jennifer_lawrence">제니퍼 로렌스</string>
+    <!-- 16 august -->
+    <string name="bruyere">장 드 라브뤼예르</string>
+    <string name="lippmann">가브리엘 리프만</string>
+    <string name="bukowski">찰스 부코스키</string>
+    <string name="richard">피에르 리샤르</string>
+    <string name="cameron">제임스 캐머런</string>
+    <string name="madonna">마돈나</string>
+    <!-- 17 august -->
+    <string name="fermat">피에르 드 페르마</string>
+    <string name="hodgkin">토머스 호지킨</string>
+    <string name="fokker">아드리안 포커</string>
+    <string name="naipaul">V. S. 나이폴</string>
+    <string name="de_niro">로버트 드 니로</string>
+    <string name="penn">숀 펜</string>
+    <!-- 18 august -->
+    <string name="brook_taylor">브룩 테일러</string>
+    <string name="salieri">안토니오 살리에리</string>
+    <string name="pierre_martin">피에르에밀 마르탱</string>
+    <string name="swayze">패트릭 스웨이지</string>
+    <string name="norton">에드워드 노턴</string>
+    <string name="slater">크리스천 슬레이터</string>
+    <!-- 19 august -->
+    <string name="samuel_richardson">새뮤얼 리처드슨</string>
+    <string name="platov">마트베이 플라토프</string>
+    <string name="nasmyth">제임스 네이스미스</string>
+    <string name="meyer">율리우스 로타어 마이어</string>
+    <string name="enescu">조르주 에네스쿠</string>
+    <string name="chanel">코코 샤넬</string>
+    <string name="perry">매슈 페리</string>
+    <!-- 20 august -->
+    <string name="berzelius">옌스 야코브 베르셀리우스</string>
+    <string name="quasimodo">살바토레 콰시모도</string>
+    <string name="susann">재클린 수잔</string>
+    <string name="durst">프레드 더스트</string>
+    <string name="amy_adams">에이미 애덤스</string>
+    <string name="garfield">앤드루 가필드</string>
+    <!-- 21 august -->
+    <string name="murdoch">윌리엄 머독</string>
+    <string name="basie">카운트 베이시</string>
+    <string name="consuelo_velazquez">콘수엘로 벨라스케스</string>
+    <string name="wilt_chamberlain">윌트 체임벌린</string>
+    <string name="brin">세르게이 브린</string>
+    <string name="bolt">우사인 볼트</string>
+    <!-- 22 august -->
+    <string name="papin">드니 파팽</string>
+    <string name="maudslay">헨리 모즐리</string>
+    <string name="nipkow">파울 고틀리프 닙코프</string>
+    <string name="debussy">클로드 드뷔시</string>
+    <string name="scheler">막스 셸러</string>
+    <string name="bradbury">레이 브래드버리</string>
+    <!-- 23 august-->
+    <string name="laperouse">장프랑수아 드 라페루즈</string>
+    <string name="cuvier">조르주 퀴비에</string>
+    <string name="jirasek">알로이스 이라세크</string>
+    <string name="arrow">케네스 애로</string>
+    <string name="phoenix">리버 피닉스</string>
+    <!-- 24 august -->
+    <string name="weddell">제임스 웨델</string>
+    <string name="borges">호르헤 루이스 보르헤스</string>
+    <string name="coelho">파울루 코엘류</string>
+    <string name="jarre">장미셸 자르</string>
+    <string name="fry">스티븐 프라이</string>
+    <string name="guttenberg">스티브 구텐버그</string>
+    <string name="grint">루퍼트 그린트</string>
+    <!-- 25 august -->
+    <string name="pinkerton">앨런 핑커턴</string>
+    <string name="elo">아르파드 엘로</string>
+    <string name="brian_moore">브라이언 무어</string>
+    <string name="connery">숀 코너리</string>
+    <string name="tim_burton">팀 버턴</string>
+    <string name="schiffer">클라우디아 시퍼</string>
+    <!-- 26 august -->
+    <string name="lambert">요한 하인리히 람베르트</string>
+    <string name="joseph_montgolfier">조제프미셸 몽골피에</string>
+    <string name="lavoisier">앙투안 라부아지에</string>
+    <string name="forest">리 드 포레스트</string>
+    <string name="teresa">마더 테레사</string>
+    <string name="culkin">매콜리 컬킨</string>
+    <!-- 27 august -->
+    <string name="hegel">게오르크 빌헬름 프리드리히 헤겔</string>
+    <string name="niebuhr">바르톨트 게오르크 니부어</string>
+    <string name="bosch">카를 보슈</string>
+    <string name="rolls">찰스 롤스</string>
+    <string name="ranevskaya">파이나 라네프스카야</string>
+    <string name="chalke">세라 찰크</string>
+    <string name="aaron_paul">에런 폴</string>
+    <!-- 28 august -->
+    <string name="goethe">요한 볼프강 폰 괴테</string>
+    <string name="blondel">앙드레 블롱델</string>
+    <string name="whipple">조지 휘플</string>
+    <string name="theremin">레온 테레민</string>
+    <string name="fincher">데이비드 핀처</string>
+    <string name="jack_black">잭 블랙</string>
+    <!-- 29 august -->
+    <string name="locke">존 로크</string>
+    <string name="maeterlinck">모리스 마테를링크</string>
+    <string name="forssmann">베르너 포르스만</string>
+    <string name="ingrid_bergman">잉그리드 버그먼</string>
+    <string name="charlie_parker">찰리 파커</string>
+    <string name="michael_jackson">마이클 잭슨</string>
+    <!-- 30 august -->
+    <string name="mary_shelley">메리 셸리</string>
+    <string name="adolf_hesse">아돌프 프리드리히 헤세</string>
+    <string name="hoff">야코뷔스 헨리퀴스 판 엇호프</string>
+    <string name="rutherford">어니스트 러더퍼드</string>
+    <string name="cummings">레이 커밍스</string>
+    <string name="mclaren">브루스 맥라렌</string>
+    <string name="diaz">카메론 디아즈</string>
+    <!-- 31 august -->
+    <string name="helmholtz">헤르만 폰 헬름홀츠</string>
+    <string name="paneth">프리드리히 파네트</string>
+    <string name="fredric_march">프레드릭 마치</string>
+    <string name="gere">리처드 기어</string>
+    <string name="tucker">크리스 터커</string>
+    <!-- 1 september -->
+    <string name="jevons">윌리엄 스탠리 제번스</string>
+    <string name="auguste_forel">오귀스트 포렐</string>
+    <string name="burroughs">에드거 라이스 버로스</string>
+    <string name="marilyn_miller">마릴린 밀러</string>
+    <string name="marciano">로키 마르시아노</string>
+    <string name="estefan">글로리아 에스테판</string>
+    <!-- 2 september -->
+    <string name="howard">존 하워드</string>
+    <string name="echeverria">에스테반 에체베리아</string>
+    <string name="field">유진 필드</string>
+    <string name="soddy">프레더릭 소디</string>
+    <string name="reeves">키아누 리브스</string>
+    <string name="hayek">살마 아예크</string>
+    <!-- 3 september -->
+    <string name="louis_sullivan">루이스 설리번</string>
+    <string name="pregl">프리츠 프레글</string>
+    <string name="porsche">페르디난트 포르셰</string>
+    <string name="anderson">칼 데이비드 앤더슨</string>
+    <string name="dovlatov">세르게이 도블라토프</string>
+    <string name="jeunet">장피에르 주네</string>
+    <string name="charlie_sheen">찰리 신</string>
+    <!-- 4 september -->
+    <string name="constantijn_huygens">콘스탄테인 하위헌스</string>
+    <string name="chateaubriand">프랑수아르네 드 샤토브리앙</string>
+    <string name="richard_wright">리처드 라이트</string>
+    <string name="tange">단게 겐조</string>
+    <string name="beyonce">비욘세</string>
+    <!-- 5 september -->
+    <string name="campanella">토마소 캄파넬라</string>
+    <string name="meyerbeer">자코모 마이어베어</string>
+    <string name="aleksey_tolstoy">알렉세이 콘스탄티노비치 톨스토이</string>
+    <string name="jesse_james">제시 제임스</string>
+    <string name="mercury">프레디 머큐리</string>
+    <string name="keaton">마이클 키턴</string>
+    <!-- 6 september -->
+    <string name="serlio">세바스티아노 세를리오</string>
+    <string name="moses_mendelssohn">모제스 멘델스존</string>
+    <string name="dalton">존 돌턴</string>
+    <string name="berdan">하이럼 버던</string>
+    <string name="addams">제인 애덤스</string>
+    <string name="essen">루이스 에센</string>
+    <!-- 7 september -->
+    <string name="leclerc">조르주루이 르클레르</string>
+    <string name="gossen">헤르만 하인리히 고센</string>
+    <string name="kuprin">알렉산드르 쿠프린</string>
+    <string name="gala_dali">갈라 달리</string>
+    <string name="debakey">마이클 엘리스 드베이키</string>
+    <string name="packard">데이비드 패커드</string>
+    <!-- 8 september -->
+    <string name="lionheart">사자심왕 리처드</string>
+    <string name="neckam">알렉산더 네컴</string>
+    <string name="mistral">프레데리크 미스트랄</string>
+    <string name="martin_freeman">마틴 프리먼</string>
+    <!-- 9 september -->
+    <string name="frederik_chapman">프레드리크 헨리크 아프 샤프만</string>
+    <string name="galvani">루이지 갈바니</string>
+    <string name="leo_tolstoy">레프 톨스토이</string>
+    <string name="usmanov">알리셰르 우스마노프</string>
+    <string name="hugh_grant">휴 그랜트</string>
+    <string name="sandler">애덤 샌들러</string>
+    <!-- 10 september -->
+    <string name="peirce">찰스 샌더스 퍼스</string>
+    <string name="elsa_schiaparelli">엘자 스키아파렐리</string>
+    <string name="compton">아서 콤프턴</string>
+    <string name="messing">볼프 메싱</string>
+    <string name="lagerfeld">카를 라거펠트</string>
+    <string name="joe_perry">조 페리</string>
+    <string name="firth">콜린 퍼스</string>
+    <string name="ritchie">가이 리치</string>
+    <!-- 11 september -->
+    <string name="james_thomson">제임스 톰슨</string>
+    <string name="zeiss">카를 차이스</string>
+    <string name="o_henry">오 헨리</string>
+    <string name="jeans">제임스 진스</string>
+    <string name="beckenbauer">프란츠 베켄바워</string>
+    <!-- 12 september -->
+    <string name="breitner">조르주 헨드리크 브라이트너</string>
+    <string name="irene_curie">이렌 졸리오퀴리</string>
+    <string name="lem">스타니스와프 렘</string>
+    <string name="barry_white">배리 화이트</string>
+    <string name="farmer">밀렌 파르메</string>
+    <string name="walker">폴 워커</string>
+    <!-- 13 september -->
+    <string name="samuel_wilson">새뮤얼 윌슨</string>
+    <string name="reed">월터 리드</string>
+    <string name="john_priestley">J. B. 프리스틀리</string>
+    <string name="dahl">로알드 달</string>
+    <string name="maurice_jarre">모리스 자르</string>
+    <string name="bisset">재클린 비셋</string>
+    <!-- 14 september -->
+    <string name="agrippa">하인리히 코르넬리우스 아그리파</string>
+    <string name="lely">피터 렐리</string>
+    <string name="cecil">로버트 세실</string>
+    <string name="dana_gibson">찰스 데이나 깁슨</string>
+    <string name="neill">샘 닐</string>
+    <string name="winehouse">에이미 와인하우스</string>
+    <!-- 15 september -->
+    <string name="marco_polo">마르코 폴로</string>
+    <string name="james_cooper">제임스 페니모어 쿠퍼</string>
+    <string name="bugatti">에토레 부가티</string>
+    <string name="christie">애거사 크리스티</string>
+    <string name="jean_renoir">장 르누아르</string>
+    <string name="tommy_lee_jones">토미 리 존스</string>
+    <string name="oliver_stone">올리버 스톤</string>
+    <string name="tom_hardy">톰 하디</string>
+    <!-- 16 september -->
+    <string name="kossel">알브레히트 코셀</string>
+    <string name="boyd">루이즈 아너 보이드</string>
+    <string name="jellinek">메르세데스 옐리네크</string>
+    <string name="korda">알렉산더 코다</string>
+    <string name="bbking">B. B. 킹</string>
+    <string name="rourke">미키 루크</string>
+    <string name="copperfield">데이비드 카퍼필드</string>
+    <!-- 17 september -->
+    <string name="riemann">베른하르트 리만</string>
+    <string name="buick">데이비드 던바 뷰익</string>
+    <string name="tsiolkovsky">콘스탄틴 치올콥스키</string>
+    <string name="kesey">켄 키지</string>
+    <string name="messner">라인홀트 메스너</string>
+    <string name="anastacia">아나스타샤</string>
+    <string name="ovechkin">알렉산드르 오베츠킨</string>
+    <!-- 18 september -->
+    <string name="samuel_johnson">새뮤얼 존슨</string>
+    <string name="foucault">레옹 푸코</string>
+    <string name="garbo">그레타 가르보</string>
+    <string name="mcmillan">에드윈 맥밀런</string>
+    <string name="werber">베르나르 베르베르</string>
+    <string name="gandolfini">제임스 갠돌피니</string>
+    <string name="shuttleworth">마크 셔틀워스</string>
+    <!-- 19 september -->
+    <string name="pajou">오귀스탱 파주</string>
+    <string name="golding">윌리엄 골딩</string>
+    <string name="irons">제러미 아이언스</string>
+    <string name="hornby">레슬리 혼비</string>
+    <string name="karelin">알렉산드르 카렐린</string>
+    <!-- 20 september -->
+    <string name="moneta">에르네스토 테오도로 모네타</string>
+    <string name="dewar">제임스 듀어</string>
+    <string name="leo_strauss">레오 스트라우스</string>
+    <string name="loren">소피아 로렌</string>
+    <string name="george_martin">조지 R. R. 마틴</string>
+    <!-- 21 september -->
+    <string name="mcadam">존 라우던 맥아담</string>
+    <string name="onnes">헤이커 카메를링 오너스</string>
+    <string name="wells">H. G. 웰스</string>
+    <string name="nicolle">샤를 니콜</string>
+    <string name="stephen_king">스티븐 킹</string>
+    <string name="murray">빌 머리</string>
+    <string name="beigbeder">프레데리크 베그베데르</string>
+    <!-- 22 september -->
+    <string name="faraday">마이클 패러데이</string>
+    <string name="george_bentham">조지 벤담</string>
+    <string name="ciurlionis">미칼로유스 치우를료니스</string>
+    <string name="muni">폴 무니</string>
+    <string name="huggins">찰스 브렌턴 허긴스</string>
+    <string name="dean_reed">딘 리드</string>
+    <!-- 23 september -->
+    <string name="fizeau">이폴리트 피조</string>
+    <string name="robert_bosch">로베르트 보슈</string>
+    <string name="orr">제1대 보이드오어 남작 존 보이드 오어</string>
+    <string name="coltrane">존 콜트레인</string>
+    <string name="romy_schneider">로미 슈나이더</string>
+    <string name="julio_iglesias">훌리오 이글레시아스</string>
+    <string name="springsteen">브루스 스프링스틴</string>
+    <!-- 24 september -->
+    <string name="cardano">제롤라모 카르다노</string>
+    <string name="walpole">호러스 월폴</string>
+    <string name="triolet">엘자 트리올레</string>
+    <string name="f_s_fitzgerald">F. 스콧 피츠제럴드</string>
+    <string name="ochoa">세베로 오초아</string>
+    <string name="brunner">존 브러너</string>
+    <!-- 25 september -->
+    <string name="thomas_morgan">토머스 헌트 모건</string>
+    <string name="faulkner">윌리엄 포크너</string>
+    <string name="shostakovich">드미트리 쇼스타코비치</string>
+    <string name="michael_douglas">마이클 더글러스</string>
+    <string name="almodovar">페드로 알모도바르</string>
+    <string name="will_smith">윌 스미스</string>
+    <string name="zeta_jones">캐서린 지타존스</string>
+    <!-- 26 september -->
+    <string name="grew">니헤미아 그루</string>
+    <string name="joseph_proust">조제프 루이 프루스트</string>
+    <string name="pavlov">이반 파블로프</string>
+    <string name="hine">루이스 하인</string>
+    <string name="wallis">반스 월리스</string>
+    <string name="eliot">T. S. 엘리엇</string>
+    <!-- 27 september -->
+    <string name="bossuet">자크베니뉴 보쉬에</string>
+    <string name="deledda">그라치아 델레다</string>
+    <string name="larry_wall">래리 월</string>
+    <string name="welsh">어빈 웰시</string>
+    <string name="paltrow">귀네스 팰트로</string>
+    <!-- 28 september -->
+    <string name="merimee">프로스페르 메리메</string>
+    <string name="moissan">앙리 무아상</string>
+    <string name="finch">피터 핀치</string>
+    <string name="mastroianni">마르첼로 마스트로야니</string>
+    <string name="bardot">브리지트 바르도</string>
+    <string name="watts">나오미 왓츠</string>
+    <string name="dita_von_teese">디타 폰 티즈</string>
+    <string name="emelianenko">표도르 예멜리야넨코</string>
+    <!-- 29 september -->
+    <string name="caravaggio">카라바조</string>
+    <string name="horatio_nelson">제1대 넬슨 자작 호레이쇼 넬슨</string>
+    <string name="gaskell">엘리자베스 개스켈</string>
+    <string name="fermi">엔리코 페르미</string>
+    <string name="ostrovsky">니콜라이 오스트롭스키</string>
+    <string name="antonioni">미켈란젤로 안토니오니</string>
+    <!-- 30 september -->
+    <string name="condillac">에티엔 보노 드 콩디야크</string>
+    <string name="wrigley">윌리엄 리글리 주니어</string>
+    <string name="perrin">장 바티스트 페랭</string>
+    <string name="geiger">한스 가이거</string>
+    <string name="kerr">데버러 카</string>
+    <string name="capote">트루먼 커포티</string>
+    <string name="bellucci">모니카 벨루치</string>
+    <string name="cotillard">마리옹 코티야르</string>
+    <!-- 1 october -->
+    <string name="boeing">윌리엄 보잉</string>
+    <string name="richard_harris">리처드 해리스</string>
+    <string name="andrews">줄리 앤드루스</string>
+    <string name="annaud">장자크 아노</string>
+    <string name="galifianakis">잭 갈리피아디스</string>
+    <string name="brie_larson">브리 라슨</string>
+    <!-- 2 october -->
+    <string name="ramsay">윌리엄 램지</string>
+    <string name="gandhi">마하트마 간디</string>
+    <string name="greene">그레이엄 그린</string>
+    <string name="willy_ley">빌리 레이</string>
+    <string name="karan">도나 카란</string>
+    <string name="sting">스팅</string>
+    <!-- 3 october -->
+    <string name="shmelyov">이반 슈멜료프</string>
+    <string name="yesenin">세르게이 예세닌</string>
+    <string name="aragon">루이 아라공</string>
+    <string name="wolfe">토머스 울프</string>
+    <string name="stefani">그웬 스테파니</string>
+    <string name="headey">리나 헤디</string>
+    <string name="ibrahimovic">즐라탄 이브라히모비치</string>
+    <string name="vikander">알리시아 비칸데르</string>
+    <!-- 4 october -->
+    <string name="piranesi">조반니 바티스타 피라네시</string>
+    <string name="pottier">외젠 포티에</string>
+    <string name="boussenard">루이 부스나르</string>
+    <string name="sarandon">수전 서랜던</string>
+    <string name="waltz">크리스토프 발츠</string>
+    <string name="silverstone">알리시아 실버스톤</string>
+    <string name="dakota_johnson">다코타 존슨</string>
+    <!-- 5 october -->
+    <string name="diderot">드니 디드로</string>
+    <string name="lumiere">루이 장 뤼미에르</string>
+    <string name="rous">프랜시스 페이턴 라우스</string>
+    <string name="kroc">레이 크록</string>
+    <string name="lemieux">마리오 르뮤</string>
+    <string name="pearce">가이 피어스</string>
+    <string name="winslet">케이트 윈슬렛</string>
+    <string name="eisenberg">제시 아이젠버그</string>
+    <!-- 6 october -->
+    <string name="maskelyne">네빌 매스켈라인</string>
+    <string name="smuglewicz">프란치셰크 스무글레비치</string>
+    <string name="westinghouse">조지 웨스팅하우스</string>
+    <string name="fessenden">레지널드 페센든</string>
+    <string name="corbusier">르 코르뷔지에</string>
+    <string name="ernest_walton">어니스트 월턴</string>
+    <string name="heyerdahl">토르 헤위에르달</string>
+    <!-- 7 october -->
+    <string name="niels_bohr">닐스 보어</string>
+    <string name="alcantara">파울리노 알칸타라</string>
+    <string name="keneally">토머스 키닐리</string>
+    <string name="putin">블라디미르 푸틴</string>
+    <string name="braxton">토니 브랙스턴</string>
+    <!-- 8 october -->
+    <string name="geyter">피에르 드 게이테르</string>
+    <string name="poddubny">이반 포두브니</string>
+    <string name="tsvetaeva">마리나 츠베타예바</string>
+    <string name="voicu">이온 보이쿠</string>
+    <string name="louise_hay">루이스 헤이</string>
+    <string name="weaver">시고니 위버</string>
+    <string name="matt_damon">맷 데이먼</string>
+    <!-- 9 october -->
+    <string name="sorbon">로베르 드 소르본</string>
+    <string name="segner">요한 안드레아스 제크네르</string>
+    <string name="saint_saens">카위유 생상스</string>
+    <string name="lennon">존 레논</string>
+    <string name="mcqueen">스티브 매퀸</string>
+    <!-- 10 october -->
+    <string name="watteau">장앙투안 와토</string>
+    <string name="cavendish">헨리 캐번디시</string>
+    <string name="verdi">주세페 베르디</string>
+    <string name="nansen">프리드쇼프 난센</string>
+    <string name="andric">이보 안드리치</string>
+    <string name="giacometti">알베르토 자코메티</string>
+    <string name="pavel_durov">파벨 두로프</string>
+    <!-- 11 october -->
+    <string name="olbers">하인리히 빌헬름 마티아스 올베르스</string>
+    <string name="berlier">장바티스트 베를리에</string>
+    <string name="heinz">헨리 하인츠</string>
+    <string name="roosevelt">엘리너 루스벨트</string>
+    <string name="mauriac">프랑수아 모리아크</string>
+    <!-- 12 october -->
+    <string name="sperry">엘머 암브로스 스페리</string>
+    <string name="harden">아서 하든</string>
+    <string name="horch">아우구스트 호르히</string>
+    <string name="crowley">알리스터 크롤리</string>
+    <string name="montale">에우제니오 몬탈레</string>
+    <string name="pavarotti">루치아노 파바로티</string>
+    <string name="jackman">휴 잭맨</string>
+    <!-- 13 october -->
+    <string name="tatum">아트 테이텀</string>
+    <string name="thatcher">마거릿 대처</string>
+    <string name="hunter">로버트 론헌터</string>
+    <string name="simon">폴 사이먼</string>
+    <string name="cohen">사샤 배런 코언</string>
+    <!-- 14 october -->
+    <string name="william_penn">윌리엄 펜</string>
+    <string name="gish">릴런 기시</string>
+    <string name="roger_moore">로저 무어</string>
+    <string name="lauren">랄프 로런</string>
+    <string name="wasikowska">미아 바시코프스카</string>
+    <!-- 15 october -->
+    <string name="torricelli">에반젤리스타 토리첼리</string>
+    <string name="lermontov">미하일 레르몬토프</string>
+    <string name="asaph_hall">아사프 홀</string>
+    <string name="nietzsche">프리드리히 니체</string>
+    <string name="ilf">일리야 일프</string>
+    <string name="puzo">마리오 푸조</string>
+    <!-- 16 october -->
+    <string name="haller">알브레히트 폰 할러</string>
+    <string name="wilde">오스카 와일드</string>
+    <string name="oneill">유진 오닐</string>
+    <string name="grass">귄터 그라스</string>
+    <string name="paffgen">크리스타 패프겐</string>
+    <string name="robbins">팀 로빈스</string>
+    <!-- 17 october -->
+    <string name="orlov">그리고리 오를로프</string>
+    <string name="saint_simon">생시몽 백작 클로드앙리 드 루브루아</string>
+    <string name="jordan">로버트 조던</string>
+    <string name="raikkonen">키미 라이코넨</string>
+    <string name="felicity_jones">펠리시티 존스</string>
+    <!-- 18 october -->
+    <string name="schonbein">크리스티안 프리드리히 쇤바인</string>
+    <string name="glumer">클레르 폰 글뤼메르</string>
+    <string name="lodygin">알렉산드르 로디긴</string>
+    <string name="bergson">앙리 베르그송</string>
+    <string name="chuck_berry">척 베리</string>
+    <string name="george_scott">조지 C. 스콧</string>
+    <string name="van_damme">장클로드 반담</string>
+    <!-- 19 october -->
+    <string name="ficino">마르실리오 피치노</string>
+    <string name="auguste_lumiere">오귀스트 뤼미에르</string>
+    <string name="boccioni">움베르토 보초니</string>
+    <string name="gilels">에밀 길렐스</string>
+    <string name="holyfield">에반더 홀리필드</string>
+    <string name="trey_parker">트레이 파커</string>
+    <!-- 20 october -->
+    <string name="bartholin">토마스 바르톨린</string>
+    <string name="wren">크리스토퍼 렌</string>
+    <string name="rimbaud">아르튀르 랭보</string>
+    <string name="chadwick">제임스 채드윅</string>
+    <string name="bernat">엔리크 베르나트</string>
+    <string name="jelinek">엘프리데 옐리네크</string>
+    <!-- 21 october -->
+    <string name="coleridge">새뮤얼 테일러 콜리지</string>
+    <string name="nobel">알프레드 노벨</string>
+    <string name="mikhalkov">니키타 미할코프</string>
+    <string name="carrie_fisher">캐리 피셔</string>
+    <string name="geim">안드레 가임</string>
+    <string name="kardashian">킴 카다시안</string>
+    <!-- 22 october -->
+    <string name="liszt">프란츠 리스트</string>
+    <string name="bernhardt">사라 베르나르</string>
+    <string name="bunin">이반 부닌</string>
+    <string name="yashin">레프 야신</string>
+    <string name="christopher_lloyd">크리스토퍼 로이드</string>
+    <string name="deneuve">까트린 드뇌브</string>
+    <string name="wenger">아르센 벵거</string>
+    <!-- 23 october -->
+    <string name="larousse">피에르 라루스</string>
+    <string name="lanchester">프레더릭 윌리엄 런체스터</string>
+    <string name="lewis">길버트 뉴턴 루이스</string>
+    <string name="bloch">펠릭스 블로흐</string>
+    <string name="pele">펠레</string>
+    <string name="reynolds">라이언 레이놀즈</string>
+    <string name="clarke">에밀리아 클라크</string>
+    <!-- 24 october -->
+    <string name="robbia">안드레아 델라 로비아</string>
+    <string name="leeuwenhoek">안토니 판 레이벤후크</string>
+    <string name="wilhelm_weber">빌헬름 에두아르트 베베르</string>
+    <string name="swarovski">다니엘 스와로브스키</string>
+    <string name="raikin">아르카디 라이킨</string>
+    <string name="rooney">웨인 루니</string>
+    <!-- 25 october -->
+    <string name="galois">에바리스트 갈루아</string>
+    <string name="johann_strauss">요한 슈트라우스</string>
+    <string name="bizet">조르주 비제</string>
+    <string name="picasso">파블로 피카소</string>
+    <string name="gance">아벨 강스</string>
+    <string name="katy_perry">케이티 페리</string>
+    <!-- 26 october -->
+    <string name="scarlatti">도메니코 스카를라티</string>
+    <string name="goldschmidt">메이어 아론 골드슈미트</string>
+    <string name="vereshchagin">바실리 베레시차긴</string>
+    <string name="bely">안드레이 벨륨</string>
+    <string name="napoleon_hill">나폴레온 힐</string>
+    <!-- 27 october -->
+    <string name="paganini">니콜로 파가니니</string>
+    <string name="falk">로베르트 팔크</string>
+    <string name="cleese">존 클리즈</string>
+    <string name="simon_le_bon">사이먼 르 봉</string>
+    <string name="vanessa_mae">바네사 메이</string>
+    <!-- 28 october -->
+    <string name="edith_head">에디스 헤드</string>
+    <string name="waugh">이블린 워</string>
+    <string name="garrincha">가린샤</string>
+    <string name="bill_gates">빌 게이츠</string>
+    <string name="ramazzotti">에로스 라마초티</string>
+    <string name="julia_roberts">줄리아 로버츠</string>
+    <string name="joaquin_phoenix">호아킨 피닉스</string>
+    <!-- 29 october -->
+    <string name="stur">류도비트 슈투르</string>
+    <string name="ioffe">아브람 요페</string>
+    <string name="phalle">니키 드 생팔</string>
+    <string name="dreyfuss">리처드 드레이퍼스</string>
+    <string name="ryder">위노나 라이더</string>
+    <!-- 30 october -->
+    <string name="kauffmann">안겔리카 카우프만</string>
+    <string name="sheridan">리처드 브린즐리 셰리던</string>
+    <string name="chenier">앙드레 세니에</string>
+    <string name="valery">폴 발레리</string>
+    <string name="maradona">디에고 마라도나</string>
+    <string name="belleci">토리 벨레치</string>
+    <!-- 31 october -->
+    <string name="vermeer">요하네스 페르메이르</string>
+    <string name="keats">존 키츠</string>
+    <string name="weierstrass">카를 바이어슈트라스</string>
+    <string name="baeyer">아돌프 폰 바이어</string>
+    <string name="helmut_newton">헬무트 뉴턴</string>
+    <string name="peter_jackson">피터 잭슨</string>
+    <string name="rob_schneider">롭 슈나이더</string>
+    <!-- 1 november -->
+    <string name="cortona">피에트로 다 코르토나</string>
+    <string name="canova">안토니오 카노바</string>
+    <string name="grieg">누르달 그리그</string>
+    <string name="flynt">래리 플린트</string>
+    <string name="kiedis">앤서니 키디스</string>
+    <string name="rai">아이슈와라 라이</string>
+    <!-- 2 november -->
+    <string name="antoinette">마리 앙투아네트</string>
+    <string name="boole">조지 불</string>
+    <string name="sorel">조르주 소렐</string>
+    <string name="visconti">루키노 비스콘티</string>
+    <string name="keith_emerson">키스 에머슨</string>
+    <string name="khan">샤룩 칸</string>
+    <string name="schwimmer">데이비드 쉼머</string>
+    <!-- 3 november -->
+    <string name="cellini">벤베누토 첼리니</string>
+    <string name="marshak">사무일 마르샤크</string>
+    <string name="dassler">아돌프 다슬러</string>
+    <string name="gerd_muller">게르트 뮐러</string>
+    <string name="lundgren">돌프 룬드그렌</string>
+    <string name="newell">게이브 뉴웰</string>
+    <!-- 4 november -->
+    <string name="reni">귀도 레니</string>
+    <string name="bove">조제 보베</string>
+    <string name="shakurantala_devi">샤쿤탈라 데비</string>
+    <string name="mcconaughey">매슈 매코너헤이</string>
+    <string name="figo">루이스 피구</string>
+    <!-- 5 november -->
+    <string name="petrov_vodkin">쿠즈마 페트로프보드킨</string>
+    <string name="leigh">비비언 리</string>
+    <string name="dassin">조 다센</string>
+    <string name="patrick">로버트 패트릭</string>
+    <string name="bryan_adams">브라이언 아담스</string>
+    <string name="swinton">틸다 스윈턴</string>
+    <!-- 6 november -->
+    <string name="sax">아돌프 삭스</string>
+    <string name="charles_dow">찰스 다우</string>
+    <string name="sousa">존 필립 수자</string>
+    <string name="nailsmith">제임스 네이스미스</string>
+    <string name="emma_stone">엠마 스톤</string>
+    <!-- 7 november -->
+    <string name="stukeley">윌리엄 스튜클리</string>
+    <string name="james_cook">제임스 쿡</string>
+    <string name="erkel">에르켈 페렌츠</string>
+    <string name="casal">훌리안 델 카살</string>
+    <string name="marie_curie">마리 퀴리</string>
+    <string name="camus">알베르 카뮈</string>
+    <string name="guetta">다비 알게타</string>
+    <!-- 8 november -->
+    <string name="stoker">브램 스토커</string>
+    <string name="hausdorff">펠릭스 하우스도르프</string>
+    <string name="rorschach">헤르만 로르샤흐</string>
+    <string name="mitchell">마거릿 미첼</string>
+    <string name="barnard">크리스티안 바르나르트</string>
+    <string name="kilby">잭 길비</string>
+    <string name="delon">알랭 들롱</string>
+    <string name="hiddink">거스 히딩크</string>
+    <!-- 9 november -->
+    <string name="borden">게일 보든</string>
+    <string name="turgenev">이반 투르게네프</string>
+    <string name="gaboriau">에밀 가보리오</string>
+    <string name="monnet">장 모네</string>
+    <string name="sagan">칼 세이건</string>
+    <string name="del_piero">알레산드로 델 피에로</string>
+    <!-- 10 november -->
+    <string name="luther">마르틴 루터</string>
+    <string name="hogarth">윌리엄 호가스</string>
+    <string name="schiller">프리드리히 실러</string>
+    <string name="innes">로버트 소번 에이턴 이네스</string>
+    <string name="morricone">엔니오 모리코네</string>
+    <string name="brittany_murphy">브리트니 머피</string>
+    <!-- 11 november -->
+    <string name="dostoyevsky">표도르 도스토예프스키</string>
+    <string name="maurice_leblanc">모리스 르블랑</string>
+    <string name="vonnegut">커트 보네거트</string>
+    <string name="brugiroux">앙드레 브뤼지로</string>
+    <string name="demi_moore">데미 무어</string>
+    <string name="dicaprio">레오나르도 디카프리오</string>
+    <!-- 12 november -->
+    <string name="rodin">오귀스트 로댕</string>
+    <string name="grace_kelly">그레이스 켈리</string>
+    <string name="gurchenko">류드밀라 구르첸코</string>
+    <string name="gosling">라이언 고슬링</string>
+    <string name="hathaway">앤 헤서웨이</string>
+    <!-- 13 november -->
+    <string name="montagu">존 몽태규 제4대 샌드위치 백작</string>
+    <string name="hauy">발랑탱 아위</string>
+    <string name="stevenson">로버트 루이스 스티븐슨</string>
+    <string name="kokkonen">요나스 코코넨</string>
+    <string name="whoopi_goldberg">우피 골드버그</string>
+    <string name="gerard_butler">제라드 버틀러</string>
+    <!-- 14 november -->
+    <string name="fulton">로버트 풀턴</string>
+    <string name="bichat">마리 프랑수아 자비에 비샤</string>
+    <string name="lyell">찰스 라이멜</string>
+    <string name="monet">클로드 모네</string>
+    <string name="banting">프레더릭 밴팅</string>
+    <string name="lindgren">아스트리드 린드그렌</string>
+    <!-- 15 november -->
+    <string name="lavater">요한 카스파르 라바터</string>
+    <string name="chasles">미셸 샤를</string>
+    <string name="hauptmann">게르하르트 하우프트만</string>
+    <string name="krogh">아우구스트 크로그</string>
+    <string name="kroeger">채드 크로거</string>
+    <!-- 16 november -->
+    <string name="kreutzer">로드돌프 크뢰처</string>
+    <string name="saramago">주제 사라마구</string>
+    <string name="achebe">치누아 아체베</string>
+    <string name="krall">다이애나 크롤</string>
+    <string name="gyllenhaal">매기 질런홀</string>
+    <!-- 17 november -->
+    <string name="bronzino">브론치노</string>
+    <string name="mobius">아우구스트 페르디난트 뫼비우스</string>
+    <string name="wigner">유진 위그너</string>
+    <string name="honda">혼다 소이치로</string>
+    <string name="scorsese">마틴 스코세이지</string>
+    <string name="devito">대니 드비토</string>
+    <string name="marceau">소피 마르소</string>
+    <string name="mcadams">레이첼 매캐담스</string>
+    <!-- 18 november -->
+    <string name="down">존 랭던 다운</string>
+    <string name="nordenskiold">아돌프 에리크 노르덴셸드</string>
+    <string name="gallup">조지 갤럽</string>
+    <string name="issigonis">알렉 이시고니스</string>
+    <string name="ryazanov">엘다르 랴자노프</string>
+    <string name="owen_wilson">오언 윌슨</string>
+    <!-- 19 november -->
+    <string name="lomonosov">미하일 로모노소프</string>
+    <string name="skoda">에밀 슈코다</string>
+    <string name="avenarius">리하르트 아베나리우스</string>
+    <string name="drucker">피터 드러커</string>
+    <string name="calvin_klein">캘빈 클라인</string>
+    <string name="ryan">멕 라이언</string>
+    <string name="jodie_foster">조디 포스터</string>
+    <!-- 20 november -->
+    <string name="guericke">오토 폰 게리케</string>
+    <string name="lagerlof">셀마 라겔뢰프</string>
+    <string name="karl_von_frisch">카를 폰 프리슈</string>
+    <string name="hubble">에드윈 허블</string>
+    <string name="osgood">찰스 오스굿</string>
+    <!-- 21 november -->
+    <string name="voltaire">볼테르</string>
+    <string name="schleiermacher">프리드리히 슬라이에르마허</string>
+    <string name="lewis_morgan">루이스 헨리 모건</string>
+    <string name="makarova">나탈리야 마카로바</string>
+    <string name="hawn">골디 혼</string>
+    <string name="bjork">비요크</string>
+    <!-- 22 november -->
+    <string name="vladimir_dal">블라디미르 달</string>
+    <string name="thomas_cook">토머스 쿡</string>
+    <string name="gide">앙드레 지드</string>
+    <string name="gaulle">샤를 드 골</string>
+    <string name="pelevin">빅토르 펠레빈</string>
+    <string name="mikkelsen">마스 미켈센</string>
+    <string name="ruffalo">마크 러팔로</string>
+    <string name="ville_valo">빌레 발로</string>
+    <string name="scarlett_johansson">스칼릿 조핸슨</string>
+    <!-- 23 november -->
+    <string name="waals">요하네스 디데릭 판데르발스</string>
+    <string name="karloff">보리스 칼로프</string>
+    <string name="moseley">헨리 모즐리</string>
+    <string name="nosov">니콜라이 노소프</string>
+    <string name="cyrus">마일리 사이러스</string>
+    <!-- 24 november -->
+    <string name="spinoza">바루흐 스피노자</string>
+    <string name="suvorov">알렉산드르 수보로프</string>
+    <string name="ellis">윌리엄 웹 엘리스</string>
+    <string name="collodi">카를로 콜로디</string>
+    <string name="carnegie">데일 카네기</string>
+    <string name="kusturica">에밀 쿠스투리차</string>
+    <string name="heigl">캐서린 헤이글</string>
+    <!-- 25 november -->
+    <string name="vega">로페 데 베가</string>
+    <string name="sumarokov">알렉산드르 수마로코프</string>
+    <string name="pirogov">니콜라이 피르고프</string>
+    <string name="benz">카를 벤츠</string>
+    <string name="vavilov">니콜라이 바빌로프</string>
+    <string name="poul_anderson">폴 앤더슨</string>
+    <!-- 26 november -->
+    <string name="harvard">존 하버드</string>
+    <string name="saussure">페르디낭 드 소쉬르</string>
+    <string name="leck">바르트 반 데르 렉</string>
+    <string name="wiener">노버트 위너</string>
+    <string name="ionesco">외젠 이오네스코</string>
+    <string name="tina_turner">티나 터너</string>
+    <!-- 27 november -->
+    <string name="celsius">안데르스 셀시우스</string>
+    <string name="weizmann">하임 바이츠만</string>
+    <string name="matsushita">마쓰시타 고노스케</string>
+    <string name="bruce_lee">이소룡</string>
+    <string name="mashkov">블라디미르 마슈코프</string>
+    <!-- 28 november -->
+    <string name="lully">장바티스트 륄리</string>
+    <string name="blake">윌리엄 블레이크</string>
+    <string name="cousin">빅토르 쿠쟁</string>
+    <string name="engels">프리드리히 엥겔스</string>
+    <string name="anton_rubinstein">안톤 루빈시테인</string>
+    <string name="blok">알렉산드르 블록</string>
+    <string name="zanetti">로베르토 자네티</string>
+    <string name="galliano">존 갈리아노</string>
+    <!-- 29 november -->
+    <string name="donizetti">가에타노 도니체티</string>
+    <string name="hauff">빌헬름 하우프</string>
+    <string name="charcot">장마르탱 샤르코</string>
+    <string name="john_fleming">존 앰브로즈 플레밍</string>
+    <string name="giggs">라이언 긱스</string>
+    <string name="faris">안나 패리스</string>
+    <!-- 30 november -->
+    <string name="swift">조너선 스위프트</string>
+    <string name="twain">마크 트웨인</string>
+    <string name="churchill">윈스턴 처칠</string>
+    <string name="ridley_scott">리들리 스콧</string>
+    <string name="idol">빌리 아이돌</string>
+    <string name="stiller">벤 스틸러</string>
+    <!-- 1 december -->
+    <string name="falconet">에티엔 모리스 팔코네</string>
+    <string name="tussaud">마리 튀소</string>
+    <string name="lobachevsky">니콜라이 로바체프스키</string>
+    <string name="zhukov">게오르기 주코프</string>
+    <string name="allen">우디 알렌</string>
+    <string name="escobar">파블로 에스코바르</string>
+    <!-- 2 december -->
+    <string name="joseph_bell">조셉 벨</string>
+    <string name="seuratl">조르주 쇠라</string>
+    <string name="callas">마리아 칼라스</string>
+    <string name="versace">잔니 베르사체</string>
+    <string name="liu">루시 리우</string>
+    <string name="furtado">넬리 퍼타도</string>
+    <string name="spears">브리트니 스피어스</string>
+    <!-- 3 december -->
+    <string name="hill">로우랜드 힐</string>
+    <string name="rota">니노 로타</string>
+    <string name="osbourne">오지 오스본</string>
+    <string name="julianne_moore">줄리앤 무어</string>
+    <string name="seyfried">아만다 사이프리드</string>
+    <!-- 4 december -->
+    <string name="chapelain">장 샤플랭</string>
+    <string name="carlyle">토머스 칼라일</string>
+    <string name="adler">로버트 애들러</string>
+    <string name="bridges">제프 브리지스</string>
+    <string name="bubka">세르게이 붑카</string>
+    <!-- 5 december -->
+    <string name="tyutchev">표도르 튜트체프</string>
+    <string name="lang">프리츠 랑</string>
+    <string name="disney">월트 디즈니</string>
+    <string name="heisenberg">베른하르트 하이젠베르크</string>
+    <string name="carreras">호세 카레라스</string>
+    <string name="kaas">파트리시아 카스</string>
+    <!-- 6 december -->
+    <string name="nicolas_leblanc">니콜라 르블랑</string>
+    <string name="gay_lussac">조제프루이 게이뤼삭</string>
+    <string name="veqilharxhi">나움 베킬하르치</string>
+    <string name="bazille">프레데릭 바지유</string>
+    <string name="crali">툴리오 크랄리</string>
+    <string name="nick_park">닉 파크</string>
+    <!-- 7 december -->
+    <string name="bernini">잔 로렌초 베르니니</string>
+    <string name="schwann">테오도르 슈반</string>
+    <string name="mascagni">피에트로 마스카니</string>
+    <string name="yosano">요사노 아키코</string>
+    <string name="waits">톰 웨이츠</string>
+    <string name="emily_browning">에밀리 브라우닝</string>
+    <!-- 8 december -->
+    <string name="dholbach">폴앙리 티리 도일바크 남작</string>
+    <string name="menzel">아돌프 폰 멘첼</string>
+    <string name="bjornson">비에른스티에르네 비에른손</string>
+    <string name="reynaud">샤를에밀 레이노</string>
+    <string name="melies">조르주 멜리에스</string>
+    <string name="morrison">짐 모리슨</string>
+    <string name="basinger">킴 베이싱어</string>
+    <string name="somerhalder">이언 서머홀더</string>
+    <!-- 9 december -->
+    <string name="milton">존 밀턴</string>
+    <string name="winckelmann">요한 요아힘 빙켈만</string>
+    <string name="scheele">칼 빌헬름 셸레</string>
+    <string name="berthollet">클로드 루이 베르톨레</string>
+    <string name="grace_hopper">그레이스 호퍼</string>
+    <string name="dench">주디 덴치</string>
+    <string name="malkovich">존 말코비치</string>
+    <!-- 10 december -->
+    <string name="lovelace">에이다 러블레이스</string>
+    <string name="nekrasov">니콜라이 네크라소프</string>
+    <string name="sachs">넬리 작스</string>
+    <string name="tarasov">아나톨리 타라소프</string>
+    <string name="michael_duncan">마이클 클라크 던컨</string>
+    <string name="branagh">케네스 브래너</string>
+    <string name="molko">브라이언 몰코</string>
+    <!-- 11 december -->
+    <string name="berlioz">엑토르 베를리오즈</string>
+    <string name="musset">알프레드 드 뮈세</string>
+    <string name="koch">로베르트 코흐</string>
+    <string name="born">막스 보르น</string>
+    <string name="gardel">카를로스 가르델</string>
+    <string name="marais">장 마레</string>
+    <!-- 12 december -->
+    <string name="karamzin">니콜라이 카람진</string>
+    <string name="serebriakova">지나이다 세레브랴코바</string>
+    <string name="ozu">오즈 야스지로</string>
+    <string name="sinatra">프랭크 시나트라</string>
+    <string name="noyce">로버트 노이스</string>
+    <string name="konyukhov">표도르 코뉴호프</string>
+    <!-- 13 december -->
+    <string name="gozzi">카를로 고치</string>
+    <string name="heine">하인리히 하이네</string>
+    <string name="werner_siemens">베르너 폰 지멘스</string>
+    <string name="birkeland">크리스티안 비르켈란</string>
+    <string name="buscemi">스티브 부세미</string>
+    <string name="foxx">제이미 폭스</string>
+    <string name="amy_lee">에이미 리</string>
+    <string name="taylor_swift">테일러 스위프트</string>
+    <!-- 14 december -->
+    <string name="nostradamus">노스트라다무스</string>
+    <string name="brahe">티코 브라헤</string>
+    <string name="ueshiba">우에시바 모리헤이</string>
+    <string name="basov">니콜라이 바소프</string>
+    <string name="kapoor">라즈 카푸르</string>
+    <!-- 15 december -->
+    <string name="carey">헨리 찰스 케리</string>
+    <string name="bolyai">보야이 야노시</string>
+    <string name="eiffel">귀스타브 에펠</string>
+    <string name="becquerel">앙리 베케렐</string>
+    <string name="zamenhof">루도비코 라자로 자멘호프</string>
+    <string name="getty">장 폴 게티</string>
+    <!-- 16 december -->
+    <string name="austen">제인 오스틴</string>
+    <string name="walras">레옹 발라스</string>
+    <string name="bergmann">에른스트 베르크만</string>
+    <string name="kandinsky">바실리 칸딘스키</string>
+    <string name="linder">막스 린데르</string>
+    <string name="arthur_clarke">아서 C. 클라크</string>
+    <string name="paul_van_dyk">파울 판 다이크</string>
+    <!-- 17 december -->
+    <string name="cimarosa">도메니코 치마로사</string>
+    <string name="beethoven">루트비히 판 베토벤</string>
+    <string name="davy">험프리 데이비</string>
+    <string name="ganelin">뱌체슬라프 가넬린</string>
+    <string name="darryl_way">대릴 웨이</string>
+    <string name="jovovich">밀라 요보비치</string>
+    <!-- 18 december -->
+    <string name="polhem">크리스토페르 폴헴</string>
+    <string name="joseph_thomson">조지프 존 톰슨</string>
+    <string name="stalin">이오시프 스탈린</string>
+    <string name="spielberg">스티븐 스필버그</string>
+    <string name="liotta">레이 리오타</string>
+    <string name="brad_pitt">브래드 피트</string>
+    <string name="holmes">케이티 홈즈</string>
+    <string name="aguilera">크리스티나 아길레라</string>
+    <!-- 19 december -->
+    <string name="michelson">앨버트 아브라함 마이컬슨</string>
+    <string name="joze_lima">호세 레사마 리마</string>
+    <string name="piaf">에디트 피아프</string>
+    <string name="schweiger">틸 슈바이거</string>
+    <string name="milano">알리사 밀라노</string>
+    <string name="jake_gyllenhaal">제이크 질런홀</string>
+    <!-- 20 december -->
+    <string name="heyrovsky">야로슬라프 헤이로프스키</string>
+    <string name="balandin">알렉세이 발란딘</string>
+    <string name="graaff">로버트 제미슨 반더그래프</string>
+    <string name="bohm">데이비드 봄</string>
+    <string name="uri_geller">유리 겔러</string>
+    <string name="jonah_hill">조나 힐</string>
+    <!-- 21 december -->
+    <string name="robert_brown">로버트 브라운</string>
+    <string name="hermann_muller">허먼 조셉 멀러</string>
+    <string name="boll">하인리히 봘</string>
+    <string name="monterroso">아우구스토 몬테로소</string>
+    <string name="jane_fonda">제인 폰다</string>
+    <string name="zappa">프랭크 자파</string>
+    <string name="samuel_jackson">사무엘 L. 잭슨</string>
+    <!-- 22 december  -->
+    <string name="liotard">장에티엔 리오타르</string>
+    <string name="fabre">장앙리 파브르</string>
+    <string name="puccini">자코모 푸치니</string>
+    <string name="elizondo">엑토르 엘리손도</string>
+    <string name="fiennes">레이프 파인즈</string>
+    <string name="paradis">바네사 파라디</string>
+    <!-- 23 december -->
+    <string name="champollion">장프랑수아 샹폴리옹</string>
+    <string name="bryullov">카를 브률로프</string>
+    <string name="dino_risi">디노 리시</string>
+    <string name="baker">쳇 베이커</string>
+    <string name="bosque">비센테 델 보스케</string>
+    <string name="bruni">카를라 브루니</string>
+    <!-- 24 december -->
+    <string name="joule">제임스 프레스콧 줄</string>
+    <string name="howard_hughes">하워드 휴즈</string>
+    <string name="chase">제임스 해들리 체이스</string>
+    <string name="gardner">에바 가드너</string>
+    <string name="ricky_martin">리키 마틴</string>
+    <string name="stephenie_meyer">스테파니 메이어</string>
+    <!-- 25 december -->
+    <string name="chevrolet">루이 시보레</string>
+    <string name="rosenzweig">프란츠 로젠츠바이크</string>
+    <string name="hilton">콘래드 힐튼</string>
+    <string name="bogart">험프리 보가트</string>
+    <string name="castaneda">카를로스 카스타네다</string>
+    <string name="lennox">애니 레녹스</string>
+    <string name="buuren">아르민 판 뷔렌</string>
+    <!-- 26 december -->
+    <string name="dinglinger">요한 멜히오르 딩링거</string>
+    <string name="babbage">찰스 배비지</string>
+    <string name="henry_miller">헨리 밀러</string>
+    <string name="zedong">마오쩌둥</string>
+    <string name="ulrich">라스 울리히</string>
+    <string name="jared_leto">자레드 레토</string>
+    <!-- 27 december -->
+    <string name="kepler">요하네스 케플러</string>
+    <string name="cayley">조지 케일리</string>
+    <string name="pasteur">루이 파스퇴르</string>
+    <string name="tretyakov">파벨 트레티야코프</string>
+    <string name="dietrich">마를렌 디트리히</string>
+    <string name="depardieu">제라르 드파르디외</string>
+    <!-- 28 december -->
+    <string name="eddington">아서 에딩턴</string>
+    <string name="murnau">프리드리히 빌헬름 무르나우</string>
+    <string name="john_neumann">존 폰 노이만</string>
+    <string name="denzel_washington">덴절 워싱턴</string>
+    <string name="torvalds">리누스 토르발스</string>
+    <string name="sienna_miller">시에나 밀러</string>
+    <!-- 29 december -->
+    <string name="pompadour">퐁파두르 후작부인</string>
+    <string name="siqueiros">다비드 알파로 시케이로스</string>
+    <string name="voight">존 보이트</string>
+    <string name="dexter_holland">덱스터 홀랜드</string>
+    <string name="jude_law">주드 로</string>
+    <!-- 30 december -->
+    <string name="jablonskis">요나스 야블론스키스</string>
+    <string name="kipling">러디어드 키플링</string>
+    <string name="patti_smith">패티 스미스</string>
+    <string name="jay_kay">제이 케이</string>
+    <string name="tiger_woods">타이거 우즈</string>
+    <string name="lebron_james">르브론 제임스</string>
+    <!-- 31 december -->
+    <string name="boldini">조반니 볼디니</string>
+    <string name="matisse">앙리 마티스</string>
+    <string name="hopkins">앤서니 홉킨스</string>
+    <string name="ferguson">알렉 퍼거슨</string>
+    <string name="kingsley">벤 킹슬리</string>
+    <string name="willis">코니 윌리스</string>
+    <string name="val_kilmer">발 킬머</string>
 </resources>
