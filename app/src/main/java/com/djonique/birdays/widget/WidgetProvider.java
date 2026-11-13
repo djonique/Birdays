@@ -54,9 +54,11 @@ public class WidgetProvider extends AppWidgetProvider {
 
             int flags = PendingIntent.FLAG_UPDATE_CURRENT;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Collection item clicks are delivered by filling in this template, which only
+                // works with a mutable PendingIntent on Android 12+. Before S mutability is
+                // implicit, so FLAG_IMMUTABLE must not be added there - it would silently break
+                // every widget row click.
                 flags |= PendingIntent.FLAG_MUTABLE;
-            } else {
-                flags |= PendingIntent.FLAG_IMMUTABLE;
             }
 
             PendingIntent clickPendingIntent = PendingIntent.getBroadcast(context, 0,

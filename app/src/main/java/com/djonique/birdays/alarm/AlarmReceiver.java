@@ -25,8 +25,14 @@ import androidx.preference.PreferenceManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
+import com.djonique.birdays.database.DbHelper;
+import com.djonique.birdays.models.Person;
 import com.djonique.birdays.utils.BirdaysApplication;
 import com.djonique.birdays.utils.Constants;
+import com.djonique.birdays.utils.NamedDaemonThreadFactory;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class AlarmReceiver extends BroadcastReceiver {
 
@@ -74,6 +80,35 @@ public class AlarmReceiver extends BroadcastReceiver {
         if (manager != null) {
             manager.notify((int) timeStamp, notification);
         }
+
+        rearmNextYear(context, timeStamp);
+    }
+
+    /**
+     * Birthday alarms fire once a year, so the next occurrence has to be scheduled after the
+     * notification is posted. Without this the alarm is consumed and the contact never gets a
+     * notification again until the app rewrites all alarms.
+     */
+    private void rearmNextYear(Context context, long timeStamp) {
+        if (timeStamp == 0) return;
+
+        final PendingResult pendingResult = goAsync();
+        final ExecutorService executor =
+                Executors.newSingleThreadExecutor(new NamedDaemonThreadFactory("alarm-rearm"));
+
+        executor.execute(() -> {
+            try (DbHelper dbHelper = new DbHelper(context)) {
+                Person person = dbHelper.query().getPerson(timeStamp);
+                if (person != null) {
+                    new AlarmHelper(context).setAlarms(person);
+                }
+            } catch (Exception ignored) {
+                // The alarm simply stays unscheduled; the next app launch re-creates it.
+            } finally {
+                executor.shutdown();
+                pendingResult.finish();
+            }
+        });
     }
 
     private Intent getResultIntent(Context context, long timeStamp, Intent intent) {
