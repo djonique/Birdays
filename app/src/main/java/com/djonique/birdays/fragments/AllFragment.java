@@ -40,8 +40,11 @@ public class AllFragment extends Fragment {
     private AllFragmentAdapter adapter;
     private DeletingPersonListener deletingPersonListener;
     private AlarmHelper alarmHelper;
-    /** Guards against an older list load landing after a newer one. */
-    private int loadToken;
+    /**
+     * Guards against an older list load or search landing after a newer one. Both paths rewrite
+     * the same adapter, so they share a single sequence number.
+     */
+    private int dataToken;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -139,7 +142,7 @@ public class AllFragment extends Fragment {
     public void addAllPersonsFromDb() {
         if (activity == null || adapter == null) return;
 
-        final int token = ++loadToken;
+        final int token = ++dataToken;
 
         Parcelable listState = null;
         if (recyclerView != null && recyclerView.getLayoutManager() != null) {
@@ -153,7 +156,7 @@ public class AllFragment extends Fragment {
                 new BirdaysRepository.Callback<List<Person>>() {
                     @Override
                     public void onSuccess(List<Person> persons) {
-                        if (token != loadToken || !isAdded() || adapter == null) return;
+                        if (token != dataToken || !isAdded() || adapter == null) return;
                         for (Person person : persons) {
                             addPerson(person, false);
                         }
@@ -297,14 +300,26 @@ public class AllFragment extends Fragment {
     }
 
     public void findPerson(String name) {
-        adapter.removeAllPersons();
-        if (activity == null) return;
-        List<Person> persons = activity.dbHelper.query().getSearchPerson(DbHelper.SELECTION_LIKE_NAME,
-                new String[]{"%" + name + "%"}, DbHelper.COLUMN_NAME);
+        if (adapter == null || activity == null) return;
 
-        for (int i = 0; i < persons.size(); i++) {
-            addPerson(persons.get(i), false);
-        }
+        final int token = ++dataToken;
+        adapter.removeAllPersons();
+
+        BirdaysRepository.getInstance(activity).searchPersons(name, false,
+                new BirdaysRepository.Callback<List<Person>>() {
+                    @Override
+                    public void onSuccess(List<Person> persons) {
+                        if (token != dataToken || !isAdded() || adapter == null) return;
+                        for (Person person : persons) {
+                            addPerson(person, false);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        // Keep the previous list; the next keystroke retries.
+                    }
+                });
     }
 
     public interface DeletingPersonListener {

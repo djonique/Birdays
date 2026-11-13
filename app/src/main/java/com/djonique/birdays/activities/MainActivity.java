@@ -11,6 +11,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements
         AllFragment.DeletingPersonListener,
         ContactsHelper.LoadingContactsListener {
 
+    /** One query per typing burst instead of one per keystroke. */
+    private static final long SEARCH_DEBOUNCE_MS = 250;
+
     public DbHelper dbHelper;
 
     private CoordinatorLayout container;
@@ -57,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements
 
     private SharedPreferences preferences;
     private PagerAdapter pagerAdapter;
+    private final Handler searchHandler = new Handler(Looper.getMainLooper());
+    private Runnable pendingSearch;
     private boolean notificationsPermissionRequested;
     private boolean contactsPermissionRequestPending;
 
@@ -113,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                pagerAdapter.search(newText);
+                scheduleSearch(newText);
                 return false;
             }
         });
@@ -204,8 +211,26 @@ public class MainActivity extends AppCompatActivity implements
         Utils.notifyWidget(this);
     }
 
-    private void onPageSelected(int position) {
-        appBarLayout.setExpanded(true, true);
+    /**
+     * Coalesces keystrokes into a single query. Clearing the field restores the full list right
+     * away; otherwise the previous pending query is cancelled and a new one is posted after
+     * {@link #SEARCH_DEBOUNCE_MS}. The fragments still drop stale results by sequence number, so a
+     * query that is already running cannot overwrite a newer one.
+     */
+    private void scheduleSearch(String query) {
+        if (pendingSearch != null) {
+            searchHandler.removeCallbacks(pendingSearch);
+            pendingSearch = null;
+        }
+        if (query == null || query.trim().isEmpty()) {
+            pagerAdapter.search("");
+            return;
+        }
+        pendingSearch = () -> pagerAdapter.search(query);
+        searchHandler.postDelayed(pendingSearch, SEARCH_DEBOUNCE_MS);
+    }
+
+    private void onPageSelected(int position) {        appBarLayout.setExpanded(true, true);
         updatePageUi(position);
     }
 
@@ -263,6 +288,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onDestroy() {
+        searchHandler.removeCallbacksAndMessages(null);
         if (dbHelper != null) {
             dbHelper.close();
         }

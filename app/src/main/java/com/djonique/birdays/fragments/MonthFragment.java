@@ -25,7 +25,6 @@ import com.djonique.birdays.R;
 import com.djonique.birdays.activities.MainActivity;
 import com.djonique.birdays.ad.NativeAdCache;
 import com.djonique.birdays.adapters.MonthFragmentAdapter;
-import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.repository.BirdaysRepository;
 import com.yandex.mobile.ads.common.AdRequestError;
@@ -40,8 +39,11 @@ public class MonthFragment extends Fragment {
     private RecyclerView recyclerView;
     private MonthFragmentAdapter adapter;
     private NativeAd mNativeAd;
-    /** Guards against an older list load landing after a newer one. */
-    private int loadToken;
+    /**
+     * Guards against an older list load or search landing after a newer one. Both paths rewrite
+     * the same adapter, so they share a single sequence number.
+     */
+    private int dataToken;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -117,7 +119,7 @@ public class MonthFragment extends Fragment {
     public void addMonthPersonsFromDb() {
         if (adapter == null || activity == null) return;
 
-        final int token = ++loadToken;
+        final int token = ++dataToken;
 
         Parcelable listState = null;
         if (recyclerView != null && recyclerView.getLayoutManager() != null) {
@@ -131,7 +133,7 @@ public class MonthFragment extends Fragment {
                 new BirdaysRepository.Callback<List<Person>>() {
                     @Override
                     public void onSuccess(List<Person> persons) {
-                        if (token != loadToken || !isAdded() || adapter == null) return;
+                        if (token != dataToken || !isAdded() || adapter == null) return;
                         adapter.addPersons(persons);
 
                         if (mNativeAd != null) {
@@ -157,13 +159,26 @@ public class MonthFragment extends Fragment {
 
     public void findPerson(String name) {
         if (adapter == null || activity == null) return;
-        adapter.removeAllPersons();
-        List<Person> persons = activity.dbHelper.query().getSearchMonthPerson(
-                DbHelper.SELECTION_LIKE_NAME, new String[]{"%" + name + "%"}, DbHelper.COLUMN_NAME);
-        adapter.addPersons(persons);
 
-        if (mNativeAd != null) {
-            adapter.setNativeAd(mNativeAd);
-        }
+        final int token = ++dataToken;
+        adapter.removeAllPersons();
+
+        BirdaysRepository.getInstance(activity).searchPersons(name, true,
+                new BirdaysRepository.Callback<List<Person>>() {
+                    @Override
+                    public void onSuccess(List<Person> persons) {
+                        if (token != dataToken || !isAdded() || adapter == null) return;
+                        adapter.addPersons(persons);
+
+                        if (mNativeAd != null) {
+                            adapter.setNativeAd(mNativeAd);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        // Keep the previous list; the next keystroke retries.
+                    }
+                });
     }
 }
