@@ -18,16 +18,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
-import com.djonique.birdays.activities.MainActivity;
 import com.djonique.birdays.adapters.FamousFragmentAdapter;
 import com.djonique.birdays.models.Person;
+import com.djonique.birdays.repository.BirdaysRepository;
 
 import java.util.Calendar;
 import java.util.List;
 
 public class FamousFragment extends Fragment {
 
-    private MainActivity activity;
     private FamousFragmentAdapter adapter;
 
     @Override
@@ -35,7 +34,6 @@ public class FamousFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if (getActivity() != null) {
-            activity = (MainActivity) getActivity();
             addFamousPersonsFromDb();
         }
     }
@@ -59,13 +57,24 @@ public class FamousFragment extends Fragment {
     }
 
     private void addFamousPersonsFromDb() {
-        if (adapter == null || activity == null) return;
+        if (adapter == null || getActivity() == null) return;
         adapter.removeAllPersons();
-        List<Person> famous = activity.dbHelper.query()
-                .getFamousBornThisDay(Calendar.getInstance().getTimeInMillis());
 
-        for (int i = 0; i < famous.size(); i++) {
-            adapter.addPerson(famous.get(i));
-        }
+        BirdaysRepository.getInstance(requireContext()).getFamousBornThisDay(
+                Calendar.getInstance().getTimeInMillis(),
+                new BirdaysRepository.Callback<List<Person>>() {
+                    @Override
+                    public void onSuccess(List<Person> famous) {
+                        if (!isAdded() || adapter == null) return;
+                        for (int i = 0; i < famous.size(); i++) {
+                            adapter.addPerson(famous.get(i));
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        // The famous list is decorative; an empty list is a valid state.
+                    }
+                });
     }
 }

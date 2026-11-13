@@ -27,6 +27,7 @@ import com.djonique.birdays.ad.NativeAdCache;
 import com.djonique.birdays.adapters.MonthFragmentAdapter;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.yandex.mobile.ads.common.AdRequestError;
 import com.yandex.mobile.ads.nativeads.NativeAd;
 import com.yandex.mobile.ads.nativeads.NativeAdLoadListener;
@@ -39,6 +40,8 @@ public class MonthFragment extends Fragment {
     private RecyclerView recyclerView;
     private MonthFragmentAdapter adapter;
     private NativeAd mNativeAd;
+    /** Guards against an older list load landing after a newer one. */
+    private int loadToken;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -114,22 +117,38 @@ public class MonthFragment extends Fragment {
     public void addMonthPersonsFromDb() {
         if (adapter == null || activity == null) return;
 
+        final int token = ++loadToken;
+
         Parcelable listState = null;
         if (recyclerView != null && recyclerView.getLayoutManager() != null) {
             listState = recyclerView.getLayoutManager().onSaveInstanceState();
         }
 
         adapter.removeAllPersons();
-        List<Person> persons = activity.dbHelper.query().getThisMonthPersons();
-        adapter.addPersons(persons);
+        final Parcelable savedState = listState;
 
-        if (mNativeAd != null) {
-            adapter.setNativeAd(mNativeAd);
-        }
+        BirdaysRepository.getInstance(activity).getThisMonthPersons(
+                new BirdaysRepository.Callback<List<Person>>() {
+                    @Override
+                    public void onSuccess(List<Person> persons) {
+                        if (token != loadToken || !isAdded() || adapter == null) return;
+                        adapter.addPersons(persons);
 
-        if (listState != null && recyclerView != null && recyclerView.getLayoutManager() != null) {
-            recyclerView.getLayoutManager().onRestoreInstanceState(listState);
-        }
+                        if (mNativeAd != null) {
+                            adapter.setNativeAd(mNativeAd);
+                        }
+
+                        if (savedState != null && recyclerView != null
+                                && recyclerView.getLayoutManager() != null) {
+                            recyclerView.getLayoutManager().onRestoreInstanceState(savedState);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        // Keep the previous list; the next refresh will retry.
+                    }
+                });
     }
 
     public void deleteRecord(long timeStamp) {

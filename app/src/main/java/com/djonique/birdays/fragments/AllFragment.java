@@ -26,6 +26,7 @@ import com.djonique.birdays.alarm.AlarmHelper;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.models.Separator;
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -39,6 +40,8 @@ public class AllFragment extends Fragment {
     private AllFragmentAdapter adapter;
     private DeletingPersonListener deletingPersonListener;
     private AlarmHelper alarmHelper;
+    /** Guards against an older list load landing after a newer one. */
+    private int loadToken;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -134,7 +137,9 @@ public class AllFragment extends Fragment {
     }
 
     public void addAllPersonsFromDb() {
-        if (activity == null) return;
+        if (activity == null || adapter == null) return;
+
+        final int token = ++loadToken;
 
         Parcelable listState = null;
         if (recyclerView != null && recyclerView.getLayoutManager() != null) {
@@ -142,15 +147,28 @@ public class AllFragment extends Fragment {
         }
 
         adapter.removeAllPersons();
-        List<Person> persons = activity.dbHelper.query().getPersons();
+        final Parcelable savedState = listState;
 
-        for (Person person : persons) {
-            addPerson(person, false);
-        }
+        BirdaysRepository.getInstance(activity).getPersons(
+                new BirdaysRepository.Callback<List<Person>>() {
+                    @Override
+                    public void onSuccess(List<Person> persons) {
+                        if (token != loadToken || !isAdded() || adapter == null) return;
+                        for (Person person : persons) {
+                            addPerson(person, false);
+                        }
 
-        if (listState != null && recyclerView != null && recyclerView.getLayoutManager() != null) {
-            recyclerView.getLayoutManager().onRestoreInstanceState(listState);
-        }
+                        if (savedState != null && recyclerView != null
+                                && recyclerView.getLayoutManager() != null) {
+                            recyclerView.getLayoutManager().onRestoreInstanceState(savedState);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        // Keep the previous list; the next refresh will retry.
+                    }
+                });
     }
 
     private Separator getSeparator(Person person) {
