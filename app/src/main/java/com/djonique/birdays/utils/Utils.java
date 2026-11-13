@@ -249,14 +249,17 @@ public class Utils {
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean isPersonAlreadyInDb(Person person, List<Person> list) {
-        boolean found = false;
+        if (person.getName() == null) {
+            return false;
+        }
         for (Person dbPerson : list) {
-            if (person.equals(dbPerson)) {
-                found = true;
-                break;
+            // Person.equals() is identity by timestamp; contact deduplication is by display
+            // name, so the comparison is explicit here instead of relying on equals().
+            if (person.getName().equalsIgnoreCase(dbPerson.getName())) {
+                return true;
             }
         }
-        return found;
+        return false;
     }
 
     public static void setupDayNightTheme(SharedPreferences preferences) {

@@ -17,6 +17,18 @@ public class Person implements Item, Comparable<Person> {
     private long date, timeStamp;
     private boolean yearUnknown;
 
+    /**
+     * Calendar instances are mutable and not thread-safe. A single shared instance used to be
+     * reused by every caller; a per-thread instance keeps the allocation cost low without
+     * sharing state between the main thread and background work.
+     */
+    private static final ThreadLocal<Calendar> CALENDAR = new ThreadLocal<Calendar>() {
+        @Override
+        protected Calendar initialValue() {
+            return Calendar.getInstance();
+        }
+    };
+
     public Person() {
         this.timeStamp = new Date().getTime();
     }
@@ -95,27 +107,32 @@ public class Person implements Item, Comparable<Person> {
     }
 
     public int getMonth() {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = CALENDAR.get();
         calendar.setTimeInMillis(this.date);
         return calendar.get(Calendar.MONTH);
     }
 
     public int getDay() {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = CALENDAR.get();
         calendar.setTimeInMillis(this.date);
         return calendar.get(Calendar.DAY_OF_MONTH);
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        if (!Person.class.isAssignableFrom(obj.getClass())) {
+        if (!(obj instanceof Person)) {
             return false;
         }
         Person person = (Person) obj;
-        return name.equalsIgnoreCase(person.getName());
+        return timeStamp == person.timeStamp;
+    }
+
+    @Override
+    public int hashCode() {
+        return Long.hashCode(timeStamp);
     }
 
     @Override
