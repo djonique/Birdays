@@ -10,7 +10,7 @@
 
     <!-- Notifications -->
     <PreferenceCategory android:title="@string/notifications">
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="@string/notifications_key"
             android:summary="@string/allow_notification"
@@ -41,7 +41,7 @@
 
     <!-- General -->
     <PreferenceCategory android:title="@string/general">
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="@string/night_mode_key"
             android:title="@string/night_mode" />
         <ListPreference
@@ -88,7 +88,7 @@
             android:selectable="false"
             android:summary="@string/about_ad_summary"
             android:title="@string/about_ad_title" />
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="@string/show_ads_key"
             android:summary="@string/show_ads_summary"

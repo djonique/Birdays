@@ -38,7 +38,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -530,7 +530,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
                 rewardedVideo.preload();
             }
 
-            SwitchPreference adSwitchPref = findPreference(getString(R.string.show_ads_key));
+            SwitchPreferenceCompat adSwitchPref = findPreference(getString(R.string.show_ads_key));
             if (adSwitchPref != null) {
                 adSwitchPref.setOnPreferenceChangeListener((preference, newValue) -> {
                     boolean isEnabling = (Boolean) newValue;

@@ -254,7 +254,6 @@ public class ContactsHelper {
 
             final boolean finalIsSuccess = isSuccess;
             mainHandler.post(() -> {
-                //noinspection ConstantValue
                 if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
                     return;
                 }

@@ -281,7 +281,6 @@ public class Utils {
         }
     }
 
-    @SuppressWarnings("deprecation")
     public static void notifyWidget(Context context) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
