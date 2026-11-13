@@ -28,6 +28,8 @@ import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 
+import com.djonique.birdays.utils.NamedDaemonThreadFactory;
+
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Collections;
@@ -41,11 +43,20 @@ public class GoogleDriveBackupManager {
     private static final String MIME_TYPE_XML = "application/xml";
 
     private final Context context;
-    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private final ExecutorService executor =
+            Executors.newSingleThreadExecutor(new NamedDaemonThreadFactory("drive-backup"));
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public GoogleDriveBackupManager(Context context) {
         this.context = context.getApplicationContext();
+    }
+
+    /**
+     * Releases the worker thread. Call from the owning Activity's {@code onDestroy()}; pending
+     * work is allowed to finish, but no new work is accepted afterwards.
+     */
+    public void close() {
+        executor.shutdown();
     }
 
     public void requestAuthorization(Activity activity, AuthorizationCallback callback) {

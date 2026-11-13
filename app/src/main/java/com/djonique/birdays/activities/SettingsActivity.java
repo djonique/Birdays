@@ -74,6 +74,14 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
     private ActivityResultLauncher<IntentSenderRequest> authorizationLauncher;
     private ActivityResultLauncher<Intent> ringtonePickerLauncher;
     private SharedPreferences preferences;
+    private GoogleDriveBackupManager backupManager;
+
+    private GoogleDriveBackupManager getBackupManager() {
+        if (backupManager == null) {
+            backupManager = new GoogleDriveBackupManager(this);
+        }
+        return backupManager;
+    }
 
     void launchRingtonePicker(Intent intent) {
         try {
@@ -212,7 +220,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
         progressDialog.startProgressDialog(getString(R.string.google_drive_backup_progress));
 
-        GoogleDriveBackupManager manager = new GoogleDriveBackupManager(this);
+        GoogleDriveBackupManager manager = getBackupManager();
         manager.requestAuthorization(this, new GoogleDriveBackupManager.AuthorizationCallback() {
             @Override
             public void onSuccess(String accessToken) {
@@ -264,7 +272,7 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
         progressDialog.startProgressDialog(getString(R.string.google_drive_restore_progress));
 
-        GoogleDriveBackupManager manager = new GoogleDriveBackupManager(this);
+        GoogleDriveBackupManager manager = getBackupManager();
         manager.requestAuthorization(this, new GoogleDriveBackupManager.AuthorizationCallback() {
             @Override
             public void onSuccess(String accessToken) {
@@ -321,6 +329,14 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
     }
 
     private enum Action {NONE, BACKUP, RESTORE}
+
+    @Override
+    protected void onDestroy() {
+        if (backupManager != null) {
+            backupManager.close();
+        }
+        super.onDestroy();
+    }
 
     public static class BirdaysPreferenceFragment extends PreferenceFragmentCompat
             implements SharedPreferences.OnSharedPreferenceChangeListener {
