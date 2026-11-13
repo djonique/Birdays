@@ -99,14 +99,11 @@ public class DetailActivity extends AppCompatActivity {
 
     private final ActivityResultLauncher<Intent> editActivityLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-                if (result.getData() == null) return;
-                if (result.getResultCode() == RESULT_OK) {
-                    Toast.makeText(this, R.string.record_edited, Toast.LENGTH_SHORT).show();
-                    Intent refresh = new Intent(this, DetailActivity.class);
-                    refresh.putExtra(Constants.TIME_STAMP, timeStamp);
-                    startActivity(refresh);
-                    this.finish();
-                }
+                if (result.getResultCode() != RESULT_OK) return;
+                Toast.makeText(this, R.string.record_edited, Toast.LENGTH_SHORT).show();
+                // Recreate instead of launching a second DetailActivity on top of this one: the
+                // screen reloads the edited person and the back stack keeps a single detail entry.
+                recreate();
             });
 
     @Override

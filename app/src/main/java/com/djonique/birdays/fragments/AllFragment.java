@@ -265,7 +265,9 @@ public class AllFragment extends Fragment {
                             if (isRemoved[0]) {
                                 alarmHelper.removeAlarms(timeStamp);
                                 activity.dbHelper.removeRecord(timeStamp);
-                                deletingPersonListener.onPersonDeleted(timeStamp);
+                                if (deletingPersonListener != null) {
+                                    deletingPersonListener.onPersonDeleted(timeStamp);
+                                }
                             }
                         }
                     });
