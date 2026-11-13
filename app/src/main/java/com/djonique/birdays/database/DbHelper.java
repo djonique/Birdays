@@ -46,13 +46,12 @@ public class DbHelper extends SQLiteOpenHelper implements AutoCloseable {
             + COLUMN_DATE + " INTEGER"
             + ");";
 
-    private final DbQueryManager dbQueryManager;
+    private DbQueryManager dbQueryManager;
     private final Context context;
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DATABASE_VERSION);
-        this.context = context;
-        dbQueryManager = new DbQueryManager(getWritableDatabase());
+        this.context = context.getApplicationContext();
     }
 
     @Override
@@ -77,7 +76,10 @@ public class DbHelper extends SQLiteOpenHelper implements AutoCloseable {
         }
     }
 
-    public DbQueryManager query() {
+    public synchronized DbQueryManager query() {
+        if (dbQueryManager == null) {
+            dbQueryManager = new DbQueryManager(getWritableDatabase());
+        }
         return dbQueryManager;
     }
 
@@ -108,7 +110,8 @@ public class DbHelper extends SQLiteOpenHelper implements AutoCloseable {
     }
 
     @Override
-    public void close() {
+    public synchronized void close() {
+        dbQueryManager = null;
         super.close();
     }
 }
