@@ -50,8 +50,8 @@ import com.djonique.birdays.backup.GoogleDriveBackupManager;
 import com.djonique.birdays.backup.RecoverHelper;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.djonique.birdays.utils.Constants;
-import com.djonique.birdays.utils.ContactsHelper;
 import com.djonique.birdays.utils.PermissionManager;
 import com.djonique.birdays.utils.ProgressDialogHelper;
 import com.djonique.birdays.utils.Utils;
@@ -67,7 +67,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SettingsActivity extends AppCompatActivity implements ContactsHelper.LoadingContactsListener {
+public class SettingsActivity extends AppCompatActivity {
 
     private static final String DO_NOT_SHOW_OPTIMIZATION_ALERT = "DO_NOT_SHOW_OPTIMIZATION_ALERT";
     private Action pendingAction = Action.NONE;
@@ -206,13 +206,47 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
         if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE && PermissionManager.readingContactsPermissionGranted(this)) {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
             if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
-                new ContactsHelper(this).loadContacts(this, preferences);
+                importContacts();
             }
         }
     }
 
-    @Override
-    public void onContactsUploaded() {
+    /**
+     * Imports contacts on the repository pool, showing progress until either outcome arrives.
+     */
+    void startContactImport() {
+        if (PermissionManager.readingContactsPermissionGranted(this)) {
+            importContacts();
+        } else {
+            PermissionManager.requestReadingContactsPermission(this);
+        }
+    }
+
+    private void importContacts() {
+        ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
+        progressDialog.startProgressDialog(getString(R.string.loading_contacts));
+
+        BirdaysRepository.getInstance(this).importContacts(
+                new BirdaysRepository.Callback<Integer>() {
+                    @Override
+                    public void onSuccess(Integer inserted) {
+                        if (isFinishing() || isDestroyed()) return;
+                        progressDialog.dismissProgressDialog();
+                        preferences.edit().putBoolean(Constants.CONTACTS_UPLOADED, true).apply();
+                        Utils.notifyWidget(SettingsActivity.this);
+                        Toast.makeText(SettingsActivity.this, R.string.contacts_uploaded,
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        progressDialog.dismissProgressDialog();
+                        preferences.edit().putBoolean(Constants.WRONG_CONTACTS_FORMAT, true).apply();
+                        Toast.makeText(SettingsActivity.this, R.string.loading_contacts_error,
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 
     public void performCloudBackup() {
@@ -458,9 +492,9 @@ public class SettingsActivity extends AppCompatActivity implements ContactsHelpe
             Preference importPref = findPreference(getString(R.string.import_contacts_key));
             if (importPref != null) {
                 importPref.setOnPreferenceClickListener(preference -> {
-                    if (getActivity() != null && !preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
-                        ContactsHelper contactsHelper = new ContactsHelper(getActivity());
-                        contactsHelper.loadContacts(getActivity(), preferences);
+                    SettingsActivity activity = (SettingsActivity) getActivity();
+                    if (activity != null && !preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
+                        activity.startContactImport();
                     }
                     return true;
                 });

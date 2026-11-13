@@ -17,6 +17,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,10 +30,11 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.djonique.birdays.R;
 import com.djonique.birdays.adapters.PagerAdapter;
 import com.djonique.birdays.fragments.AllFragment;
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.djonique.birdays.utils.BirdaysApplication;
 import com.djonique.birdays.utils.Constants;
-import com.djonique.birdays.utils.ContactsHelper;
 import com.djonique.birdays.utils.PermissionManager;
+import com.djonique.birdays.utils.ProgressDialogHelper;
 import com.djonique.birdays.utils.ReviewHelper;
 import com.djonique.birdays.utils.Utils;
 import com.google.android.material.appbar.AppBarLayout;
@@ -43,8 +45,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity implements
-        AllFragment.DeletingPersonListener,
-        ContactsHelper.LoadingContactsListener {
+        AllFragment.DeletingPersonListener {
 
     /** One query per typing burst instead of one per keystroke. */
     private static final long SEARCH_DEBOUNCE_MS = 250;
@@ -101,10 +102,12 @@ public class MainActivity extends AppCompatActivity implements
                 (tab, position) -> tab.setText(pagerAdapter.getPageTitle(position))).attach();
 
         if (!preferences.getBoolean(Constants.CONTACTS_UPLOADED, false)) {
-            if (!PermissionManager.readingContactsPermissionGranted(this)) {
+            if (PermissionManager.readingContactsPermissionGranted(this)) {
+                importContacts();
+            } else {
                 contactsPermissionRequestPending = true;
+                PermissionManager.requestReadingContactsPermission(this);
             }
-            new ContactsHelper(this).loadContacts(this, preferences);
         }
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -254,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
-                    new ContactsHelper(this).loadContacts(this, preferences);
+                    importContacts();
                 }
             } else {
                 Snackbar.make(container, R.string.permission_required,
@@ -276,9 +279,36 @@ public class MainActivity extends AppCompatActivity implements
                 Uri.parse("package:" + getPackageName())));
     }
 
-    @Override
-    public void onContactsUploaded() {
-        pagerAdapter.addPersonsFromDb();
+    /**
+     * Imports contacts on the repository pool. The progress dialog is dismissed on both outcomes,
+     * and the UI is touched only while the activity is still alive.
+     */
+    private void importContacts() {
+        ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
+        progressDialog.startProgressDialog(getString(R.string.loading_contacts));
+
+        BirdaysRepository.getInstance(this).importContacts(
+                new BirdaysRepository.Callback<Integer>() {
+                    @Override
+                    public void onSuccess(Integer inserted) {
+                        if (isFinishing() || isDestroyed()) return;
+                        progressDialog.dismissProgressDialog();
+                        preferences.edit().putBoolean(Constants.CONTACTS_UPLOADED, true).apply();
+                        pagerAdapter.addPersonsFromDb();
+                        Utils.notifyWidget(MainActivity.this);
+                        Toast.makeText(MainActivity.this, R.string.contacts_uploaded,
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        progressDialog.dismissProgressDialog();
+                        preferences.edit().putBoolean(Constants.WRONG_CONTACTS_FORMAT, true).apply();
+                        Toast.makeText(MainActivity.this, R.string.loading_contacts_error,
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 
     @Override

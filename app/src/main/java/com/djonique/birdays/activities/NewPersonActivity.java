@@ -230,15 +230,14 @@ public class NewPersonActivity extends AppCompatActivity {
         if (contactData == null) return;
 
         ContentResolver contentResolver = getContentResolver();
-        ContactsHelper contactsHelper = new ContactsHelper(this);
 
         try (Cursor cursor = contentResolver.query(contactData, null, null, null, null)) {
             if (cursor != null && cursor.moveToFirst()) {
                 String id = cursor.getString(
                         cursor.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
-                etName.setText(contactsHelper.getContactName(contentResolver, id));
-                etPhone.setText(contactsHelper.getContactPhoneNumber(contentResolver, id));
-                etEmail.setText(contactsHelper.getContactEmail(contentResolver, id));
+                etName.setText(ContactsHelper.getContactName(contentResolver, id));
+                etPhone.setText(ContactsHelper.getContactPhoneNumber(contentResolver, id));
+                etEmail.setText(ContactsHelper.getContactEmail(contentResolver, id));
             }
         } catch (Exception ignored) {
         }
