@@ -19,10 +19,12 @@
 -dontwarn com.google.api.client.**
 
 # Yandex Mobile Ads SDK
--keep class com.yandex.mobile.ads.** { <fields>; <methods>; }
+# Keep only the public packages the app references; the SDK ships its own consumer rules for
+# its internal and mediation code, which must not be pinned here.
+-keep class com.yandex.mobile.ads.common.** { *; }
+-keep class com.yandex.mobile.ads.banner.** { *; }
+-keep class com.yandex.mobile.ads.interstitial.** { *; }
+-keep class com.yandex.mobile.ads.rewarded.** { *; }
+-keep class com.yandex.mobile.ads.nativeads.** { *; }
 -dontwarn com.yandex.mobile.ads.**
-
-# Material DateTime Picker
--keep class com.wdullaer.materialdatetimepicker.** { *; }
--dontwarn com.wdullaer.materialdatetimepicker.**
 

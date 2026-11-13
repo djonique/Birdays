@@ -14,9 +14,9 @@ if (keystorePropertiesFile.exists()) {
 }
 
 def localPropertiesFile = rootProject.file("local.properties")
-def localProperties = new Properties()
+ext.localProperties = new Properties()
 if (localPropertiesFile.exists()) {
-    localPropertiesFile.withInputStream { localProperties.load(it) }
+    localPropertiesFile.withInputStream { ext.localProperties.load(it) }
 }
 
 // A release build is only signed when every required entry is present AND the keystore file
@@ -36,7 +36,13 @@ def getProp(Properties props, String key, String defaultValue) {
 }
 
 def getAdUnitId(Properties props, String key, String defaultValue) {
-    return getProp(props, key, defaultValue).replace('"', '')
+    // Ad unit ids belong to the developer's local setup, not to the signing config. Prefer
+    // local.properties (already git-ignored) and keep keystore.properties as a fallback so
+    // existing checkouts keep working.
+    def value = localProperties.containsKey(key)
+            ? localProperties[key]
+            : (props.containsKey(key) ? props[key] : defaultValue)
+    return value.replace('"', '')
 }
 
 android {
