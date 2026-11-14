@@ -198,4 +198,2663 @@
     <string name="help_delay_text">请注意，在某些设备上，通知可能会有所延迟。</string>
     <string name="help_email_description">如有任何问题或建议，请通过 birdaysapp@gmail.com 与我联系</string>
     <string name="send_email">发送邮件</string>
+
+    <!-- Famous persons -->
+    <!-- 1 january -->
+    <string name="medici">洛伦佐·德·美第奇</string>
+    <string name="giordano_bruno">焦尔达诺·布鲁诺</string>
+    <string name="frazer">詹姆斯·乔治·弗雷泽</string>
+    <string name="coubertin">皮埃尔·德·顾拜旦</string>
+    <string name="william_fox">威廉·福克斯</string>
+    <!-- 2 january -->
+    <string name="piero_di_cosimo">皮耶罗·迪·科西莫</string>
+    <string name="vasily_perov">瓦西里·彼罗夫</string>
+    <string name="balakirev">米利·巴拉基列夫</string>
+    <string name="tippett">迈克尔·蒂皮特</string>
+    <string name="isaac_asimov">艾萨克·阿西莫夫</string>
+    <!-- 3 january -->
+    <string name="louis_poinsot">路易·普安索</string>
+    <string name="dabbadie">安托万·汤姆森·达巴迪</string>
+    <string name="fletcher">约翰·古尔德·弗莱彻</string>
+    <string name="tolkien">约翰·罗纳德·瑞尔·托尔金</string>
+    <string name="moore">戈登·摩尔</string>
+    <string name="mel_gibson">梅尔·吉布森</string>
+    <string name="schumacher">迈克尔·舒马赫</string>
+    <!-- 4 january -->
+    <string name="isaac_newton">艾萨克·牛顿</string>
+    <string name="pergolesi">乔瓦尼·巴蒂斯塔·佩尔戈莱西</string>
+    <string name="jacob_grimm">雅各布·格林</string>
+    <string name="braille">路易·布莱叶</string>
+    <string name="tsereteli">祖拉布·采列捷利</string>
+    <string name="josephson">布赖恩·戴维·约瑟夫森</string>
+    <!-- 5 january -->
+    <string name="eucken">鲁道夫·克里斯托夫·欧肯</string>
+    <string name="gillette">金·坎普·吉列</string>
+    <string name="erlanger">约瑟夫·厄兰格</string>
+    <string name="umberto_eco">翁贝托·埃科</string>
+    <string name="manson">玛丽莲·曼森</string>
+    <string name="bradley_cooper">布莱德利·库珀</string>
+    <!-- 6 january -->
+    <string name="darc">让娜·达尔克</string>
+    <string name="jakob_bernoulli">雅各布·伯努利</string>
+    <string name="montgolfier">雅克-艾蒂安·蒙戈尔菲耶</string>
+    <string name="schliemann">海因里希·施里曼</string>
+    <string name="scriabin">亚历山大·斯克里亚宾</string>
+    <string name="celentano">阿德里亚诺·切伦塔诺</string>
+    <string name="atkinson">罗温·艾金森</string>
+    <string name="redmayne">埃迪·雷德梅恩</string>
+    <!-- 7 january -->
+    <string name="pope_gregory">教宗格里高利十三世</string>
+    <string name="fleming">桑福德·弗莱明</string>
+    <string name="eliezer">埃利泽·本-耶胡达</string>
+    <string name="borel">埃米尔·博雷尔</string>
+    <string name="nicolas_cage">尼古拉斯·凯奇</string>
+    <!-- 8 january -->
+    <string name="sirani">伊丽莎白塔·西拉尼</string>
+    <string name="nijinska">布罗尼斯拉娃·尼金斯卡</string>
+    <string name="presley">埃尔维斯·普雷斯利</string>
+    <string name="hawking">斯蒂芬·霍金</string>
+    <string name="daviw_bowie">大卫·鲍伊</string>
+    <!-- 9 january -->
+    <string name="simon_vouet">西蒙·武埃</string>
+    <string name="wrangel">费迪南德·冯·弗兰格尔</string>
+    <string name="watson">约翰·布罗德斯·华生</string>
+    <string name="capek">卡雷尔·恰佩克</string>
+    <string name="beauvoir">西蒙娜·德·波伏娃</string>
+    <!-- 10 january -->
+    <string name="birkbeck">乔治·伯贝克</string>
+    <string name="tolstoy">阿列克谢·托尔斯泰</string>
+    <string name="bertoni">弗拉米尼奥·贝尔托尼</string>
+    <string name="wilson">罗伯特·伍德罗·威尔逊</string>
+    <string name="knuth">唐纳德·尔文·克努斯</string>
+    <!-- 11 january -->
+    <string name="parmigianino">帕尔米贾尼诺</string>
+    <string name="guidobaldo">圭多巴尔多·德尔蒙特</string>
+    <string name="stensen">尼古拉斯·斯泰诺</string>
+    <string name="hofmann">阿尔伯特·霍夫曼</string>
+    <string name="mendoza">爱德华多·门多萨</string>
+    <!-- 12 january -->
+    <string name="helmont">扬·巴普蒂斯塔·范·海尔蒙特</string>
+    <string name="perrault">夏尔·佩罗</string>
+    <string name="jack_london">杰克·伦敦</string>
+    <string name="kurchatov">伊戈尔·库尔恰托夫</string>
+    <string name="korolev">谢尔盖·科罗廖夫</string>
+    <string name="maharishi">马哈里希·马赫什·约吉</string>
+    <string name="murakami">村上春树</string>
+    <!-- 13 january -->
+    <string name="beketov">尼古拉·别克托夫</string>
+    <string name="wien">威廉·维恩</string>
+    <string name="soutine">柴姆·苏丁</string>
+    <string name="lifshitz">伊利亚·利夫希茨</string>
+    <string name="feyerabend">保罗·费耶阿本德</string>
+    <!-- 14 january -->
+    <string name="semyonov">彼得·谢苗诺夫-天山斯基</string>
+    <string name="morisot">贝尔特·莫里索</string>
+    <string name="schweitzer">阿尔贝特·施韦泽</string>
+    <string name="mishima">三岛由纪夫</string>
+    <string name="kharlamov">瓦列里·哈尔拉莫夫</string>
+    <!-- 15 january -->
+    <string name="moliere">莫里哀</string>
+    <string name="griboyedov">亚历山大·格里鲍耶陀夫</string>
+    <string name="virtanen">阿尔图里·伊尔马里·维尔塔宁</string>
+    <string name="teller">爱德华·泰勒</string>
+    <string name="luther_king">马丁·路德·金</string>
+    <!-- 16 january -->
+    <string name="schoner">约翰内斯·舍纳</string>
+    <string name="piccinni">尼科洛·皮钦尼</string>
+    <string name="alfieri">维托里奥·阿尔菲耶里</string>
+    <string name="veresaev">维肯季·韦列萨耶夫</string>
+    <string name="roy_jones">小罗伊·琼斯</string>
+    <!-- 17 january -->
+    <string name="franklin">本杰明·富兰克林</string>
+    <string name="zhukovsky">尼古拉·茹科夫斯基</string>
+    <string name="stanislavski">康斯坦丁·斯坦尼斯拉夫斯基</string>
+    <string name="al_capone">阿尔·卡彭</string>
+    <string name="muhammad_ali">穆罕默德·阿里</string>
+    <string name="jim_carrey">金·凯瑞</string>
+    <!-- 18 january -->
+    <string name="montesquieu">孟德斯鸠</string>
+    <string name="cesar_cui">居伊</string>
+    <string name="ehrenfest">保罗·埃伦费斯特</string>
+    <string name="milne">艾伦·亚历山大·米尔恩</string>
+    <string name="kitano">北野武</string>
+    <string name="costner">凯文·科斯特纳</string>
+    <string name="guardiola">何塞普·瓜迪奥拉</string>
+    <!-- 19 january -->
+    <string name="cagnacci">圭多·卡尼亚奇</string>
+    <string name="comte">奥古斯特·孔德</string>
+    <string name="edgar_poe">埃德加·爱伦·坡</string>
+    <string name="kapteyn">雅各布斯·卡普坦</string>
+    <string name="serov">瓦伦丁·谢罗夫</string>
+    <string name="kantorovich">列昂尼德·坎托罗维奇</string>
+    <!-- 20 january -->
+    <string name="gessi">弗朗切斯科·杰西</string>
+    <string name="ampere">安德烈-马里·安培</string>
+    <string name="chausson">埃内斯特·肖松</string>
+    <string name="onassis">亚里士多德·奥纳西斯</string>
+    <string name="fellini">费德里科·费里尼</string>
+    <!-- 21 january -->
+    <string name="browning">约翰·摩西·勃朗宁</string>
+    <string name="florensky">帕维尔·弗洛连斯基</string>
+    <string name="dior">克里斯汀·迪奥</string>
+    <string name="benny_hill">本尼·希尔</string>
+    <string name="domingo">普拉西多·多明戈</string>
+    <!-- 22 january -->
+    <string name="bacon">弗朗西斯·培根</string>
+    <string name="byron">乔治·戈登·拜伦</string>
+    <string name="scoville">威尔伯·斯科维尔</string>
+    <string name="picabia">弗朗西斯·毕卡比亚</string>
+    <string name="landau">列夫·朗道</string>
+    <!-- 23 january -->
+    <string name="stendhal">司汤达</string>
+    <string name="manet">爱德华·马奈</string>
+    <string name="abbe">恩斯特·阿贝</string>
+    <string name="hilbert">大卫·希尔伯特</string>
+    <string name="yukawa">汤川秀树</string>
+    <string name="hauer">鲁特格尔·哈尔</string>
+    <!-- 24 january -->
+    <string name="congreve">威廉·康格里夫</string>
+    <string name="beaumarchais">皮埃尔·博马舍</string>
+    <string name="hoffmann">恩斯特·特奥多尔·阿马德乌斯·霍夫曼</string>
+    <string name="surikov">瓦西里·苏里科夫</string>
+    <string name="shechtman">达尼埃尔·谢赫特曼</string>
+    <string name="kinski">娜塔莎·金斯基</string>
+    <!-- 25 january -->
+    <string name="lagrange">约瑟夫-路易·拉格朗日</string>
+    <string name="burns">罗伯特·彭斯</string>
+    <string name="shishkin">伊万·希什金</string>
+    <string name="maugham">萨默塞特·毛姆</string>
+    <string name="woolf">弗吉尼亚·伍尔夫</string>
+    <string name="prigogine">伊利亚·普里高津</string>
+    <string name="eusebio">尤西比奥</string>
+    <!-- 26 january -->
+    <string name="morita">盛田昭夫</string>
+    <string name="newman">保罗·纽曼</string>
+    <string name="davis">安吉拉·戴维斯</string>
+    <string name="gretzky">韦恩·格雷茨基</string>
+    <string name="mourinho">若泽·穆里尼奥</string>
+    <!-- 27 january -->
+    <string name="neumann">约翰·巴尔塔萨·诺伊曼</string>
+    <string name="mozart">沃尔夫冈·阿马德乌斯·莫扎特</string>
+    <string name="schelling">弗里德里希·谢林</string>
+    <string name="saltykov_shchedrin">米哈伊尔·萨尔蒂科夫-谢德林</string>
+    <string name="carroll">刘易斯·卡罗尔</string>
+    <string name="bjorndalen">奥勒·埃纳尔·比约恩达伦</string>
+    <!-- 28 january -->
+    <string name="borelli">乔瓦尼·阿方索·博雷利</string>
+    <string name="heweliusz">扬·赫维留</string>
+    <string name="baskerville">约翰·巴斯克维尔</string>
+    <string name="rubinstein">阿图尔·鲁宾斯坦</string>
+    <string name="buffon">吉安路易吉·布冯</string>
+    <!-- 29 january -->
+    <string name="swedenborg">伊曼纽·斯威登堡</string>
+    <string name="mohs">弗里德里希·莫斯</string>
+    <string name="auber">丹尼尔·奥柏</string>
+    <string name="shibasaburo">北里柴三郎</string>
+    <string name="chekhov">安东·契诃夫</string>
+    <string name="rolland">罗曼·罗兰</string>
+    <!-- 30 january -->
+    <string name="watt">詹姆斯·瓦特</string>
+    <string name="chamisso">阿德尔伯特·冯·沙米索</string>
+    <string name="kotelnikov">格列布·科捷利尼科夫</string>
+    <string name="gaidai">列昂尼德·盖代</string>
+    <string name="engelbart">道格拉斯·恩格尔巴特</string>
+    <string name="brown">露丝·布朗</string>
+    <!-- 31 january -->
+    <string name="schubert">弗朗茨·舒伯特</string>
+    <string name="richards">西奥多·威廉·理查兹</string>
+    <string name="langmuir">欧文·朗缪尔</string>
+    <string name="vanga">万加</string>
+    <string name="timberlake">贾斯汀·汀布莱克</string>
+    <!-- 1 february -->
+    <string name="bekhterev">弗拉基米尔·米哈伊洛维奇·别赫捷列夫</string>
+    <string name="john_ford">约翰·福特</string>
+    <string name="gable">克拉克·盖博</string>
+    <string name="segre">埃米利奥·吉诺·塞格雷</string>
+    <string name="brandon_lee">李国豪</string>
+    <!-- 2 february -->
+    <string name="bourdon">塞巴斯蒂安·布尔东</string>
+    <string name="boussingault">让-巴蒂斯特·布森戈</string>
+    <string name="forel">弗朗索瓦-阿尔方斯·福雷尔</string>
+    <string name="chkalov">瓦列里·奇卡洛夫</string>
+    <string name="haasse">赫拉·哈瑟</string>
+    <string name="holland">约翰·亨利·霍兰德</string>
+    <!-- 3 february -->
+    <string name="mendelssohn">费利克斯·门德尔松</string>
+    <string name="trubner">海因里希·威廉·特吕布纳</string>
+    <string name="fomin">伊万·福明</string>
+    <string name="stein">格特鲁德·斯泰因</string>
+    <string name="joachim_low">约阿希姆·勒夫</string>
+    <!-- 4 february -->
+    <string name="bottger">约翰·弗里德里希·伯特格尔</string>
+    <string name="nemcova">鲍日娜·聂姆佐娃</string>
+    <string name="prandtl">路德维希·普朗特</string>
+    <string name="maillard">路易·卡米耶·马亚尔</string>
+    <string name="tombaugh">克莱德·威廉·汤博</string>
+    <!-- 5 february -->
+    <string name="runeberg">约翰·卢德维格·鲁内贝里</string>
+    <string name="maxim">海勒姆·史蒂文斯·马克沁</string>
+    <string name="dunlop">约翰·博伊德·邓禄普</string>
+    <string name="teike">卡尔·泰克</string>
+    <string name="citroen">安德烈·雪铁龙</string>
+    <string name="voisin">加布里埃尔·瓦赞</string>
+    <string name="cristiano_ronaldo">克里斯蒂亚诺·罗纳尔多</string>
+    <string name="neymar">内马尔</string>
+    <!-- 6 february -->
+    <string name="heinecken">克里斯蒂安·海因里希·海内肯</string>
+    <string name="zelinsky">尼古拉·泽林斯基</string>
+    <string name="bragg">保罗·布拉格</string>
+    <string name="truffaut">弗朗索瓦·特吕弗</string>
+    <string name="bob_marley">鲍勃·马利</string>
+    <!-- 7 february -->
+    <string name="dickens">查尔斯·狄更斯</string>
+    <string name="alfred_adler">阿尔弗雷德·阿德勒</string>
+    <string name="sinclair_lewis">辛克莱·刘易斯</string>
+    <string name="chizhevsky">亚历山大·奇热夫斯基</string>
+    <string name="euler">乌尔夫·冯·奥伊勒</string>
+    <string name="desmond_doss">德斯蒙德·多斯</string>
+    <string name="kutcher">艾什顿·库彻</string>
+    <!-- 8 february -->
+    <string name="bernoulli">丹尼尔·伯努利</string>
+    <string name="courtois">贝尔纳·库尔图瓦</string>
+    <string name="jules_verne">儒勒·凡尔纳</string>
+    <string name="mendeleev">德米特里·门捷列夫</string>
+    <string name="carlson">切斯特·卡尔森</string>
+    <string name="williams">约翰·威廉姆斯</string>
+    <!-- 9 february -->
+    <string name="navai">阿里希尔·纳沃伊</string>
+    <string name="valisy_zhukovsky">瓦西里·茹科夫斯基</string>
+    <string name="maybach">威廉·迈巴赫</string>
+    <string name="soseki">夏目漱石</string>
+    <string name="berg">阿尔班·贝尔格</string>
+    <string name="valier">马克斯·瓦利尔</string>
+    <string name="monod">雅克·莫诺</string>
+    <!-- 10 february -->
+    <string name="molter">约翰·梅尔希奥·莫尔特</string>
+    <string name="lamb">查尔斯·兰姆</string>
+    <string name="navier">克洛德-路易·纳维</string>
+    <string name="pasternak">鲍里斯·帕斯捷尔纳克</string>
+    <string name="brecht">贝托尔特·布莱希特</string>
+    <!-- 11 february -->
+    <string name="talbot">威廉·亨利·福克斯·塔尔博特</string>
+    <string name="edison">托马斯·爱迪生</string>
+    <string name="henry">比尤拉·路易丝·亨利</string>
+    <string name="sheldon">西德尼·谢尔顿</string>
+    <string name="nielsen">莱斯利·尼尔森</string>
+    <string name="aniston">詹妮弗·安妮斯顿</string>
+    <!-- 12 february -->
+    <string name="gottsched">约翰·克里斯托夫·戈特舍德</string>
+    <string name="darwin">查尔斯·罗伯特·达尔文</string>
+    <string name="lincoln">亚伯拉罕·林肯</string>
+    <string name="roerich">海伦娜·罗里奇</string>
+    <string name="anna_pavlova">安娜·帕夫洛娃</string>
+    <string name="byung_chul">李秉喆</string>
+    <!-- 13 february -->
+    <string name="malthus">托马斯·马尔萨斯</string>
+    <string name="krylov">伊万·克雷洛夫</string>
+    <string name="chaliapin">费奥多尔·夏里亚宾</string>
+    <string name="shockley">威廉·布拉德福德·肖克利</string>
+    <string name="collina">皮耶路易吉·科利纳</string>
+    <string name="robbie_williams">罗比·威廉姆斯</string>
+    <!-- 14 february -->
+    <string name="alberti">莱昂·巴蒂斯塔·阿尔伯蒂</string>
+    <string name="babur">巴布尔</string>
+    <string name="ferris">乔治·费里斯</string>
+    <string name="germi">彼得罗·杰尔米</string>
+    <string name="sergey_kapitsa">谢尔盖·卡皮察</string>
+    <string name="alan_parker">艾伦·帕克</string>
+    <!-- 15 february -->
+    <string name="galilei">伽利略·伽利莱</string>
+    <string name="praetorius">普雷托里乌斯</string>
+    <string name="bentham">杰里米·边沁</string>
+    <string name="stoney">乔治·约翰斯通·斯托尼</string>
+    <string name="guillaume">夏尔·爱德华·纪尧姆</string>
+    <string name="whitehead">阿尔弗雷德·诺斯·怀特海</string>
+    <string name="barrymore">约翰·巴里摩尔</string>
+    <!-- 16 february -->
+    <string name="bouguer">皮埃尔·布格</string>
+    <string name="bodoni">詹巴蒂斯塔·博多尼</string>
+    <string name="galton">弗朗西斯·高尔顿</string>
+    <string name="haeckel">恩斯特·海因里希·海克尔</string>
+    <string name="rossi">瓦伦蒂诺·罗西</string>
+    <!-- 17 february -->
+    <string name="laennec">勒内·拉埃内克</string>
+    <string name="beilstein">弗里德里希·康拉德·拜尔施泰因</string>
+    <string name="john_watson">托马斯·约翰·沃森</string>
+    <string name="fisher">罗纳德·费希尔</string>
+    <string name="michael_bay">迈克尔·贝</string>
+    <string name="denise_richards">丹妮丝·理查兹</string>
+    <!-- 18 february -->
+    <string name="volta">亚历山德罗·伏打</string>
+    <string name="bates">亨利·沃尔特·贝茨</string>
+    <string name="ernst_mach">恩斯特·马赫</string>
+    <string name="ferrari">恩佐·法拉利</string>
+    <string name="yoko_ono">小野洋子</string>
+    <string name="travolta">约翰·特拉沃尔塔</string>
+    <!-- 19 february -->
+    <string name="copernicus">尼古拉·哥白尼</string>
+    <string name="boccherini">路易吉·博凯里尼</string>
+    <string name="murchison">罗德里克·默奇森</string>
+    <string name="ducommun">埃利·迪科门</string>
+    <string name="arrhenius">斯万特·阿伦尼乌斯</string>
+    <string name="del_toro">本尼西奥·德尔·托罗</string>
+    <!-- 20 february -->
+    <string name="reil">约翰·克里斯蒂安·赖尔</string>
+    <string name="boltzmann">路德维希·玻尔兹曼</string>
+    <string name="crawford">辛迪·克劳馥</string>
+    <string name="cobain">科特·柯本</string>
+    <string name="rihanna">蕾哈娜</string>
+    <!-- 21 february -->
+    <string name="delibes">莱奥·德利布</string>
+    <string name="calment">让娜·卡尔芒</string>
+    <string name="sullivan">哈里·斯塔克·沙利文</string>
+    <string name="henrik_dam">亨利克·达姆</string>
+    <string name="givenchy">于贝尔·德·纪梵希</string>
+    <string name="palahniuk">恰克·帕拉尼克</string>
+    <!-- 22 february -->
+    <string name="washington">乔治·华盛顿</string>
+    <string name="schopenhauer">阿图尔·叔本华</string>
+    <string name="quetelet">阿道夫·凯特勒</string>
+    <string name="janssen">皮埃尔·让森</string>
+    <string name="hertz">海因里希·赫兹</string>
+    <string name="bronsted">约翰内斯·尼古劳斯·布仑斯惕</string>
+    <string name="drew_barrymore">德鲁·巴里摩尔</string>
+    <!-- 23 february -->
+    <string name="handel">乔治·弗里德里希·亨德尔</string>
+    <string name="chambers">威廉·钱伯斯</string>
+    <string name="rothschild">迈尔·阿姆谢尔·罗斯柴尔德</string>
+    <string name="malevich">卡济米尔·马列维奇</string>
+    <string name="jaspers">卡尔·雅斯贝尔斯</string>
+    <string name="blunt">艾米莉·布朗特</string>
+    <!-- 24 february -->
+    <string name="banks">约瑟夫·班克斯</string>
+    <string name="grimm">威廉·格林</string>
+    <string name="borgman">伊万·博尔格曼</string>
+    <string name="freda">里卡多·弗雷达</string>
+    <string name="legrand">米歇尔·勒格朗</string>
+    <string name="steve_jobs">史蒂夫·乔布斯</string>
+    <!-- 25 february -->
+    <string name="battuta">伊本·白图泰</string>
+    <string name="goldoni">卡洛·哥尔多尼</string>
+    <string name="renoir">皮埃尔-奥古斯特·雷诺阿</string>
+    <string name="karl_may">卡尔·迈</string>
+    <string name="caruso">恩里科·卡鲁索</string>
+    <string name="burgess">安东尼·伯吉斯</string>
+    <!-- 26 february -->
+    <string name="marlowe">克里斯托弗·马洛</string>
+    <string name="arago">弗朗索瓦·阿拉戈</string>
+    <string name="hugo">维克多·雨果</string>
+    <string name="levi_strauss">李维·斯特劳斯</string>
+    <string name="flammarion">卡米耶·弗拉马里翁</string>
+    <!-- 27 february -->
+    <string name="constantine">君士坦丁大帝</string>
+    <string name="longfellow">亨利·沃兹沃斯·朗费罗</string>
+    <string name="ge">尼古拉·盖</string>
+    <string name="best">查尔斯·贝斯特</string>
+    <string name="steinbeck">约翰·斯坦贝克</string>
+    <string name="taylor">伊丽莎白·泰勒</string>
+    <!-- 28 february -->
+    <string name="montaigne">米歇尔·德·蒙田</string>
+    <string name="reaumur">勒内·安托万·列奥米尔</string>
+    <string name="renan">欧内斯特·勒南</string>
+    <string name="pauling">莱纳斯·鲍林</string>
+    <string name="gehry">弗兰克·盖里</string>
+    <string name="cooper">利昂·库珀</string>
+    <string name="vodianova">娜塔莉亚·沃佳诺娃</string>
+    <!-- 29 february -->
+    <string name="klenze">利奥·冯·克伦策</string>
+    <string name="rossini">焦阿基诺·罗西尼</string>
+    <string name="john_holland">约翰·菲利普·霍兰</string>
+    <string name="hollerith">赫尔曼·霍列瑞斯</string>
+    <string name="papert">西摩·帕尔特</string>
+    <!-- 1 march -->
+    <string name="botticelli">桑德罗·波提切利</string>
+    <string name="chopin">弗雷德里克·肖邦</string>
+    <string name="akutagawa">芥川龙之介</string>
+    <string name="miller">格伦·米勒</string>
+    <string name="snyder">扎克·施奈德</string>
+    <string name="bieber">贾斯汀·比伯</string>
+    <!-- 2 march -->
+    <string name="dekker">爱德华·道维斯·戴克</string>
+    <string name="smetana">贝德里赫·斯美塔那</string>
+    <string name="irving">约翰·欧文</string>
+    <string name="bon_jovi">琼·邦乔维</string>
+    <string name="craig">丹尼尔·克雷格</string>
+    <!-- 3 march -->
+    <string name="pullman">乔治·普尔曼</string>
+    <string name="cantor">格奥尔格·康托尔</string>
+    <string name="bell">亚历山大·格拉汉姆·贝尔</string>
+    <string name="frisch">朗纳·弗里施</string>
+    <string name="kornberg">阿瑟·科恩伯格</string>
+    <!-- 4 march -->
+    <string name="vivaldi">安东尼奥·维瓦尔第</string>
+    <string name="raeburn">亨利·雷伯恩</string>
+    <string name="gamow">乔治·伽莫夫</string>
+    <string name="veksler">弗拉基米尔·韦克斯勒</string>
+    <string name="mauriat">保罗·莫里哀</string>
+    <!-- 5 march -->
+    <string name="mercator">格拉杜斯·墨卡托</string>
+    <string name="tiepolo">乔瓦尼·巴蒂斯塔·提埃坡罗</string>
+    <string name="marey">艾蒂安-朱尔·马雷</string>
+    <string name="tarrasch">西格贝特·塔拉施</string>
+    <string name="ando">安藤百福</string>
+    <string name="tobin">詹姆斯·托宾</string>
+    <!-- 6 march -->
+    <string name="michelangelo">米开朗基罗</string>
+    <string name="bergerac">西拉诺·德·贝热拉克</string>
+    <string name="elizabeth_browning">伊丽莎白·巴雷特·勃朗宁</string>
+    <string name="jerzy_lec">斯坦尼斯瓦夫·耶日·莱茨</string>
+    <string name="marquez">加夫列尔·加西亚·马尔克斯</string>
+    <string name="tereshkova">瓦莲京娜·捷列什科娃</string>
+    <string name="shaquille">沙奎尔·奥尼尔</string>
+    <!-- 7 march -->
+    <string name="rob_roy">罗布·罗伊</string>
+    <string name="niepce">约瑟夫·尼塞福尔·涅普斯</string>
+    <string name="palmer">丹尼尔·戴维·帕尔默</string>
+    <string name="montesquiou">罗贝尔·德·孟德斯鸠</string>
+    <string name="mondrian">皮特·蒙德里安</string>
+    <string name="ravel">莫里斯·拉威尔</string>
+    <string name="kobo_abe">安部公房</string>
+    <!-- 8 march -->
+    <string name="fothergill">约翰·福瑟吉尔</string>
+    <string name="potocki">扬·波托茨基</string>
+    <string name="ignacy">伊格纳齐·武卡谢维奇</string>
+    <string name="thompson">拉马库斯·阿德纳·汤普森</string>
+    <string name="otto_hahn">奥托·哈恩</string>
+    <string name="kendall">爱德华·卡尔文·肯德尔</string>
+    <string name="aiken">霍华德·海瑟威·艾肯</string>
+    <!-- 9 march -->
+    <string name="vespucci">亚美利哥·韦斯普奇</string>
+    <string name="shevchenko">塔拉斯·舍甫琴科</string>
+    <string name="barragan">路易斯·巴拉甘</string>
+    <string name="kohn">沃尔特·科恩</string>
+    <string name="gagarin">尤里·加加林</string>
+    <string name="binoche">朱丽叶·比诺什</string>
+    <!-- 10 march -->
+    <string name="schlegel">弗里德里希·施莱格尔</string>
+    <string name="eichendorff">约瑟夫·冯·艾兴多夫</string>
+    <string name="blatter">约瑟夫·布拉特</string>
+    <string name="norris">查克·诺里斯</string>
+    <string name="bin_laden">奥萨马·本·拉登</string>
+    <string name="stone">莎朗·斯通</string>
+    <!-- 11 march -->
+    <string name="tasso">托尔夸托·塔索</string>
+    <string name="verrier">于尔班·勒威耶</string>
+    <string name="bertrand">约瑟夫·贝特朗</string>
+    <string name="vannevar_bush">万尼瓦尔·布什</string>
+    <string name="bloembergen">尼古拉斯·布隆伯根</string>
+    <string name="adams">道格拉斯·亚当斯</string>
+    <string name="knoxville">约翰尼·诺克斯维尔</string>
+    <!-- 12 march -->
+    <string name="notre">安德烈·勒诺特</string>
+    <string name="berkeley">乔治·贝克莱</string>
+    <string name="bazhenov">瓦西里·巴热诺夫</string>
+    <string name="kirchhoff">古斯塔夫·基尔霍夫</string>
+    <string name="newcomb">西蒙·纽康</string>
+    <string name="perkin">威廉·亨利·珀金</string>
+    <string name="vernadsky">弗拉基米尔·维尔纳茨基</string>
+    <!-- 13 march -->
+    <string name="bonnet">夏尔·博内</string>
+    <string name="lowell">帕西瓦尔·罗威尔</string>
+    <string name="eliade">米尔恰·伊利亚德</string>
+    <string name="hubbard">拉法叶·罗纳德·贺伯特</string>
+    <string name="scatman">斯凯特曼·约翰</string>
+    <!-- 14 march -->
+    <string name="telemann">格奥尔格·菲利普·泰勒曼</string>
+    <string name="strauss">老约翰·施特劳斯</string>
+    <string name="banville">泰奥多尔·德·邦维尔</string>
+    <string name="schiaparelli">乔瓦尼·斯基亚帕雷利</string>
+    <string name="ehrlich">保罗·埃利希</string>
+    <string name="einstein">阿尔伯特·爱因斯坦</string>
+    <string name="caine">迈克尔·凯恩</string>
+    <!-- 15 march -->
+    <string name="sylvius">弗朗西斯库斯·西尔维于斯</string>
+    <string name="loschmidt">约翰·约瑟夫·洛施密特</string>
+    <string name="heyse">保罗·海泽</string>
+    <string name="behring">埃米尔·冯·贝林</string>
+    <string name="haffkine">沃尔德马·哈夫金</string>
+    <string name="alferov">若列斯·阿尔费罗夫</string>
+    <!-- 16 march -->
+    <string name="georg_ohm">格奥尔格·西蒙·欧姆</string>
+    <string name="prudhomme">苏利·普吕多姆</string>
+    <string name="beijerinck">马丁努斯·拜耶林克</string>
+    <string name="yayser">海因里希·凯泽</string>
+    <string name="damadian">雷蒙德·达马迪安</string>
+    <string name="bertolucci">贝纳尔多·贝托鲁奇</string>
+    <string name="stallman">理查德·斯托曼</string>
+    <!-- 17 march -->
+    <string name="daimler">戈特利布·戴姆勒</string>
+    <string name="vrubel">米哈伊尔·弗鲁贝尔</string>
+    <string name="hess">瓦尔特·鲁道夫·赫斯</string>
+    <string name="nureyev">鲁道夫·努里耶夫</string>
+    <string name="gibson">威廉·吉布森</string>
+    <string name="russell">库尔特·拉塞尔</string>
+    <!-- 18 march -->
+    <string name="steiner">雅各布·施泰纳</string>
+    <string name="hebbel">弗里德里希·黑贝尔</string>
+    <string name="diesel">鲁道夫·狄塞尔</string>
+    <string name="stekel">威廉·施特克尔</string>
+    <string name="koffka">库尔特·考夫卡</string>
+    <string name="besson">吕克·贝松</string>
+    <!-- 19 march -->
+    <string name="burton">理查德·弗朗西斯·伯顿</string>
+    <string name="wheeler">威廉·莫顿·惠勒</string>
+    <string name="reger">马克斯·雷格</string>
+    <string name="haworth">诺曼·霍沃思</string>
+    <string name="joliot_curie">弗雷德里克·约里奥-居里</string>
+    <string name="molina">马里奥·莫利纳</string>
+    <string name="bruce_willis">布鲁斯·威利斯</string>
+    <!-- 20 march -->
+    <string name="ibsen">亨利克·易卜生</string>
+    <string name="gigli">贝尼亚米诺·吉里</string>
+    <string name="skinner">伯尔赫斯·弗雷德里克·斯金纳</string>
+    <string name="cattell">雷蒙德·卡特尔</string>
+    <string name="neher">埃尔温·内尔</string>
+    <string name="bennington">查斯特·贝宁顿</string>
+    <!-- 21 march -->
+    <string name="fourier">约瑟夫·傅里叶</string>
+    <string name="mozhaysky">亚历山大·莫扎伊斯基</string>
+    <string name="gilbert">沃尔特·吉尔伯特</string>
+    <string name="oldman">加里·奥德曼</string>
+    <string name="senna">埃尔顿·塞纳</string>
+    <string name="ronaldinho">罗纳尔迪尼奥</string>
+    <!-- 22 march -->
+    <string name="van_dyck">安东尼·范戴克</string>
+    <string name="pelletier">皮埃尔·约瑟夫·佩尔蒂埃</string>
+    <string name="lysenko">米科拉·李森科</string>
+    <string name="millikan">罗伯特·安德鲁斯·密立根</string>
+    <string name="richter">伯顿·里克特</string>
+    <string name="webber">安德鲁·劳埃德·韦伯</string>
+    <!-- 23 march -->
+    <string name="laplace">皮埃尔-西蒙·拉普拉斯</string>
+    <string name="du_gard">罗杰·马丁·杜加尔</string>
+    <string name="noether">埃米·诺特</string>
+    <string name="juan_gris">胡安·格里斯</string>
+    <string name="fromm">埃里希·弗罗姆</string>
+    <string name="kurosawa">黑泽明</string>
+    <string name="von_braun">韦纳·冯·布劳恩</string>
+    <!-- 24 march -->
+    <string name="agricola">格奥尔格乌斯·阿格里科拉</string>
+    <string name="priestley">约瑟夫·普里斯特利</string>
+    <string name="morris">威廉·莫里斯</string>
+    <string name="houdini">哈里·胡迪尼</string>
+    <string name="dario_fo">达里奥·福</string>
+    <string name="ballmer">史蒂夫·鲍尔默</string>
+    <string name="jim_parsons">吉姆·帕森斯</string>
+    <!-- 25 march -->
+    <string name="amici">乔瓦尼·巴蒂斯塔·阿米奇</string>
+    <string name="toscanini">阿图罗·托斯卡尼尼</string>
+    <string name="aretha_franklin">艾瑞莎·弗兰克林</string>
+    <string name="elton_john">艾尔顿·约翰</string>
+    <string name="parker">莎拉·杰西卡·帕克</string>
+    <!-- 26 march -->
+    <string name="gesner">康拉德·格斯纳</string>
+    <string name="prorok_divis">普罗科普·迪维什</string>
+    <string name="benjamin_thompson">本杰明·汤普森</string>
+    <string name="feddersen">贝伦德·威廉·费德森</string>
+    <string name="frost">罗伯特·弗罗斯特</string>
+    <string name="tennessee_williams">田纳西·威廉斯</string>
+    <string name="katz">伯纳德·卡茨</string>
+    <string name="anfinsen">克里斯蒂安·安芬森</string>
+    <string name="nimoy">伦纳德·尼莫伊</string>
+    <string name="tinto_brass">丁度·巴拉斯</string>
+    <string name="tyler">史蒂芬·泰勒</string>
+    <string name="knightley">凯拉·奈特莉</string>
+    <!-- 27 march -->
+    <string name="hittorf">约翰·威廉·希托夫</string>
+    <string name="rontgen">威廉·伦琴</string>
+    <string name="wallach">奥托·瓦拉赫</string>
+    <string name="pearson">卡尔·皮尔逊</string>
+    <string name="henry_royce">亨利·莱斯</string>
+    <string name="steichen">爱德华·史泰钦</string>
+    <string name="tarantino">昆汀·塔伦蒂诺</string>
+    <!-- 28 march -->
+    <string name="raphael">拉斐尔</string>
+    <string name="comenius">约翰·阿摩司·夸美纽斯</string>
+    <string name="tamburini">安东尼奥·坦布里尼</string>
+    <string name="maxim_gorky">马克西姆·高尔基</string>
+    <string name="heymans">科内耶·海曼斯</string>
+    <string name="brzezinski">兹比格涅夫·布热津斯基</string>
+    <string name="friedman">杰罗姆·艾萨克·弗里德曼</string>
+    <string name="lady_gaga">Lady Gaga</string>
+    <!-- 29 march -->
+    <string name="santorio">桑托里奥·桑托里奥</string>
+    <string name="musaus">约翰·卡尔·奥古斯特·穆索伊斯</string>
+    <string name="schneider">欧仁·施耐德</string>
+    <string name="walton">山姆·沃尔顿</string>
+    <string name="vane">约翰·范恩</string>
+    <string name="gleeson">布莱丹·格里森</string>
+    <!-- 30 march -->
+    <string name="goya">弗朗西斯科·戈雅</string>
+    <string name="rozier">皮拉特尔·德·罗齐耶</string>
+    <string name="bunsen">罗伯特·本生</string>
+    <string name="verlaine">保罗·魏尔伦</string>
+    <string name="van_gogh">文森特·梵高</string>
+    <string name="sharpe">汤姆·夏普</string>
+    <string name="dion">席琳·迪翁</string>
+    <!-- 31 march -->
+    <string name="descartes">勒内·笛卡尔</string>
+    <string name="marvell">安德鲁·马维尔</string>
+    <string name="bach">约翰·塞巴斯蒂安·巴赫</string>
+    <string name="haydn">约瑟夫·海顿</string>
+    <string name="chukovsky">科尔涅伊·楚科夫斯基</string>
+    <string name="william_bragg">威廉·劳伦斯·布拉格</string>
+    <string name="walken">克里斯托弗·沃肯</string>
+    <!-- 1 april -->
+    <string name="harvey">威廉·哈维</string>
+    <string name="germain">索菲·热尔曼</string>
+    <string name="gogol">尼古拉·果戈里</string>
+    <string name="zsigmondy">理查德·阿道夫·席格蒙迪</string>
+    <string name="busoni">费鲁乔·布索尼</string>
+    <string name="rachmaninoff">谢尔盖·拉赫玛尼诺夫</string>
+    <string name="lon_chaney">朗·钱尼</string>
+    <string name="maslow">亚伯拉罕·马斯洛</string>
+    <!-- 2 april -->
+    <string name="grimaldi">弗朗切斯科·马里亚·格里马尔迪</string>
+    <string name="casanova">贾科莫·卡萨诺瓦</string>
+    <string name="andersen">汉斯·克里斯蒂安·安徒生</string>
+    <string name="butler">尼古拉斯·默里·巴特勒</string>
+    <string name="chrysler">沃尔特·克莱斯勒</string>
+    <string name="fassbender">迈克尔·法斯宾德</string>
+    <!-- 3 april -->
+    <string name="washington_irving">华盛顿·欧文</string>
+    <string name="velde">亨利·范·德·维尔德</string>
+    <string name="jansky">扬·扬斯基</string>
+    <string name="brando">马龙·白兰度</string>
+    <string name="baldwin">亚历克·鲍德温</string>
+    <string name="murphy">艾迪·墨菲</string>
+    <!-- 4 april -->
+    <string name="reid">托马斯·梅恩·里德</string>
+    <string name="siemens">卡尔·威廉·西门子</string>
+    <string name="simmons">丹·西蒙斯</string>
+    <string name="weaving">雨果·维文</string>
+    <string name="robert_downey">小罗伯特·唐尼</string>
+    <string name="ledger">希斯·莱杰</string>
+    <!-- 5 april -->
+    <string name="hobbes">托马斯·霍布斯</string>
+    <string name="viviani">温琴佐·维维亚尼</string>
+    <string name="yale">伊莱胡·耶鲁</string>
+    <string name="spohr">路易·施波尔</string>
+    <string name="dupre">朱尔·杜普雷</string>
+    <string name="nadar">纳达尔</string>
+    <string name="lister">约瑟夫·李斯特</string>
+    <string name="hailey">阿瑟·黑利</string>
+    <!-- 6 april -->
+    <string name="gosse">菲利普·亨利·戈斯</string>
+    <string name="moreau">居斯塔夫·莫罗</string>
+    <string name="douglas">唐纳德·威尔斯·道格拉斯</string>
+    <string name="lynen">费奥多尔·吕嫩</string>
+    <string name="fischer">埃德蒙·亨利·费希尔</string>
+    <string name="james_watson">詹姆斯·沃森</string>
+    <!-- 7 april -->
+    <string name="gerard_dou">赫拉德·道</string>
+    <string name="wordsworth">威廉·华兹华斯</string>
+    <string name="selmi">弗朗切斯科·塞尔米</string>
+    <string name="christiansen">奥勒· kirk·克里斯蒂安森</string>
+    <string name="holiday">比莉·荷莉戴</string>
+    <string name="coppola">弗朗西斯·福特·科波拉</string>
+    <string name="chan">成龙</string>
+    <string name="crowe">罗素·克劳</string>
+    <!-- 8 april -->
+    <string name="tartini">朱塞佩·塔尔蒂尼</string>
+    <string name="von_hofmann">奥古斯特·威廉·冯·霍夫曼</string>
+    <string name="husserl">埃德蒙德·胡塞尔</string>
+    <string name="hicks">约翰·希克斯</string>
+    <string name="calvin">梅尔文·卡尔文</string>
+    <!-- 9 april -->
+    <string name="timur">帖木儿</string>
+    <string name="boehm">特奥巴尔德·伯姆</string>
+    <string name="brunel">伊桑巴德·王国·布鲁内尔</string>
+    <string name="muybridge">埃德沃德·迈布里奇</string>
+    <string name="pincus">格雷戈里·古德温·平卡斯</string>
+    <string name="eckert">约翰·普雷斯珀·埃克特</string>
+    <string name="hefner">休·海夫纳</string>
+    <string name="belmondo">让-保罗·贝尔蒙多</string>
+    <string name="stewart">克里斯汀·斯图尔特</string>
+    <!-- 10 april -->
+    <string name="grotius">胡果·格劳秀斯</string>
+    <string name="tschirnhaus">埃伦弗里德·瓦尔特·冯·契恩豪斯</string>
+    <string name="heinicke">萨穆埃尔·海尼克</string>
+    <string name="pulitzer">约瑟夫·普利策</string>
+    <string name="seagal">史蒂文·西格尔</string>
+    <string name="canet">吉约姆·卡内</string>
+    <!-- 11 april -->
+    <string name="parkinson">詹姆斯·帕金森</string>
+    <string name="bertini">弗兰切斯卡·贝尔蒂尼</string>
+    <string name="julian">珀西·朱利安</string>
+    <string name="lavey">安东·拉维</string>
+    <string name="wiles">安德鲁·怀尔斯</string>
+    <!-- 12 april -->
+    <string name="meyerhof">奥托·弗里茨·迈尔霍夫</string>
+    <string name="lily_pons">莉莉·庞斯</string>
+    <string name="tinbergen">扬·丁伯根</string>
+    <string name="cabalie">蒙特塞拉特·卡巴耶</string>
+    <string name="hancock">赫比·汉考克</string>
+    <string name="garcia">安迪·加西亚</string>
+    <!-- 13 april -->
+    <string name="favre">皮埃尔·法夫尔</string>
+    <string name="fawkes">盖伊·福克斯</string>
+    <string name="bramah">约瑟夫·布拉马</string>
+    <string name="trevithick">理查德·特里维西克</string>
+    <string name="meucci">安东尼奥·梅乌奇</string>
+    <string name="lacan">雅克·拉康</string>
+    <string name="beckett">萨缪尔·贝克特</string>
+    <!-- 14 april -->
+    <string name="ortelius">亚伯拉罕·奥特柳斯</string>
+    <string name="huygens">克里斯蒂安·惠更斯</string>
+    <string name="fonvizin">杰尼斯·冯维辛</string>
+    <string name="rohlfs">格哈德·罗尔夫斯</string>
+    <string name="horsley">维克托·霍斯利</string>
+    <string name="matsumoto">松本行弘</string>
+    <!-- 15 april -->
+    <string name="da_vinci">列奥纳多·达·芬奇</string>
+    <string name="leonhard_euler">莱昂哈德·欧拉</string>
+    <string name="cullen">威廉·卡伦</string>
+    <string name="busch">威廉·布施</string>
+    <string name="gumilyov">尼古拉·古米廖夫</string>
+    <string name="emma_thompson">艾玛·汤普森</string>
+    <string name="emma_watson">艾玛·沃森</string>
+    <!-- 16 april -->
+    <string name="apianus">彼得鲁斯·阿皮亚努斯</string>
+    <string name="hadley">约翰·哈德利</string>
+    <string name="eisenstein">戈特霍尔德·艾森斯坦</string>
+    <string name="france">阿纳托尔·法郎士</string>
+    <string name="wright">威尔伯·莱特</string>
+    <string name="chaplin">查理·卓别林</string>
+    <!-- 17 april -->
+    <string name="morgan">约翰·皮尔庞特·摩根</string>
+    <string name="starling">欧内斯特·亨利·斯塔林</string>
+    <string name="saeverud">哈拉尔·塞韦鲁德</string>
+    <string name="kohler">乔治斯·克勒</string>
+    <string name="garner">詹妮弗·加纳</string>
+    <string name="beckham">维多利亚·贝克汉姆</string>
+    <!-- 18 april -->
+    <string name="ricardo">大卫·李嘉图</string>
+    <string name="boisbaudran">保罗·埃米尔·勒科克·德·布瓦博德朗</string>
+    <string name="goldstein">约瑟夫·伦纳德·戈德斯坦</string>
+    <string name="sokolov">格里戈里·索科洛夫</string>
+    <string name="eric_roberts">埃里克·罗伯茨</string>
+    <string name="tennant">大卫·田纳特</string>
+    <!-- 19 april -->
+    <string name="ehrenberg">克里斯蒂安·戈特弗里德·埃伦贝格</string>
+    <string name="gerstner">弗朗茨·安东·冯·格斯纳</string>
+    <string name="fechner">古斯塔夫·特奥多尔·费希纳</string>
+    <string name="hughes">理查德·休斯</string>
+    <string name="seaborg">格伦·西博格</string>
+    <string name="judd">艾什莉·贾德</string>
+    <string name="christensen">海登·克里斯滕森</string>
+    <!-- 20 april -->
+    <string name="aretino">彼得罗·阿雷蒂诺</string>
+    <string name="pinel">菲利普·皮内尔</string>
+    <string name="raffaelli">让-弗朗索瓦·拉法埃利</string>
+    <string name="hitler">阿道夫·希特勒</string>
+    <string name="lloyd">哈罗德·劳埃德</string>
+    <string name="leiris">米歇尔·莱里斯</string>
+    <string name="muller">卡尔·亚历山大·米勒</string>
+    <string name="sedgwick">伊迪·塞奇威克</string>
+    <!-- 21 april -->
+    <string name="riebeeck">扬·范·里贝克</string>
+    <string name="kulibin">伊万·库利宾</string>
+    <string name="frobel">弗里德里希·福禄贝尔</string>
+    <string name="starley">詹姆斯·斯塔利</string>
+    <string name="flemming">瓦尔特·弗莱明</string>
+    <string name="weber">马克斯·韦伯</string>
+    <string name="bridgman">珀西·威廉斯·布里奇曼</string>
+    <string name="karrer">保罗·卡勒</string>
+    <!-- 22 april -->
+    <string name="fielding">亨利·菲尔丁</string>
+    <string name="kant">伊曼努尔·康德</string>
+    <string name="plante">加斯东·普兰特</string>
+    <string name="eichler">奥古斯特·威廉·艾希勒</string>
+    <string name="bohr">哈拉尔德·玻尔</string>
+    <string name="mabokov">弗拉基米尔·纳博科夫</string>
+    <string name="oppenheimer">朱利叶斯·罗伯特·奥本海默</string>
+    <string name="mingus">查尔斯·明格斯</string>
+    <string name="nicholson">杰克·尼科尔森</string>
+    <!-- 23 april -->
+    <string name="planck">马克斯·普朗克</string>
+    <string name="fibiger">约翰内斯·菲比格</string>
+    <string name="marsh">奈欧·马许</string>
+    <string name="ohlin">贝蒂尔·俄林</string>
+    <string name="laxness">哈尔多尔·拉克斯内斯</string>
+    <string name="cena">约翰·塞纳</string>
+    <string name="patel">戴夫·帕特尔</string>
+    <!-- 24 april -->
+    <string name="martini">乔瓦尼·巴蒂斯塔·马蒂尼</string>
+    <string name="cartwright">埃德蒙·卡特赖特</string>
+    <string name="spitteler">卡尔·施皮特勒</string>
+    <string name="bertillon">阿方斯·贝蒂荣</string>
+    <string name="sundback">吉迪恩·森德巴克</string>
+    <string name="streisand">芭芭拉·史翠珊</string>
+    <!-- 25 april -->
+    <string name="marc_brunel">马克·伊桑巴德·布鲁内尔</string>
+    <string name="klein">费利克斯·克莱因</string>
+    <string name="felix_dherelle">费利克斯·德雷勒</string>
+    <string name="marconi">古列尔莫·马可尼</string>
+    <string name="pauli">沃尔夫冈·泡利</string>
+    <string name="fitzgerald">埃拉·菲茨杰拉德</string>
+    <string name="al_pacino">阿尔·帕西诺</string>
+    <string name="cruyff">约翰·克鲁伊夫</string>
+    <string name="zellweger">蕾妮·齐薇格</string>
+    <!-- 26 april -->
+    <string name="aurelius">马可·奥勒留</string>
+    <string name="shakespeare">威廉·莎士比亚</string>
+    <string name="uhland">路德维希·乌兰德</string>
+    <string name="delacroix">欧仁·德拉克罗瓦</string>
+    <string name="krupp">阿尔弗雷德·克虏伯</string>
+    <string name="billroth">特奥多尔·比尔罗特</string>
+    <string name="richardson">欧文·威兰斯·理查森</string>
+    <string name="wittgenstein">路德维希·维特根斯坦</string>
+    <string name="charles_richter">查尔斯·弗朗西斯·里克特</string>
+    <!-- 27 april -->
+    <string name="kolreuter">约瑟夫·戈特利布·克尔罗伊特</string>
+    <string name="wollstonecraft">玛丽·沃斯通克拉夫特</string>
+    <string name="morse">萨缪尔·摩尔斯</string>
+    <string name="carothers">华莱士·卡罗瑟斯</string>
+    <string name="lantz">沃尔特·兰兹</string>
+    <!-- 28 april-->
+    <string name="achard">弗朗茨·卡尔·阿哈德</string>
+    <string name="kraus">卡尔·克劳斯</string>
+    <string name="godel">库尔特·哥德尔</string>
+    <string name="schindler">奥斯卡·辛德勒</string>
+    <string name="lamborghini">费鲁吉欧·兰博基尼</string>
+    <string name="harper_lee">哈珀·李</string>
+    <string name="yves_klein">伊夫·克莱因</string>
+    <string name="cruz">佩内洛普·克鲁兹</string>
+    <!-- 29 april -->
+    <string name="drais">卡尔·德莱斯</string>
+    <string name="poincare">昂利·庞加莱</string>
+    <string name="hearst">威廉·伦道夫·赫斯特</string>
+    <string name="urey">哈罗德·尤里</string>
+    <string name="jack_williamson">杰克·威廉森</string>
+    <string name="pfeiffer">米歇尔·菲佛</string>
+    <string name="thurman">乌玛·瑟曼</string>
+    <!-- 30 april -->
+    <string name="gauss">卡尔·弗里德里希·高斯</string>
+    <string name="bleuler">欧根·布洛伊勒</string>
+    <string name="kuznets">西蒙·库兹涅茨</string>
+    <string name="schultz">西奥多·舒尔茨</string>
+    <string name="shannon">克劳德·香农</string>
+    <string name="gal_gadot">盖尔·加朵</string>
+    <!-- 1 may -->
+    <string name="addison">约瑟夫·艾迪生</string>
+    <string name="cajal">圣地亚哥·拉蒙-卡哈尔</string>
+    <string name="chardin">德日进</string>
+    <string name="woo">吴宇森</string>
+    <string name="dornan">杰米·道南</string>
+    <!-- 2 may -->
+    <string name="kirche">阿塔纳修斯·基歇尔</string>
+    <string name="jerome">杰罗姆·K·杰罗姆</string>
+    <string name="wood">罗伯特·威廉斯·伍德</string>
+    <string name="marshall">艾伦·马歇尔</string>
+    <string name="springer">阿克塞尔·施普林格</string>
+    <string name="johnson">道恩·强森</string>
+    <string name="david_beckham">大卫·贝克汉姆</string>
+    <!-- 3 may -->
+    <string name="machiavelli">尼可罗·马基亚维利</string>
+    <string name="haldane">约翰·斯科特·霍尔丹</string>
+    <string name="ekman">瓦格恩·瓦尔弗里德·埃克曼</string>
+    <string name="coty">弗朗索瓦·科蒂</string>
+    <string name="thomson">乔治·佩吉特·汤姆孙</string>
+    <string name="kastler">阿尔弗雷德·卡斯特勒</string>
+    <!-- 4 may -->
+    <string name="cristofori">巴尔托洛梅奥·克里斯托福里</string>
+    <string name="borda">让-夏尔·德·博尔达</string>
+    <string name="brockhaus">弗里德里希·阿诺德·布罗克豪斯</string>
+    <string name="thenard">路易·雅克·泰纳尔</string>
+    <string name="liddell">爱丽丝·利德尔</string>
+    <string name="mandelstam">列昂尼德·曼德尔施塔姆</string>
+    <string name="hepburn">奥黛丽·赫本</string>
+    <!-- 5 may -->
+    <string name="kierkegaard">索伦·克尔凯郭尔</string>
+    <string name="marx">卡尔·马克思</string>
+    <string name="sienkiewicz">亨利克·显克微支</string>
+    <string name="schawlow">阿瑟·伦纳德·肖洛</string>
+    <string name="adele">阿黛尔</string>
+    <!-- 6 may -->
+    <string name="freud">西格蒙德·弗洛伊德</string>
+    <string name="peary">罗伯特·皮里</string>
+    <string name="grignard">维克多·格林尼亚</string>
+    <string name="martinson">哈里·马丁松</string>
+    <string name="clooney">乔治·克鲁尼</string>
+    <!-- 7 may -->
+    <string name="clairaut">亚历克西斯·克莱罗</string>
+    <string name="robert_browning">罗伯特·勃朗宁</string>
+    <string name="tchaikovsky">彼得·伊里奇·柴可夫斯基</string>
+    <string name="tagore">罗宾德拉纳特·泰戈尔</string>
+    <string name="reymont">瓦迪斯瓦夫·雷蒙特</string>
+    <string name="land">埃德温·赫伯特·兰德</string>
+    <!-- 8 may -->
+    <string name="dunant">亨利·杜南</string>
+    <string name="lwoff">安德烈·米歇尔·利沃夫</string>
+    <string name="fernandel">费南代尔</string>
+    <string name="rossellini">罗伯托·罗西里尼</string>
+    <string name="iglesias">安立奎·伊格莱西亚斯</string>
+    <!-- 9 may -->
+    <string name="monge">加斯帕尔·蒙日</string>
+    <string name="opel">亚当·欧宝</string>
+    <string name="laval">古斯塔夫·德·拉瓦尔</string>
+    <string name="carter">霍华德·卡特</string>
+    <string name="gasset">何塞·奥尔特加·伊·加塞特</string>
+    <string name="richard_day">理查德·戴</string>
+    <string name="eigen">曼弗雷德·艾根</string>
+    <!-- 10 may -->
+    <string name="lisle">克洛德·约瑟夫·鲁日·德·李尔</string>
+    <string name="fresnel">奥古斯丁-让·菲涅耳</string>
+    <string name="killing">威廉·基灵</string>
+    <string name="lipton">托马斯·利普顿</string>
+    <string name="gaumont">莱昂·高蒙</string>
+    <string name="barth">卡尔·巴特</string>
+    <string name="selznick">大卫·O·塞尔兹尼克</string>
+    <string name="chapman">马克·大卫·查普曼</string>
+    <!-- 11 may -->
+    <string name="munchhausen">希罗尼穆斯·卡尔·弗里德里希·冯·闵希豪森</string>
+    <string name="blumenbach">约翰·弗里德里希·布卢门巴赫</string>
+    <string name="voynich">埃塞尔·莉莲·伏尼契</string>
+    <string name="dali">萨尔瓦多·达利</string>
+    <string name="feynman">理查德·费曼</string>
+    <string name="dijkstra">艾兹格·W·迪杰斯特拉</string>
+    <string name="iniesta">安德烈斯·伊涅斯塔</string>
+    <!-- 12 may -->
+    <string name="lear">爱德华·李尔</string>
+    <string name="hind">约翰·罗素·欣德</string>
+    <string name="pirquet">克莱门斯·冯·皮尔凯</string>
+    <string name="giauque">威廉·吉奥克</string>
+    <string name="devi">英德拉·黛维</string>
+    <string name="voznesensky">安德烈·沃兹涅先斯基</string>
+    <!-- 13 may -->
+    <string name="nevsky">亚历山大·涅夫斯基</string>
+    <string name="daudet">阿尔封斯·都德</string>
+    <string name="ross">罗纳德·罗斯</string>
+    <string name="braque">乔治·布拉克</string>
+    <string name="wonder">史提夫·汪达</string>
+    <string name="rodman">丹尼斯·罗德曼</string>
+    <string name="pattinson">罗伯特·帕丁森</string>
+    <!-- 14 may -->
+    <string name="gainsborough">托马斯·庚斯博罗</string>
+    <string name="steinitz">威廉·斯坦尼茨</string>
+    <string name="tsvet">米哈伊尔·茨维特</string>
+    <string name="lucas">乔治·卢卡斯</string>
+    <string name="zemeckis">罗伯特·泽米吉斯</string>
+    <string name="tim_roth">蒂姆·罗斯</string>
+    <string name="blanchett">凯特·布兰切特</string>
+    <string name="zuckerberg">马克·扎克伯格</string>
+    <!-- 15 may -->
+    <string name="mechnikov">伊利亚·梅契尼可夫</string>
+    <string name="vasnetsov">维克托·瓦斯涅佐夫</string>
+    <string name="wernicke">卡尔·韦尼克</string>
+    <string name="baum">莱曼·弗兰克·鲍姆</string>
+    <string name="curie">皮埃尔·居里</string>
+    <string name="bulgakov">米哈伊尔·布尔加科夫</string>
+    <!-- 16 may -->
+    <string name="agnesi">玛丽亚·加埃塔纳·阿涅西</string>
+    <string name="vauquelin">路易-尼古拉·沃克兰</string>
+    <string name="david_hughes">大卫·爱德华·休斯</string>
+    <string name="fonda">亨利·方达</string>
+    <string name="herman">伍迪·赫尔曼</string>
+    <string name="trejo">丹尼·特雷霍</string>
+    <string name="brosnan">皮尔斯·布鲁斯南</string>
+    <string name="megan_fox">梅根·福克斯</string>
+    <!-- 17 may -->
+    <string name="jenner">爱德华·詹纳</string>
+    <string name="lockyer">诺曼·洛克耶</string>
+    <string name="hassel">奥德·哈塞尔</string>
+    <string name="gabin">让·迦本</string>
+    <string name="nilsson">比尔吉特·尼尔松</string>
+    <string name="hopper">丹尼斯·霍珀</string>
+    <!-- 18 may -->
+    <string name="khayyam">欧玛尔·海亚姆</string>
+    <string name="clapperton">休·克拉珀顿</string>
+    <string name="hofmeister">威廉·霍夫迈斯特</string>
+    <string name="heaviside">奥利弗·亥维赛</string>
+    <string name="bertrand_russell">伯特兰·罗素</string>
+    <string name="vigneaud">文森特·迪维尼奥</string>
+    <string name="cretu">迈克尔·克雷图</string>
+    <!-- 19 may -->
+    <string name="evola">尤利乌斯·埃沃拉</string>
+    <string name="colin_chapman">柯林·查普曼</string>
+    <string name="placido">米凯莱·普拉奇多</string>
+    <string name="karapetyan">沙瓦尔什·卡拉佩强</string>
+    <string name="oreiro">娜塔莉亚·奥雷罗</string>
+    <string name="pirlo">安德烈亚·皮尔洛</string>
+    <string name="sam_smith">萨姆·史密斯</string>
+    <!-- 20 may -->
+    <string name="fabricius">希罗尼穆斯·法布里修斯</string>
+    <string name="balzac">奥诺雷·德·巴尔扎克</string>
+    <string name="passy">弗雷德里克·帕西</string>
+    <string name="berliner">埃米尔·贝利纳</string>
+    <string name="hewlett">威廉·雷丁顿·休利特</string>
+    <string name="edward_lewis">爱德华·刘易斯</string>
+    <string name="cher">雪儿</string>
+    <!-- 21 may -->
+    <string name="durer">阿尔布雷希特·丢勒</string>
+    <string name="coriolis">加斯帕尔-居斯塔夫·德·科里奥利</string>
+    <string name="kock">保罗·德·科克</string>
+    <string name="renault">路易·雷诺</string>
+    <string name="einthoven">威廉·埃因托芬</string>
+    <string name="sakharov">安德烈·萨哈罗夫</string>
+    <!-- 22 may -->
+    <string name="wagner">理查德·瓦格纳</string>
+    <string name="doyle">阿瑟·柯南·道尔</string>
+    <string name="olivier">劳伦斯·奥利维尔</string>
+    <string name="herge">埃尔热</string>
+    <string name="herbert_brown">赫伯特·查尔斯·布朗</string>
+    <string name="campbell">娜奥米·坎贝尔</string>
+    <!-- 23 may -->
+    <string name="linnaeus">卡尔·林奈</string>
+    <string name="mesmer">弗朗茨·梅斯梅尔</string>
+    <string name="lilienthal">奥托·李林塔尔</string>
+    <string name="fairbanks">道格拉斯·范朋克</string>
+    <string name="lagerkvist">佩尔·拉格奎斯特</string>
+    <string name="bardeen">约翰·巴丁</string>
+    <string name="moog">罗伯特·穆格</string>
+    <!-- 24 may -->
+    <string name="pontormo">蓬托尔莫</string>
+    <string name="fahrenheit">丹尼尔·加布里埃尔·华伦海特</string>
+    <string name="sholokhov">米哈伊尔·肖洛霍夫</string>
+    <string name="brodsky">约瑟夫·布罗茨基</string>
+    <string name="dylan">鲍勃·迪伦</string>
+    <string name="deakins">罗杰·狄金斯</string>
+    <!-- 25 may -->
+    <string name="emerson">拉尔夫·沃尔多·爱默生</string>
+    <string name="burckhardt">雅各布·布克哈特</string>
+    <string name="zeeman">彼得·塞曼</string>
+    <string name="steinberger">杰克·施泰因贝格尔</string>
+    <string name="mckellen">伊恩·麦克莱恩</string>
+    <string name="myers">迈克·梅尔斯</string>
+    <!-- 26 may -->
+    <string name="petty">威廉·配第</string>
+    <string name="moivre">亚伯拉罕·棣莫弗</string>
+    <string name="john_wayne">约翰·韦恩</string>
+    <string name="miles_davis">迈尔斯·戴维斯</string>
+    <string name="kevorkian">杰克·凯沃基安</string>
+    <string name="kravitz">兰尼·克拉维茨</string>
+    <string name="helena_carter">海伦娜·伯翰·卡特</string>
+    <!-- 27 may -->
+    <string name="vanderbilt">科尼利厄斯·范德比尔特</string>
+    <string name="duncan">伊莎多拉·邓肯</string>
+    <string name="cockcroft">约翰·考克饶夫</string>
+    <string name="christopher_lee">克里斯托弗·李</string>
+    <string name="bettany">保罗·贝坦尼</string>
+    <!-- 28 may -->
+    <string name="guillotin">约瑟夫·伊尼亚斯·吉约丹</string>
+    <string name="thomas_moore">托马斯·摩尔</string>
+    <string name="agassiz">路易·阿加西</string>
+    <string name="milankovic">米卢廷·米兰科维奇</string>
+    <string name="ian_fleming">伊恩·弗莱明</string>
+    <string name="minogue">凯莉·米洛</string>
+    <!-- 29 may -->
+    <string name="david_bruce">大卫·布鲁斯</string>
+    <string name="chesterton">吉尔伯特·基思·切斯特顿</string>
+    <string name="spengler">奥斯瓦尔德·斯宾格勒</string>
+    <string name="bob_hope">鲍勃·霍普</string>
+    <string name="goldberg">莱娅·戈德堡</string>
+    <string name="kennedy">约翰·菲茨杰拉德·肯尼迪</string>
+    <!-- 30 may -->
+    <string name="hagen">赫尔曼·奥古斯特·哈根</string>
+    <string name="faberge">彼得·卡尔·法贝热</string>
+    <string name="thalberg">欧文·撒尔伯格</string>
+    <string name="alfven">汉尼斯·阿尔文</string>
+    <string name="blanc">梅尔·布兰克</string>
+    <string name="gerrard">史蒂文·杰拉德</string>
+    <!-- 31 may -->
+    <string name="tieck">路德维希·蒂克</string>
+    <string name="pugni">切萨雷·普尼</string>
+    <string name="pirrie">威廉·詹姆斯·皮里</string>
+    <string name="perse">圣琼·佩斯</string>
+    <string name="allais">莫里斯·阿莱</string>
+    <string name="eastwood">克林特·伊斯特伍德</string>
+    <string name="jay_miner">杰伊·迈纳</string>
+    <!-- 1 june -->
+    <string name="paer">费迪南多·帕尔</string>
+    <string name="carnot">尼古拉·莱昂纳尔·萨迪·卡诺</string>
+    <string name="glinka">米哈伊尔·格林卡</string>
+    <string name="monroe">玛丽莲·梦露</string>
+    <string name="foster">诺曼·福斯特</string>
+    <string name="freeman">摩根·弗里曼</string>
+    <string name="persson">马库斯·佩尔松</string>
+    <!-- 2 june -->
+    <string name="de_sade">萨德侯爵</string>
+    <string name="cagliostro">亚历山德罗·卡廖斯特罗</string>
+    <string name="akimov">伊万·阿基莫夫</string>
+    <string name="hardy">托马斯·哈代</string>
+    <string name="weissmuller">尊尼·威士慕拉</string>
+    <string name="quinto">扎克瑞·昆图</string>
+    <!-- 3 june -->
+    <string name="hutton">詹姆斯·赫顿</string>
+    <string name="shrapnel">亨利·施雷普内尔</string>
+    <string name="cobden">理查德·科布登</string>
+    <string name="timiryazev">克利缅特·季米里亚泽夫</string>
+    <string name="pearl">雷蒙德·珀尔</string>
+    <string name="arber">维尔纳·阿尔伯</string>
+    <string name="nadal">拉斐尔·纳达尔</string>
+    <!-- 4 june -->
+    <string name="quesnay">弗朗索瓦·魁奈</string>
+    <string name="nazimova">阿拉·纳齐莫娃</string>
+    <string name="cockerell">克里斯托弗·科克雷尔</string>
+    <string name="bartoli">切奇莉亚·巴托莉</string>
+    <string name="jolie">安吉丽娜·朱莉</string>
+    <!-- 5 june -->
+    <string name="chippendale">托马斯·齐彭代尔</string>
+    <string name="keynes">约翰·梅纳德·凯恩斯</string>
+    <string name="lorca">费德里科·加西亚·洛尔卡</string>
+    <string name="gabor">丹尼斯·加博尔</string>
+    <string name="peierls">鲁道夫·派尔斯</string>
+    <string name="wahlberg">马克·沃尔伯格</string>
+    <!-- 6 june -->
+    <string name="regiomontanus">雷格蒙塔努斯</string>
+    <string name="velazquez">迭戈·委拉斯开兹</string>
+    <string name="corneille">皮埃尔·高乃依</string>
+    <string name="pushkin">亚历山大·普希金</string>
+    <string name="braun">卡尔·费迪南德·布劳恩</string>
+    <string name="mann">托马斯·曼</string>
+    <!-- 7 june -->
+    <string name="brummell">博·布鲁梅尔</string>
+    <string name="auer">利奥波德·奥尔</string>
+    <string name="mackintosh">查尔斯·雷尼·麦金托什</string>
+    <string name="barkla">查尔斯·格洛弗·巴克拉</string>
+    <string name="mulliken">罗伯特·桑德森·马利肯</string>
+    <string name="apgar">维吉尼亚·阿普加</string>
+    <string name="martin">迪恩·马丁</string>
+    <string name="neeson">连姆·尼森</string>
+    <!-- 8 june -->
+    <string name="cassini">乔瓦尼·多梅尼科·卡西尼</string>
+    <string name="albinoni">托马索·阿尔比诺尼</string>
+    <string name="careme">马里-安托万·卡雷姆</string>
+    <string name="schumann">罗伯特·舒曼</string>
+    <string name="yeste">圣地亚哥·伯纳乌·耶斯特</string>
+    <string name="john_campbell">约翰·伍德·坎贝尔</string>
+    <string name="kanye_west">坎耶·韦斯特</string>
+    <!-- 9 june -->
+    <string name="stephenson">乔治·斯蒂芬森</string>
+    <string name="galle">约翰·戈特弗里德·加勒</string>
+    <string name="suttner">贝尔塔·冯·苏特纳</string>
+    <string name="dale">亨利·哈利特·戴尔</string>
+    <string name="fox">迈克尔·J·福克斯</string>
+    <string name="depp">约翰尼·德普</string>
+    <string name="portman">娜塔莉·波特曼</string>
+    <!-- 10 june -->
+    <string name="courbet">居斯塔夫·库尔贝</string>
+    <string name="otto">尼古拉斯·奥托</string>
+    <string name="cook">弗雷德里克·库克</string>
+    <string name="mcdaniel">海蒂·麦克丹尼尔</string>
+    <string name="bellow">索尔·贝娄</string>
+    <string name="garland">朱迪·加兰</string>
+    <!-- 11 june -->
+    <string name="constable">约翰·康斯特勃</string>
+    <string name="fortuny">马里亚诺·福图尼</string>
+    <string name="richard_strauss">理查德·施特劳斯</string>
+    <string name="cousteau">雅克-伊夫·库斯托</string>
+    <string name="styron">威廉·斯泰隆</string>
+    <string name="laurie">休·劳瑞</string>
+    <string name="dinklage">彼特·丁拉基</string>
+    <string name="labeouf">希亚·拉博夫</string>
+    <!-- 12 june -->
+    <string name="roebling">约翰·奥古斯特·罗布林</string>
+    <string name="lipmann">弗里茨·阿尔伯特·李普曼</string>
+    <string name="frank">安妮·弗兰克</string>
+    <string name="sakmann">伯特·萨克曼</string>
+    <string name="lima">阿德里亚娜·利马</string>
+    <!-- 13 june -->
+    <string name="young">托马斯·杨</string>
+    <string name="maxwell">詹姆斯·克拉克·麦克斯韦</string>
+    <string name="yeats">威廉·巴特勒·叶芝</string>
+    <string name="john_nash">小约翰·福布斯·纳什</string>
+    <string name="mcdowell">马尔科姆·麦克道威尔</string>
+    <string name="perelman">格里戈里·佩雷尔曼</string>
+    <string name="evans">克里斯·埃文斯</string>
+    <!-- 14 june -->
+    <string name="coulomb">夏尔-奥古斯丁·德·库仑</string>
+    <string name="stowe">哈丽叶特·比切·斯托</string>
+    <string name="landsteiner">卡尔·兰德施泰纳</string>
+    <string name="tokarev">费多尔·托卡列夫</string>
+    <string name="church">阿隆佐·邱奇</string>
+    <string name="guevara">埃内斯托·切·格瓦拉</string>
+    <string name="graf">施特菲·格拉芙</string>
+    <!-- 15 june -->
+    <string name="poussin">尼古拉·普桑</string>
+    <string name="fourcroy">安托万·弗朗索瓦·德·富尔克鲁瓦</string>
+    <string name="balmont">康斯坦丁·巴尔蒙特</string>
+    <string name="belushi">詹姆斯·贝鲁什</string>
+    <string name="helen_hunt">海伦·亨特</string>
+    <string name="kahn">奥利弗·卡恩</string>
+    <string name="harris">尼尔·帕特里克·哈里斯</string>
+    <!-- 16 june -->
+    <string name="boccaccio">乔瓦尼·薄伽丘</string>
+    <string name="plucker">尤利乌斯·普吕克</string>
+    <string name="friedmann">亚历山大·弗里德曼</string>
+    <string name="leinster">默里·莱因斯特</string>
+    <string name="chakraborty">米通·查克拉博蒂</string>
+    <string name="shakur">图帕克·沙库尔</string>
+    <string name="john_newman">约翰·纽曼</string>
+    <!-- 17 june -->
+    <string name="panini">乔瓦尼·保罗·帕尼尼</string>
+    <string name="gounod">夏尔·古诺</string>
+    <string name="stravinsky">伊戈尔·斯特拉文斯基</string>
+    <string name="escher">莫里茨·科内利斯·埃舍尔</string>
+    <string name="wakefield">露丝·格雷夫斯·韦克菲尔德</string>
+    <string name="jacob">弗朗索瓦·雅各布</string>
+    <!-- 18 june -->
+    <string name="goncharov">伊万·冈察洛夫</string>
+    <string name="laveran">夏尔·路易·阿方斯·拉韦朗</string>
+    <string name="flagg">詹姆斯·蒙哥马利·弗拉格</string>
+    <string name="macdonald">珍妮特·麦克唐纳</string>
+    <string name="mccartney">保罗·麦卡特尼</string>
+    <string name="capello">法比奥·卡佩罗</string>
+    <!-- 19 june -->
+    <string name="pascal">布莱士·帕斯卡</string>
+    <string name="dazai">太宰治</string>
+    <string name="flory">保罗·弗洛里</string>
+    <string name="aage_bohr">奥格·尼尔斯·玻尔</string>
+    <string name="rushdie">萨尔曼·鲁西迪</string>
+    <string name="dujardin">让·杜雅尔丹</string>
+    <!-- 20 june -->
+    <string name="rosa">萨尔瓦托·罗萨</string>
+    <string name="offenbach">雅克·奥芬巴赫</string>
+    <string name="bonnat">莱昂·博纳</string>
+    <string name="kidman">妮可·基德曼</string>
+    <string name="rodriguez">罗伯特·罗德里格兹</string>
+    <!-- 21 june -->
+    <string name="poisson">西莫恩·德尼·泊松</string>
+    <string name="sartre">让-保罗·萨特</string>
+    <string name="mcewan">伊恩·麦克尤恩</string>
+    <string name="platini">米歇尔·普拉蒂尼</string>
+    <string name="tsoi">维克多·崔</string>
+    <string name="lana_del_rey">拉娜·德雷</string>
+    <!-- 22 june -->
+    <string name="haggard">亨利·莱特·哈葛德</string>
+    <string name="minkowski">赫尔曼·闵可夫斯基</string>
+    <string name="huxley">朱利安·赫胥黎</string>
+    <string name="remarque">埃里希·玛利亚·雷马克</string>
+    <string name="dillinger">约翰·迪林杰</string>
+    <string name="wilder">比利·怀尔德</string>
+    <string name="streep">梅丽尔·斯特里普</string>
+    <string name="dan_brown">丹·布朗</string>
+    <!-- 23 june -->
+    <string name="vico">詹巴蒂斯塔·维柯</string>
+    <string name="beauharnais">约瑟芬·德·博阿尔内</string>
+    <string name="akhmatova">安娜·阿赫玛托娃</string>
+    <string name="turing">艾伦·图灵</string>
+    <string name="fosse">鲍勃·福斯</string>
+    <string name="zidane">齐内丁·齐达内</string>
+    <!-- 24 june -->
+    <string name="victor_hess">维克托·弗朗茨·赫斯</string>
+    <string name="fangio">胡安·曼努埃尔·范吉奥</string>
+    <string name="perl">马丁·刘易斯·珀尔</string>
+    <string name="chabrol">克洛德·夏布洛尔</string>
+    <string name="messi">利昂内尔·梅西</string>
+    <!-- 25 june -->
+    <string name="gaudi">安东尼·高迪</string>
+    <string name="nernst">瓦尔特·能斯脱</string>
+    <string name="orwell">乔治·奥威尔</string>
+    <string name="lumet">西德尼·吕美特</string>
+    <string name="abrikosov">阿列克谢·阿布里科索夫</string>
+    <string name="michael">乔治·迈克尔</string>
+    <!-- 26 june -->
+    <string name="brandt">格奥尔格·勃兰特</string>
+    <string name="kelvin">威廉·汤姆孙，第一代开尔文男爵</string>
+    <string name="buck">赛珍珠</string>
+    <string name="bill_lear">比尔·李尔</string>
+    <string name="robert_richardson">罗伯特·科尔曼·理查森</string>
+    <!-- 27 june -->
+    <string name="mauser">保罗·毛瑟</string>
+    <string name="spemann">汉斯·施佩曼</string>
+    <string name="keller">海伦·凯勒</string>
+    <string name="abrams">J·J·艾布拉姆斯</string>
+    <string name="maguire">托比·马奎尔</string>
+    <string name="raul">劳尔·冈萨雷斯·布兰科</string>
+    <!-- 28 june -->
+    <string name="rubens">彼得·保罗·鲁本斯</string>
+    <string name="rousseau">让-雅克·卢梭</string>
+    <string name="broca">保罗·布罗卡</string>
+    <string name="pirandello">路易吉·皮兰德娄</string>
+    <string name="carrel">亚历克西·卡雷尔</string>
+    <string name="goeppert_mayer">玛丽亚·格佩特-梅耶</string>
+    <string name="kathy_bates">凯西·贝茨</string>
+    <string name="cusack">约翰·库萨克</string>
+    <string name="musk">埃隆·马斯克</string>
+    <!-- 29 june -->
+    <string name="dodoens">伦贝特·多多恩斯</string>
+    <string name="ressel">约瑟夫·雷塞尔</string>
+    <string name="leopardi">贾科莫·莱奥帕尔迪</string>
+    <string name="exupery">安托万·德·圣-埃克苏佩里</string>
+    <string name="fallaci">奥里亚娜·法拉奇</string>
+    <string name="scherzinger">妮可·舒可辛格</string>
+    <!-- 30 june -->
+    <string name="vernet">奥拉斯·韦尔内</string>
+    <string name="hooker">约瑟夫·道尔顿·胡克</string>
+    <string name="duhamel">乔治·杜阿梅尔</string>
+    <string name="milosz">切斯瓦夫·米沃什</string>
+    <string name="ballard">罗伯特·巴拉德</string>
+    <string name="tyson">迈克·泰森</string>
+    <string name="phelps">迈克尔·菲尔普斯</string>
+    <!-- 1 july -->
+    <string name="leibniz">戈特弗里德·威廉·莱布尼茨</string>
+    <string name="poncelet">让-维克托·彭赛列</string>
+    <string name="george_sand">乔治·桑</string>
+    <string name="vierordt">卡尔·冯·菲尔绍特</string>
+    <string name="bleriot">路易·布莱里奥</string>
+    <string name="lauder">雅诗·兰黛</string>
+    <string name="diana">威尔士王妃戴安娜</string>
+    <string name="pamela_anderson">帕米拉·安德森</string>
+    <!-- 2 july -->
+    <string name="gluck">克里斯托夫·维利巴尔德·格鲁克</string>
+    <string name="henry_bragg">威廉·亨利·布拉格</string>
+    <string name="hesse">赫尔曼·黑塞</string>
+    <string name="lacoste">勒内·拉科斯特</string>
+    <string name="cardin">皮尔·卡丹</string>
+    <string name="lumumba">帕特里斯·卢蒙巴</string>
+    <string name="naceri">萨米·纳塞利</string>
+    <string name="robbie">玛格特·罗比</string>
+    <!-- 3 july -->
+    <string name="adam">罗伯特·亚当</string>
+    <string name="kafka">弗朗茨·卡夫卡</string>
+    <string name="stoppard">汤姆·斯托帕德</string>
+    <string name="cruise">汤姆·克鲁斯</string>
+    <string name="selanne">特穆·塞拉尼</string>
+    <!-- 4 july -->
+    <string name="blanchard">让-皮埃尔·布兰查德</string>
+    <string name="everest">乔治·埃佛勒斯</string>
+    <string name="garibaldi">朱塞佩·加里波第</string>
+    <string name="manolete">马诺莱特</string>
+    <string name="lollobrigida">吉娜·劳洛勃丽吉达</string>
+    <!-- 5 july -->
+    <string name="bulgarin">法捷伊·布尔加林</string>
+    <string name="fitzroy">罗伯特·菲茨罗伊</string>
+    <string name="rankine">威廉·约翰·兰金</string>
+    <string name="zetkin">克拉拉·蔡特金</string>
+    <string name="gasser">赫伯特·斯宾塞·加瑟</string>
+    <string name="cocteau">让·科克托</string>
+    <!-- 6 july -->
+    <string name="raffles">斯坦福·莱佛士</string>
+    <string name="heidenstam">魏尔纳·冯·海登斯坦</string>
+    <string name="chagall">马克·夏加尔</string>
+    <string name="bill_haley">比尔·哈利</string>
+    <string name="stallone">西尔维斯特·史泰龙</string>
+    <string name="rush">杰弗里·拉什</string>
+    <string name="eva_green">伊娃·格林</string>
+    <!-- 7 july -->
+    <string name="jacquard">约瑟夫·玛丽·雅卡尔</string>
+    <string name="golgi">卡米洛·高尔基</string>
+    <string name="mahler">古斯塔夫·马勒</string>
+    <string name="feuchtwanger">利翁·福伊希特万格</string>
+    <string name="ringo_starr">林戈·斯塔尔</string>
+    <string name="cutugno">托托·库图尼奥</string>
+    <!-- 8 july -->
+    <string name="fontaine">让·德·拉封丹</string>
+    <string name="zeppelin">斐迪南·冯·齐柏林</string>
+    <string name="rockefeller">约翰·D·洛克菲勒</string>
+    <string name="benardos">尼古拉·贝纳多斯</string>
+    <string name="arthus_evans">阿瑟·埃文斯</string>
+    <string name="perls">弗里茨·皮尔斯</string>
+    <string name="kapitsa">彼得·卡皮察</string>
+    <!-- 9 july -->
+    <string name="radcliffe">安·拉德克利夫</string>
+    <string name="davenport">托马斯·达文波特</string>
+    <string name="elias_howe">伊莱亚斯·豪</string>
+    <string name="boas">弗朗茨·博厄斯</string>
+    <string name="chagas">卡洛斯·沙加斯</string>
+    <string name="tom_hanks">汤姆·汉克斯</string>
+    <string name="love">科特妮·洛芙</string>
+    <!-- 10 july -->
+    <string name="jean_calvin">让·加尔文</string>
+    <string name="marryat">弗雷德里克·马里亚特</string>
+    <string name="pissarro">卡米耶·毕沙罗</string>
+    <string name="tesla">尼古拉·特斯拉</string>
+    <string name="proust">马塞尔·普鲁斯特</string>
+    <string name="chamberlain">欧文·张伯伦</string>
+    <!-- 11 july -->
+    <string name="gondora">路易斯·德·贡戈拉</string>
+    <string name="lalande">热罗姆·拉朗德</string>
+    <string name="nelson">莱昂纳德·纳尔逊</string>
+    <string name="abel">鲁道夫·阿贝尔</string>
+    <string name="brynner">尤·伯连纳</string>
+    <string name="armani">乔治·阿玛尼</string>
+    <!-- 12 july -->
+    <string name="bernard">克洛德·贝尔纳</string>
+    <string name="eastman">乔治·伊士曼</string>
+    <string name="tod_browning">托德·布朗宁</string>
+    <string name="modigliani">阿梅代奥·莫迪利亚尼</string>
+    <string name="meruda">巴勃罗·聂鲁达</string>
+    <string name="wyeth">安德鲁·怀斯</string>
+    <string name="michelle_rodriguez">米歇尔·罗德里格兹</string>
+    <!-- 13 july -->
+    <string name="john_dee">约翰·迪伊</string>
+    <string name="cannizzaro">斯坦尼斯劳·坎尼扎罗</string>
+    <string name="otto_wagner">奥托·瓦格纳</string>
+    <string name="babel">伊萨克·巴别尔</string>
+    <string name="ascari">阿尔贝托·阿斯卡里</string>
+    <string name="ford">哈里森·福特</string>
+    <string name="rubik">厄尔诺·鲁比克</string>
+    <string name="benassi">本尼·贝纳西</string>
+    <!-- 14 july -->
+    <string name="dumas">让-巴蒂斯特·杜马</string>
+    <string name="klimt">古斯塔夫·克里姆特</string>
+    <string name="irving_stone">欧文·斯通</string>
+    <string name="bergman">英格玛·伯格曼</string>
+    <string name="forrester">杰伊·赖特·福雷斯特</string>
+    <!-- 15 july -->
+    <string name="rembrandt">伦勃朗</string>
+    <string name="pareto">维尔弗雷多·帕累托</string>
+    <string name="harmsworth">阿尔弗雷德·哈姆斯沃思，第一代诺思克利夫子爵</string>
+    <string name="brockhouse">伯特伦·布罗克豪斯</string>
+    <string name="savage">亚当·萨维奇</string>
+    <string name="kruger">黛安·克鲁格</string>
+    <!-- 16 july -->
+    <string name="assisi">阿西西的克拉拉</string>
+    <string name="amundsen">罗阿尔·阿蒙森</string>
+    <string name="stanwyck">芭芭拉·斯坦威克</string>
+    <string name="laroche">盖伊·拉罗什</string>
+    <string name="sheckley">罗伯特·谢克里</string>
+    <!-- 17 july -->
+    <string name="friedrich_krupp">弗里德里希·克虏伯</string>
+    <string name="corot">让-巴蒂斯特-卡米耶·柯罗</string>
+    <string name="nicholas">尼古拉·米克卢霍-马克莱</string>
+    <string name="lamaitre">乔治·勒梅特</string>
+    <string name="abbott">贝伦尼斯·阿博特</string>
+    <string name="sutherland">唐纳德·萨瑟兰</string>
+    <!-- 18 july -->
+    <string name="thackeray">威廉·梅克比斯·萨克雷</string>
+    <string name="viardot">波利娜·维亚尔多</string>
+    <string name="lorentz">亨德里克·洛伦兹</string>
+    <string name="mandela">纳尔逊·曼德拉</string>
+    <string name="hunter_thompson">亨特·S·汤普森</string>
+    <string name="branson">理查德·布兰森</string>
+    <string name="vin_diesel">范·迪塞尔</string>
+    <!-- 19 july -->
+    <string name="colt">塞缪尔·柯尔特</string>
+    <string name="degas">埃德加·德加</string>
+    <string name="mayakovsky">弗拉基米尔·马雅可夫斯基</string>
+    <string name="cronin">阿奇博尔德·约瑟夫·克罗宁</string>
+    <string name="coloane">弗朗西斯科·科洛阿内</string>
+    <string name="yalow">罗莎琳·萨斯曼·雅洛</string>
+    <string name="cumberbatch">本尼迪克特·康伯巴奇</string>
+    <!-- 20 july -->
+    <string name="petrarca">弗朗切斯科·彼特拉克</string>
+    <string name="owen">理查德·欧文</string>
+    <string name="mendel">格雷戈尔·孟德尔</string>
+    <string name="georg_muller">格奥尔格·埃利亚斯·缪勒</string>
+    <string name="morandi">乔治·莫兰迪</string>
+    <string name="dobrev">多布里·多布雷夫</string>
+    <string name="bundchen">吉赛尔·邦辰</string>
+    <!-- 21 july -->
+    <string name="picard">让·皮卡尔</string>
+    <string name="regnault">亨利·维克托·勒尼奥</string>
+    <string name="reuter">保罗·路透</string>
+    <string name="hemingway">欧内斯特·海明威</string>
+    <string name="robin_williams">罗宾·威廉姆斯</string>
+    <string name="josh_hartnett">乔什·哈奈特</string>
+    <!-- 22 july -->
+    <string name="soufflot">雅克-热尔曼·苏夫洛</string>
+    <string name="gustav_hertz">古斯塔夫·路德维希·赫兹</string>
+    <string name="mathieu">米雷耶·马蒂厄</string>
+    <string name="dafoe">威廉·达福</string>
+    <string name="selena_gomez">赛琳娜·戈麦斯</string>
+    <!-- 23 july -->
+    <string name="vyazemsky">彼得·维亚泽姆斯基</string>
+    <string name="cilea">弗朗切斯科·奇莱亚</string>
+    <string name="harrelson">伍迪·哈里森</string>
+    <string name="hoffman">菲利普·塞默·霍夫曼</string>
+    <string name="lewinsky">莫妮卡·莱温斯基</string>
+    <string name="daniel_radcliffe">丹尼尔·雷德克里夫</string>
+    <!-- 24 july -->
+    <string name="vidocq">欧仁·弗朗索瓦·维多克</string>
+    <string name="alexandre_dumas">大仲马</string>
+    <string name="mucha">阿尔丰斯·穆夏</string>
+    <string name="benson">爱德华·弗雷德里克·本森</string>
+    <string name="lopez">詹妮弗·洛佩兹</string>
+    <!-- 25 july -->
+    <string name="scheiner">克里斯托夫·沙伊纳</string>
+    <string name="eakins">托马斯·艾金斯</string>
+    <string name="davidson_black">步达生</string>
+    <string name="canetti">埃利亚斯·卡内蒂</string>
+    <string name="leblanc">马特·勒布朗</string>
+    <!-- 26 july -->
+    <string name="remak">罗伯特·雷马克</string>
+    <string name="shaw">萧伯纳</string>
+    <string name="jung">卡尔·荣格</string>
+    <string name="maurois">安德烈·莫洛亚</string>
+    <string name="kubrick">斯坦利·库布里克</string>
+    <string name="jagger">米克·贾格尔</string>
+    <string name="spacey">凯文·史派西</string>
+    <string name="bullock">桑德拉·布洛克</string>
+    <string name="statham">杰森·斯坦森</string>
+    <!-- 27 july -->
+    <string name="corday">夏绿蒂·科黛</string>
+    <string name="carducci">焦苏埃·卡尔杜奇</string>
+    <string name="hans_fischer">汉斯·费歇尔</string>
+    <string name="monaco">马里奥·德尔·莫纳科</string>
+    <string name="nikolaj">尼古拉·科斯特-瓦尔道</string>
+    <!-- 28 july -->
+    <string name="hooke">罗伯特·胡克</string>
+    <string name="feuerbach">路德维希·费尔巴哈</string>
+    <string name="grisi">朱莉娅·格里西</string>
+    <string name="duchamp">马塞尔·杜尚</string>
+    <string name="popper">卡尔·波普尔</string>
+    <string name="burda">安妮·布尔达</string>
+    <string name="chavez">乌戈·查韦斯</string>
+    <!-- 29 july -->
+    <string name="aivazovsky">伊万·艾瓦佐夫斯基</string>
+    <string name="mussolini">贝尼托·墨索里尼</string>
+    <string name="theda_bara">西达·巴拉</string>
+    <string name="clara_bow">克拉拉·鲍</string>
+    <string name="alonso">费尔南多·阿隆索</string>
+    <!-- 30 july -->
+    <string name="vasari">乔治·瓦萨里</string>
+    <string name="bronte">艾米莉·勃朗特</string>
+    <string name="henry_ford">亨利·福特</string>
+    <string name="cyril_parkinson">西里尔·诺斯古德·帕金森</string>
+    <string name="schwarzenegger">阿诺德·施瓦辛格</string>
+    <string name="jean_reno">让·雷诺</string>
+    <string name="nolan">克里斯托弗·诺兰</string>
+    <!-- 31 july -->
+    <string name="cramer">加布里埃尔·克拉默</string>
+    <string name="wohler">弗里德里希·维勒</string>
+    <string name="planquette">罗贝尔·普朗凯特</string>
+    <string name="milton_friedman">米尔顿·弗里德曼</string>
+    <string name="de_funes">路易·德·菲奈斯</string>
+    <string name="primo_levi">普里莫·莱维</string>
+    <string name="rowling">J·K·罗琳</string>
+    <!-- 1 august -->
+    <string name="lamarck">让-巴蒂斯特·拉马克</string>
+    <string name="melville">赫尔曼·梅尔维尔</string>
+    <string name="taro">格尔达·塔罗</string>
+    <string name="laurent">伊夫·圣洛朗</string>
+    <string name="mendes">萨姆·门德斯</string>
+    <string name="momoa">杰森·莫玛</string>
+    <!-- 2 august -->
+    <string name="hoogstraten">萨米埃尔·范霍赫斯特拉滕</string>
+    <string name="tyndall">约翰·丁达尔</string>
+    <string name="olcott">亨利·斯蒂尔·奥尔科特</string>
+    <string name="bartholdi">弗雷德里克·奥古斯特·巴托尔迪</string>
+    <string name="loy">玛娜·洛伊</string>
+    <string name="worthington">萨姆·沃辛顿</string>
+    <!-- 3 august -->
+    <string name="otis">伊莱沙·奥的斯</string>
+    <string name="simak">克利福德·D·西马克</string>
+    <string name="james">P·D·詹姆斯</string>
+    <string name="sheen">马丁·辛</string>
+    <string name="lilly">伊万杰琳·莉莉</string>
+    <!-- 4 august -->
+    <string name="shelley">珀西·比希·雪莱</string>
+    <string name="john_venn">约翰·维恩</string>
+    <string name="hamsun">克努特·汉姆生</string>
+    <string name="armstrong">路易斯·阿姆斯特朗</string>
+    <string name="thornton">比利·鲍伯·松顿</string>
+    <!-- 5 august -->
+    <string name="niels_abel">尼尔斯·亨利克·阿贝尔</string>
+    <string name="repin">伊利亚·列宾</string>
+    <string name="maupassant">居伊·德·莫泊桑</string>
+    <string name="wain">路易斯·韦恩</string>
+    <string name="huston">约翰·休斯顿</string>
+    <string name="neil_armstrong">尼尔·阿姆斯特朗</string>
+    <!-- 6 august -->
+    <string name="malebranche">尼古拉·马勒伯朗士</string>
+    <string name="johann_bernoulli">约翰·伯努利</string>
+    <string name="alexander_fleming">亚历山大·弗莱明</string>
+    <string name="lucille_ball">露西尔·鲍尔</string>
+    <string name="andy_warhol">安迪·沃霍尔</string>
+    <string name="shyamalan">M·奈特·沙马兰</string>
+    <!-- 7 august -->
+    <string name="bathory">伊丽莎白·巴托里</string>
+    <string name="mata_hari">玛塔·哈里</string>
+    <string name="tobin_bell">托宾·贝尔</string>
+    <string name="duchovny">大卫·杜楚尼</string>
+    <string name="jimmy_wales">吉米·威尔士</string>
+    <string name="theron">查理兹·塞隆</string>
+    <!-- 8 august -->
+    <string name="bateson">威廉·贝特森</string>
+    <string name="lawrence">欧内斯特·劳伦斯</string>
+    <string name="dirac">保罗·狄拉克</string>
+    <string name="dustin_hoffman">达斯汀·霍夫曼</string>
+    <string name="federer">罗杰·费德勒</string>
+    <!-- 9 august -->
+    <string name="avogadro">阿梅代奥·阿伏伽德罗</string>
+    <string name="morton_william">威廉·托马斯·格林·莫顿</string>
+    <string name="huckel">埃里希·休克尔</string>
+    <string name="piaget">让·皮亚杰</string>
+    <string name="travers">P·L·特拉弗斯</string>
+    <string name="jansson">托芙·扬松</string>
+    <string name="griffith">梅兰尼·格里菲斯</string>
+    <string name="houston">惠特妮·休斯顿</string>
+    <string name="tautou">奥黛丽·塔图</string>
+    <!-- 10 august -->
+    <string name="nestle">亨利·雀巢</string>
+    <string name="qunanbaiuli">阿拜·库南巴耶夫</string>
+    <string name="darrow">查尔斯·达罗</string>
+    <string name="shearer">瑙玛·希拉</string>
+    <string name="tiselius">阿尔内·蒂塞利乌斯</string>
+    <string name="banderas">安东尼奥·班德拉斯</string>
+    <!-- 11 august -->
+    <string name="andrew_davis">安德鲁·杰克逊·戴维斯</string>
+    <string name="savant">玛丽莲·沃斯·莎凡特</string>
+    <string name="wozniak">斯蒂夫·沃兹尼亚克</string>
+    <string name="hogan">胡克·霍根</string>
+    <string name="hemsworth">克里斯·海姆斯沃斯</string>
+    <!-- 12 august -->
+    <string name="bering">维图斯·白令</string>
+    <string name="demille">塞西尔·B·戴米尔</string>
+    <string name="bendix">文森特·雨果·本迪克斯</string>
+    <string name="schrodinger">埃尔温·薛定谔</string>
+    <string name="soros">乔治·索罗斯</string>
+    <string name="delevingne">卡拉·迪瓦伊</string>
+    <!-- 13 august -->
+    <string name="angstrom">安德斯·约纳斯·埃格斯特朗</string>
+    <string name="miescher">弗里德里希·米歇尔</string>
+    <string name="agnelli">乔瓦尼·阿涅利</string>
+    <string name="hitchcock">阿尔弗雷德·希区柯克</string>
+    <string name="wankel">菲利克斯·汪克尔</string>
+    <string name="castro">菲德尔·卡斯特罗</string>
+    <!-- 14 august -->
+    <string name="orsted">汉斯·克里斯蒂安·奥斯特</string>
+    <string name="holliday">多克·霍利迪</string>
+    <string name="merezhkovsky">德米特里·梅列日科夫斯基</string>
+    <string name="galsworthy">约翰·高尔斯华绥</string>
+    <string name="dempster">阿瑟·杰弗里·登普斯特</string>
+    <string name="steve_martin">史蒂夫·马丁</string>
+    <string name="berry">哈莉·贝瑞</string>
+    <string name="kunis">米拉·库尼斯</string>
+    <!-- 15 august -->
+    <string name="carmontelle">卡尔蒙泰勒</string>
+    <string name="napoleon">拿破仑</string>
+    <string name="scott">沃尔特·司各特</string>
+    <string name="broglie">路易·德布罗意</string>
+    <string name="inarritu">亚历杭德罗·冈萨雷斯·伊纳里图</string>
+    <string name="affleck">本·阿弗莱克</string>
+    <string name="jennifer_lawrence">詹妮弗·劳伦斯</string>
+    <!-- 16 august -->
+    <string name="bruyere">让·德·拉布吕耶尔</string>
+    <string name="lippmann">加布里埃尔·李普曼</string>
+    <string name="bukowski">查尔斯·布考斯基</string>
+    <string name="richard">皮埃尔·理查德</string>
+    <string name="cameron">詹姆斯·卡梅隆</string>
+    <string name="madonna">麦当娜</string>
+    <!-- 17 august -->
+    <string name="fermat">皮埃尔·德·费马</string>
+    <string name="hodgkin">托马斯·霍奇金</string>
+    <string name="fokker">阿德里安·福克</string>
+    <string name="naipaul">V·S·奈保尔</string>
+    <string name="de_niro">罗伯特·德尼罗</string>
+    <string name="penn">西恩·潘</string>
+    <!-- 18 august -->
+    <string name="brook_taylor">布鲁克·泰勒</string>
+    <string name="salieri">安东尼奥·萨列里</string>
+    <string name="pierre_martin">皮埃尔-埃米尔·马丁</string>
+    <string name="swayze">帕特里克·斯威兹</string>
+    <string name="norton">爱德华·诺顿</string>
+    <string name="slater">克里斯蒂安·史莱特</string>
+    <!-- 19 august -->
+    <string name="samuel_richardson">塞缪尔·理查森</string>
+    <string name="platov">马特维·普拉托夫</string>
+    <string name="nasmyth">詹姆斯·内史密斯</string>
+    <string name="meyer">尤利乌斯·洛塔尔·迈耶尔</string>
+    <string name="enescu">乔治·埃内斯库</string>
+    <string name="chanel">可可·香奈儿</string>
+    <string name="perry">马修·派瑞</string>
+    <!-- 20 august -->
+    <string name="berzelius">永斯·雅各布·贝采利乌斯</string>
+    <string name="quasimodo">萨尔瓦托雷·夸西莫多</string>
+    <string name="susann">杰奎琳·苏珊</string>
+    <string name="durst">弗雷德·德斯特</string>
+    <string name="amy_adams">艾米·亚当斯</string>
+    <string name="garfield">安德鲁·加菲尔德</string>
+    <!-- 21 august -->
+    <string name="murdoch">威廉·默多克</string>
+    <string name="basie">贝西伯爵</string>
+    <string name="consuelo_velazquez">孔苏埃洛·贝拉斯克斯</string>
+    <string name="wilt_chamberlain">威尔特·张伯伦</string>
+    <string name="brin">谢尔盖·布林</string>
+    <string name="bolt">尤塞恩·博尔特</string>
+    <!-- 22 august -->
+    <string name="papin">丹尼斯·帕潘</string>
+    <string name="maudslay">亨利·莫兹利</string>
+    <string name="nipkow">保罗·戈特利布·尼普科夫</string>
+    <string name="debussy">克洛德·德彪西</string>
+    <string name="scheler">马克斯·舍勒</string>
+    <string name="bradbury">雷·布拉德伯里</string>
+    <!-- 23 august-->
+    <string name="laperouse">让-弗朗索瓦·德·拉佩鲁兹</string>
+    <string name="cuvier">乔治·居维叶</string>
+    <string name="jirasek">阿洛伊斯·伊拉塞克</string>
+    <string name="arrow">肯尼斯·阿罗</string>
+    <string name="phoenix">瑞凡·菲尼克斯</string>
+    <!-- 24 august -->
+    <string name="weddell">詹姆斯·威德尔</string>
+    <string name="borges">豪尔赫·路易斯·博尔赫斯</string>
+    <string name="coelho">保罗·柯艾略</string>
+    <string name="jarre">让-米歇尔·雅尔</string>
+    <string name="fry">斯蒂芬·弗雷</string>
+    <string name="guttenberg">史蒂夫·古根伯格</string>
+    <string name="grint">鲁伯特·格林特</string>
+    <!-- 25 august -->
+    <string name="pinkerton">艾伦·平克顿</string>
+    <string name="elo">阿尔帕德·埃洛</string>
+    <string name="brian_moore">布莱恩·摩尔</string>
+    <string name="connery">肖恩·康纳利</string>
+    <string name="tim_burton">蒂姆·伯顿</string>
+    <string name="schiffer">克劳迪娅·希弗</string>
+    <!-- 26 august -->
+    <string name="lambert">约翰·海因里希·朗伯</string>
+    <string name="joseph_montgolfier">约瑟夫-米歇尔·蒙戈尔菲耶</string>
+    <string name="lavoisier">安托万·拉瓦锡</string>
+    <string name="forest">李·德富雷斯特</string>
+    <string name="teresa">特蕾莎修女</string>
+    <string name="culkin">麦考利·卡尔金</string>
+    <!-- 27 august -->
+    <string name="hegel">格奥尔格·威廉·弗里德里希·黑格尔</string>
+    <string name="niebuhr">巴托尔德·格奥尔格·尼布尔</string>
+    <string name="bosch">卡尔·博施</string>
+    <string name="rolls">查尔斯·劳斯</string>
+    <string name="ranevskaya">法伊娜·拉涅夫斯卡娅</string>
+    <string name="chalke">莎拉·查尔克</string>
+    <string name="aaron_paul">亚伦·保尔</string>
+    <!-- 28 august -->
+    <string name="goethe">约翰·沃尔夫冈·冯·歌德</string>
+    <string name="blondel">安德烈·布隆代尔</string>
+    <string name="whipple">乔治·惠普尔</string>
+    <string name="theremin">莱昂·特雷门</string>
+    <string name="fincher">大卫·芬奇</string>
+    <string name="jack_black">杰克·布莱克</string>
+    <!-- 29 august -->
+    <string name="locke">约翰·洛克</string>
+    <string name="maeterlinck">莫里斯·梅特林克</string>
+    <string name="forssmann">维尔纳·福斯曼</string>
+    <string name="ingrid_bergman">英格丽·褒曼</string>
+    <string name="charlie_parker">查理·帕克</string>
+    <string name="michael_jackson">迈克尔·杰克逊</string>
+    <!-- 30 august -->
+    <string name="mary_shelley">玛丽·雪莱</string>
+    <string name="adolf_hesse">阿道夫·弗里德里希·黑塞</string>
+    <string name="hoff">雅各布斯·亨里克斯·范特霍夫</string>
+    <string name="rutherford">欧内斯特·卢瑟福</string>
+    <string name="cummings">雷·卡明斯</string>
+    <string name="mclaren">布鲁斯·迈凯伦</string>
+    <string name="diaz">卡梅隆·迪亚兹</string>
+    <!-- 31 august -->
+    <string name="helmholtz">赫尔曼·冯·亥姆霍兹</string>
+    <string name="paneth">弗里德里希·帕内特</string>
+    <string name="fredric_march">弗雷德里克·马奇</string>
+    <string name="gere">理查·基尔</string>
+    <string name="tucker">克里斯·塔克</string>
+    <!-- 1 september -->
+    <string name="jevons">威廉·斯坦利·杰文斯</string>
+    <string name="auguste_forel">奥古斯特-亨利·福雷尔</string>
+    <string name="burroughs">埃德加·赖斯·巴勒斯</string>
+    <string name="marilyn_miller">玛丽莲·米勒</string>
+    <string name="marciano">洛基·马西安诺</string>
+    <string name="estefan">格洛丽亚·埃斯特凡</string>
+    <!-- 2 september -->
+    <string name="howard">约翰·霍华德</string>
+    <string name="echeverria">埃斯特万·埃切维里亚</string>
+    <string name="field">尤金·菲尔德</string>
+    <string name="soddy">弗雷德里克·索迪</string>
+    <string name="reeves">基努·里维斯</string>
+    <string name="hayek">萨尔玛·海耶克</string>
+    <!-- 3 september -->
+    <string name="louis_sullivan">路易斯·沙利文</string>
+    <string name="pregl">弗里茨·普雷格尔</string>
+    <string name="porsche">斐迪南·保时捷</string>
+    <string name="anderson">卡尔·戴维·安德森</string>
+    <string name="dovlatov">谢尔盖·多甫拉托夫</string>
+    <string name="jeunet">让-皮埃尔·热内</string>
+    <string name="charlie_sheen">查理·辛</string>
+    <!-- 4 september -->
+    <string name="constantijn_huygens">康斯坦丁·惠更斯</string>
+    <string name="chateaubriand">弗朗索瓦-勒内·德·夏多布里昂</string>
+    <string name="richard_wright">理查德·赖特</string>
+    <string name="tange">丹下健三</string>
+    <string name="beyonce">碧昂丝</string>
+    <!-- 5 september -->
+    <string name="campanella">托马索·康帕内拉</string>
+    <string name="meyerbeer">贾科莫·梅耶贝尔</string>
+    <string name="aleksey_tolstoy">阿列克谢·康斯坦丁诺维奇·托尔斯泰</string>
+    <string name="jesse_james">杰西·詹姆斯</string>
+    <string name="mercury">弗雷迪·墨丘利</string>
+    <string name="keaton">迈克尔·基顿</string>
+    <!-- 6 september -->
+    <string name="serlio">塞巴斯蒂亚诺·塞利奥</string>
+    <string name="moses_mendelssohn">摩西·门德尔松</string>
+    <string name="dalton">约翰·道尔顿</string>
+    <string name="berdan">海勒姆·伯丹</string>
+    <string name="addams">简·亚当斯</string>
+    <string name="essen">路易斯·埃森</string>
+    <!-- 7 september -->
+    <string name="leclerc">乔治-路易·勒克莱尔，布丰伯爵</string>
+    <string name="gossen">赫尔曼·海因里希·戈森</string>
+    <string name="kuprin">亚历山大·库普林</string>
+    <string name="gala_dali">加拉·达利</string>
+    <string name="debakey">迈克尔·埃利斯·德贝基</string>
+    <string name="packard">大卫·帕卡德</string>
+    <!-- 8 september -->
+    <string name="lionheart">狮心王理查</string>
+    <string name="neckam">亚历山大·内卡姆</string>
+    <string name="mistral">弗雷德里克·米斯特拉尔</string>
+    <string name="martin_freeman">马丁·弗瑞曼</string>
+    <!-- 9 september -->
+    <string name="frederik_chapman">弗雷德里克·亨里克·阿夫·查普曼</string>
+    <string name="galvani">路易吉·伽伐尼</string>
+    <string name="leo_tolstoy">列夫·托尔斯泰</string>
+    <string name="usmanov">阿利舍尔·乌斯马诺夫</string>
+    <string name="hugh_grant">休·格兰特</string>
+    <string name="sandler">亚当·桑德勒</string>
+    <!-- 10 september -->
+    <string name="peirce">查尔斯·桑德斯·皮尔士</string>
+    <string name="elsa_schiaparelli">艾尔莎·夏帕瑞丽</string>
+    <string name="compton">阿瑟·康普顿</string>
+    <string name="messing">沃尔夫·梅辛</string>
+    <string name="lagerfeld">卡尔·拉格斐</string>
+    <string name="joe_perry">乔·佩里</string>
+    <string name="firth">科林·费尔斯</string>
+    <string name="ritchie">盖·里奇</string>
+    <!-- 11 september -->
+    <string name="james_thomson">詹姆斯·汤姆孙</string>
+    <string name="zeiss">卡尔·蔡司</string>
+    <string name="o_henry">欧·亨利</string>
+    <string name="jeans">詹姆斯·金斯</string>
+    <string name="beckenbauer">弗朗茨·贝肯鲍尔</string>
+    <!-- 12 september -->
+    <string name="breitner">乔治·亨德里克·布莱特纳</string>
+    <string name="irene_curie">伊雷娜·约里奥-居里</string>
+    <string name="lem">斯坦尼斯瓦夫·莱姆</string>
+    <string name="barry_white">巴里·怀特</string>
+    <string name="farmer">玛莲·法莫</string>
+    <string name="walker">保罗·沃克</string>
+    <!-- 13 september -->
+    <string name="samuel_wilson">塞缪尔·威尔逊</string>
+    <string name="reed">沃尔特·里德</string>
+    <string name="john_priestley">约翰·博因顿·普里斯特利</string>
+    <string name="dahl">罗尔德·达尔</string>
+    <string name="maurice_jarre">莫里斯·雅尔</string>
+    <string name="bisset">杰奎琳·比塞特</string>
+    <!-- 14 september -->
+    <string name="agrippa">海因里希·科尼利厄斯·阿格里帕</string>
+    <string name="lely">彼得·莱利</string>
+    <string name="cecil">罗伯特·塞西尔</string>
+    <string name="dana_gibson">查尔斯·达纳·吉布森</string>
+    <string name="neill">山姆·尼尔</string>
+    <string name="winehouse">艾米·怀恩豪斯</string>
+    <!-- 15 september -->
+    <string name="marco_polo">马可·波罗</string>
+    <string name="james_cooper">詹姆斯·菲尼莫尔·库珀</string>
+    <string name="bugatti">埃托雷·布加迪</string>
+    <string name="christie">阿加莎·克里斯蒂</string>
+    <string name="jean_renoir">让·雷诺阿</string>
+    <string name="tommy_lee_jones">汤米·李·琼斯</string>
+    <string name="oliver_stone">奥利弗·斯通</string>
+    <string name="tom_hardy">汤姆·哈迪</string>
+    <!-- 16 september -->
+    <string name="kossel">阿尔布雷希特·科塞尔</string>
+    <string name="boyd">路易丝·阿纳·博伊德</string>
+    <string name="jellinek">梅赛德斯·耶利内克</string>
+    <string name="korda">亚历山大·柯达</string>
+    <string name="bbking">B·B·金</string>
+    <string name="rourke">米基·洛克</string>
+    <string name="copperfield">大卫·科波菲尔</string>
+    <!-- 17 september -->
+    <string name="riemann">波恩哈德·黎曼</string>
+    <string name="buick">大卫·邓巴·别克</string>
+    <string name="tsiolkovsky">康斯坦丁·齐奥尔科夫斯基</string>
+    <string name="kesey">肯·克西</string>
+    <string name="messner">莱因霍尔德·梅斯纳尔</string>
+    <string name="anastacia">安娜斯塔西亚</string>
+    <string name="ovechkin">亚历山大·奥韦奇金</string>
+    <!-- 18 september -->
+    <string name="samuel_johnson">塞缪尔·约翰逊</string>
+    <string name="foucault">莱昂·傅科</string>
+    <string name="garbo">葛丽泰·嘉宝</string>
+    <string name="mcmillan">埃德温·麦克米伦</string>
+    <string name="werber">贝尔纳·韦尔贝</string>
+    <string name="gandolfini">詹姆斯·甘多菲尼</string>
+    <string name="shuttleworth">马克·沙特尔沃思</string>
+    <!-- 19 september -->
+    <string name="pajou">奥古斯丁·帕茹</string>
+    <string name="golding">威廉·戈尔丁</string>
+    <string name="irons">杰瑞米·艾恩斯</string>
+    <string name="hornby">莱斯利·霍恩比</string>
+    <string name="karelin">亚历山大·卡列林</string>
+    <!-- 20 september -->
+    <string name="moneta">埃内斯托·泰奥多罗·莫内塔</string>
+    <string name="dewar">詹姆斯·杜瓦</string>
+    <string name="leo_strauss">列奥·施特劳斯</string>
+    <string name="loren">索菲亚·罗兰</string>
+    <string name="george_martin">乔治·R·R·马丁</string>
+    <!-- 21 september -->
+    <string name="mcadam">约翰·劳登·麦克亚当</string>
+    <string name="onnes">海克·卡末林·昂内斯</string>
+    <string name="wells">赫伯特·乔治·威尔斯</string>
+    <string name="nicolle">夏尔·尼科尔</string>
+    <string name="stephen_king">斯蒂芬·金</string>
+    <string name="murray">比尔·默瑞</string>
+    <string name="beigbeder">弗雷德里克·贝格伯德</string>
+    <!-- 22 september -->
+    <string name="faraday">迈克尔·法拉第</string>
+    <string name="george_bentham">乔治·边沁</string>
+    <string name="ciurlionis">米卡洛尤斯·丘尔廖尼斯</string>
+    <string name="muni">保罗·穆尼</string>
+    <string name="huggins">查尔斯·布伦顿·哈金斯</string>
+    <string name="dean_reed">迪恩·里德</string>
+    <!-- 23 september -->
+    <string name="fizeau">伊波利特·斐索</string>
+    <string name="robert_bosch">罗伯特·博世</string>
+    <string name="orr">约翰·博伊德·奥尔，第一代博伊德-奥尔男爵</string>
+    <string name="coltrane">约翰·柯川</string>
+    <string name="romy_schneider">罗密·施奈德</string>
+    <string name="julio_iglesias">胡里奥·伊格莱西亚斯</string>
+    <string name="springsteen">布鲁斯·斯普林斯汀</string>
+    <!-- 24 september -->
+    <string name="cardano">吉罗拉莫·卡尔达诺</string>
+    <string name="walpole">霍勒斯·沃波尔</string>
+    <string name="triolet">艾尔莎·特里奥莱</string>
+    <string name="f_s_fitzgerald">弗朗西斯·斯科特·菲茨杰拉德</string>
+    <string name="ochoa">塞韦罗·奥乔亚</string>
+    <string name="brunner">约翰·布鲁纳</string>
+    <!-- 25 september -->
+    <string name="thomas_morgan">托马斯·亨特·摩尔根</string>
+    <string name="faulkner">威廉·福克纳</string>
+    <string name="shostakovich">德米特里·肖斯塔科维奇</string>
+    <string name="michael_douglas">迈克尔·道格拉斯</string>
+    <string name="almodovar">佩德罗·阿莫多瓦</string>
+    <string name="will_smith">威尔·史密斯</string>
+    <string name="zeta_jones">凯瑟琳·泽塔-琼斯</string>
+    <!-- 26 september -->
+    <string name="grew">尼希米亚·格鲁</string>
+    <string name="joseph_proust">约瑟夫·路易·普鲁斯特</string>
+    <string name="pavlov">伊万·巴甫洛夫</string>
+    <string name="hine">刘易斯·海因</string>
+    <string name="wallis">巴恩斯·沃利斯</string>
+    <string name="eliot">托马斯·斯特恩斯·艾略特</string>
+    <!-- 27 september -->
+    <string name="bossuet">雅克-贝尼涅·博须埃</string>
+    <string name="deledda">格拉齐亚·黛莱达</string>
+    <string name="larry_wall">拉里·沃尔</string>
+    <string name="welsh">欧文·威尔士</string>
+    <string name="paltrow">格温妮丝·帕特洛</string>
+    <!-- 28 september -->
+    <string name="merimee">普罗斯佩·梅里美</string>
+    <string name="moissan">亨利·莫瓦桑</string>
+    <string name="finch">彼得·芬奇</string>
+    <string name="mastroianni">马塞洛·马斯楚安尼</string>
+    <string name="bardot">碧姬·芭铎</string>
+    <string name="watts">娜奥米·沃茨</string>
+    <string name="dita_von_teese">蒂塔·万·提斯</string>
+    <string name="emelianenko">菲多·艾米连科</string>
+    <!-- 29 september -->
+    <string name="caravaggio">卡拉瓦乔</string>
+    <string name="horatio_nelson">霍雷肖·纳尔逊，第一代纳尔逊子爵</string>
+    <string name="gaskell">伊丽莎白·盖斯凯尔</string>
+    <string name="fermi">恩里科·费米</string>
+    <string name="ostrovsky">尼古拉·奥斯特洛夫斯基</string>
+    <string name="antonioni">米开朗基罗·安东尼奥尼</string>
+    <!-- 30 september -->
+    <string name="condillac">艾蒂安·博诺·德·孔狄亚克</string>
+    <string name="wrigley">小威廉·瑞格利</string>
+    <string name="perrin">让·巴蒂斯特·佩兰</string>
+    <string name="geiger">汉斯·盖格</string>
+    <string name="kerr">黛博拉·蔻儿</string>
+    <string name="capote">杜鲁门·卡波特</string>
+    <string name="bellucci">莫妮卡·贝鲁奇</string>
+    <string name="cotillard">玛丽昂·歌迪亚</string>
+    <!-- 1 october -->
+    <string name="boeing">威廉·爱德华·波音</string>
+    <string name="richard_harris">理查德·哈里斯</string>
+    <string name="andrews">朱莉·安德鲁斯</string>
+    <string name="annaud">让-雅克·阿诺</string>
+    <string name="galifianakis">扎克·加利凡纳基斯</string>
+    <string name="brie_larson">布丽·拉尔森</string>
+    <!-- 2 october -->
+    <string name="ramsay">威廉·拉姆齐</string>
+    <string name="gandhi">圣雄甘地</string>
+    <string name="greene">格雷厄姆·格林</string>
+    <string name="willy_ley">威利·李</string>
+    <string name="karan">唐娜·凯伦</string>
+    <string name="sting">斯汀</string>
+    <!-- 3 october -->
+    <string name="shmelyov">伊万·什梅廖夫</string>
+    <string name="yesenin">谢尔盖·叶赛宁</string>
+    <string name="aragon">路易·阿拉贡</string>
+    <string name="wolfe">托马斯·沃尔夫</string>
+    <string name="stefani">格温·史蒂芬妮</string>
+    <string name="headey">琳娜·海蒂</string>
+    <string name="ibrahimovic">兹拉坦·伊布拉希莫维奇</string>
+    <string name="vikander">艾丽西亚·维坎德</string>
+    <!-- 4 october -->
+    <string name="piranesi">乔瓦尼·巴蒂斯塔·皮拉内西</string>
+    <string name="pottier">欧仁·鲍狄埃</string>
+    <string name="boussenard">路易·亨利·布塞纳尔</string>
+    <string name="sarandon">苏珊·萨兰登</string>
+    <string name="waltz">克里斯托弗·瓦尔兹</string>
+    <string name="silverstone">艾丽西亚·希尔维斯通</string>
+    <string name="dakota_johnson">达科塔·约翰逊</string>
+    <!-- 5 october -->
+    <string name="diderot">德尼·狄德罗</string>
+    <string name="lumiere">路易·让·卢米埃尔</string>
+    <string name="rous">弗朗西斯·佩顿·劳斯</string>
+    <string name="kroc">雷·克罗克</string>
+    <string name="lemieux">马里奥·勒米厄</string>
+    <string name="pearce">盖·皮尔斯</string>
+    <string name="winslet">凯特·温斯莱特</string>
+    <string name="eisenberg">杰西·艾森伯格</string>
+    <!-- 6 october -->
+    <string name="maskelyne">内维尔·马斯基林</string>
+    <string name="smuglewicz">弗朗齐歇克·斯穆格莱维奇</string>
+    <string name="westinghouse">乔治·威斯汀豪斯</string>
+    <string name="fessenden">雷金纳德·费森登</string>
+    <string name="corbusier">勒·柯布西耶</string>
+    <string name="ernest_walton">欧内斯特·沃尔顿</string>
+    <string name="heyerdahl">托尔·海尔达尔</string>
+    <!-- 7 october -->
+    <string name="niels_bohr">尼尔斯·玻尔</string>
+    <string name="alcantara">保利诺·阿尔坎塔拉</string>
+    <string name="keneally">托马斯·肯尼利</string>
+    <string name="putin">弗拉基米尔·普京</string>
+    <string name="braxton">唐妮·布蕾斯顿</string>
+    <!-- 8 october -->
+    <string name="geyter">皮埃尔·狄盖特</string>
+    <string name="poddubny">伊万·波杜布内</string>
+    <string name="tsvetaeva">玛琳娜·茨维塔耶娃</string>
+    <string name="voicu">扬·沃伊库</string>
+    <string name="louise_hay">露易丝·海</string>
+    <string name="weaver">西格妮·韦弗</string>
+    <string name="matt_damon">马特·达蒙</string>
+    <!-- 9 october -->
+    <string name="sorbon">罗贝尔·德·索邦</string>
+    <string name="segner">约翰·安德烈亚斯·塞格纳</string>
+    <string name="saint_saens">卡米尔·圣桑</string>
+    <string name="lennon">约翰·列侬</string>
+    <string name="mcqueen">史蒂夫·麦奎因</string>
+    <!-- 10 october -->
+    <string name="watteau">让-安托万·华托</string>
+    <string name="cavendish">亨利·卡文迪什</string>
+    <string name="verdi">朱塞佩·威尔第</string>
+    <string name="nansen">弗里乔夫·南森</string>
+    <string name="andric">伊沃·安德里奇</string>
+    <string name="giacometti">阿尔贝托·贾科梅蒂</string>
+    <string name="pavel_durov">帕维尔·杜罗夫</string>
+    <!-- 11 october -->
+    <string name="olbers">海因里希·威廉·马蒂亚斯·奥尔伯斯</string>
+    <string name="berlier">让-巴蒂斯特·贝利耶</string>
+    <string name="heinz">亨利·亨氏</string>
+    <string name="roosevelt">埃莉诺·罗斯福</string>
+    <string name="mauriac">弗朗索瓦·莫里亚克</string>
+    <!-- 12 october -->
+    <string name="sperry">埃尔默·安布罗斯·斯佩里</string>
+    <string name="harden">阿瑟·哈登</string>
+    <string name="horch">奥古斯特·霍希</string>
+    <string name="crowley">阿莱斯特·克劳利</string>
+    <string name="montale">埃乌杰尼奥·蒙塔莱</string>
+    <string name="pavarotti">卢奇亚诺·帕瓦罗蒂</string>
+    <string name="jackman">休·杰克曼</string>
+    <!-- 13 october -->
+    <string name="tatum">阿特·塔图姆</string>
+    <string name="thatcher">玛格丽特·撒切尔</string>
+    <string name="hunter">罗伯特·洛恩·亨特</string>
+    <string name="simon">保罗·西蒙</string>
+    <string name="cohen">萨莎·拜伦·科恩</string>
+    <!-- 14 october -->
+    <string name="william_penn">威廉·佩恩</string>
+    <string name="gish">莉莲·吉许</string>
+    <string name="roger_moore">罗杰·摩尔</string>
+    <string name="lauren">拉夫·劳伦</string>
+    <string name="wasikowska">米娅·华希科沃斯卡</string>
+    <!-- 15 october -->
+    <string name="torricelli">埃万杰利斯塔·托里拆利</string>
+    <string name="lermontov">米哈伊尔·莱蒙托夫</string>
+    <string name="asaph_hall">阿萨夫·霍尔</string>
+    <string name="nietzsche">弗里德里希·尼采</string>
+    <string name="ilf">伊利亚·伊里夫</string>
+    <string name="puzo">马里奥·普佐</string>
+    <!-- 16 october -->
+    <string name="haller">阿尔布雷希特·冯·哈勒</string>
+    <string name="wilde">奥斯卡·王尔德</string>
+    <string name="oneill">尤金·奥尼尔</string>
+    <string name="grass">君特·格拉斯</string>
+    <string name="paffgen">克里斯塔·帕夫根</string>
+    <string name="robbins">蒂姆·罗宾斯</string>
+    <!-- 17 october -->
+    <string name="orlov">格里戈里·奥尔洛夫</string>
+    <string name="saint_simon">克洛德·亨利·德·鲁弗鲁瓦，圣西门伯爵</string>
+    <string name="jordan">罗伯特·乔丹</string>
+    <string name="raikkonen">基米·莱科宁</string>
+    <string name="felicity_jones">菲丽希缇·琼斯</string>
+    <!-- 18 october -->
+    <string name="schonbein">克里斯蒂安·弗里德里希·舍恩拜因</string>
+    <string name="glumer">克莱尔·冯·格吕默</string>
+    <string name="lodygin">亚历山大·洛德金</string>
+    <string name="bergson">亨利·柏格森</string>
+    <string name="chuck_berry">查克·贝里</string>
+    <string name="george_scott">乔治·C·斯科特</string>
+    <string name="van_damme">尚-克劳德·范·达美</string>
+    <!-- 19 october -->
+    <string name="ficino">马尔西利奥·费奇诺</string>
+    <string name="auguste_lumiere">奥古斯特·路易·玛丽·尼古拉·卢米埃尔</string>
+    <string name="boccioni">翁贝托·波丘尼</string>
+    <string name="gilels">埃米尔·吉列尔斯</string>
+    <string name="holyfield">伊万德·霍利菲尔德</string>
+    <string name="trey_parker">特雷·帕克</string>
+    <!-- 20 october -->
+    <string name="bartholin">托马斯·巴托林</string>
+    <string name="wren">克里斯托弗·雷恩</string>
+    <string name="rimbaud">阿尔蒂尔·兰波</string>
+    <string name="chadwick">詹姆斯·查德威克</string>
+    <string name="bernat">恩里克·贝尔纳特</string>
+    <string name="jelinek">埃尔弗里德·耶利内克</string>
+    <!-- 21 october -->
+    <string name="coleridge">塞缪尔·泰勒·柯勒律治</string>
+    <string name="nobel">阿尔弗雷德·诺贝尔</string>
+    <string name="mikhalkov">尼基塔·米哈尔科夫</string>
+    <string name="carrie_fisher">凯丽·费雪</string>
+    <string name="geim">安德烈·海姆</string>
+    <string name="kardashian">金·卡戴珊</string>
+    <!-- 22 october -->
+    <string name="liszt">弗朗茨·李斯特</string>
+    <string name="bernhardt">莎拉·伯恩哈特</string>
+    <string name="bunin">伊万·布宁</string>
+    <string name="yashin">列夫·雅辛</string>
+    <string name="christopher_lloyd">克里斯托弗·洛伊德</string>
+    <string name="deneuve">凯瑟琳·德纳芙</string>
+    <string name="wenger">阿尔塞纳·温格</string>
+    <!-- 23 october -->
+    <string name="larousse">皮埃尔·拉鲁斯</string>
+    <string name="lanchester">弗雷德里克·威廉·兰切斯特</string>
+    <string name="lewis">吉尔伯特·牛顿·路易斯</string>
+    <string name="bloch">费利克斯·布洛赫</string>
+    <string name="pele">贝利</string>
+    <string name="reynolds">瑞安·雷诺兹</string>
+    <string name="clarke">艾米莉亚·克拉克</string>
+    <!-- 24 october -->
+    <string name="robbia">安德烈亚·德拉·罗比亚</string>
+    <string name="leeuwenhoek">安东尼·范·列文虎克</string>
+    <string name="wilhelm_weber">威廉·爱德华·韦伯</string>
+    <string name="swarovski">丹尼尔·施华洛世奇</string>
+    <string name="raikin">阿尔卡季·赖金</string>
+    <string name="rooney">韦恩·鲁尼</string>
+    <!-- 25 october -->
+    <string name="galois">埃瓦里斯特·伽罗瓦</string>
+    <string name="johann_strauss">约翰·施特劳斯</string>
+    <string name="bizet">乔治·比才</string>
+    <string name="picasso">巴勃罗·毕加索</string>
+    <string name="gance">阿贝尔·冈斯</string>
+    <string name="katy_perry">凯蒂·佩里</string>
+    <!-- 26 october -->
+    <string name="scarlatti">多梅尼科·斯卡拉蒂</string>
+    <string name="goldschmidt">梅厄·阿龙·戈德施密特</string>
+    <string name="vereshchagin">瓦西里·韦列夏金</string>
+    <string name="bely">安德烈·别雷</string>
+    <string name="napoleon_hill">拿破仑·希尔</string>
+    <!-- 27 october -->
+    <string name="paganini">尼科罗·帕格尼尼</string>
+    <string name="falk">罗伯特·法尔克</string>
+    <string name="cleese">约翰·克里斯</string>
+    <string name="simon_le_bon">西蒙·勒邦</string>
+    <string name="vanessa_mae">陈美</string>
+    <!-- 28 october -->
+    <string name="edith_head">伊迪丝·海德</string>
+    <string name="waugh">伊夫林·沃</string>
+    <string name="garrincha">加林查</string>
+    <string name="bill_gates">比尔·盖茨</string>
+    <string name="ramazzotti">埃罗斯·拉马佐蒂</string>
+    <string name="julia_roberts">朱莉娅·罗伯茨</string>
+    <string name="joaquin_phoenix">华金·菲尼克斯</string>
+    <!-- 29 october -->
+    <string name="stur">卢多维特·什图尔</string>
+    <string name="ioffe">阿布拉姆·约费</string>
+    <string name="phalle">妮基·德·圣法勒</string>
+    <string name="dreyfuss">理查德·德莱弗斯</string>
+    <string name="ryder">薇诺娜·瑞德</string>
+    <!-- 30 october -->
+    <string name="kauffmann">安杰莉卡·考夫曼</string>
+    <string name="sheridan">理查德·谢里丹</string>
+    <string name="chenier">安德烈·谢尼埃</string>
+    <string name="valery">保罗·瓦勒里</string>
+    <string name="maradona">迭戈·马拉多纳</string>
+    <string name="belleci">托里·贝莱奇</string>
+    <!-- 31 october -->
+    <string name="vermeer">约翰内斯·维米尔</string>
+    <string name="keats">约翰·济慈</string>
+    <string name="weierstrass">卡尔·魏尔斯特拉斯</string>
+    <string name="baeyer">阿道夫·冯·拜尔</string>
+    <string name="helmut_newton">赫尔穆特·牛顿</string>
+    <string name="peter_jackson">彼得·杰克逊</string>
+    <string name="rob_schneider">罗伯·施奈德</string>
+    <!-- 1 november -->
+    <string name="cortona">皮埃特罗·达·科尔托纳</string>
+    <string name="canova">安东尼奥·卡诺瓦</string>
+    <string name="grieg">诺达尔·格里格</string>
+    <string name="flynt">拉里·弗林特</string>
+    <string name="kiedis">安东尼·基德斯</string>
+    <string name="rai">艾西瓦娅·雷</string>
+    <!-- 2 november -->
+    <string name="antoinette">玛丽·安托瓦内特</string>
+    <string name="boole">乔治·布尔</string>
+    <string name="sorel">乔治·索雷尔</string>
+    <string name="visconti">卢基诺·维斯孔蒂</string>
+    <string name="keith_emerson">基思·埃默森</string>
+    <string name="khan">沙鲁克·汗</string>
+    <string name="schwimmer">大卫·休默</string>
+    <!-- 3 november -->
+    <string name="cellini">本韦努托·切利尼</string>
+    <string name="marshak">萨穆伊尔·马尔夏克</string>
+    <string name="dassler">阿道夫·达斯勒</string>
+    <string name="gerd_muller">盖德·穆勒</string>
+    <string name="lundgren">杜夫·龙格尔</string>
+    <string name="newell">加布·纽维尔</string>
+    <!-- 4 november -->
+    <string name="reni">圭多·雷尼</string>
+    <string name="bove">约瑟夫·博韦</string>
+    <string name="shakurantala_devi">沙昆塔拉·德维</string>
+    <string name="mcconaughey">马修·麦康纳</string>
+    <string name="figo">路易斯·菲戈</string>
+    <!-- 5 november -->
+    <string name="petrov_vodkin">库兹马·彼得罗夫-沃德金</string>
+    <string name="leigh">费雯·丽</string>
+    <string name="dassin">乔·达辛</string>
+    <string name="patrick">罗伯特·帕特里克</string>
+    <string name="bryan_adams">布莱恩·亚当斯</string>
+    <string name="swinton">蒂尔达·斯温顿</string>
+    <!-- 6 november -->
+    <string name="sax">阿道夫·萨克斯</string>
+    <string name="charles_dow">查尔斯·道</string>
+    <string name="sousa">约翰·菲利普·苏萨</string>
+    <string name="nailsmith">詹姆斯·奈史密斯</string>
+    <string name="emma_stone">艾玛·斯通</string>
+    <!-- 7 november -->
+    <string name="stukeley">威廉·斯图克利</string>
+    <string name="james_cook">詹姆斯·库克</string>
+    <string name="erkel">费伦茨·埃尔凯尔</string>
+    <string name="casal">胡利安·德尔·卡萨尔</string>
+    <string name="marie_curie">玛丽·居里</string>
+    <string name="camus">阿尔贝·加缪</string>
+    <string name="guetta">大卫·库塔</string>
+    <!-- 8 november -->
+    <string name="stoker">布拉姆·斯托克</string>
+    <string name="hausdorff">费利克斯·豪斯多夫</string>
+    <string name="rorschach">赫尔曼·罗夏</string>
+    <string name="mitchell">玛格丽特·米切尔</string>
+    <string name="barnard">克里斯蒂安·巴纳德</string>
+    <string name="kilby">杰克·基尔比</string>
+    <string name="delon">阿兰·德龙</string>
+    <string name="hiddink">胡斯·希丁克</string>
+    <!-- 9 november -->
+    <string name="borden">盖尔·博登</string>
+    <string name="turgenev">伊万·屠格涅夫</string>
+    <string name="gaboriau">埃米尔·加博里奥</string>
+    <string name="monnet">让·莫内</string>
+    <string name="sagan">卡尔·萨根</string>
+    <string name="del_piero">亚历山德罗·德尔·皮耶罗</string>
+    <!-- 10 november -->
+    <string name="luther">马丁·路德</string>
+    <string name="hogarth">威廉·贺加斯</string>
+    <string name="schiller">弗里德里希·席勒</string>
+    <string name="innes">罗伯特·索伯恩·艾顿·英尼斯</string>
+    <string name="morricone">埃尼奥·莫里康内</string>
+    <string name="brittany_murphy">布莱特妮·墨菲</string>
+    <!-- 11 november -->
+    <string name="dostoyevsky">费奥多尔·陀思妥耶夫斯基</string>
+    <string name="maurice_leblanc">莫里斯·勒布朗</string>
+    <string name="vonnegut">库尔特·冯内古特</string>
+    <string name="brugiroux">安德烈·布鲁吉鲁</string>
+    <string name="demi_moore">黛米·摩尔</string>
+    <string name="dicaprio">莱昂纳多·迪卡普里奥</string>
+    <!-- 12 november -->
+    <string name="rodin">奥古斯特·罗丹</string>
+    <string name="grace_kelly">格蕾丝·凯利</string>
+    <string name="gurchenko">柳德米拉·古尔琴科</string>
+    <string name="gosling">瑞恩·高斯林</string>
+    <string name="hathaway">安妮·海瑟薇</string>
+    <!-- 13 november -->
+    <string name="montagu">约翰·蒙塔古，第四代三明治伯爵</string>
+    <string name="hauy">瓦朗坦·阿维</string>
+    <string name="stevenson">罗伯特·路易斯·史蒂文森</string>
+    <string name="kokkonen">约纳斯·科科宁</string>
+    <string name="whoopi_goldberg">乌比·戈德堡</string>
+    <string name="gerard_butler">杰拉德·巴特勒</string>
+    <!-- 14 november -->
+    <string name="fulton">罗伯特·富尔顿</string>
+    <string name="bichat">玛丽·弗朗索瓦·泽维尔·比沙</string>
+    <string name="lyell">查尔斯·莱尔</string>
+    <string name="monet">克洛德·莫奈</string>
+    <string name="banting">弗雷德里克·班廷</string>
+    <string name="lindgren">阿斯特丽德·林格伦</string>
+    <!-- 15 november -->
+    <string name="lavater">约翰·卡斯帕·拉瓦特尔</string>
+    <string name="chasles">米歇尔·沙勒</string>
+    <string name="hauptmann">盖哈特·豪普特曼</string>
+    <string name="krogh">奥古斯特·克罗</string>
+    <string name="kroeger">查德·克罗格</string>
+    <!-- 16 november -->
+    <string name="kreutzer">鲁道夫·克鲁采</string>
+    <string name="saramago">若泽·萨拉马戈</string>
+    <string name="achebe">钦努阿·阿契贝</string>
+    <string name="krall">戴安娜·克瑞儿</string>
+    <string name="gyllenhaal">玛吉·吉伦哈尔</string>
+    <!-- 17 november -->
+    <string name="bronzino">布龙齐诺</string>
+    <string name="mobius">奥古斯特·费迪南德·莫比乌斯</string>
+    <string name="wigner">尤金·维格纳</string>
+    <string name="honda">本田宗一郎</string>
+    <string name="scorsese">马丁·斯科塞斯</string>
+    <string name="devito">丹尼·德维托</string>
+    <string name="marceau">苏菲·玛索</string>
+    <string name="mcadams">瑞秋·麦克亚当斯</string>
+    <!-- 18 november -->
+    <string name="down">约翰·兰登·唐</string>
+    <string name="nordenskiold">阿道夫·埃里克·诺登舍尔德</string>
+    <string name="gallup">乔治·盖洛普</string>
+    <string name="issigonis">亚历克·伊斯哥尼斯</string>
+    <string name="ryazanov">埃利达尔·梁赞诺夫</string>
+    <string name="owen_wilson">欧文·威尔逊</string>
+    <!-- 19 november -->
+    <string name="lomonosov">米哈伊尔·罗蒙诺索夫</string>
+    <string name="skoda">埃米尔·斯柯达</string>
+    <string name="avenarius">理查德·阿芬那留斯</string>
+    <string name="drucker">彼得·德鲁克</string>
+    <string name="calvin_klein">卡尔文·克莱因</string>
+    <string name="ryan">梅格·瑞恩</string>
+    <string name="jodie_foster">朱迪·福斯特</string>
+    <!-- 20 november -->
+    <string name="guericke">奥托·冯·格里克</string>
+    <string name="lagerlof">塞尔玛·拉格洛夫</string>
+    <string name="karl_von_frisch">卡尔·冯·弗里施</string>
+    <string name="hubble">埃德温·哈勃</string>
+    <string name="osgood">查尔斯·奥斯古德</string>
+    <!-- 21 november -->
+    <string name="voltaire">伏尔泰</string>
+    <string name="schleiermacher">弗里德里希·施莱尔马赫</string>
+    <string name="lewis_morgan">路易斯·亨利·摩尔根</string>
+    <string name="makarova">娜塔莉亚·马卡洛娃</string>
+    <string name="hawn">歌蒂·韩</string>
+    <string name="bjork">比约克</string>
+    <!-- 22 november -->
+    <string name="vladimir_dal">弗拉基米尔·达里</string>
+    <string name="thomas_cook">托马斯·库克</string>
+    <string name="gide">安德烈·纪德</string>
+    <string name="gaulle">夏尔·戴高乐</string>
+    <string name="pelevin">维克多·佩列文</string>
+    <string name="mikkelsen">麦斯·米科尔森</string>
+    <string name="ruffalo">马克·鲁法洛</string>
+    <string name="ville_valo">维勒·瓦罗</string>
+    <string name="scarlett_johansson">斯嘉丽·约翰逊</string>
+    <!-- 23 november -->
+    <string name="waals">约翰内斯·迪德里克·范德瓦尔斯</string>
+    <string name="karloff">鲍里斯·卡洛夫</string>
+    <string name="moseley">亨利·莫塞莱</string>
+    <string name="nosov">尼古拉·诺索夫</string>
+    <string name="cyrus">麦莉·赛勒斯</string>
+    <!-- 24 november -->
+    <string name="spinoza">巴鲁赫·斯宾诺莎</string>
+    <string name="suvorov">亚历山大·苏沃洛夫</string>
+    <string name="ellis">威廉·韦伯·埃利斯</string>
+    <string name="collodi">卡洛·科洛迪</string>
+    <string name="carnegie">戴尔·卡耐基</string>
+    <string name="kusturica">埃米尔·库斯图里卡</string>
+    <string name="heigl">凯瑟琳·海格尔</string>
+    <!-- 25 november -->
+    <string name="vega">洛佩·德·维加</string>
+    <string name="sumarokov">亚历山大·苏马罗科夫</string>
+    <string name="pirogov">尼古拉·皮罗戈夫</string>
+    <string name="benz">卡尔·本茨</string>
+    <string name="vavilov">尼古拉·瓦维洛夫</string>
+    <string name="poul_anderson">波尔·安德森</string>
+    <!-- 26 november -->
+    <string name="harvard">约翰·哈佛</string>
+    <string name="saussure">费尔迪南·德·索绪尔</string>
+    <string name="leck">巴特·范德莱克</string>
+    <string name="wiener">诺伯特·维纳</string>
+    <string name="ionesco">欧仁·尤内斯库</string>
+    <string name="tina_turner">蒂娜·特纳</string>
+    <!-- 27 november -->
+    <string name="celsius">安德斯·摄尔修斯</string>
+    <string name="weizmann">哈伊姆·魏茨曼</string>
+    <string name="matsushita">松下幸之助</string>
+    <string name="bruce_lee">李小龙</string>
+    <string name="mashkov">弗拉基米尔·马什科夫</string>
+    <!-- 28 november -->
+    <string name="lully">让-巴蒂斯特·吕利</string>
+    <string name="blake">威廉·布莱克</string>
+    <string name="cousin">维克多·库赞</string>
+    <string name="engels">弗里德里希·恩格斯</string>
+    <string name="anton_rubinstein">安东·鲁宾斯坦</string>
+    <string name="blok">亚历山大·勃洛克</string>
+    <string name="zanetti">罗伯托·扎内蒂</string>
+    <string name="galliano">约翰·加利亚诺</string>
+    <!-- 29 november -->
+    <string name="donizetti">葛塔诺·多尼采蒂</string>
+    <string name="hauff">威廉·豪夫</string>
+    <string name="charcot">让-马丁·沙可</string>
+    <string name="john_fleming">约翰·安布罗斯·弗莱明</string>
+    <string name="giggs">瑞恩·吉格斯</string>
+    <string name="faris">安娜·法瑞丝</string>
+    <!-- 30 november -->
+    <string name="swift">乔纳森·斯威夫特</string>
+    <string name="twain">马克·吐温</string>
+    <string name="churchill">温斯顿·丘吉尔</string>
+    <string name="ridley_scott">雷德利·斯科特</string>
+    <string name="idol">比利·爱多尔</string>
+    <string name="stiller">本·斯蒂勒</string>
+    <!-- 1 december -->
+    <string name="falconet">艾蒂安·莫里斯·法尔科内</string>
+    <string name="tussaud">玛丽·杜莎</string>
+    <string name="lobachevsky">尼古拉·罗巴切夫斯基</string>
+    <string name="zhukov">格奥尔基·朱可夫</string>
+    <string name="allen">伍迪·艾伦</string>
+    <string name="escobar">巴勃罗·埃斯科瓦尔</string>
+    <!-- 2 december -->
+    <string name="joseph_bell">约瑟夫·贝尔</string>
+    <string name="seuratl">乔治·秀拉</string>
+    <string name="callas">玛丽亚·卡拉斯</string>
+    <string name="versace">詹尼·范思哲</string>
+    <string name="liu">刘玉玲</string>
+    <string name="furtado">妮莉·费塔朵</string>
+    <string name="spears">布兰妮·斯皮尔斯</string>
+    <!-- 3 december -->
+    <string name="hill">罗兰·希尔</string>
+    <string name="rota">尼诺·罗塔</string>
+    <string name="osbourne">奥兹·奥斯本</string>
+    <string name="julianne_moore">朱丽安·摩尔</string>
+    <string name="seyfried">阿曼达·西耶弗里德</string>
+    <!-- 4 december -->
+    <string name="chapelain">让·沙普兰</string>
+    <string name="carlyle">托马斯·卡莱尔</string>
+    <string name="adler">罗伯特·阿德勒</string>
+    <string name="bridges">杰夫·布里吉斯</string>
+    <string name="bubka">谢尔盖·布勃卡</string>
+    <!-- 5 december -->
+    <string name="tyutchev">费奥多尔·丘特切夫</string>
+    <string name="lang">弗里茨·朗</string>
+    <string name="disney">华特·迪士尼</string>
+    <string name="heisenberg">维尔纳·海森堡</string>
+    <string name="carreras">何塞·卡雷拉斯</string>
+    <string name="kaas">派翠西亚·凯丝</string>
+    <!-- 6 december -->
+    <string name="nicolas_leblanc">尼古拉·勒布朗</string>
+    <string name="gay_lussac">约瑟夫·路易·盖-吕萨克</string>
+    <string name="veqilharxhi">瑙姆·韦奇尔哈尔希</string>
+    <string name="bazille">弗雷德里克·巴齐耶</string>
+    <string name="crali">图利奥·克拉利</string>
+    <string name="nick_park">尼克·帕克</string>
+    <!-- 7 december -->
+    <string name="bernini">吉安·洛伦佐·贝尼尼</string>
+    <string name="schwann">特奥多尔·施万</string>
+    <string name="mascagni">皮埃特罗·马斯卡尼</string>
+    <string name="yosano">与谢野晶子</string>
+    <string name="waits">汤姆·威茨</string>
+    <string name="emily_browning">艾米莉·布朗宁</string>
+    <!-- 8 december -->
+    <string name="dholbach">保尔-亨利·蒂里，霍尔巴赫男爵</string>
+    <string name="menzel">阿道夫·冯·门采尔</string>
+    <string name="bjornson">比约恩斯彻纳·比约恩松</string>
+    <string name="reynaud">夏尔-埃米尔·雷诺</string>
+    <string name="melies">乔治·梅里爱</string>
+    <string name="morrison">吉姆·莫里森</string>
+    <string name="basinger">金·贝辛格</string>
+    <string name="somerhalder">伊恩·萨默海尔德</string>
+    <!-- 9 december -->
+    <string name="milton">约翰·弥尔顿</string>
+    <string name="winckelmann">约翰·约阿希姆·温克尔曼</string>
+    <string name="scheele">卡尔·威廉·舍勒</string>
+    <string name="berthollet">克洛德·路易·贝托莱</string>
+    <string name="grace_hopper">格蕾丝·霍珀</string>
+    <string name="dench">朱迪·丹奇</string>
+    <string name="malkovich">约翰·马尔科维奇</string>
+    <!-- 10 december -->
+    <string name="lovelace">阿达·洛芙莱斯</string>
+    <string name="nekrasov">尼古拉·涅克拉索夫</string>
+    <string name="sachs">内莉·萨克斯</string>
+    <string name="tarasov">阿纳托利·塔拉索夫</string>
+    <string name="michael_duncan">迈克尔·克拉克·邓肯</string>
+    <string name="branagh">肯尼思·布拉纳</string>
+    <string name="molko">布莱恩·莫尔可</string>
+    <!-- 11 december -->
+    <string name="berlioz">埃克托·柏辽兹</string>
+    <string name="musset">阿尔弗雷德·德·缪塞</string>
+    <string name="koch">罗伯特·科赫</string>
+    <string name="born">马克斯·玻恩</string>
+    <string name="gardel">卡洛斯·加德尔</string>
+    <string name="marais">让·马莱</string>
+    <!-- 12 december -->
+    <string name="karamzin">尼古拉·卡拉姆津</string>
+    <string name="serebriakova">季娜伊达·谢列布里亚科娃</string>
+    <string name="ozu">小津安二郎</string>
+    <string name="sinatra">弗兰克·辛纳屈</string>
+    <string name="noyce">罗伯特·诺伊斯</string>
+    <string name="konyukhov">费奥多尔·科纽霍夫</string>
+    <!-- 13 december -->
+    <string name="gozzi">卡洛·戈齐</string>
+    <string name="heine">海因里希·海涅</string>
+    <string name="werner_siemens">维尔纳·冯·西门子</string>
+    <string name="birkeland">克里斯蒂安· Birkeland</string>
+    <string name="buscemi">史蒂夫·布西密</string>
+    <string name="foxx">杰米·福克斯</string>
+    <string name="amy_lee">艾米·李</string>
+    <string name="taylor_swift">泰勒·斯威夫特</string>
+    <!-- 14 december -->
+    <string name="nostradamus">诺斯特拉达姆士</string>
+    <string name="brahe">第谷·布拉赫</string>
+    <string name="ueshiba">植芝盛平</string>
+    <string name="basov">尼古拉·巴索夫</string>
+    <string name="kapoor">拉兹·卡普尔</string>
+    <!-- 15 december -->
+    <string name="carey">亨利·查尔斯·凯里</string>
+    <string name="bolyai">鲍耶·亚诺什</string>
+    <string name="eiffel">古斯塔夫·埃菲尔</string>
+    <string name="becquerel">亨利·贝可勒尔</string>
+    <string name="zamenhof">路德维克·柴门霍夫</string>
+    <string name="getty">让·保罗·盖蒂</string>
+    <!-- 16 december -->
+    <string name="austen">简·奥斯汀</string>
+    <string name="walras">莱昂·瓦尔拉斯</string>
+    <string name="bergmann">恩斯特·贝格曼</string>
+    <string name="kandinsky">瓦西里·康定斯基</string>
+    <string name="linder">麦克斯·林戴</string>
+    <string name="arthur_clarke">亚瑟·查理斯·克拉克</string>
+    <string name="paul_van_dyk">保罗·范迪克</string>
+    <!-- 17 december -->
+    <string name="cimarosa">多梅尼科·奇马罗萨</string>
+    <string name="beethoven">路德维希·范·贝多芬</string>
+    <string name="davy">汉弗里·戴维</string>
+    <string name="ganelin">维亚切斯拉夫·加内林</string>
+    <string name="darryl_way">达里尔·韦</string>
+    <string name="jovovich">米拉·乔沃维奇</string>
+    <!-- 18 december -->
+    <string name="polhem">克里斯托弗·波尔汉</string>
+    <string name="joseph_thomson">约瑟夫·约翰·汤姆孙</string>
+    <string name="stalin">约瑟夫·斯大林</string>
+    <string name="spielberg">史蒂文·斯皮尔伯格</string>
+    <string name="liotta">雷·利奥塔</string>
+    <string name="brad_pitt">布拉德·皮特</string>
+    <string name="holmes">凯蒂·霍尔姆斯</string>
+    <string name="aguilera">克里斯蒂娜·阿奎莱拉</string>
+    <!-- 19 december -->
+    <string name="michelson">阿尔伯特·亚伯拉罕·迈克耳孙</string>
+    <string name="joze_lima">何塞·莱萨马·利马</string>
+    <string name="piaf">伊迪丝·琵雅芙</string>
+    <string name="schweiger">蒂尔·施威格</string>
+    <string name="milano">艾丽莎·米兰诺</string>
+    <string name="jake_gyllenhaal">杰克·吉伦哈尔</string>
+    <!-- 20 december -->
+    <string name="heyrovsky">雅罗斯拉夫·海罗夫斯基</string>
+    <string name="balandin">阿列克谢·巴兰金</string>
+    <string name="graaff">罗伯特·杰米森·范德格拉夫</string>
+    <string name="bohm">戴维·玻姆</string>
+    <string name="uri_geller">尤里·盖勒</string>
+    <string name="jonah_hill">乔纳·希尔</string>
+    <!-- 21 december -->
+    <string name="robert_brown">罗伯特·布朗</string>
+    <string name="hermann_muller">赫尔曼·约瑟夫·马勒</string>
+    <string name="boll">海因里希·伯尔</string>
+    <string name="monterroso">奥古斯托·蒙特罗索</string>
+    <string name="jane_fonda">简·方达</string>
+    <string name="zappa">弗兰克·扎帕</string>
+    <string name="samuel_jackson">塞缪尔·L·杰克逊</string>
+    <!-- 22 december  -->
+    <string name="liotard">让-埃蒂安·利奥塔</string>
+    <string name="fabre">让-亨利·法布尔</string>
+    <string name="puccini">贾科莫·普契尼</string>
+    <string name="elizondo">埃克托·埃利松多</string>
+    <string name="fiennes">拉尔夫·费因斯</string>
+    <string name="paradis">凡妮莎·帕拉迪丝</string>
+    <!-- 23 december -->
+    <string name="champollion">让-弗朗索瓦·商博良</string>
+    <string name="bryullov">卡尔·布留洛夫</string>
+    <string name="dino_risi">迪诺·里西</string>
+    <string name="baker">查特·贝克</string>
+    <string name="bosque">比森特·德尔·博斯克</string>
+    <string name="bruni">卡拉·布吕尼</string>
+    <!-- 24 december -->
+    <string name="joule">詹姆斯·普雷斯科特·焦耳</string>
+    <string name="howard_hughes">霍华德·休斯</string>
+    <string name="chase">詹姆斯·哈德利·蔡斯</string>
+    <string name="gardner">艾娃·加德纳</string>
+    <string name="ricky_martin">瑞奇·马丁</string>
+    <string name="stephenie_meyer">斯蒂芬妮·梅尔</string>
+    <!-- 25 december -->
+    <string name="chevrolet">路易·雪佛兰</string>
+    <string name="rosenzweig">弗朗茨·罗森茨维格</string>
+    <string name="hilton">康拉德·希尔顿</string>
+    <string name="bogart">亨弗莱·鲍嘉</string>
+    <string name="castaneda">卡洛斯·卡斯塔尼达</string>
+    <string name="lennox">安妮·蓝妮克丝</string>
+    <string name="buuren">阿明·范·比伦</string>
+    <!-- 26 december -->
+    <string name="dinglinger">约翰·梅尔希奥·丁格林格</string>
+    <string name="babbage">查尔斯·巴贝奇</string>
+    <string name="henry_miller">亨利·米勒</string>
+    <string name="zedong">毛泽东</string>
+    <string name="ulrich">拉尔斯·乌尔里希</string>
+    <string name="jared_leto">杰瑞德·莱托</string>
+    <!-- 27 december -->
+    <string name="kepler">约翰内斯·开普勒</string>
+    <string name="cayley">乔治·凯利</string>
+    <string name="pasteur">路易·巴斯德</string>
+    <string name="tretyakov">帕维尔·特列季亚科夫</string>
+    <string name="dietrich">玛琳·黛德丽</string>
+    <string name="depardieu">热拉尔·德帕迪约</string>
+    <!-- 28 december -->
+    <string name="eddington">亚瑟·爱丁顿</string>
+    <string name="murnau">弗里德里希·威廉·茂瑙</string>
+    <string name="john_neumann">约翰·冯·诺伊曼</string>
+    <string name="denzel_washington">丹泽尔·华盛顿</string>
+    <string name="torvalds">林纳斯·托瓦兹</string>
+    <string name="sienna_miller">西耶娜·米勒</string>
+    <!-- 29 december -->
+    <string name="pompadour">蓬帕杜夫人</string>
+    <string name="siqueiros">大卫·阿尔法罗·西凯罗斯</string>
+    <string name="voight">乔恩·沃伊特</string>
+    <string name="dexter_holland">德克斯特·霍兰德</string>
+    <string name="jude_law">裘德·洛</string>
+    <!-- 30 december -->
+    <string name="jablonskis">约纳斯·亚布隆斯基斯</string>
+    <string name="kipling">鲁德亚德·吉卜林</string>
+    <string name="patti_smith">帕蒂·史密斯</string>
+    <string name="jay_kay">杰·凯</string>
+    <string name="tiger_woods">泰格·伍兹</string>
+    <string name="lebron_james">勒布朗·詹姆斯</string>
+    <!-- 31 december -->
+    <string name="boldini">乔瓦尼·波尔迪尼</string>
+    <string name="matisse">亨利·马蒂斯</string>
+    <string name="hopkins">安东尼·霍普金斯</string>
+    <string name="ferguson">亚历克斯·弗格森</string>
+    <string name="kingsley">本·金斯利</string>
+    <string name="willis">康妮·威利斯</string>
+    <string name="val_kilmer">方·基默</string>
 </resources>

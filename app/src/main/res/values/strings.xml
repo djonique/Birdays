@@ -239,7 +239,7 @@
     <string name="menu_github">Source code</string>
     <string name="github_url" translatable="false">https://github.com/Djonique/Birdays</string>
     <string name="privacy_policy">Privacy policy</string>
-    <string name="privacy_policy_link" translatable="false">https://raw.githubusercontent.com/Djonique/Birdays/master/PRIVACY%20POLICY.html</string>
+    <string name="privacy_policy_link" translatable="false">https://djonique.github.io/Birdays</string>
 
     <!-- HelpActivity -->
     <string name="help_header">Why isn\'t the reminder working?</string>

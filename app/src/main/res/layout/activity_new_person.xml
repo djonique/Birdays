@@ -64,13 +64,14 @@
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/calendar"
                     app:srcCompat="@drawable/ic_person_blue_24dp"
-                    app:tint="@color/blue_to_green" />
+                    app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_new_person_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding"
+                    android:layout_marginEnd="@dimen/edit_text_input_padding">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_new_person_name"
@@ -98,13 +99,14 @@
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/calendar"
                     app:srcCompat="@drawable/ic_calendar_blue_24dp"
-                    app:tint="@color/blue_to_green" />
+                    app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_new_person_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding"
+                    android:layout_marginEnd="@dimen/edit_text_input_padding">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_new_person_date"
@@ -146,12 +148,13 @@
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/phone_number"
                     app:srcCompat="@drawable/ic_call_blue_24dp"
-                    app:tint="@color/blue_to_green" />
+                    app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding"
+                    android:layout_marginEnd="@dimen/edit_text_input_padding">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_new_person_phone"
@@ -179,12 +182,13 @@
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/email"
                     app:srcCompat="@drawable/ic_email_blue_24dp"
-                    app:tint="@color/blue_to_green" />
+                    app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/edit_text_view_left_padding">
+                    android:layout_marginStart="@dimen/edit_text_view_left_padding"
+                    android:layout_marginEnd="@dimen/edit_text_input_padding">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_new_person_email"

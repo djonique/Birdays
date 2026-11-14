@@ -131,7 +131,7 @@
                     android:textAppearance="@style/TextAppearance.Birdays.Caption"
                     android:textColor="?android:attr/textColorSecondary" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/native_ad_call_to_action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

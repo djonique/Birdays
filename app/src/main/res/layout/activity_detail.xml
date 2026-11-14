@@ -82,7 +82,7 @@
                                 android:layout_height="40dp"
                                 android:layout_gravity="center_vertical"
                                 android:gravity="center"
-                                android:textColor="@color/blue_to_green"
+                                android:textColor="?attr/colorPrimary"
                                 android:textSize="@dimen/detail_age_text_size"
                                 tools:ignore="SpUsage" />
 
@@ -103,7 +103,7 @@
                                 style="@style/detailActivityIcons"
                                 android:contentDescription="@string/calendar"
                                 app:srcCompat="@drawable/ic_calendar_blue_24dp"
-                                app:tint="@color/blue_to_green" />
+                                app:tint="?attr/colorPrimary" />
 
                             <TextView
                                 android:id="@+id/textview_detail_left"
@@ -124,7 +124,7 @@
                                 style="@style/detailActivityIcons"
                                 android:contentDescription="@string/calendar"
                                 app:srcCompat="@drawable/ic_calendar_range_blue_24dp"
-                                app:tint="@color/blue_to_green" />
+                                app:tint="?attr/colorPrimary" />
 
                             <TextView
                                 android:id="@+id/textview_detail_since"
@@ -143,7 +143,7 @@
                                 android:id="@+id/imageview_detail_zodiac"
                                 style="@style/detailActivityIcons"
                                 android:contentDescription="@string/zodiac_sign"
-                                app:tint="@color/blue_to_green" />
+                                app:tint="?attr/colorPrimary" />
 
                             <TextView
                                 android:id="@+id/textview_detail_zodiac"
@@ -180,7 +180,7 @@
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:contentDescription="@string/call"
                                 app:srcCompat="@drawable/ic_call_blue_24dp"
-                                app:tint="@color/blue_to_green" />
+                                app:tint="?attr/colorPrimary" />
 
                             <ImageButton
                                 android:id="@+id/imagebutton_detail_chat"
@@ -189,7 +189,7 @@
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:contentDescription="@string/chat"
                                 app:srcCompat="@drawable/ic_chat_blue_24dp"
-                                app:tint="@color/blue_to_green" />
+                                app:tint="?attr/colorPrimary" />
 
                             <TextView
                                 android:id="@+id/textview_detail_phone"
@@ -212,7 +212,7 @@
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:contentDescription="@string/send_email"
                                 app:srcCompat="@drawable/ic_email_blue_24dp"
-                                app:tint="@color/blue_to_green" />
+                                app:tint="?attr/colorPrimary" />
 
                             <TextView
                                 android:id="@+id/textview_detail_email"

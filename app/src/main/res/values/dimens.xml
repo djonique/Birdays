@@ -46,6 +46,7 @@
 
     <!-- EditActivity -->
     <dimen name="edit_image_padding">8dp</dimen>
+    <dimen name="edit_text_input_padding">8dp</dimen>
     <dimen name="edit_text_view_left_padding">24dp</dimen>
     <dimen name="edit_left_cb_padding">72dp</dimen>
     <dimen name="edit_linear_layout_padding_top">16dp</dimen>

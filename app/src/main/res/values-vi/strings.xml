@@ -199,5 +199,2662 @@
     <string name="help_email_description">Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, vui lòng liên hệ với tôi tại birdaysapp@gmail.com</string>
     <string name="send_email">Gửi email</string>
 
-
+    <!-- Famous persons -->
+    <!-- 1 january -->
+    <string name="medici">Lô-ren-xô đơ Mê-đi-xi</string>
+    <string name="giordano_bruno">Gi-oóc-đa-nô Bru-nô</string>
+    <string name="frazer">Giêm Gioóc Phơ-rây-dơ</string>
+    <string name="coubertin">Pi-e đơ Cu-béc-tanh</string>
+    <string name="william_fox">Uy-li-am Phốc</string>
+    <!-- 2 january -->
+    <string name="piero_di_cosimo">Pi-ê-rô đi Cô-xi-mô</string>
+    <string name="vasily_perov">Va-xi-li Pê-rốp</string>
+    <string name="balakirev">Mi-li Ba-la-ki-rép</string>
+    <string name="tippett">Mai-cơn Típ-pét</string>
+    <string name="isaac_asimov">Ai-dắc A-di-mốp</string>
+    <!-- 3 january -->
+    <string name="louis_poinsot">Lu-i Poanh-xô</string>
+    <string name="dabbadie">Ăng-toan Tôm-xơn Đa-ba-đi</string>
+    <string name="fletcher">Giôn Gun Phơ-lét-chơ</string>
+    <string name="tolkien">Giôn Rô-nan Ru-en Tôn-ki-ên</string>
+    <string name="moore">Goóc-đơn Mu-ơ</string>
+    <string name="mel_gibson">Meo Gíp-xơn</string>
+    <string name="schumacher">Mi-kha-ên Su-ma-khơ</string>
+    <!-- 4 january -->
+    <string name="isaac_newton">Ai-dắc Niu-tơn</string>
+    <string name="pergolesi">Giô-van-ni Bát-ti-xta Péc-gô-lê-di</string>
+    <string name="jacob_grimm">Gia-cốp Grim</string>
+    <string name="braille">Lu-i Bơ-rai</string>
+    <string name="tsereteli">Du-ráp Txê-rê-tê-li</string>
+    <string name="josephson">Bơ-rai-ơn Đa-vít Giô-dép-xơn</string>
+    <!-- 5 january -->
+    <string name="eucken">Ru-đôn Cơ-rít-xtốp Ơi-ken</string>
+    <string name="gillette">Kinh Cam Gi-lét</string>
+    <string name="erlanger">Giô-dép Ơ-lanh-gơ</string>
+    <string name="umberto_eco">Um-béc-tô Ê-cô</string>
+    <string name="manson">Ma-ri-lin Man-xơn</string>
+    <string name="bradley_cooper">Bơ-rát-li Cúp-pơ</string>
+    <!-- 6 january -->
+    <string name="darc">Giăng Đa</string>
+    <string name="jakob_bernoulli">Gia-cốp Béc-nu-li</string>
+    <string name="montgolfier">Giắc Ê-ti-en Mông-gôn-phi-ê</string>
+    <string name="schliemann">Hai-rích Sơ-li-man</string>
+    <string name="scriabin">A-lếch-xan-đơ Xơ-ri-a-bin</string>
+    <string name="celentano">A-đri-a-nô Xê-len-ta-nô</string>
+    <string name="atkinson">Rô-oăn Át-kin-xơn</string>
+    <string name="redmayne">Ét-đi Rét-mên</string>
+    <!-- 7 january -->
+    <string name="pope_gregory">Giáo hoàng Grêgôriô XIII</string>
+    <string name="fleming">Xan-phót Phơ-le-minh</string>
+    <string name="eliezer">Ê-li-ê-dơ Ben-Yê-hu-đa</string>
+    <string name="borel">Ê-min Bô-ren</string>
+    <string name="nicolas_cage">Ni-cô-lát Cây-giơ</string>
+    <!-- 8 january -->
+    <string name="sirani">Ê-li-da-bét-ta Xi-ra-ni</string>
+    <string name="nijinska">Bơ-rô-ni-xla-va Ni-gin-xca</string>
+    <string name="presley">Eo-vít Pơ-rét-xli</string>
+    <string name="hawking">Xti-vơn Hoóc-king</string>
+    <string name="daviw_bowie">Đa-vít Bâu-i</string>
+    <!-- 9 january -->
+    <string name="simon_vouet">Xi-mông Vu-ê</string>
+    <string name="wrangel">Phéc-đi-năng phôn Vơ-ran-ghen</string>
+    <string name="watson">Giôn Bơ-ro-đút Oát-xơn</string>
+    <string name="capek">Ca-ren Cha-pếch</string>
+    <string name="beauvoir">Xi-môn đơ Bô-voa</string>
+    <!-- 10 january -->
+    <string name="birkbeck">Gioóc Bớc-bếch</string>
+    <string name="tolstoy">A-lếch-xây Tôn-xtôi</string>
+    <string name="bertoni">Phơ-la-mi-ni-ô Béc-tô-ni</string>
+    <string name="wilson">Rô-bớt Út-râu Uyn-xơn</string>
+    <string name="knuth">Đô-nan Ơ-vin Cơ-nút</string>
+    <!-- 11 january -->
+    <string name="parmigianino">Pác-mi-gia-ni-nô</string>
+    <string name="guidobaldo">Gui-đô-ban-đô đen Môn-tê</string>
+    <string name="stensen">Ni-cô-lát Xten-nô</string>
+    <string name="hofmann">An-bớt Hốp-man</string>
+    <string name="mendoza">Ê-đu-ác-đô Men-đô-da</string>
+    <!-- 12 january -->
+    <string name="helmont">Giăng Báp-ti-xta van Hen-môn</string>
+    <string name="perrault">Sác-lơ Pê-rô</string>
+    <string name="jack_london">Giắc Lân-đơn</string>
+    <string name="kurchatov">I-go Cuốc-cha-tốp</string>
+    <string name="korolev">Xéc-gây Cô-rô-li-ốp</string>
+    <string name="maharishi">Ma-ha-ri-si Ma-hét Y-ô-gi</string>
+    <string name="murakami">Ha-ru-ki Mu-ra-ca-mi</string>
+    <!-- 13 january -->
+    <string name="beketov">Ni-cô-lai Bê-kê-tốp</string>
+    <string name="wien">Vin-hem Vin</string>
+    <string name="soutine">Chai-im Xu-tin</string>
+    <string name="lifshitz">I-li-a Líp-sít</string>
+    <string name="feyerabend">Pôn Phây-ơ-ra-ben</string>
+    <!-- 14 january -->
+    <string name="semyonov">Pi-ốt Xê-mi-ô-nốp-Tian-San-xki</string>
+    <string name="morisot">Béc-tơ Mô-ri-dô</string>
+    <string name="schweitzer">An-be Svai-txơ</string>
+    <string name="mishima">Y-u-ki-ô Mi-si-ma</string>
+    <string name="kharlamov">Va-lê-ri Khác-la-mốp</string>
+    <!-- 15 january -->
+    <string name="moliere">Mô-li-e</string>
+    <string name="griboyedov">A-lếch-xan-đơ Gơ-ri-bôi-ê-đốp</string>
+    <string name="virtanen">Át-tu-ri In-ma-ri Viếc-ta-nen</string>
+    <string name="teller">Ét-uốt Teo-lơ</string>
+    <string name="luther_king">Mác-tin Lu-thơ Kinh</string>
+    <!-- 16 january -->
+    <string name="schoner">Giô-han-nét Sơ-nơ</string>
+    <string name="piccinni">Ni-cô-lô Pít-chin-ni</string>
+    <string name="alfieri">Vít-to-ri-ô An-phi-ê-ri</string>
+    <string name="veresaev">Vi-ken-ti Vê-rê-xa-ép</string>
+    <string name="roy_jones">Roi Giôn-xơ Con</string>
+    <!-- 17 january -->
+    <string name="franklin">Ben-gia-min Phơ-ranh-klin</string>
+    <string name="zhukovsky">Ni-cô-lai Du-cốp-xki</string>
+    <string name="stanislavski">Côn-xtan-tin Xta-ni-xláp-xki</string>
+    <string name="al_capone">An Ca-pôn</string>
+    <string name="muhammad_ali">Mu-ham-mát A-li</string>
+    <string name="jim_carrey">Gim Ca-rây</string>
+    <!-- 18 january -->
+    <string name="montesquieu">Mông-tét-xki-ơ</string>
+    <string name="cesar_cui">Xê-da Cui</string>
+    <string name="ehrenfest">Pôn Ê-ren-phét</string>
+    <string name="milne">A-lan A-lếch-xan-đơ Min</string>
+    <string name="kitano">Ta-kê-si Ki-ta-nô</string>
+    <string name="costner">Kê-vin Cốt-xnơ</string>
+    <string name="guardiola">Giô-dép Goác-đi-ô-la</string>
+    <!-- 19 january -->
+    <string name="cagnacci">Gui-đô Ca-nhát-chi</string>
+    <string name="comte">Ô-guýt Công-tơ</string>
+    <string name="edgar_poe">Ét-ga A-lan Pô</string>
+    <string name="kapteyn">Gia-cô-bút Cáp-tên</string>
+    <string name="serov">Va-len-tin Xê-rốp</string>
+    <string name="kantorovich">Lê-ô-nít Can-tô-rô-vích</string>
+    <!-- 20 january -->
+    <string name="gessi">Phơ-ran-xét-xcô Ghét-xi</string>
+    <string name="ampere">Ăng-đơ-rê Ma-ri Am-pe</string>
+    <string name="chausson">Éc-nét Sô-xông</string>
+    <string name="onassis">A-ri-xtốt Ô-na-xít</string>
+    <string name="fellini">Phê-đê-ri-cô Phen-li-ni</string>
+    <!-- 21 january -->
+    <string name="browning">Giôn Mô-dét Bơ-rao-ninh</string>
+    <string name="florensky">Pa-ven Phơ-lo-ren-xki</string>
+    <string name="dior">Cơ-rít-xti-an Đi-o</string>
+    <string name="benny_hill">Ben-ni Hiu</string>
+    <string name="domingo">Pơ-la-xi-đô Đô-minh-gô</string>
+    <!-- 22 january -->
+    <string name="bacon">Phơ-ran-xít Bây-cơn</string>
+    <string name="byron">Gioóc Goóc-đơn Bai-rơn</string>
+    <string name="scoville">Uyn-bơ Xcô-vin</string>
+    <string name="picabia">Phơ-ran-xít Pi-ca-bi-a</string>
+    <string name="landau">Lép Lan-đao</string>
+    <!-- 23 january -->
+    <string name="stendhal">Xtăng-đan</string>
+    <string name="manet">Ê-đu-a Ma-nê</string>
+    <string name="abbe">Éc-xtơ Áp-bê</string>
+    <string name="hilbert">Đa-vít Hin-be</string>
+    <string name="yukawa">Hi-đê-ki Y-u-ca-oa</string>
+    <string name="hauer">Rút-gơ Hau-ơ</string>
+    <!-- 24 january -->
+    <string name="congreve">Uy-li-am Công-gơ-ríp</string>
+    <string name="beaumarchais">Pi-e Bô-mác-se</string>
+    <string name="hoffmann">Éc-xtơ Tê-ô-đo A-ma-đê-út Hốp-man</string>
+    <string name="surikov">Va-xi-li Xu-ri-cốp</string>
+    <string name="shechtman">Đan Sếch-man</string>
+    <string name="kinski">Na-xtát-xi-a Kin-xki</string>
+    <!-- 25 january -->
+    <string name="lagrange">Giô-dép Lu-i La-gơ-răng-giơ</string>
+    <string name="burns">Rô-bớt Bơn-xơ</string>
+    <string name="shishkin">I-van Si-skin</string>
+    <string name="maugham">Xăm-mơ-xét Mô-am</string>
+    <string name="woolf">Vơ-gi-ni-a Un-phơ</string>
+    <string name="prigogine">I-li-a Pơ-ri-gô-gin</string>
+    <string name="eusebio">Ơ-dê-bi-ô</string>
+    <!-- 26 january -->
+    <string name="morita">A-ki-ô Mô-ri-ta</string>
+    <string name="newman">Pôn Niu-man</string>
+    <string name="davis">Ăng-giê-la Đa-vít</string>
+    <string name="gretzky">Uên Gơ-rét-xki</string>
+    <string name="mourinho">Giô-dê Mô-ri-nhô</string>
+    <!-- 27 january -->
+    <string name="neumann">Giô-han Ban-ta-da Nôi-man</string>
+    <string name="mozart">Vôn-phơ-gang A-ma-đê-út Mô-da</string>
+    <string name="schelling">Phơ-ri-đơ-rích Sên-linh</string>
+    <string name="saltykov_shchedrin">Mi-kha-in Xan-tư-cốp-Sê-đơ-rin</string>
+    <string name="carroll">Lu-ít Ca-rôn</string>
+    <string name="bjorndalen">Ô-lê Ai-na Bi-ơn-đa-len</string>
+    <!-- 28 january -->
+    <string name="borelli">Giô-van-ni An-phông-xô Bô-re-li</string>
+    <string name="heweliusz">Giăng Hê-vê-li-út</string>
+    <string name="baskerville">Giôn Bát-xcơ-vin</string>
+    <string name="rubinstein">Ác-thơ Ru-bin-xtai</string>
+    <string name="buffon">Gian-lu-i-gi Búp-phông</string>
+    <!-- 29 january -->
+    <string name="swedenborg">Ê-ma-nu-en Xvê-đơn-boóc</string>
+    <string name="mohs">Phơ-ri-đơ-rích Mô</string>
+    <string name="auber">Đa-ni-en Ô-be</string>
+    <string name="shibasaburo">Ki-ta-xa-tô Si-ba-xa-bu-rô</string>
+    <string name="chekhov">Ăng-tôn Sê-khốp</string>
+    <string name="rolland">Rô-manh Rô-lăng</string>
+    <!-- 30 january -->
+    <string name="watt">Giêm Oát</string>
+    <string name="chamisso">A-đen-bớt phôn Sa-mi-xô</string>
+    <string name="kotelnikov">Gơ-lép Cô-ten-ni-cốp</string>
+    <string name="gaidai">Lê-ô-nít Gai-đai</string>
+    <string name="engelbart">Đắc-glát En-ghen-bát</string>
+    <string name="brown">Rút Bơ-rao</string>
+    <!-- 31 january -->
+    <string name="schubert">Phơ-răng Su-be</string>
+    <string name="richards">Tê-ô-đo Uy-li-am Ri-chác</string>
+    <string name="langmuir">Ơ-vinh Lăng-mua</string>
+    <string name="vanga">Van-ga</string>
+    <string name="timberlake">Giút-xtin Tim-bơ-lếch</string>
+    <!-- 1 february -->
+    <string name="bekhterev">Vla-đi-mia Bếch-tê-rép</string>
+    <string name="john_ford">Giôn Pho</string>
+    <string name="gable">Clác Gây-bơ</string>
+    <string name="segre">Ê-mi-li-ô Gi-nô Xê-gơ-rê</string>
+    <string name="brandon_lee">Bơ-ran-đơn Lý</string>
+    <!-- 2 february -->
+    <string name="bourdon">Xê-bát-xti-ăng Buốc-đông</string>
+    <string name="boussingault">Giăng Báp-tít Bu-xanh-gô</string>
+    <string name="forel">Phơ-răng-xoa An-phông-xơ Phô-ren</string>
+    <string name="chkalov">Va-lê-ri Chơ-ca-lốp</string>
+    <string name="haasse">Hen-la Ha-xơ</string>
+    <string name="holland">Giôn Hen-ri Ho-lân</string>
+    <!-- 3 february -->
+    <string name="mendelssohn">Phê-lích Men-đen-xôn</string>
+    <string name="trubner">Hai-rích Vin-hem Tơ-rúp-nơ</string>
+    <string name="fomin">I-van Phô-min</string>
+    <string name="stein">Gơ-tơ-rút Xtai</string>
+    <string name="joachim_low">Giô-a-khim Lơ</string>
+    <!-- 4 february -->
+    <string name="bottger">Giô-han Phơ-ri-đơ-rích Bớt-gơ</string>
+    <string name="nemcova">Bô-giê-na Nem-cô-va</string>
+    <string name="prandtl">Lút-vích Pơ-ran-đơn</string>
+    <string name="maillard">Lu-i Ca-mi May-a</string>
+    <string name="tombaugh">Clai Uy-li-am Tôm-bô</string>
+    <!-- 5 february -->
+    <string name="runeberg">Giô-han Lút-vích Ru-nê-béc</string>
+    <string name="maxim">Hai-răm Xti-vơn Mắc-xim</string>
+    <string name="dunlop">Giôn Bôi Đăn-lốp</string>
+    <string name="teike">Các Tai-kơ</string>
+    <string name="citroen">Ăng-đơ-rê Guýt-xtáp Xi-tơ-rô-en</string>
+    <string name="voisin">Ga-bơ-ri-en Voa-danh</string>
+    <string name="cristiano_ronaldo">Cơ-rít-xti-a-nô Rô-nan-đô</string>
+    <string name="neymar">Nây-ma</string>
+    <!-- 6 february -->
+    <string name="heinecken">Cơ-rít-xti-an Hai-rích Hai-nếch-ken</string>
+    <string name="zelinsky">Ni-cô-lai Dê-lin-xki</string>
+    <string name="bragg">Pôn Bơ-rắc</string>
+    <string name="truffaut">Phơ-răng-xoa Rô-lăng Tơ-ruýp-phô</string>
+    <string name="bob_marley">Bốp Mác-li</string>
+    <!-- 7 february -->
+    <string name="dickens">Sác-lơ Đích-ken</string>
+    <string name="alfred_adler">An-phơ-rét Át-lơ</string>
+    <string name="sinclair_lewis">Xinh-cle Lu-ít</string>
+    <string name="chizhevsky">A-lếch-xan-đơ Chi-giép-xki</string>
+    <string name="euler">Un phôn Ơi-le</string>
+    <string name="desmond_doss">Đét-mân Đót</string>
+    <string name="kutcher">Át-xtơn Cút-chơ</string>
+    <!-- 8 february -->
+    <string name="bernoulli">Đa-ni-en Béc-nu-li</string>
+    <string name="courtois">Béc-na Cuốc-toa</string>
+    <string name="jules_verne">Giuyn Véc-nơ</string>
+    <string name="mendeleev">Đơ-mi-tơ-ri Men-đê-lê-ép</string>
+    <string name="carlson">Chét-xtơ Các-xơn</string>
+    <string name="williams">Giôn Uy-li-am</string>
+    <!-- 9 february -->
+    <string name="navai">A-li-Sia Na-va-i</string>
+    <string name="valisy_zhukovsky">Va-xi-li Du-cốp-xki</string>
+    <string name="maybach">Vin-hem May-bách</string>
+    <string name="soseki">Nát-xư-mê Xô-xê-ki</string>
+    <string name="berg">An-ban Béc</string>
+    <string name="valier">Mắc Va-li-ê</string>
+    <string name="monod">Giắc Lu-xi-ăng Mô-nô</string>
+    <!-- 10 february -->
+    <string name="molter">Giô-han Men-chi-o Môn-tơ</string>
+    <string name="lamb">Sác-lơ Lam</string>
+    <string name="navier">Clốt Lu-i Na-vi-ê</string>
+    <string name="pasternak">Bô-rít Pát-xtéc-nắc</string>
+    <string name="brecht">Béc-tôn Bơ-rếch</string>
+    <!-- 11 february -->
+    <string name="talbot">Uy-li-am Hen-ri Phốc Tan-bốt</string>
+    <string name="edison">Tô-mát Ê-đi-xơn</string>
+    <string name="henry">Biu-la Lu-i Hen-ri</string>
+    <string name="sheldon">Xít-ni Seo-đơn</string>
+    <string name="nielsen">Lét-xli Nin-xơn</string>
+    <string name="aniston">Giê-ni-phơ A-nít-xtơn</string>
+    <!-- 12 february -->
+    <string name="gottsched">Giô-han Cơ-rít-xtốp Gốt-sét</string>
+    <string name="darwin">Sác-lơ Rô-bớt Đác-uyn</string>
+    <string name="lincoln">Áp-ra-ham Lin-côn</string>
+    <string name="roerich">Hê-lê-na Rơ-rích</string>
+    <string name="anna_pavlova">An-na Páp-lô-va</string>
+    <string name="byung_chul">Lý Bỉnh Triết</string>
+    <!-- 13 february -->
+    <string name="malthus">Tô-mát Man-thớt</string>
+    <string name="krylov">I-van Cơ-rư-lốp</string>
+    <string name="chaliapin">Phi-ô-đo Sa-li-a-pin</string>
+    <string name="shockley">Uy-li-am Bơ-rát-phót Sốc-li</string>
+    <string name="collina">Pi-e-lu-i-gi Cô-li-na</string>
+    <string name="robbie_williams">Rốp-bi Uy-li-am</string>
+    <!-- 14 february -->
+    <string name="alberti">Lê-ô-nê Bát-ti-xta An-béc-ti</string>
+    <string name="babur">Ba-bua</string>
+    <string name="ferris">Gioóc Phe-rít</string>
+    <string name="germi">Pi-ê-tơ-rô Giéc-mi</string>
+    <string name="sergey_kapitsa">Xéc-gây Ca-pít-xa</string>
+    <string name="alan_parker">A-lan Pác-cơ</string>
+    <!-- 15 february -->
+    <string name="galilei">Ga-li-lê-ô Ga-li-lê</string>
+    <string name="praetorius">Pơ-rê-tô-ri-út</string>
+    <string name="bentham">Giê-rê-mi Ben-tham</string>
+    <string name="stoney">Gioóc Giôn-xtơn Xtô-ni</string>
+    <string name="guillaume">Sác-lơ Ê-đu-a Ghi-ôm</string>
+    <string name="whitehead">An-phơ-rét Noóc Oai-hét</string>
+    <string name="barrymore">Giôn Ba-ri-mo</string>
+    <!-- 16 february -->
+    <string name="bouguer">Pi-e Bu-ghê</string>
+    <string name="bodoni">Giam-bát-ti-xta Bô-đô-ni</string>
+    <string name="galton">Phơ-ran-xít Gan-tơn</string>
+    <string name="haeckel">Éc-xtơ Hai-rích Hếch-ken</string>
+    <string name="rossi">Va-len-ti-nô Rốt-xi</string>
+    <!-- 17 february -->
+    <string name="laennec">Rơ-nê La-en-nếch</string>
+    <string name="beilstein">Phơ-ri-đơ-rích Côn-rát Bai-xtai</string>
+    <string name="john_watson">Tô-mát Giôn Oát-xơn</string>
+    <string name="fisher">Rô-nan Phít-sơ</string>
+    <string name="michael_bay">Mai-cơn Bay</string>
+    <string name="denise_richards">Đơ-ni Ri-chác</string>
+    <!-- 18 february -->
+    <string name="volta">A-lếch-xan-đơ-rô Vôn-ta</string>
+    <string name="bates">Hen-ri Oan-tơ Bết-xơ</string>
+    <string name="ernst_mach">Éc-xtơ Mắc</string>
+    <string name="ferrari">En-dô Phe-ra-ri</string>
+    <string name="yoko_ono">Y-ô-cô Ô-nô</string>
+    <string name="travolta">Giôn Tơ-ra-vôn-ta</string>
+    <!-- 19 february -->
+    <string name="copernicus">Ni-cô-lai Cô-péc-ních</string>
+    <string name="boccherini">Lu-i-gi Bốc-kê-ri-ni</string>
+    <string name="murchison">Rô-đơ-rích Im-pi Mơ-chi-xơn</string>
+    <string name="ducommun">Ê-li Đuy-cô-manh</string>
+    <string name="arrhenius">Xvan-tê Ô-guýt A-rê-ni-út</string>
+    <string name="del_toro">Bê-ni-xi-ô đen Tô-rô</string>
+    <!-- 20 february -->
+    <string name="reil">Giô-han Cơ-rít-xti-an Rai</string>
+    <string name="boltzmann">Lút-vích Bôn-xơ-man</string>
+    <string name="crawford">Xin-đi Cơ-ro-phớt</string>
+    <string name="cobain">Cớt Cô-bên</string>
+    <string name="rihanna">Ri-an-na</string>
+    <!-- 21 february -->
+    <string name="delibes">Lê-ô Đơ-líp</string>
+    <string name="calment">Giăng Can-măng</string>
+    <string name="sullivan">Ha-ri Xtắc Xu-li-vân</string>
+    <string name="henrik_dam">Hen-rích Đam</string>
+    <string name="givenchy">Uy-be đơ Gi-văng-si</string>
+    <string name="palahniuk">Chắc Pa-la-ni-úc</string>
+    <!-- 22 february -->
+    <string name="washington">Gioóc Oa-sinh-tơn</string>
+    <string name="schopenhauer">Ác-thơ Sô-pen-hau-ơ</string>
+    <string name="quetelet">A-đôn-phơ Kê-tơ-lê</string>
+    <string name="janssen">Pi-e Giăng-xen</string>
+    <string name="hertz">Hai-rích Héc</string>
+    <string name="bronsted">Giô-han-nét Ni-cô-lau Bơ-rơn-xtét</string>
+    <string name="drew_barrymore">Đơ-riu Ba-ri-mo</string>
+    <!-- 23 february -->
+    <string name="handel">Gioóc Phơ-ri-đơ-rích Han-đen</string>
+    <string name="chambers">Uy-li-am Cham-bơ</string>
+    <string name="rothschild">May-ơ Am-sen Rốt-chai</string>
+    <string name="malevich">Ca-di-mia Ma-lê-vích</string>
+    <string name="jaspers">Các Giat-xpơ</string>
+    <string name="blunt">Ê-mi-li Bơ-lăn</string>
+    <!-- 24 february -->
+    <string name="banks">Giô-dép Banh</string>
+    <string name="grimm">Vin-hem Grim</string>
+    <string name="borgman">I-van Boóc-man</string>
+    <string name="freda">Rích-các-đô Phơ-rê-đa</string>
+    <string name="legrand">Mi-sen Lơ-gơ-răng</string>
+    <string name="steve_jobs">Xti-vơ Gióp</string>
+    <!-- 25 february -->
+    <string name="battuta">I-bơn Bát-tu-ta</string>
+    <string name="goldoni">Các-lô Gôn-đô-ni</string>
+    <string name="renoir">Pi-e Ô-guýt Rơ-noa</string>
+    <string name="karl_may">Các Phơ-ri-đơ-rích May</string>
+    <string name="caruso">En-ri-cô Ca-ru-xô</string>
+    <string name="burgess">An-thô-ni Bơ-gét</string>
+    <!-- 26 february -->
+    <string name="marlowe">Cơ-rít-xtô-phơ Mác-lâu</string>
+    <string name="arago">Phơ-răng-xoa A-ra-gô</string>
+    <string name="hugo">Vích-to Huy-gô</string>
+    <string name="levi_strauss">Lê-vi Xtơ-rao</string>
+    <string name="flammarion">Ca-mi Phơ-lam-ma-ri-ông</string>
+    <!-- 27 february -->
+    <string name="constantine">Côn-xtan-ti-nút Đại đế</string>
+    <string name="longfellow">Hen-ri Oát-xuốt Long-phe-lâu</string>
+    <string name="ge">Ni-cô-lai Ghê</string>
+    <string name="best">Sác-lơ Bét</string>
+    <string name="steinbeck">Giôn Xtai-bếch</string>
+    <string name="taylor">Ê-li-da-bét Tay-lơ</string>
+    <!-- 28 february -->
+    <string name="montaigne">Mi-sen đơ Mông-ten</string>
+    <string name="reaumur">Rơ-nê Ăng-toan Rê-ô-muy-a</string>
+    <string name="renan">Éc-nét Rơ-năng</string>
+    <string name="pauling">Lai-nớt Pao-linh</string>
+    <string name="gehry">Phơ-ranh Ghê-ri</string>
+    <string name="cooper">Lê-ông Cúp-pơ</string>
+    <string name="vodianova">Na-ta-li-a Vô-đi-a-nô-va</string>
+    <!-- 29 february -->
+    <string name="klenze">Lê-ô phôn Cơ-len-dơ</string>
+    <string name="rossini">Giô-a-ki-nô Rốt-xi-ni</string>
+    <string name="john_holland">Giôn Phi-líp Ho-lân</string>
+    <string name="hollerith">Hơ-man Hô-lơ-rít</string>
+    <string name="papert">Xây-mua Pa-pớt</string>
+    <!-- 1 march -->
+    <string name="botticelli">Xan-đơ-rô Bốt-ti-xen-li</string>
+    <string name="chopin">Phơ-rê-đê-rích Sô-panh</string>
+    <string name="akutagawa">Ri-ư-nô-xư-kê A-cư-ta-ga-oa</string>
+    <string name="miller">Gơ-len Mi-lơ</string>
+    <string name="snyder">Dắc Xnai-đơ</string>
+    <string name="bieber">Giút-xtin Bi-bơ</string>
+    <!-- 2 march -->
+    <string name="dekker">Ê-đu-át Đao-uýt Đếch-cơ</string>
+    <string name="smetana">Bê-đơ-rích Xmê-ta-na</string>
+    <string name="irving">Giôn Ơ-vinh</string>
+    <string name="bon_jovi">Giôn Bon Giô-vi</string>
+    <string name="craig">Đa-ni-en Cơ-rếch</string>
+    <!-- 3 march -->
+    <string name="pullman">Gioóc Pun-man</string>
+    <string name="cantor">Gê-oóc Can-to</string>
+    <string name="bell">A-lếch-xan-đơ Gơ-ra-ham Beo</string>
+    <string name="frisch">Rắc-na Phơ-rít</string>
+    <string name="kornberg">Ác-thơ Coóc-béc</string>
+    <!-- 4 march -->
+    <string name="vivaldi">Ăng-tô-ni-ô Vi-van-đi</string>
+    <string name="raeburn">Hen-ri Rây-bơn</string>
+    <string name="gamow">Gioóc Ga-mốp</string>
+    <string name="veksler">Vla-đi-mia Vếch-xlơ</string>
+    <string name="mauriat">Pôn Mô-ri-a</string>
+    <!-- 5 march -->
+    <string name="mercator">Gơ-hác-đút Méc-ca-to</string>
+    <string name="tiepolo">Giô-van-ni Bát-ti-xta Ti-ê-pô-lô</string>
+    <string name="marey">Ê-ti-en Giuyn Ma-rây</string>
+    <string name="tarrasch">Dích-bớt Ta-rát</string>
+    <string name="ando">Mô-mô-phư-cư An-đô</string>
+    <string name="tobin">Giêm Tô-bin</string>
+    <!-- 6 march -->
+    <string name="michelangelo">Mi-ken-lăng-giơ-lô</string>
+    <string name="bergerac">Xa-vi-ni-ăng đơ Xi-ra-nô đơ Béc-giơ-rắc</string>
+    <string name="elizabeth_browning">Ê-li-da-bét Ba-rét Bơ-rao-ninh</string>
+    <string name="jerzy_lec">Xta-ni-xláp Giê-gi Lếch</string>
+    <string name="marquez">Ga-bơ-ri-en Gác-xi-a Mác-két</string>
+    <string name="tereshkova">Va-len-ti-na Tê-rê-scô-va</string>
+    <string name="shaquille">Sa-kin Ô-nin</string>
+    <!-- 7 march -->
+    <string name="rob_roy">Rốp Roi</string>
+    <string name="niepce">Giô-dép Ni-xê-pho Ni-ép-xơ</string>
+    <string name="palmer">Đa-ni-en Đa-vít Pam-mơ</string>
+    <string name="montesquiou">Rô-be đơ Mông-tét-xki-u</string>
+    <string name="mondrian">Pi-ét Môn-đơ-ri-an</string>
+    <string name="ravel">Mô-rít Ra-ven</string>
+    <string name="kobo_abe">Cô-bô A-bê</string>
+    <!-- 8 march -->
+    <string name="fothergill">Giôn Phô-thơ-gin</string>
+    <string name="potocki">Giăng Pô-tốc-ki</string>
+    <string name="ignacy">I-gơ-na-xi Lu-ca-si-ê-vích</string>
+    <string name="thompson">La-Mác-cút Át-na Tôm-xơn</string>
+    <string name="otto_hahn">Ốt-tô Han</string>
+    <string name="kendall">Ét-uốt Can-vin Ken-đan</string>
+    <string name="aiken">Hao-uốt Ha-thơ-uây Ai-ken</string>
+    <!-- 9 march -->
+    <string name="vespucci">A-mê-ri-gô Vét-xpu-chi</string>
+    <string name="shevchenko">Ta-rát Sép-chen-cô</string>
+    <string name="barragan">Lu-ít Ba-ra-gan</string>
+    <string name="kohn">Oan-tơ Côn</string>
+    <string name="gagarin">Y-u-ri Ga-ga-rin</string>
+    <string name="binoche">Giuy-li-ét Bi-nốt</string>
+    <!-- 10 march -->
+    <string name="schlegel">Phơ-ri-đơ-rích Slê-ghen</string>
+    <string name="eichendorff">Giô-dép phôn Ai-khen-đoóc</string>
+    <string name="blatter">Giô-dép Bơ-lát-tơ</string>
+    <string name="norris">Chắc No-rít</string>
+    <string name="bin_laden">Ô-xa-ma bin La-đen</string>
+    <string name="stone">Sa-rơn Xtôn</string>
+    <!-- 11 march -->
+    <string name="tasso">Toóc-qua-tô Tát-xô</string>
+    <string name="verrier">Uốc-banh Lơ Ve-ri-ê</string>
+    <string name="bertrand">Giô-dép Béc-tơ-răng</string>
+    <string name="vannevar_bush">Va-nê-va Bút-sơ</string>
+    <string name="bloembergen">Ni-cô-lát Bơ-lum-béc-ghen</string>
+    <string name="adams">Đắc-glát A-đam</string>
+    <string name="knoxville">Giôn-ni Nốc-xơ-vin</string>
+    <!-- 12 march -->
+    <string name="notre">Ăng-đơ-rê Lơ Nốt-tơ-rơ</string>
+    <string name="berkeley">Gioóc Bớc-li</string>
+    <string name="bazhenov">Va-xi-li Ba-giê-nốp</string>
+    <string name="kirchhoff">Guýt-xtáp Kiếc-khốp</string>
+    <string name="newcomb">Xai-mơn Niu-côm</string>
+    <string name="perkin">Uy-li-am Hen-ri Pơ-kin</string>
+    <string name="vernadsky">Vla-đi-mia Véc-nát-xki</string>
+    <!-- 13 march -->
+    <string name="bonnet">Sác-lơ Bôn-nê</string>
+    <string name="lowell">Pơ-xi-van Lâu-en</string>
+    <string name="eliade">Mia-chê-a Ê-li-a-đê</string>
+    <string name="hubbard">La-phay-ét Rô-nan Hắp-bát</string>
+    <string name="scatman">Xcát-man Giôn</string>
+    <!-- 14 march -->
+    <string name="telemann">Gê-oóc Phi-líp Tê-lê-man</string>
+    <string name="strauss">Giô-han Xtơ-rao I</string>
+    <string name="banville">Tê-ô-đo đơ Băng-vin</string>
+    <string name="schiaparelli">Giô-van-ni Xki-a-pa-ren-li</string>
+    <string name="ehrlich">Pôn E-lích</string>
+    <string name="einstein">An-be Anh-xtanh</string>
+    <string name="caine">Mai-cơn Kên</string>
+    <!-- 15 march -->
+    <string name="sylvius">Phơ-ran-xít-xcút Xin-vi-út</string>
+    <string name="loschmidt">Giô-han Giô-dép Lốt-smít</string>
+    <string name="heyse">Pôn Hai-dơ</string>
+    <string name="behring">Ê-min phôn Bê-rinh</string>
+    <string name="haffkine">Oan-đơ-ma Háp-kin</string>
+    <string name="alferov">Giô-rét An-phi-ô-rốp</string>
+    <!-- 16 march -->
+    <string name="georg_ohm">Gê-oóc Xi-môn Ôm</string>
+    <string name="prudhomme">Xuy-li Pơ-ruy-đôm</string>
+    <string name="beijerinck">Mác-ti-nút Bay-ơ-rinh</string>
+    <string name="yayser">Hai-rích Kai-dơ</string>
+    <string name="damadian">Rây-mơn Đa-ma-đi-an</string>
+    <string name="bertolucci">Béc-nác-đô Béc-tô-lút-chi</string>
+    <string name="stallman">Ri-chác Xtôn-man</string>
+    <!-- 17 march -->
+    <string name="daimler">Gốt-líp Đai-mlơ</string>
+    <string name="vrubel">Mi-kha-in Vơ-ru-ben</string>
+    <string name="hess">Oan-tơ Ru-đôn Hét</string>
+    <string name="nureyev">Ru-đôn Nu-rê-ép</string>
+    <string name="gibson">Uy-li-am Gíp-xơn</string>
+    <string name="russell">Cớt Rút-xen</string>
+    <!-- 18 march -->
+    <string name="steiner">Gia-cốp Xtai-nơ</string>
+    <string name="hebbel">Phơ-ri-đơ-rích Hép-ben</string>
+    <string name="diesel">Ru-đôn Đi-ê-den</string>
+    <string name="stekel">Vin-hem Xtê-ken</string>
+    <string name="koffka">Cớt Cốp-ca</string>
+    <string name="besson">Lúc Bét-xông</string>
+    <!-- 19 march -->
+    <string name="burton">Ri-chác Phơ-ran-xít Bơ-tơn</string>
+    <string name="wheeler">Uy-li-am Mo-tơn Uyn-lơ</string>
+    <string name="reger">Mắc Rê-gơ</string>
+    <string name="haworth">No-man Ha-uốt</string>
+    <string name="joliot_curie">Phơ-rê-đê-rích Giô-li-ô Quy-ri</string>
+    <string name="molina">Ma-ri-ô Mô-li-na</string>
+    <string name="bruce_willis">Bơ-rút Uy-lít</string>
+    <!-- 20 march -->
+    <string name="ibsen">Hen-rích Íp-xen</string>
+    <string name="gigli">Bê-ni-a-mi-nô Gi-li</string>
+    <string name="skinner">Bơ-rút Phơ-rê-đơ-rích Xkin-nơ</string>
+    <string name="cattell">Rây-mơn Cát-ten</string>
+    <string name="neher">Éc-vin Nê-ơ</string>
+    <string name="bennington">Chét-xtơ Ben-ninh-tơn</string>
+    <!-- 21 march -->
+    <string name="fourier">Giô-dép Phu-ri-ê</string>
+    <string name="mozhaysky">A-lếch-xan-đơ Mô-giai-xki</string>
+    <string name="gilbert">Oan-tơ Gin-bớt</string>
+    <string name="oldman">Ga-ri Ôn-man</string>
+    <string name="senna">Ai-tơn Xen-na</string>
+    <string name="ronaldinho">Rô-nan-đin-hô</string>
+    <!-- 22 march -->
+    <string name="van_dyck">Ăng-tô-ni van Đích</string>
+    <string name="pelletier">Pi-e Giô-dép Pê-lơ-ti-ê</string>
+    <string name="lysenko">Mư-cô-la Lư-xen-cô</string>
+    <string name="millikan">Rô-bớt Ăng-đơ-riu Mi-li-can</string>
+    <string name="richter">Bơ-tơn Rích-tơ</string>
+    <string name="webber">Ăng-đơ-riu Loi Uép-bơ</string>
+    <!-- 23 march -->
+    <string name="laplace">Pi-e Xi-mông La-plát</string>
+    <string name="du_gard">Rô-giê Mác-tanh đuy Ga</string>
+    <string name="noether">Em-mi Nơ-thơ</string>
+    <string name="juan_gris">Hoan Gơ-rít</string>
+    <string name="fromm">Ê-rích Phơ-rom</string>
+    <string name="kurosawa">A-ki-ra Cư-rô-xa-oa</string>
+    <string name="von_braun">Véc-nơ phôn Bơ-rao</string>
+    <!-- 24 march -->
+    <string name="agricola">Gê-oóc-gi-út A-gơ-ri-cô-la</string>
+    <string name="priestley">Giô-dép Pơ-rít-xtli</string>
+    <string name="morris">Uy-li-am Mo-rít</string>
+    <string name="houdini">Ha-ri Hu-đi-ni</string>
+    <string name="dario_fo">Đa-ri-ô Phô</string>
+    <string name="ballmer">Xti-vơ Ban-mơ</string>
+    <string name="jim_parsons">Gim Pác-xơn</string>
+    <!-- 25 march -->
+    <string name="amici">Giô-van-ni Bát-ti-xta A-mi-chi</string>
+    <string name="toscanini">Ác-tu-rô Tốt-xca-ni-ni</string>
+    <string name="aretha_franklin">A-rê-tha Phơ-ranh-klin</string>
+    <string name="elton_john">Eo-tơn Giôn</string>
+    <string name="parker">Xa-ra Giét-xi-ca Pác-cơ</string>
+    <!-- 26 march -->
+    <string name="gesner">Côn-rát Ghét-xnơ</string>
+    <string name="prorok_divis">Pơ-rô-cốp Đi-vít</string>
+    <string name="benjamin_thompson">Ben-gia-min Tôm-xơn</string>
+    <string name="feddersen">Bê-ren Vin-hem Phét-đơ-xen</string>
+    <string name="frost">Rô-bớt Phơ-rót</string>
+    <string name="tennessee_williams">Ten-nét-xi Uy-li-am</string>
+    <string name="katz">Béc-nát Cát</string>
+    <string name="anfinsen">Cơ-rít-xti-an An-phin-xen</string>
+    <string name="nimoy">Lê-ô-nát Ni-moi</string>
+    <string name="tinto_brass">Tin-tô Bơ-rát</string>
+    <string name="tyler">Xti-vơn Tai-lơ</string>
+    <string name="knightley">Kei-ra Nai-tơ-li</string>
+    <!-- 27 march -->
+    <string name="hittorf">Giô-han Vin-hem Hít-toóc</string>
+    <string name="rontgen">Vin-hem Rơn-ghen</string>
+    <string name="wallach">Ốt-tô Va-lắc</string>
+    <string name="pearson">Các Pia-xơn</string>
+    <string name="henry_royce">Hen-ri Roi</string>
+    <string name="steichen">Ét-uốt Xtai-khen</string>
+    <string name="tarantino">Quen-tin Ta-ran-ti-nô</string>
+    <!-- 28 march -->
+    <string name="raphael">Ra-pha-en</string>
+    <string name="comenius">Giôn A-mốt Cô-mê-ni-út</string>
+    <string name="tamburini">Ăng-tô-ni-ô Tam-bu-ri-ni</string>
+    <string name="maxim_gorky">Mắc-xim Goóc-ki</string>
+    <string name="heymans">Coóc-nây Hay-man</string>
+    <string name="brzezinski">Dơ-bích-nhép Bơ-giê-din-xki</string>
+    <string name="friedman">Giê-rôm Ai-dắc Phơ-rít-man</string>
+    <string name="lady_gaga">Lây-đi Ga-ga</string>
+    <!-- 29 march -->
+    <string name="santorio">Xan-tô-ri-ô Xan-tô-ri-ô</string>
+    <string name="musaus">Giô-han Các Ô-guýt Mu-dơ-út</string>
+    <string name="schneider">Ơ-gien Snai-đơ</string>
+    <string name="walton">Xam Oan-tơn</string>
+    <string name="vane">Giôn Vên</string>
+    <string name="gleeson">Bơ-ren-đơn Gơ-li-xơn</string>
+    <!-- 30 march -->
+    <string name="goya">Phơ-ran-xít-xcô Goi-a</string>
+    <string name="rozier">Pi-lát-tơ-rơ đơ Rô-di-ê</string>
+    <string name="bunsen">Rô-bớt Bun-den</string>
+    <string name="verlaine">Pôn Véc-len</string>
+    <string name="van_gogh">Vinh-xăng van Gốc</string>
+    <string name="sharpe">Tôm Sáp</string>
+    <string name="dion">Xê-lin Đi-ông</string>
+    <!-- 31 march -->
+    <string name="descartes">Rơ-nê Đề-các</string>
+    <string name="marvell">Ăng-đơ-riu Ma-ven</string>
+    <string name="bach">Giô-han Xê-bát-xti-an Bách</string>
+    <string name="haydn">Giô-dép Hai-đơn</string>
+    <string name="chukovsky">Coóc-nây Chu-cốp-xki</string>
+    <string name="william_bragg">Uy-li-am Lô-ren Bơ-rắc</string>
+    <string name="walken">Cơ-rít-xtô-phơ Oa-ken</string>
+    <!-- 1 april -->
+    <string name="harvey">Uy-li-am Ha-vây</string>
+    <string name="germain">Xô-phi Giéc-manh</string>
+    <string name="gogol">Ni-cô-lai Gô-gôn</string>
+    <string name="zsigmondy">Rích-ác A-đôn Dích-môn-đi</string>
+    <string name="busoni">Phe-rút-chi-ô Bu-dô-ni</string>
+    <string name="rachmaninoff">Xéc-gây Rác-ma-ni-nốp</string>
+    <string name="lon_chaney">Lon Che-ni</string>
+    <string name="maslow">Áp-ra-ham Mát-xlâu</string>
+    <!-- 2 april -->
+    <string name="grimaldi">Phơ-ran-xét-xcô Ma-ri-a Gơ-ri-man-đi</string>
+    <string name="casanova">Gia-cô-mô Ca-da-nô-va</string>
+    <string name="andersen">Han Cơ-rít-xti-an An-đéc-xen</string>
+    <string name="butler">Ni-cô-lát Mơ-rây Bắt-lơ</string>
+    <string name="chrysler">Oan-tơ Cơ-rai-xlơ</string>
+    <string name="fassbender">Mai-cơn Phắt-xben-đơ</string>
+    <!-- 3 april -->
+    <string name="washington_irving">Oa-sinh-tơn Ơ-vinh</string>
+    <string name="velde">Hen-ri van đơ Ven-đơ</string>
+    <string name="jansky">Giăng Gian-xki</string>
+    <string name="brando">Mác-lông Bơ-ran-đô</string>
+    <string name="baldwin">A-lếch Bôn-uyn</string>
+    <string name="murphy">Ét-đi Mơ-phi</string>
+    <!-- 4 april -->
+    <string name="reid">Tô-mát Mên Rít</string>
+    <string name="siemens">Các Vin-hem Xi-men</string>
+    <string name="simmons">Đan Xim-mơn</string>
+    <string name="weaving">Huy-gô Uy-vinh</string>
+    <string name="robert_downey">Rô-bớt Đao-ni Con</string>
+    <string name="ledger">Hít Lét-giơ</string>
+    <!-- 5 april -->
+    <string name="hobbes">Tô-mát Hốp-xơ</string>
+    <string name="viviani">Vin-xen-dô Vi-vi-a-ni</string>
+    <string name="yale">Ê-li-hu Y-ên</string>
+    <string name="spohr">Lu-i Xpo</string>
+    <string name="dupre">Giuyn Đuy-pơ-rê</string>
+    <string name="nadar">Na-đa</string>
+    <string name="lister">Giô-dép Lít-xtơ</string>
+    <string name="hailey">Ác-thơ Hay-li</string>
+    <!-- 6 april -->
+    <string name="gosse">Phi-líp Hen-ri Gốt-xơ</string>
+    <string name="moreau">Guýt-xtáp Mô-rô</string>
+    <string name="douglas">Đô-nan Uyn Đắc-glát</string>
+    <string name="lynen">Phi-ô-đo Luy-nen</string>
+    <string name="fischer">Ét-mông Hen-ri Phít-sơ</string>
+    <string name="james_watson">Giêm Oát-xơn</string>
+    <!-- 7 april -->
+    <string name="gerard_dou">Ghê-rát Đao</string>
+    <string name="wordsworth">Uy-li-am Uốt-xuốt</string>
+    <string name="selmi">Phơ-ran-xét-xcô Xen-mi</string>
+    <string name="christiansen">Ô-lê Kiếc Cơ-rít-xti-an-xen</string>
+    <string name="holiday">Bin-li Hô-li-đây</string>
+    <string name="coppola">Phơ-ran-xít Pho Cốp-pô-la</string>
+    <string name="chan">Thành Long</string>
+    <string name="crowe">Rút-xen Cơ-râu</string>
+    <!-- 8 april -->
+    <string name="tartini">Giu-dép-pê Tác-ti-ni</string>
+    <string name="von_hofmann">Ô-guýt Vin-hem phôn Hốp-man</string>
+    <string name="husserl">Ét-mun Hút-xơn</string>
+    <string name="hicks">Giôn Hích</string>
+    <string name="calvin">Men-vin Can-vin</string>
+    <!-- 9 april -->
+    <string name="timur">Thi-mua</string>
+    <string name="boehm">Thê-ô-ban Bơm</string>
+    <string name="brunel">I-dam-bát Kinh-đơm Bơ-ru-nen</string>
+    <string name="muybridge">Ét-uốt Mai-bơ-rít</string>
+    <string name="pincus">Gơ-rê-gô-ri Gút-uyn Pin-cút</string>
+    <string name="eckert">Giôn Pơ-rét-xpơ Éch-cớt</string>
+    <string name="hefner">Hiu Hép-nơ</string>
+    <string name="belmondo">Giăng Pôn Ben-mông-đô</string>
+    <string name="stewart">Cơ-rít-xtơn Xtiu-uốt</string>
+    <!-- 10 april -->
+    <string name="grotius">Huy-gô Gơ-rô-ti-út</string>
+    <string name="tschirnhaus">Ê-ren-phơ-rít Oan-tơ phôn Siếc-hao</string>
+    <string name="heinicke">Xa-mu-en Hai-ni-cơ</string>
+    <string name="pulitzer">Giô-dép Pu-lít-dơ</string>
+    <string name="seagal">Xti-vơn Xi-gan</string>
+    <string name="canet">Ghi-ôm Ca-nê</string>
+    <!-- 11 april -->
+    <string name="parkinson">Giêm Pác-kin-xơn</string>
+    <string name="bertini">Phơ-ran-chét-xca Béc-ti-ni</string>
+    <string name="julian">Pơ-xi Giu-li-an</string>
+    <string name="lavey">Ăng-tôn La-Vây</string>
+    <string name="wiles">Ăng-đơ-riu Uai-lơ</string>
+    <!-- 12 april -->
+    <string name="meyerhof">Ốt-tô Phơ-rít May-ơ-hốp</string>
+    <string name="lily_pons">Li-li Pông</string>
+    <string name="tinbergen">Giăng Tin-béc-ghen</string>
+    <string name="cabalie">Mông-xê-rát Ca-ba-li-ê</string>
+    <string name="hancock">Hơ-bi Han-cốc</string>
+    <string name="garcia">An-đi Gác-xi-a</string>
+    <!-- 13 april -->
+    <string name="favre">Pi-e Pha-vơ-rơ</string>
+    <string name="fawkes">Gai Pho-cơ</string>
+    <string name="bramah">Giô-dép Bơ-ra-ma</string>
+    <string name="trevithick">Ri-chác Tơ-rê-vi-thích</string>
+    <string name="meucci">Ăng-tô-ni-ô Mê-út-chi</string>
+    <string name="lacan">Giắc La-căng</string>
+    <string name="beckett">Xa-mu-en Bếch-két</string>
+    <!-- 14 april -->
+    <string name="ortelius">Áp-ra-ham Oóc-tê-li-út</string>
+    <string name="huygens">Cơ-rít-xti-an Huy-ghen</string>
+    <string name="fonvizin">Đê-nít Phôn-vi-din</string>
+    <string name="rohlfs">Géc-hát Rôn-phơ</string>
+    <string name="horsley">Vích-to Hót-xli</string>
+    <string name="matsumoto">Y-u-ki-hi-rô Mát-xư-mô-tô</string>
+    <!-- 15 april -->
+    <string name="da_vinci">Lê-ô-nác-đô đa Vin-xi</string>
+    <string name="leonhard_euler">Lê-ô-nát Ơi-le</string>
+    <string name="cullen">Uy-li-am Ca-len</string>
+    <string name="busch">Vin-hem Bút-sơ</string>
+    <string name="gumilyov">Ni-cô-lai Gu-mi-li-ốp</string>
+    <string name="emma_thompson">Em-ma Tôm-xơn</string>
+    <string name="emma_watson">Em-ma Oát-xơn</string>
+    <!-- 16 april -->
+    <string name="apianus">Pê-tơ-rút A-pi-a-nút</string>
+    <string name="hadley">Giôn Hát-li</string>
+    <string name="eisenstein">Gốt-thôn Ai-den-xtai</string>
+    <string name="france">A-na-tôn Phơ-răng-xơ</string>
+    <string name="wright">Uyn-bơ Rai</string>
+    <string name="chaplin">Sác-lô Sáp-lin</string>
+    <!-- 17 april -->
+    <string name="morgan">Giôn Pia-pông Moóc-gan</string>
+    <string name="starling">Éc-nét Hen-ri Xta-linh</string>
+    <string name="saeverud">Ha-ran Xê-vơ-rút</string>
+    <string name="kohler">Gioóc Cơ-lơ</string>
+    <string name="garner">Giê-ni-phơ Ga-nơ</string>
+    <string name="beckham">Vích-to-ri-a Bếch-ham</string>
+    <!-- 18 april -->
+    <string name="ricardo">Đa-vít Ri-các-đô</string>
+    <string name="boisbaudran">Pôn Ê-min Lơ-cốc đơ Boa-bô-đơ-răng</string>
+    <string name="goldstein">Giô-dép Lê-ô-nát Gôn-xtai</string>
+    <string name="sokolov">Gơ-ri-gô-ri Xô-cô-lốp</string>
+    <string name="eric_roberts">Ê-rích Rô-bớt</string>
+    <string name="tennant">Đa-vít Ten-nân</string>
+    <!-- 19 april -->
+    <string name="ehrenberg">Cơ-rít-xti-an Gốt-phơ-rít Ê-ren-béc</string>
+    <string name="gerstner">Phơ-răng Ăng-tôn phôn Ghéc-xtơ-nơ</string>
+    <string name="fechner">Guýt-xtáp Thê-ô-đo Phếch-nơ</string>
+    <string name="hughes">Ri-chác Hiu</string>
+    <string name="seaborg">Gơ-len Thê-ô-đo Xi-boóc</string>
+    <string name="judd">Át-xli Giắt</string>
+    <string name="christensen">Hay-đơn Cơ-rít-xten-xen</string>
+    <!-- 20 april -->
+    <string name="aretino">Pi-ê-tơ-rô A-rê-ti-nô</string>
+    <string name="pinel">Phi-líp Pi-nen</string>
+    <string name="raffaelli">Giăng Phơ-răng-xoa Ra-pha-en-li</string>
+    <string name="hitler">A-đôn Hít-le</string>
+    <string name="lloyd">Ha-rôn Loi</string>
+    <string name="leiris">Mi-sen Lây-rít</string>
+    <string name="muller">Các A-lếch-xan-đơ Muy-lơ</string>
+    <string name="sedgwick">I-đi Xét-uých</string>
+    <!-- 21 april -->
+    <string name="riebeeck">Giô-han van Ri-bếch</string>
+    <string name="kulibin">I-van Cu-li-bin</string>
+    <string name="frobel">Phơ-ri-đơ-rích Phơ-rơ-ben</string>
+    <string name="starley">Giêm Xta-li</string>
+    <string name="flemming">Oan-tơ Phơ-lem-minh</string>
+    <string name="weber">Mắc Vê-be</string>
+    <string name="bridgman">Pơ-xi Uy-li-am Bơ-rít-man</string>
+    <string name="karrer">Pôn Ca-rơ</string>
+    <!-- 22 april -->
+    <string name="fielding">Hen-ri Phin-đinh</string>
+    <string name="kant">Im-ma-nu-en Can-tơ</string>
+    <string name="plante">Gát-xtông Pơ-lăng-tê</string>
+    <string name="eichler">Ô-guýt Vin-hem Ai-khơ-lơ</string>
+    <string name="bohr">Ha-ran Bo</string>
+    <string name="mabokov">Vla-đi-mia Na-bô-cốp</string>
+    <string name="oppenheimer">Giu-li-út Rô-bớt Óp-pen-hai-mơ</string>
+    <string name="mingus">Sác-lơ Min-gút</string>
+    <string name="nicholson">Giắc Ni-côn-xơn</string>
+    <!-- 23 april -->
+    <string name="planck">Mắc Pơ-lăng</string>
+    <string name="fibiger">Giô-han-nét Phi-bi-gơ</string>
+    <string name="marsh">Ngai-ô Mát-sơ</string>
+    <string name="ohlin">Béc-tin Ô-lin</string>
+    <string name="laxness">Han-đo Lắc-xnét</string>
+    <string name="cena">Giôn Xi-na</string>
+    <string name="patel">Đép Pa-ten</string>
+    <!-- 24 april -->
+    <string name="martini">Giô-van-ni Bát-ti-xta Mác-ti-ni</string>
+    <string name="cartwright">Ét-mân Cát-rai</string>
+    <string name="spitteler">Các Xpi-tơ-lơ</string>
+    <string name="bertillon">An-phông-xơ Béc-ti-ông</string>
+    <string name="sundback">Gi-đê-ông Xăn-bách</string>
+    <string name="streisand">Bác-bơ-ra Xtơ-rai-xần</string>
+    <!-- 25 april -->
+    <string name="marc_brunel">Mác I-dam-bát Bơ-ru-nen</string>
+    <string name="klein">Phê-lích Cơ-lai</string>
+    <string name="felix_dherelle">Phê-lích Đê-ren</string>
+    <string name="marconi">Gu-li-en-mô Mác-cô-ni</string>
+    <string name="pauli">Vôn-phơ-gang Pau-li</string>
+    <string name="fitzgerald">En-la Phít-giê-rôn</string>
+    <string name="al_pacino">An Pa-chi-nô</string>
+    <string name="cruyff">Giô-han Cơ-roi</string>
+    <string name="zellweger">Rơ-nê Den-uê-gơ</string>
+    <!-- 26 april -->
+    <string name="aurelius">Mác-cút Au-rê-li-út</string>
+    <string name="shakespeare">Uy-li-am Sếch-xpia</string>
+    <string name="uhland">Lút-vích U-lan</string>
+    <string name="delacroix">Ơ-gien Đơ-la-cơ-roa</string>
+    <string name="krupp">An-phơ-rét Cơ-rúp</string>
+    <string name="billroth">Thê-ô-đo Bin-rốt</string>
+    <string name="richardson">Ô-oen Uy-lăng Ri-chác-xơn</string>
+    <string name="wittgenstein">Lút-vích Vít-ghen-xtai</string>
+    <string name="charles_richter">Sác-lơ Phơ-ran-xít Rích-tơ</string>
+    <!-- 27 april -->
+    <string name="kolreuter">Giô-dép Gốt-líp Côn-roi-tơ</string>
+    <string name="wollstonecraft">Me-ri Un-xtơn-cơ-ráp</string>
+    <string name="morse">Xa-mu-en Moóc-xơ</string>
+    <string name="carothers">Oa-lát Ca-rô-thơ</string>
+    <string name="lantz">Oan-tơ Lan-xơ</string>
+    <!-- 28 april-->
+    <string name="achard">Phơ-răng Các A-sác</string>
+    <string name="kraus">Các Cơ-rao</string>
+    <string name="godel">Cớt Gơ-đen</string>
+    <string name="schindler">Ót-xca Sin-đơ-lơ</string>
+    <string name="lamborghini">Phe-rút-chi-ô Lam-boóc-ghi-ni</string>
+    <string name="harper_lee">Ha-pơ Li</string>
+    <string name="yves_klein">Íp Cơ-lanh</string>
+    <string name="cruz">Pê-nê-lô-pê Cơ-rút</string>
+    <!-- 29 april -->
+    <string name="drais">Các Đơ-rai</string>
+    <string name="poincare">Ăng-ri Poanh-ca-rê</string>
+    <string name="hearst">Uy-li-am Ran-đốp Hớt</string>
+    <string name="urey">Ha-rôn U-rây</string>
+    <string name="jack_williamson">Giắc Uy-li-am-xơn</string>
+    <string name="pfeiffer">Mi-sen Phai-phơ</string>
+    <string name="thurman">U-ma Thơ-man</string>
+    <!-- 30 april -->
+    <string name="gauss">Các Phơ-ri-đơ-rích Gao-xơ</string>
+    <string name="bleuler">Ơ-gien Bơ-loi-lơ</string>
+    <string name="kuznets">Xai-mơn Cu-dơ-nét</string>
+    <string name="schultz">Thê-ô-đo Sun-xơ</string>
+    <string name="shannon">Clốt San-nơn</string>
+    <string name="gal_gadot">Gan Ga-đốt</string>
+    <!-- 1 may -->
+    <string name="addison">Giô-dép A-đít-xơn</string>
+    <string name="cajal">San-ti-a-gô Ra-môn i Ca-hal</string>
+    <string name="chardin">Pi-e Tay-ha đơ Sa-đanh</string>
+    <string name="woo">Ngô Vũ Sâm</string>
+    <string name="dornan">Gia-mi Đơ-nân</string>
+    <!-- 2 may -->
+    <string name="kirche">A-tha-na-xi-út Kiếc-hê</string>
+    <string name="jerome">Giê-rôm K. Giê-rôm</string>
+    <string name="wood">Rô-bớt Uy-li-am Út</string>
+    <string name="marshall">A-lan Mát-sơn</string>
+    <string name="springer">Ắc-xen Xp-rinh-gơ</string>
+    <string name="johnson">Đuêy-in Giôn-xơn</string>
+    <string name="david_beckham">Đa-vít Bếch-ham</string>
+    <!-- 3 may -->
+    <string name="machiavelli">Ni-cô-lô Ma-ki-a-vê-li</string>
+    <string name="haldane">Giôn Xcốt Han-đan</string>
+    <string name="ekman">Vác-nơ Oan-phơ-rít Éc-man</string>
+    <string name="coty">Phơ-răng-xoa Cô-ti</string>
+    <string name="thomson">Gê-oóc Pa-giết Tôm-xơn</string>
+    <string name="kastler">Al-phơ-rét Cát-lơ</string>
+    <!-- 4 may -->
+    <string name="cristofori">Bác-tô-lô-mê-ô Cơn-xtô-phô-ri</string>
+    <string name="borda">Giăng Sác-lơ đơ Bo-đa</string>
+    <string name="brockhaus">Phơ-ri-đơ-rích A-nôn Bรôc-hau-xơ</string>
+    <string name="thenard">Lu-i Giắc Tê-nác</string>
+    <string name="liddell">A-lít Lít-đen</string>
+    <string name="mandelstam">Lê-ô-nít Man-đen-xtam</string>
+    <string name="hepburn">Ót-đrây Hép-bơn</string>
+    <!-- 5 may -->
+    <string name="kierkegaard">Xơ-ren Kiếc-ke-go</string>
+    <string name="marx">Các Mác</string>
+    <string name="sienkiewicz">Hen-rích Sen-ki-ê-vích</string>
+    <string name="schawlow">Ác-thơ Lê-ô-nát Xa-lô</string>
+    <string name="adele">A-đen</string>
+    <!-- 6 may -->
+    <string name="freud">Xig-mun Phrốt</string>
+    <string name="peary">Rô-bớt Pi-ri</string>
+    <string name="grignard">Vích-to Gơ-ri-nyar</string>
+    <string name="martinson">Ha-ri Mát-tin-xơn</string>
+    <string name="clooney">Gioóc Cu-li</string>
+    <!-- 7 may -->
+    <string name="clairaut">A-lếch-xít Cle-rô</string>
+    <string name="robert_browning">Rô-bớt Bơ-rao-ninh</string>
+    <string name="tchaikovsky">Py-ốt I-li-ích Trai-cốp-xki</string>
+    <string name="tagore">Ra-bin-đra-nát Ta-go</string>
+    <string name="reymont">Vla-đi-xla-v Rê-môn-tơ</string>
+    <string name="land">Ét-vin Héc-bớt Lan</string>
+    <!-- 8 may -->
+    <string name="dunant">Hen-ri Đu-năng</string>
+    <string name="lwoff">Ăng-đơ-rê Mi-sen Lô-ốp</string>
+    <string name="fernandel">Phéc-năng-đel</string>
+    <string name="rossellini">Rô-bê-tô Rốt-xê-li-ni</string>
+    <string name="iglesias">En-ri-cê I-gơ-lê-xi-as</string>
+    <!-- 9 may -->
+    <string name="monge">Gát-pác Mông-giơ</string>
+    <string name="opel">A-đam Ô-pen</string>
+    <string name="laval">Guýt-x-ta-phơ đơ La-van</string>
+    <string name="carter">Hao-uốt Ca-tơ</string>
+    <string name="gasset">Giô-xê Óc-tê-ga i Ga-xết</string>
+    <string name="richard_day">Ri-chác Đây</string>
+    <string name="eigen">Man-phrét Ai-ghen</string>
+    <!-- 10 may -->
+    <string name="lisle">Clốt Giô-dép Ru-giê đơ Lít</string>
+    <string name="fresnel">Ô-guýt-xtanh Giăng Phrết-nen</string>
+    <string name="killing">Vil-hem Ki-linh</string>
+    <string name="lipton">Tô-mát Líp-tơn</string>
+    <string name="gaumont">Lê-ông Gô-mông</string>
+    <string name="barth">Các Bát</string>
+    <string name="selznick">Đa-vít O. Xel-ních</string>
+    <string name="chapman">Mác Đa-vít Cháp-man</string>
+    <!-- 11 may -->
+    <string name="munchhausen">Hi-rô-ni-mút Các Phơ-ri-đơ-rích phôn Münchhausen</string>
+    <string name="blumenbach">Giô-han Phơ-ri-đơ-rích Bơ-lu-men-bách</string>
+    <string name="voynich">Ét-then Li-li-an Vôi-ních</string>
+    <string name="dali">Xan-va-đo Đa-li</string>
+    <string name="feynman">Ri-chác Phây-nơ-man</string>
+    <string name="dijkstra">Ét-x-gơ Uai-bơ Đích-xtra</string>
+    <string name="iniesta">An-đrét I-ni-ét-ta</string>
+    <!-- 12 may -->
+    <string name="lear">Ét-uốt Lê-a</string>
+    <string name="hind">Giôn Rác-xơn Hin</string>
+    <string name="pirquet">Cơ-lê-măng phôn Píc-kê</string>
+    <string name="giauque">Uy-li-am Giô-k</string>
+    <string name="devi">In-đra Đê-vi</string>
+    <string name="voznesensky">Ăng-đrây Vô-x-nê-xen-xki</string>
+    <!-- 13 may -->
+    <string name="nevsky">A-lếch-xan-đơ Nép-xki</string>
+    <string name="daudet">An-phông-xơ Đô-đê</string>
+    <string name="ross">Rô-nan Rốt</string>
+    <string name="braque">Giơ-giơ Bơ-rác</string>
+    <string name="wonder">Xti-vi Oan-đơ</string>
+    <string name="rodman">Đen-nít Rót-man</string>
+    <string name="pattinson">Rô-bớt Pát-tin-xơn</string>
+    <!-- 14 may -->
+    <string name="gainsborough">Tô-mát Gên-x-bơ-rô</string>
+    <string name="steinitz">Vil-hem Xtai-nít</string>
+    <string name="tsvet">Mi-kha-in X-vét</string>
+    <string name="lucas">Gioóc Lu-cát</string>
+    <string name="zemeckis">Rô-bớt Zê-méc-kít</string>
+    <string name="tim_roth">Tim Rốt</string>
+    <string name="blanchett">Cát Blan-chét</string>
+    <string name="zuckerberg">Mác Xúc-cơ-béc</string>
+    <!-- 15 may -->
+    <string name="mechnikov">I-li-a Mếch-ni-cốp</string>
+    <string name="vasnetsov">Vích-to Vas-nét-xốp</string>
+    <string name="wernicke">Các Véc-ni-cê</string>
+    <string name="baum">Li-man Phrăng Bau-mơ</string>
+    <string name="curie">Pi-e Cu-ri</string>
+    <string name="bulgakov">Mi-kha-in Bun-ga-cốp</string>
+    <!-- 16 may -->
+    <string name="agnesi">Ma-ri-a Ga-ê-ta-na An-giê-xi</string>
+    <string name="vauquelin">Lu-i Ni-cô-la Vô-cơ-lanh</string>
+    <string name="david_hughes">Đa-vít Ét-uốt Hiu</string>
+    <string name="fonda">Hen-ri Phôn-đa</string>
+    <string name="herman">U-di Héc-mân</string>
+    <string name="trejo">Đan-ni Tre-hô</string>
+    <string name="brosnan">Pi-e B-rốt-nân</string>
+    <string name="megan_fox">Me-gân Phốc</string>
+    <!-- 17 may -->
+    <string name="jenner">Ét-uốt Giê-nê</string>
+    <string name="lockyer">No-man Lốc-ye</string>
+    <string name="hassel">Ót Xa-xen</string>
+    <string name="gabin">Giăng Ga-banh</string>
+    <string name="nilsson">Béc-gít Nil-xơn</string>
+    <string name="hopper">Đen-nít Hốp-pơ</string>
+    <!-- 18 may -->
+    <string name="khayyam">O-ma Kha-yam</string>
+    <string name="clapperton">Huy Cláp-péc-tơn</string>
+    <string name="hofmeister">Vil-hem Hốp-mai-x-tơ</string>
+    <string name="heaviside">Ô-li-vơ Hê-vi-sai</string>
+    <string name="bertrand_russell">Béc-trân Rát-xen</string>
+    <string name="vigneaud">Vin-xăng đuy Vi-nhô</string>
+    <string name="cretu">Mi-kha-in C-rê-tu</string>
+    <!-- 19 may -->
+    <string name="evola">Giuy-li-út E-vô-la</string>
+    <string name="colin_chapman">Cô-lin Cháp-man</string>
+    <string name="placido">Mi-sê-lê Pla-chi-đô</string>
+    <string name="karapetyan">Xa-vác Ka-ra-pê-tian</string>
+    <string name="oreiro">Na-ta-li-a O-rei-rô</string>
+    <string name="pirlo">An-đrét Píc-lô</string>
+    <string name="sam_smith">Sam Xmít</string>
+    <!-- 20 may -->
+    <string name="fabricius">Hi-rô-ni-mút Fa-bri-ci-út</string>
+    <string name="balzac">Ô-nô-rê đơ Ban-dắc</string>
+    <string name="passy">Phơ-ri-đơ-rích Pa-xê</string>
+    <string name="berliner">Ê-min Béc-li-nê</string>
+    <string name="hewlett">Uy-li-am Rê-đing-tơn Hiu-lét</string>
+    <string name="edward_lewis">Ét-uốt Lu-i</string>
+    <string name="cher">Se</string>
+    <!-- 21 may -->
+    <string name="durer">An-bơ-rếch-tơ Đuy-rê</string>
+    <string name="coriolis">Gát-pác-Guýt-x-ta-vơ đơ Cô-ri-ô-lít</string>
+    <string name="kock">Pôn đơ Cốc</string>
+    <string name="renault">Lu-i Rê-nô</string>
+    <string name="einthoven">Vil-hem En-thô-vên</string>
+    <string name="sakharov">Ăng-đrây Sa-ha-rốp</string>
+    <!-- 22 may -->
+    <string name="wagner">Ri-chác Vác-nê</string>
+    <string name="doyle">Át-thơ Cô-nan Đôi-lê</string>
+    <string name="olivier">Lô-rên-xơ Ô-li-vi-ê</string>
+    <string name="herge">Héc-giê</string>
+    <string name="herbert_brown">Héc-bớt Các B-raun</string>
+    <string name="campbell">Na-o-mi Cam-bơn</string>
+    <!-- 23 may -->
+    <string name="linnaeus">Các Lin-nê-u</string>
+    <string name="mesmer">Phơ-răng Méc-mê</string>
+    <string name="lilienthal">Ót-tô Li-li-en-than</string>
+    <string name="fairbanks">Đô-gơ-lát Phe-băng-x</string>
+    <string name="lagerkvist">Pê La-gơ-cơ-vít</string>
+    <string name="bardeen">Giôn Bác-đin</string>
+    <string name="moog">Rô-bớt Múc</string>
+    <!-- 24 may -->
+    <string name="pontormo">Pôn-tô-mo</string>
+    <string name="fahrenheit">Đa-ni-ên Ga-bri-ê-lơ Pha-ren-hai</string>
+    <string name="sholokhov">Mi-kha-in Xhô-lô-cốp</string>
+    <string name="brodsky">Giô-dép B-rốt-xki</string>
+    <string name="dylan">Bốp Đi-lân</string>
+    <string name="deakins">Rô-gơ Đi-kín-x</string>
+    <!-- 25 may -->
+    <string name="emerson">Ráp Uôn-đô E-méc-xơn</string>
+    <string name="burckhardt">Gia-cốp Búc-ca-tơ</string>
+    <string name="zeeman">Pi-tê Xê-man</string>
+    <string name="steinberger">Giắc Xtai-n-béc-ghen</string>
+    <string name="mckellen">I-an Mác-cơ-lên</string>
+    <string name="myers">Mai-cơ Mai-ê-x</string>
+    <!-- 26 may -->
+    <string name="petty">Uy-li-am Pê-ti</string>
+    <string name="moivre">A-bra-ham đơ Oa-v-rơ</string>
+    <string name="john_wayne">Giôn Uen</string>
+    <string name="miles_davis">Mai-lét Đa-vít</string>
+    <string name="kevorkian">Giắc Kê-vơ-ki-an</string>
+    <string name="kravitz">Len-ni C-ra-vít</string>
+    <string name="helena_carter">Hê-lê-na Bôn-ham Ca-tơ</string>
+    <!-- 27 may -->
+    <string name="vanderbilt">Cơ-nê-li-út Vớc-bơn-đêu</string>
+    <string name="duncan">I-xa-đô-ra Đun-can</string>
+    <string name="cockcroft">Giôn Cốc-crốt</string>
+    <string name="christopher_lee">Cơ-rít-x-tô-phê Li</string>
+    <string name="bettany">Pôn Bét-ta-ni</string>
+    <!-- 28 may -->
+    <string name="guillotin">Giô-dép I-nhát Giu-i-tanh</string>
+    <string name="thomas_moore">Tô-mát Mu-a</string>
+    <string name="agassiz">Lu-i A-gát-xít</string>
+    <string name="milankovic">Mi-lu-tin Mi-lan-cô-vích</string>
+    <string name="ian_fleming">I-an Phơ-le-minh</string>
+    <string name="minogue">カイ-li Mi-nô-gơ</string>
+    <!-- 29 may -->
+    <string name="david_bruce">Đa-vít B-rút</string>
+    <string name="chesterton">Gi-léc-bớt Kếch-tơ-tơn</string>
+    <string name="spengler">Ót-x-van Xpen-gơ</string>
+    <string name="bob_hope">Bốp Hốp</string>
+    <string name="goldberg">Lê-a Gôn-béc</string>
+    <string name="kennedy">Giôn Phít-z-gê-rôn Ke-ne-đi</string>
+    <!-- 30 may -->
+    <string name="hagen">Héc-man A-gút Ha-ghen</string>
+    <string name="faberge">Pi-tê Các Fa-béc-giê</string>
+    <string name="thalberg">Ét-vinh Tal-béc</string>
+    <string name="alfven">Han-nét An-ven</string>
+    <string name="blanc">Men Blăng</string>
+    <string name="gerrard">Xti-vên Giê-rác</string>
+    <!-- 31 may -->
+    <string name="tieck">Lút-vích Tíc</string>
+    <string name="pugni">Xê-da Pu-nhi</string>
+    <string name="pirrie">Uy-li-am Gi-mít Pi-ri</string>
+    <string name="perse">Xanh-Giăng Péc-x-tơ</string>
+    <string name="allais">Mô-rít A-le</string>
+    <string name="eastwood">C-lin-tơ Ít-uất</string>
+    <string name="jay_miner">Giê Mi-nê</string>
+    <!-- 1 june -->
+    <string name="paer">Phe-đi-na-nô Pa-e</string>
+    <string name="carnot">Ni-cô-la Lê-ô-nát Xa-đi Cac-nô</string>
+    <string name="glinka">Mi-kha-in Glin-ca</string>
+    <string name="monroe">Ma-ri-lin Mơn-rô</string>
+    <string name="foster">No-man Phốt-xtơ</string>
+    <string name="freeman">Moóc-gan Phรี-man</string>
+    <string name="persson">Mác-cút Péc-xơn</string>
+    <!-- 2 june -->
+    <string name="de_sade">Hầu tước de Sade</string>
+    <string name="cagliostro">A-lếch-xan-đô Ca-gli-ô-xtro</string>
+    <string name="akimov">I-van A-ki-mốp</string>
+    <string name="hardy">Tô-mát Ha-di</string>
+    <string name="weissmuller">Giôn Uai-x-muy-lơ</string>
+    <string name="quinto">Xa-cha-ri Quin-tô</string>
+    <!-- 3 june -->
+    <string name="hutton">Giêm Hát-tơn</string>
+    <string name="shrapnel">Hen-ri S-ráp-nê</string>
+    <string name="cobden">Ri-chác Cốp-đên</string>
+    <string name="timiryazev">Kli-măng Ti-mi-ri-a-dép</string>
+    <string name="pearl">Rây-mơn Péc</string>
+    <string name="arber">Véc-nê A-bê</string>
+    <string name="nadal">Ra-pha-el Na-đan</string>
+    <!-- 4 june -->
+    <string name="quesnay">Phơ-răng-xoa Kê-nê</string>
+    <string name="nazimova">A-la Na-di-mô-va</string>
+    <string name="cockerell">Cơ-rít-tô-phơ Cốc-cơ-ren</string>
+    <string name="bartoli">Xê-xi-li-a Bác-tô-li</string>
+    <string name="jolie">Ăn-giê-li-na Giô-li</string>
+    <!-- 5 june -->
+    <string name="chippendale">Tô-mát Chíp-pen-đêu</string>
+    <string name="keynes">Giôn May-nác Kên-x</string>
+    <string name="lorca">Phơ-ri-đơ-rích Gác-xi-a Lôc-ca</string>
+    <string name="gabor">Đen-nít Ga-bô</string>
+    <string name="peierls">Ru-đôn Pay-ê-lê</string>
+    <string name="wahlberg">Mác Uôn-béc</string>
+    <!-- 6 june -->
+    <string name="regiomontanus">Rê-gi-ô-môn-ta-nút</string>
+    <string name="velazquez">Đi-ê-gô Vê-lát-kết</string>
+    <string name="corneille">Pi-e Coóc-nây</string>
+    <string name="pushkin">A-lếch-xan-đơ Pút-skin</string>
+    <string name="braun">Các Phe-đi-năng B-raun</string>
+    <string name="mann">Tô-mát Man</string>
+    <!-- 7 june -->
+    <string name="brummell">Bô B-rum-men</string>
+    <string name="auer">Lê-ô-pôn A-uê</string>
+    <string name="mackintosh">Sác-lơ Rê-ni Mác-kin-tốt</string>
+    <string name="barkla">Sác-lơ Glô-vơ Bác-la</string>
+    <string name="mulliken">Rô-bớt Xan-đéc-xơn Mu-li-cơn</string>
+    <string name="apgar">Vi-gi-ni-a Áp-ga</string>
+    <string name="martin">Đin Mác-tin</string>
+    <string name="neeson">Li-am Ni-xơn</string>
+    <!-- 8 june -->
+    <string name="cassini">Giô-van-ni Đô-mê-ni-cô Ca-xi-ni</string>
+    <string name="albinoni">Tô-ma-xô Al-bi-nô-ni</string>
+    <string name="careme">Ma-ri-Ăng-toan Ca-rêm</string>
+    <string name="schumann">Rô-bớt Su-man</string>
+    <string name="yeste">San-ti-a-gô Béc-na-bê-u I-ét-xtê</string>
+    <string name="john_campbell">Giôn Uốt Câm-bêu</string>
+    <string name="kanye_west">Can-y Uét</string>
+    <!-- 9 june -->
+    <string name="stephenson">Giôóc Xtê-phên-xơn</string>
+    <string name="galle">Giô-han Gốt-ph-ri Gal-lê</string>
+    <string name="suttner">Béc-tha phôn Xút-nê</string>
+    <string name="dale">Hen-ri Ha-lết Đal</string>
+    <string name="fox">Mai-cơn Giê. Phốc</string>
+    <string name="depp">Giôn Đép</string>
+    <string name="portman">Na-ta-li Pót-man</string>
+    <!-- 10 june -->
+    <string name="courbet">Guýt-xtáp Cuốc-bê</string>
+    <string name="otto">Ni-cô-lau Ôt-tô</string>
+    <string name="cook">Phơ-rê-đê-rích Cúc</string>
+    <string name="mcdaniel">Hát-ti Mác-đê-ni-ên</string>
+    <string name="bellow">Xôn Bê-lâu</string>
+    <string name="garland">Giuy-đi Gác-lân</string>
+    <!-- 11 june -->
+    <string name="constable">Giôn Cơn-xta-bêu</string>
+    <string name="fortuny">Ma-ri-a-nô Phốt-tu-ni</string>
+    <string name="richard_strauss">Ri-chác Xtơ-rao</string>
+    <string name="cousteau">Giắc-I-vơ Cu-xtô</string>
+    <string name="styron">Uy-li-am Xti-rôn</string>
+    <string name="laurie">Huy Lô-ri</string>
+    <string name="dinklage">Pi-tê Đin-cla-gê</string>
+    <string name="labeouf">Xa-i-a La-bơ-phơ</string>
+    <!-- 12 june -->
+    <string name="roebling">Giôn O-gút Rơ-blinh</string>
+    <string name="lipmann">Phơ-rít Al-bớt Líp-man</string>
+    <string name="frank">An Phrăng</string>
+    <string name="sakmann">Béc Xác-man</string>
+    <string name="lima">A-d-ri-a-na Li-ma</string>
+    <!-- 13 june -->
+    <string name="young">Tô-mát Dương</string>
+    <string name="maxwell">Giêm Cléc Mác-uêu</string>
+    <string name="yeats">Uy-li-am Bát-lê I-ét</string>
+    <string name="john_nash">Giôn Phô-bớt Nát Con</string>
+    <string name="mcdowell">Man-côm Mác-đô-wêu</string>
+    <string name="perelman">G-ri-gô-ri Pê-rê-man</string>
+    <string name="evans">C-rin Ê-vân</string>
+    <!-- 14 june -->
+    <string name="coulomb">Sác-lơ-Ăng-toan đơ Cu-lông</string>
+    <string name="stowe">Ha-ri-ét Bê-chê Xtô</string>
+    <string name="landsteiner">Các Lan-xtai-nê</string>
+    <string name="tokarev">Phi-đô-rê Tô-ca-rép</string>
+    <string name="church">A-lôn-dô Chơ-chơ</string>
+    <string name="guevara">En-nét-tô Chê Ge-va-ra</string>
+    <string name="graf">Xtê-phi G-ráp</string>
+    <!-- 15 june -->
+    <string name="poussin">Ni-cô-la Pu-xanh</string>
+    <string name="fourcroy">Ăng-toan Phơ-răng-xoa đơ Phu-c-roa</string>
+    <string name="balmont">Côn-xtan-tin Ban-mông</string>
+    <string name="belushi">Giêm Bê-lu-si</string>
+    <string name="helen_hunt">Hê-lên Hăn-tơ</string>
+    <string name="kahn">Ô-li-vê Can</string>
+    <string name="harris">Nên Pát-trích Ha-rít</string>
+    <!-- 16 june -->
+    <string name="boccaccio">Giô-van-ni Bốc-các-chi-ô</string>
+    <string name="plucker">Giuy-li-út P-lúc-cê</string>
+    <string name="friedmann">A-lếch-xan-đơ Ph-ri-ê-man</string>
+    <string name="leinster">Mơ-ri Lên-x-tê</string>
+    <string name="chakraborty">Mi-thun Chác-ra-bô-ti</string>
+    <string name="shakur">Tu-pác Sa-kua</string>
+    <string name="john_newman">Giôn Niu-man</string>
+    <!-- 17 june -->
+    <string name="panini">Giô-van-ni Pao-lô Pa-ni-ni</string>
+    <string name="gounod">Sác-lơ Gu-nô</string>
+    <string name="stravinsky">I-gô Xtra-vin-xki</string>
+    <string name="escher">Mau-rít Cơn-ê-lít E-sê</string>
+    <string name="wakefield">Rút G-rê-vét Uêi-k-phin</string>
+    <string name="jacob">Phơ-răng-xoa Gia-cốp</string>
+    <!-- 18 june -->
+    <string name="goncharov">I-van Gôn-cha-rốp</string>
+    <string name="laveran">Sác-lơ Lu-i Al-phông-xơ La-vê-răng</string>
+    <string name="flagg">Giêm Mông-gô-mê Phlác</string>
+    <string name="macdonald">Giê-nét Mác-đô-nê</string>
+    <string name="mccartney">Pôn Mác-cát-ni</string>
+    <string name="capello">Fa-bi-ô Ca-pê-lô</string>
+    <!-- 19 june -->
+    <string name="pascal">Blê-dơ Pát-can</string>
+    <string name="dazai">Ô-sa-mu Đa-zai</string>
+    <string name="flory">Pôn Ph-lô-ri</string>
+    <string name="aage_bohr">A-a-gê Ni-en Bo</string>
+    <string name="rushdie">Xal-man Rút-đi</string>
+    <string name="dujardin">Giăng Duy-gia-đanh</string>
+    <!-- 20 june -->
+    <string name="rosa">Xan-va-tô Rô-xa</string>
+    <string name="offenbach">Giắc Ốp-phên-bách</string>
+    <string name="bonnat">Lê-ông Bô-nát</string>
+    <string name="kidman">Ni-côn Kít-man</string>
+    <string name="rodriguez">Rô-bớt Rô-d-ri-gết</string>
+    <!-- 21 june -->
+    <string name="poisson">Xi-mê-ông Đê-ni Pua-xông</string>
+    <string name="sartre">Giăng-Pôn Xát-trê</string>
+    <string name="mcewan">I-an Mác-ê-uân</string>
+    <string name="platini">Mi-sê-lê P-la-ti-ni</string>
+    <string name="tsoi">Vích-tơ Xo-i</string>
+    <string name="lana_del_rey">La-na Đen Rê</string>
+    <!-- 22 june -->
+    <string name="haggard">Hen-ri Ri-đơ Ha-gác</string>
+    <string name="minkowski">Héc-man Min-cốp-xki</string>
+    <string name="huxley">Giuy-li-an Hắc-x-lê</string>
+    <string name="remarque">Ê-rích Ma-ri-a Rê-mác-kết</string>
+    <string name="dillinger">Giôn Đi-lin-gê</string>
+    <string name="wilder">Bi-li Uin-đê</string>
+    <string name="streep">Mê-ril Xtri-pết</string>
+    <string name="dan_brown">Đan B-raun</string>
+    <!-- 23 june -->
+    <string name="vico">Giam-bát-ti-xta Vi-cô</string>
+    <string name="beauharnais">Giô-dê-phin de Beauharnais</string>
+    <string name="akhmatova">An-na Ác-ma-tô-va</string>
+    <string name="turing">A-lan Tu-rinh</string>
+    <string name="fosse">Bốp Phốt-xế</string>
+    <string name="zidane">Đi-ne-đin Đi-da-nê</string>
+    <!-- 24 june -->
+    <string name="victor_hess">Vích-to Phơ-răng Hét</string>
+    <string name="fangio">Gi-an Ma-nu-en Fan-gi-ô</string>
+    <string name="perl">Mác-tin Lu-i Péc</string>
+    <string name="chabrol">Clốt Sa-b-rôn</string>
+    <string name="messi">Li-ô-nel Méc-si</string>
+    <!-- 25 june -->
+    <string name="gaudi">Ăn-tô-ni Gau-đi</string>
+    <string name="nernst">Vân-tê Néc-nít</string>
+    <string name="orwell">Giôóc O-uêu</string>
+    <string name="lumet">Xít-ni Lu-mết</string>
+    <string name="abrikosov">A-lếch-xê A-b-ri-cô-xốp</string>
+    <string name="michael">Giôóc Mi-cha-el</string>
+    <!-- 26 june -->
+    <string name="brandt">Gê-oóc B-răn</string>
+    <string name="kelvin">Uy-li-am Tôm-xơn, Nam tước Kelvin thứ 1</string>
+    <string name="buck">Péc X. Bức</string>
+    <string name="bill_lear">Biu Li-a</string>
+    <string name="robert_richardson">Rô-bớt Cô-le-man Ri-chác-xơn</string>
+    <!-- 27 june -->
+    <string name="mauser">Pôn Mau-zê</string>
+    <string name="spemann">Han Xpê-man</string>
+    <string name="keller">Hê-lên Cê-lê</string>
+    <string name="abrams">J.J. A-b-ram-x</string>
+    <string name="maguire">Tô-bây Ma-gui-rê</string>
+    <string name="raul">Ra-un Gôn-xá-lết Blan-cô</string>
+    <!-- 28 june -->
+    <string name="rubens">Pi-e Pôn Ru-bên</string>
+    <string name="rousseau">Giăng-Giắc Ru-xô</string>
+    <string name="broca">Pôn B-rô-ca</string>
+    <string name="pirandello">Lu-i-gi Pi-ran-đê-lô</string>
+    <string name="carrel">A-lếch-xít Ca-rên</string>
+    <string name="goeppert_mayer">Ma-ri-a Gơ-p-p-e-t Mai-e</string>
+    <string name="kathy_bates">Ca-thi Bê-tê</string>
+    <string name="cusack">Giôn Cu-xác</string>
+    <string name="musk">Ê-lôn Mát-x</string>
+    <!-- 29 june -->
+    <string name="dodoens">Rem-béc Đô-đo-en</string>
+    <string name="ressel">Giô-sép Rê-xê</string>
+    <string name="leopardi">Gi-a-cô-mô Lê-ô-pác-đi</string>
+    <string name="exupery">Ăng-toan de Saint-Exupéry</string>
+    <string name="fallaci">Ô-ri-a-na Fal-la-si</string>
+    <string name="scherzinger">Ni-côn X-chéc-zin-gê</string>
+    <!-- 30 june -->
+    <string name="vernet">Hô-rác Vê-nê</string>
+    <string name="hooker">Giô-sép Đan-tơn Húc-cê</string>
+    <string name="duhamel">Giôóc Đu-ha-mên</string>
+    <string name="milosz">Chê-x-láp Mi-lót</string>
+    <string name="ballard">Rô-bớt Ba-lác</string>
+    <string name="tyson">Mai Tai-x-nê</string>
+    <string name="phelps">Mi-cha-el Phel-p-x</string>
+    <!-- 1 july -->
+    <string name="leibniz">Gốt-phơ-rít Vin-hem Lai-bơ-nít</string>
+    <string name="poncelet">Giăng Vích-to Pông-xơ-lê</string>
+    <string name="george_sand">Gioóc Xăng</string>
+    <string name="vierordt">Các phôn Phi-ê-rốt</string>
+    <string name="bleriot">Lu-i Bơ-lê-ri-ô</string>
+    <string name="lauder">Ét-xtê Lâu-đơ</string>
+    <string name="diana">Đi-a-na, Vương phi xứ Uên</string>
+    <string name="pamela_anderson">Pa-mê-la An-đéc-xơn</string>
+    <!-- 2 july -->
+    <string name="gluck">Cơ-rít-xtốp Vi-li-ban Glúc</string>
+    <string name="henry_bragg">Uy-li-am Hen-ri Bơ-rắc</string>
+    <string name="hesse">Héc-man Hét-xơ</string>
+    <string name="lacoste">Rơ-nê La-cốt</string>
+    <string name="cardin">Pi-e Các-đanh</string>
+    <string name="lumumba">Pa-tơ-rít Lu-mum-ba</string>
+    <string name="naceri">Xa-mi Na-xê-ri</string>
+    <string name="robbie">Mác-gô Rốp-bi</string>
+    <!-- 3 july -->
+    <string name="adam">Rô-bớt A-đam</string>
+    <string name="kafka">Phơ-răng Cáp-ca</string>
+    <string name="stoppard">Tôm Xtốp-pát</string>
+    <string name="cruise">Tôm Cơ-rui</string>
+    <string name="selanne">Tê-mu Xê-lan-nê</string>
+    <!-- 4 july -->
+    <string name="blanchard">Giăng Pi-e Bơ-lăng-sa</string>
+    <string name="everest">Gioóc Ê-vơ-rét</string>
+    <string name="garibaldi">Giu-dép-pê Ga-ri-ban-đi</string>
+    <string name="manolete">Ma-nô-lê-tê</string>
+    <string name="lollobrigida">Gi-na Lô-lô-bơ-ri-gi-đa</string>
+    <!-- 5 july -->
+    <string name="bulgarin">Phát-đây Bun-ga-rin</string>
+    <string name="fitzroy">Rô-bớt Phít-rôi</string>
+    <string name="rankine">Uy-li-am Giôn Ran-kin</string>
+    <string name="zetkin">Cla-ra Dét-kin</string>
+    <string name="gasser">Hơ-bớt Xpen-xơ Gát-xơ</string>
+    <string name="cocteau">Giăng Cốc-tô</string>
+    <!-- 6 july -->
+    <string name="raffles">Xtam-phớt Ráp-phơn</string>
+    <string name="heidenstam">Véc-nơ phôn Hai-đơn-xtam</string>
+    <string name="chagall">Mác Sa-gan</string>
+    <string name="bill_haley">Bin Hây-li</string>
+    <string name="stallone">Xin-vét-xtơ Xta-lôn</string>
+    <string name="rush">Gép-phơ-ri Rút</string>
+    <string name="eva_green">Ê-va Gơ-rin</string>
+    <!-- 7 july -->
+    <string name="jacquard">Giô-dép Ma-ri Gia-ca</string>
+    <string name="golgi">Ca-min-lô Gôn-gi</string>
+    <string name="mahler">Guýt-xtáp Ma-lơ</string>
+    <string name="feuchtwanger">Li-ông Phôi-tơ-van-gơ</string>
+    <string name="ringo_starr">Rin-gô Xta</string>
+    <string name="cutugno">Tô-tô Cu-tu-nhô</string>
+    <!-- 8 july -->
+    <string name="fontaine">Giăng đơ La Phông-ten</string>
+    <string name="zeppelin">Phéc-đi-năng phôn Dép-pơ-lin</string>
+    <string name="rockefeller">Giôn Đ. Rốc-cơ-phe-lơ</string>
+    <string name="benardos">Ni-cô-lai Bê-nác-đốt</string>
+    <string name="arthus_evans">Ác-thơ Ê-vân</string>
+    <string name="perls">Phơ-rít Pơn</string>
+    <string name="kapitsa">Pi-ốt Ca-pít-xa</string>
+    <!-- 9 july -->
+    <string name="radcliffe">An Rát-clíp</string>
+    <string name="davenport">Tô-mát Đa-vơn-pót</string>
+    <string name="elias_howe">Ê-li-át Hau</string>
+    <string name="boas">Phơ-răng Bô-át</string>
+    <string name="chagas">Các-lốt Cha-gát</string>
+    <string name="tom_hanks">Tôm Hanh</string>
+    <string name="love">Coóc-ni Lốp</string>
+    <!-- 10 july -->
+    <string name="jean_calvin">Giăng Can-vanh</string>
+    <string name="marryat">Phơ-rê-đơ-rích Ma-ri-át</string>
+    <string name="pissarro">Ca-mi Pi-xa-rô</string>
+    <string name="tesla">Ni-cô-la Tét-xla</string>
+    <string name="proust">Mác-xen Pơ-rút</string>
+    <string name="chamberlain">Ô-oen Cham-bơ-len</string>
+    <!-- 11 july -->
+    <string name="gondora">Lu-ít đê Gông-gô-ra</string>
+    <string name="lalande">Giê-rôm La-lăng</string>
+    <string name="nelson">Lê-ô-nát Nen-xơn</string>
+    <string name="abel">Ru-đôn A-ben</string>
+    <string name="brynner">Yun Bơ-rin-nơ</string>
+    <string name="armani">Gi-oóc-gi-ô Ác-ma-ni</string>
+    <!-- 12 july -->
+    <string name="bernard">Clốt Béc-na</string>
+    <string name="eastman">Gioóc Ít-man</string>
+    <string name="tod_browning">Tốt Bơ-rao-ninh</string>
+    <string name="modigliani">A-mê-đê-ô Mô-đi-gli-a-ni</string>
+    <string name="meruda">Páp-lô Nê-ru-đa</string>
+    <string name="wyeth">Ăng-đơ-riu Oai-ét</string>
+    <string name="michelle_rodriguez">Mi-sen Rô-đơ-ri-ghết</string>
+    <!-- 13 july -->
+    <string name="john_dee">Giôn Đi</string>
+    <string name="cannizzaro">Xta-ni-xla-ô Ca-ni-da-rô</string>
+    <string name="otto_wagner">Ốt-tô Vác-nơ</string>
+    <string name="babel">I-xắc Ba-ben</string>
+    <string name="ascari">An-béc-tô Át-xca-ri</string>
+    <string name="ford">Ha-ri-xơn Pho</string>
+    <string name="rubik">Éc-nơ Ru-bích</string>
+    <string name="benassi">Ben-ni Bê-nát-xi</string>
+    <!-- 14 july -->
+    <string name="dumas">Giăng Báp-tít Đuy-ma</string>
+    <string name="klimt">Guýt-xtáp Cơ-lim</string>
+    <string name="irving_stone">Ơ-vinh Xtôn</string>
+    <string name="bergman">In-gơ-ma Béc-man</string>
+    <string name="forrester">Giây Rai Pho-rét-xtơ</string>
+    <!-- 15 july -->
+    <string name="rembrandt">Rem-bơ-ran</string>
+    <string name="pareto">Vin-phơ-rê-đô Pa-rê-tô</string>
+    <string name="harmsworth">An-phơ-rét Ham-uốt, Tử tước Northcliffe thứ 1</string>
+    <string name="brockhouse">Bơ-trăm Bơ-rốc-hau-xơ</string>
+    <string name="savage">A-đam Xa-vít</string>
+    <string name="kruger">Đai-an Cơ-ru-gơ</string>
+    <!-- 16 july -->
+    <string name="assisi">Cla-ra thành Át-xi-di</string>
+    <string name="amundsen">Rô-an A-mun-xen</string>
+    <string name="stanwyck">Bác-ba-ra Xtan-uých</string>
+    <string name="laroche">Ghi La-rốt</string>
+    <string name="sheckley">Rô-bớt Sếch-li</string>
+    <!-- 17 july -->
+    <string name="friedrich_krupp">Phơ-ri-đơ-rích Cơ-rúp</string>
+    <string name="corot">Giăng Báp-tít Ca-mi Cô-rô</string>
+    <string name="nicholas">Ni-cô-lai Mi-cơ-lu-khô-Mắc-lai</string>
+    <string name="lamaitre">Gioóc Lơ-mét-tơ-rơ</string>
+    <string name="abbott">Bê-rê-nít Áp-bốt</string>
+    <string name="sutherland">Đô-nan Xơ-thơ-lân</string>
+    <!-- 18 july -->
+    <string name="thackeray">Uy-li-am Mếch-pít Thác-cơ-rê</string>
+    <string name="viardot">Pô-lin Vi-ác-đô</string>
+    <string name="lorentz">Hen-đơ-rích Lo-ren-xơ</string>
+    <string name="mandela">Nen-xơn Man-đê-la</string>
+    <string name="hunter_thompson">Hăn-tơ Ét. Tôm-xơn</string>
+    <string name="branson">Ri-chác Bơ-ran-xơn</string>
+    <string name="vin_diesel">Vin Đi-ê-den</string>
+    <!-- 19 july -->
+    <string name="colt">Xa-mu-en Côn</string>
+    <string name="degas">Ét-ga Đơ-ga</string>
+    <string name="mayakovsky">Vla-đi-mia Mai-a-cốp-xki</string>
+    <string name="cronin">Ác-chi-ban Giô-dép Cơ-rô-nin</string>
+    <string name="coloane">Phơ-ran-xít-xcô Cô-lô-a-nê</string>
+    <string name="yalow">Rô-da-lin Xút-xman Ya-lâu</string>
+    <string name="cumberbatch">Bê-nê-đích Căm-bơ-bách</string>
+    <!-- 20 july -->
+    <string name="petrarca">Phơ-ran-xét-xcô Pê-tơ-rác-ca</string>
+    <string name="owen">Ri-chác Ô-oen</string>
+    <string name="mendel">Gơ-rê-go Men-đen</string>
+    <string name="georg_muller">Gê-oóc Ê-li-át Muy-lơ</string>
+    <string name="morandi">Gi-oóc-gi-ô Mô-ran-đi</string>
+    <string name="dobrev">Đốp-ri Đốp-rép</string>
+    <string name="bundchen">Gi-xen Bun-chen</string>
+    <!-- 21 july -->
+    <string name="picard">Giăng Pi-ca</string>
+    <string name="regnault">Ăng-ri Vích-to Rơ-nhô</string>
+    <string name="reuter">Pôn Roi-tơ</string>
+    <string name="hemingway">Éc-nét Hê-minh-uê</string>
+    <string name="robin_williams">Rô-bin Uy-li-am</string>
+    <string name="josh_hartnett">Giốt Hát-nét</string>
+    <!-- 22 july -->
+    <string name="soufflot">Giắc Giéc-manh Xu-phơ-lô</string>
+    <string name="gustav_hertz">Guýt-xtáp Lút-vích Héc</string>
+    <string name="mathieu">Mi-rây Ma-thi-ơ</string>
+    <string name="dafoe">Uy-li-am Đa-phô</string>
+    <string name="selena_gomez">Xê-lê-na Gô-mét</string>
+    <!-- 23 july -->
+    <string name="vyazemsky">Pi-ốt Vi-a-dem-xki</string>
+    <string name="cilea">Phơ-ran-xét-xcô Chi-lê-a</string>
+    <string name="harrelson">Út-đi Ha-ren-xơn</string>
+    <string name="hoffman">Phi-líp Xây-mua Hốp-man</string>
+    <string name="lewinsky">Mô-ni-ca Lơ-uyn-xki</string>
+    <string name="daniel_radcliffe">Đa-ni-en Rát-clíp</string>
+    <!-- 24 july -->
+    <string name="vidocq">Ơ-gien Phơ-răng-xoa Vi-đốc</string>
+    <string name="alexandre_dumas">A-lếch-xăng Đuy-ma</string>
+    <string name="mucha">An-phông-xơ Mu-kha</string>
+    <string name="benson">Ét-uốt Phơ-rê-đơ-rích Ben-xơn</string>
+    <string name="lopez">Giê-ni-phơ Lô-pét</string>
+    <!-- 25 july -->
+    <string name="scheiner">Cơ-rít-xtốp Sai-nơ</string>
+    <string name="eakins">Tô-mát I-kin</string>
+    <string name="davidson_black">Đa-vít-xơn Bơ-lách</string>
+    <string name="canetti">Ê-li-át Ca-nét-ti</string>
+    <string name="leblanc">Mát Lơ-bơ-lăng</string>
+    <!-- 26 july -->
+    <string name="remak">Rô-bớt Rê-mắc</string>
+    <string name="shaw">Béc-na So</string>
+    <string name="jung">Các Giung</string>
+    <string name="maurois">Ăng-đơ-rê Mô-roa</string>
+    <string name="kubrick">Xtan-li Cu-bơ-rích</string>
+    <string name="jagger">Mích Giắc-gơ</string>
+    <string name="spacey">Kê-vin Xpây-xi</string>
+    <string name="bullock">Xan-đơ-ra Bun-lốc</string>
+    <string name="statham">Giây-xơn Xtây-thăm</string>
+    <!-- 27 july -->
+    <string name="corday">Sác-lốt Coóc-đây</string>
+    <string name="carducci">Giô-du-ê Các-đút-chi</string>
+    <string name="hans_fischer">Han Phít-sơ</string>
+    <string name="monaco">Ma-ri-ô Đen Mô-na-cô</string>
+    <string name="nikolaj">Ni-cô-lai Cốt-xtơ-Oan-đau</string>
+    <!-- 28 july -->
+    <string name="hooke">Rô-bớt Húc</string>
+    <string name="feuerbach">Lút-vích Phoi-ơ-bách</string>
+    <string name="grisi">Giu-li-a Gơ-ri-di</string>
+    <string name="duchamp">Mác-xen Đuy-săng</string>
+    <string name="popper">Các Pốp-pơ</string>
+    <string name="burda">En-nê Bua-đa</string>
+    <string name="chavez">Hu-gô Cha-vết</string>
+    <!-- 29 july -->
+    <string name="aivazovsky">I-van Ai-va-dốp-xki</string>
+    <string name="mussolini">Bê-ni-tô Mút-xô-li-ni</string>
+    <string name="theda_bara">Thê-đa Ba-ra</string>
+    <string name="clara_bow">Cla-ra Bâu</string>
+    <string name="alonso">Phéc-nan-đô A-lông-xô</string>
+    <!-- 30 july -->
+    <string name="vasari">Gi-oóc-gi-ô Va-da-ri</string>
+    <string name="bronte">Ê-mi-li Bơ-rôn-tê</string>
+    <string name="henry_ford">Hen-ri Pho</string>
+    <string name="cyril_parkinson">Xi-rin Noóc-cốt Pác-kin-xơn</string>
+    <string name="schwarzenegger">Ác-nôn Xoát-dơ-nếch-gơ</string>
+    <string name="jean_reno">Giăng Rê-nô</string>
+    <string name="nolan">Cơ-rít-xtô-phơ Nô-lan</string>
+    <!-- 31 july -->
+    <string name="cramer">Ga-bơ-ri-en Cơ-ra-me</string>
+    <string name="wohler">Phơ-ri-đơ-rích Vơ-lơ</string>
+    <string name="planquette">Rô-be Pơ-lăng-két</string>
+    <string name="milton_friedman">Min-tơn Phơ-rít-man</string>
+    <string name="de_funes">Lu-i đơ Phuy-nét</string>
+    <string name="primo_levi">Pơ-ri-mô Lê-vi</string>
+    <string name="rowling">Giô-an Râu-linh</string>
+    <!-- 1 august -->
+    <string name="lamarck">Giăng Báp-tít La-mác</string>
+    <string name="melville">Hơ-man Men-vin</string>
+    <string name="taro">Géc-đa Ta-rô</string>
+    <string name="laurent">Íp Xanh Lô-răng</string>
+    <string name="mendes">Xam Men-đét</string>
+    <string name="momoa">Giây-xơn Mô-moa</string>
+    <!-- 2 august -->
+    <string name="hoogstraten">Xa-mu-en van Hốc-xtơ-ra-tơn</string>
+    <string name="tyndall">Giôn Tin-đan</string>
+    <string name="olcott">Hen-ri Xtin Ôn-cốt</string>
+    <string name="bartholdi">Phơ-rê-đê-rích Ô-guýt Bác-tôn-đi</string>
+    <string name="loy">Mơ-na Loi</string>
+    <string name="worthington">Xam Oa-thinh-tơn</string>
+    <!-- 3 august -->
+    <string name="otis">Ê-li-sa Ô-tít</string>
+    <string name="simak">Clíp-phớt Đô-nan Xi-mắc</string>
+    <string name="james">Phi-lít Đo-rô-thi Giêm</string>
+    <string name="sheen">Mác-tin Sin</string>
+    <string name="lilly">Ê-van-giê-lin Li-li</string>
+    <!-- 4 august -->
+    <string name="shelley">Pơ-xi Bít-sơ Seo-li</string>
+    <string name="john_venn">Giôn Ven</string>
+    <string name="hamsun">Cơn-út Ham-xun</string>
+    <string name="armstrong">Lu-i Am-xtơ-rong</string>
+    <string name="thornton">Bin-li Bốp Thoóc-tơn</string>
+    <!-- 5 august -->
+    <string name="niels_abel">Nin Hen-rích A-ben</string>
+    <string name="repin">I-li-a Rê-pin</string>
+    <string name="maupassant">Ghi đơ Mô-pát-xăng</string>
+    <string name="wain">Lu-i Uên</string>
+    <string name="huston">Giôn Hiu-xtơn</string>
+    <string name="neil_armstrong">Nin Am-xtơ-rong</string>
+    <!-- 6 august -->
+    <string name="malebranche">Ni-cô-la Ma-lơ-bơ-răng-sơ</string>
+    <string name="johann_bernoulli">Giô-han Béc-nu-li</string>
+    <string name="alexander_fleming">A-lếch-xan-đơ Phơ-le-minh</string>
+    <string name="lucille_ball">Lu-xin Bôn</string>
+    <string name="andy_warhol">An-đi Oa-hôn</string>
+    <string name="shyamalan">M. Nai Sa-ma-lan</string>
+    <!-- 7 august -->
+    <string name="bathory">Ê-li-da-bét Ba-thô-ri</string>
+    <string name="mata_hari">Ma-ta Ha-ri</string>
+    <string name="tobin_bell">Tô-bin Beo</string>
+    <string name="duchovny">Đa-vít Đu-khốp-ni</string>
+    <string name="jimmy_wales">Gim-mi Uên</string>
+    <string name="theron">Sác-lít Thê-rôn</string>
+    <!-- 8 august -->
+    <string name="bateson">Uy-li-am Bết-xơn</string>
+    <string name="lawrence">Éc-nét Lô-ren</string>
+    <string name="dirac">Pôn Đi-rắc</string>
+    <string name="dustin_hoffman">Đát-xtin Hốp-man</string>
+    <string name="federer">Rô-giơ Phê-đơ-rơ</string>
+    <!-- 9 august -->
+    <string name="avogadro">A-mê-đê-ô A-vô-ga-đơ-rô</string>
+    <string name="morton_william">Uy-li-am Tô-mát Gơ-rin Mo-tơn</string>
+    <string name="huckel">Ê-rích Húc-ken</string>
+    <string name="piaget">Giăng Pi-a-giê</string>
+    <string name="travers">Pa-mê-la Lin-đơn Tơ-ra-vơ</string>
+    <string name="jansson">Tô-vê Gian-xơn</string>
+    <string name="griffith">Mê-la-ni Gơ-ríp-phít</string>
+    <string name="houston">Uýt-ni Hiu-xtơn</string>
+    <string name="tautou">Ót-đơ-rây Tô-tu</string>
+    <!-- 10 august -->
+    <string name="nestle">Ăng-ri Nét-xơ-lê</string>
+    <string name="qunanbaiuli">A-bai Cu-nan-bai-u-lư</string>
+    <string name="darrow">Sác-lơ Đa-râu</string>
+    <string name="shearer">No-ma Sia-rơ</string>
+    <string name="tiselius">A-nê Ti-xê-li-út</string>
+    <string name="banderas">Ăng-tô-ni-ô Ban-đê-rát</string>
+    <!-- 11 august -->
+    <string name="andrew_davis">Ăng-đơ-riu Giắc-xơn Đa-vít</string>
+    <string name="savant">Ma-ri-lin vốt Xa-văng</string>
+    <string name="wozniak">Xti-vơ Oát-ni-ắc</string>
+    <string name="hogan">Hăn Hô-gân</string>
+    <string name="hemsworth">Cơ-rít Hem-uốt</string>
+    <!-- 12 august -->
+    <string name="bering">Vi-tút Bê-rinh</string>
+    <string name="demille">Xê-xin B. Đơ-min</string>
+    <string name="bendix">Vin-xen Hiu-gô Ben-đích</string>
+    <string name="schrodinger">Éc-vin Sơ-rơ-đin-gơ</string>
+    <string name="soros">Gioóc Xô-rốt</string>
+    <string name="delevingne">Ca-ra Đê-lê-vin</string>
+    <!-- 13 august -->
+    <string name="angstrom">An-đơ Giô-nát Ăng-xtơ-rôm</string>
+    <string name="miescher">Phơ-ri-đơ-rích Mi-sơ</string>
+    <string name="agnelli">Giô-van-ni A-nhê-li</string>
+    <string name="hitchcock">An-phơ-rét Hít-cốc</string>
+    <string name="wankel">Phê-lích Van-ken</string>
+    <string name="castro">Phi-đen Ca-xtơ-rô</string>
+    <!-- 14 august -->
+    <string name="orsted">Han Cơ-rít-xti-an Ơ-xtét</string>
+    <string name="holliday">Đốc Hô-li-đây</string>
+    <string name="merezhkovsky">Đơ-mi-tơ-ri Mê-rết-cốp-xki</string>
+    <string name="galsworthy">Giôn Gôn-uốt-thi</string>
+    <string name="dempster">Ác-thơ Gép-phơ-ri Đem-xtơ</string>
+    <string name="steve_martin">Xti-vơ Mác-tin</string>
+    <string name="berry">Ha-li Be-ri</string>
+    <string name="kunis">Mi-la Cu-nít</string>
+    <!-- 15 august -->
+    <string name="carmontelle">Các-mông-ten</string>
+    <string name="napoleon">Na-pô-lê-ông</string>
+    <string name="scott">Oan-tơ Xcốt</string>
+    <string name="broglie">Lu-i đơ Bơ-rơi</string>
+    <string name="inarritu">A-lê-han-đơ-rô Gôn-da-lét I-nha-ri-tu</string>
+    <string name="affleck">Ben Áp-phơ-lếch</string>
+    <string name="jennifer_lawrence">Giê-ni-phơ Lô-ren</string>
+    <!-- 16 august -->
+    <string name="bruyere">Giăng đơ La Bơ-ruy-e</string>
+    <string name="lippmann">Ga-bơ-ri-en Líp-man</string>
+    <string name="bukowski">Sác-lơ Bu-cốp-xki</string>
+    <string name="richard">Pi-e Ri-sa</string>
+    <string name="cameron">Giêm Ca-mơ-rơn</string>
+    <string name="madonna">Ma-đôn-na</string>
+    <!-- 17 august -->
+    <string name="fermat">Pi-e đơ Phéc-ma</string>
+    <string name="hodgkin">Tô-mát Hốt-kin</string>
+    <string name="fokker">A-đơ-ri-an Phốc-cơ</string>
+    <string name="naipaul">V. Ét. Nai-pôn</string>
+    <string name="de_niro">Rô-bớt Đơ Ni-rô</string>
+    <string name="penn">Xon Pen</string>
+    <!-- 18 august -->
+    <string name="brook_taylor">Bơ-rúc Tay-lơ</string>
+    <string name="salieri">Ăng-tô-ni-ô Xa-li-ê-ri</string>
+    <string name="pierre_martin">Pi-e Ê-min Mác-tanh</string>
+    <string name="swayze">Pa-tơ-rích Xuây-di</string>
+    <string name="norton">Ét-uốt No-tơn</string>
+    <string name="slater">Cơ-rít-xti-an Xlây-tơ</string>
+    <!-- 19 august -->
+    <string name="samuel_richardson">Xa-mu-en Ri-chác-xơn</string>
+    <string name="platov">Mát-vây Pơ-la-tốp</string>
+    <string name="nasmyth">Giêm Nát-mít</string>
+    <string name="meyer">Giu-li-út Lô-tha May-ơ</string>
+    <string name="enescu">Gioóc Ê-nét-xcu</string>
+    <string name="chanel">Cô-cô Sa-nen</string>
+    <string name="perry">Mát-thiu Pe-ri</string>
+    <!-- 20 august -->
+    <string name="berzelius">Giơn Gia-cốp Béc-dê-li-út</string>
+    <string name="quasimodo">Xan-va-tô-rê Qua-di-mô-đô</string>
+    <string name="susann">Giắc-cơ-lin Xu-dan</string>
+    <string name="durst">Phơ-rét Đớt</string>
+    <string name="amy_adams">Ây-mi A-đam</string>
+    <string name="garfield">Ăng-đơ-riu Ga-phin</string>
+    <!-- 21 august -->
+    <string name="murdoch">Uy-li-am Mơ-đốc</string>
+    <string name="basie">Cao Bây-xi</string>
+    <string name="consuelo_velazquez">Côn-xu-ê-lô Vê-lát-kết</string>
+    <string name="wilt_chamberlain">Uyn Cham-bơ-len</string>
+    <string name="brin">Xéc-gây Bơ-rin</string>
+    <string name="bolt">U-xên Bôn</string>
+    <!-- 22 august -->
+    <string name="papin">Đơ-ni Pa-panh</string>
+    <string name="maudslay">Hen-ri Mót-xlây</string>
+    <string name="nipkow">Pôn Gốt-líp Níp-cốp</string>
+    <string name="debussy">Clốt Đơ-buy-xi</string>
+    <string name="scheler">Mắc Sê-lơ</string>
+    <string name="bradbury">Rây Bơ-rát-bơ-ri</string>
+    <!-- 23 august-->
+    <string name="laperouse">Giăng Phơ-răng-xoa đơ La-pê-rút</string>
+    <string name="cuvier">Gioóc Quy-vi-ê</string>
+    <string name="jirasek">A-lôi Gi-ra-xếch</string>
+    <string name="arrow">Ken-nét A-râu</string>
+    <string name="phoenix">Ri-vơ Phê-ních</string>
+    <!-- 24 august -->
+    <string name="weddell">Giêm Uét-đen</string>
+    <string name="borges">Hoóc-hê Lu-ít Boóc-hét</string>
+    <string name="coelho">Pao-lô Cô-ê-lô</string>
+    <string name="jarre">Giăng Mi-sen Gia</string>
+    <string name="fry">Xti-vơn Phơ-rai</string>
+    <string name="guttenberg">Xti-vơ Gút-tơn-béc</string>
+    <string name="grint">Ru-pớt Gơ-rin</string>
+    <!-- 25 august -->
+    <string name="pinkerton">A-lan Pin-cơ-tơn</string>
+    <string name="elo">Ác-pát Ê-lô</string>
+    <string name="brian_moore">Bơ-rai-ơn Mu-ơ</string>
+    <string name="connery">Xon Co-nơ-ri</string>
+    <string name="tim_burton">Tim Bơ-tơn</string>
+    <string name="schiffer">Clau-đi-a Síp-phơ</string>
+    <!-- 26 august -->
+    <string name="lambert">Giô-han Hai-rích Lam-be</string>
+    <string name="joseph_montgolfier">Giô-dép Mi-sen Mông-gôn-phi-ê</string>
+    <string name="lavoisier">Ăng-toan La-voa-di-ê</string>
+    <string name="forest">Li Đơ Pho-rét</string>
+    <string name="teresa">Mẹ Tê-rê-xa</string>
+    <string name="culkin">Ma-cau-lây Căn-kin</string>
+    <!-- 27 august -->
+    <string name="hegel">Gê-oóc Vin-hem Phơ-ri-đơ-rích Hê-ghen</string>
+    <string name="niebuhr">Bác-thôn Gê-oóc Ni-bua</string>
+    <string name="bosch">Các Bốt-sơ</string>
+    <string name="rolls">Sác-lơ Rôn</string>
+    <string name="ranevskaya">Pha-i-na Ra-nép-xca-ia</string>
+    <string name="chalke">Xa-ra Chốc</string>
+    <string name="aaron_paul">A-rôn Pôn</string>
+    <!-- 28 august -->
+    <string name="goethe">Giô-han Vôn-phơ-gang phôn Gớt</string>
+    <string name="blondel">Ăng-đơ-rê Bơ-lông-đen</string>
+    <string name="whipple">Gioóc Hoi Uíp-pơn</string>
+    <string name="theremin">Lê-ông Tê-rê-min</string>
+    <string name="fincher">Đa-vít Phin-chơ</string>
+    <string name="jack_black">Giắc Bơ-lách</string>
+    <!-- 29 august -->
+    <string name="locke">Giôn Lốc-cơ</string>
+    <string name="maeterlinck">Mô-rít Mát-téc-lích</string>
+    <string name="forssmann">Véc-nơ Pho-xơ-man</string>
+    <string name="ingrid_bergman">In-gơ-rít Béc-man</string>
+    <string name="charlie_parker">Sác-li Pác-cơ</string>
+    <string name="michael_jackson">Mai-cơn Giắc-xơn</string>
+    <!-- 30 august -->
+    <string name="mary_shelley">Me-ri Seo-li</string>
+    <string name="adolf_hesse">A-đôn Phơ-ri-đơ-rích Hét-xơ</string>
+    <string name="hoff">Gia-cô-bút Hen-ri-cút van \'t Hốp</string>
+    <string name="rutherford">Éc-nét Rơ-dơ-pho</string>
+    <string name="cummings">Rây Căm-minh</string>
+    <string name="mclaren">Bơ-rút Mắc-la-ren</string>
+    <string name="diaz">Ca-mơ-rôn Đi-át</string>
+    <!-- 31 august -->
+    <string name="helmholtz">Héc-man phôn Hem-hôn</string>
+    <string name="paneth">Phơ-ri-đơ-rích Pa-nét</string>
+    <string name="fredric_march">Phơ-rê-đơ-rích Mác</string>
+    <string name="gere">Ri-chác Gia</string>
+    <string name="tucker">Cơ-rít Tắc-cơ</string>
+    <!-- 1 september -->
+    <string name="jevons">Uy-li-am Xtan-li Giê-vơn</string>
+    <string name="auguste_forel">Ô-guýt Phô-ren</string>
+    <string name="burroughs">Ét-ga Rai Bơ-râu</string>
+    <string name="marilyn_miller">Ma-ri-lin Mi-lơ</string>
+    <string name="marciano">Rốc-ki Mác-xi-a-nô</string>
+    <string name="estefan">Gơ-lo-ri-a Ét-xtê-phan</string>
+    <!-- 2 september -->
+    <string name="howard">Giôn Hao-uốt</string>
+    <string name="echeverria">Ét-xtê-ban Ê-chê-vê-ri-a</string>
+    <string name="field">Ơ-gien Phin</string>
+    <string name="soddy">Phơ-rê-đơ-rích Xốt-đi</string>
+    <string name="reeves">Ki-a-nu Ri-vơ</string>
+    <string name="hayek">Xan-ma Hay-ếch</string>
+    <!-- 3 september -->
+    <string name="louis_sullivan">Lu-i Xu-li-vân</string>
+    <string name="pregl">Phơ-rít Pơ-rê-gơn</string>
+    <string name="porsche">Phéc-đi-năng Poóc-sơ</string>
+    <string name="anderson">Các Đa-vít An-đéc-xơn</string>
+    <string name="dovlatov">Xéc-gây Đốp-la-tốp</string>
+    <string name="jeunet">Giăng Pi-e Giơ-nê</string>
+    <string name="charlie_sheen">Sác-li Sin</string>
+    <!-- 4 september -->
+    <string name="constantijn_huygens">Côn-xtan-tain Huy-ghen</string>
+    <string name="chateaubriand">Phơ-răng-xoa Rơ-nê đơ Sa-tô-bơ-ri-ăng</string>
+    <string name="richard_wright">Ri-chác Rai</string>
+    <string name="tange">Ken-dô Tan-gê</string>
+    <string name="beyonce">Bi-on-xê</string>
+    <!-- 5 september -->
+    <string name="campanella">Tôm-ma-dô Cam-pa-nen-la</string>
+    <string name="meyerbeer">Gia-cô-mô May-ơ-bia</string>
+    <string name="aleksey_tolstoy">A-lếch-xây Côn-xtan-ti-nô-vích Tôn-xtôi</string>
+    <string name="jesse_james">Giét-xi Giêm</string>
+    <string name="mercury">Phơ-rét-đi Mơ-kiu-ri</string>
+    <string name="keaton">Mai-cơn Ki-tơn</string>
+    <!-- 6 september -->
+    <string name="serlio">Xê-bát-xti-a-nô Xéc-li-ô</string>
+    <string name="moses_mendelssohn">Mô-dét Men-đen-xôn</string>
+    <string name="dalton">Giôn Đan-tơn</string>
+    <string name="berdan">Hai-răm Béc-đan</string>
+    <string name="addams">Giên A-đam</string>
+    <string name="essen">Lu-i Ét-xen</string>
+    <!-- 7 september -->
+    <string name="leclerc">Gioóc Lu-i Lơ-cơ-léc, Bá tước xứ Buy-phông</string>
+    <string name="gossen">Héc-man Hai-rích Gốt-xen</string>
+    <string name="kuprin">A-lếch-xan-đơ Cu-pơ-rin</string>
+    <string name="gala_dali">Ga-la Đa-li</string>
+    <string name="debakey">Mai-cơn E-lít Đơ-bây-ki</string>
+    <string name="packard">Đa-vít Pắc-cát</string>
+    <!-- 8 september -->
+    <string name="lionheart">Ri-chác Sư tử tâm</string>
+    <string name="neckam">A-lếch-xan-đơ Nếch-cam</string>
+    <string name="mistral">Phơ-rê-đê-rích Mít-xtơ-ran</string>
+    <string name="martin_freeman">Mác-tin Phơ-ri-man</string>
+    <!-- 9 september -->
+    <string name="frederik_chapman">Phơ-rê-đơ-rích Hen-rích áp Cháp-man</string>
+    <string name="galvani">Lu-i-gi Gan-va-ni</string>
+    <string name="leo_tolstoy">Lép Tôn-xtôi</string>
+    <string name="usmanov">A-li-sơ Út-xma-nốp</string>
+    <string name="hugh_grant">Hiu Gơ-ran</string>
+    <string name="sandler">A-đam Xan-đơ-lơ</string>
+    <!-- 10 september -->
+    <string name="peirce">Sác-lơ Xan-đơ Pơ-xơ</string>
+    <string name="elsa_schiaparelli">En-xa Xki-a-pa-ren-li</string>
+    <string name="compton">Ác-thơ Côm-tơn</string>
+    <string name="messing">Vôn Mét-xinh</string>
+    <string name="lagerfeld">Các La-gơ-phen</string>
+    <string name="joe_perry">Giô Pe-ri</string>
+    <string name="firth">Cô-lin Phớt</string>
+    <string name="ritchie">Gai Rít-chi</string>
+    <!-- 11 september -->
+    <string name="james_thomson">Giêm Tôm-xơn</string>
+    <string name="zeiss">Các Dai</string>
+    <string name="o_henry">Ô. Hen-ri</string>
+    <string name="jeans">Giêm Gin</string>
+    <string name="beckenbauer">Phơ-răng Bếch-ken-bau-ơ</string>
+    <!-- 12 september -->
+    <string name="breitner">Gioóc Hen-đơ-rích Bơ-rai-tơ-nơ</string>
+    <string name="irene_curie">I-ren Giô-li-ô Quy-ri</string>
+    <string name="lem">Xta-ni-xláp Lem</string>
+    <string name="barry_white">Ba-ri Oai</string>
+    <string name="farmer">Mi-len Phác-mơ</string>
+    <string name="walker">Pôn Oác-cơ</string>
+    <!-- 13 september -->
+    <string name="samuel_wilson">Xa-mu-en Uyn-xơn</string>
+    <string name="reed">Oan-tơ Rít</string>
+    <string name="john_priestley">Giôn Boi-tơn Pơ-rít-xtli</string>
+    <string name="dahl">Rô-an Đan</string>
+    <string name="maurice_jarre">Mô-rít Gia</string>
+    <string name="bisset">Giắc-cơ-lin Bít-xét</string>
+    <!-- 14 september -->
+    <string name="agrippa">Hai-rích Coóc-nê-li-út A-gơ-ríp-pa</string>
+    <string name="lely">Pi-tơ Lê-li</string>
+    <string name="cecil">Rô-bớt Xê-xin</string>
+    <string name="dana_gibson">Sác-lơ Đa-na Gíp-xơn</string>
+    <string name="neill">Xam Nin</string>
+    <string name="winehouse">Ây-mi Oai-hao</string>
+    <!-- 15 september -->
+    <string name="marco_polo">Mác-cô Pô-lô</string>
+    <string name="james_cooper">Giêm Phe-ni-mo Cúp-pơ</string>
+    <string name="bugatti">Ét-to-rê Bu-gát-ti</string>
+    <string name="christie">A-ga-tha Cơ-rít-xti</string>
+    <string name="jean_renoir">Giăng Rơ-noa</string>
+    <string name="tommy_lee_jones">Tôm-mi Li Giôn</string>
+    <string name="oliver_stone">Ô-li-vơ Xtôn</string>
+    <string name="tom_hardy">Tôm Ha-đi</string>
+    <!-- 16 september -->
+    <string name="kossel">An-bơ-rếch Cốt-xen</string>
+    <string name="boyd">Lu-i-dơ A-nơ Boi</string>
+    <string name="jellinek">Méc-xê-đét Giê-li-nếch</string>
+    <string name="korda">A-lếch-xan-đơ Coóc-đa</string>
+    <string name="bbking">Bi Bi Kinh</string>
+    <string name="rourke">Mích-ki Rốc</string>
+    <string name="copperfield">Đa-vít Cốp-pơ-phin</string>
+    <!-- 17 september -->
+    <string name="riemann">Béc-hát Ri-man</string>
+    <string name="buick">Đa-vít Đăn-ba Biu-ích</string>
+    <string name="tsiolkovsky">Côn-xtan-tin Xi-ôn-cốp-xki</string>
+    <string name="kesey">Ken Ki-di</string>
+    <string name="messner">Rai-hôn Mét-xnơ</string>
+    <string name="anastacia">A-na-xta-xi-a</string>
+    <string name="ovechkin">A-lếch-xan-đơ Ô-vếch-kin</string>
+    <!-- 18 september -->
+    <string name="samuel_johnson">Xa-mu-en Giôn-xơn</string>
+    <string name="foucault">Lê-ông Phu-cô</string>
+    <string name="garbo">Gơ-rê-ta Gác-bô</string>
+    <string name="mcmillan">Ét-uyn Mắc-mi-lân</string>
+    <string name="werber">Béc-na Véc-be</string>
+    <string name="gandolfini">Giêm Gan-đôn-phi-ni</string>
+    <string name="shuttleworth">Mác Sát-tơn-uốt</string>
+    <!-- 19 september -->
+    <string name="pajou">Ô-guýt-xtanh Pa-giu</string>
+    <string name="golding">Uy-li-am Gôn-đinh</string>
+    <string name="irons">Giê-rê-mi Ai-ơn</string>
+    <string name="hornby">Lét-xli Hoóc-bi</string>
+    <string name="karelin">A-lếch-xan-đơ Ca-rê-lin</string>
+    <!-- 20 september -->
+    <string name="moneta">Éc-nét-xtô Tê-ô-đô-rô Mô-nê-ta</string>
+    <string name="dewar">Giêm Điu-ơ</string>
+    <string name="leo_strauss">Lê-ô Xtơ-rao</string>
+    <string name="loren">Xô-phi-a Lo-ren</string>
+    <string name="george_martin">Gioóc R. R. Mác-tin</string>
+    <!-- 21 september -->
+    <string name="mcadam">Giôn Lau-đơn Mắc-a-đam</string>
+    <string name="onnes">Hai-kơ Ca-mơ-linh Ôn-nét</string>
+    <string name="wells">Hơ-bớt Gioóc Ueo</string>
+    <string name="nicolle">Sác-lơ Ni-côn</string>
+    <string name="stephen_king">Xti-vơn Kinh</string>
+    <string name="murray">Bin Mơ-rây</string>
+    <string name="beigbeder">Phơ-rê-đê-rích Bếch-bê-đê</string>
+    <!-- 22 september -->
+    <string name="faraday">Mai-cơn Pha-ra-đây</string>
+    <string name="george_bentham">Gioóc Ben-tham</string>
+    <string name="ciurlionis">Mi-ca-lôi-út Chiu-li-ô-nít</string>
+    <string name="muni">Pôn Mu-ni</string>
+    <string name="huggins">Sác-lơ Bơ-ren-tơn Hắc-gin</string>
+    <string name="dean_reed">Đin Rít</string>
+    <!-- 23 september -->
+    <string name="fizeau">I-pô-lít Phi-dô</string>
+    <string name="robert_bosch">Rô-bớt Bốt-sơ</string>
+    <string name="orr">Giôn Boi O, Nam tước Boyd-Orr thứ 1</string>
+    <string name="coltrane">Giôn Côn-tơ-rên</string>
+    <string name="romy_schneider">Rô-mi Snai-đơ</string>
+    <string name="julio_iglesias">Hu-li-ô I-gơ-lê-xi-át</string>
+    <string name="springsteen">Bơ-rút Xpơ-rinh-xtin</string>
+    <!-- 24 september -->
+    <string name="cardano">Giê-rô-la-mô Các-đa-nô</string>
+    <string name="walpole">Ho-rát Uôn-pôn</string>
+    <string name="triolet">En-xa Tơ-ri-ô-lê</string>
+    <string name="f_s_fitzgerald">Phơ-ran-xít Xcốt Phít-giê-rôn</string>
+    <string name="ochoa">Xê-vê-rô Ô-chô-a</string>
+    <string name="brunner">Giôn Bơ-răn-nơ</string>
+    <!-- 25 september -->
+    <string name="thomas_morgan">Tô-mát Hăn Moóc-gan</string>
+    <string name="faulkner">Uy-li-am Phốc-nơ</string>
+    <string name="shostakovich">Đơ-mi-tơ-ri Xốt-xta-cô-vích</string>
+    <string name="michael_douglas">Mai-cơn Đắc-glát</string>
+    <string name="almodovar">Pê-đơ-rô An-mô-đô-va</string>
+    <string name="will_smith">Uyn Xmít</string>
+    <string name="zeta_jones">Ca-thơ-rin Dê-ta-Giôn</string>
+    <!-- 26 september -->
+    <string name="grew">Nê-hê-mi-a Gơ-riu</string>
+    <string name="joseph_proust">Giô-dép Lu-i Pơ-rút</string>
+    <string name="pavlov">I-van Páp-lốp</string>
+    <string name="hine">Lu-ít Hain</string>
+    <string name="wallis">Ban Oa-lít</string>
+    <string name="eliot">Tô-mát Xtơn Ê-li-ốt</string>
+    <!-- 27 september -->
+    <string name="bossuet">Giắc Bê-nin Bốt-xuy-ê</string>
+    <string name="deledda">Gơ-ra-di-a Đê-lét-đa</string>
+    <string name="larry_wall">La-ri Uôn</string>
+    <string name="welsh">Ơ-vin Ueo</string>
+    <string name="paltrow">Guyn-nét Pao-tơ-râu</string>
+    <!-- 28 september -->
+    <string name="merimee">Pơ-rót-xpe Mê-ri-mê</string>
+    <string name="moissan">Ăng-ri Moa-xăng</string>
+    <string name="finch">Pi-tơ Phin-chơ</string>
+    <string name="mastroianni">Mác-xen-lô Mát-xtơ-roi-an-ni</string>
+    <string name="bardot">Bơ-ri-gít Bác-đô</string>
+    <string name="watts">Na-ô-mi Oát</string>
+    <string name="dita_von_teese">Đi-ta Von Ti-dơ</string>
+    <string name="emelianenko">Phi-ô-đo Ê-mê-li-a-nen-cô</string>
+    <!-- 29 september -->
+    <string name="caravaggio">Ca-ra-vát-giô</string>
+    <string name="horatio_nelson">Ho-ra-ti-ô Nen-xơn, Tử tước Nelson thứ 1</string>
+    <string name="gaskell">Ê-li-da-bét Gát-xken</string>
+    <string name="fermi">En-ri-cô Phéc-mi</string>
+    <string name="ostrovsky">Ni-cô-lai Ốt-xtơ-rốp-xki</string>
+    <string name="antonioni">Mi-ken-lăng-giơ-lô Ăng-tô-ni-ô-ni</string>
+    <!-- 30 september -->
+    <string name="condillac">Ê-ti-en Bôn-nô đơ Công-đi-ắc</string>
+    <string name="wrigley">Uy-li-am Rích-li Con</string>
+    <string name="perrin">Giăng Báp-tít Pe-ranh</string>
+    <string name="geiger">Han Gai-gơ</string>
+    <string name="kerr">Đê-bô-ra Cơ</string>
+    <string name="capote">Tơ-ru-man Ca-pô-tê</string>
+    <string name="bellucci">Mô-ni-ca Ben-lút-chi</string>
+    <string name="cotillard">Ma-ri-ông Cô-ti-a</string>
+    <!-- 1 october -->
+    <string name="boeing">Uy-li-am Bô-inh</string>
+    <string name="richard_harris">Ri-chác Ha-rít</string>
+    <string name="andrews">Giu-li An-đơ-riu</string>
+    <string name="annaud">Giăng-Giắc A-nô</string>
+    <string name="galifianakis">Dắc Ga-li-phi-a-na-kít</string>
+    <string name="brie_larson">Bơ-ri La-xơn</string>
+    <!-- 2 october -->
+    <string name="ramsay">Uy-li-am Ram-dây</string>
+    <string name="gandhi">Ma-hát-ma Gan-đi</string>
+    <string name="greene">Gơ-ra-ham Gơ-rin</string>
+    <string name="willy_ley">Uy-li Lây</string>
+    <string name="karan">Đon-na Ca-rân</string>
+    <string name="sting">Xtinh</string>
+    <!-- 3 october -->
+    <string name="shmelyov">I-van Sơ-mê-li-ốp</string>
+    <string name="yesenin">Xéc-gây Ê-xê-nin</string>
+    <string name="aragon">Lu-i A-ra-gông</string>
+    <string name="wolfe">Tô-mát Un-phơ</string>
+    <string name="stefani">Goen Xtê-pha-ni</string>
+    <string name="headey">Lê-na Hi-đi</string>
+    <string name="ibrahimovic">Dla-tan I-bơ-ra-hi-mô-vích</string>
+    <string name="vikander">A-li-xi-a Vi-can-đơ</string>
+    <!-- 4 october -->
+    <string name="piranesi">Giô-van-ni Bát-ti-xta Pi-ra-nê-di</string>
+    <string name="pottier">Ơ-gien Pốt-ti-ê</string>
+    <string name="boussenard">Lu-i Ăng-ri Bu-xơ-na</string>
+    <string name="sarandon">Xu-dân Xa-ran-đơn</string>
+    <string name="waltz">Cơ-rít-xtốp Van-xơ</string>
+    <string name="silverstone">A-li-xi-a Xin-vơ-xtôn</string>
+    <string name="dakota_johnson">Đa-cô-ta Giôn-xơn</string>
+    <!-- 5 october -->
+    <string name="diderot">Đơ-ni Đi-đơ-rô</string>
+    <string name="lumiere">Lu-i Giăng Luy-mi-e</string>
+    <string name="rous">Phơ-ran-xít Pây-tơn Râu</string>
+    <string name="kroc">Rây Cơ-rốc</string>
+    <string name="lemieux">Ma-ri-ô Lơ-mi-ơ</string>
+    <string name="pearce">Gai Pia-xơ</string>
+    <string name="winslet">Kết Uyn-xlét</string>
+    <string name="eisenberg">Giét-xi Ai-den-béc</string>
+    <!-- 6 october -->
+    <string name="maskelyne">Nê-vin Mát-xcơ-lin</string>
+    <string name="smuglewicz">Phơ-ran-xi-dếch Xmu-gơ-lê-vích</string>
+    <string name="westinghouse">Gioóc Oét-xtinh-hao</string>
+    <string name="fessenden">Rê-gi-nan Phét-xen-đơn</string>
+    <string name="corbusier">Lơ Coóc-buy-di-ê</string>
+    <string name="ernest_walton">Éc-nét Oan-tơn</string>
+    <string name="heyerdahl">Tho Hai-ơ-đan</string>
+    <!-- 7 october -->
+    <string name="niels_bohr">Nin Bo</string>
+    <string name="alcantara">Pau-li-nô An-can-ta-ra</string>
+    <string name="keneally">Tô-mát Kê-ni-li</string>
+    <string name="putin">Vla-đi-mia Pu-tin</string>
+    <string name="braxton">Tô-ni Bơ-rắc-xtơn</string>
+    <!-- 8 october -->
+    <string name="geyter">Pi-e Đơ Giây-tơ</string>
+    <string name="poddubny">I-van Pốt-đúp-nưi</string>
+    <string name="tsvetaeva">Ma-ri-na Xvê-ta-ê-va</string>
+    <string name="voicu">I-ông Voi-cu</string>
+    <string name="louise_hay">Lu-i-dơ Hay</string>
+    <string name="weaver">Xi-goóc-ni Uy-vơ</string>
+    <string name="matt_damon">Mát Đây-mơn</string>
+    <!-- 9 october -->
+    <string name="sorbon">Rô-be đơ Xoóc-bông</string>
+    <string name="segner">Giô-han An-đơ-rê-át Dếch-nơ</string>
+    <string name="saint_saens">Ca-mi Xanh-Xăng</string>
+    <string name="lennon">Giôn Len-nơn</string>
+    <string name="mcqueen">Xti-vơ Mắc-Quin</string>
+    <!-- 10 october -->
+    <string name="watteau">Giăng Ăng-toan Oát-tô</string>
+    <string name="cavendish">Hen-ri Ca-ven-đít</string>
+    <string name="verdi">Giu-dép-pê Véc-đi</string>
+    <string name="nansen">Phơ-rít-giốp Nan-xen</string>
+    <string name="andric">I-vô An-đơ-rích</string>
+    <string name="giacometti">An-béc-tô Gia-cô-mét-ti</string>
+    <string name="pavel_durov">Pa-ven Đu-rốp</string>
+    <!-- 11 october -->
+    <string name="olbers">Hai-rích Vin-hem Mát-thi-át Ôn-bơ</string>
+    <string name="berlier">Giăng-Báp-tít Béc-li-ê</string>
+    <string name="heinz">Hen-ri Hain-dơ</string>
+    <string name="roosevelt">Ê-lê-a-no Ru-dơ-ven</string>
+    <string name="mauriac">Phơ-răng-xoa Mô-ri-ắc</string>
+    <!-- 12 october -->
+    <string name="sperry">En-mơ Am-bơ-rô-dơ Xpê-ri</string>
+    <string name="harden">Ác-thơ Ha-đơn</string>
+    <string name="horch">Ô-guýt Hoóc</string>
+    <string name="crowley">A-lít-xtơ Cơ-rau-li</string>
+    <string name="montale">Ơ-giê-ni-ô Môn-ta-lê</string>
+    <string name="pavarotti">Lu-chi-a-nô Pa-va-rót-ti</string>
+    <string name="jackman">Hiu Giắc-man</string>
+    <!-- 13 october -->
+    <string name="tatum">Át Tây-tăm</string>
+    <string name="thatcher">Mác-ga-rét Thát-chơ</string>
+    <string name="hunter">Rô-bớt Lo-nơ Hăn-tơ</string>
+    <string name="simon">Pôn Xai-mơn</string>
+    <string name="cohen">Xa-sa Ba-rơn Cô-en</string>
+    <!-- 14 october -->
+    <string name="william_penn">Uy-li-am Pen</string>
+    <string name="gish">Li-li-an Gít</string>
+    <string name="roger_moore">Rô-giơ Mu-ơ</string>
+    <string name="lauren">Ráp Lô-ren</string>
+    <string name="wasikowska">Mi-a Va-si-cốp-xca</string>
+    <!-- 15 october -->
+    <string name="torricelli">Ê-van-giê-li-xta Tô-ri-xen-li</string>
+    <string name="lermontov">Mi-kha-in Léc-môn-tốp</string>
+    <string name="asaph_hall">A-sáp Hôn</string>
+    <string name="nietzsche">Phơ-ri-đơ-rích Nít-sơ</string>
+    <string name="ilf">I-li-a In-phơ</string>
+    <string name="puzo">Ma-ri-ô Pu-dô</string>
+    <!-- 16 october -->
+    <string name="haller">An-bơ-rếch phôn Ha-lơ</string>
+    <string name="wilde">Ót-xca Oai</string>
+    <string name="oneill">Ơ-gien Ô\'Nin</string>
+    <string name="grass">Guyn-tơ Gơ-rát</string>
+    <string name="paffgen">Cơ-rít-xta Pép-ghen</string>
+    <string name="robbins">Tim Rốp-bin</string>
+    <!-- 17 october -->
+    <string name="orlov">Gơ-ri-gô-ri Oóc-lốp</string>
+    <string name="saint_simon">Clốt Ăng-ri đơ Ru-voa, Bá tước xứ Xanh-Xi-mông</string>
+    <string name="jordan">Rô-bớt Gioóc-đơn</string>
+    <string name="raikkonen">Ki-mi Rai-cô-nen</string>
+    <string name="felicity_jones">Phê-li-xi-ti Giôn</string>
+    <!-- 18 october -->
+    <string name="schonbein">Cơ-rít-xti-an Phơ-ri-đơ-rích Sơn-bain</string>
+    <string name="glumer">Cle phôn Gluy-mơ</string>
+    <string name="lodygin">A-lếch-xan-đơ Lô-đư-gin</string>
+    <string name="bergson">Ăng-ri Béc-xông</string>
+    <string name="chuck_berry">Chắc Be-ri</string>
+    <string name="george_scott">Gioóc X. Xcốt</string>
+    <string name="van_damme">Giăng-Clốt Van Đam</string>
+    <!-- 19 october -->
+    <string name="ficino">Mác-xi-li-ô Phi-chi-nô</string>
+    <string name="auguste_lumiere">Ô-guýt Lu-i Ma-ri Ni-cô-la Luy-mi-e</string>
+    <string name="boccioni">Um-béc-tô Bốt-chi-ô-ni</string>
+    <string name="gilels">Ê-min Ghi-len</string>
+    <string name="holyfield">Ê-van-đơ Hô-li-phin</string>
+    <string name="trey_parker">Tơ-rây Pác-cơ</string>
+    <!-- 20 october -->
+    <string name="bartholin">Tô-mát Bác-thô-lin</string>
+    <string name="wren">Cơ-rít-xtô-phơ Ren</string>
+    <string name="rimbaud">Ác-thơ Ranh-bô</string>
+    <string name="chadwick">Giêm Chát-uých</string>
+    <string name="bernat">En-rích Béc-nát</string>
+    <string name="jelinek">En-phơ-ri-đơ Giê-li-nếch</string>
+    <!-- 21 october -->
+    <string name="coleridge">Xa-mu-en Tay-lơ Cô-lơ-rít</string>
+    <string name="nobel">An-phơ-rét Nô-ben</string>
+    <string name="mikhalkov">Ni-ki-ta Mi-khan-cốp</string>
+    <string name="carrie_fisher">Ca-ri Phít-sơ</string>
+    <string name="geim">An-đơ-rây Ghêm</string>
+    <string name="kardashian">Kim Các-đa-si-an</string>
+    <!-- 22 october -->
+    <string name="liszt">Phơ-răng Lít</string>
+    <string name="bernhardt">Xa-ra Béc-na</string>
+    <string name="bunin">I-van Bu-nin</string>
+    <string name="yashin">Lép Ia-sin</string>
+    <string name="christopher_lloyd">Cơ-rít-xtô-phơ Loi</string>
+    <string name="deneuve">Ca-thơ-rin Đơ-nơ-vơ</string>
+    <string name="wenger">Ác-xen Ven-gơ</string>
+    <!-- 23 october -->
+    <string name="larousse">Pi-e La-rút</string>
+    <string name="lanchester">Phơ-rê-đơ-rích Uy-li-am Lan-chét-xtơ</string>
+    <string name="lewis">Gin-bớt Niu-tơn Lu-ít</string>
+    <string name="bloch">Phê-lích Bơ-lốc</string>
+    <string name="pele">Pê-lê</string>
+    <string name="reynolds">Rai-ơn Rây-nôn</string>
+    <string name="clarke">Ê-mi-li-a Clác</string>
+    <!-- 24 october -->
+    <string name="robbia">An-đơ-rê-a Đen-la Rốp-bi-a</string>
+    <string name="leeuwenhoek">Ăng-tô-ni van Lơ-ven-húc</string>
+    <string name="wilhelm_weber">Vin-hem Ê-đu-át Vê-be</string>
+    <string name="swarovski">Đa-ni-en Xva-rốp-xki</string>
+    <string name="raikin">Ác-ca-đi Rai-kin</string>
+    <string name="rooney">Uên Ru-ni</string>
+    <!-- 25 october -->
+    <string name="galois">Ê-va-rít Ga-loa</string>
+    <string name="johann_strauss">Giô-han Xtơ-rao</string>
+    <string name="bizet">Gioóc Bi-dê</string>
+    <string name="picasso">Páp-lô Pi-cát-xô</string>
+    <string name="gance">A-ben Găng-xơ</string>
+    <string name="katy_perry">Kây-ti Pe-ri</string>
+    <!-- 26 october -->
+    <string name="scarlatti">Đô-mê-ni-cô Xcác-lát-ti</string>
+    <string name="goldschmidt">Mây-ơ A-rôn Gôn-smít</string>
+    <string name="vereshchagin">Va-xi-li Vê-rê-sa-gin</string>
+    <string name="bely">An-đơ-rây Bê-lưi</string>
+    <string name="napoleon_hill">Na-pô-lê-ông Hin</string>
+    <!-- 27 october -->
+    <string name="paganini">Ni-cô-lô Pa-ga-ni-ni</string>
+    <string name="falk">Rô-bớt Phank</string>
+    <string name="cleese">Giôn Cơ-li-dơ</string>
+    <string name="simon_le_bon">Xai-mơn Lơ Bông</string>
+    <string name="vanessa_mae">Va-nét-xa Mây</string>
+    <!-- 28 october -->
+    <string name="edith_head">I-đít Hét</string>
+    <string name="waugh">Ê-vơ-lin O</string>
+    <string name="garrincha">Ga-rin-cha</string>
+    <string name="bill_gates">Bin Ghết</string>
+    <string name="ramazzotti">Ê-rót Ra-ma-dốt-ti</string>
+    <string name="julia_roberts">Giu-li-a Rô-bớt</string>
+    <string name="joaquin_phoenix">Hoa-kin Phê-ních</string>
+    <!-- 29 october -->
+    <string name="stur">Lưu-đô-vít Xtua</string>
+    <string name="ioffe">Áp-ram I-ốp-phê</string>
+    <string name="phalle">Ni-ki đơ Xanh Phan</string>
+    <string name="dreyfuss">Ri-chác Đơ-rây-phút</string>
+    <string name="ryder">Uy-nô-na Rai-đơ</string>
+    <!-- 30 october -->
+    <string name="kauffmann">Ăng-giê-li-ca Cao-phơ-man</string>
+    <string name="sheridan">Ri-chác Se-ri-đan</string>
+    <string name="chenier">Ăng-đơ-rê Sê-ni-ê</string>
+    <string name="valery">Pôn Va-lê-ri</string>
+    <string name="maradona">Đi-ê-gô Ma-ra-đô-na</string>
+    <string name="belleci">Tô-ri Be-lê-chi</string>
+    <!-- 31 october -->
+    <string name="vermeer">Giô-han-nét Véc-me</string>
+    <string name="keats">Giôn Kít</string>
+    <string name="weierstrass">Các Vai-ơ-xtơ-rát</string>
+    <string name="baeyer">A-đôn phôn Bay-ơ</string>
+    <string name="helmut_newton">Hen-mút Niu-tơn</string>
+    <string name="peter_jackson">Pi-tơ Giắc-xơn</string>
+    <string name="rob_schneider">Rốp Snai-đơ</string>
+    <!-- 1 november -->
+    <string name="cortona">Pi-ê-tơ-rô đa Coóc-tô-na</string>
+    <string name="canova">Ăng-tô-ni-ô Ca-nô-va</string>
+    <string name="grieg">Noóc-đan Gơ-rích</string>
+    <string name="flynt">La-ri Phơ-lin</string>
+    <string name="kiedis">Ăng-thô-ni Ki-đít</string>
+    <string name="rai">Ai-xoa-ri-a Rai</string>
+    <!-- 2 november -->
+    <string name="antoinette">Ma-ri Ăng-toa-nét</string>
+    <string name="boole">Gioóc Bun</string>
+    <string name="sorel">Gioóc Xô-ren</string>
+    <string name="visconti">Lu-ki-nô Vi-xcông-ti</string>
+    <string name="keith_emerson">Kít E-mơ-xơn</string>
+    <string name="khan">Sa Rúc Khan</string>
+    <string name="schwimmer">Đa-vít Suym-mơ</string>
+    <!-- 3 november -->
+    <string name="cellini">Ben-vê-nu-tô Xen-li-ni</string>
+    <string name="marshak">Xa-mu-in Mác-sắc</string>
+    <string name="dassler">A-đôn Đát-xlơ</string>
+    <string name="gerd_muller">Ghéc Muy-lơ</string>
+    <string name="lundgren">Đôn-phơ Lun-gơ-ren</string>
+    <string name="newell">Ghếp Niu-eo</string>
+    <!-- 4 november -->
+    <string name="reni">Gui-đô Rê-ni</string>
+    <string name="bove">Giô-dép Bô-vê</string>
+    <string name="shakurantala_devi">Sa-cun-ta-la Đê-vi</string>
+    <string name="mcconaughey">Mát-thiu Mắc-Co-na-hây</string>
+    <string name="figo">Lu-ít Phi-gô</string>
+    <!-- 5 november -->
+    <string name="petrov_vodkin">Cu-dơ-ma Pê-tơ-rốp-Vốt-kin</string>
+    <string name="leigh">Vi-vi-ên Li</string>
+    <string name="dassin">Giô Đát-xanh</string>
+    <string name="patrick">Rô-bớt Pát-trích</string>
+    <string name="bryan_adams">Bơ-rai-ơn A-đam</string>
+    <string name="swinton">Tin-đa Xuyn-tơn</string>
+    <!-- 6 november -->
+    <string name="sax">A-đôn-phơ Xắc</string>
+    <string name="charles_dow">Sác-lơ Đao</string>
+    <string name="sousa">Giôn Phi-líp Xu-da</string>
+    <string name="nailsmith">Giêm Nây-xmít</string>
+    <string name="emma_stone">Em-ma Xtôn</string>
+    <!-- 7 november -->
+    <string name="stukeley">Uy-li-am Xtiu-cơ-li</string>
+    <string name="james_cook">Giêm Cúc</string>
+    <string name="erkel">Phe-ren Éc-ken</string>
+    <string name="casal">Hu-li-an đen Ca-xan</string>
+    <string name="marie_curie">Ma-ri Quy-ri</string>
+    <string name="camus">An-be Ca-muy</string>
+    <string name="guetta">Đa-vít Ghét-ta</string>
+    <!-- 8 november -->
+    <string name="stoker">Bơ-ram Xtốc-cơ</string>
+    <string name="hausdorff">Phê-lích Hau-xơ-đoóc</string>
+    <string name="rorschach">Héc-man Ro-sắc</string>
+    <string name="mitchell">Mác-ga-rét Mít-cheo</string>
+    <string name="barnard">Cơ-rít-xti-an Bác-na</string>
+    <string name="kilby">Giắc Kin-bi</string>
+    <string name="delon">A-lanh Đơ-lông</string>
+    <string name="hiddink">Gút Hít-đinh</string>
+    <!-- 9 november -->
+    <string name="borden">Gên Boóc-đơn</string>
+    <string name="turgenev">I-van Tuốc-ghê-nhép</string>
+    <string name="gaboriau">Ê-min Ga-bô-ri-ô</string>
+    <string name="monnet">Giăng Mô-nê</string>
+    <string name="sagan">Các Xa-gan</string>
+    <string name="del_piero">A-lếch-xan-đơ-rô Đen Pi-ê-rô</string>
+    <!-- 10 november -->
+    <string name="luther">Mác-tin Lu-thơ</string>
+    <string name="hogarth">Uy-li-am Hô-gát</string>
+    <string name="schiller">Phơ-ri-đơ-rích Si-lơ</string>
+    <string name="innes">Rô-bớt Tho-bơn Ay-tơn In-nét</string>
+    <string name="morricone">En-ni-ô Mô-ri-cô-nê</string>
+    <string name="brittany_murphy">Bơ-rít-ta-ni Mơ-phi</string>
+    <!-- 11 november -->
+    <string name="dostoyevsky">Phi-ô-đo Đốt-xtôi-ép-xki</string>
+    <string name="maurice_leblanc">Mô-rít Lơ-bơ-lăng</string>
+    <string name="vonnegut">Cớt Von-nê-gút</string>
+    <string name="brugiroux">Ăng-đơ-rê Bơ-ruy-giơ-ru</string>
+    <string name="demi_moore">Đơ-mi Mu-ơ</string>
+    <string name="dicaprio">Lê-ô-nác-đô Đi-cáp-ri-ô</string>
+    <!-- 12 november -->
+    <string name="rodin">Ô-guýt Rô-đanh</string>
+    <string name="grace_kelly">Gơ-rây Ke-li</string>
+    <string name="gurchenko">Li-út-mi-la Gua-chen-cô</string>
+    <string name="gosling">Rai-ơn Gốt-linh</string>
+    <string name="hathaway">An Ha-tha-uây</string>
+    <!-- 13 november -->
+    <string name="montagu">Giôn Mông-ta-ghiu, Bá tước xứ Sandwich thứ 4</string>
+    <string name="hauy">Va-lăng-tanh A-uy</string>
+    <string name="stevenson">Rô-bớt Lu-i Xti-vơn-xơn</string>
+    <string name="kokkonen">Giô-nát Cốc-cô-nen</string>
+    <string name="whoopi_goldberg">Úp-pi Gôn-béc</string>
+    <string name="gerard_butler">Giê-rát Bắt-lơ</string>
+    <!-- 14 november -->
+    <string name="fulton">Rô-bớt Phun-tơn</string>
+    <string name="bichat">Ma-ri Phơ-răng-xoa Xa-vi-ê Bi-sa</string>
+    <string name="lyell">Sác-lơ Lai-eo</string>
+    <string name="monet">Clốt Mô-nê</string>
+    <string name="banting">Phơ-rê-đơ-rích Ban-tinh</string>
+    <string name="lindgren">Át-xtơ-rít Lin-gơ-ren</string>
+    <!-- 15 november -->
+    <string name="lavater">Giô-han Cát-xpa La-va-tơ</string>
+    <string name="chasles">Mi-sen San</string>
+    <string name="hauptmann">Géc-hát Hóp-man</string>
+    <string name="krogh">Ô-guýt Cơ-rốc</string>
+    <string name="kroeger">Chát Cơ-rô-gơ</string>
+    <!-- 16 november -->
+    <string name="kreutzer">Rô-đôn-phơ Cơ-roi-txơ</string>
+    <string name="saramago">Giô-dê Xa-ra-ma-gô</string>
+    <string name="achebe">Chi-nu-a A-chê-bê</string>
+    <string name="krall">Đai-a-na Cơ-ran</string>
+    <string name="gyllenhaal">Mác-ghi Gi-len-han</string>
+    <!-- 17 november -->
+    <string name="bronzino">Bơ-rôn-di-nô</string>
+    <string name="mobius">Ô-guýt Phéc-đi-năng Mô-bi-út</string>
+    <string name="wigner">Ơ-gien Uých-nơ</string>
+    <string name="honda">Xôi-chi-rô Hôn-đa</string>
+    <string name="scorsese">Mác-tin Xco-xê-dê</string>
+    <string name="devito">Đan-ni Đơ-vi-tô</string>
+    <string name="marceau">Xô-phi Mác-xô</string>
+    <string name="mcadams">Rây-cheo Mắc-A-đam</string>
+    <!-- 18 november -->
+    <string name="down">Giôn Lăng-đơn Đao</string>
+    <string name="nordenskiold">A-đôn Ê-rích Noóc-đen-sơn</string>
+    <string name="gallup">Gioóc Ga-lớp</string>
+    <string name="issigonis">A-lếch I-xi-gô-nít</string>
+    <string name="ryazanov">En-đa Ri-a-da-nốp</string>
+    <string name="owen_wilson">Ô-oen Uyn-xơn</string>
+    <!-- 19 november -->
+    <string name="lomonosov">Mi-kha-in Lô-mô-nô-xốp</string>
+    <string name="skoda">Ê-min Xcô-đa</string>
+    <string name="avenarius">Ri-chác A-vê-na-ri-út</string>
+    <string name="drucker">Pi-tơ Đơ-rắc-cơ</string>
+    <string name="calvin_klein">Can-vin Cơ-lai</string>
+    <string name="ryan">Mếch Rai-ơn</string>
+    <string name="jodie_foster">Giô-đi Phốt-xtơ</string>
+    <!-- 20 november -->
+    <string name="guericke">Ốt-tô phôn Ghê-rích-kơ</string>
+    <string name="lagerlof">Xen-ma La-gơ-lớp</string>
+    <string name="karl_von_frisch">Các phôn Phơ-rít</string>
+    <string name="hubble">Ét-uyn Hắp-bơn</string>
+    <string name="osgood">Sác-lơ Ót-gút</string>
+    <!-- 21 november -->
+    <string name="voltaire">Vôn-te</string>
+    <string name="schleiermacher">Phơ-ri-đơ-rích Slai-ơ-ma-khơ</string>
+    <string name="lewis_morgan">Lu-ít Hen-ri Moóc-gan</string>
+    <string name="makarova">Na-ta-li-a Ma-ca-rô-va</string>
+    <string name="hawn">Gôn-đi Hon</string>
+    <string name="bjork">Bi-ớc</string>
+    <!-- 22 november -->
+    <string name="vladimir_dal">Vla-đi-mia Đan</string>
+    <string name="thomas_cook">Tô-mát Cúc</string>
+    <string name="gide">Ăng-đơ-rê Gi-đơ</string>
+    <string name="gaulle">Sác-lơ đơ Gôn</string>
+    <string name="pelevin">Vích-to Pê-lê-vin</string>
+    <string name="mikkelsen">Mát Mích-ken-xen</string>
+    <string name="ruffalo">Mác Rúp-pha-lô</string>
+    <string name="ville_valo">Vin Va-lô</string>
+    <string name="scarlett_johansson">Xca-lét Giô-han-xơn</string>
+    <!-- 23 november -->
+    <string name="waals">Giô-han-nét Đi-đơ-rích van đơ Van</string>
+    <string name="karloff">Bô-rít Các-lốp</string>
+    <string name="moseley">Hen-ri Mô-dơ-li</string>
+    <string name="nosov">Ni-cô-lai Nô-xốp</string>
+    <string name="cyrus">Mai-li Xai-rút</string>
+    <!-- 24 november -->
+    <string name="spinoza">Ba-rúc Xpi-nô-da</string>
+    <string name="suvorov">A-lếch-xan-đơ Xu-vô-rốp</string>
+    <string name="ellis">Uy-li-am Uép E-lít</string>
+    <string name="collodi">Các-lô Cô-lô-đi</string>
+    <string name="carnegie">Đên Các-nê-gi</string>
+    <string name="kusturica">Ê-mia Cút-xtu-ri-ca</string>
+    <string name="heigl">Ca-thơ-rin Hai-gơn</string>
+    <!-- 25 november -->
+    <string name="vega">Lô-pê đê Vê-ga</string>
+    <string name="sumarokov">A-lếch-xan-đơ Xu-ma-rô-cốp</string>
+    <string name="pirogov">Ni-cô-lai Pi-rô-gốp</string>
+    <string name="benz">Các Ben</string>
+    <string name="vavilov">Ni-cô-lai Va-vi-lốp</string>
+    <string name="poul_anderson">Pôn An-đéc-xơn</string>
+    <!-- 26 november -->
+    <string name="harvard">Giôn Ha-vớt</string>
+    <string name="saussure">Phéc-đi-năng đơ Xô-xuya</string>
+    <string name="leck">Bát van đơ Lếch</string>
+    <string name="wiener">No-bớt Uy-nơ</string>
+    <string name="ionesco">Ơ-gien I-ô-nét-xcô</string>
+    <string name="tina_turner">Ti-na Tơ-nơ</string>
+    <!-- 27 november -->
+    <string name="celsius">An-đơ Xen-xi-út</string>
+    <string name="weizmann">Chai-im Vai-xơ-man</string>
+    <string name="matsushita">Cô-nô-xư-kê Mát-xư-si-ta</string>
+    <string name="bruce_lee">Lý Tiểu Long</string>
+    <string name="mashkov">Vla-đi-mia Mát-scốp</string>
+    <!-- 28 november -->
+    <string name="lully">Giăng-Báp-tít Luy-li</string>
+    <string name="blake">Uy-li-am Bơ-lếch</string>
+    <string name="cousin">Vích-to Cu-danh</string>
+    <string name="engels">Phơ-ri-đơ-rích Ăng-ghen</string>
+    <string name="anton_rubinstein">Ăng-tôn Ru-bin-xtai</string>
+    <string name="blok">A-lếch-xan-đơ Bơ-lốc</string>
+    <string name="zanetti">Rô-béc-tô Da-nét-ti</string>
+    <string name="galliano">Giôn Ga-li-a-nô</string>
+    <!-- 29 november -->
+    <string name="donizetti">Ga-ê-ta-nô Đô-ni-dét-ti</string>
+    <string name="hauff">Vin-hem Hao</string>
+    <string name="charcot">Giăng-Mác-tanh Sác-cô</string>
+    <string name="john_fleming">Giôn Am-bơ-rô-dơ Phơ-le-minh</string>
+    <string name="giggs">Rai-ơn Ghích</string>
+    <string name="faris">An-na Pha-rít</string>
+    <!-- 30 november -->
+    <string name="swift">Giô-na-than Xuýt</string>
+    <string name="twain">Mác Tuên</string>
+    <string name="churchill">Uyn-xtơn Sớc-sin</string>
+    <string name="ridley_scott">Rít-li Xcốt</string>
+    <string name="idol">Bin-li Ai-đôn</string>
+    <string name="stiller">Ben Xti-lơ</string>
+    <!-- 1 december -->
+    <string name="falconet">Ê-ti-en Mơ-rít Fal-cô-nê</string>
+    <string name="tussaud">Ma-ri Tuy-sô</string>
+    <string name="lobachevsky">Ni-cô-lai Lô-ba-chép-xki</string>
+    <string name="zhukov">Ghê-oóc-ghi Chu-cốp</string>
+    <string name="allen">Uy-di A-len</string>
+    <string name="escobar">Páp-lô Ét-xcô-ba</string>
+    <!-- 2 december -->
+    <string name="joseph_bell">Giô-dép Ben</string>
+    <string name="seuratl">Gioóc Xơ-rác</string>
+    <string name="callas">Ma-ri-a Ca-lát</string>
+    <string name="versace">Gia-ni Véc-sa-che</string>
+    <string name="liu">Lu-xi Lu</string>
+    <string name="furtado">Nen-li Phua-ta-đô</string>
+    <string name="spears">B-rít-ni Xpi-a</string>
+    <!-- 3 december -->
+    <string name="hill">Rô-lân Hiu</string>
+    <string name="rota">Ni-nô Rô-ta</string>
+    <string name="osbourne">Ót-zi Ôt-x-bơn</string>
+    <string name="julianne_moore">Giuy-li-an Mơ-ua</string>
+    <string name="seyfried">A-man-đa Xây-ph-rít</string>
+    <!-- 4 december -->
+    <string name="chapelain">Giăng Sa-pơ-lanh</string>
+    <string name="carlyle">Tô-mát Ca-lai</string>
+    <string name="adler">Rô-bớt Át-lơ</string>
+    <string name="bridges">Giếch B-ri-đờ-x</string>
+    <string name="bubka">Xéc-gây Búp-ca</string>
+    <!-- 5 december -->
+    <string name="tyutchev">Phi-ô-đô Tiut-chép</string>
+    <string name="lang">Phơ-rít Lang</string>
+    <string name="disney">Uôn Đít-ni</string>
+    <string name="heisenberg">Véc-nơ Hai-dơn-béc</string>
+    <string name="carreras">Giô-xê Ca-rê-rác</string>
+    <string name="kaas">Pa-tri-xi-a Kas</string>
+    <!-- 6 december -->
+    <string name="nicolas_leblanc">Ni-cô-la Lơ-blăng</string>
+    <string name="gay_lussac">Giô-dép Lu-i Ghê-Luy-xác</string>
+    <string name="veqilharxhi">Na-um Vê-ki-lhar-x-hi</string>
+    <string name="bazille">Phơ-rê-đê-rích Ba-di-lê</string>
+    <string name="crali">Tu-li-o C-ra-li</string>
+    <string name="nick_park">Ních Pác</string>
+    <!-- 7 december -->
+    <string name="bernini">Giang Lô-ren-zô Béc-ni-ni</string>
+    <string name="schwann">Thê-o-đo X-van</string>
+    <string name="mascagni">Pi-ê-tơ Mác-cag-ni</string>
+    <string name="yosano">A-ki-cô Y-o-xả-nô</string>
+    <string name="waits">Tôm Uây-t-x</string>
+    <string name="emily_browning">Ê-mi-li B-rao-ninh</string>
+    <!-- 8 december -->
+    <string name="dholbach">Pôn-Hen-ri Thi-ri, nam tước d\'Holbach</string>
+    <string name="menzel">A-đôn phôn Men-zơn</string>
+    <string name="bjornson">Bi-ơn-xtê-nê Bi-ơn-xơn</string>
+    <string name="reynaud">Sác-lơ-Ê-min Rê-nô</string>
+    <string name="melies">Gioóc Mê-li-ê</string>
+    <string name="morrison">Gim Mô-ri-xơn</string>
+    <string name="basinger">Kim Ba-xin-gê</string>
+    <string name="somerhalder">I-an Xô-mơ-hôn-đê</string>
+    <!-- 9 december -->
+    <string name="milton">Giôn Min-tơn</string>
+    <string name="winckelmann">Giô-han Giô-a-chim Vin-cơ-l-man</string>
+    <string name="scheele">Các Vin-hem Sê-lê</string>
+    <string name="berthollet">Clốt Lu-i Béc-thô-lê</string>
+    <string name="grace_hopper">G-rây Hốp-pơ</string>
+    <string name="dench">Giuy-di Đen-chê</string>
+    <string name="malkovich">Giôn Mác-cô-vích</string>
+    <!-- 10 december -->
+    <string name="lovelace">A-đa Lơ-vơ-lát</string>
+    <string name="nekrasov">Ni-cô-lai Nê-c-ra-xốp</string>
+    <string name="sachs">Nen-li Xắc-x</string>
+    <string name="tarasov">A-na-tô-li Ta-ra-xốp</string>
+    <string name="michael_duncan">Mai-cơn Clác Đăn-cơn</string>
+    <string name="branagh">Ken-nét B-ra-na</string>
+    <string name="molko">B-rai-an Môn-cô</string>
+    <!-- 11 december -->
+    <string name="berlioz">Héc-to Béc-li-ô-z</string>
+    <string name="musset">Al-phơ-rét de Musset</string>
+    <string name="koch">Rô-bớt Cốc</string>
+    <string name="born">Mác Bôn</string>
+    <string name="gardel">Các-lốt Gar-đen</string>
+    <string name="marais">Giăng Ma-rê</string>
+    <!-- 12 december -->
+    <string name="karamzin">Ni-cô-lai Ca-ram-zin</string>
+    <string name="serebriakova">Zi-nai-đa Sê-rê-b-ri-a-cô-va</string>
+    <string name="ozu">Ya-su-ji-rô O-zu</string>
+    <string name="sinatra">Phrăng Si-na-tra</string>
+    <string name="noyce">Rô-bớt Nôi-x</string>
+    <string name="konyukhov">Phi-ô-đô Côn-yu-khốp</string>
+    <!-- 13 december -->
+    <string name="gozzi">Các-lô Gót-zi</string>
+    <string name="heine">Hai-rích Hai-nê</string>
+    <string name="werner_siemens">Véc-nơ phôn Xi-men</string>
+    <string name="birkeland">C-rít-xti-an Bê-c-la-lân</string>
+    <string name="buscemi">Xti-vơ Bu-se-mi</string>
+    <string name="foxx">Giê-mi Phốc-x</string>
+    <string name="amy_lee">Ây-mi Li</string>
+    <string name="taylor_swift">Tay-lơ X-uít</string>
+    <!-- 14 december -->
+    <string name="nostradamus">Nốt-x-tra-đa-mút</string>
+    <string name="brahe">Ty-chô B-ra-hê</string>
+    <string name="ueshiba">Mô-ri-hê Uy-xhi-ba</string>
+    <string name="basov">Ni-cô-lai Ba-xốp</string>
+    <string name="kapoor">Rát Ca-pu-a</string>
+    <!-- 15 december -->
+    <string name="carey">Hen-ri Sác-lơ Ca-rê</string>
+    <string name="bolyai">Ya-nốt Bôn-ya-i</string>
+    <string name="eiffel">Guýt-xtáp E-ph-r-l</string>
+    <string name="becquerel">Hen-ri Béc-cơ-rên</string>
+    <string name="zamenhof">Lút-vích Lây-zê Za-mên-hốp</string>
+    <string name="getty">Giăng Pôn Ghe-ti</string>
+    <!-- 16 december -->
+    <string name="austen">Giên Ôt-xtên</string>
+    <string name="walras">Lê-ông Uôn-rặt</string>
+    <string name="bergmann">Éc-nít Béc-g-man</string>
+    <string name="kandinsky">Va-xi-li Can-đin-x-ki</string>
+    <string name="linder">Mắc Lin-đê</string>
+    <string name="arthur_clarke">Ác-thơ C. Clác</string>
+    <string name="paul_van_dyk">Pôn van Đic</string>
+    <!-- 17 december -->
+    <string name="cimarosa">Đô-mê-ni-cô Si-ma-rô-xa</string>
+    <string name="beethoven">Lút-vích van Bết-hô-vên</string>
+    <string name="davy">Hăm-ph-ri Đa-vi</string>
+    <string name="ganelin">Vi-a-chê-sláp Gan-nê-lin</string>
+    <string name="darryl_way">Đa-ri-l Uây</string>
+    <string name="jovovich">Mi-la Giô-vô-vích</string>
+    <!-- 18 december -->
+    <string name="polhem">Cơ-rít-xtô-phơ Pôn-hêm</string>
+    <string name="joseph_thomson">Giô-dép Giôn Tôm-xơn</string>
+    <string name="stalin">Giô-dép Xta-lin</string>
+    <string name="spielberg">Xti-vên X-pit-béc</string>
+    <string name="liotta">Rây Li-ốt-ta</string>
+    <string name="brad_pitt">B-rát Pít</string>
+    <string name="holmes">Ca-ti Hôn-m-x</string>
+    <string name="aguilera">C-rít-xti-na A-gui-lê-ra</string>
+    <!-- 19 december -->
+    <string name="michelson">Al-bớt A-b-ra-ham Mi-chen-xơn</string>
+    <string name="joze_lima">Giô-xê Lê-za-ma Li-ma</string>
+    <string name="piaf">É-đít Pi-áp</string>
+    <string name="schweiger">Til X-vai-gơ</string>
+    <string name="milano">A-li-x-x-a Mi-la-nô</string>
+    <string name="jake_gyllenhaal">Giếc Gi-len-han</string>
+    <!-- 20 december -->
+    <string name="heyrovsky">Ya-rô-sláp Hây-rốp-x-ki</string>
+    <string name="balandin">A-lếch-xê Ba-lan-đin</string>
+    <string name="graaff">Rô-bớt Giê-mi-x-on Van de Graaff</string>
+    <string name="bohm">Đa-vít Bôm</string>
+    <string name="uri_geller">U-ri Gê-lê</string>
+    <string name="jonah_hill">Giô-na Hiu</string>
+    <!-- 21 december -->
+    <string name="robert_brown">Rô-bớt B-raun</string>
+    <string name="hermann_muller">Héc-man Giô-dép Muy-lơ</string>
+    <string name="boll">Hai-rích Bôn</string>
+    <string name="monterroso">Ô-guýt-tô Môn-tê-rô-x-ô</string>
+    <string name="jane_fonda">Giên Phôn-đa</string>
+    <string name="zappa">Phrăng Zap-pa</string>
+    <string name="samuel_jackson">Xa-mu-en L. Giắc-x-on</string>
+    <!-- 22 december  -->
+    <string name="liotard">Giăng-Ê-ti-en Li-o-tác</string>
+    <string name="fabre">Giăng-Hen-ri Fa-b-r-ê</string>
+    <string name="puccini">Gia-cô-mô Púc-chi-ni</string>
+    <string name="elizondo">Héc-tô E-li-zôn-đô</string>
+    <string name="fiennes">Ráp Phi-ên-x</string>
+    <string name="paradis">Va-nét-xa Pa-ra-đí</string>
+    <!-- 23 december -->
+    <string name="champollion">Giăng-Phơ-răng-xoa Săm-pô-li-ông</string>
+    <string name="bryullov">Các B-ruy-lốp</string>
+    <string name="dino_risi">Đi-nô Ri-xi</string>
+    <string name="baker">Chét Ba-cê</string>
+    <string name="bosque">Vi-xên-tê đel Bốt-quê</string>
+    <string name="bruni">Ca-la B-ru-ni</string>
+    <!-- 24 december -->
+    <string name="joule">Giêm P-rít-x-cốt Giun</string>
+    <string name="howard_hughes">Hao-uốt Hu-g-h-e-x</string>
+    <string name="chase">Giêm Hát-li Chê-x</string>
+    <string name="gardner">A-va Gác-đ-n-ê</string>
+    <string name="ricky_martin">Ri-ki Mác-tin</string>
+    <string name="stephenie_meyer">X-tê-pha-ni May-ê</string>
+    <!-- 25 december -->
+    <string name="chevrolet">Lu-i Sê-v-rô-lê</string>
+    <string name="rosenzweig">Phrăng Rô-dên-x-vai-g</string>
+    <string name="hilton">Côn-rát Hilt-tôn</string>
+    <string name="bogart">Hăm-ph-ri Bô-gát</string>
+    <string name="castaneda">Các-lốt Cát-ta-nê-đa</string>
+    <string name="lennox">An-ni Lên-nốc-x</string>
+    <string name="buuren">A-min van Bu-ren</string>
+    <!-- 26 december -->
+    <string name="dinglinger">Giô-han Men-chi-o Đing-lin-gê</string>
+    <string name="babbage">Sác-lơ Ba-bích</string>
+    <string name="henry_miller">Hen-ri Mi-lê</string>
+    <string name="zedong">Mao Trạch Đông</string>
+    <string name="ulrich">Lát Un-rích</string>
+    <string name="jared_leto">Giê-rết Lê-tô</string>
+    <!-- 27 december -->
+    <string name="kepler">Giô-han-nét Kép-lê</string>
+    <string name="cayley">Gioóc Cay-li</string>
+    <string name="pasteur">Lu-i Pát-xtơ</string>
+    <string name="tretyakov">Pa-vên T-rê-ty-a-cốp</string>
+    <string name="dietrich">Mác-lê-nê Đi-ê-t-rích</string>
+    <string name="depardieu">Gê-rác Đê-pác-đi-u</string>
+    <!-- 28 december -->
+    <string name="eddington">Ác-thơ Éc-đing-tơn</string>
+    <string name="murnau">Phơ-ri-đơ-rích Vin-hem Muy-nô</string>
+    <string name="john_neumann">Giôn von Nôi-man</string>
+    <string name="denzel_washington">Đen-z-el Oa-sinh-tơn</string>
+    <string name="torvalds">Li-nút Tốc-vôn-đ-x</string>
+    <string name="sienna_miller">Xi-ên-na Mi-lê</string>
+    <!-- 29 december -->
+    <string name="pompadour">Nữ hầu tước de Pompadour</string>
+    <string name="siqueiros">Đa-vít Al-pha-rô Si-que-i-rô-x</string>
+    <string name="voight">Giôn Vô-i-t-x</string>
+    <string name="dexter_holland">Đéc-x-tê Hô-lân</string>
+    <string name="jude_law">Giút Lô</string>
+    <!-- 30 december -->
+    <string name="jablonskis">Giô-nác Ya-blon-x-ki-x</string>
+    <string name="kipling">Rát-yard Kip-linh</string>
+    <string name="patti_smith">Pa-ti X-mít</string>
+    <string name="jay_kay">Giê Kay</string>
+    <string name="tiger_woods">Tai-gê Uút-x</string>
+    <string name="lebron_james">Lê-b-rôn Giêm-x</string>
+    <!-- 31 december -->
+    <string name="boldini">Giô-van-ni Bôn-đi-ni</string>
+    <string name="matisse">Hen-ri Ma-tít</string>
+    <string name="hopkins">An-thô-ni Hốp-kin-x</string>
+    <string name="ferguson">A-lếch Phéc-gu-x-on</string>
+    <string name="kingsley">Ben King-x-li</string>
+    <string name="willis">Côn-ni Uy-li-x</string>
+    <string name="val_kilmer">Van Kil-mê</string>
 </resources>

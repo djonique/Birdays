@@ -68,7 +68,7 @@
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/send_email"
                 app:srcCompat="@drawable/ic_email_blue_24dp"
-                app:tint="@color/blue_to_green" />
+                app:tint="?attr/colorPrimary" />
 
             <!--Divider-->
             <View
@@ -82,7 +82,7 @@
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/chat"
                 app:srcCompat="@drawable/ic_chat_blue_24dp"
-                app:tint="@color/blue_to_green" />
+                app:tint="?attr/colorPrimary" />
 
             <!--Divider-->
             <View
@@ -96,7 +96,7 @@
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/call"
                 app:srcCompat="@drawable/ic_call_blue_24dp"
-                app:tint="@color/blue_to_green" />
+                app:tint="?attr/colorPrimary" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
