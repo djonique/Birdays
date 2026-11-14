@@ -201,22 +201,22 @@
 
     <!-- Famous persons -->
     <!-- 1 january -->
-    <string name="medici">Lorenzo de\' Medici</string>
+    <string name="medici">Lorenzo de’ Medici</string>
     <string name="giordano_bruno">Giordano Bruno</string>
     <string name="frazer">James George Frazer</string>
     <string name="coubertin">Pierre de Coubertin</string>
     <string name="william_fox">William Fox</string>
     <!-- 2 january -->
     <string name="piero_di_cosimo">Piero di Cosimo</string>
-    <string name="vasily_perov">Vasily Perov</string>
-    <string name="balakirev">Mily Balakirev</string>
+    <string name="vasily_perov">Vaszilij Grigorjevics Perov</string>
+    <string name="balakirev">Milij Balakirev</string>
     <string name="tippett">Michael Tippett</string>
     <string name="isaac_asimov">Isaac Asimov</string>
     <!-- 3 january -->
     <string name="louis_poinsot">Louis Poinsot</string>
-    <string name="dabbadie">Antoine Thomson d\'Abbadie</string>
+    <string name="dabbadie">Antoine Thomson d’Abbadie</string>
     <string name="fletcher">John Gould Fletcher</string>
-    <string name="tolkien">John Ronald Reuel Tolkien</string>
+    <string name="tolkien">J. R. R. Tolkien</string>
     <string name="moore">Gordon Moore</string>
     <string name="mel_gibson">Mel Gibson</string>
     <string name="schumacher">Michael Schumacher</string>
@@ -235,7 +235,7 @@
     <string name="manson">Marilyn Manson</string>
     <string name="bradley_cooper">Bradley Cooper</string>
     <!-- 6 january -->
-    <string name="darc">Jeanne d\'Arc</string>
+    <string name="darc">Jeanne d’Arc</string>
     <string name="jakob_bernoulli">Jakob Bernoulli</string>
     <string name="montgolfier">Jacques-Étienne Montgolfier</string>
     <string name="schliemann">Heinrich Schliemann</string>
@@ -244,7 +244,7 @@
     <string name="atkinson">Rowan Atkinson</string>
     <string name="redmayne">Eddie Redmayne</string>
     <!-- 7 january -->
-    <string name="pope_gregory">Pope Gregory XIII</string>
+    <string name="pope_gregory">XIII. Gergely pápa</string>
     <string name="fleming">Sandford Fleming</string>
     <string name="eliezer">Eliezer Ben-Yehuda</string>
     <string name="borel">Émile Borel</string>
@@ -407,20 +407,20 @@
     <string name="vanga">Vanga</string>
     <string name="timberlake">Justin Timberlake</string>
     <!-- 1 february -->
-    <string name="bekhterev">Vladimir Bekhterev</string>
+    <string name="bekhterev">Vlagyimir Mihajlovics Behtyerev</string>
     <string name="john_ford">John Ford</string>
     <string name="gable">Clark Gable</string>
-    <string name="segre">Emilio Gino Segrè</string>
+    <string name="segre">Emilio Segrè</string>
     <string name="brandon_lee">Brandon Lee</string>
     <!-- 2 february -->
     <string name="bourdon">Sébastien Bourdon</string>
     <string name="boussingault">Jean Baptiste Boussingault</string>
     <string name="forel">François-Alphonse Forel</string>
-    <string name="chkalov">Valery Chkalov</string>
+    <string name="chkalov">Valerij Pavlovics Cskalov</string>
     <string name="haasse">Hella Haasse</string>
     <string name="holland">John Henry Holland</string>
     <!-- 3 february -->
-    <string name="mendelssohn">Felix Mendelssohn</string>
+    <string name="mendelssohn">Felix Mendelssohn Bartholdy</string>
     <string name="trubner">Heinrich Wilhelm Trübner</string>
     <string name="fomin">Ivan Fomin</string>
     <string name="stein">Gertrude Stein</string>
@@ -610,7 +610,7 @@
     <!-- 1 march -->
     <string name="botticelli">Sandro Botticelli</string>
     <string name="chopin">Frédéric Chopin</string>
-    <string name="akutagawa">Ryūnosuke Akutagawa</string>
+    <string name="akutagawa">Akutagava Rjúnoszuke</string>
     <string name="miller">Glenn Miller</string>
     <string name="snyder">Zack Snyder</string>
     <string name="bieber">Justin Bieber</string>
@@ -633,11 +633,11 @@
     <string name="veksler">Vladimir Veksler</string>
     <string name="mauriat">Paul Mauriat</string>
     <!-- 5 march -->
-    <string name="mercator">Gerhardus Mercator</string>
+    <string name="mercator">Gerardus Mercator</string>
     <string name="tiepolo">Giovanni Battista Tiepolo</string>
     <string name="marey">Étienne-Jules Marey</string>
     <string name="tarrasch">Siegbert Tarrasch</string>
-    <string name="ando">Momofuku Ando</string>
+    <string name="ando">Andó Momofuku</string>
     <string name="tobin">James Tobin</string>
     <!-- 6 march -->
     <string name="michelangelo">Michelangelo</string>
@@ -843,10 +843,10 @@
     <!-- 1 april -->
     <string name="harvey">William Harvey</string>
     <string name="germain">Sophie Germain</string>
-    <string name="gogol">Nikolai Gogol</string>
+    <string name="gogol">Nyikolaj Vasziljevics Gogol</string>
     <string name="zsigmondy">Richard Adolf Zsigmondy</string>
     <string name="busoni">Ferruccio Busoni</string>
-    <string name="rachmaninoff">Sergei Rachmaninoff</string>
+    <string name="rachmaninoff">Szergej Rahmanyinov</string>
     <string name="lon_chaney">Lon Chaney</string>
     <string name="maslow">Abraham Maslow</string>
     <!-- 2 april -->
@@ -1083,7 +1083,7 @@
     <string name="woo">John Woo</string>
     <string name="dornan">Jamie Dornan</string>
     <!-- 2 may -->
-    <string name="kirche">Athanasius Kirche</string>
+    <string name="kirche">Athanasius Kircher</string>
     <string name="jerome">Jerome K. Jerome</string>
     <string name="wood">Robert Williams Wood</string>
     <string name="marshall">Alan Marshall</string>
@@ -1306,15 +1306,15 @@
     <string name="eastwood">Clint Eastwood</string>
     <string name="jay_miner">Jay Miner</string>
     <!-- 1 june -->
-    <string name="paer">Ferdinando Paer</string>
+    <string name="paer">Ferdinando Paër</string>
     <string name="carnot">Nicolas Léonard Sadi Carnot</string>
-    <string name="glinka">Mikhail Glinka</string>
+    <string name="glinka">Mihail Ivanovics Glinka</string>
     <string name="monroe">Marilyn Monroe</string>
     <string name="foster">Norman Foster</string>
     <string name="freeman">Morgan Freeman</string>
     <string name="persson">Markus Persson</string>
     <!-- 2 june -->
-    <string name="de_sade">Marquis de Sade</string>
+    <string name="de_sade">De Sade márki</string>
     <string name="cagliostro">Alessandro Cagliostro</string>
     <string name="akimov">Ivan Akimov</string>
     <string name="hardy">Thomas Hardy</string>
@@ -1324,7 +1324,7 @@
     <string name="hutton">James Hutton</string>
     <string name="shrapnel">Henry Shrapnel</string>
     <string name="cobden">Richard Cobden</string>
-    <string name="timiryazev">Kliment Timiryazev</string>
+    <string name="timiryazev">Kliment Tyimirjazev</string>
     <string name="pearl">Raymond Pearl</string>
     <string name="arber">Werner Arber</string>
     <string name="nadal">Rafael Nadal</string>
@@ -1345,12 +1345,12 @@
     <string name="regiomontanus">Regiomontanus</string>
     <string name="velazquez">Diego Velázquez</string>
     <string name="corneille">Pierre Corneille</string>
-    <string name="pushkin">Alexander Pushkin</string>
+    <string name="pushkin">Alekszandr Szergejevics Puskin</string>
     <string name="braun">Karl Ferdinand Braun</string>
     <string name="mann">Thomas Mann</string>
     <!-- 7 june -->
     <string name="brummell">Beau Brummell</string>
-    <string name="auer">Leopold Auer</string>
+    <string name="auer">Lipót Auer</string>
     <string name="mackintosh">Charles Rennie Mackintosh</string>
     <string name="barkla">Charles Glover Barkla</string>
     <string name="mulliken">Robert Sanderson Mulliken</string>
@@ -1414,7 +1414,7 @@
     <!-- 15 june -->
     <string name="poussin">Nicolas Poussin</string>
     <string name="fourcroy">Antoine François de Fourcroy</string>
-    <string name="balmont">Konstantin Balmont</string>
+    <string name="balmont">Konsztantyin Balmont</string>
     <string name="belushi">James Belushi</string>
     <string name="helen_hunt">Helen Hunt</string>
     <string name="kahn">Oliver Kahn</string>
@@ -1435,7 +1435,7 @@
     <string name="wakefield">Ruth Graves Wakefield</string>
     <string name="jacob">François Jacob</string>
     <!-- 18 june -->
-    <string name="goncharov">Ivan Goncharov</string>
+    <string name="goncharov">Ivan Goncsarov</string>
     <string name="laveran">Charles Louis Alphonse Laveran</string>
     <string name="flagg">James Montgomery Flagg</string>
     <string name="macdonald">Jeanette MacDonald</string>
@@ -1535,7 +1535,7 @@
     <string name="vierordt">Karl von Vierordt</string>
     <string name="bleriot">Louis Blériot</string>
     <string name="lauder">Estée Lauder</string>
-    <string name="diana">Diana, Princess of Wales</string>
+    <string name="diana">Diana, Wales hercegnéje</string>
     <string name="pamela_anderson">Pamela Anderson</string>
     <!-- 2 july -->
     <string name="gluck">Christoph Willibald Gluck</string>
@@ -1625,7 +1625,7 @@
     <string name="babel">Isaac Babel</string>
     <string name="ascari">Alberto Ascari</string>
     <string name="ford">Harrison Ford</string>
-    <string name="rubik">Ernő Rubik</string>
+    <string name="rubik">Rubik Ernő</string>
     <string name="benassi">Benny Benassi</string>
     <!-- 14 july -->
     <string name="dumas">Jean-Baptiste Dumas</string>
@@ -1636,12 +1636,12 @@
     <!-- 15 july -->
     <string name="rembrandt">Rembrandt</string>
     <string name="pareto">Vilfredo Pareto</string>
-    <string name="harmsworth">Alfred Harmsworth, 1st Viscount Northcliffe</string>
+    <string name="harmsworth">Alfred Harmsworth, Northcliffe 1. vikomtja</string>
     <string name="brockhouse">Bertram Brockhouse</string>
     <string name="savage">Adam Savage</string>
     <string name="kruger">Diane Kruger</string>
     <!-- 16 july -->
-    <string name="assisi">Clare of Assisi</string>
+    <string name="assisi">Assisi Szent Klára</string>
     <string name="amundsen">Roald Amundsen</string>
     <string name="stanwyck">Barbara Stanwyck</string>
     <string name="laroche">Guy Laroche</string>
@@ -1664,7 +1664,7 @@
     <!-- 19 july -->
     <string name="colt">Samuel Colt</string>
     <string name="degas">Edgar Degas</string>
-    <string name="mayakovsky">Vladimir Mayakovsky</string>
+    <string name="mayakovsky">Vlagyimir Majakovszkij</string>
     <string name="cronin">Archibald Joseph Cronin</string>
     <string name="coloane">Francisco Coloane</string>
     <string name="yalow">Rosalyn Sussman Yalow</string>
@@ -1754,12 +1754,12 @@
     <string name="milton_friedman">Milton Friedman</string>
     <string name="de_funes">Louis de Funès</string>
     <string name="primo_levi">Primo Levi</string>
-    <string name="rowling">Joanne Rowling</string>
+    <string name="rowling">Joanne Kathleen Rowling</string>
     <!-- 1 august -->
     <string name="lamarck">Jean-Baptiste Lamarck</string>
     <string name="melville">Herman Melville</string>
     <string name="taro">Gerda Taro</string>
-    <string name="laurent">Yves Saint Laurent</string>
+    <string name="laurent">Yves Saint-Laurent</string>
     <string name="mendes">Sam Mendes</string>
     <string name="momoa">Jason Momoa</string>
     <!-- 2 august -->
@@ -1771,8 +1771,8 @@
     <string name="worthington">Sam Worthington</string>
     <!-- 3 august -->
     <string name="otis">Elisha Otis</string>
-    <string name="simak">Clifford Donald Simak</string>
-    <string name="james">Phyllis Dorothy James</string>
+    <string name="simak">Clifford D. Simak</string>
+    <string name="james">P. D. James</string>
     <string name="sheen">Martin Sheen</string>
     <string name="lilly">Evangeline Lilly</string>
     <!-- 4 august -->
@@ -1783,7 +1783,7 @@
     <string name="thornton">Billy Bob Thornton</string>
     <!-- 5 august -->
     <string name="niels_abel">Niels Henrik Abel</string>
-    <string name="repin">Ilya Repin</string>
+    <string name="repin">Ilja Jefimovics Repin</string>
     <string name="maupassant">Guy de Maupassant</string>
     <string name="wain">Louis Wain</string>
     <string name="huston">John Huston</string>
@@ -1796,7 +1796,7 @@
     <string name="andy_warhol">Andy Warhol</string>
     <string name="shyamalan">M. Night Shyamalan</string>
     <!-- 7 august -->
-    <string name="bathory">Elizabeth Báthory</string>
+    <string name="bathory">Báthory Erzsébet</string>
     <string name="mata_hari">Mata Hari</string>
     <string name="tobin_bell">Tobin Bell</string>
     <string name="duchovny">David Duchovny</string>
@@ -1856,7 +1856,7 @@
     <string name="kunis">Mila Kunis</string>
     <!-- 15 august -->
     <string name="carmontelle">Carmontelle</string>
-    <string name="napoleon">Napoleon</string>
+    <string name="napoleon">Napóleon</string>
     <string name="scott">Walter Scott</string>
     <string name="broglie">Louis de Broglie</string>
     <string name="inarritu">Alejandro González Iñárritu</string>
@@ -1938,7 +1938,7 @@
     <string name="joseph_montgolfier">Joseph-Michel Montgolfier</string>
     <string name="lavoisier">Antoine Lavoisier</string>
     <string name="forest">Lee De Forest</string>
-    <string name="teresa">Mother Teresa</string>
+    <string name="teresa">Teréz anya</string>
     <string name="culkin">Macaulay Culkin</string>
     <!-- 27 august -->
     <string name="hegel">Georg Wilhelm Friedrich Hegel</string>
@@ -1978,7 +1978,7 @@
     <string name="tucker">Chris Tucker</string>
     <!-- 1 september -->
     <string name="jevons">William Stanley Jevons</string>
-    <string name="auguste_forel">Auguste Forel</string>
+    <string name="auguste_forel">Auguste-Henri Forel</string>
     <string name="burroughs">Edgar Rice Burroughs</string>
     <string name="marilyn_miller">Marilyn Miller</string>
     <string name="marciano">Rocky Marciano</string>
@@ -1995,7 +1995,7 @@
     <string name="pregl">Fritz Pregl</string>
     <string name="porsche">Ferdinand Porsche</string>
     <string name="anderson">Carl David Anderson</string>
-    <string name="dovlatov">Sergei Dovlatov</string>
+    <string name="dovlatov">Szergej Dovlatov</string>
     <string name="jeunet">Jean-Pierre Jeunet</string>
     <string name="charlie_sheen">Charlie Sheen</string>
     <!-- 4 september -->
@@ -2007,7 +2007,7 @@
     <!-- 5 september -->
     <string name="campanella">Tommaso Campanella</string>
     <string name="meyerbeer">Giacomo Meyerbeer</string>
-    <string name="aleksey_tolstoy">Aleksey Konstantinovich Tolstoy</string>
+    <string name="aleksey_tolstoy">Aleksey Konsztantyinovics Tolsztoj</string>
     <string name="jesse_james">Jesse James</string>
     <string name="mercury">Freddie Mercury</string>
     <string name="keaton">Michael Keaton</string>
@@ -2019,21 +2019,21 @@
     <string name="addams">Jane Addams</string>
     <string name="essen">Louis Essen</string>
     <!-- 7 september -->
-    <string name="leclerc">Georges-Louis Leclerc, Comte de Buffon</string>
+    <string name="leclerc">Georges-Louis Leclerc de Buffon</string>
     <string name="gossen">Hermann Heinrich Gossen</string>
     <string name="kuprin">Aleksandr Kuprin</string>
     <string name="gala_dali">Gala Dalí</string>
     <string name="debakey">Michael Ellis DeBakey</string>
     <string name="packard">David Packard</string>
     <!-- 8 september -->
-    <string name="lionheart">Richard the Lionheart</string>
+    <string name="lionheart">Oroszlánszívű Richárd</string>
     <string name="neckam">Alexander Neckam</string>
     <string name="mistral">Frédéric Mistral</string>
     <string name="martin_freeman">Martin Freeman</string>
     <!-- 9 september -->
     <string name="frederik_chapman">Fredrik Henrik af Chapman</string>
     <string name="galvani">Luigi Galvani</string>
-    <string name="leo_tolstoy">Leo Tolstoy</string>
+    <string name="leo_tolstoy">Lev Tolsztoj</string>
     <string name="usmanov">Alisher Usmanov</string>
     <string name="hugh_grant">Hugh Grant</string>
     <string name="sandler">Adam Sandler</string>
@@ -2093,7 +2093,7 @@
     <!-- 17 september -->
     <string name="riemann">Bernhard Riemann</string>
     <string name="buick">David Dunbar Buick</string>
-    <string name="tsiolkovsky">Konstantin Tsiolkovsky</string>
+    <string name="tsiolkovsky">Konsztantyin Ciolkovszkij</string>
     <string name="kesey">Ken Kesey</string>
     <string name="messner">Reinhold Messner</string>
     <string name="anastacia">Anastacia</string>
@@ -2136,7 +2136,7 @@
     <!-- 23 september -->
     <string name="fizeau">Hippolyte Fizeau</string>
     <string name="robert_bosch">Robert Bosch</string>
-    <string name="orr">John Boyd Orr, 1st Baron Boyd-Orr</string>
+    <string name="orr">John Boyd Orr</string>
     <string name="coltrane">John Coltrane</string>
     <string name="romy_schneider">Romy Schneider</string>
     <string name="julio_iglesias">Julio Iglesias</string>
@@ -2151,7 +2151,7 @@
     <!-- 25 september -->
     <string name="thomas_morgan">Thomas Hunt Morgan</string>
     <string name="faulkner">William Faulkner</string>
-    <string name="shostakovich">Dmitri Shostakovich</string>
+    <string name="shostakovich">Dmitrij Sosztakovics</string>
     <string name="michael_douglas">Michael Douglas</string>
     <string name="almodovar">Pedro Almodóvar</string>
     <string name="will_smith">Will Smith</string>
@@ -2180,10 +2180,10 @@
     <string name="emelianenko">Fedor Emelianenko</string>
     <!-- 29 september -->
     <string name="caravaggio">Caravaggio</string>
-    <string name="horatio_nelson">Horatio Nelson, 1st Viscount Nelson</string>
+    <string name="horatio_nelson">Horatio Nelson</string>
     <string name="gaskell">Elizabeth Gaskell</string>
     <string name="fermi">Enrico Fermi</string>
-    <string name="ostrovsky">Nikolai Ostrovsky</string>
+    <string name="ostrovsky">Nyikolaj Osztrovszkij</string>
     <string name="antonioni">Michelangelo Antonioni</string>
     <!-- 30 september -->
     <string name="condillac">Étienne Bonnot de Condillac</string>
@@ -2195,7 +2195,7 @@
     <string name="bellucci">Monica Bellucci</string>
     <string name="cotillard">Marion Cotillard</string>
     <!-- 1 october -->
-    <string name="boeing">William Boeing</string>
+    <string name="boeing">William E. Boeing</string>
     <string name="richard_harris">Richard Harris</string>
     <string name="andrews">Julie Andrews</string>
     <string name="annaud">Jean-Jacques Annaud</string>
@@ -2246,12 +2246,12 @@
     <string name="niels_bohr">Niels Bohr</string>
     <string name="alcantara">Paulino Alcántara</string>
     <string name="keneally">Thomas Keneally</string>
-    <string name="putin">Vladimir Putin</string>
+    <string name="putin">Vlagyimir Putyin</string>
     <string name="braxton">Toni Braxton</string>
     <!-- 8 october -->
     <string name="geyter">Pierre De Geyter</string>
     <string name="poddubny">Ivan Poddubny</string>
-    <string name="tsvetaeva">Marina Tsvetaeva</string>
+    <string name="tsvetaeva">Marina Cvetajeva</string>
     <string name="voicu">Ion Voicu</string>
     <string name="louise_hay">Louise Hay</string>
     <string name="weaver">Sigourney Weaver</string>
@@ -2298,7 +2298,7 @@
     <string name="wasikowska">Mia Wasikowska</string>
     <!-- 15 october -->
     <string name="torricelli">Evangelista Torricelli</string>
-    <string name="lermontov">Mikhail Lermontov</string>
+    <string name="lermontov">Mihail Lermontov</string>
     <string name="asaph_hall">Asaph Hall</string>
     <string name="nietzsche">Friedrich Nietzsche</string>
     <string name="ilf">Ilya Ilf</string>
@@ -2341,12 +2341,12 @@
     <!-- 21 october -->
     <string name="coleridge">Samuel Taylor Coleridge</string>
     <string name="nobel">Alfred Nobel</string>
-    <string name="mikhalkov">Nikita Mikhalkov</string>
+    <string name="mikhalkov">Nyikita Mihalkov</string>
     <string name="carrie_fisher">Carrie Fisher</string>
     <string name="geim">Andre Geim</string>
     <string name="kardashian">Kim Kardashian</string>
     <!-- 22 october -->
-    <string name="liszt">Franz Liszt</string>
+    <string name="liszt">Liszt Ferenc</string>
     <string name="bernhardt">Sarah Bernhardt</string>
     <string name="bunin">Ivan Bunin</string>
     <string name="yashin">Lev Yashin</string>
@@ -2366,7 +2366,7 @@
     <string name="leeuwenhoek">Antoni van Leeuwenhoek</string>
     <string name="wilhelm_weber">Wilhelm Eduard Weber</string>
     <string name="swarovski">Daniel Swarovski</string>
-    <string name="raikin">Arkady Raikin</string>
+    <string name="raikin">Arkagyij Rajkin</string>
     <string name="rooney">Wayne Rooney</string>
     <!-- 25 october -->
     <string name="galois">Évariste Galois</string>
@@ -2422,7 +2422,7 @@
     <string name="grieg">Nordahl Grieg</string>
     <string name="flynt">Larry Flynt</string>
     <string name="kiedis">Anthony Kiedis</string>
-    <string name="rai">Aishwarya Rai</string>
+    <string name="rai">Aisvarja Rai</string>
     <!-- 2 november -->
     <string name="antoinette">Marie Antoinette</string>
     <string name="boole">George Boole</string>
@@ -2433,7 +2433,7 @@
     <string name="schwimmer">David Schwimmer</string>
     <!-- 3 november -->
     <string name="cellini">Benvenuto Cellini</string>
-    <string name="marshak">Samuil Marshak</string>
+    <string name="marshak">Szamuil Marsak</string>
     <string name="dassler">Adolf Dassler</string>
     <string name="gerd_muller">Gerd Müller</string>
     <string name="lundgren">Dolph Lundgren</string>
@@ -2460,7 +2460,7 @@
     <!-- 7 november -->
     <string name="stukeley">William Stukeley</string>
     <string name="james_cook">James Cook</string>
-    <string name="erkel">Ferenc Erkel</string>
+    <string name="erkel">Erkel Ferenc</string>
     <string name="casal">Julián del Casal</string>
     <string name="marie_curie">Marie Curie</string>
     <string name="camus">Albert Camus</string>
@@ -2476,7 +2476,7 @@
     <string name="hiddink">Guus Hiddink</string>
     <!-- 9 november -->
     <string name="borden">Gail Borden</string>
-    <string name="turgenev">Ivan Turgenev</string>
+    <string name="turgenev">Ivan Turgenyev</string>
     <string name="gaboriau">Émile Gaboriau</string>
     <string name="monnet">Jean Monnet</string>
     <string name="sagan">Carl Sagan</string>
@@ -2489,7 +2489,7 @@
     <string name="morricone">Ennio Morricone</string>
     <string name="brittany_murphy">Brittany Murphy</string>
     <!-- 11 november -->
-    <string name="dostoyevsky">Fyodor Dostoyevsky</string>
+    <string name="dostoyevsky">Fjodor Dosztojevszkij</string>
     <string name="maurice_leblanc">Maurice Leblanc</string>
     <string name="vonnegut">Kurt Vonnegut</string>
     <string name="brugiroux">André Brugiroux</string>
@@ -2498,11 +2498,11 @@
     <!-- 12 november -->
     <string name="rodin">Auguste Rodin</string>
     <string name="grace_kelly">Grace Kelly</string>
-    <string name="gurchenko">Lyudmila Gurchenko</string>
+    <string name="gurchenko">Ljudmila Gurcsenko</string>
     <string name="gosling">Ryan Gosling</string>
     <string name="hathaway">Anne Hathaway</string>
     <!-- 13 november -->
-    <string name="montagu">John Montagu, 4th Earl of Sandwich</string>
+    <string name="montagu">John Montagu, Sandwich 4. grófja</string>
     <string name="hauy">Valentin Haüy</string>
     <string name="stevenson">Robert Louis Stevenson</string>
     <string name="kokkonen">Joonas Kokkonen</string>
@@ -2541,10 +2541,10 @@
     <string name="nordenskiold">Adolf Erik Nordenskiöld</string>
     <string name="gallup">George Gallup</string>
     <string name="issigonis">Alec Issigonis</string>
-    <string name="ryazanov">Eldar Ryazanov</string>
+    <string name="ryazanov">Eldar Rjazanov</string>
     <string name="owen_wilson">Owen Wilson</string>
     <!-- 19 november -->
-    <string name="lomonosov">Mikhail Lomonosov</string>
+    <string name="lomonosov">Mihail Lomonoszov</string>
     <string name="skoda">Emil Škoda</string>
     <string name="avenarius">Richard Avenarius</string>
     <string name="drucker">Peter Drucker</string>
@@ -2565,11 +2565,11 @@
     <string name="hawn">Goldie Hawn</string>
     <string name="bjork">Björk</string>
     <!-- 22 november -->
-    <string name="vladimir_dal">Vladimir Dal</string>
+    <string name="vladimir_dal">Vlagyimir Dal</string>
     <string name="thomas_cook">Thomas Cook</string>
     <string name="gide">André Gide</string>
     <string name="gaulle">Charles de Gaulle</string>
-    <string name="pelevin">Victor Pelevin</string>
+    <string name="pelevin">Viktor Pelevin</string>
     <string name="mikkelsen">Mads Mikkelsen</string>
     <string name="ruffalo">Mark Ruffalo</string>
     <string name="ville_valo">Ville Valo</string>
@@ -2578,7 +2578,7 @@
     <string name="waals">Johannes Diderik van der Waals</string>
     <string name="karloff">Boris Karloff</string>
     <string name="moseley">Henry Moseley</string>
-    <string name="nosov">Nikolay Nosov</string>
+    <string name="nosov">Nyikolaj Noszov</string>
     <string name="cyrus">Miley Cyrus</string>
     <!-- 24 november -->
     <string name="spinoza">Baruch Spinoza</string>
@@ -2591,9 +2591,9 @@
     <!-- 25 november -->
     <string name="vega">Lope de Vega</string>
     <string name="sumarokov">Alexander Sumarokov</string>
-    <string name="pirogov">Nikolay Pirogov</string>
+    <string name="pirogov">Nyikolaj Pirogov</string>
     <string name="benz">Carl Benz</string>
-    <string name="vavilov">Nikolai Vavilov</string>
+    <string name="vavilov">Nyikolaj Vavilov</string>
     <string name="poul_anderson">Poul Anderson</string>
     <!-- 26 november -->
     <string name="harvard">John Harvard</string>
@@ -2605,9 +2605,9 @@
     <!-- 27 november -->
     <string name="celsius">Anders Celsius</string>
     <string name="weizmann">Chaim Weizmann</string>
-    <string name="matsushita">Kōnosuke Matsushita</string>
+    <string name="matsushita">Kónoszuke Macusita</string>
     <string name="bruce_lee">Bruce Lee</string>
-    <string name="mashkov">Vladimir Mashkov</string>
+    <string name="mashkov">Vlagyimir Maskov</string>
     <!-- 28 november -->
     <string name="lully">Jean-Baptiste Lully</string>
     <string name="blake">William Blake</string>
@@ -2634,8 +2634,8 @@
     <!-- 1 december -->
     <string name="falconet">Étienne Maurice Falconet</string>
     <string name="tussaud">Marie Tussaud</string>
-    <string name="lobachevsky">Nikolai Lobachevsky</string>
-    <string name="zhukov">Georgy Zhukov</string>
+    <string name="lobachevsky">Nyikolaj Ivanovics Lobacsevszkij</string>
+    <string name="zhukov">Georgij Konsztantyinovics Zsukov</string>
     <string name="allen">Woody Allen</string>
     <string name="escobar">Pablo Escobar</string>
     <!-- 2 december -->
@@ -2657,9 +2657,9 @@
     <string name="carlyle">Thomas Carlyle</string>
     <string name="adler">Robert Adler</string>
     <string name="bridges">Jeff Bridges</string>
-    <string name="bubka">Sergey Bubka</string>
+    <string name="bubka">Szergej Bubka</string>
     <!-- 5 december -->
-    <string name="tyutchev">Fyodor Tyutchev</string>
+    <string name="tyutchev">Fjodor Tyutcsev</string>
     <string name="lang">Fritz Lang</string>
     <string name="disney">Walt Disney</string>
     <string name="heisenberg">Werner Heisenberg</string>
@@ -2698,7 +2698,7 @@
     <string name="malkovich">John Malkovich</string>
     <!-- 10 december -->
     <string name="lovelace">Ada Lovelace</string>
-    <string name="nekrasov">Nikolay Nekrasov</string>
+    <string name="nekrasov">Nyikolaj Nekraszov</string>
     <string name="sachs">Nelly Sachs</string>
     <string name="tarasov">Anatoli Tarasov</string>
     <string name="michael_duncan">Michael Clarke Duncan</string>
@@ -2712,12 +2712,12 @@
     <string name="gardel">Carlos Gardel</string>
     <string name="marais">Jean Marais</string>
     <!-- 12 december -->
-    <string name="karamzin">Nikolay Karamzin</string>
+    <string name="karamzin">Nyikolaj Karamzin</string>
     <string name="serebriakova">Zinaida Serebriakova</string>
     <string name="ozu">Yasujirō Ozu</string>
     <string name="sinatra">Frank Sinatra</string>
     <string name="noyce">Robert Noyce</string>
-    <string name="konyukhov">Fyodor Konyukhov</string>
+    <string name="konyukhov">Fjodor Konyuhov</string>
     <!-- 13 december -->
     <string name="gozzi">Carlo Gozzi</string>
     <string name="heine">Heinrich Heine</string>
@@ -2731,11 +2731,11 @@
     <string name="nostradamus">Nostradamus</string>
     <string name="brahe">Tycho Brahe</string>
     <string name="ueshiba">Morihei Ueshiba</string>
-    <string name="basov">Nikolay Basov</string>
+    <string name="basov">Nyikolaj Baszov</string>
     <string name="kapoor">Raj Kapoor</string>
     <!-- 15 december -->
     <string name="carey">Henry Charles Carey</string>
-    <string name="bolyai">János Bolyai</string>
+    <string name="bolyai">Bolyai János</string>
     <string name="eiffel">Gustave Eiffel</string>
     <string name="becquerel">Henri Becquerel</string>
     <string name="zamenhof">Ludwik Lejzer Zamenhof</string>
@@ -2752,7 +2752,7 @@
     <string name="cimarosa">Domenico Cimarosa</string>
     <string name="beethoven">Ludwig van Beethoven</string>
     <string name="davy">Humphry Davy</string>
-    <string name="ganelin">Vyacheslav Ganelin</string>
+    <string name="ganelin">Vjacseszlav Ganelin</string>
     <string name="darryl_way">Darryl Way</string>
     <string name="jovovich">Milla Jovovich</string>
     <!-- 18 december -->
@@ -2819,7 +2819,7 @@
     <string name="dinglinger">Johann Melchior Dinglinger</string>
     <string name="babbage">Charles Babbage</string>
     <string name="henry_miller">Henry Miller</string>
-    <string name="zedong">Mao Zedong</string>
+    <string name="zedong">Mao Ce-tung</string>
     <string name="ulrich">Lars Ulrich</string>
     <string name="jared_leto">Jared Leto</string>
     <!-- 27 december -->
