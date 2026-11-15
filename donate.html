@@ -18,8 +18,6 @@
             
             --md-sys-color-primary: #C2185B;
             --md-sys-color-on-primary: #FFFFFF;
-            --md-sys-color-secondary-container: #8CF8DF;
-            --md-sys-color-on-secondary-container: #00201B;
         }
 
         /* Night theme */
@@ -35,8 +33,6 @@
             
             --md-sys-color-primary: #FFB1C8;
             --md-sys-color-on-primary: #65002F;
-            --md-sys-color-secondary-container: #005046;
-            --md-sys-color-on-secondary-container: #8CF8DF;
         }
 
         body {
@@ -70,7 +66,6 @@
             position: relative;
         }
 
-        /* Language button */
         .header-row {
             display: flex;
             justify-content: flex-end;
@@ -146,26 +141,28 @@
             opacity: 0.9;
         }
 
+        /* 1. YooKassa (dynamic based on theme) */
         .btn-yookassa {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
         }
 
+        /* 2. Lava.top (always light theme colors: #8CF8DF / #00201B) */
         .btn-lava {
-            background-color: var(--md-sys-color-secondary-container);
-            color: var(--md-sys-color-on-secondary-container);
+            background-color: #8CF8DF;
+            color: #00201B;
         }
 
+        /* 3. Boosty (always brand color: #FF5722 / #FFFFFF) */
         .btn-boosty {
-            background-color: var(--md-sys-color-surface-variant);
-            color: var(--md-sys-color-on-surface-variant);
-            border: 1px solid var(--md-sys-color-outline);
+            background-color: #FF5722;
+            color: #FFFFFF;
         }
 
         .btn-subtitle {
             font-size: 12px;
             font-weight: 400;
-            opacity: 0.8;
+            opacity: 0.85;
             margin-top: 2px;
         }
 
@@ -183,26 +180,26 @@
                 heading: "☕ Поддержать разработку",
                 description: "Выберите удобный сервис для доната. Спасибо за то, что помогаете развитию приложения!",
                 yookassaSub: "Для карт РФ и СБП",
-                lavaSub: "Для международных карт",
+                lavaSub: "Весь мир • Без регистрации",
                 boostySub: "Требует регистрации"
             },
             en: {
                 title: "Support the Project",
                 heading: "☕ Support Development",
                 description: "Choose a convenient donation service. Thank you for helping improve the app!",
-                yookassaSub: "For Russian cards & SBP",
-                lavaSub: "For international cards",
+                yookassaSub: "Russian cards & SBP",
+                lavaSub: "Worldwide • No sign-up",
                 boostySub: "Requires registration"
             }
         };
 
         let currentLang = 'ru';
 
-        // Theme and language initialization
+        // Initialize theme and language before rendering
         (function() {
             const urlParams = new URLSearchParams(window.location.search);
             
-            // 1. Theme
+            // Theme handling
             const theme = urlParams.get('theme');
             if (theme === 'light' || theme === 'dark') {
                 document.documentElement.className = theme;
@@ -214,7 +211,7 @@
                 }
             }
 
-            // 2. Language
+            // Language handling
             let langParam = urlParams.get('lang');
             if (langParam && translations[langParam]) {
                 currentLang = langParam;
@@ -253,6 +250,7 @@
 
     <div class="container">
         <div class="card">
+            <!-- Language switcher -->
             <div class="header-row">
                 <div class="lang-switcher">
                     <button id="btn-lang-ru" class="lang-btn" onclick="applyLanguage('ru')">🇷🇺 RU</button>
@@ -264,19 +262,19 @@
             <p id="description">Выберите удобный сервис для доната. Спасибо за то, что помогаете развитию приложения!</p>
 
             <div class="donate-buttons">
-                <!-- ЮKassa -->
+                <!-- Button 1: YooKassa -->
                 <a href="TODO_LINK" class="btn btn-yookassa" target="_blank" rel="noopener">
                     ЮKassa
                     <span id="sub-yookassa" class="btn-subtitle">Для карт РФ и СБП</span>
                 </a>
 
-                <!-- Lava.top -->
+                <!-- Button 2: Lava.top -->
                 <a href="TODO_LINK" class="btn btn-lava" target="_blank" rel="noopener">
                     Lava.top
-                    <span id="sub-lava" class="btn-subtitle">Для международных карт</span>
+                    <span id="sub-lava" class="btn-subtitle">Весь мир • Без регистрации</span>
                 </a>
 
-                <!-- Boosty -->
+                <!-- Button 3: Boosty -->
                 <a href="TODO_LINK" class="btn btn-boosty" target="_blank" rel="noopener">
                     Boosty
                     <span id="sub-boosty" class="btn-subtitle">Требует регистрации</span>
@@ -288,5 +286,6 @@
             Birdays app by Evgenii Timofeev
         </div>
     </div>
+
 </body>
 </html>
