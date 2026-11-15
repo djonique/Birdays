@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Поддержать проект</title>
+    <style>
+        /* Light theme */
+        :root {
+            --md-sys-color-background: #FFF6F8;
+            --md-sys-color-on-background: #201A1B;
+            --md-sys-color-surface: #FFFBFF;
+            --md-sys-color-on-surface: #201A1B;
+            --md-sys-color-surface-variant: #F5DDE2;
+            --md-sys-color-on-surface-variant: #524346;
+            --md-sys-color-outline: #857376;
+            --md-sys-color-outline-variant: #D7C1C5;
+            
+            --md-sys-color-primary: #C2185B;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-secondary-container: #8CF8DF;
+            --md-sys-color-on-secondary-container: #00201B;
+        }
+
+        /* Night theme */
+        html.dark {
+            --md-sys-color-background: #161213;
+            --md-sys-color-on-background: #EFE0E1;
+            --md-sys-color-surface: #1E191A;
+            --md-sys-color-on-surface: #EFE0E1;
+            --md-sys-color-surface-variant: #524346;
+            --md-sys-color-on-surface-variant: #D7C1C5;
+            --md-sys-color-outline: #9F8C8F;
+            --md-sys-color-outline-variant: #524346;
+            
+            --md-sys-color-primary: #FFB1C8;
+            --md-sys-color-on-primary: #65002F;
+            --md-sys-color-secondary-container: #005046;
+            --md-sys-color-on-secondary-container: #8CF8DF;
+        }
+
+        body {
+            font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background-color: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-background);
+            margin: 0;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            border-radius: 28px;
+            padding: 28px 24px 32px 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            position: relative;
+        }
+
+        /* Language button */
+        .header-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            background-color: var(--md-sys-color-surface-variant);
+            border-radius: 100px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--md-sys-color-on-surface-variant);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .lang-btn.active {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+
+        .donate-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 20px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: transform 0.15s ease, opacity 0.15s ease;
+            box-sizing: border-box;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+
+        .btn-yookassa {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+
+        .btn-lava {
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+        }
+
+        .btn-boosty {
+            background-color: var(--md-sys-color-surface-variant);
+            color: var(--md-sys-color-on-surface-variant);
+            border: 1px solid var(--md-sys-color-outline);
+        }
+
+        .btn-subtitle {
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            font-size: 13px;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+    </style>
+
+    <script>
+        const translations = {
+            ru: {
+                title: "Поддержать проект",
+                heading: "☕ Поддержать разработку",
+                description: "Выберите удобный сервис для доната. Спасибо за то, что помогаете развитию приложения!",
+                yookassaSub: "Для карт РФ и СБП",
+                lavaSub: "Для международных карт",
+                boostySub: "Требует регистрации"
+            },
+            en: {
+                title: "Support the Project",
+                heading: "☕ Support Development",
+                description: "Choose a convenient donation service. Thank you for helping improve the app!",
+                yookassaSub: "For Russian cards & SBP",
+                lavaSub: "For international cards",
+                boostySub: "Requires registration"
+            }
+        };
+
+        let currentLang = 'ru';
+
+        // Theme and language initialization
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 1. Theme
+            const theme = urlParams.get('theme');
+            if (theme === 'light' || theme === 'dark') {
+                document.documentElement.className = theme;
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.className = 'dark';
+                } else {
+                    document.documentElement.className = 'light';
+                }
+            }
+
+            // 2. Language
+            let langParam = urlParams.get('lang');
+            if (langParam && translations[langParam]) {
+                currentLang = langParam;
+            } else {
+                const browserLang = (navigator.language || navigator.userLanguage || 'ru').toLowerCase();
+                if (browserLang.startsWith('ru') || browserLang.startsWith('be') || browserLang.startsWith('kk')) {
+                    currentLang = 'ru';
+                } else {
+                    currentLang = 'en';
+                }
+            }
+        })();
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            
+            document.documentElement.lang = lang;
+            document.getElementById('page-title').innerText = t.title;
+            document.getElementById('heading').innerText = t.heading;
+            document.getElementById('description').innerText = t.description;
+            document.getElementById('sub-yookassa').innerText = t.yookassaSub;
+            document.getElementById('sub-lava').innerText = t.lavaSub;
+            document.getElementById('sub-boosty').innerText = t.boostySub;
+
+            document.getElementById('btn-lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            applyLanguage(currentLang);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="header-row">
+                <div class="lang-switcher">
+                    <button id="btn-lang-ru" class="lang-btn" onclick="applyLanguage('ru')">🇷🇺 RU</button>
+                    <button id="btn-lang-en" class="lang-btn" onclick="applyLanguage('en')">🇬🇧 EN</button>
+                </div>
+            </div>
+
+            <h1 id="heading">☕ Поддержать разработку</h1>
+            <p id="description">Выберите удобный сервис для доната. Спасибо за то, что помогаете развитию приложения!</p>
+
+            <div class="donate-buttons">
+                <!-- ЮKassa -->
+                <a href="TODO_LINK" class="btn btn-yookassa" target="_blank" rel="noopener">
+                    ЮKassa
+                    <span id="sub-yookassa" class="btn-subtitle">Для карт РФ и СБП</span>
+                </a>
+
+                <!-- Lava.top -->
+                <a href="TODO_LINK" class="btn btn-lava" target="_blank" rel="noopener">
+                    Lava.top
+                    <span id="sub-lava" class="btn-subtitle">Для международных карт</span>
+                </a>
+
+                <!-- Boosty -->
+                <a href="TODO_LINK" class="btn btn-boosty" target="_blank" rel="noopener">
+                    Boosty
+                    <span id="sub-boosty" class="btn-subtitle">Требует регистрации</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            Birdays app by Evgenii Timofeev
+        </div>
+    </div>
+</body>
+</html>
