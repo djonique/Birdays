@@ -3,73 +3,220 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Birdays</title>
+    <title id="page-title">Privacy Policy - Birdays</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        body {
+            font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 20px;
+        }
         h1, h2 { color: #111; }
         h2 { margin-top: 30px; }
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
+
+        .header-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            background-color: #f0f0f0;
+            border-radius: 100px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #666;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .lang-btn.active {
+            background-color: #C2185B;
+            color: #ffffff;
+        }
     </style>
+
+    <script>
+        let currentLang = 'en';
+
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let langParam = urlParams.get('lang');
+            if (langParam && (langParam === 'ru' || langParam === 'en')) {
+                currentLang = langParam;
+            } else {
+                const browserLang = (navigator.language || navigator.userLanguage || 'ru').toLowerCase();
+                if (browserLang.startsWith('ru') || browserLang.startsWith('be') || browserLang.startsWith('kk')) {
+                    currentLang = 'ru';
+                } else {
+                    currentLang = 'en';
+                }
+            }
+        })();
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.getElementById('page-title').innerText = (lang === 'ru') ? 'Политика конфиденциальности — Birdays' : 'Privacy Policy - Birdays';
+
+            document.getElementById('content-ru').style.display = (lang === 'ru') ? 'block' : 'none';
+            document.getElementById('content-en').style.display = (lang === 'en') ? 'block' : 'none';
+
+            document.getElementById('btn-lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            applyLanguage(currentLang);
+        });
+    </script>
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> November 16, 2026</p>
+    <div class="header-row">
+        <div class="lang-switcher">
+            <button id="btn-lang-ru" class="lang-btn" onclick="applyLanguage('ru')">🇷🇺 RU</button>
+            <button id="btn-lang-en" class="lang-btn" onclick="applyLanguage('en')">🇬🇧 EN</button>
+        </div>
+    </div>
 
-<p>Evgenii Timofeev built the Birdays app as an open source app. This SERVICE is provided by Evgenii Timofeev at no cost and is intended for use as is.</p>
+    <!-- Russian version -->
+    <div id="content-ru" style="display: none;">
+        <h1>Политика конфиденциальности</h1>
+        <p><strong>Дата последнего обновления:</strong> 16 ноября 2026 г.</p>
 
-<p>This page is used to inform users regarding my policies with the collection, use, and disclosure of Personal Information if anyone decides to use my Service.</p>
+        <p>Евгений Тимофеев создал приложение Birdays как приложение с открытым исходным кодом. Данный СЕРВИС предоставляется Евгением Тимофеевым бесплатно и предназначен для использования «как есть».</p>
 
-<p>If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. I will not use or share your information with anyone except as described in this Privacy Policy, which includes the limited data that the third-party services listed in Section 2 process to provide analytics, crash reporting and advertising.</p>
+        <p>Эта страница используется для информирования пользователей о правилах сбора, использования и раскрытия персональной информации в случае решения использовать мой Сервис.</p>
 
-<h2>1. Information Collection and Use</h2>
-<p>Birdays is designed with privacy in mind. Most features work entirely offline, and your personal data remains stored locally on your device.</p>
+        <p>Если вы решаете использовать мой Сервис, вы соглашаетесь на сбор и использование информации в соответствии с данной политикой. Я не буду использовать вашу информацию или передавать её кому-либо, за исключением случаев, описанных в настоящей Политике конфиденциальности, включая ограниченный объём данных, которые сторонние сервисы, перечисленные в Разделе 2, обрабатывают для обеспечения аналитики, отчётов о сбоях и рекламы.</p>
 
-<h3>A. Contacts Access (READ_CONTACTS)</h3>
-<p>The app requests permission to read your device's contacts (<code>android.permission.READ_CONTACTS</code>). This permission is used exclusively to enable you to import birthday dates and contact names from your address book into Birdays. All contact data is processed locally on your device and is never transmitted to my servers or any third parties.</p>
+        <h2>1. Сбор и использование информации</h2>
+        <p>Birdays разработано с заботой о конфиденциальности. Большинство функций работают полностью офлайн, а ваши личные данные хранятся локально на вашем устройстве.</p>
 
-<h3>B. Cloud Sync and Backup (Google Drive API)</h3>
-<p>If you explicitly choose to use the Google Drive backup and restore feature, the app utilizes the official Google Drive API to save and restore your backup file. The backup file is saved directly into your personal Google Drive account. I do not store, access, or have any visibility into your Google Drive files or account details.</p>
+        <h3>A. Доступ к контактам (READ_CONTACTS)</h3>
+        <p>Приложение запрашивает разрешение на чтение контактов устройства (<code>android.permission.READ_CONTACTS</code>). Это разрешение используется исключительно для того, чтобы вы могли импортировать даты дней рождения и имена контактов из адресной книги в Birdays. Все данные контактов обрабатываются локально на вашем устройстве и никогда не передаются на мои серверы или третьим лицам.</p>
 
-<h2>2. Third-Party Services and SDKs</h2>
-<p>The app uses third-party services that may collect information used to identify your device for analytics, crash reporting, and advertising purposes. Each provider processes that data under its own privacy policy:</p>
-<ul>
-    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services & Google Drive API</a></li>
-    <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></li>
-    <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></li>
-    <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex Mobile Ads SDK</a></li>
-    <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex AppMetrica</a></li>
-    <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex Varioqub</a></li>
-    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Install Referrer</a></li>
-</ul>
+        <h3>B. Облачная синхронизация и резервное копирование (Google Drive API)</h3>
+        <p>Если вы явно выбираете использование функции резервного копирования и восстановления через Google Drive, приложение использует официальный Google Drive API для сохранения и восстановления файла резервной копии. Файл резервной копии сохраняется непосредственно в ваш личный аккаунт Google Drive. Я не храню, не имею доступа и не вижу ваши файлы или данные аккаунта Google Drive.</p>
 
-<h3>A. Advertising identifier and ad data</h3>
-<p>To load, show and measure ads, the advertising SDKs may access your device's advertising ID (the <code>com.google.android.gms.permission.AD_ID</code> permission) together with basic technical data: device model, operating system version, language, coarse location derived from the IP address, and app interaction events such as ad impressions. This data is used to deliver and cap ads, measure their performance and prevent fraud; it is not used by me to identify you personally.</p>
+        <h2>2. Сторонние сервисы и SDK</h2>
+        <p>Приложение использует сторонние сервисы, которые могут собирать информацию, используемую для идентификации вашего устройства в целях аналитики, отчётов о сбоях и рекламы. Каждый провайдер обрабатывает эти данные в соответствии со своей собственной политикой конфиденциальности:</p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services & Google Drive API</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></li>
+            <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex Mobile Ads SDK</a></li>
+            <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex AppMetrica</a></li>
+            <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex Varioqub</a></li>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Install Referrer</a></li>
+        </ul>
 
-<h3>B. Turning ads off</h3>
-<p>Advertising can be disabled in the app settings (Settings → “Show ads”), and watching the rewarded video once also switches ads off. You can additionally reset or delete your advertising ID in the Android system settings.</p>
+        <h3>A. Рекламный идентификатор и рекламные данные</h3>
+        <p>Для загрузки, показа и измерения рекламы рекламные SDK могут получать доступ к рекламному идентификатору вашего устройства (разрешение <code>com.google.android.gms.permission.AD_ID</code>) вместе с базовыми техническими данными: модель устройства, версия операционной системы, язык, примерное местоположение на основе IP-адреса и события взаимодействия с приложением, такие как показы рекламы. Эти данные используются для показа и ограничения частоты показов рекламы, оценки её эффективности и предотвращения мошенничества; они не используются мной для вашей личной идентификации.</p>
 
-<h2>3. Log Data and Crash Diagnostics</h2>
-<p>Whenever you use my Service, in case of an error or crash in the app, data and information are collected on your phone (through third-party tools like Firebase Crashlytics). This Log Data may include information such as your device's Internet Protocol ("IP") address, device model, operating system version, app configuration at the time of the error, and other relevant diagnostic statistics.</p>
+        <h3>B. Отключение рекламы</h3>
+        <p>Рекламу можно отключить в настройках приложения (Настройки → «Показывать рекламу»), также однократный просмотр видео с вознаграждением отключает рекламу. Дополнительно вы можете сбросить или удалить свой рекламный идентификатор в системных настройках Android.</p>
 
-<h2>4. Cookies</h2>
-<p>Cookies are files with a small amount of data commonly used as anonymous unique identifiers. Birdays does not use cookies explicitly. However, third-party libraries (such as ad networks or analytics SDKs) may use cookies or similar tracking technologies to collect information and improve their services.</p>
+        <h2>3. Журналы данных и диагностика сбоев</h2>
+        <p>Каждый раз, когда вы используете мой Сервис, в случае ошибки или сбоя в приложении, на вашем телефоне собираются данные и информация (через сторонние инструменты, такие как Firebase Crashlytics). Эти журналы данных могут включать такую информацию, как IP-адрес вашего устройства, модель устройства, версия операционной системы, конфигурация приложения во время ошибки и другая соответствующая диагностическая статистика.</p>
 
-<h2>5. Data Retention and Deletion</h2>
-<p>Names, dates, phone numbers, e-mail addresses and notes you add are stored only in the app's private storage on your device and are kept until you delete them. Deleting a record in the app removes it immediately, and uninstalling the app removes the local database and preferences. Backups created with Google Drive remain in your Google account and are deleted by you from Drive. Diagnostic and analytics data collected by the third-party services in Section 2 is retained according to their own policies; write to the address in Section 9 to request deletion of anything that can be linked to you.</p>
+        <h2>4. Файлы cookie</h2>
+        <p>Файлы cookie — это файлы с небольшим объёмом данных, которые обычно используются в качестве анонимных уникальных идентификаторов. Birdays не использует файлы cookie явно. Однако сторонние библиотеки (такие как рекламные сети или аналитические SDK) могут использовать cookie или аналогичные технологии отслеживания для сбора информации и улучшения своих сервисов.</p>
 
-<h2>6. Children’s Privacy</h2>
-<p>These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to take necessary actions.</p>
+        <h2>5. Хранение и удаление данных</h2>
+        <p>Имена, даты, номера телефонов, адреса электронной почты и заметки, которые вы добавляете, хранятся только в приватном хранилище приложения на вашем устройстве и сохраняются до тех пор, пока вы их не удалите. Удаление записи в приложении немедленно удаляет её, а удаление приложения удаляет локальную базу данных и настройки. Резервные копии, созданные в Google Drive, остаются в вашем аккаунте Google и удаляются вами из Google Drive. Диагностические и аналитические данные, собираемые сторонними сервисами из Раздела 2, хранятся в соответствии с их собственными политиками; напишите по адресу из Раздела 9, чтобы запросить удаление любых данных, которые могут быть связаны с вами.</p>
 
-<h2>7. Security</h2>
-<p>I value your trust in using my Service and strive to protect your data using commercially acceptable means. However, remember that no method of transmission over the internet or electronic storage is 100% secure, and I cannot guarantee absolute security.</p>
+        <h2>6. Конфиденциальность детей</h2>
+        <p>Данные Сервисы не предназначены для лиц младше 13 лет. Я намеренно не собираю персональную информацию от детей младше 13 лет. Если вы являетесь родителем или опекуном и знаете, что ваш ребёнок предоставил мне личные данные, пожалуйста, свяжитесь со мной, чтобы я мог принять необходимые меры.</p>
 
-<h2>8. Changes to This Privacy Policy</h2>
-<p>I may update this Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.</p>
+        <h2>7. Безопасность</h2>
+        <p>Я ценю ваше доверие при использовании моего Сервиса и стремлюсь защитить ваши данные доступными коммерческими средствами. Однако помните, что ни один способ передачи через интернет или способ электронного хранения не является на 100% безопасным, и я не могу гарантировать его абсолютную безопасность.</p>
 
-<h2>9. Contact Me</h2>
-<p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at: <a href="mailto:birdaysapp@gmail.com">birdaysapp@gmail.com</a></p>
+        <h2>8. Изменения в настоящей Политике конфиденциальности</h2>
+        <p>Я могу время от времени обновлять настоящую Политику конфиденциальности. Поэтому вам рекомендуется периодически просматривать эту страницу на предмет изменений. Я уведомлю вас обо всех изменениях, разместив новую Политику конфиденциальности на этой странице.</p>
+
+        <h2>9. Связаться со мной</h2>
+        <p>Если у вас есть какие-либо вопросы или предложения по поводу моей Политики конфиденциальности, смело обращайтесь ко мне по адресу: <a href="mailto:birdaysapp@gmail.com">birdaysapp@gmail.com</a></p>
+    </div>
+
+    <!-- English version -->
+    <div id="content-en" style="display: none;">
+        <h1>Privacy Policy</h1>
+        <p><strong>Last updated:</strong> November 16, 2026</p>
+
+        <p>Evgenii Timofeev built the Birdays app as an open source app. This SERVICE is provided by Evgenii Timofeev at no cost and is intended for use as is.</p>
+
+        <p>This page is used to inform users regarding my policies with the collection, use, and disclosure of Personal Information if anyone decides to use my Service.</p>
+
+        <p>If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. I will not use or share your information with anyone except as described in this Privacy Policy, which includes the limited data that the third-party services listed in Section 2 process to provide analytics, crash reporting and advertising.</p>
+
+        <h2>1. Information Collection and Use</h2>
+        <p>Birdays is designed with privacy in mind. Most features work entirely offline, and your personal data remains stored locally on your device.</p>
+
+        <h3>A. Contacts Access (READ_CONTACTS)</h3>
+        <p>The app requests permission to read your device's contacts (<code>android.permission.READ_CONTACTS</code>). This permission is used exclusively to enable you to import birthday dates and contact names from your address book into Birdays. All contact data is processed locally on your device and is never transmitted to my servers or any third parties.</p>
+
+        <h3>B. Cloud Sync and Backup (Google Drive API)</h3>
+        <p>If you explicitly choose to use the Google Drive backup and restore feature, the app utilizes the official Google Drive API to save and restore your backup file. The backup file is saved directly into your personal Google Drive account. I do not store, access, or have any visibility into your Google Drive files or account details.</p>
+
+        <h2>2. Third-Party Services and SDKs</h2>
+        <p>The app uses third-party services that may collect information used to identify your device for analytics, crash reporting, and advertising purposes. Each provider processes that data under its own privacy policy:</p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services & Google Drive API</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></li>
+            <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex Mobile Ads SDK</a></li>
+            <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex AppMetrica</a></li>
+            <li><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex Varioqub</a></li>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Install Referrer</a></li>
+        </ul>
+
+        <h3>A. Advertising identifier and ad data</h3>
+        <p>To load, show and measure ads, the advertising SDKs may access your device's advertising ID (the <code>com.google.android.gms.permission.AD_ID</code> permission) together with basic technical data: device model, operating system version, language, coarse location derived from the IP address, and app interaction events such as ad impressions. This data is used to deliver and cap ads, measure their performance and prevent fraud; it is not used by me to identify you personally.</p>
+
+        <h3>B. Turning ads off</h3>
+        <p>Advertising can be disabled in the app settings (Settings → “Show ads”), and watching the rewarded video once also switches ads off. You can additionally reset or delete your advertising ID in the Android system settings.</p>
+
+        <h2>3. Log Data and Crash Diagnostics</h2>
+        <p>Whenever you use my Service, in case of an error or crash in the app, data and information are collected on your phone (through third-party tools like Firebase Crashlytics). This Log Data may include information such as your device's Internet Protocol ("IP") address, device model, operating system version, app configuration at the time of the error, and other relevant diagnostic statistics.</p>
+
+        <h2>4. Cookies</h2>
+        <p>Cookies are files with a small amount of data commonly used as anonymous unique identifiers. Birdays does not use cookies explicitly. However, third-party libraries (such as ad networks or analytics SDKs) may use cookies or similar tracking technologies to collect information and improve their services.</p>
+
+        <h2>5. Data Retention and Deletion</h2>
+        <p>Names, dates, phone numbers, e-mail addresses and notes you add are stored only in the app's private storage on your device and are kept until you delete them. Deleting a record in the app removes it immediately, and uninstalling the app removes the local database and preferences. Backups created with Google Drive remain in your Google account and are deleted by you from Drive. Diagnostic and analytics data collected by the third-party services in Section 2 is retained according to their own policies; write to the address in Section 9 to request deletion of anything that can be linked to you.</p>
+
+        <h2>6. Children’s Privacy</h2>
+        <p>These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to take necessary actions.</p>
+
+        <h2>7. Security</h2>
+        <p>I value your trust in using my Service and strive to protect your data using commercially acceptable means. However, remember that no method of transmission over the internet or electronic storage is 100% secure, and I cannot guarantee absolute security.</p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>I may update this Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+        <h2>9. Contact Me</h2>
+        <p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at: <a href="mailto:birdaysapp@gmail.com">birdaysapp@gmail.com</a></p>
+    </div>
 
 </body>
 </html>
