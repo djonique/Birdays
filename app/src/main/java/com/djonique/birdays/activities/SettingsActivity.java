@@ -6,7 +6,6 @@
 
 package com.djonique.birdays.activities;
 
-import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -14,12 +13,11 @@ import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -30,13 +28,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.IntentCompat;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreferenceCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -45,11 +41,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.djonique.birdays.R;
 import com.djonique.birdays.ad.RewardedVideo;
 import com.djonique.birdays.alarm.AlarmHelper;
+import com.djonique.birdays.backup.BackupMetadata;
+import com.djonique.birdays.backup.ExportHelper;
 import com.djonique.birdays.backup.GoogleDriveBackupManager;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.repository.BirdaysRepository;
+import com.djonique.birdays.utils.BirdaysPreferencesManager;
 import com.djonique.birdays.utils.Constants;
+import com.djonique.birdays.utils.DonateHelper;
 import com.djonique.birdays.utils.PermissionManager;
 import com.djonique.birdays.utils.ProgressDialogHelper;
 import com.djonique.birdays.utils.Utils;
@@ -59,20 +59,27 @@ import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 
 import java.io.File;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private static final String DO_NOT_SHOW_OPTIMIZATION_ALERT = "DO_NOT_SHOW_OPTIMIZATION_ALERT";
+    private static final String TAG = "SettingsActivity";
+    private static final String STATE_PENDING_ACTION = "STATE_PENDING_ACTION";
     private Action pendingAction = Action.NONE;
     private ActivityResultLauncher<IntentSenderRequest> authorizationLauncher;
     private ActivityResultLauncher<Intent> ringtonePickerLauncher;
     private SharedPreferences preferences;
     private GoogleDriveBackupManager backupManager;
+    /**
+     * Set while the app settings screen is open to grant the contacts permission there.
+     */
+    private boolean contactsPermissionSettingsOpened;
+    /**
+     * Kept as a field so the non-cancelable dialog can be dismissed from onDestroy().
+     */
+    private ProgressDialogHelper progressDialog;
 
     private GoogleDriveBackupManager getBackupManager() {
         if (backupManager == null) {
@@ -94,6 +101,16 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        // The consent screen is a separate activity, so this one can be recreated while the
+        // result is pending. Restoring the action keeps the resumed flow (backup or restore).
+        if (savedInstanceState != null) {
+            int ordinal = savedInstanceState.getInt(STATE_PENDING_ACTION, Action.NONE.ordinal());
+            Action[] actions = Action.values();
+            if (ordinal >= 0 && ordinal < actions.length) {
+                pendingAction = actions[ordinal];
+            }
+        }
+
         authorizationLauncher =
                 registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), result -> {
                     if (result.getResultCode() == RESULT_OK) {
@@ -113,7 +130,7 @@ public class SettingsActivity extends AppCompatActivity {
                     if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                         Uri uri = IntentCompat.getParcelableExtra(result.getData(), RingtoneManager.EXTRA_RINGTONE_PICKED_URI, Uri.class);
                         String ringtoneString = uri != null ? uri.toString() : "";
-                        PreferenceManager.getDefaultSharedPreferences(this).edit().putString(Constants.RINGTONE_KEY, ringtoneString).apply();
+                        BirdaysPreferencesManager.getDefaultSharedPreferences(this).edit().putString(Constants.RINGTONE_KEY, ringtoneString).apply();
 
                         BirdaysPreferenceFragment fragment = (BirdaysPreferenceFragment)
                                 getSupportFragmentManager().findFragmentById(R.id.content_settings);
@@ -139,14 +156,7 @@ public class SettingsActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_settings, fragment).commit();
         }
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-        if (!preferences.getBoolean(DO_NOT_SHOW_OPTIMIZATION_ALERT, false)) {
-            PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
-            if (powerManager != null && !powerManager.isIgnoringBatteryOptimizations(getPackageName())) {
-                showWarningMessage(this);
-            }
-        }
+        preferences = BirdaysPreferencesManager.getDefaultSharedPreferences(this);
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
@@ -157,34 +167,10 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    private void showWarningMessage(Context context) {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        builder.setIcon(R.drawable.ic_warning_red_24dp);
-        builder.setTitle(R.string.optimization_enabled);
-
-        @SuppressLint("InflateParams") LinearLayout view = (LinearLayout)
-                getLayoutInflater().inflate(R.layout.checkbox_do_not_show_again, null);
-
-        builder.setView(view);
-        AppCompatCheckBox cbDoNotShowAgain = view.findViewById(R.id.checkbox_alert);
-
-        builder.setMessage(R.string.optimization_description);
-        builder.setPositiveButton(R.string.disable_button, (dialog, which) -> {
-            try {
-                startActivity(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
-                if (cbDoNotShowAgain.isChecked()) {
-                    preferences.edit().putBoolean(DO_NOT_SHOW_OPTIMIZATION_ALERT, true).apply();
-                }
-            } catch (ActivityNotFoundException ignored) {
-            }
-        });
-        builder.setNegativeButton(R.string.cancel_button, (dialog, which) -> {
-            dialog.cancel();
-            if (cbDoNotShowAgain.isChecked()) {
-                preferences.edit().putBoolean(DO_NOT_SHOW_OPTIMIZATION_ALERT, true).apply();
-            }
-        });
-        builder.show();
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(STATE_PENDING_ACTION, pendingAction.ordinal());
     }
 
     @Override
@@ -201,11 +187,57 @@ public class SettingsActivity extends AppCompatActivity {
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE && PermissionManager.readingContactsPermissionGranted(this)) {
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        if (requestCode != Constants.READ_CONTACTS_PERMISSION_CODE) return;
+
+        if (PermissionManager.readingContactsPermissionGranted(this)) {
             if (!preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
                 importContacts();
             }
+            return;
+        }
+
+        // Denied. After the second denial Android stops showing the system dialog, so a repeated
+        // tap on the preference would otherwise silently do nothing; the user is offered the app
+        // settings instead, which are the only remaining way to grant the permission.
+        showContactsPermissionDialog();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // The permission can only be granted manually in the app settings, so the import is
+        // resumed by itself once the user comes back.
+        if (contactsPermissionSettingsOpened) {
+            contactsPermissionSettingsOpened = false;
+            if (PermissionManager.readingContactsPermissionGranted(this)
+                    && !preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
+                importContacts();
+            }
+        }
+    }
+
+    /**
+     * Explains why the import cannot run and opens the app settings, where the permission can
+     * still be granted after the system dialog has stopped appearing.
+     */
+    private void showContactsPermissionDialog() {
+        if (isFinishing() || isDestroyed()) return;
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.contacts_import_title)
+                .setMessage(R.string.permission_required)
+                .setPositiveButton(R.string.help_settings, (dialog, which) -> openApplicationSettings())
+                .setNegativeButton(R.string.cancel_button, null)
+                .show();
+    }
+
+    private void openApplicationSettings() {
+        contactsPermissionSettingsOpened = true;
+        try {
+            startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                    Uri.parse("package:" + getPackageName())));
+        } catch (ActivityNotFoundException e) {
+            contactsPermissionSettingsOpened = false;
+            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -221,15 +253,14 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void importContacts() {
-        ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
-        progressDialog.startProgressDialog(getString(R.string.loading_contacts));
+        showProgressDialog(getString(R.string.loading_contacts));
 
         BirdaysRepository.getInstance(this).importContacts(
-                new BirdaysRepository.Callback<Integer>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(Integer inserted) {
                         if (isFinishing() || isDestroyed()) return;
-                        progressDialog.dismissProgressDialog();
+                        dismissProgressDialog();
                         preferences.edit().putBoolean(Constants.CONTACTS_UPLOADED, true).apply();
                         Utils.notifyWidget(SettingsActivity.this);
                         Toast.makeText(SettingsActivity.this, R.string.contacts_uploaded,
@@ -239,7 +270,7 @@ public class SettingsActivity extends AppCompatActivity {
                     @Override
                     public void onError(Throwable t) {
                         if (isFinishing() || isDestroyed()) return;
-                        progressDialog.dismissProgressDialog();
+                        dismissProgressDialog();
                         preferences.edit().putBoolean(Constants.WRONG_CONTACTS_FORMAT, true).apply();
                         Toast.makeText(SettingsActivity.this, R.string.loading_contacts_error,
                                 Toast.LENGTH_LONG).show();
@@ -248,9 +279,9 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void performCloudBackup() {
+        if (progressDialog != null) return;
         pendingAction = Action.BACKUP;
-        ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
-        progressDialog.startProgressDialog(getString(R.string.google_drive_backup_progress));
+        showProgressDialog(getString(R.string.google_drive_backup_progress));
 
         GoogleDriveBackupManager manager = getBackupManager();
         manager.requestAuthorization(this, new GoogleDriveBackupManager.AuthorizationCallback() {
@@ -259,16 +290,17 @@ public class SettingsActivity extends AppCompatActivity {
                 pendingAction = Action.NONE;
                 // Export reads the whole table and writes XML; it used to run on the main thread.
                 BirdaysRepository.getInstance(SettingsActivity.this).createBackupFile(
-                        new BirdaysRepository.Callback<File>() {
+                        new BirdaysRepository.Callback<>() {
                             @Override
-                            public void onSuccess(File backupFile) {
+                            public void onSuccess(ExportHelper.Backup backup) {
                                 if (isFinishing() || isDestroyed()) return;
-                                manager.uploadBackup(accessToken, backupFile,
+                                manager.uploadBackup(accessToken, backup.getFile(),
+                                        backup.getAppProperties(),
                                         new GoogleDriveBackupManager.UploadCallback() {
                                             @Override
                                             public void onSuccess() {
                                                 if (isFinishing() || isDestroyed()) return;
-                                                progressDialog.dismissProgressDialog();
+                                                dismissProgressDialog();
                                                 Toast.makeText(SettingsActivity.this,
                                                         R.string.backup_complete, Toast.LENGTH_LONG).show();
                                             }
@@ -276,7 +308,7 @@ public class SettingsActivity extends AppCompatActivity {
                                             @Override
                                             public void onError(Exception e) {
                                                 if (isFinishing() || isDestroyed()) return;
-                                                progressDialog.dismissProgressDialog();
+                                                dismissProgressDialog();
                                                 Toast.makeText(SettingsActivity.this,
                                                         "Upload error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                                             }
@@ -286,7 +318,7 @@ public class SettingsActivity extends AppCompatActivity {
                             @Override
                             public void onError(Throwable t) {
                                 if (isFinishing() || isDestroyed()) return;
-                                progressDialog.dismissProgressDialog();
+                                dismissProgressDialog();
                                 Toast.makeText(SettingsActivity.this,
                                         "Backup error: " + t.getMessage(), Toast.LENGTH_LONG).show();
                             }
@@ -295,7 +327,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             @Override
             public void onRequiresResolution(android.app.PendingIntent pendingIntent) {
-                progressDialog.dismissProgressDialog();
+                dismissProgressDialog();
                 try {
                     IntentSenderRequest request = new IntentSenderRequest.Builder(pendingIntent).build();
                     authorizationLauncher.launch(request);
@@ -307,7 +339,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             @Override
             public void onError(Exception e) {
-                progressDialog.dismissProgressDialog();
+                dismissProgressDialog();
                 pendingAction = Action.NONE;
                 Toast.makeText(SettingsActivity.this, "Authorization failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
@@ -315,9 +347,9 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void performCloudRestore() {
+        if (progressDialog != null) return;
         pendingAction = Action.RESTORE;
-        ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
-        progressDialog.startProgressDialog(getString(R.string.google_drive_restore_progress));
+        showProgressDialog(getString(R.string.google_drive_restore_progress));
 
         GoogleDriveBackupManager manager = getBackupManager();
         manager.requestAuthorization(this, new GoogleDriveBackupManager.AuthorizationCallback() {
@@ -326,55 +358,35 @@ public class SettingsActivity extends AppCompatActivity {
                 pendingAction = Action.NONE;
                 manager.findLatestBackup(accessToken, new GoogleDriveBackupManager.FindBackupCallback() {
                     @Override
-                    public void onFound(String fileId, String modifiedTime) {
-                        manager.downloadBackup(accessToken, fileId, new GoogleDriveBackupManager.DownloadCallback() {
-                            @Override
-                            public void onSuccess(File downloadedFile) {
-                                if (isFinishing() || isDestroyed()) return;
-                                // Parsing the XML and inserting every row used to run on the main
-                                // thread through RecoverHelper; it now runs on the repository pool.
-                                BirdaysRepository.getInstance(SettingsActivity.this).restoreBackup(
-                                        Uri.fromFile(downloadedFile),
-                                        new BirdaysRepository.Callback<Integer>() {
-                                            @Override
-                                            public void onSuccess(Integer inserted) {
-                                                if (isFinishing() || isDestroyed()) return;
-                                                progressDialog.dismissProgressDialog();
-                                                Utils.notifyWidget(SettingsActivity.this);
-                                                Toast.makeText(SettingsActivity.this,
-                                                        R.string.records_recovered, Toast.LENGTH_LONG).show();
-                                            }
+                    public void onFound(BackupMetadata metadata) {
+                        manager.downloadBackup(accessToken, metadata.getFileId(),
+                                new GoogleDriveBackupManager.DownloadCallback() {
+                                    @Override
+                                    public void onSuccess(File downloadedFile) {
+                                        if (isFinishing() || isDestroyed()) return;
+                                        prepareRestore(metadata, downloadedFile);
+                                    }
 
-                                            @Override
-                                            public void onError(Throwable t) {
-                                                if (isFinishing() || isDestroyed()) return;
-                                                progressDialog.dismissProgressDialog();
-                                                Toast.makeText(SettingsActivity.this,
-                                                        R.string.recover_records_error, Toast.LENGTH_LONG).show();
-                                            }
-                                        });
-                            }
-
-                            @Override
-                            public void onError(Exception e) {
-                                if (isFinishing() || isDestroyed()) return;
-                                progressDialog.dismissProgressDialog();
-                                Toast.makeText(SettingsActivity.this, "Download error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        });
+                                    @Override
+                                    public void onError(Exception e) {
+                                        if (isFinishing() || isDestroyed()) return;
+                                        dismissProgressDialog();
+                                        Toast.makeText(SettingsActivity.this, "Download error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                });
                     }
 
                     @Override
                     public void onNotFound() {
                         if (isFinishing() || isDestroyed()) return;
-                        progressDialog.dismissProgressDialog();
+                        dismissProgressDialog();
                         Toast.makeText(SettingsActivity.this, "File not found", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onError(Exception e) {
                         if (isFinishing() || isDestroyed()) return;
-                        progressDialog.dismissProgressDialog();
+                        dismissProgressDialog();
                         Toast.makeText(SettingsActivity.this, "Search error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
@@ -384,7 +396,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onRequiresResolution(android.app.PendingIntent pendingIntent) {
                 // The consent screen replaces this activity's window; leaving the progress
                 // dialog up would strand it behind the Google UI on return.
-                progressDialog.dismissProgressDialog();
+                dismissProgressDialog();
                 try {
                     IntentSenderRequest request = new IntentSenderRequest.Builder(pendingIntent).build();
                     authorizationLauncher.launch(request);
@@ -396,22 +408,124 @@ public class SettingsActivity extends AppCompatActivity {
 
             @Override
             public void onError(Exception e) {
-                progressDialog.dismissProgressDialog();
+                dismissProgressDialog();
                 pendingAction = Action.NONE;
                 Toast.makeText(SettingsActivity.this, "Authorization failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private enum Action {NONE, BACKUP, RESTORE}
+    /**
+     * Parses the downloaded backup on the repository pool. Nothing is written to the database: the
+     * records are only held in memory until the user confirms the restore.
+     */
+    private void prepareRestore(BackupMetadata metadata, File downloadedFile) {
+        BirdaysRepository.getInstance(this).prepareBackup(Uri.fromFile(downloadedFile),
+                new BirdaysRepository.Callback<>() {
+                    @Override
+                    public void onSuccess(BirdaysRepository.PreparedBackup prepared) {
+                        if (isFinishing() || isDestroyed()) return;
+                        dismissProgressDialog();
+                        showRestoreConfirmation(metadata, prepared);
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        dismissProgressDialog();
+                        Toast.makeText(SettingsActivity.this,
+                                R.string.recover_records_error, Toast.LENGTH_LONG).show();
+                    }
+                });
+    }
+
+    /**
+     * The backup is applied only after this dialog is confirmed. The count comes from the file's
+     * {@code appProperties}; when Drive did not store it, the number of records parsed from the
+     * downloaded file is shown instead.
+     */
+    private void showRestoreConfirmation(BackupMetadata metadata,
+                                         BirdaysRepository.PreparedBackup prepared) {
+        Integer recordCount = metadata.resolveRecordCount(prepared.getRecordCount());
+        boolean fallbackUsed = !metadata.hasRecordCount();
+
+        long modifiedTime = metadata.getModifiedTime();
+        String date = modifiedTime > BackupMetadata.UNKNOWN_MODIFIED_TIME
+                ? Utils.getDateTime(modifiedTime)
+                : getString(R.string.restore_unknown);
+
+        Log.d(TAG, "Restore confirmation: modifiedTime=" + modifiedTime
+                + " (" + date + "), recordCount=" + (recordCount != null ? recordCount : "unknown")
+                + ", appProperties fallback " + (fallbackUsed ? "used" : "not needed")
+                + (fallbackUsed ? ", records parsed from the file: " + prepared.getRecordCount() : ""));
+
+        String countText = recordCount != null
+                ? String.valueOf(recordCount)
+                : getString(R.string.restore_unknown);
+
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.restore_confirm_title)
+                .setMessage(getString(R.string.restore_confirm_message, date, countText))
+                .setPositiveButton(R.string.restore_button,
+                        (dialog, which) -> applyRestore(prepared))
+                .setNegativeButton(R.string.cancel_button, null)
+                .show();
+    }
+
+    private void applyRestore(BirdaysRepository.PreparedBackup prepared) {
+        showProgressDialog(getString(R.string.google_drive_restore_progress));
+
+        BirdaysRepository.getInstance(this).restoreBackup(prepared,
+                new BirdaysRepository.Callback<>() {
+                    @Override
+                    public void onSuccess(Integer inserted) {
+                        if (isFinishing() || isDestroyed()) return;
+                        dismissProgressDialog();
+                        Utils.notifyWidget(SettingsActivity.this);
+                        Toast.makeText(SettingsActivity.this,
+                                R.string.records_recovered, Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        dismissProgressDialog();
+                        Toast.makeText(SettingsActivity.this,
+                                R.string.recover_records_error, Toast.LENGTH_LONG).show();
+                    }
+                });
+    }
+
+    /**
+     * Replaces any dialog that is already on screen. Without this a second tap on an import or a
+     * backup row during a slow request attached a second, non-cancelable dialog to the activity.
+     */
+    private void showProgressDialog(String message) {
+        if (isFinishing() || isDestroyed()) return;
+        dismissProgressDialog();
+        progressDialog = new ProgressDialogHelper(this);
+        progressDialog.startProgressDialog(message);
+    }
+
+    private void dismissProgressDialog() {
+        if (progressDialog != null) {
+            progressDialog.dismissProgressDialog();
+            progressDialog = null;
+        }
+    }
 
     @Override
     protected void onDestroy() {
+        // The progress dialog is not cancelable, so it must be dismissed before the activity
+        // window is torn down; otherwise it is left attached to a destroyed activity.
+        dismissProgressDialog();
         if (backupManager != null) {
             backupManager.close();
         }
         super.onDestroy();
     }
+
+    private enum Action {NONE, BACKUP, RESTORE}
 
     public static class BirdaysPreferenceFragment extends PreferenceFragmentCompat
             implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -452,7 +566,7 @@ public class SettingsActivity extends AppCompatActivity {
             setPreferencesFromResource(R.xml.preferences, rootKey);
 
             if (getActivity() == null) return;
-            preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            preferences = BirdaysPreferencesManager.getDefaultSharedPreferences(getActivity());
 
             Preference addNotifPref = findPreference(Constants.ADDITIONAL_NOTIFICATION_KEY);
             if (addNotifPref != null) {
@@ -465,32 +579,25 @@ public class SettingsActivity extends AppCompatActivity {
 
             Preference timePref = findPreference(Constants.NOTIFICATION_TIME_KEY);
             if (timePref != null) {
-                long savedTime = preferences.getLong(Constants.NOTIFICATION_TIME_KEY, 645703200000L - Utils.getTimeOffset());
-                timePref.setSummary(DateFormat.getTimeFormat(getActivity()).format(new Date(savedTime)));
+                String savedTime = Utils.getNotificationTime(preferences);
+                timePref.setSummary(Utils.getNotificationTimeSummary(getActivity(), savedTime));
                 timePref.setOnPreferenceClickListener(preference -> {
                     if (getActivity() == null) return true;
-                    long time = preferences.getLong(Constants.NOTIFICATION_TIME_KEY, 645703200000L - Utils.getTimeOffset());
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.setTimeInMillis(time);
-                    int hour = calendar.get(Calendar.HOUR_OF_DAY);
-                    int minute = calendar.get(Calendar.MINUTE);
+                    int[] time =
+                            Utils.parseNotificationTime(Utils.getNotificationTime(preferences));
 
                     MaterialTimePicker timePicker = new MaterialTimePicker.Builder()
                             .setTimeFormat(DateFormat.is24HourFormat(getActivity())
                                     ? TimeFormat.CLOCK_24H : TimeFormat.CLOCK_12H)
-                            .setHour(hour)
-                            .setMinute(minute)
+                            .setHour(time[0])
+                            .setMinute(time[1])
                             .setTitleText(R.string.notifications_time)
                             .build();
                     timePicker.addOnPositiveButtonClickListener(picker -> {
-                        Calendar cal = Calendar.getInstance();
-                        cal.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-                        cal.set(Calendar.MINUTE, timePicker.getMinute());
-                        cal.set(Calendar.SECOND, 0);
-                        cal.set(Calendar.MILLISECOND, 0);
-                        long newTime = cal.getTimeInMillis();
-                        preferences.edit().putLong(Constants.NOTIFICATION_TIME_KEY, newTime).apply();
-                        timePref.setSummary(DateFormat.getTimeFormat(getActivity()).format(new Date(newTime)));
+                        Utils.setNotificationTime(preferences,
+                                timePicker.getHour(), timePicker.getMinute());
+                        timePref.setSummary(Utils.getNotificationTimeSummary(getActivity(),
+                                Utils.getNotificationTime(preferences)));
                         onSharedPreferenceChanged(preferences, Constants.NOTIFICATION_TIME_KEY);
                     });
                     timePicker.show(getParentFragmentManager(), TIME_PICKER_TAG);
@@ -534,7 +641,12 @@ public class SettingsActivity extends AppCompatActivity {
             if (importPref != null) {
                 importPref.setOnPreferenceClickListener(preference -> {
                     SettingsActivity activity = (SettingsActivity) getActivity();
-                    if (activity != null && !preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
+                    if (activity == null) return true;
+                    // A tap always has to produce a result: either the import runs, the permission
+                    // is requested, or the user is told why the import is blocked.
+                    if (preferences.getBoolean(Constants.WRONG_CONTACTS_FORMAT, false)) {
+                        Toast.makeText(activity, R.string.loading_contacts_error, Toast.LENGTH_LONG).show();
+                    } else {
                         activity.startContactImport();
                     }
                     return true;
@@ -664,7 +776,7 @@ public class SettingsActivity extends AppCompatActivity {
             if (donatePref != null) {
                 donatePref.setOnPreferenceClickListener(preference -> {
                     if (getActivity() != null) {
-                        Utils.openBrowser(getActivity(), getString(R.string.donate_url));
+                        DonateHelper.openDonatePage(getActivity());
                     }
                     return true;
                 });
@@ -683,7 +795,7 @@ public class SettingsActivity extends AppCompatActivity {
             if (privacyPref != null) {
                 privacyPref.setOnPreferenceClickListener(preference -> {
                     if (getActivity() != null)
-                        Utils.openBrowser(getActivity(), getString(R.string.privacy_policy_link));
+                        DonateHelper.openPrivacyPolicy(getActivity());
                     return true;
                 });
             }
@@ -719,11 +831,18 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             if (getActivity() == null) return;
-            final AlarmHelper alarmHelper = new AlarmHelper(getActivity());
-            List<Person> persons;
-            try (DbHelper dbHelper = new DbHelper(getActivity())) {
-                persons = dbHelper.query().getPersons();
+
+            // AppCompatDelegate recreates the started activities itself, so this must run on the
+            // main thread and nothing else is needed here.
+            if (Constants.NIGHT_MODE_KEY.equals(key)) {
+                Utils.setupDayNightTheme(sharedPreferences);
+                return;
             }
+
+            // Everything below touches the database and re-arms alarms; it runs on a worker
+            // thread with an application context so a slow read cannot block the settings UI.
+            final Context appContext = getActivity().getApplicationContext();
+
             switch (key) {
                 case Constants.NOTIFICATIONS_KEY:
                     final boolean isChecked = sharedPreferences.getBoolean(Constants.NOTIFICATIONS_KEY, false);
@@ -734,14 +853,15 @@ public class SettingsActivity extends AppCompatActivity {
                     ExecutorService executor = Executors.newSingleThreadExecutor();
                     try {
                         executor.execute(() -> {
-                            if (!isAdded() || getActivity() == null) return;
-                            if (isChecked) {
+                            final AlarmHelper alarmHelper = new AlarmHelper(appContext);
+                            try (DbHelper dbHelper = new DbHelper(appContext)) {
+                                List<Person> persons = dbHelper.query().getPersons();
                                 for (Person person : persons) {
-                                    alarmHelper.setAlarms(person);
-                                }
-                            } else {
-                                for (Person person : persons) {
-                                    alarmHelper.removeAlarms(person.getTimeStamp());
+                                    if (isChecked) {
+                                        alarmHelper.setAlarms(person);
+                                    } else {
+                                        alarmHelper.removeAlarms(person.getTimeStamp());
+                                    }
                                 }
                             }
                         });
@@ -751,12 +871,7 @@ public class SettingsActivity extends AppCompatActivity {
                     break;
                 case Constants.NOTIFICATION_TIME_KEY:
                 case Constants.ADDITIONAL_NOTIFICATION_KEY:
-                    restartAlarms(alarmHelper, persons);
-                    break;
-                case Constants.NIGHT_MODE_KEY:
-                    // AppCompatDelegate recreates the started activities itself, so the settings
-                    // screen and its scroll position are restored by the framework
-                    Utils.setupDayNightTheme(sharedPreferences);
+                    restartAlarms(appContext);
                     break;
             }
         }
@@ -789,19 +904,22 @@ public class SettingsActivity extends AppCompatActivity {
         public void onDestroy() {
             if (rewardedVideo != null) {
                 rewardedVideo.destroy();
+                rewardedVideo = null;
             }
             super.onDestroy();
         }
 
-        private void restartAlarms(final AlarmHelper alarmHelper, final List<Person> persons) {
+        private void restartAlarms(final Context appContext) {
             //noinspection resource
             ExecutorService executor = Executors.newSingleThreadExecutor();
             try {
                 executor.execute(() -> {
-                    if (!isAdded() || getActivity() == null) return;
-                    for (Person person : persons) {
-                        alarmHelper.removeAlarms(person.getTimeStamp());
-                        alarmHelper.setAlarms(person);
+                    final AlarmHelper alarmHelper = new AlarmHelper(appContext);
+                    try (DbHelper dbHelper = new DbHelper(appContext)) {
+                        for (Person person : dbHelper.query().getPersons()) {
+                            alarmHelper.removeAlarms(person.getTimeStamp());
+                            alarmHelper.setAlarms(person);
+                        }
                     }
                 });
             } finally {

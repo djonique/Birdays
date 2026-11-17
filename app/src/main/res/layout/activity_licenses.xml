@@ -101,6 +101,11 @@
                 style="@style/Licenses.Secondary.TextView"
                 android:text="@string/bsd_3_clause_license" />
 
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:text="@string/apache_libraries_note" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -124,6 +129,20 @@
             <TextView
                 style="@style/Licenses.Secondary.TextView"
                 android:text="@string/yandex_ads_terms" />
+
+            <TextView
+                style="@style/Licenses.Primary.TextView"
+                android:paddingTop="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:text="@string/appmetrica_by_yandex" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/appmetrica_copyright" />
+
+            <TextView
+                style="@style/Licenses.Secondary.TextView"
+                android:text="@string/appmetrica_terms" />
 
             <TextView
                 style="@style/Licenses.Primary.TextView"

@@ -6,6 +6,7 @@
 
 package com.djonique.birdays.activities;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -30,7 +31,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,7 +40,9 @@ import com.djonique.birdays.ad.NativeAdHelper;
 import com.djonique.birdays.adapters.FamousFragmentAdapter;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.repository.BirdaysRepository;
+import com.djonique.birdays.utils.BirdaysPreferencesManager;
 import com.djonique.birdays.utils.Constants;
+import com.djonique.birdays.utils.DeletedRecord;
 import com.djonique.birdays.utils.ReviewHelper;
 import com.djonique.birdays.utils.Utils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -48,7 +50,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
-import com.yandex.mobile.ads.common.AdRequest;
 import com.yandex.mobile.ads.common.AdRequestError;
 import com.yandex.mobile.ads.nativeads.NativeAd;
 import com.yandex.mobile.ads.nativeads.NativeAdLoadListener;
@@ -59,6 +60,14 @@ import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
 
+    private final ActivityResultLauncher<Intent> editActivityLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+                if (result.getResultCode() != RESULT_OK) return;
+                Toast.makeText(this, R.string.record_edited, Toast.LENGTH_SHORT).show();
+                // Recreate instead of launching a second DetailActivity on top of this one: the
+                // screen reloads the edited person and the back stack keeps a single detail entry.
+                recreate();
+            });
     private ImageView ivSeasonPicture;
     private TextView tvAge;
     private TextView tvDate;
@@ -73,21 +82,15 @@ public class DetailActivity extends AppCompatActivity {
     private RelativeLayout rlEmail;
     private TextView tvEmail;
     private RecyclerView recyclerView;
-
+    private Toolbar toolbar;
+    private ImageButton btnPhone;
+    private ImageButton btnChat;
+    private ImageButton btnEmail;
     private com.yandex.mobile.ads.nativeads.NativeAd mNativeAd;
     private Person person;
     private long timeStamp, date;
     private String phoneNumber, email, displayedAge;
     private boolean yearUnknown;
-
-    private final ActivityResultLauncher<Intent> editActivityLauncher =
-            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-                if (result.getResultCode() != RESULT_OK) return;
-                Toast.makeText(this, R.string.record_edited, Toast.LENGTH_SHORT).show();
-                // Recreate instead of launching a second DetailActivity on top of this one: the
-                // screen reloads the edited person and the back stack keeps a single detail entry.
-                recreate();
-            });
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -96,7 +99,7 @@ public class DetailActivity extends AppCompatActivity {
         Utils.setupSystemBarAppearance(this);
 
         CoordinatorLayout container = findViewById(R.id.container_detail);
-        Toolbar toolbar = findViewById(R.id.toolbar_detail);
+        toolbar = findViewById(R.id.toolbar_detail);
         ivSeasonPicture = findViewById(R.id.imageview_detail_picture);
         tvAge = findViewById(R.id.textview_detail_age);
         tvDate = findViewById(R.id.textview_detail_date);
@@ -112,11 +115,11 @@ public class DetailActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.textview_detail_email);
         recyclerView = findViewById(R.id.recyclerview_detail);
         FloatingActionButton fabDetail = findViewById(R.id.fab_detail);
-        ImageButton btnPhone = findViewById(R.id.imagebutton_detail_phone);
-        ImageButton btnChat = findViewById(R.id.imagebutton_detail_chat);
-        ImageButton btnEmail = findViewById(R.id.imagebutton_detail_email);
+        btnPhone = findViewById(R.id.imagebutton_detail_phone);
+        btnChat = findViewById(R.id.imagebutton_detail_chat);
+        btnEmail = findViewById(R.id.imagebutton_detail_email);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences preferences = BirdaysPreferencesManager.getDefaultSharedPreferences(this);
         boolean adEnabled = preferences.getBoolean(getString(R.string.show_ads_key), true);
         if (BuildConfig.DEBUG) {
             Log.d("DetailActivity", "adEnabled = " + adEnabled);
@@ -130,6 +133,7 @@ public class DetailActivity extends AppCompatActivity {
                 loadNativeAd(nativeAdView);
             }
         }
+
 
         Utils.setupDayNightTheme(preferences);
 
@@ -148,10 +152,26 @@ public class DetailActivity extends AppCompatActivity {
 
         if (fabDetail != null) fabDetail.setOnClickListener(v -> starEditActivity());
 
+        loadPerson();
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                handleBackPressed();
+            }
+        });
+    }
+
+    /**
+     * Loads the record identified by {@link #timeStamp}. Called on creation and again from
+     * {@link #onNewIntent(Intent)} when a notification opens another person on top of this screen
+     * (the activity is launched with SINGLE_TOP | CLEAR_TOP).
+     */
+    private void loadPerson() {
         // The record is read on a worker thread; every view is touched only after the lifecycle
         // re-check below, so a slow read cannot update a finished screen.
         BirdaysRepository.getInstance(this).getPerson(timeStamp,
-                new BirdaysRepository.Callback<Person>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(Person result) {
                         if (isFinishing() || isDestroyed()) return;
@@ -183,13 +203,14 @@ public class DetailActivity extends AppCompatActivity {
                         finish();
                     }
                 });
+    }
 
-        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
-            @Override
-            public void handleOnBackPressed() {
-                handleBackPressed();
-            }
-        });
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
+        loadPerson();
     }
 
     @Override
@@ -211,8 +232,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void handleBackPressed() {
-        // Closing a record must not be interrupted by a full-screen ad: interstitials on Back
-        // are both a poor experience and against the ad network's placement policy.
         closeActivity();
     }
 
@@ -224,10 +243,21 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        releaseNativeAd();
+        super.onDestroy();
+    }
+
+    /**
+     * Yandex Mobile Ads 8.6.0 has no {@code destroy()} on {@code NativeAd} (verified against the
+     * AAR's class file): the SDK's lifecycle contract is to detach the listener and drop every
+     * reference the app holds. The ad then becomes eligible for collection together with this
+     * screen instead of keeping the previous activity's view hierarchy reachable.
+     */
+    private void releaseNativeAd() {
         if (mNativeAd != null) {
             mNativeAd.setNativeAdEventListener(null);
+            mNativeAd = null;
         }
-        super.onDestroy();
     }
 
     private void loadNativeAd(@NonNull NativeAdView nativeAdView) {
@@ -235,16 +265,21 @@ public class DetailActivity extends AppCompatActivity {
         com.djonique.birdays.ad.NativeAdCache.getInstance().loadAd(this, new NativeAdLoadListener() {
             @Override
             public void onAdLoaded(@NonNull NativeAd nativeAd) {
+                // The request outlives the screen when the user backs out while it is in flight.
+                if (isFinishing() || isDestroyed()) return;
+                releaseNativeAd();
                 mNativeAd = nativeAd;
                 if (NativeAdHelper.bindNativeAd(nativeAdView, nativeAd)) {
                     nativeAdView.setVisibility(View.VISIBLE);
                 } else {
+                    releaseNativeAd();
                     nativeAdView.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {
+                if (isFinishing() || isDestroyed()) return;
                 if (BuildConfig.DEBUG) {
                     Log.e("DetailActivity", "Native ad failed to load: code=" + adRequestError.getCode() + ", desc=" + adRequestError.getDescription());
                 }
@@ -264,7 +299,9 @@ public class DetailActivity extends AppCompatActivity {
             rlDaysSinceBirthday.setVisibility(View.GONE);
         } else {
             tvDate.setText(Utils.getDate(date));
+            tvAge.setVisibility(View.VISIBLE);
             tvAge.setText(String.valueOf(displayedAge.equals("0") ? Utils.getCurrentAge(date) : Utils.getFutureAge(date)));
+            rlDaysSinceBirthday.setVisibility(View.VISIBLE);
             tvDaysSinceBirthday.setText(Utils.daysSinceBirthday(date));
         }
 
@@ -272,18 +309,25 @@ public class DetailActivity extends AppCompatActivity {
         tvZodiacSign.setText(getString(zodiacId));
         ivZodiacSign.setImageResource(Utils.getZodiacImage(zodiacId));
 
-        if (isEmpty(phoneNumber) && isEmpty(email))
+        // Every visibility is reset explicitly: onNewIntent() reuses these views for another
+        // record, so a branch left over from the previous person must not leak into the next.
+        if (isEmpty(phoneNumber) && isEmpty(email)) {
             cardViewInfo.setVisibility(View.GONE);
+        } else {
+            cardViewInfo.setVisibility(View.VISIBLE);
+        }
 
         if (isEmpty(phoneNumber)) {
             rlPhoneNumber.setVisibility(View.GONE);
         } else {
+            rlPhoneNumber.setVisibility(View.VISIBLE);
             tvPhoneNumber.setText(String.valueOf(person.getPhoneNumber()));
         }
 
         if (isEmpty(email)) {
             rlEmail.setVisibility(View.GONE);
         } else {
+            rlEmail.setVisibility(View.VISIBLE);
             tvEmail.setText(person.getEmail());
         }
     }
@@ -300,7 +344,7 @@ public class DetailActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         BirdaysRepository.getInstance(this).getFamousBornThisDay(date,
-                new BirdaysRepository.Callback<List<Person>>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(List<Person> famousPersons) {
                         if (isFinishing() || isDestroyed()) return;
@@ -339,31 +383,45 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void deletePersonDialog(final Person person) {
+        if (person == null) return;
+
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
         builder.setMessage(getString(R.string.delete_record_confirm, person.getName()));
         builder.setPositiveButton(getString(R.string.ok_button), (dialog, which) -> {
             dialog.dismiss();
-            BirdaysRepository.getInstance(this).removePerson(timeStamp,
-                    new BirdaysRepository.Callback<Boolean>() {
-                        @Override
-                        public void onSuccess(Boolean result) {
-                            if (isFinishing() || isDestroyed()) return;
-                            Utils.notifyWidget(getApplicationContext());
-                            finish();
-                            Utils.overrideCloseTransition(DetailActivity.this,
-                                    R.anim.activity_primary_in, R.anim.activity_secondary_out);
-                        }
-
-                        @Override
-                        public void onError(Throwable t) {
-                            if (isFinishing() || isDestroyed()) return;
-                            Toast.makeText(DetailActivity.this, R.string.recover_records_error,
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    });
+            deletePerson();
         });
         builder.setNegativeButton(R.string.cancel_button, (dialog, which) -> dialog.cancel());
         builder.show();
+    }
+
+    /**
+     * Deletes the record and closes the screen. The deleted record is handed to the list screen,
+     * which shows the "Record deleted" snackbar with Undo once this screen is gone. The write is
+     * awaited before closing so the list reload behind it cannot see the record anymore.
+     */
+    private void deletePerson() {
+        BirdaysRepository.getInstance(this).removePerson(timeStamp,
+                new BirdaysRepository.Callback<>() {
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        // The widget and the list mirror the database, so they are updated even
+                        // when this screen is already closing.
+                        Utils.notifyWidget(getApplicationContext());
+                        DeletedRecord.set(person);
+                        if (isFinishing() || isDestroyed()) return;
+                        finish();
+                        Utils.overrideCloseTransition(DetailActivity.this,
+                                R.anim.activity_primary_in, R.anim.activity_secondary_out);
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        Toast.makeText(DetailActivity.this, R.string.recover_records_error,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void requestInAppReview() {
@@ -382,22 +440,40 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void makeCall() {
-        startActivity(Intent.createChooser(new Intent(Intent.ACTION_DIAL,
-                Uri.parse(Constants.TEL + phoneNumber)), null));
+        if (phoneNumber == null || phoneNumber.isEmpty()) return;
+        try {
+            String cleanNumber = phoneNumber.replaceAll("[^0-9+]", "");
+            Intent intent = new Intent(Intent.ACTION_DIAL,
+                    Uri.parse(Constants.TEL + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void sendMessage() {
-        Intent intent = new Intent(Intent.ACTION_SENDTO)
-                .putExtra(Constants.ADDRESS, phoneNumber)
-                .setData(Uri.parse(Constants.SMSTO + phoneNumber));
-        startActivity(Intent.createChooser(intent, null));
+        if (phoneNumber == null || phoneNumber.isEmpty()) return;
+        try {
+            String cleanNumber = phoneNumber.replaceAll("[^0-9+]", "");
+            Intent intent = new Intent(Intent.ACTION_SENDTO)
+                    .putExtra(Constants.ADDRESS, phoneNumber)
+                    .setData(Uri.parse(Constants.SMSTO + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
+            startActivity(Intent.createChooser(intent, null));
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void sendEmail() {
-        Intent intent = new Intent(Intent.ACTION_SENDTO)
-                .putExtra(Intent.EXTRA_EMAIL, new String[]{email})
-                .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.happy_birthday))
-                .setData(Uri.parse(Constants.MAILTO + email));
-        startActivity(Intent.createChooser(intent, null));
+        if (email == null || email.isEmpty()) return;
+        try {
+            Intent intent = new Intent(Intent.ACTION_SENDTO)
+                    .putExtra(Intent.EXTRA_EMAIL, new String[]{email})
+                    .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.happy_birthday))
+                    .setData(Uri.parse(Constants.MAILTO + email));
+            startActivity(Intent.createChooser(intent, null));
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+        }
     }
 }

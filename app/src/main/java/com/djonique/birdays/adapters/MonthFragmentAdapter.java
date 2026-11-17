@@ -7,6 +7,7 @@
 package com.djonique.birdays.adapters;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -50,12 +52,42 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @SuppressLint("NotifyDataSetChanged")
     public void setNativeAd(NativeAd nativeAd) {
+        // addMonthPersonsFromDb()/findPerson() re-apply the same ad after every load; refreshing
+        // the whole list for an unchanged reference caused a second full rebind per search.
+        if (this.nativeAd == nativeAd) return;
         this.nativeAd = nativeAd;
         notifyDataSetChanged();
     }
 
+    /**
+     * Drops the reference without touching the list; used when the fragment view is destroyed.
+     */
+    public void clearNativeAd() {
+        nativeAd = null;
+    }
+
     private int getAdPosition() {
         return Math.min(2, persons.size());
+    }
+
+    /**
+     * The adapter list contains an extra ad row when a native ad is shown, so a person index and
+     * an adapter position are not the same thing. Kept package-private so the position fix can be
+     * exercised without a real ad view.
+     */
+    boolean isAdRowPresent() {
+        return nativeAd != null;
+    }
+
+    /**
+     * Maps a person index to its adapter position. Everything at or after the ad row is shifted
+     * down by one; the ad itself sits between the first and the remaining persons.
+     */
+    private int adapterPositionFor(int personIndex) {
+        if (isAdRowPresent() && personIndex >= getAdPosition()) {
+            return personIndex + 1;
+        }
+        return personIndex;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -67,8 +99,13 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
         }
     }
 
+    /**
+     * Replaces the list in one pass. The previous clear-then-add sequence produced two full
+     * refreshes for every load and briefly blanked the screen while the read was in flight.
+     */
     @SuppressLint("NotifyDataSetChanged")
-    public void addPersons(List<Person> personList) {
+    public void replacePersons(List<Person> personList) {
+        persons.clear();
         for (Person person : personList) {
             if (Utils.isCurrentMonth(person.getDate())) {
                 persons.add(person);
@@ -80,7 +117,7 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public int getItemViewType(int position) {
-        if (nativeAd != null && position == getAdPosition()) {
+        if (isAdRowPresent() && position == getAdPosition()) {
             return TYPE_AD;
         }
         return TYPE_PERSON;
@@ -144,10 +181,16 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
 
         if (email != null && !email.isEmpty()) {
             enableButton(cardViewHolder.btnEmail);
-            cardViewHolder.btnEmail.setOnClickListener(v ->
-                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_SENDTO)
+            cardViewHolder.btnEmail.setOnClickListener(v -> {
+                try {
+                    Intent intent = new Intent(Intent.ACTION_SENDTO)
                             .putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.happy_birthday))
-                            .setData(Uri.parse(Constants.MAILTO + email)), null)));
+                            .setData(Uri.parse(Constants.MAILTO + email));
+                    context.startActivity(Intent.createChooser(intent, null));
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(context, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+                }
+            });
         } else {
             disableButton(cardViewHolder.btnEmail);
         }
@@ -155,13 +198,27 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
         if (phoneNumber != null && !phoneNumber.isEmpty()) {
             enableButton(cardViewHolder.btnCall);
             enableButton(cardViewHolder.btnChat);
-            cardViewHolder.btnCall.setOnClickListener(v ->
-                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_DIAL,
-                            Uri.parse(Constants.TEL + phoneNumber)), null)));
+            cardViewHolder.btnCall.setOnClickListener(v -> {
+                try {
+                    String cleanNumber = phoneNumber.replaceAll("[^0-9+]", "");
+                    Intent intent = new Intent(Intent.ACTION_DIAL,
+                            Uri.parse(Constants.TEL + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
+                    context.startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(context, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+                }
+            });
 
-            cardViewHolder.btnChat.setOnClickListener(v ->
-                    context.startActivity(Intent.createChooser(new Intent(Intent.ACTION_SENDTO)
-                            .setData(Uri.parse(Constants.SMSTO + phoneNumber)), null)));
+            cardViewHolder.btnChat.setOnClickListener(v -> {
+                try {
+                    String cleanNumber = phoneNumber.replaceAll("[^0-9+]", "");
+                    Intent intent = new Intent(Intent.ACTION_SENDTO)
+                            .setData(Uri.parse(Constants.SMSTO + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
+                    context.startActivity(Intent.createChooser(intent, null));
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(context, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+                }
+            });
         } else {
             disableButton(cardViewHolder.btnCall);
             disableButton(cardViewHolder.btnChat);
@@ -169,8 +226,19 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
 
     @Override
+    public void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
+        if (holder.getItemViewType() == TYPE_AD) {
+            // A detached ad row is hidden so a recycled holder never shows a stale creative
+            // before the next bind. NativeAd in 8.6.0 exposes no destroy(): the owning screen is
+            // responsible for dropping its reference (see MonthFragment.onDestroyView()).
+            holder.itemView.setVisibility(View.GONE);
+        }
+        super.onViewRecycled(holder);
+    }
+
+    @Override
     public int getItemCount() {
-        return persons.size() + (nativeAd != null ? 1 : 0);
+        return persons.size() + (isAdRowPresent() ? 1 : 0);
     }
 
     public void removePerson(long timeStamp) {
@@ -178,19 +246,23 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
             Person person = persons.get(i);
 
             if (person.getTimeStamp() == timeStamp) {
+                // The adapter position depends on the list size, so it has to be computed before
+                // the person is removed.
+                int adapterPosition = adapterPositionFor(i);
                 persons.remove(i);
-                notifyItemRemoved(i);
+                notifyItemRemoved(adapterPosition);
                 break;
             }
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void removeAllPersons() {
-        int oldSize = persons.size();
-        if (oldSize > 0) {
-            persons.clear();
-            notifyItemRangeRemoved(0, oldSize);
-        }
+        if (persons.isEmpty()) return;
+        // A range update would mix person indexes with adapter indexes (the ad row is still
+        // present), so the whole list is refreshed once instead.
+        persons.clear();
+        notifyDataSetChanged();
     }
 
     private void enableButton(ImageButton button) {

@@ -6,6 +6,7 @@
 
 package com.djonique.birdays.activities;
 
+import android.app.AlarmManager;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -53,8 +54,10 @@ public class HelpActivity extends AppCompatActivity {
         if (btnSendEmail != null) btnSendEmail.setText(R.string.send_email);
 
         if (btnOpenSettings != null)
-            btnOpenSettings.setOnClickListener(v -> openBatteryOptimization());
+            btnOpenSettings.setOnClickListener(v -> Utils.openAppSettings(this));
         if (btnSendEmail != null) btnSendEmail.setOnClickListener(v -> sendEmail());
+
+        setupExactAlarmButton();
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
@@ -63,6 +66,47 @@ public class HelpActivity extends AppCompatActivity {
                 Utils.overrideCloseTransition(HelpActivity.this, R.anim.activity_primary_in, R.anim.activity_secondary_out);
             }
         });
+    }
+
+    /**
+     * Exact-alarm access is a special app access, not a runtime permission: it can only be
+     * granted on the system screen opened by {@code ACTION_REQUEST_SCHEDULE_EXACT_ALARM}.
+     *
+     * <p>SCHEDULE_EXACT_ALARM requires a Play Policy declaration. When the user denies it,
+     * {@code AlarmHelper} keeps using the documented {@code setAndAllowWhileIdle} fallback, so
+     * reminders still arrive — just not to the exact minute. The row is only offered here, never
+     * as a startup dialog, and it is hidden once the access is granted.</p>
+     */
+    private void setupExactAlarmButton() {
+        AppCompatButton btnExactAlarm = findViewById(R.id.button_help_exact_alarm);
+        if (btnExactAlarm == null) return;
+
+        if (!needsExactAlarmPermission()) {
+            btnExactAlarm.setVisibility(View.GONE);
+            return;
+        }
+
+        btnExactAlarm.setText(R.string.help_exact_alarm);
+        btnExactAlarm.setOnClickListener(v -> requestExactAlarmPermission());
+    }
+
+    private boolean needsExactAlarmPermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return false;
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        return alarmManager != null && !alarmManager.canScheduleExactAlarms();
+    }
+
+    private void requestExactAlarmPermission() {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                startActivity(new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM,
+                        Uri.parse("package:" + getPackageName())));
+            }
+        } catch (ActivityNotFoundException e) {
+            // The fallback alarm scheduling still works on devices without this screen.
+            Toast.makeText(this, ACTIVITY_NOT_FOUND_EXCEPTION, Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -74,22 +118,18 @@ public class HelpActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void openBatteryOptimization() {
+    private void sendEmail() {
         try {
-            startActivity(Intent.createChooser(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS), null));
+            String email = getString(R.string.birdays_email);
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse(Constants.MAILTO + email));
+            intent.putExtra(Intent.EXTRA_SUBJECT, Build.MANUFACTURER + "/"
+                    + Build.MODEL + "/"
+                    + Build.VERSION.SDK_INT + "/"
+                    + getString(R.string.version_name));
+            startActivity(Intent.createChooser(intent, null));
         } catch (ActivityNotFoundException e) {
             Toast.makeText(this, ACTIVITY_NOT_FOUND_EXCEPTION, Toast.LENGTH_LONG).show();
         }
-    }
-
-    private void sendEmail() {
-        String email = getString(R.string.birdays_email);
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse(Constants.MAILTO + email));
-        intent.putExtra(Intent.EXTRA_SUBJECT, Build.MANUFACTURER + "/"
-                + Build.MODEL + "/"
-                + Build.VERSION.SDK_INT + "/"
-                + getString(R.string.version_name));
-        startActivity(Intent.createChooser(intent, null));
     }
 }

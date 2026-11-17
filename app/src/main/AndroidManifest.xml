@@ -12,6 +12,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -24,10 +25,25 @@
     <uses-permission
         android:name="android.permission.ACCESS_ADSERVICES_AD_ID"
         tools:node="remove" />
-    <!-- Merged in by an ads/HTTP dependency; no app code acquires a wake lock. -->
-    <uses-permission
-        android:name="android.permission.WAKE_LOCK"
-        tools:node="remove" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="smsto" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="sms" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+    </queries>
 
     <application
         android:name=".utils.BirdaysApplication"
@@ -41,7 +57,8 @@
         android:supportsRtl="true"
         android:theme="@style/BirdaysTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <!-- Firebase Messaging icon -->
+
+        <!-- Firebase Cloud Messaging icon -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_notification" />
@@ -57,6 +74,15 @@
             </intent-filter>
         </activity>
 
+        <!-- NewPersonActivity -->
+        <activity
+            android:name=".activities.NewPersonActivity"
+            android:exported="false"
+            android:label="@string/new_record"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/BirdaysTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
         <!-- DetailActivity -->
         <activity
             android:name=".activities.DetailActivity"
@@ -65,15 +91,6 @@
             android:parentActivityName=".activities.MainActivity"
             android:theme="@style/BirdaysTheme.NoActionBar" />
 
-        <!-- NewPersonActivity -->
-        <activity
-            android:name=".activities.NewPersonActivity"
-            android:exported="false"
-            android:label="@string/new_record"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/BirdaysTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden" />
-
         <!-- EditActivity -->
         <activity
             android:name=".activities.EditActivity"
@@ -81,7 +98,7 @@
             android:label="@string/editing_label"
             android:parentActivityName=".activities.DetailActivity"
             android:theme="@style/BirdaysTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
         <!-- SettingsActivity -->
         <activity
@@ -117,7 +134,15 @@
             android:name=".alarm.AlarmSetter"
             android:exported="false">
             <intent-filter>
+                <!-- Re-arm after device restart -->
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- Re-arm after an app update (nothing else clears the alarms the same way). -->
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <!-- The wall clock or the time zone changed, so every trigger time moved. -->
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <!-- The user granted exact-alarm access: replace the inexact fallbacks. -->
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
             </intent-filter>
         </receiver>
 

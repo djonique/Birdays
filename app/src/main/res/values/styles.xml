@@ -204,8 +204,12 @@
     <style name="CollapsingToolbarStyle">
         <item name="collapsedTitleGravity">left|center_horizontal</item>
         <item name="expandedTitleGravity">left|bottom</item>
-        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Birdays.CollapsingToolbar.Collapsed</item>
-        <item name="expandedTitleTextAppearance">@style/TextAppearance.Birdays.CollapsingToolbar.Expanded</item>
+        <item name="collapsedTitleTextAppearance">
+            @style/TextAppearance.Birdays.CollapsingToolbar.Collapsed
+        </item>
+        <item name="expandedTitleTextAppearance">
+            @style/TextAppearance.Birdays.CollapsingToolbar.Expanded
+        </item>
         <item name="expandedTitleTextColor">@android:color/white</item>
         <item name="collapsedTitleTextColor">@color/on_app_bar</item>
     </style>

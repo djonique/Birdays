@@ -45,18 +45,45 @@ def getAdUnitId(Properties props, String key, String defaultValue) {
     return value.replace('"', '')
 }
 
+// The check below is only meaningful when a release variant is actually requested. Gradle always
+// configures every build type, so failing unconditionally would break debug builds and IDE sync.
+def releaseVariantRequested = gradle.startParameter.taskNames.any {
+    it.toLowerCase().contains('release')
+}
+
+/**
+ * Fails the build unless a real (non-demo) ad unit id is configured. Demo ids must never reach
+ * a release build: the app would silently serve test ads to production users.
+ *
+ * <p>Declared as a closure (not a script method) so it captures the local `keystoreProperties`
+ * loaded above.</p>
+ */
+def requireReleaseAdId = { String key ->
+    def rawValue = localProperties.containsKey(key)
+            ? localProperties[key]
+            : (keystoreProperties.containsKey(key) ? keystoreProperties[key] : null)
+    def value = rawValue == null ? '' : rawValue.toString().replace('"', '').trim()
+    if (value.isEmpty() || value.startsWith('demo-')) {
+        throw new GradleException("Birdays: release ad unit id '" + key + "' is missing or still "
+                + "a demo id. Set it in local.properties (or keystore.properties) before "
+                + "building a release.")
+    }
+    return value
+}
+
 android {
     namespace = 'com.djonique.birdays'
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.djonique.birdays"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
         versionCode 19
         versionName "2.0.0"
         vectorDrawables.useSupportLibrary = true
         resValue "string", "version_name", versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildFeatures {
@@ -77,13 +104,18 @@ android {
     buildTypes {
         debug {
             minifyEnabled = false
-            buildConfigField "String", "INTERSTITIAL_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexInterstitialAdUnitIdDebug', 'demo-interstitial-yandex')}\""
             buildConfigField "String", "REWARDED_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexRewardedAdUnitIdDebug', 'demo-rewarded-yandex')}\""
             buildConfigField "String", "NATIVE_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexNativeAdUnitIdDebug', 'demo-native-content-yandex')}\""
         }
         release {
             if (hasReleaseSigning) {
                 signingConfig signingConfigs.release
+            } else if (releaseVariantRequested
+                    && !project.hasProperty('birdaysAllowUnsignedRelease')) {
+                throw new GradleException("Birdays: release signing is not configured "
+                        + "(keystore.properties is missing storeFile/storePassword/keyAlias/"
+                        + "keyPassword or the keystore file does not exist). Pass "
+                        + "-PbirdaysAllowUnsignedRelease to build an unsigned release on purpose.")
             } else {
                 logger.warn("Birdays: release signing is not configured (keystore.properties is " +
                         "missing storeFile/storePassword/keyAlias/keyPassword or the keystore " +
@@ -92,9 +124,17 @@ android {
             minifyEnabled = true
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "INTERSTITIAL_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexInterstitialAdUnitIdRelease', 'demo-interstitial-yandex')}\""
-            buildConfigField "String", "REWARDED_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexRewardedAdUnitIdRelease', 'demo-rewarded-yandex')}\""
-            buildConfigField "String", "NATIVE_AD_UNIT_ID", "\"${getAdUnitId(keystoreProperties, 'YandexNativeAdUnitIdRelease', 'demo-native-content-yandex')}\""
+
+            // Release builds require real ad unit ids; debug keeps the demo fallback above.
+            def rewardedAdId = releaseVariantRequested
+                    ? requireReleaseAdId('YandexRewardedAdUnitIdRelease')
+                    : getAdUnitId(keystoreProperties, 'YandexRewardedAdUnitIdRelease', 'demo-rewarded-yandex')
+            def nativeAdId = releaseVariantRequested
+                    ? requireReleaseAdId('YandexNativeAdUnitIdRelease')
+                    : getAdUnitId(keystoreProperties, 'YandexNativeAdUnitIdRelease', 'demo-native-content-yandex')
+
+            buildConfigField "String", "REWARDED_AD_UNIT_ID", "\"${rewardedAdId}\""
+            buildConfigField "String", "NATIVE_AD_UNIT_ID", "\"${nativeAdId}\""
         }
     }
 
@@ -124,9 +164,7 @@ dependencies {
     // Ads
     implementation 'com.yandex.android:mobileads:8.6.0'
 
-    // Google Identity & Credential Manager & Drive API & Play Review
-    implementation 'androidx.credentials:credentials:1.3.0'
-    implementation 'androidx.credentials:credentials-play-services-auth:1.3.0'
+    // Google Sign-In & Drive API & Play Review
     implementation 'com.google.android.gms:play-services-auth:21.2.0'
     implementation 'com.google.android.play:review:2.0.2'
     implementation 'com.google.api-client:google-api-client-android:2.6.0'
@@ -138,7 +176,16 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
 
+    // Local unit tests (JVM)
     testImplementation 'junit:junit:4.13.2'
+    // Context is mocked in Utils.daysLeft tests; no real Android calls are made on the JVM.
+    testImplementation 'org.mockito:mockito-core:5.14.2'
+
+    // Instrumented tests (run on a device/emulator)
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -6,9 +6,18 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 
+<!--
+    Auto Backup rules for Android 11 (API 30) and lower. The app has its own Google Drive
+    backup, so the persons database and the preferences are excluded from the platform backup.
+-->
+
 <full-backup-content>
-    <include
+    <!-- The whole database directory is excluded: excluding only the main file left its
+         -wal/-shm/-journal sidecars (which can contain record data) in the cloud backup. -->
+    <exclude
         domain="database"
-        path="my_db" />
-    <include domain="sharedpref" />
+        path="." />
+    <exclude
+        domain="sharedpref"
+        path="." />
 </full-backup-content>

@@ -254,7 +254,7 @@
     <string name="nijinska">布羅尼斯拉瓦·尼金斯卡</string>
     <string name="presley">艾維斯·普里斯萊</string>
     <string name="hawking">史蒂芬·霍金</string>
-    <string name="daviw_bowie">大衛·鮑伊</string>
+    <string name="david_bowie">大衛·鮑伊</string>
     <!-- 9 january -->
     <string name="simon_vouet">西蒙·武埃</string>
     <string name="wrangel">費迪南德·馮·弗蘭格爾</string>
@@ -463,7 +463,7 @@
     <string name="williams">約翰·威廉斯</string>
     <!-- 9 february -->
     <string name="navai">阿里希爾·納沃伊</string>
-    <string name="valisy_zhukovsky">瓦西里·茹科夫斯基</string>
+    <string name="vasily_zhukovsky">瓦西里·茹科夫斯基</string>
     <string name="maybach">威廉·邁巴赫</string>
     <string name="soseki">夏目漱石</string>
     <string name="berg">阿爾班·貝爾格</string>
@@ -718,7 +718,7 @@
     <string name="georg_ohm">格奧爾格·西蒙·歐姆</string>
     <string name="prudhomme">蘇利·普呂多姆</string>
     <string name="beijerinck">馬丁努斯·貝傑林克</string>
-    <string name="yayser">海因里希·凱澤</string>
+    <string name="kayser">海因里希·凱澤</string>
     <string name="damadian">雷蒙德·達馬迪安</string>
     <string name="bertolucci">貝納多·貝托魯奇</string>
     <string name="stallman">理查·斯托曼</string>

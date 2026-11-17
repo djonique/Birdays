@@ -51,6 +51,7 @@ public class WidgetProvider extends AppWidgetProvider {
 
             Intent clickIntent = new Intent(context, WidgetProvider.class);
             clickIntent.setAction(ACTION_ON_CLICK);
+            clickIntent.setPackage(context.getPackageName());
 
             int flags = PendingIntent.FLAG_UPDATE_CURRENT;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

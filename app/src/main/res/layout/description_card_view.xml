@@ -67,7 +67,7 @@
                 android:id="@+id/imagebutton_card_email"
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/send_email"
-                app:srcCompat="@drawable/ic_email_blue_24dp"
+                app:srcCompat="@drawable/ic_email_24dp"
                 app:tint="?attr/colorPrimary" />
 
             <!--Divider-->
@@ -81,7 +81,7 @@
                 android:id="@+id/imagebutton_card_chat"
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/chat"
-                app:srcCompat="@drawable/ic_chat_blue_24dp"
+                app:srcCompat="@drawable/ic_chat_24dp"
                 app:tint="?attr/colorPrimary" />
 
             <!--Divider-->
@@ -95,7 +95,7 @@
                 android:id="@+id/imagebutton_card_call"
                 style="@style/cardImageButtonStyle"
                 android:contentDescription="@string/call"
-                app:srcCompat="@drawable/ic_call_blue_24dp"
+                app:srcCompat="@drawable/ic_call_24dp"
                 app:tint="?attr/colorPrimary" />
         </LinearLayout>
     </LinearLayout>

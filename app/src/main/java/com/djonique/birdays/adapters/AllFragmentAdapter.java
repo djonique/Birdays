@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
@@ -26,6 +25,7 @@ import com.djonique.birdays.fragments.AllFragment;
 import com.djonique.birdays.models.Item;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.models.Separator;
+import com.djonique.birdays.utils.BirdaysPreferencesManager;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.Utils;
 
@@ -74,6 +74,16 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void addItem(int location, Item item) {
         items.add(location, item);
         notifyItemInserted(location);
+    }
+
+    /**
+     * Appends an already grouped batch and refreshes it with a single range notification.
+     */
+    public void addItems(List<Item> newItems) {
+        if (newItems.isEmpty()) return;
+        int start = items.size();
+        items.addAll(newItems);
+        notifyItemRangeInserted(start, newItems.size());
     }
 
     public void removePerson(int location) {
@@ -151,7 +161,7 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        displayedAge = PreferenceManager.getDefaultSharedPreferences(context)
+        displayedAge = BirdaysPreferencesManager.getDefaultSharedPreferences(context)
                 .getString(Constants.DISPLAYED_AGE_KEY, "0");
         if (viewType == TYPE_PERSON) {
             View view = LayoutInflater.from(context).inflate(R.layout.description_list_view, parent, false);
@@ -224,20 +234,22 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         if (oldSize != 0) {
             items.clear();
             notifyItemRangeRemoved(0, oldSize);
-
-            containsSeparatorJanuary = false;
-            containsSeparatorFebruary = false;
-            containsSeparatorMarch = false;
-            containsSeparatorApril = false;
-            containsSeparatorMay = false;
-            containsSeparatorJune = false;
-            containsSeparatorJuly = false;
-            containsSeparatorAugust = false;
-            containsSeparatorSeptember = false;
-            containsSeparatorOctober = false;
-            containsSeparatorNovember = false;
-            containsSeparatorDecember = false;
         }
+
+        // The flags describe the contents, so an empty list always resets them — even when the
+        // adapter was already empty but a separator flag had not been cleared.
+        containsSeparatorJanuary = false;
+        containsSeparatorFebruary = false;
+        containsSeparatorMarch = false;
+        containsSeparatorApril = false;
+        containsSeparatorMay = false;
+        containsSeparatorJune = false;
+        containsSeparatorJuly = false;
+        containsSeparatorAugust = false;
+        containsSeparatorSeptember = false;
+        containsSeparatorOctober = false;
+        containsSeparatorNovember = false;
+        containsSeparatorDecember = false;
     }
 
     private int getAgeCircleColor(int age) {

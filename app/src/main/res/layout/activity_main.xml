@@ -78,6 +78,6 @@
         app:layout_behavior="com.djonique.birdays.behaviors.ScrollAwareFABBehavior"
         app:pressedTranslationZ="12dp"
         app:rippleColor="@color/ripple"
-        app:srcCompat="@drawable/ic_add_grey_24dp"
+        app:srcCompat="@drawable/ic_add_24dp"
         app:tint="@color/fab_icon" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

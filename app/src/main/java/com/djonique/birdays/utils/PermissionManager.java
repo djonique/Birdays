@@ -76,12 +76,7 @@ public class PermissionManager {
      */
     public static void openNotificationSettings(Activity activity) {
         Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            intent.putExtra(Settings.EXTRA_APP_PACKAGE, activity.getPackageName());
-        } else {
-            intent.putExtra("app_package", activity.getPackageName());
-            intent.putExtra("app_uid", activity.getApplicationInfo().uid);
-        }
+        intent.putExtra(Settings.EXTRA_APP_PACKAGE, activity.getPackageName());
         try {
             activity.startActivity(intent);
         } catch (ActivityNotFoundException e) {

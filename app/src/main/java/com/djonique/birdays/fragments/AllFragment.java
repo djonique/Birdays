@@ -22,13 +22,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.MainActivity;
 import com.djonique.birdays.adapters.AllFragmentAdapter;
+import com.djonique.birdays.models.Item;
 import com.djonique.birdays.models.Person;
 import com.djonique.birdays.models.Separator;
 import com.djonique.birdays.repository.BirdaysRepository;
+import com.djonique.birdays.utils.Utils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 public class AllFragment extends Fragment {
@@ -145,17 +149,14 @@ public class AllFragment extends Fragment {
             listState = recyclerView.getLayoutManager().onSaveInstanceState();
         }
 
-        adapter.removeAllPersons();
         final Parcelable savedState = listState;
 
         BirdaysRepository.getInstance(activity).getPersons(
-                new BirdaysRepository.Callback<List<Person>>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(List<Person> persons) {
                         if (token != dataToken || !isAdded() || adapter == null) return;
-                        for (Person person : persons) {
-                            addPerson(person, false);
-                        }
+                        replaceWithPersons(persons);
 
                         if (savedState != null && recyclerView != null
                                 && recyclerView.getLayoutManager() != null) {
@@ -168,6 +169,42 @@ public class AllFragment extends Fragment {
                         // Keep the previous list; the next refresh will retry.
                     }
                 });
+    }
+
+    /**
+     * Rebuilds the whole list in one pass.
+     *
+     * <p>Inserting row by row used to rescan the adapter for every person (O(N²)) and emit one
+     * change notification per person and separator. The records are sorted once, grouped by
+     * month, and handed to the adapter as a single range insertion.</p>
+     */
+    private void replaceWithPersons(List<Person> persons) {
+        if (adapter == null) return;
+
+        // The XML layout animation runs on the first layout pass only. The records arrive from the
+        // database after that pass, so the animation is re-armed for the first batch and the list
+        // still falls down into place instead of appearing at once. Refreshes and search results
+        // over a non-empty list keep the rows in place.
+        boolean firstPopulation = adapter.getItemCount() == 0 && recyclerView != null;
+
+        adapter.removeAllPersons();
+
+        List<Person> sorted = new ArrayList<>(persons);
+        Collections.sort(sorted);
+
+        List<Item> newItems = new ArrayList<>(sorted.size() * 2);
+        for (Person person : sorted) {
+            Separator separator = getSeparator(person);
+            if (separator != null) {
+                newItems.add(separator);
+            }
+            newItems.add(person);
+        }
+
+        if (firstPopulation) {
+            Utils.playListEnterAnimation(recyclerView);
+        }
+        adapter.addItems(newItems);
     }
 
     private Separator getSeparator(Person person) {
@@ -249,6 +286,22 @@ public class AllFragment extends Fragment {
         return separator;
     }
 
+    /**
+     * Removes a record by its id, e.g. when it was deleted on the detail screen. Uses the adapter
+     * removal so the row animates out with the same fade-and-shift effect as a long-press
+     * deletion, separators included.
+     */
+    public void deletePerson(long timeStamp) {
+        if (adapter == null) return;
+
+        for (int i = 0; i < adapter.getItemCount(); i++) {
+            if (adapter.getItem(i) instanceof Person person && person.getTimeStamp() == timeStamp) {
+                adapter.removePerson(i);
+                return;
+            }
+        }
+    }
+
     public void removePersonDialog(final int location) {
         if (activity == null) return;
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
@@ -271,7 +324,7 @@ public class AllFragment extends Fragment {
                 // right after the action, and onViewDetachedFromWindow must not delete the row.
                 isRemoved[0] = false;
                 BirdaysRepository.getInstance(activity).getPerson(timeStamp,
-                        new BirdaysRepository.Callback<Person>() {
+                        new BirdaysRepository.Callback<>() {
                             @Override
                             public void onSuccess(Person person) {
                                 if (person == null || !isAdded() || adapter == null) return;
@@ -312,16 +365,13 @@ public class AllFragment extends Fragment {
         if (adapter == null || activity == null) return;
 
         final int token = ++dataToken;
-        adapter.removeAllPersons();
 
         BirdaysRepository.getInstance(activity).searchPersons(name, false,
-                new BirdaysRepository.Callback<List<Person>>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(List<Person> persons) {
                         if (token != dataToken || !isAdded() || adapter == null) return;
-                        for (Person person : persons) {
-                            addPerson(person, false);
-                        }
+                        replaceWithPersons(persons);
                     }
 
                     @Override

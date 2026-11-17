@@ -33,13 +33,17 @@ import com.djonique.birdays.utils.NamedDaemonThreadFactory;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Collections;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class GoogleDriveBackupManager {
 
     private static final String TAG = "GoogleDriveBackup";
+    /** Name of the file inside the Drive app-data folder; part of the published backup format. */
     private static final String BACKUP_FILE_NAME = "database_backup.xml";
+    /** Local cache file for a downloaded backup; never reused for an upload. */
+    private static final String RESTORE_FILE_NAME = "backup_restore.xml";
     private static final String MIME_TYPE_XML = "application/xml";
 
     private final Context context;
@@ -53,7 +57,7 @@ public class GoogleDriveBackupManager {
 
     /**
      * Releases the worker thread. Call from the owning Activity's {@code onDestroy()}; pending
-     * work is allowed to finish, but no new work is accepted afterwards.
+     * work is allowed to finish, but no new work is accepted afterward.
      */
     public void close() {
         executor.shutdown();
@@ -95,7 +99,8 @@ public class GoogleDriveBackupManager {
                 .build();
     }
 
-    public void uploadBackup(String accessToken, java.io.File xmlFile, UploadCallback callback) {
+    public void uploadBackup(String accessToken, java.io.File xmlFile,
+                             Map<String, String> appProperties, UploadCallback callback) {
         executor.execute(() -> {
             try {
                 Drive driveService = getDriveService(accessToken);
@@ -107,23 +112,52 @@ public class GoogleDriveBackupManager {
                         .execute();
 
                 FileContent mediaContent = new FileContent(MIME_TYPE_XML, xmlFile);
+                String fileId;
 
                 if (result.getFiles() != null && !result.getFiles().isEmpty()) {
-                    String fileId = result.getFiles().get(0).getId();
+                    fileId = result.getFiles().get(0).getId();
                     driveService.files().update(fileId, new File(), mediaContent).execute();
                 } else {
                     File fileMetadata = new File();
                     fileMetadata.setName(BACKUP_FILE_NAME);
                     fileMetadata.setParents(Collections.singletonList("appDataFolder"));
-                    driveService.files().create(fileMetadata, mediaContent).setFields("id").execute();
+                    fileId = driveService.files().create(fileMetadata, mediaContent)
+                            .setFields("id")
+                            .execute()
+                            .getId();
                 }
 
+                storeAppProperties(driveService, fileId, appProperties);
                 mainHandler.post(callback::onSuccess);
             } catch (Exception e) {
                 Log.e(TAG, "Upload backup failed", e);
                 mainHandler.post(() -> callback.onError(e));
+            } finally {
+                // The XML is a temporary local file; it is deleted even when the upload failed so
+                // a copy of the user's data is not left in the cache directory.
+                //noinspection ResultOfMethodCallIgnored
+                xmlFile.delete();
             }
         });
+    }
+
+    /**
+     * Writes the caller's {@code appProperties} (the record count) onto the uploaded file. The XML
+     * is already in Drive when this runs, so a failure is only logged: the backup counts as
+     * successful and the restore falls back to counting the records in the downloaded file.
+     */
+    private static void storeAppProperties(Drive driveService, String fileId,
+                                           Map<String, String> appProperties) {
+        if (appProperties == null || appProperties.isEmpty()) {
+            return;
+        }
+        try {
+            File metadata = new File();
+            metadata.setAppProperties(appProperties);
+            driveService.files().update(fileId, metadata).setFields("id").execute();
+        } catch (Exception e) {
+            Log.w(TAG, "Backup uploaded, but appProperties could not be stored", e);
+        }
     }
 
     public void findLatestBackup(String accessToken, FindBackupCallback callback) {
@@ -134,15 +168,23 @@ public class GoogleDriveBackupManager {
                         .setSpaces("appDataFolder")
                         .setQ("name = '" + BACKUP_FILE_NAME + "' and trashed = false")
                         .setOrderBy("modifiedTime desc")
-                        .setFields("files(id, name, modifiedTime)")
+                        .setFields("files(id, name)")
                         .execute();
 
-                if (result.getFiles() != null && !result.getFiles().isEmpty()) {
-                    File latestFile = result.getFiles().get(0);
-                    mainHandler.post(() -> callback.onFound(latestFile.getId(), latestFile.getModifiedTime().toString()));
-                } else {
+                if (result.getFiles() == null || result.getFiles().isEmpty()) {
                     mainHandler.post(callback::onNotFound);
+                    return;
                 }
+
+                String fileId = result.getFiles().get(0).getId();
+                // A direct GET asks Drive for the metadata again instead of reusing the list
+                // response, so the confirmation dialog shows the current modifiedTime and
+                // appProperties. The client keeps no metadata cache of its own.
+                File metadataFile = driveService.files().get(fileId)
+                        .setFields("id, modifiedTime, appProperties")
+                        .execute();
+                BackupMetadata metadata = BackupMetadata.fromDriveFile(metadataFile);
+                mainHandler.post(() -> callback.onFound(metadata));
             } catch (Exception e) {
                 Log.e(TAG, "Find latest backup failed", e);
                 mainHandler.post(() -> callback.onError(e));
@@ -154,7 +196,7 @@ public class GoogleDriveBackupManager {
         executor.execute(() -> {
             try {
                 Drive driveService = getDriveService(accessToken);
-                java.io.File tempFile = new java.io.File(context.getCacheDir(), BACKUP_FILE_NAME);
+                java.io.File tempFile = new java.io.File(context.getCacheDir(), RESTORE_FILE_NAME);
                 try (OutputStream outputStream = new FileOutputStream(tempFile)) {
                     driveService.files().get(fileId).executeMediaAndDownloadTo(outputStream);
                 }
@@ -181,7 +223,7 @@ public class GoogleDriveBackupManager {
     }
 
     public interface FindBackupCallback {
-        void onFound(String fileId, String modifiedTime);
+        void onFound(BackupMetadata metadata);
 
         void onNotFound();
 

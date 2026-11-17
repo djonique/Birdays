@@ -113,8 +113,8 @@ public final class ContactsHelper {
                 if (date == 0) continue;
 
                 boolean yearUnknown = Utils.isYearUnknown(dateString);
-                String phoneNumber = phoneNumbers.containsKey(id) ? phoneNumbers.get(id) : "";
-                String email = emails.containsKey(id) ? emails.get(id) : "";
+                String phoneNumber = phoneNumbers.getOrDefault(id, "");
+                String email = emails.getOrDefault(id, "");
 
                 Person person = new Person(name, date, yearUnknown, phoneNumber, email);
                 contacts.add(person);

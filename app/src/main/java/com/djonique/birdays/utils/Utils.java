@@ -15,10 +15,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -29,6 +33,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.models.Person;
@@ -51,6 +56,14 @@ public class Utils {
 
     public static String getDate(long date) {
         return DateFormat.getDateInstance(DateFormat.DEFAULT, Locale.getDefault()).format(date);
+    }
+
+    /**
+     * Localized date and time, used to describe when a backup was written.
+     */
+    public static String getDateTime(long date) {
+        return DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.SHORT,
+                Locale.getDefault()).format(date);
     }
 
     public static String getDateWithoutYear(long date) {
@@ -88,6 +101,77 @@ public class Utils {
 
     public static long getTimeOffset() {
         return TimeZone.getDefault().getOffset(System.currentTimeMillis());
+    }
+
+    /**
+     * Returns the notification time as a local {@code "HH:mm"} string.
+     *
+     * <p>Older versions stored an absolute timestamp. That value is still accepted (and converted
+     * on read), so an update does not silently move the user's reminder to the default time.</p>
+     */
+    public static String getNotificationTime(SharedPreferences preferences) {
+        if (preferences == null) return Constants.DEFAULT_NOTIFICATION_TIME;
+
+        Object stored = preferences.getAll().get(Constants.NOTIFICATION_TIME_KEY);
+        if (stored instanceof String time && isValidNotificationTime(time)) {
+            return time;
+        }
+        if (stored instanceof Long millis) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(millis);
+            return toNotificationTime(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+        }
+        return Constants.DEFAULT_NOTIFICATION_TIME;
+    }
+
+    public static void setNotificationTime(SharedPreferences preferences, int hour, int minute) {
+        if (preferences == null) return;
+        preferences.edit()
+                .putString(Constants.NOTIFICATION_TIME_KEY, toNotificationTime(hour, minute))
+                .apply();
+    }
+
+    public static String toNotificationTime(int hour, int minute) {
+        return String.format(Locale.US, "%02d:%02d", hour, minute);
+    }
+
+    /**
+     * Parses {@code "HH:mm"} into {@code {hour, minute}}. Anything malformed falls back to the
+     * default time instead of throwing, because the value comes from persisted preferences.
+     */
+    public static int[] parseNotificationTime(String time) {
+        if (isValidNotificationTime(time)) {
+            return new int[]{
+                    Integer.parseInt(time.substring(0, 2)),
+                    Integer.parseInt(time.substring(3))
+            };
+        }
+        String[] fallback = Constants.DEFAULT_NOTIFICATION_TIME.split(":");
+        return new int[]{Integer.parseInt(fallback[0]), Integer.parseInt(fallback[1])};
+    }
+
+    /**
+     * Formats {@code "HH:mm"} with the device's 12/24-hour preference for a preference summary.
+     */
+    public static String getNotificationTimeSummary(Context context, String time) {
+        int[] values = parseNotificationTime(time);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, values[0]);
+        calendar.set(Calendar.MINUTE, values[1]);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return android.text.format.DateFormat.getTimeFormat(context).format(calendar.getTime());
+    }
+
+    private static boolean isValidNotificationTime(String time) {
+        if (time == null || time.length() != 5 || time.charAt(2) != ':') return false;
+        try {
+            int hour = Integer.parseInt(time.substring(0, 2));
+            int minute = Integer.parseInt(time.substring(3));
+            return hour >= 0 && hour < 24 && minute >= 0 && minute < 60;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     public static int getCurrentAge(long date) {
@@ -255,8 +339,9 @@ public class Utils {
         }
         for (Person dbPerson : list) {
             // Person.equals() is identity by timestamp; contact deduplication is by display
-            // name, so the comparison is explicit here instead of relying on equals().
-            if (person.getName().equalsIgnoreCase(dbPerson.getName())) {
+            // name AND birthday, so two different people sharing a name are both imported.
+            if (person.getName().equalsIgnoreCase(dbPerson.getName())
+                    && person.getDate() == dbPerson.getDate()) {
                 return true;
             }
         }
@@ -341,8 +426,8 @@ public class Utils {
 
     /**
      * On Android 15+ the window is edge-to-edge and the system navigation bar is transparent, so
-     * the content behind it is visible. The bar is painted with the app background colour instead:
-     * nothing shines through the navigation bar and it looks opaque on every screen.
+     * the content behind it is visible. The bar is painted with the app background color instead:
+     * nothing shines through the navigation bar, and it looks opaque on every screen.
      */
     private static void addNavigationBarScrims(Activity activity) {
         ViewGroup content = activity.findViewById(android.R.id.content);
@@ -391,8 +476,8 @@ public class Utils {
 
     /**
      * On Android 15+ the window is edge-to-edge and the system status bar is transparent, so its
-     * colour has to be painted by the app. A fixed black view is laid over the top of the activity
-     * instead of colouring the app bar: the app bar scrolls (in fragments and on the detail screen),
+     * color has to be painted by the app. A fixed black view is laid over the top of the activity
+     * instead of coloring the app bar: the app bar scrolls (in fragments and on the detail screen),
      * while this scrim stays in place and keeps the status bar black everywhere.
      */
     private static void addStatusBarScrim(Activity activity) {
@@ -426,7 +511,7 @@ public class Utils {
 
     /**
      * In landscape the camera cutout sits on the left (or right) edge and the app cannot draw there,
-     * so the strip next to the content would otherwise stay the window background colour. A fixed
+     * so the strip next to the content would otherwise stay the window background color. A fixed
      * black strip of exactly the cutout width is painted over it, which keeps the cutout area black
      * in both themes and in every activity.
      */
@@ -545,5 +630,76 @@ public class Utils {
                 initialRightPadding + insets.right,
                 view.getPaddingBottom()
         );
+    }
+
+    /**
+     * Replays the fall-down row animation for the first populated layout of a list.
+     *
+     * <p>{@code android:layoutAnimation} in XML is applied on the first layout pass only. Both
+     * fragment lists are filled from the database after that pass, so their rows appeared without
+     * any animation. This re-arms the same {@code item_animation_fall_down} for the children the
+     * first populated layout produced.</p>
+     *
+     * <p>Only the first population should animate: refreshes and search results replace rows that
+     * are already on screen, and those must not move.</p>
+     */
+    public static void playListEnterAnimation(RecyclerView recyclerView) {
+        recyclerView.getViewTreeObserver().addOnPreDrawListener(
+                new ViewTreeObserver.OnPreDrawListener() {
+                    @Override
+                    public boolean onPreDraw() {
+                        RecyclerView.Adapter<?> adapter = recyclerView.getAdapter();
+                        boolean nothingToAnimate = adapter == null || adapter.getItemCount() == 0;
+
+                        // The traversal that follows the data change can still run before the rows
+                        // are laid out, so the listener waits for the layout that contains them.
+                        if (!nothingToAnimate && recyclerView.getChildCount() == 0) {
+                            return true;
+                        }
+
+                        ViewTreeObserver current = recyclerView.getViewTreeObserver();
+                        if (current.isAlive()) {
+                            current.removeOnPreDrawListener(this);
+                        }
+                        if (!nothingToAnimate) {
+                            playFallDownAnimation(recyclerView);
+                        }
+                        return true;
+                    }
+                });
+    }
+
+    private static void playFallDownAnimation(RecyclerView recyclerView) {
+        // The same 15% step the layout animation declares, expressed in milliseconds.
+        long step = (long) (recyclerView.getResources()
+                .getInteger(android.R.integer.config_mediumAnimTime) * 0.15f);
+
+        for (int i = 0; i < recyclerView.getChildCount(); i++) {
+            View child = recyclerView.getChildAt(i);
+            // Every child needs its own instance: an Animation object keeps per-view timing state.
+            Animation animation = AnimationUtils.loadAnimation(
+                    recyclerView.getContext(), R.anim.item_animation_fall_down);
+            animation.setStartOffset(i * step);
+            child.startAnimation(animation);
+        }
+    }
+
+    /**
+     * Opens the system screen for this app (App info), which is where notifications, battery
+     * usage and the other per-app switches live. No special permission is needed, unlike
+     * ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS.
+     */
+    public static void openAppSettings(Context context) {
+        if (context == null) return;
+        try {
+            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            intent.setData(Uri.parse("package:" + context.getPackageName()));
+            context.startActivity(intent);
+        } catch (Exception e) {
+            try {
+                context.startActivity(new Intent(Settings.ACTION_SETTINGS));
+            } catch (Exception ignored) {
+            }
+        }
     }
 }

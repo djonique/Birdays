@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +37,9 @@ import java.util.Calendar;
 
 public class EditActivity extends AppCompatActivity {
 
+    private static final String STATE_DATE = "STATE_DATE";
+    private static final String STATE_FORM_LOADED = "STATE_FORM_LOADED";
+    private final Calendar calendar = Calendar.getInstance();
     private TextInputLayout tilEditName;
     private EditText etName;
     private TextInputLayout tilEditDate;
@@ -43,9 +47,7 @@ public class EditActivity extends AppCompatActivity {
     private AppCompatCheckBox checkBox;
     private EditText etPhoneNumber;
     private EditText etEmail;
-
     private Person person;
-    private final Calendar calendar = Calendar.getInstance();
     private long date;
     private boolean yearUnknown;
     private boolean hideOkButton = false;
@@ -73,13 +75,25 @@ public class EditActivity extends AppCompatActivity {
         etPhoneNumber = findViewById(R.id.edittext_edit_phone);
         etEmail = findViewById(R.id.edittext_edit_email);
 
+        // A recreated screen already has the user's edits restored by the framework. Only the
+        // calendar (and the date derived from it) is not part of the view state.
+        boolean formLoaded = savedInstanceState != null
+                && savedInstanceState.getBoolean(STATE_FORM_LOADED, false);
+        if (formLoaded) {
+            long savedDate = savedInstanceState.getLong(STATE_DATE, 0L);
+            if (savedDate > 0L) {
+                calendar.setTimeInMillis(savedDate);
+                date = savedDate;
+            }
+        }
+
         Intent intent = getIntent();
         long timeStamp = intent.getLongExtra(Constants.TIME_STAMP, 0);
 
         // The record is read on a worker thread. The form is already inflated, so the callback
         // only has to fill it in — after re-checking that this activity is still alive.
         BirdaysRepository.getInstance(this).getPerson(timeStamp,
-                new BirdaysRepository.Callback<Person>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(Person result) {
                         if (isFinishing() || isDestroyed()) return;
@@ -90,9 +104,14 @@ public class EditActivity extends AppCompatActivity {
                             return;
                         }
                         person = result;
-                        yearUnknown = person.isYearUnknown();
-                        calendar.setTimeInMillis(person.getDate());
-                        setupUI();
+                        // Filling the form again after a rotation would discard what the user
+                        // has typed (the async read can land after the framework restored the
+                        // views). A rotation that happened before the first fill still needs it.
+                        if (!formLoaded) {
+                            yearUnknown = person.isYearUnknown();
+                            calendar.setTimeInMillis(person.getDate());
+                            setupUI();
+                        }
                     }
 
                     @Override
@@ -148,6 +167,15 @@ public class EditActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(STATE_FORM_LOADED, person != null);
+        if (person != null) {
+            outState.putLong(STATE_DATE, calendar.getTimeInMillis());
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_edit, menu);
         if (hideOkButton) menu.findItem(R.id.menu_edit_ok).setVisible(false);
@@ -194,7 +222,7 @@ public class EditActivity extends AppCompatActivity {
         // The repository also re-schedules the alarm for the new date, so RESULT_OK is reported
         // only after the write finished — the detail screen then re-reads the committed row.
         BirdaysRepository.getInstance(this).updatePerson(person,
-                new BirdaysRepository.Callback<Person>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(Person result) {
                         if (isFinishing() || isDestroyed()) return;

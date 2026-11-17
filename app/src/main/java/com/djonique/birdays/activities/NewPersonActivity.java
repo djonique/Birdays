@@ -8,9 +8,7 @@ package com.djonique.birdays.activities;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -33,11 +31,9 @@ import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.Toolbar;
 
 import com.djonique.birdays.R;
-import com.djonique.birdays.alarm.AlarmHelper;
-import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
+import com.djonique.birdays.repository.BirdaysRepository;
 import com.djonique.birdays.utils.Constants;
-import com.djonique.birdays.utils.ContactsHelper;
 import com.djonique.birdays.utils.DatePickerManager;
 import com.djonique.birdays.utils.PermissionManager;
 import com.djonique.birdays.utils.Utils;
@@ -49,25 +45,13 @@ import java.util.Calendar;
 public class NewPersonActivity extends AppCompatActivity {
 
     private static final String STATE_DATE = "STATE_DATE";
-
-    private TextInputLayout tilName;
-    private TextInputLayout tilDate;
-    private EditText etName;
-    private EditText etDate;
-    private EditText etPhone;
-    private EditText etEmail;
-    private AppCompatCheckBox checkBox;
-
     private final Calendar calendar = Calendar.getInstance();
-    private boolean hideOkButton = true;
-
     private final ActivityResultLauncher<Intent> contactPickerLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     fillFromContact(result.getData());
                 }
             });
-
     private final ActivityResultLauncher<String> readContactsPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
                 if (granted) {
@@ -76,6 +60,14 @@ public class NewPersonActivity extends AppCompatActivity {
                     Toast.makeText(this, R.string.permission_required, Toast.LENGTH_LONG).show();
                 }
             });
+    private TextInputLayout tilName;
+    private TextInputLayout tilDate;
+    private EditText etName;
+    private EditText etDate;
+    private EditText etPhone;
+    private EditText etEmail;
+    private AppCompatCheckBox checkBox;
+    private boolean hideOkButton = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -189,19 +181,26 @@ public class NewPersonActivity extends AppCompatActivity {
         person.setPhoneNumber(getText(etPhone));
         person.setEmail(getText(etEmail));
 
-        try (DbHelper dbHelper = new DbHelper(this)) {
-            dbHelper.addRecord(person);
-        }
+        BirdaysRepository.getInstance(this).addPerson(person, new BirdaysRepository.Callback<>() {
+            @Override
+            public void onSuccess(Person result) {
+                if (isFinishing() || isDestroyed()) return;
+                Utils.notifyWidget(NewPersonActivity.this);
+                Intent intent = new Intent(NewPersonActivity.this, DetailActivity.class);
+                intent.putExtra(Constants.TIME_STAMP, result.getTimeStamp());
+                startActivity(intent);
+                Utils.overrideOpenTransition(NewPersonActivity.this,
+                        R.anim.activity_secondary_in, R.anim.activity_primary_out);
+                finish();
+            }
 
-        new AlarmHelper(this).setAlarms(person);
-        Utils.notifyWidget(this);
-
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra(Constants.TIME_STAMP, person.getTimeStamp());
-        startActivity(intent);
-        Utils.overrideOpenTransition(this,
-                R.anim.activity_secondary_in, R.anim.activity_primary_out);
-        finish();
+            @Override
+            public void onError(Throwable t) {
+                if (isFinishing() || isDestroyed()) return;
+                Toast.makeText(NewPersonActivity.this, R.string.recover_records_error,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private String getText(EditText editText) {
@@ -229,18 +228,22 @@ public class NewPersonActivity extends AppCompatActivity {
         Uri contactData = data.getData();
         if (contactData == null) return;
 
-        ContentResolver contentResolver = getContentResolver();
+        BirdaysRepository.getInstance(this).getContactDetails(contactData,
+                new BirdaysRepository.Callback<>() {
+                    @Override
+                    public void onSuccess(BirdaysRepository.ContactDetails details) {
+                        if (isFinishing() || isDestroyed()) return;
+                        etName.setText(details.getName());
+                        etPhone.setText(details.getPhoneNumber());
+                        etEmail.setText(details.getEmail());
+                    }
 
-        try (Cursor cursor = contentResolver.query(contactData, null, null, null, null)) {
-            if (cursor != null && cursor.moveToFirst()) {
-                String id = cursor.getString(
-                        cursor.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
-                etName.setText(ContactsHelper.getContactName(contentResolver, id));
-                etPhone.setText(ContactsHelper.getContactPhoneNumber(contentResolver, id));
-                etEmail.setText(ContactsHelper.getContactEmail(contentResolver, id));
-            }
-        } catch (Exception ignored) {
-        }
+                    @Override
+                    public void onError(Throwable t) {
+                        // The picked contact can be gone by the time the query runs; keeping the
+                        // form as it is lets the user enter the data manually.
+                    }
+                });
     }
 
     private void pickDate() {

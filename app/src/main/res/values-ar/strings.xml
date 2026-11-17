@@ -254,7 +254,7 @@
     <string name="nijinska">برونيسلافا نيجينسكا</string>
     <string name="presley">إلفيس بريسلي</string>
     <string name="hawking">ستيفن هوكينغ</string>
-    <string name="daviw_bowie">ديفيد بوي</string>
+    <string name="david_bowie">ديفيد بوي</string>
     <!-- 9 january -->
     <string name="simon_vouet">سيمون فويت</string>
     <string name="wrangel">فرديناند فون رانغل</string>
@@ -463,7 +463,7 @@
     <string name="williams">جون ويليامز</string>
     <!-- 9 february -->
     <string name="navai">علي شير نوائي</string>
-    <string name="valisy_zhukovsky">فاسيلي جوكوفسكي</string>
+    <string name="vasily_zhukovsky">فاسيلي جوكوفسكي</string>
     <string name="maybach">فيلهلم مايباخ</string>
     <string name="soseki">ناتسومي سوسيكي</string>
     <string name="berg">ألبان بيرغ</string>
@@ -718,7 +718,7 @@
     <string name="georg_ohm">غيورغ زيمون أوم</string>
     <string name="prudhomme">سولي برودوم</string>
     <string name="beijerinck">مارتينوس بايرينك</string>
-    <string name="yayser">هاينريش كايزر</string>
+    <string name="kayser">هاينريش كايزر</string>
     <string name="damadian">رايموند داماديان</string>
     <string name="bertolucci">برناردو برتولوتشي</string>
     <string name="stallman">ريتشارد ستولمن</string>

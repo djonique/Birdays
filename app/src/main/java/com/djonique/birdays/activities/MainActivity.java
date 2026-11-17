@@ -24,15 +24,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.preference.PreferenceManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.adapters.PagerAdapter;
 import com.djonique.birdays.fragments.AllFragment;
+import com.djonique.birdays.models.Person;
 import com.djonique.birdays.repository.BirdaysRepository;
 import com.djonique.birdays.utils.BirdaysApplication;
+import com.djonique.birdays.utils.BirdaysPreferencesManager;
 import com.djonique.birdays.utils.Constants;
+import com.djonique.birdays.utils.DeletedRecord;
 import com.djonique.birdays.utils.PermissionManager;
 import com.djonique.birdays.utils.ProgressDialogHelper;
 import com.djonique.birdays.utils.ReviewHelper;
@@ -47,23 +49,31 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 public class MainActivity extends AppCompatActivity implements
         AllFragment.DeletingPersonListener {
 
-    /** One query per typing burst instead of one per keystroke. */
+    /**
+     * One query per typing burst instead of one per keystroke.
+     */
     private static final long SEARCH_DEBOUNCE_MS = 250;
-
+    private final Handler searchHandler = new Handler(Looper.getMainLooper());
     private CoordinatorLayout container;
     private AppBarLayout appBarLayout;
-    private Toolbar toolbar;
     private SearchView searchView;
     private TabLayout tabLayout;
     private ViewPager2 viewPager;
     private FloatingActionButton fab;
-
     private SharedPreferences preferences;
     private PagerAdapter pagerAdapter;
-    private final Handler searchHandler = new Handler(Looper.getMainLooper());
+    private ProgressDialogHelper progressDialog;
     private Runnable pendingSearch;
     private boolean notificationsPermissionRequested;
     private boolean contactsPermissionRequestPending;
+    /**
+     * The process-wide alarm rebuild runs once per screen instance, not on every resume.
+     */
+    private boolean alarmsRescheduled;
+    /**
+     * Set when the detail screen deleted a record and the list is about to re-enter.
+     */
+    private Person pendingDeletedPerson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements
 
         container = findViewById(R.id.container_main);
         appBarLayout = findViewById(R.id.appbar_main);
-        toolbar = findViewById(R.id.toolbar_main);
+        Toolbar toolbar = findViewById(R.id.toolbar_main);
         searchView = findViewById(R.id.searchview_main);
         tabLayout = findViewById(R.id.tablayout_main);
         viewPager = findViewById(R.id.viewpager_main);
@@ -84,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements
 
         FirebaseAnalytics.getInstance(this);
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences = BirdaysPreferencesManager.getDefaultSharedPreferences(this);
         boolean adEnabled = preferences.getBoolean(getString(R.string.show_ads_key), true);
         if (adEnabled) {
             com.djonique.birdays.ad.NativeAdCache.getInstance().preload(this);
@@ -101,14 +111,7 @@ public class MainActivity extends AppCompatActivity implements
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> tab.setText(pagerAdapter.getPageTitle(position))).attach();
 
-        if (!preferences.getBoolean(Constants.CONTACTS_UPLOADED, false)) {
-            if (PermissionManager.readingContactsPermissionGranted(this)) {
-                importContacts();
-            } else {
-                contactsPermissionRequestPending = true;
-                PermissionManager.requestReadingContactsPermission(this);
-            }
-        }
+        requestPermissionsSequentially();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -148,7 +151,19 @@ public class MainActivity extends AppCompatActivity implements
         syncSelectedPage();
         // The pager may apply its restored page on the next layout pass.
         viewPager.post(this::syncSelectedPage);
-        requestNotificationsPermissionIfNeeded();
+        showDeletionSnackbarIfNeeded();
+        rescheduleAlarmsOnce();
+    }
+
+    /**
+     * Safety net for alarms that were lost without a broadcast reaching {@link
+     * com.djonique.birdays.alarm.AlarmSetter} (for example when the process was killed mid-boot).
+     * Runs on the repository pool so the database is never opened on the main thread.
+     */
+    private void rescheduleAlarmsOnce() {
+        if (alarmsRescheduled) return;
+        alarmsRescheduled = true;
+        BirdaysRepository.getInstance(this).rescheduleAllAlarms(null);
     }
 
     /**
@@ -165,21 +180,42 @@ public class MainActivity extends AppCompatActivity implements
         updatePageUi(position);
     }
 
-    private void requestNotificationsPermissionIfNeeded() {
-        if (notificationsPermissionRequested
-                || contactsPermissionRequestPending
-                || !preferences.getBoolean(getString(R.string.notifications_key), true)
-                || !PermissionManager.canRequestNotificationsPermission(this)) {
+    private void requestPermissionsSequentially() {
+        if (notificationsPermissionRequested || contactsPermissionRequestPending) {
             return;
         }
-        notificationsPermissionRequested = true;
-        PermissionManager.requestNotificationsPermission(this);
+
+        if (preferences.getBoolean(getString(R.string.notifications_key), true)
+                && PermissionManager.canRequestNotificationsPermission(this)) {
+            notificationsPermissionRequested = true;
+            PermissionManager.requestNotificationsPermission(this);
+            return;
+        }
+
+        checkAndRequestContactsPermission();
+    }
+
+    private void checkAndRequestContactsPermission() {
+        if (!preferences.getBoolean(Constants.CONTACTS_UPLOADED, false)) {
+            if (PermissionManager.readingContactsPermissionGranted(this)) {
+                importContacts();
+            } else if (!contactsPermissionRequestPending) {
+                contactsPermissionRequestPending = true;
+                PermissionManager.requestReadingContactsPermission(this);
+            }
+        }
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        pagerAdapter.addPersonsFromDb();
+        pendingDeletedPerson = DeletedRecord.take();
+        // When a record was just deleted, only that row has to go. A full reload would rebuild
+        // both lists and replace the row-removal animation with a list-wide one, so the row is
+        // removed in onResume, once the window is visible again.
+        if (pendingDeletedPerson == null) {
+            pagerAdapter.addPersonsFromDb();
+        }
     }
 
     @Override
@@ -210,8 +246,55 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
+     * The detail screen deletes a record, closes itself and hands the deleted person over. The
+     * snackbar is shown here, on the list, and the row is removed through the same adapter call
+     * as the long-press deletion in the list, so it animates out instead of the list reloading.
+     * "Undo" re-inserts the record and the row animates back in.
+     */
+    private void showDeletionSnackbarIfNeeded() {
+        Person deleted = pendingDeletedPerson;
+        if (deleted == null) return;
+        pendingDeletedPerson = null;
+
+        final boolean[] undone = {false};
+
+        Snackbar.make(container, R.string.record_deleted, Snackbar.LENGTH_SHORT)
+                .setAction(R.string.undo, v -> {
+                    undone[0] = true;
+                    restoreDeletedPerson(deleted);
+                })
+                .show();
+
+        // Posted so the removal animation starts on a visible window when the screen comes back.
+        container.post(() -> {
+            if (!undone[0]) {
+                pagerAdapter.deletePerson(deleted.getTimeStamp());
+            }
+        });
+    }
+
+    private void restoreDeletedPerson(Person person) {
+        BirdaysRepository.getInstance(this).addPerson(person,
+                new BirdaysRepository.Callback<>() {
+                    @Override
+                    public void onSuccess(Person result) {
+                        if (isFinishing() || isDestroyed()) return;
+                        Utils.notifyWidget(MainActivity.this);
+                        pagerAdapter.restorePerson(result);
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        Toast.makeText(MainActivity.this, R.string.recover_records_error,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    /**
      * Coalesces keystrokes into a single query. Clearing the field restores the full list right
-     * away; otherwise the previous pending query is cancelled and a new one is posted after
+     * away; otherwise the previous pending query is canceled and a new one is posted after
      * {@link #SEARCH_DEBOUNCE_MS}. The fragments still drop stale results by sequence number, so a
      * query that is already running cannot overwrite a newer one.
      */
@@ -228,7 +311,8 @@ public class MainActivity extends AppCompatActivity implements
         searchHandler.postDelayed(pendingSearch, SEARCH_DEBOUNCE_MS);
     }
 
-    private void onPageSelected(int position) {        appBarLayout.setExpanded(true, true);
+    private void onPageSelected(int position) {
+        appBarLayout.setExpanded(true, true);
         updatePageUi(position);
     }
 
@@ -252,7 +336,9 @@ public class MainActivity extends AppCompatActivity implements
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE) {
+        if (requestCode == Constants.NOTIFICATIONS_PERMISSION_CODE) {
+            container.post(this::checkAndRequestContactsPermission);
+        } else if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE) {
             contactsPermissionRequestPending = false;
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -261,13 +347,10 @@ public class MainActivity extends AppCompatActivity implements
                 }
             } else {
                 Snackbar.make(container, R.string.permission_required,
-                        Snackbar.LENGTH_LONG)
+                                Snackbar.LENGTH_LONG)
                         .setAction(R.string.snackbar_allow_text, v -> openApplicationSettings())
                         .show();
             }
-            // Ask for notifications only after the contacts prompt is dismissed,
-            // so the user does not get two permission dialogs at the same time
-            container.post(this::requestNotificationsPermissionIfNeeded);
         }
     }
 
@@ -284,15 +367,15 @@ public class MainActivity extends AppCompatActivity implements
      * and the UI is touched only while the activity is still alive.
      */
     private void importContacts() {
-        ProgressDialogHelper progressDialog = new ProgressDialogHelper(this);
+        progressDialog = new ProgressDialogHelper(this);
         progressDialog.startProgressDialog(getString(R.string.loading_contacts));
 
         BirdaysRepository.getInstance(this).importContacts(
-                new BirdaysRepository.Callback<Integer>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(Integer inserted) {
                         if (isFinishing() || isDestroyed()) return;
-                        progressDialog.dismissProgressDialog();
+                        dismissProgressDialog();
                         preferences.edit().putBoolean(Constants.CONTACTS_UPLOADED, true).apply();
                         pagerAdapter.addPersonsFromDb();
                         Utils.notifyWidget(MainActivity.this);
@@ -303,7 +386,7 @@ public class MainActivity extends AppCompatActivity implements
                     @Override
                     public void onError(Throwable t) {
                         if (isFinishing() || isDestroyed()) return;
-                        progressDialog.dismissProgressDialog();
+                        dismissProgressDialog();
                         preferences.edit().putBoolean(Constants.WRONG_CONTACTS_FORMAT, true).apply();
                         Toast.makeText(MainActivity.this, R.string.loading_contacts_error,
                                 Toast.LENGTH_LONG).show();
@@ -311,9 +394,19 @@ public class MainActivity extends AppCompatActivity implements
                 });
     }
 
+    private void dismissProgressDialog() {
+        if (progressDialog != null) {
+            progressDialog.dismissProgressDialog();
+            progressDialog = null;
+        }
+    }
+
     @Override
     protected void onDestroy() {
         searchHandler.removeCallbacksAndMessages(null);
+        // The dialog is not cancelable, so it must be dismissed before the window goes away;
+        // otherwise it would be left attached to a destroyed activity.
+        dismissProgressDialog();
         super.onDestroy();
     }
 }

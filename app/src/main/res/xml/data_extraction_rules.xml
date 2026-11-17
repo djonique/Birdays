@@ -9,20 +9,29 @@
 <!--
     Backup and transfer rules for Android 12 (API 31) and above.
     For API 30 and lower, the rules from backup_scheme.xml apply.
+
+    The app ships its own Google Drive backup, so Auto Backup must not duplicate the persons
+    database (PII) or the preferences (the ad-free flag) to the user's cloud storage.
 -->
 
 <data-extraction-rules>
     <cloud-backup>
-        <include
+        <!-- The whole database directory is excluded: excluding only the main file left its
+             -wal/-shm/-journal sidecars (which can contain record data) in the cloud backup. -->
+        <exclude
             domain="database"
-            path="my_db" />
-        <include domain="sharedpref" />
+            path="." />
+        <exclude
+            domain="sharedpref"
+            path="." />
     </cloud-backup>
 
     <device-transfer>
-        <include
+        <exclude
             domain="database"
-            path="my_db" />
-        <include domain="sharedpref" />
+            path="." />
+        <exclude
+            domain="sharedpref"
+            path="." />
     </device-transfer>
 </data-extraction-rules>

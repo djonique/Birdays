@@ -11,7 +11,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -19,8 +18,6 @@ import com.djonique.birdays.R;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class ProgressDialogHelper {
-
-    private static final String ILLEGAL_ARGUMENT_EXCEPTION = "IllegalArgumentException";
 
     private final Context context;
     private AlertDialog progressDialog;
@@ -46,15 +43,19 @@ public class ProgressDialogHelper {
     }
 
     /**
-     * Stops progress dialog
+     * Stops progress dialog. Safe to call from {@code onDestroy()} (or twice): a dialog whose
+     * window is already detached throws {@link IllegalArgumentException} from {@code dismiss()},
+     * which is expected there and carries no user-facing meaning.
      */
     public void dismissProgressDialog() {
-        if (progressDialog != null) {
-            try {
-                progressDialog.dismiss();
-            } catch (IllegalArgumentException e) {
-                Toast.makeText(context, ILLEGAL_ARGUMENT_EXCEPTION, Toast.LENGTH_SHORT).show();
-            }
+        final AlertDialog dialog = progressDialog;
+        if (dialog == null) return;
+        try {
+            dialog.dismiss();
+        } catch (IllegalArgumentException ignored) {
+            // The activity window is gone; there is nothing left to dismiss.
+        } finally {
+            progressDialog = null;
         }
     }
 }

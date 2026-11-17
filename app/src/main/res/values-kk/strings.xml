@@ -254,7 +254,7 @@
     <string name="nijinska">Бронислава Нижинская</string>
     <string name="presley">Элвис Пресли</string>
     <string name="hawking">Стивен Хокинг</string>
-    <string name="daviw_bowie">Дэвид Боуи</string>
+    <string name="david_bowie">Дэвид Боуи</string>
     <!-- 9 january -->
     <string name="simon_vouet">Симон Вуэ</string>
     <string name="wrangel">Фердинанд Врангель</string>
@@ -463,7 +463,7 @@
     <string name="williams">Джон Уильямс</string>
     <!-- 9 february -->
     <string name="navai">Алишер Навои</string>
-    <string name="valisy_zhukovsky">Василий Жуковский</string>
+    <string name="vasily_zhukovsky">Василий Жуковский</string>
     <string name="maybach">Вильгельм Майбах</string>
     <string name="soseki">Нацумэ Сосэки</string>
     <string name="berg">Альбан Берг</string>
@@ -718,7 +718,7 @@
     <string name="georg_ohm">Георг Симон Ом</string>
     <string name="prudhomme">Сюлли-Прюдом</string>
     <string name="beijerinck">Мартин Бейеринк</string>
-    <string name="yayser">Генрих Кайзер</string>
+    <string name="kayser">Генрих Кайзер</string>
     <string name="damadian">Реймонд Дамадьян</string>
     <string name="bertolucci">Бернардо Бертолуччи</string>
     <string name="stallman">Ричард Столлман</string>

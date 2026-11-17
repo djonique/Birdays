@@ -63,7 +63,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/calendar"
-                    app:srcCompat="@drawable/ic_person_blue_24dp"
+                    app:srcCompat="@drawable/ic_person_24dp"
                     app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -98,7 +98,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/calendar"
-                    app:srcCompat="@drawable/ic_calendar_blue_24dp"
+                    app:srcCompat="@drawable/ic_calendar_24dp"
                     app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -147,7 +147,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/phone_number"
-                    app:srcCompat="@drawable/ic_call_blue_24dp"
+                    app:srcCompat="@drawable/ic_call_24dp"
                     app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -181,7 +181,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/edit_image_padding"
                     android:contentDescription="@string/email"
-                    app:srcCompat="@drawable/ic_email_blue_24dp"
+                    app:srcCompat="@drawable/ic_email_24dp"
                     app:tint="?attr/colorPrimary" />
 
                 <com.google.android.material.textfield.TextInputLayout

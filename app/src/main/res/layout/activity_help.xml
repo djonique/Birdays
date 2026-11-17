@@ -63,6 +63,12 @@
                 android:id="@+id/button_help_open_settings"
                 layout="@layout/button_help_activity" />
 
+            <!-- Request exact-alarm access; hidden when the access is already granted -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_help_exact_alarm"
+                style="@style/ButtonStyle"
+                android:layout_marginTop="@dimen/default_padding" />
+
             <TextView
                 style="@style/SectionHeader.TextView"
                 android:layout_width="match_parent"

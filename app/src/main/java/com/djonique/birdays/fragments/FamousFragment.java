@@ -62,7 +62,7 @@ public class FamousFragment extends Fragment {
 
         BirdaysRepository.getInstance(requireContext()).getFamousBornThisDay(
                 Calendar.getInstance().getTimeInMillis(),
-                new BirdaysRepository.Callback<List<Person>>() {
+                new BirdaysRepository.Callback<>() {
                     @Override
                     public void onSuccess(List<Person> famous) {
                         if (!isAdded() || adapter == null) return;

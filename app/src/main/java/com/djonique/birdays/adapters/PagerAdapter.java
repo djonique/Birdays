@@ -112,5 +112,24 @@ public class PagerAdapter extends FragmentStateAdapter {
         if (monthFragment != null) {
             monthFragment.deleteRecord(timeStamp);
         }
+        AllFragment allFragment = findFragment(AllFragment.class);
+        if (allFragment != null) {
+            allFragment.deletePerson(timeStamp);
+        }
+    }
+
+    /**
+     * Puts a record back after an undo. The repository has already re-inserted it, so both lists
+     * only need the item: the adapters animate the insertion like any other add.
+     */
+    public void restorePerson(Person person) {
+        MonthFragment monthFragment = findFragment(MonthFragment.class);
+        if (monthFragment != null) {
+            monthFragment.addPerson(person);
+        }
+        AllFragment allFragment = findFragment(AllFragment.class);
+        if (allFragment != null) {
+            allFragment.addPerson(person, false);
+        }
     }
 }

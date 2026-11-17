@@ -14,6 +14,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
@@ -21,13 +22,12 @@ import android.provider.Settings;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
 import androidx.core.content.ContextCompat;
-import androidx.preference.PreferenceManager;
+import com.djonique.birdays.utils.BirdaysPreferencesManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
-import com.djonique.birdays.utils.BirdaysApplication;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.NamedDaemonThreadFactory;
 
@@ -45,18 +45,14 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         manager = ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE));
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        preferences = BirdaysPreferencesManager.getDefaultSharedPreferences(context);
 
-        String ringtone = preferences.getString(Constants.RINGTONE_KEY,
-                Settings.System.DEFAULT_NOTIFICATION_URI.toString());
-        Uri ringtoneUri = null;
-        if (!ringtone.isEmpty()) {
-            try {
-                ringtoneUri = Uri.parse(ringtone);
-            } catch (Exception ignored) {
-            }
-        }
-        createNotificationChannel(context, ringtoneUri);
+        // Reminders can still be in the system queue for a moment after the user switches them
+        // off (or the toggle write races with a firing alarm). Nothing is posted and nothing is
+        // re-armed in that case.
+        if (!preferences.getBoolean(Constants.NOTIFICATIONS_KEY, true)) return;
+
+        createNotificationChannel(context);
 
         String name = intent.getStringExtra(Constants.NAME);
         String when = intent.getStringExtra(Constants.WHEN);
@@ -65,7 +61,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
 
         PendingIntent pendingIntent = TaskStackBuilder.create(context)
-                .addNextIntentWithParentStack(getResultIntent(context, timeStamp, intent))
+                .addNextIntentWithParentStack(getResultIntent(context, timeStamp))
                 .getPendingIntent(((int) timeStamp), flags);
 
         NotificationCompat.Builder builder = buildNotification(context, name, when);
@@ -106,52 +102,63 @@ public class AlarmReceiver extends BroadcastReceiver {
                 // The alarm simply stays unscheduled; the next app launch re-creates it.
             } finally {
                 executor.shutdown();
-                pendingResult.finish();
+                if (pendingResult != null) {
+                    pendingResult.finish();
+                }
             }
         });
     }
 
-    private Intent getResultIntent(Context context, long timeStamp, Intent intent) {
+    /**
+     * Builds a clean navigation intent. The broadcast intent must never be reused: it carries the
+     * alarm's own extras and, when the list screen is visible, was previously handed to
+     * TaskStackBuilder as-is, which produced an intent that did not resolve to DetailActivity.
+     */
+    Intent getResultIntent(Context context, long timeStamp) {
         Intent resultIntent = new Intent(context, DetailActivity.class);
         resultIntent.putExtra(Constants.TIME_STAMP, timeStamp);
-        if (BirdaysApplication.isActivityVisible()) {
-            resultIntent = intent;
-        }
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         return resultIntent;
     }
 
-    private void createNotificationChannel(Context context, Uri ringtoneUri) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            if (manager == null) return;
+    /**
+     * The channel is created once and never deleted: removing it would reset the user's own
+     * importance and sound choices. Android ignores later sound/importance changes to a channel,
+     * so the stored ringtone is applied here at creation time. A ringtone picked afterward is a
+     * documented platform limitation and can only be changed in the system settings for the
+     * channel; on API 25 and lower the per-notification sound below still applies.
+     */
+    private void createNotificationChannel(Context context) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return;
+        if (manager == null) return;
+        if (manager.getNotificationChannel(CHANNEL_ID) != null) return;
 
-            NotificationChannel existing = manager.getNotificationChannel(CHANNEL_ID);
-            if (existing != null) {
-                // A channel's sound cannot be changed after it is created. Recreate it only when
-                // the user picked a different ringtone, so the channel keeps its settings (and
-                // the user's importance choice) on every other notification.
-                Uri currentSound = existing.getSound();
-                boolean soundChanged = ringtoneUri == null
-                        ? currentSound != null
-                        : !ringtoneUri.equals(currentSound);
-                if (!soundChanged) return;
-                manager.deleteNotificationChannel(CHANNEL_ID);
-            }
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
+                context.getString(R.string.channel_name), NotificationManager.IMPORTANCE_HIGH);
+        channel.enableLights(true);
+        channel.enableVibration(true);
+        channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+        channel.setSound(channelSound(), notificationAudioAttributes());
+        manager.createNotificationChannel(channel);
+    }
 
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
-                    context.getString(R.string.channel_name), NotificationManager.IMPORTANCE_HIGH);
-            channel.enableLights(true);
-            channel.enableVibration(true);
-            channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
-            if (ringtoneUri != null) {
-                android.media.AudioAttributes audioAttributes = new android.media.AudioAttributes.Builder()
-                        .setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .setUsage(android.media.AudioAttributes.USAGE_NOTIFICATION_EVENT)
-                        .build();
-                channel.setSound(ringtoneUri, audioAttributes);
-            }
-            manager.createNotificationChannel(channel);
+    /** The ringtone selected at the moment the channel is first created; null means "Silent". */
+    private Uri channelSound() {
+        String ringtone = preferences.getString(Constants.RINGTONE_KEY,
+                Settings.System.DEFAULT_NOTIFICATION_URI.toString());
+        if (ringtone.isEmpty()) return null;
+        try {
+            return Uri.parse(ringtone);
+        } catch (Exception e) {
+            return Settings.System.DEFAULT_NOTIFICATION_URI;
         }
+    }
+
+    private static AudioAttributes notificationAudioAttributes() {
+        return new AudioAttributes.Builder()
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)
+                .build();
     }
 
     private NotificationCompat.Builder buildNotification(Context context, String title, String text) {
@@ -166,18 +173,22 @@ public class AlarmReceiver extends BroadcastReceiver {
         return builder;
     }
 
+    /**
+     * Only relevant on API 25 and lower: once a notification is posted to a channel (API 26+),
+     * the channel decides the sound and the builder value is ignored.
+     */
     private void setDefaultsAndRingtone(NotificationCompat.Builder builder) {
         String ringtone = preferences.getString(Constants.RINGTONE_KEY,
                 Settings.System.DEFAULT_NOTIFICATION_URI.toString());
+        if (ringtone.isEmpty()) {
+            builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE | NotificationCompat.DEFAULT_LIGHTS);
+            return;
+        }
         try {
-            setRingtone(builder, Uri.parse(ringtone));
+            builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE | NotificationCompat.DEFAULT_LIGHTS);
+            builder.setSound(Uri.parse(ringtone));
         } catch (Exception e) {
             builder.setDefaults(NotificationCompat.DEFAULT_ALL);
         }
-    }
-
-    private void setRingtone(NotificationCompat.Builder builder, Uri ringtoneUri) {
-        builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE | NotificationCompat.DEFAULT_LIGHTS);
-        builder.setSound(ringtoneUri);
     }
 }

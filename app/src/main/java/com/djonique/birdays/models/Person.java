@@ -9,28 +9,34 @@ package com.djonique.birdays.models;
 import androidx.annotation.NonNull;
 
 import java.util.Calendar;
-import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Person implements Item, Comparable<Person> {
 
-    private String name, phoneNumber, email;
-    private long date, timeStamp;
-    private boolean yearUnknown;
-
+    /**
+     * {@code time_stamp} is the record identity (edits, deletes, notification IDs and alarm
+     * request codes). Wall-clock milliseconds are not unique: two records created within the same
+     * millisecond received the same identity. A process-wide monotonic sequence removes the
+     * collision while keeping the same magnitude and type.
+     */
+    private static final AtomicLong ID_SEQUENCE = new AtomicLong(System.currentTimeMillis());
     /**
      * Calendar instances are mutable and not thread-safe. A single shared instance used to be
      * reused by every caller; a per-thread instance keeps the allocation cost low without
      * sharing state between the main thread and background work.
      */
-    private static final ThreadLocal<Calendar> CALENDAR = new ThreadLocal<Calendar>() {
+    private static final ThreadLocal<Calendar> CALENDAR = new ThreadLocal<>() {
         @Override
         protected Calendar initialValue() {
             return Calendar.getInstance();
         }
     };
+    private String name, phoneNumber, email;
+    private long date, timeStamp;
+    private boolean yearUnknown;
 
     public Person() {
-        this.timeStamp = new Date().getTime();
+        this.timeStamp = nextTimeStamp();
     }
 
     public Person(String name, long date) {
@@ -44,7 +50,7 @@ public class Person implements Item, Comparable<Person> {
         this.yearUnknown = yearUnknown;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.timeStamp = new Date().getTime();
+        this.timeStamp = nextTimeStamp();
     }
 
     public Person(String name, long date, boolean yearUnknown, String phoneNumber, String email,
@@ -55,6 +61,14 @@ public class Person implements Item, Comparable<Person> {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.timeStamp = timeStamp;
+    }
+
+    /**
+     * Next value for {@code time_stamp}. Also used by the v1 -> v2 migration to reassign
+     * duplicate identities, so newly generated values can never collide with kept ones.
+     */
+    public static long nextTimeStamp() {
+        return ID_SEQUENCE.incrementAndGet();
     }
 
     public String getName() {
@@ -123,10 +137,9 @@ public class Person implements Item, Comparable<Person> {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Person)) {
+        if (!(obj instanceof Person person)) {
             return false;
         }
-        Person person = (Person) obj;
         return timeStamp == person.timeStamp;
     }
 

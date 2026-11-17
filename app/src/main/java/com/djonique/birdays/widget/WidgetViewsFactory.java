@@ -72,6 +72,10 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
 
     @Override
     public void onDestroy() {
+        if (dbHelper != null) {
+            dbHelper.close();
+            dbHelper = null;
+        }
     }
 
     @Override

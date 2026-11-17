@@ -126,7 +126,7 @@
     <string name="notifications">Notifications</string>
     <string name="allow_notification">Allow the app to send notifications about upcoming birthdays</string>
     <string name="notifications_time">Notification time</string>
-    <string name="default_time_preference" translatable="false">645703200000</string>
+    <string name="default_time_preference" translatable="false">10:00</string>
     <string name="additional_notification">Additional notification</string>
 
     <string-array name="additional_notification_entries">
@@ -212,6 +212,10 @@
     <string name="google_drive_restore_progress">Restoring from Google Drive…</string>
     <string name="recover_records_error">Failed to recover records</string>
     <string name="records_recovered">Records recovered</string>
+    <string name="restore_confirm_title">Restore from backup</string>
+    <string name="restore_confirm_message">Are you sure you want to restore records from %1$s? Record count: %2$s.</string>
+    <string name="restore_button">Restore</string>
+    <string name="restore_unknown">unknown</string>
 
     <!-- Advertising -->
     <string name="advertising">Advertising</string>
@@ -229,7 +233,7 @@
     <string name="ad_watch_full_video_to_disable">Watch the video to the end to disable ads</string>
     <string name="donate_title">Make a contribution</string>
     <string name="donate_summary">Financial support for the app\'s development</string>
-    <string name="donate_url" translatable="false">https://boosty.to/djonique/donate</string>
+    <string name="donate_url" translatable="false">https://djonique.github.io/Birdays/donate.html</string>
 
     <!-- About -->
     <string name="about">About</string>
@@ -245,6 +249,7 @@
     <string name="help_header">Why isn\'t the reminder working?</string>
     <string name="help_description">Android devices have a power-saving mode that blocks the app from running in the background or prevents it from starting automatically. To make notifications work correctly, follow these simple steps:\n\n1. Make sure notifications are allowed for the Birdays app (Settings > Apps > Birdays).\n\n2. If you have task managers, memory-cleaning or power-saving apps installed (such as “Battery Saver”, “Clean Master” and similar apps) that block background operation, add Birdays to the exceptions.\n\n3. Turn off power-saving mode for Birdays (Settings > Battery > Battery optimization).</string>
     <string name="help_settings">Open settings</string>
+    <string name="help_exact_alarm">Allow exact alarms</string>
     <string name="help_delay_text">Please note that notifications may be delayed on some devices.</string>
     <string name="help_email_description">If you have any questions or suggestions, please contact me at birdaysapp@gmail.com</string>
     <string name="send_email">Send email</string>
@@ -264,11 +269,15 @@
     <string name="play_review_terms" translatable="false">Used under the Play Core Software Development Kit Terms of Service and the Android Software Development Kit License Agreement:\n\nhttps://developer.android.com/guide/playcore</string>
     <string name="apache_license" translatable="false">Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\nhttps://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
     <string name="bsd_3_clause_license" translatable="false">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n* Neither the name of Google Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</string>
+    <string name="apache_libraries_note" translatable="false">This app also includes the following libraries, each used under the Apache License, Version 2.0:\n\nKotlin Standard Library and Kotlin Coroutines by JetBrains s.r.o.\n\nOkHttp and Okio by Square, Inc.\n\nGuava and Gson by Google LLC\n\nApache HttpClient by The Apache Software Foundation</string>
 
     <!-- Third-party SDKs -->
     <string name="yandex_ads_by_yandex" translatable="false">Yandex Mobile Ads SDK by Yandex</string>
     <string name="yandex_ads_copyright" translatable="false">Copyright Yandex</string>
     <string name="yandex_ads_terms" translatable="false">Built with Yandex Mobile Ads SDK. Used under the Yandex Mobile Ads SDK License Agreement:\n\nhttps://yandex.ru/legal/mobileads_sdk_agreement/</string>
+    <string name="appmetrica_by_yandex" translatable="false">Yandex AppMetrica SDK by Yandex</string>
+    <string name="appmetrica_copyright" translatable="false">Copyright Yandex</string>
+    <string name="appmetrica_terms" translatable="false">Built with Yandex AppMetrica SDK («Создано с использованием Yandex AppMetrica SDK»). Supplied with the Yandex Mobile Ads SDK and used under the Yandex AppMetrica SDK License Agreement:\n\nhttps://yandex.ru/legal/appmetrica_sdk_agreement/</string>
     <string name="firebase_by_google" translatable="false">Firebase by Google LLC</string>
     <string name="firebase_copyright" translatable="false">Copyright Google LLC</string>
     <string name="firebase_terms" translatable="false">Used under the Firebase Terms of Service:\n\nhttps://firebase.google.com/terms</string>
@@ -331,7 +340,7 @@
     <string name="nijinska">Bronislava Nijinska</string>
     <string name="presley">Elvis Presley</string>
     <string name="hawking">Stephen Hawking</string>
-    <string name="daviw_bowie">David Bowie</string>
+    <string name="david_bowie">David Bowie</string>
     <!-- 9 january -->
     <string name="simon_vouet">Simon Vouet</string>
     <string name="wrangel">Ferdinand von Wrangel</string>
@@ -540,7 +549,7 @@
     <string name="williams">John Williams</string>
     <!-- 9 february -->
     <string name="navai">Ali-Shir Nava\'i</string>
-    <string name="valisy_zhukovsky">Vasily Zhukovsky</string>
+    <string name="vasily_zhukovsky">Vasily Zhukovsky</string>
     <string name="maybach">Wilhelm Maybach</string>
     <string name="soseki">Natsume Sōseki</string>
     <string name="berg">Alban Berg</string>
@@ -795,7 +804,7 @@
     <string name="georg_ohm">Georg Simon Ohm</string>
     <string name="prudhomme">Sully Prudhomme</string>
     <string name="beijerinck">Martinus Beijerinck</string>
-    <string name="yayser">Heinrich Kayser</string>
+    <string name="kayser">Heinrich Kayser</string>
     <string name="damadian">Raymond Damadian</string>
     <string name="bertolucci">Bernardo Bertolucci</string>
     <string name="stallman">Richard Stallman</string>
@@ -1925,7 +1934,7 @@
     <string name="castro">Fidel Castro</string>
     <!-- 14 august -->
     <string name="orsted">Hans Christian Ørsted</string>
-    <string name="holliday">Doc Holliday</string>
+    <string name="holliday" tools:ignore="Typos">Doc Holliday</string>
     <string name="merezhkovsky">Dmitry Merezhkovsky</string>
     <string name="galsworthy">John Galsworthy</string>
     <string name="dempster">Arthur Jeffrey Dempster</string>
