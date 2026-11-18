@@ -66,8 +66,7 @@
     <color name="cardview_birthday">@color/md_theme_primary_container</color>
     <color name="divider_color">@color/md_theme_outline_variant</color>
 
-    <!-- Legacy / Decorative aliases -->
-    <color name="blue_to_green">@color/md_theme_primary</color>
-    <color name="accent_green">#8CF8DF</color>
-    <color name="red_alert">#FFB4AB</color>
+    <!-- Widget -->
+    <color name="widget_header_color">#8CF8DF</color>
+    <color name="widget_birthday_color">#FFB4AB</color>
 </resources>

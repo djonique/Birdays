@@ -72,7 +72,7 @@ public class DbHelperMigrationInstrumentedTest {
             DbHelper.migrateToV2(db, context);
 
             assertTrue("unique time_stamp index was not created",
-                    indexExists(db, "idx_persons_time_stamp"));
+                    indexExists(db));
 
             List<Long> timeStamps = readTimeStamps(db);
             assertEquals("the migration lost or added rows", 3, timeStamps.size());
@@ -112,9 +112,9 @@ public class DbHelperMigrationInstrumentedTest {
         return result;
     }
 
-    private static boolean indexExists(SQLiteDatabase db, String name) {
+    private static boolean indexExists(SQLiteDatabase db) {
         try (Cursor cursor = db.query("sqlite_master", new String[]{"name"},
-                "type = ? AND name = ?", new String[]{"index", name}, null, null, null)) {
+                "type = ? AND name = ?", new String[]{"index", "idx_persons_time_stamp"}, null, null, null)) {
             return cursor.moveToFirst();
         }
     }

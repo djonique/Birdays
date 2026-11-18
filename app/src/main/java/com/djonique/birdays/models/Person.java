@@ -25,12 +25,7 @@ public class Person implements Item, Comparable<Person> {
      * reused by every caller; a per-thread instance keeps the allocation cost low without
      * sharing state between the main thread and background work.
      */
-    private static final ThreadLocal<Calendar> CALENDAR = new ThreadLocal<>() {
-        @Override
-        protected Calendar initialValue() {
-            return Calendar.getInstance();
-        }
-    };
+    private static final ThreadLocal<Calendar> CALENDAR = ThreadLocal.withInitial(Calendar::getInstance);
     private String name, phoneNumber, email;
     private long date, timeStamp;
     private boolean yearUnknown;

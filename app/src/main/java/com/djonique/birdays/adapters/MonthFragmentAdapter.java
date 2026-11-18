@@ -295,10 +295,15 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
 
     static class CardViewHolder extends RecyclerView.ViewHolder {
-        CardView cardView;
-        RelativeLayout relativeLayout;
-        TextView tvName, tvDate, tvAge, tvDaysLeft;
-        ImageButton btnEmail, btnChat, btnCall;
+        final CardView cardView;
+        final RelativeLayout relativeLayout;
+        final TextView tvName;
+        final TextView tvDate;
+        final TextView tvAge;
+        final TextView tvDaysLeft;
+        final ImageButton btnEmail;
+        final ImageButton btnChat;
+        final ImageButton btnCall;
 
         CardViewHolder(View itemView) {
             super(itemView);

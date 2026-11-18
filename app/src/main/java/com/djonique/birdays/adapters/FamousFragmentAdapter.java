@@ -74,7 +74,8 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
     }
 
     public static class ListViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvDate;
+        final TextView tvName;
+        final TextView tvDate;
 
         ListViewHolder(View itemView) {
             super(itemView);

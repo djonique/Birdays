@@ -272,7 +272,9 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     private static class ListViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvDate, tvAge;
+        final TextView tvName;
+        final TextView tvDate;
+        final TextView tvAge;
 
         ListViewHolder(View itemView) {
             super(itemView);
@@ -283,8 +285,8 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     private static class SeparatorViewHolder extends RecyclerView.ViewHolder {
-        TextView separatorView;
-        View dividerLine;
+        final TextView separatorView;
+        final View dividerLine;
 
         SeparatorViewHolder(View itemView) {
             super(itemView);

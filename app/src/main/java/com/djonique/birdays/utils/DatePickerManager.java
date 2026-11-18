@@ -18,7 +18,7 @@ import java.util.TimeZone;
 
 /**
  * Shows the Material date picker. The platform {@code DatePickerDialog} is not used:
- * it inherits text colours from private framework attributes that AppCompat-based
+ * it inherits text colors from private framework attributes that AppCompat-based
  * themes do not resolve, which left the calendar numbers invisible in the dark theme.
  * {@link MaterialDatePicker} is drawn with the Material theme roles instead, so it
  * follows the app palette in both schemes.

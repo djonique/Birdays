@@ -108,7 +108,7 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
         String today = context.getString(R.string.today);
         if (Utils.daysLeft(context, date).equals(today)) {
             view.setTextViewText(R.id.textview_widget_date, today);
-            setTextColor(view, ContextCompat.getColor(context, R.color.red_alert));
+            setTextColor(view, ContextCompat.getColor(context, R.color.widget_birthday_color));
         } else {
             view.setTextViewText(R.id.textview_widget_date, Utils.getDateWithoutYear(date));
             setTextColor(view, ContextCompat.getColor(context, android.R.color.white));
