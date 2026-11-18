@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">新建记录</string>
     <string name="add_from_contacts">从联系人添加</string>
-    <string name="open_contacts_error">由于设备功能而无法执行操作</string>
+    <string name="activity_not_found_error">由于设备功能而无法执行操作</string>
     <string name="name">姓名</string>
     <string name="error_hint">请输入姓名</string>
     <string name="phone_number">电话号码</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">正在从 Google Drive 恢复…</string>
     <string name="recover_records_error">恢复记录失败</string>
     <string name="records_recovered">记录已恢复</string>
+    <string name="restore_confirm_title">从备份恢复</string>
+    <string name="restore_confirm_message">确定要从 %1$s 恢复记录吗？记录数：%2$s。</string>
+    <string name="restore_button">恢复</string>
+    <string name="restore_unknown">未知</string>
+    <string name="upload_error">上传错误：%s</string>
+    <string name="backup_error">备份错误：%s</string>
+    <string name="auth_error">认证错误：%s</string>
+    <string name="authorization_failed_error">授权失败：%s</string>
+    <string name="download_error">下载错误：%s</string>
+    <string name="file_not_found">未找到文件</string>
+    <string name="search_error">搜索错误：%s</string>
 
     <!-- Advertising -->
     <string name="advertising">广告</string>
@@ -193,11 +204,15 @@
 
     <!-- HelpActivity -->
     <string name="help_header">为什么提醒不起作用？</string>
-    <string name="help_description">Android 设备有省电模式，会阻止应用在后台运行或阻止其自动启动。要让通知正常工作，请按以下简单步骤操作：\n\n1. 确保已允许 Birdays 应用发送通知（设置 > 应用 > Birdays）。\n\n2. 如果你安装了会阻止后台运行的任务管理器、内存清理或省电应用（例如“Battery Saver”、“Clean Master”及类似应用），请将 Birdays 加入例外列表。\n\n3. 为 Birdays 关闭省电模式（设置 > 电池 > 电池优化）。</string>
+    <string name="help_description">Android 设备具有省电模式，该模式会阻止应用在后台运行或防止其自动启动。为使通知正常工作，请按照以下简单步骤操作：</string>
+    <string name="help_explanation_1">1. 确保允许 Birdays 应用发送通知（设置 > Birdays > 通知）。</string>
+    <string name="help_delay_text">请注意，某些设备上的通知可能会延迟。</string>
+    <string name="help_exact_alarm">允许设置闹钟和提醒</string>
+    <string name="help_explanation_2">2. 关闭 Birdays 的省电模式（设置 > Birdays > 电池）。</string>
     <string name="help_settings">打开设置</string>
-    <string name="help_delay_text">请注意，在某些设备上，通知可能会有所延迟。</string>
-    <string name="help_email_description">如有任何问题或建议，请通过 birdaysapp@gmail.com 与我联系</string>
-    <string name="send_email">发送邮件</string>
+    <string name="help_explanation_3">3. 如果您安装了阻止后台运行的任务管理器、内存清理或省电应用（例如“Battery Saver”、“Clean Master”及类似应用），请将 Birdays 添加到例外列表中。</string>
+    <string name="help_email_description">如果您有任何问题或建议，请通过 birdaysapp@gmail.com 与我联系</string>
+    <string name="send_email">发送电子邮件</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

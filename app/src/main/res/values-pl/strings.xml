@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Nowy wpis</string>
     <string name="add_from_contacts">Dodaj z kontaktów</string>
-    <string name="open_contacts_error">Nie można wykonać czynności z powodu urządzenia</string>
+    <string name="activity_not_found_error">Nie można wykonać czynności z powodu urządzenia</string>
     <string name="name">Imię i Nazwisko</string>
     <string name="error_hint">Proszę podać nazwę</string>
     <string name="phone_number">Numer telefonu</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Przywracanie z Google Drive…</string>
     <string name="recover_records_error">Nie udało się odzyskać wpisów</string>
     <string name="records_recovered">Odzyskano</string>
+    <string name="restore_confirm_title">Przywróć z kopii zapasowej</string>
+    <string name="restore_confirm_message">Czy na pewno chcesz przywrócić rekordy z %1$s? Liczba rekordów: %2$s.</string>
+    <string name="restore_button">Przywróć</string>
+    <string name="restore_unknown">nieznany</string>
+    <string name="upload_error">Błąd przesyłania: %s</string>
+    <string name="backup_error">Błąd kopii zapasowej: %s</string>
+    <string name="auth_error">Błąd uwierzytelniania: %s</string>
+    <string name="authorization_failed_error">Autoryzacja nie powiodła się: %s</string>
+    <string name="download_error">Błąd pobierania: %s</string>
+    <string name="file_not_found">Nie znaleziono pliku</string>
+    <string name="search_error">Błąd wyszukiwania: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Reklama</string>
@@ -193,11 +204,15 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Dlaczego przypomnienie nie działa?</string>
-    <string name="help_description">Urządzenia Android mają tryb oszczędzania energii, który blokuje działanie aplikacji w tle lub uniemożliwia jej automatyczne uruchamianie. Aby powiadomienia działały prawidłowo, wykonaj następujące proste kroki:\n\n1. Upewnij się, że powiadomienia są dozwolone dla aplikacji Birdays (Ustawienia > Aplikacje > Birdays).\n\n2. Jeśli masz zainstalowane menedżery zadań, aplikacje do czyszczenia pamięci lub oszczędzania energii (takie jak „Battery Saver”, „Clean Master” i podobne), które blokują działanie w tle, dodaj Birdays do wyjątków.\n\n3. Wyłącz tryb oszczędzania energii dla Birdays (Ustawienia > Bateria > Optymalizacja baterii).</string>
+    <string name="help_description">Urządzenia z systemem Android mają tryb oszczędzania energii, który blokuje działanie aplikacji w tle lub uniemożliwia jej automatyczne uruchamianie. Aby powiadomienia działały poprawnie, wykonaj te proste kroki:</string>
+    <string name="help_explanation_1">1. Upewnij się, że powiadomienia są dozwolone dla aplikacji Birdays (Ustawienia > Birdays > Powiadomienia).</string>
+    <string name="help_delay_text">Pamiętaj, że na niektórych urządzeniach powiadomienia mogą być opóźnione.</string>
+    <string name="help_exact_alarm">Zezwalaj na dokładne alarmy</string>
+    <string name="help_explanation_2">2. Wyłącz tryb oszczędzania energii dla aplikacji Birdays (Ustawienia > Birdays > Bateria).</string>
     <string name="help_settings">Otwórz ustawienia</string>
-    <string name="help_delay_text">Pamiętaj, że na niektórych urządzeniach powiadomienia mogą działać z pewnym opóźnieniem.</string>
-    <string name="help_email_description">Jeśli masz pytania lub sugestie, skontaktuj się ze mną pod adresem birdaysapp@gmail.com</string>
-    <string name="send_email">Wyślij email</string>
+    <string name="help_explanation_3">3. Jeśli masz zainstalowane menedżery zadań lub aplikacje do czyszczenia pamięci i oszczędzania energii (takie jak „Battery Saver”, „Clean Master” i podobne), które blokują działanie w tle, dodaj aplikację Birdays do wyjątków.</string>
+    <string name="help_email_description">Jeśli masz jakieś pytania lub sugestie, skontaktuj się ze mną pod adresem birdaysapp@gmail.com</string>
+    <string name="send_email">Wyślij e-mail</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

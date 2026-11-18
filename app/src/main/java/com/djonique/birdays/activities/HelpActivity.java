@@ -30,8 +30,6 @@ import com.google.android.material.appbar.AppBarLayout;
 
 public class HelpActivity extends AppCompatActivity {
 
-    private static final String ACTIVITY_NOT_FOUND_EXCEPTION = "ActivityNotFoundException";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +103,7 @@ public class HelpActivity extends AppCompatActivity {
             }
         } catch (ActivityNotFoundException e) {
             // The fallback alarm scheduling still works on devices without this screen.
-            Toast.makeText(this, ACTIVITY_NOT_FOUND_EXCEPTION, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.activity_not_found_error, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -129,7 +127,7 @@ public class HelpActivity extends AppCompatActivity {
                     + getString(R.string.version_name));
             startActivity(Intent.createChooser(intent, null));
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, ACTIVITY_NOT_FOUND_EXCEPTION, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.activity_not_found_error, Toast.LENGTH_LONG).show();
         }
     }
 }

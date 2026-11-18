@@ -47,9 +47,9 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Nuovo record</string>
     <string name="add_from_contacts">Aggiungi dai contatti</string>
-    <string name="open_contacts_error">Impossibile eseguire l\'azione a causa delle caratteristiche del dispositivo</string>
+    <string name="activity_not_found_error">Impossibile eseguire l\'azione a causa delle caratteristiche del dispositivo</string>
     <string name="name">Nome</string>
-    <string name="error_hint">Inserire un nome</string>
+    <string name="error_hint">Inserisci un nome</string>
     <string name="phone_number">Numero di telefono</string>
     <string name="pick_date">Scegli una data</string>
     <string name="wrong_date">Data non valida</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Ripristino da Google Drive in corso…</string>
     <string name="recover_records_error">Impossibile recuperare i record</string>
     <string name="records_recovered">Record recuperati</string>
+    <string name="restore_confirm_title">Ripristina dal backup</string>
+    <string name="restore_confirm_message">Sei sicuro di voler ripristinare i record da %1$s? Numero di record: %2$s.</string>
+    <string name="restore_button">Ripristina</string>
+    <string name="restore_unknown">sconosciuto</string>
+    <string name="upload_error">Errore di caricamento: %s</string>
+    <string name="backup_error">Errore di backup: %s</string>
+    <string name="auth_error">Errore di autenticazione: %s</string>
+    <string name="authorization_failed_error">Autorizzazione non riuscita: %s</string>
+    <string name="download_error">Errore di download: %s</string>
+    <string name="file_not_found">File non trovato</string>
+    <string name="search_error">Errore di ricerca: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Pubblicità</string>
@@ -193,9 +204,13 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Perché il promemoria non funziona?</string>
-    <string name="help_description">I dispositivi Android dispongono di una modalità di risparmio energetico che blocca l\'esecuzione dell\'app in background o ne impedisce l\'avvio automatico. Per fare in modo che le notifiche funzionino correttamente, segui questi semplici passaggi:\n\n1. Assicurati che le notifiche siano consentite per l\'app Birdays (Impostazioni > App > Birdays).\n\n2. Se hai installato gestori attività, app per la pulizia della memoria o per il risparmio energetico (come “Battery Saver”, “Clean Master” e app simili) che bloccano il funzionamento in background, aggiungi Birdays alle eccezioni.\n\n3. Disattiva la modalità di risparmio energetico per Birdays (Impostazioni > Batteria > Ottimizzazione batteria).</string>
-    <string name="help_settings">Apri le impostazioni</string>
-    <string name="help_delay_text">Tieni presente che su alcuni dispositivi le notifiche potrebbero essere ritardate.</string>
+    <string name="help_description">I dispositivi Android dispongono di una modalità di risparmio energetico che impedisce all\'app di essere eseguita in background o ne blocca l\'avvio automatico. Per far funzionare correttamente le notifiche, segui questi semplici passaggi:</string>
+    <string name="help_explanation_1">1. Assicurati che le notifiche siano consentite per l\'app Birdays (Impostazioni > Birdays > Notifiche).</string>
+    <string name="help_delay_text">Tieni presente che su alcuni dispositivi le notifiche potrebbero subire dei ritardi.</string>
+    <string name="help_exact_alarm">Consenti sveglie e promemoria</string>
+    <string name="help_explanation_2">2. Disattiva la modalità di risparmio energetico per Birdays (Impostazioni > Birdays > Batteria).</string>
+    <string name="help_settings">Apri impostazioni</string>
+    <string name="help_explanation_3">3. Se hai installato app per la gestione delle attività, la pulizia della memoria o il risparmio energetico (come “Battery Saver”, “Clean Master” e app simili) che bloccano il funzionamento in background, aggiungi Birdays alle eccezioni.</string>
     <string name="help_email_description">Se hai domande o suggerimenti, contattami all\'indirizzo birdaysapp@gmail.com</string>
     <string name="send_email">Invia email</string>
 

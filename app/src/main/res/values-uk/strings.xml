@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Новий запис</string>
     <string name="add_from_contacts">Додати з контактів</string>
-    <string name="open_contacts_error">Цю дію неможливо виконати через особливості пристрою</string>
+    <string name="activity_not_found_error">Цю дію неможливо виконати через особливості пристрою</string>
     <string name="name">Ім\'я</string>
     <string name="error_hint">Будь ласка, введіть ім\'я</string>
     <string name="phone_number">Номер телефону</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Відновлення з Google Диска…</string>
     <string name="recover_records_error">Не вдалося відновити записи</string>
     <string name="records_recovered">Записи відновлено</string>
+    <string name="restore_confirm_title">Відновлення з резервної копії</string>
+    <string name="restore_confirm_message">Ви дійсно хочете відновити записи від %1$s? Кількість записів: %2$s.</string>
+    <string name="restore_button">Відновити</string>
+    <string name="restore_unknown">невідомо</string>
+    <string name="upload_error">Помилка завантаження: %s</string>
+    <string name="backup_error">Помилка резервного копіювання: %s</string>
+    <string name="auth_error">Помилка авторизації: %s</string>
+    <string name="authorization_failed_error">Авторизація не вдалася: %s</string>
+    <string name="download_error">Помилка завантаження файлу: %s</string>
+    <string name="file_not_found">Файл не знайдено</string>
+    <string name="search_error">Помилка пошуку: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Реклама</string>
@@ -192,10 +203,14 @@
     <string name="privacy_policy">Політика конфіденційності</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Чому нагадування не спрацьовує?</string>
-    <string name="help_description">На пристроях Android є режим енергозбереження, який блокує роботу застосунку у фоновому режимі або забороняє автозапуск. Щоб сповіщення працювали коректно, виконайте кілька простих дій:\n\n1. Переконайтеся, що для застосунку Birdays дозволено сповіщення (Налаштування > Програми > Birdays).\n\n2. Якщо у вас встановлені менеджери завдань, застосунки для очищення пам\'яті або енергозбереження («Battery Saver», «Clean Master» та подібні), які блокують роботу у фоновому режимі, додайте Birdays до винятків.\n\n3. Вимкніть режим енергозбереження для Birdays (Налаштування > Акумулятор > Економія заряду акумулятора).</string>
-    <string name="help_settings">Відкрити налаштування</string>
+    <string name="help_header">Чому нагадування не спрацьовують?</string>
+    <string name="help_description">На пристроях Android є режим енергозбереження, який блокує роботу застосунку у фоновому режимі або забороняє автозапуск. Щоб сповіщення працювали коректно, виконайте кілька простих дій:</string>
+    <string name="help_explanation_1">1. Переконайтеся, що для застосунку Birdays дозволені сповіщення (Налаштування > Birdays > Сповіщення).</string>
     <string name="help_delay_text">Зверніть увагу, що на деяких пристроях сповіщення надходять із затримкою.</string>
+    <string name="help_exact_alarm">Дозволити точні будильники</string>
+    <string name="help_explanation_2">2. Вимкніть режим енергозбереження для Birdays (Налаштування > Birdays > Батарея).</string>
+    <string name="help_settings">Відкрити налаштування</string>
+    <string name="help_explanation_3">3. Якщо у вас встановлені менеджери завдань, додатки для очищення пам\'яті або енергозбереження («Battery Saver», «Clean Master» та аналогічні), які блокують роботу у фоновому режимі, додайте Birdays у винятки.</string>
     <string name="help_email_description">З усіх питань і пропозицій пишіть мені на пошту birdaysapp@gmail.com</string>
     <string name="send_email">Надіслати листа</string>
 
@@ -230,7 +245,7 @@
     <!-- 5 january -->
     <string name="eucken">Рудольф Крістоф Ойкен</string>
     <string name="gillette">Кінґ Кемп Жиллетт</string>
-    <string name="erlanger">Джозеф Урлангер</string>
+    <string name="erlanger">Джозеф Ерлангер</string>
     <string name="umberto_eco">Умберто Еко</string>
     <string name="manson">Мерілін Менсон</string>
     <string name="bradley_cooper">Бредлі Купер</string>
@@ -257,7 +272,7 @@
     <string name="david_bowie">Девід Бові</string>
     <!-- 9 january -->
     <string name="simon_vouet">Сімон Вуе</string>
-    <string name="wrangel">Фердінанд Врангель</string>
+    <string name="wrangel">Фердинанд Врангель</string>
     <string name="watson">Джон Бродес Вотсон</string>
     <string name="capek">Карел Чапек</string>
     <string name="beauvoir">Симона де Бовуар</string>

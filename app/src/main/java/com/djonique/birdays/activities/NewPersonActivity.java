@@ -220,7 +220,7 @@ public class NewPersonActivity extends AppCompatActivity {
         try {
             contactPickerLauncher.launch(intent);
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.activity_not_found_error, Toast.LENGTH_LONG).show();
         }
     }
 

@@ -49,7 +49,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">New record</string>
     <string name="add_from_contacts">Add from contacts</string>
-    <string name="open_contacts_error">Unable to perform action due to device features</string>
+    <string name="activity_not_found_error">Unable to perform action due to device features</string>
     <string name="name">Name</string>
     <string name="error_hint">Please enter a name</string>
     <string name="phone_number">Phone number</string>
@@ -216,6 +216,13 @@
     <string name="restore_confirm_message">Are you sure you want to restore records from %1$s? Record count: %2$s.</string>
     <string name="restore_button">Restore</string>
     <string name="restore_unknown">unknown</string>
+    <string name="upload_error">Upload error: %s</string>
+    <string name="backup_error">Backup error: %s</string>
+    <string name="auth_error">Auth error: %s</string>
+    <string name="authorization_failed_error">Authorization failed: %s</string>
+    <string name="download_error">Download error: %s</string>
+    <string name="file_not_found">File not found</string>
+    <string name="search_error">Search error: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Advertising</string>
@@ -241,16 +248,19 @@
     <string name="software_licenses">Open-source licenses</string>
     <string name="third_party_sdks">Third-party SDKs</string>
     <string name="menu_github">Source code</string>
-    <string name="github_url" translatable="false">https://github.com/Djonique/Birdays</string>
+    <string name="github_url" translatable="false">https://github.com/djonique/Birdays</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="privacy_policy_link" translatable="false">https://djonique.github.io/Birdays</string>
 
     <!-- HelpActivity -->
     <string name="help_header">Why isn\'t the reminder working?</string>
-    <string name="help_description">Android devices have a power-saving mode that blocks the app from running in the background or prevents it from starting automatically. To make notifications work correctly, follow these simple steps:\n\n1. Make sure notifications are allowed for the Birdays app (Settings > Apps > Birdays).\n\n2. If you have task managers, memory-cleaning or power-saving apps installed (such as “Battery Saver”, “Clean Master” and similar apps) that block background operation, add Birdays to the exceptions.\n\n3. Turn off power-saving mode for Birdays (Settings > Battery > Battery optimization).</string>
-    <string name="help_settings">Open settings</string>
-    <string name="help_exact_alarm">Allow exact alarms</string>
+    <string name="help_description">Android devices have a power-saving mode that blocks the app from running in the background or prevents it from starting automatically. To make notifications work correctly, follow these simple steps:</string>
+    <string name="help_explanation_1">1. Make sure notifications are allowed for the Birdays app (Settings > Birdays > Notifications).</string>
     <string name="help_delay_text">Please note that notifications may be delayed on some devices.</string>
+    <string name="help_exact_alarm">Allow exact alarms</string>
+    <string name="help_explanation_2">2. Turn off power-saving mode for Birdays (Settings > Birdays > Battery).</string>
+    <string name="help_settings">Open settings</string>
+    <string name="help_explanation_3">3. If you have task managers, memory-cleaning or power-saving apps installed (such as “Battery Saver”, “Clean Master” and similar apps) that block background operation, add Birdays to the exceptions.</string>
     <string name="help_email_description">If you have any questions or suggestions, please contact me at birdaysapp@gmail.com</string>
     <string name="send_email">Send email</string>
     <string name="birdays_email" translatable="false">birdaysapp@gmail.com</string>

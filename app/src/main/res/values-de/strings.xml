@@ -20,10 +20,21 @@
     <string name="age">Aktuelles Alter:\u0020</string>
     <string name="happy_birthday">Alles Gute zum Geburtstag!</string>
     <string name="web_search_error">Aktion kann nicht ausgeführt werden, bitte Webbrowser installieren</string>
-    <string name="delete_record_confirm">Möchten Sie %1$s wirklich löschen?</string>
+    <string name="delete_record_confirm">Möchtest du %1$s wirklich löschen?</string>
     <string name="record_deleted">Eintrag gelöscht</string>
     <string name="undo">Rückgängig</string>
     <string name="add_record">Eintrag hinzufügen</string>
+    <string name="restore_confirm_title">Aus Backup wiederherstellen</string>
+    <string name="restore_confirm_message">Möchtest du die Einträge wirklich von %1$s wiederherstellen? Anzahl der Einträge: %2$s.</string>
+    <string name="restore_button">Wiederherstellen</string>
+    <string name="restore_unknown">unbekannt</string>
+    <string name="upload_error">Hochladefehler: %s</string>
+    <string name="backup_error">Sicherungsfehler: %s</string>
+    <string name="auth_error">Authentifizierungsfehler: %s</string>
+    <string name="authorization_failed_error">Autorisierung fehlgeschlagen: %s</string>
+    <string name="download_error">Herunterladefehler: %s</string>
+    <string name="file_not_found">Datei nicht gefunden</string>
+    <string name="search_error">Suchfehler: %s</string>
 
     <string-array name="months">
         <item>Januar</item>
@@ -47,9 +58,9 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Neuer Eintrag</string>
     <string name="add_from_contacts">Aus Kontakten hinzufügen</string>
-    <string name="open_contacts_error">Aktion kann wegen Geräteeigenschaften nicht ausgeführt werden</string>
+    <string name="activity_not_found_error">Aktion kann wegen Geräteeigenschaften nicht ausgeführt werden</string>
     <string name="name">Name</string>
-    <string name="error_hint">Bitte geben Sie einen Namen ein</string>
+    <string name="error_hint">Bitte gib einen Namen ein</string>
     <string name="phone_number">Telefonnummer</string>
     <string name="pick_date">Datum auswählen</string>
     <string name="wrong_date">Falsches Datum</string>
@@ -93,7 +104,7 @@
 
     <!-- SettingsActivity -->
     <string name="optimization_enabled">Akku-Optimierung für die App deaktivieren</string>
-    <string name="optimization_description">Damit die App korrekt funktioniert, öffnen Sie die Einstellungen und erlauben Sie der App, ohne Einschränkungen im Hintergrund zu laufen</string>
+    <string name="optimization_description">Damit die App korrekt funktioniert, öffne die Einstellungen und erlaube der App, ohne Einschränkungen im Hintergrund zu laufen</string>
     <string name="do_not_show_again">Nicht erneut anzeigen</string>
     <string name="disable_button">Deaktivieren</string>
 
@@ -122,10 +133,10 @@
     </string-array>
 
     <string name="notification_tone">Benachrichtigungston</string>
-    <string name="ringtone_summary">Wählen Sie einen Benachrichtigungston. Standardmäßig wird der Ton aus den Geräteeinstellungen verwendet</string>
+    <string name="ringtone_summary">Wähle einen Benachrichtigungston. Standardmäßig wird der Ton aus den Geräteeinstellungen verwendet</string>
     <string name="silent">Kein Ton</string>
     <string name="help">Hilfe</string>
-    <string name="tap_here">Tippen Sie hier, wenn Sie keine Benachrichtigungen erhalten</string>
+    <string name="tap_here">Tippe hier, wenn du keine Benachrichtigungen erhältst</string>
 
     <!-- General -->
     <string name="general">Allgemein</string>
@@ -145,17 +156,17 @@
         <item>Zukunft</item>
     </string-array>
 
-    <string name="displayed_age_changes">Sie müssen die App neu starten, damit diese Änderung wirksam wird</string>
+    <string name="displayed_age_changes">Du musst die App neu starten, damit diese Änderung wirksam wird</string>
     <string name="restart_now">Jetzt neu starten</string>
     <string name="later">Später</string>
     <string name="rate_app">App bewerten</string>
     <string name="share_app">App teilen</string>
-    <string name="share_text">"Vergessen Sie oft, Ihren Verwandten, Freunden oder Kollegen zum Geburtstag zu gratulieren? Birdays erinnert Sie an ein wichtiges Datum!  "</string>
+    <string name="share_text">"Vergisst du oft, deinen Verwandten, Freunden oder Kollegen zum Geburtstag zu gratulieren? Birdays erinnert dich an ein wichtiges Datum!  "</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Synchronisierung und Backup</string>
     <string name="contacts_import_title">Kontakte importieren</string>
-    <string name="contacts_import_summary">Tippen Sie hier, um Kontakte von Ihrem Gerät zu importieren (unterstützt ISO 8601)</string>
+    <string name="contacts_import_summary">Tippe hier, um Kontakte von deinem Gerät zu importieren (unterstützt ISO 8601)</string>
     <string name="google_drive_backup">Google Drive-Backup</string>
     <string name="google_drive_backup_summary">Datenbank-Backup in Google Drive hochladen</string>
     <string name="google_drive_backup_progress">Backup wird in Google Drive erstellt…</string>
@@ -171,15 +182,15 @@
     <string name="about_ad_title">Warum sehe ich Werbung?</string>
     <string name="about_ad_summary">Alle Werbeeinnahmen fließen in die Entwicklung des Projekts</string>
     <string name="show_ads">Werbung anzeigen</string>
-    <string name="show_ads_summary">Sie können die Werbung deaktivieren, indem Sie eine kurze Videoanzeige ansehen</string>
+    <string name="show_ads_summary">Du kannst die Werbung deaktivieren, indem du eine kurze Videoanzeige ansiehst</string>
 
     <!-- Support project -->
     <string name="support_project_category">Projekt unterstützen</string>
     <string name="watch_video_title">Videoanzeige ansehen</string>
-    <string name="ad_rewarded_summary">Sehen Sie sich ein kurzes Video an – die Einnahmen fließen in die Entwicklung der App</string>
-    <string name="ad_rewarded_unavailable">Video ist derzeit nicht verfügbar, bitte versuchen Sie es später erneut</string>
+    <string name="ad_rewarded_summary">Sieh dir ein kurzes Video an – die Einnahmen fließen in die Entwicklung der App</string>
+    <string name="ad_rewarded_unavailable">Das Video ist derzeit nicht verfügbar, bitte versuche es später erneut</string>
     <string name="ad_disabled_success">Werbung ist jetzt deaktiviert</string>
-    <string name="ad_watch_full_video_to_disable">Sehen Sie das Video bis zum Ende an, um die Werbung zu deaktivieren</string>
+    <string name="ad_watch_full_video_to_disable">Sieh dir das Video bis zum Ende an, um die Werbung zu deaktivieren</string>
     <string name="donate_title">Einen Beitrag leisten</string>
     <string name="donate_summary">Finanzielle Unterstützung für die Entwicklung der App</string>
 
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Warum funktioniert die Erinnerung nicht?</string>
-    <string name="help_description">Android-Geräte verfügen über einen Energiesparmodus, der verhindert, dass die App im Hintergrund läuft oder automatisch startet. Damit Benachrichtigungen korrekt funktionieren, befolgen Sie diese einfachen Schritte:\n\n1. Stellen Sie sicher, dass Benachrichtigungen für die Birdays-App erlaubt sind (Einstellungen &gt; Apps &gt; Birdays).\n\n2. Falls Sie Task-Manager-, Speicherbereinigungs- oder Energiespar-Apps installiert haben (wie „Battery Saver“, „Clean Master“ und ähnliche Apps), die den Hintergrundbetrieb blockieren, fügen Sie Birdays zu den Ausnahmen hinzu.\n\n3. Deaktivieren Sie den Energiesparmodus für Birdays (Einstellungen &gt; Akku &gt; Akku-Optimierung).</string>
+    <string name="help_description">Android-Geräte verfügen über einen Energiesparmodus, der verhindert, dass die App im Hintergrund ausgeführt wird oder automatisch startet. Befolge diese einfachen Schritte, damit Benachrichtigungen richtig funktionieren:</string>
+    <string name="help_explanation_1">1. Stelle sicher, dass Benachrichtigungen für die Birdays-App zugelassen sind (Einstellungen > Birdays > Benachrichtigungen).</string>
+    <string name="help_delay_text">Bitte beachte, dass Benachrichtigungen auf einigen Geräten verzögert ankommen können.</string>
+    <string name="help_exact_alarm">Genaue Wecker zulassen</string>
+    <string name="help_explanation_2">2. Deaktiviere den Energiesparmodus für Birdays (Einstellungen > Birdays > Akku).</string>
     <string name="help_settings">Einstellungen öffnen</string>
-    <string name="help_delay_text">Bitte beachten Sie, dass Benachrichtigungen auf manchen Geräten mit Verzögerung erscheinen können.</string>
-    <string name="help_email_description">Bei Fragen oder Anregungen kontaktieren Sie mich bitte unter birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Wenn du Task-Manager oder Apps zur Speicherbereinigung und Energieeinsparung installiert hast (z. B. „Battery Saver“, „Clean Master“ und ähnliche Apps), die die Hintergrundaktivität blockieren, füge Birdays zu den Ausnahmen hinzu.</string>
+    <string name="help_email_description">Wenn du Fragen oder Vorschläge hast, kontaktiere mich bitte unter birdaysapp@gmail.com</string>
     <string name="send_email">E-Mail senden</string>
 
     <!-- Famous persons -->

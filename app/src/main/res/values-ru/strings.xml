@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Новая запись</string>
     <string name="add_from_contacts">Добавить из контактов</string>
-    <string name="open_contacts_error">Это действие выполнить невозможно из-за особенностей устройства</string>
+    <string name="activity_not_found_error">Это действие выполнить невозможно из-за особенностей устройства</string>
     <string name="name">Имя</string>
     <string name="error_hint">Пожалуйста, введите имя</string>
     <string name="phone_number">Номер телефона</string>
@@ -166,9 +166,16 @@
     <string name="recover_records_error">Не удалось восстановить записи</string>
     <string name="records_recovered">Записи восстановлены</string>
     <string name="restore_confirm_title">Восстановление из резервной копии</string>
-    <string name="restore_confirm_message">Вы уверены, что хотите восстановить записи от %1$s? Количество записей: %2$s.</string>
+    <string name="restore_confirm_message">Вы действительно хотите восстановить записи от %1$s? Количество записей: %2$s.</string>
     <string name="restore_button">Восстановить</string>
     <string name="restore_unknown">неизвестно</string>
+    <string name="upload_error">Ошибка загрузки: %s</string>
+    <string name="backup_error">Ошибка резервного копирования: %s</string>
+    <string name="auth_error">Ошибка авторизации: %s</string>
+    <string name="authorization_failed_error">Авторизация не удалась: %s</string>
+    <string name="download_error">Ошибка загрузки файла: %s</string>
+    <string name="file_not_found">Файл не найден</string>
+    <string name="search_error">Ошибка поиска: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Реклама</string>
@@ -196,11 +203,14 @@
     <string name="privacy_policy">Политика конфиденциальности</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Почему напоминание не срабатывает?</string>
-    <string name="help_description">На устройствах Android есть режим энергосбережения, который блокирует работу приложения в фоновом режиме или запрещает автозапуск. Чтобы уведомления работали корректно, выполните несколько простых действий:\n\n1. Убедитесь, что для приложения Birdays разрешены уведомления (Настройки > Приложения > Birdays).\n\n2. Если у вас установлены менеджеры задач, приложения для очистки памяти или энергосбережения («Battery Saver», «Clean Master» и аналогичные), которые блокируют работу в фоновом режиме, добавьте Birdays в исключения.\n\n3. Отключите режим энергосбережения для Birdays (Настройки > Батарея > Экономия заряда батареи).</string>
-    <string name="help_settings">Открыть настройки</string>
-    <string name="help_exact_alarm">Разрешить точные будильники</string>
+    <string name="help_header">Почему напоминания не срабатывают?</string>
+    <string name="help_description">На устройствах Android есть режим энергосбережения, который блокирует работу приложения в фоновом режиме или запрещает автозапуск. Чтобы уведомления работали корректно, выполните несколько простых действий:</string>
+    <string name="help_explanation_1">1. Убедитесь, что для приложения Birdays разрешены уведомления (Настройки > Birdays > Уведомления).</string>
     <string name="help_delay_text">Обратите внимание, что на некоторых устройствах уведомления приходят с задержкой.</string>
+    <string name="help_exact_alarm">Разрешить точные будильники</string>
+    <string name="help_explanation_2">2. Отключите режим энергосбережения для Birdays (Настройки > Birdays > Батарея).</string>
+    <string name="help_settings">Открыть настройки</string>
+    <string name="help_explanation_3">3. Если у вас установлены менеджеры задач, приложения для очистки памяти или энергосбережения («Battery Saver», «Clean Master» и аналогичные), которые блокируют работу в фоновом режиме, добавьте Birdays в исключения.</string>
     <string name="help_email_description">По всем вопросам и предложениям пишите мне на почту birdaysapp@gmail.com</string>
     <string name="send_email">Отправить письмо</string>
 

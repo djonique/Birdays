@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Új rekord</string>
     <string name="add_from_contacts">Hozzáadás a névjegyek közül</string>
-    <string name="open_contacts_error">A műveletet nem sikerült végrehajtani az eszközfunkciók miatt</string>
+    <string name="activity_not_found_error">A műveletet nem sikerült végrehajtani az eszközfunkciók miatt</string>
     <string name="name">Név</string>
     <string name="error_hint">Kérjük, adja meg a nevét</string>
     <string name="phone_number">Telefonszám</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Visszaállítás a Google Drive-ról…</string>
     <string name="recover_records_error">Nem sikerült helyreállítani a rekordokat</string>
     <string name="records_recovered">Rekordok helyreállítva</string>
+    <string name="restore_confirm_title">Visszaállítás biztonsági mentésből</string>
+    <string name="restore_confirm_message">Biztosan vissza szeretné állítani a rekordokat innen: %1$s? Rekordok száma: %2$s.</string>
+    <string name="restore_button">Visszaállítás</string>
+    <string name="restore_unknown">ismeretlen</string>
+    <string name="upload_error">Feltöltési hiba: %s</string>
+    <string name="backup_error">Biztonsági mentési hiba: %s</string>
+    <string name="auth_error">Hitelesítési hiba: %s</string>
+    <string name="authorization_failed_error">A engedélyezés sikertelen: %s</string>
+    <string name="download_error">Letöltési hiba: %s</string>
+    <string name="file_not_found">A fájl nem található</string>
+    <string name="search_error">Keresési hiba: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Hirdetések</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Miért nem működik az emlékeztető?</string>
-    <string name="help_description">Az Android-eszközök energiatakarékos módja megakadályozhatja, hogy az alkalmazás a háttérben fusson, vagy hogy automatikusan elinduljon. Az értesítések megfelelő működéséhez kövesse az alábbi egyszerű lépéseket:\n\n1. Győződjön meg arról, hogy az értesítések engedélyezve vannak a Birdays alkalmazás számára (Beállítások > Alkalmazások > Birdays).\n\n2. Ha olyan feladatkezelő, memóriatisztító vagy energiatakarékos alkalmazás van telepítve (például „Battery Saver”, „Clean Master” és hasonlók), amelyek blokkolják a háttérben való működést, vegye fel a Birdays alkalmazást a kivételek közé.\n\n3. Kapcsolja ki az energiatakarékos módot a Birdays számára (Beállítások > Akkumulátor > Akkumulátor-optimalizálás).</string>
+    <string name="help_description">Az Android-eszközök rendelkeznek egy energiatakarékos móddal, amely megakadályozza az alkalmazás háttérben történő futását vagy automatikus elindulását. Az értesítések megfelelő működéséhez kövesd ezeket az egyszerű lépéseket:</string>
+    <string name="help_explanation_1">1. Győződj meg arról, hogy az értesítések engedélyezve vannak a Birdays alkalmazáshoz (Beállítások > Birdays > Értesítések).</string>
+    <string name="help_delay_text">Kérjük, vedd figyelembe, hogy egyes eszközökön az értesítések késhetnek.</string>
+    <string name="help_exact_alarm">Pontos ébresztések engedélyezése</string>
+    <string name="help_explanation_2">2. Kapcsold ki az energiatakarékos módot a Birdays esetében (Beállítások > Birdays > Akkumulátor).</string>
     <string name="help_settings">Beállítások megnyitása</string>
-    <string name="help_delay_text">Kérjük, vegye figyelembe, hogy egyes készülékeken az értesítések késhetnek.</string>
-    <string name="help_email_description">Ha bármilyen kérdése vagy javaslata van, kérjük, lépjen kapcsolatba velem a birdaysapp@gmail.com címen.</string>
+    <string name="help_explanation_3">3. Ha feladatkezelő, memóriatisztító vagy energiatakarékos alkalmazásokat (például „Battery Saver”, „Clean Master” és hasonló alkalmazásokat) telepítettél, amelyek blokkolják a háttérben történő működést, add hozzá a Birdays alkalmazást a kivételekhez.</string>
+    <string name="help_email_description">Ha bármilyen kérdésed vagy javaslatod van, kérjük, vedd fel velem a kapcsolatot a birdaysapp@gmail.com címen</string>
     <string name="send_email">E-mail küldése</string>
 
     <!-- Famous persons -->

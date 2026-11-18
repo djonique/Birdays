@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Ny oppføring</string>
     <string name="add_from_contacts">Legg til fra kontakter</string>
-    <string name="open_contacts_error">Kunne ikke utføre handlingen på grunn av enhetsfunksjonene</string>
+    <string name="activity_not_found_error">Kunne ikke utføre handlingen på grunn av enhetsfunksjonene</string>
     <string name="name">Navn</string>
     <string name="error_hint">Vennligst skriv inn et navn</string>
     <string name="phone_number">Telefonnummer</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Gjenoppretter fra Google Drive…</string>
     <string name="recover_records_error">Kunne ikke gjenopprette oppføringene</string>
     <string name="records_recovered">Oppføringene gjenopprettet</string>
+    <string name="restore_confirm_title">Gjenopprett fra sikkerhetskopi</string>
+    <string name="restore_confirm_message">Er du sikker på at du vil gjenopprette oppføringer fra %1$s? Antall oppføringer: %2$s.</string>
+    <string name="restore_button">Gjenopprett</string>
+    <string name="restore_unknown">ukjent</string>
+    <string name="upload_error">Opplastingsfeil: %s</string>
+    <string name="backup_error">Sikkerhetskopieringsfeil: %s</string>
+    <string name="auth_error">Autentiseringsfeil: %s</string>
+    <string name="authorization_failed_error">Autorisasjon mislyktes: %s</string>
+    <string name="download_error">Nedlastingsfeil: %s</string>
+    <string name="file_not_found">Filen ble ikke funnet</string>
+    <string name="search_error">Søkefeil: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Reklame</string>
@@ -192,11 +203,15 @@
     <string name="privacy_policy">Personvernerklæring</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Hvorfor fungerer ikke påminnelsen?</string>
-    <string name="help_description">Android-enheter har en strømsparingsmodus som blokkerer appen fra å kjøre i bakgrunnen eller hindrer den i å starte automatisk. For at varsler skal fungere riktig, følg disse enkle trinnene:\n\n1. Sørg for at varsler er tillatt for Birdays-appen (Innstillinger > Apper > Birdays).\n\n2. Hvis du har oppgavebehandlere, minnerensere eller strømsparingsapper installert (for eksempel «Battery Saver», «Clean Master» og lignende apper) som blokkerer bakgrunnskjøring, legg Birdays til unntakene.\n\n3. Slå av strømsparingsmodus for Birdays (Innstillinger > Batteri > Batterioptimalisering).</string>
-    <string name="help_settings">Åpne innstillinger</string>
+    <string name="help_header">Hvorfor virker ikke påminnelsen?</string>
+    <string name="help_description">Android-enheter har en strømsparingsmodus som blokkerer appen fra å kjøre i bakgrunnen eller hindrer den i å starte automatisk. Følg disse enkle trinnene for at varsler skal fungere som de skal:</string>
+    <string name="help_explanation_1">1. Sørg for at varsler er tillatt for Birdays-appen (Innstillinger > Birdays > Varsler).</string>
     <string name="help_delay_text">Vær oppmerksom på at varsler kan bli forsinket på enkelte enheter.</string>
-    <string name="help_email_description">Hvis du har spørsmål eller forslag, kontakt meg på birdaysapp@gmail.com</string>
+    <string name="help_exact_alarm">Tillat nøyaktige alarmer</string>
+    <string name="help_explanation_2">2. Slå av strømsparingsmodus for Birdays (Innstillinger > Birdays > Batteri).</string>
+    <string name="help_settings">Åpne innstillinger</string>
+    <string name="help_explanation_3">3. Hvis du har installert oppgavebehandlere eller apper for minnerensing og strømsparing (som «Battery Saver», «Clean Master» og lignende apper) som blokkerer bakgrunnsaktivitet, må du legge til Birdays i unntakene.</string>
+    <string name="help_email_description">Hvis du har spørsmål eller forslag, kan du kontakte meg på birdaysapp@gmail.com</string>
     <string name="send_email">Send e-post</string>
 
     <!-- Famous persons -->

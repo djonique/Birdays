@@ -237,7 +237,7 @@ public class SettingsActivity extends AppCompatActivity {
                     Uri.parse("package:" + getPackageName())));
         } catch (ActivityNotFoundException e) {
             contactsPermissionSettingsOpened = false;
-            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.activity_not_found_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -310,7 +310,7 @@ public class SettingsActivity extends AppCompatActivity {
                                                 if (isFinishing() || isDestroyed()) return;
                                                 dismissProgressDialog();
                                                 Toast.makeText(SettingsActivity.this,
-                                                        "Upload error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                                        R.string.upload_error + e.getMessage(), Toast.LENGTH_LONG).show();
                                             }
                                         });
                             }
@@ -320,7 +320,7 @@ public class SettingsActivity extends AppCompatActivity {
                                 if (isFinishing() || isDestroyed()) return;
                                 dismissProgressDialog();
                                 Toast.makeText(SettingsActivity.this,
-                                        "Backup error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                                        R.string.backup_error + t.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         });
             }
@@ -333,7 +333,7 @@ public class SettingsActivity extends AppCompatActivity {
                     authorizationLauncher.launch(request);
                 } catch (Exception e) {
                     pendingAction = Action.NONE;
-                    Toast.makeText(SettingsActivity.this, "Auth error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingsActivity.this, R.string.auth_error + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -341,7 +341,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onError(Exception e) {
                 dismissProgressDialog();
                 pendingAction = Action.NONE;
-                Toast.makeText(SettingsActivity.this, "Authorization failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, R.string.authorization_failed_error + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -374,7 +374,7 @@ public class SettingsActivity extends AppCompatActivity {
                                     public void onError(Exception e) {
                                         if (isFinishing() || isDestroyed()) return;
                                         dismissProgressDialog();
-                                        Toast.makeText(SettingsActivity.this, "Download error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SettingsActivity.this, R.string.download_error + e.getMessage(), Toast.LENGTH_LONG).show();
                                     }
                                 });
                     }
@@ -383,14 +383,14 @@ public class SettingsActivity extends AppCompatActivity {
                     public void onNotFound() {
                         if (isFinishing() || isDestroyed()) return;
                         dismissProgressDialog();
-                        Toast.makeText(SettingsActivity.this, "File not found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingsActivity.this, R.string.file_not_found, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onError(Exception e) {
                         if (isFinishing() || isDestroyed()) return;
                         dismissProgressDialog();
-                        Toast.makeText(SettingsActivity.this, "Search error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(SettingsActivity.this, R.string.search_error + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -405,7 +405,7 @@ public class SettingsActivity extends AppCompatActivity {
                     authorizationLauncher.launch(request);
                 } catch (Exception e) {
                     pendingAction = Action.NONE;
-                    Toast.makeText(SettingsActivity.this, "Auth error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingsActivity.this, R.string.auth_error + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -413,7 +413,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onError(Exception e) {
                 dismissProgressDialog();
                 pendingAction = Action.NONE;
-                Toast.makeText(SettingsActivity.this, "Authorization failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, R.string.authorization_failed_error + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }

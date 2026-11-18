@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Новы запіс</string>
     <string name="add_from_contacts">Дадаць з кантактаў</string>
-    <string name="open_contacts_error">Не ўдалося выканаць дзеянне з-за асаблівасцей прылады</string>
+    <string name="activity_not_found_error">Не ўдалося выканаць дзеянне з-за асаблівасцей прылады</string>
     <string name="name">Імя</string>
     <string name="error_hint">Калі ласка, увядзіце імя</string>
     <string name="phone_number">Нумар тэлефона</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Аднаўленне з Google Drive…</string>
     <string name="recover_records_error">Не ўдалося аднавіць запісы</string>
     <string name="records_recovered">Запісы адноўлены</string>
+    <string name="restore_confirm_title">Аднаўленне з рэзервовай копіі</string>
+    <string name="restore_confirm_message">Ці сапраўды вы хочаце аднавіць запісы ад %1$s? Колькасць запісаў: %2$s.</string>
+    <string name="restore_button">Аднавіць</string>
+    <string name="restore_unknown">невядома</string>
+    <string name="upload_error">Памылка загрузкі: %s</string>
+    <string name="backup_error">Памылка рэзервовага капіявання: %s</string>
+    <string name="auth_error">Памылка аўтарызацыі: %s</string>
+    <string name="authorization_failed_error">Аўтарызацыя не ўдалася: %s</string>
+    <string name="download_error">Памылка спампоўвання файла: %s</string>
+    <string name="file_not_found">Файл не знойдзены</string>
+    <string name="search_error">Памылка пошуку: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Рэклама</string>
@@ -192,12 +203,16 @@
     <string name="privacy_policy">Палітыка канфідэнцыяльнасці</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Чаму напамін не працуе?</string>
-    <string name="help_description">На прыладах Android ёсць рэжым эканоміі энергіі, які блакуе працу прыкладання ў фоне або перашкаджае яго аўтаматычнаму запуску. Каб апавяшчэнні працавалі карэктна, выканайце наступныя простыя крокі:\n\n1. Пераканайцеся, што для прыкладання Birdays дазволены апавяшчэнні (Налады &gt; Прыкладанні &gt; Birdays).\n\n2. Калі ў вас усталяваныя менеджары задач, праграмы для ачысткі памяці або эканоміі энергіі (напрыклад, «Battery Saver», «Clean Master» і падобныя), якія блакуюць фонавую працу, дадайце Birdays у выключэнні.\n\n3. Адключыце рэжым эканоміі энергіі для Birdays (Налады &gt; Батарэя &gt; Эканомія зарада батарэі).</string>
+    <string name="help_header">Чаму напамінкі не спрацоўваюць?</string>
+    <string name="help_description">На прыладах Android ёсць рэжым энергазберажэння, які блакуе працу праграмы ў фонавым рэжыме або забараняе аўтазапуск. Каб апавяшчэнні працавалі карэктна, выканайце некалькі простых дзеянняў:</string>
+    <string name="help_explanation_1">1. Пераканайцеся, што для праграмы Birdays дазволены апавяшчэнні (Налады > Birdays > Апавяшчэнні).</string>
+    <string name="help_delay_text">Звярніце ўвагу, што на некаторых прыладах апавяшчэнні прыходзяць з затрымкай.</string>
+    <string name="help_exact_alarm">Дазволіць дакладныя будзільнікі</string>
+    <string name="help_explanation_2">2. Адключыце рэжым энергазберажэння для Birdays (Налады > Birdays > Батарэя).</string>
     <string name="help_settings">Адкрыць налады</string>
-    <string name="help_delay_text">Майце на ўвазе, што на некаторых прыладах апавяшчэнні могуць прыходзіць з затрымкай.</string>
-    <string name="help_email_description">Калі ў вас ёсць пытанні ці прапановы, напішыце мне на birdaysapp@gmail.com</string>
-    <string name="send_email">Даслаць ліст</string>
+    <string name="help_explanation_3">3. Калі ў вас устаноўлены дыспетчары задач, праграмы для ачысткі памяці або энергазберажэння («Battery Saver», «Clean Master» і аналагічныя), якія блакуюць працу ў фонавым рэжыме, дадайце Birdays у выключэнні.</string>
+    <string name="help_email_description">Па ўсіх пытаннях і прапановах пішыце мне на пошту birdaysapp@gmail.com</string>
+    <string name="send_email">Адправіць ліст</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->
@@ -257,7 +272,7 @@
     <string name="david_bowie">Дэвід Боўі</string>
     <!-- 9 january -->
     <string name="simon_vouet">Сімон Вуэ</string>
-    <string name="wrangel">Фэрдынанд фон Урангель</string>
+    <string name="wrangel">Фердынанд фон Урангель</string>
     <string name="watson">Джон Бродэс Уотсан</string>
     <string name="capek">Карэл Чапек</string>
     <string name="beauvoir">Сімона дэ Бавуар</string>
@@ -265,7 +280,7 @@
     <string name="birkbeck">Джордж Біркбек</string>
     <string name="tolstoy">Аляксей Талстой</string>
     <string name="bertoni">Фламіна Бэртоні</string>
-    <string name="wilson">РоБерт Вудроў Уілсан</string>
+    <string name="wilson">Роберт Вудроў Уілсан</string>
     <string name="knuth">Дональд Эрвін Кнут</string>
     <!-- 11 january -->
     <string name="parmigianino">Парміджаніна</string>

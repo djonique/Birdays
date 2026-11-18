@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Ny post</string>
     <string name="add_from_contacts">Tilføj fra kontakter</string>
-    <string name="open_contacts_error">Kan ikke udføre handlingen på grund af enhedens funktioner</string>
+    <string name="activity_not_found_error">Kan ikke udføre handlingen på grund af enhedens funktioner</string>
     <string name="name">Navn</string>
     <string name="error_hint">Indtast et navn</string>
     <string name="phone_number">Telefonnummer</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Gendanner fra Google Drive…</string>
     <string name="recover_records_error">Kunne ikke gendanne poster</string>
     <string name="records_recovered">Poster gendannet</string>
+    <string name="restore_confirm_title">Gendan fra sikkerhedskopi</string>
+    <string name="restore_confirm_message">Er du sikker på, at du vil gendanne poster fra %1$s? Antal poster: %2$s.</string>
+    <string name="restore_button">Gendan</string>
+    <string name="restore_unknown">ukendt</string>
+    <string name="upload_error">Uploadfejl: %s</string>
+    <string name="backup_error">Sikkerhedskopieringsfejl: %s</string>
+    <string name="auth_error">Godkendelsesfejl: %s</string>
+    <string name="authorization_failed_error">Godkendelse mislykkedes: %s</string>
+    <string name="download_error">Downloadfejl: %s</string>
+    <string name="file_not_found">Filen blev ikke fundet</string>
+    <string name="search_error">Søgefejl: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Reklame</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Hvorfor virker påmindelsen ikke?</string>
-    <string name="help_description">Android-enheder har en strømsparetilstand, der blokerer appen i at køre i baggrunden eller forhindrer den i at starte automatisk. For at få notifikationer til at virke korrekt skal du følge disse enkle trin:\n\n1. Sørg for, at notifikationer er tilladte for Birdays-appen (Indstillinger &gt; Apps &gt; Birdays).\n\n2. Hvis du har opgaveadministratorer, hukommelsesrensnings- eller strømspareapps installeret (f.eks. “Battery Saver”, “Clean Master” og lignende apps), der blokerer baggrundskørsel, skal du tilføje Birdays til undtagelserne.\n\n3. Slå strømsparetilstand fra for Birdays (Indstillinger &gt; Batteri &gt; Batterioptimering).</string>
+    <string name="help_description">Android-enheder har en strømsparetilstand, der blokerer appen fra at køre i baggrunden eller forhindrer den i at starte automatisk. Følg disse enkle trin for at få notifikationer til at virke korrekt:</string>
+    <string name="help_explanation_1">1. Sørg for, at notifikationer er tilladt for Birdays-appen (Indstillinger > Birdays > Notifikationer).</string>
+    <string name="help_delay_text">Bemærk venligst, at notifikationer kan være forsinkede på visse enheder.</string>
+    <string name="help_exact_alarm">Tillad nøjagtige alarmer</string>
+    <string name="help_explanation_2">2. Deaktiver strømsparetilstand for Birdays (Indstillinger > Birdays > Batteri).</string>
     <string name="help_settings">Åbn indstillinger</string>
-    <string name="help_delay_text">Bemærk, at notifikationer kan blive forsinkede på nogle enheder.</string>
-    <string name="help_email_description">Hvis du har spørgsmål eller forslag, kan du kontakte mig på birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Hvis du har installeret opgavehåndteringer eller apps til hukommelsesrensning og strømbesparelse (såsom “Battery Saver”, “Clean Master” og lignende apps), der blokerer baggrundsaktivitet, skal du tilføje Birdays til undtagelserne.</string>
+    <string name="help_email_description">Hvis du har spørgsmål eller forslag, er du velkommen til at kontakte mig på birdaysapp@gmail.com</string>
     <string name="send_email">Send e-mail</string>
 
     <!-- Famous persons -->

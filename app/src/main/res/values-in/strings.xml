@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Catatan baru</string>
     <string name="add_from_contacts">Tambahkan dari kontak</string>
-    <string name="open_contacts_error">Tidak dapat melakukan tindakan karena fitur perangkat</string>
+    <string name="activity_not_found_error">Tidak dapat melakukan tindakan karena fitur perangkat</string>
     <string name="name">Nama</string>
     <string name="error_hint">Silakan masukkan nama</string>
     <string name="phone_number">Nomor telepon</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Memulihkan dari Google Drive…</string>
     <string name="recover_records_error">Gagal memulihkan catatan</string>
     <string name="records_recovered">Catatan dipulihkan</string>
+    <string name="restore_confirm_title">Pulihkan dari cadangan</string>
+    <string name="restore_confirm_message">Apakah Anda yakin ingin memulihkan catatan dari %1$s? Jumlah catatan: %2$s.</string>
+    <string name="restore_button">Pulihkan</string>
+    <string name="restore_unknown">tidak diketahui</string>
+    <string name="upload_error">Kesalahan unggah: %s</string>
+    <string name="backup_error">Kesalahan pencadangan: %s</string>
+    <string name="auth_error">Kesalahan otentikasi: %s</string>
+    <string name="authorization_failed_error">Otorisasi gagal: %s</string>
+    <string name="download_error">Kesalahan unduh: %s</string>
+    <string name="file_not_found">Berkas tidak ditemukan</string>
+    <string name="search_error">Kesalahan pencarian: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Iklan</string>
@@ -193,9 +204,13 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Mengapa pengingat tidak berfungsi?</string>
-    <string name="help_description">Perangkat Android memiliki mode hemat daya yang memblokir aplikasi agar tidak berjalan di latar belakang atau mencegahnya mulai otomatis. Agar notifikasi berfungsi dengan benar, ikuti langkah sederhana berikut:\n\n1. Pastikan notifikasi diizinkan untuk aplikasi Birdays (Setelan > Aplikasi > Birdays).\n\n2. Jika Anda memasang pengelola tugas, pembersih memori, atau aplikasi hemat daya (seperti “Battery Saver”, “Clean Master” dan aplikasi serupa) yang memblokir operasi latar belakang, tambahkan Birdays ke pengecualian.\n\n3. Nonaktifkan mode hemat daya untuk Birdays (Setelan > Baterai > Optimasi baterai).</string>
-    <string name="help_settings">Buka pengaturan</string>
-    <string name="help_delay_text">Harap diingat bahwa notifikasi mungkin tertunda di beberapa perangkat.</string>
+    <string name="help_description">Perangkat Android memiliki mode hemat daya yang memblokir aplikasi berjalan di latar belakang atau mencegahnya mulai secara otomatis. Agar notifikasi berfungsi dengan baik, ikuti langkah-langkah sederhana berikut:</string>
+    <string name="help_explanation_1">1. Pastikan notifikasi diizinkan untuk aplikasi Birdays (Setelan > Birdays > Notifikasi).</string>
+    <string name="help_delay_text">Harap perhatikan bahwa notifikasi mungkin tertunda di beberapa perangkat.</string>
+    <string name="help_exact_alarm">Izinkan alarm yang tepat</string>
+    <string name="help_explanation_2">2. Nonaktifkan mode hemat daya untuk Birdays (Setelan > Birdays > Baterai).</string>
+    <string name="help_settings">Buka setelan</string>
+    <string name="help_explanation_3">3. Jika Anda menginstal aplikasi pengelola tugas, pembersih memori, atau penghemat daya (seperti “Battery Saver”, “Clean Master”, dan aplikasi serupa) yang memblokir operasi latar belakang, tambahkan Birdays ke pengecualian.</string>
     <string name="help_email_description">Jika Anda memiliki pertanyaan atau saran, silakan hubungi saya di birdaysapp@gmail.com</string>
     <string name="send_email">Kirim email</string>
 

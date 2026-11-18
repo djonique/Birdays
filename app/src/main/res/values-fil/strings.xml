@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Bagong tala</string>
     <string name="add_from_contacts">Magdagdag mula sa mga kontak</string>
-    <string name="open_contacts_error">Hindi maisagawa ang aksyon dahil sa mga feature ng device</string>
+    <string name="activity_not_found_error">Hindi maisagawa ang aksyon dahil sa mga feature ng device</string>
     <string name="name">Pangalan</string>
     <string name="error_hint">Pakilagyan ng pangalan</string>
     <string name="phone_number">Numero ng telepono</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Nagre-restore mula sa Google Drive…</string>
     <string name="recover_records_error">Bigo ang pag-recover ng mga tala</string>
     <string name="records_recovered">Na-recover ang mga tala</string>
+    <string name="restore_confirm_title">I-restore mula sa backup</string>
+    <string name="restore_confirm_message">Sigurado ka bang gusto mong i-restore ang mga tala mula sa %1$s? Bilang ng mga tala: %2$s.</string>
+    <string name="restore_button">I-restore</string>
+    <string name="restore_unknown">hindi alam</string>
+    <string name="upload_error">Error sa pag-upload: %s</string>
+    <string name="backup_error">Error sa backup: %s</string>
+    <string name="auth_error">Error sa authentication: %s</string>
+    <string name="authorization_failed_error">Nabigo ang awtorisasyon: %s</string>
+    <string name="download_error">Error sa pag-download: %s</string>
+    <string name="file_not_found">Hindi nahanap ang file</string>
+    <string name="search_error">Error sa paghanap: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Advertising</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Bakit hindi gumagana ang paalala?</string>
-    <string name="help_description">Ang mga Android device ay may power-saving mode na humaharang sa app na tumakbo sa background o pumipigil dito sa awtomatikong pagsisimula. Para gumana nang tama ang mga notification, sundin ang mga simpleng hakbang na ito:\n\n1. Siguraduhing pinapayagan ang mga notification para sa Birdays app (Mga setting > Apps > Birdays).\n\n2. Kung may naka-install kang task managers, memory-cleaning o power-saving apps (tulad ng “Battery Saver”, “Clean Master” at katulad na apps) na humaharang sa background na operasyon, idagdag ang Birdays sa mga exception.\n\n3. I-off ang power-saving mode para sa Birdays (Mga setting > Battery > Battery optimization).</string>
-    <string name="help_settings">Buksan ang mga setting</string>
+    <string name="help_description">May power-saving mode ang mga Android device na pumipigil sa app na tumakbo sa background o pumipigil dito na awtomatikong magsimula. Para gumana nang maayos ang mga notification, sundin ang mga simpleng hakbang na ito:</string>
+    <string name="help_explanation_1">1. Tiyaking pinapayagan ang mga notification para sa Birdays app (Mga Setting > Birdays > Mga Notification).</string>
     <string name="help_delay_text">Pakitandaan na maaaring maantala ang mga notification sa ilang device.</string>
-    <string name="help_email_description">Kung mayroon kang mga tanong o suhestyon, makipag-ugnayan sa akin sa birdaysapp@gmail.com</string>
+    <string name="help_exact_alarm">Payagan ang mga eksaktong alarm</string>
+    <string name="help_explanation_2">2. I-off ang power-saving mode para sa Birdays (Mga Setting > Birdays > Baterya).</string>
+    <string name="help_settings">Buksan ang mga setting</string>
+    <string name="help_explanation_3">3. Kung mayroon kang mga naka-install na task manager, memory-cleaning, o power-saving app (gaya ng “Battery Saver”, “Clean Master”, at mga katulad na app) na humaharang sa paggana sa background, idagdag ang Birdays sa mga exception.</string>
+    <string name="help_email_description">Kung mayroon kang anumang mga tanong o mungkahi, mangyaring makipag-ugnayan sa akin sa birdaysapp@gmail.com</string>
     <string name="send_email">Magpadala ng email</string>
 
     <!-- Famous persons -->

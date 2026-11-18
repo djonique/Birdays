@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Ny post</string>
     <string name="add_from_contacts">Lägg till från kontakter</string>
-    <string name="open_contacts_error">Det gick inte att utföra åtgärden på grund av enhetens funktioner</string>
+    <string name="activity_not_found_error">Det gick inte att utföra åtgärden på grund av enhetens funktioner</string>
     <string name="name">Namn</string>
     <string name="error_hint">Ange ett namn</string>
     <string name="phone_number">Telefonnummer</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Återställer från Google Drive…</string>
     <string name="recover_records_error">Det gick inte att återställa poster</string>
     <string name="records_recovered">Poster återställda</string>
+    <string name="restore_confirm_title">Återställ från säkerhetskopia</string>
+    <string name="restore_confirm_message">Är du säker på att du vill återställa poster från %1$s? Antal poster: %2$s.</string>
+    <string name="restore_button">Återställ</string>
+    <string name="restore_unknown">okänd</string>
+    <string name="upload_error">Uppladdningsfel: %s</string>
+    <string name="backup_error">Säkerhetskopieringsfel: %s</string>
+    <string name="auth_error">Autentiseringsfel: %s</string>
+    <string name="authorization_failed_error">Auktorisering misslyckades: %s</string>
+    <string name="download_error">Nedladdningsfel: %s</string>
+    <string name="file_not_found">Filen hittades inte</string>
+    <string name="search_error">Sökfel: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Reklam</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Varför fungerar inte påminnelsen?</string>
-    <string name="help_description">Android-enheter har ett energisparläge som blockerar appen från att köras i bakgrunden eller hindrar den från att starta automatiskt. För att aviseringar ska fungera korrekt, följ dessa enkla steg:\n\n1. Se till att aviseringar är tillåtna för appen Birdays (Inställningar > Appar > Birdays).\n\n2. Om du har aktivitetshanterare, minnesrensnings- eller energisparappar installerade (som ”Battery Saver”, ”Clean Master” och liknande appar) som blockerar bakgrundskörning, lägg till Birdays i undantagen.\n\n3. Stäng av energisparläget för Birdays (Inställningar > Batteri > Batterioptimering).</string>
+    <string name="help_description">Android-enheter har ett batterisparläge som blockerar appen från att köras i bakgrunden eller hindrar den från att starta automatiskt. Följ dessa enkla steg för att få aviseringar att fungera korrekt:</string>
+    <string name="help_explanation_1">1. Se till att aviseringar är tillåtna för Birdays-appen (Inställningar > Birdays > Aviseringar).</string>
+    <string name="help_delay_text">Observera att aviseringar kan försenas på vissa enheter.</string>
+    <string name="help_exact_alarm">Tillåt exakta alarm</string>
+    <string name="help_explanation_2">2. Stäng av batterisparläget för Birdays (Inställningar > Birdays > Batteri).</string>
     <string name="help_settings">Öppna inställningar</string>
-    <string name="help_delay_text">Observera att aviseringar kan fördröjas på vissa enheter.</string>
-    <string name="help_email_description">Om du har frågor eller förslag, kontakta mig på birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Om du har installerat aktivitetshanterare eller appar för minnesrensning och batterisparande (som ”Battery Saver”, ”Clean Master” och liknande appar) som blockerar bakgrundsaktivitet, lägg till Birdays i undantagen.</string>
+    <string name="help_email_description">Om du har några frågor eller förslag är du välkommen att kontakta mig på birdaysapp@gmail.com</string>
     <string name="send_email">Skicka e-post</string>
 
     <!-- Famous persons -->

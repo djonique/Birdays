@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Νέα εγγραφή</string>
     <string name="add_from_contacts">Προσθήκη από τις επαφές</string>
-    <string name="open_contacts_error">Δεν είναι δυνατή η εκτέλεση ενέργειας λόγω των λειτουργιών της συσκευής</string>
+    <string name="activity_not_found_error">Δεν είναι δυνατή η εκτέλεση ενέργειας λόγω των λειτουργιών της συσκευής</string>
     <string name="name">Όνομα</string>
     <string name="error_hint">Εισαγάγετε το όνομα</string>
     <string name="phone_number">Τηλεφωνικό νούμερο</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Επαναφορά από το Google Drive…</string>
     <string name="recover_records_error">Αποτυχία ανάκτησης εγγραφών</string>
     <string name="records_recovered">Οι εγγραφές ανακτήθηκαν</string>
+    <string name="restore_confirm_title">Επαναφορά από αντίγραφο ασφαλείας</string>
+    <string name="restore_confirm_message">Είστε σίγουροι ότι θέλετε να επαναφέρετε εγγραφές από %1$s; Αριθμός εγγραφών: %2$s.</string>
+    <string name="restore_button">Επαναφορά</string>
+    <string name="restore_unknown">άγνωστο</string>
+    <string name="upload_error">Σφάλμα μεταφόρτωσης: %s</string>
+    <string name="backup_error">Σφάλμα αντιγράφου ασφαλείας: %s</string>
+    <string name="auth_error">Σφάλμα ελέγχου ταυτότητας: %s</string>
+    <string name="authorization_failed_error">Η εξουσιοδότηση απέτυχε: %s</string>
+    <string name="download_error">Σφάλμα λήψης: %s</string>
+    <string name="file_not_found">Το αρχείο δεν βρέθηκε</string>
+    <string name="search_error">Σφάλμα αναζήτησης: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Διαφήμιση</string>
@@ -193,11 +204,15 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Γιατί δεν λειτουργεί η υπενθύμιση;</string>
-    <string name="help_description">Οι συσκευές Android διαθέτουν λειτουργία εξοικονόμησης ενέργειας που εμποδίζει την εφαρμογή να εκτελείται στο παρασκήνιο ή την εμποδίζει να ξεκινά αυτόματα. Για να λειτουργούν σωστά οι ειδοποιήσεις, ακολουθήστε αυτά τα απλά βήματα:\n\n1. Βεβαιωθείτε ότι επιτρέπονται οι ειδοποιήσεις για την εφαρμογή Birdays (Ρυθμίσεις > Εφαρμογές > Birdays).\n\n2. Εάν έχετε εγκαταστήσει διαχειριστές εργασιών, εφαρμογές καθαρισμού μνήμης ή εξοικονόμησης ενέργειας (όπως «Battery Saver», «Clean Master» και παρόμοιες εφαρμογές) που εμποδίζουν τη λειτουργία στο παρασκήνιο, προσθέστε το Birdays στις εξαιρέσεις.\n\n3. Απενεργοποιήστε τη λειτουργία εξοικονόμησης ενέργειας για το Birdays (Ρυθμίσεις > Μπαταρία > Βελτιστοποίηση μπαταρίας).</string>
-    <string name="help_settings">Ανοίξτε τις ρυθμίσεις</string>
-    <string name="help_delay_text">Λάβετε υπόψη ότι σε ορισμένες συσκευές οι ειδοποιήσεις ενδέχεται να καθυστερήσουν.</string>
+    <string name="help_description">Οι συσκευές Android διαθέτουν λειτουργία εξοικονόμησης ενέργειας που εμποδίζει την εφαρμογή να εκτελείται στο παρασκήνιο ή αποτρέπει την αυτόματη εκκίνησή της. Για να λειτουργούν σωστά οι ειδοποιήσεις, ακολουθήστε αυτά τα απλά βήματα:</string>
+    <string name="help_explanation_1">1. Βεβαιωθείτε ότι επιτρέπονται οι ειδοποιήσεις για την εφαρμογή Birdays (Ρυθμίσεις > Birdays > Ειδοποιήσεις).</string>
+    <string name="help_delay_text">Λάβετε υπόψη ότι οι ειδοποιήσεις ενδέχεται να καθυστερούν σε ορισμένες συσκευές.</string>
+    <string name="help_exact_alarm">Να επιτρέπονται τα ακριβή ξυπνητήρια</string>
+    <string name="help_explanation_2">2. Απενεργοποιήστε τη λειτουργία εξοικονόμησης ενέργειας για το Birdays (Ρυθμίσεις > Birdays > Μπαταρία).</string>
+    <string name="help_settings">Άνοιγμα ρυθμίσεων</string>
+    <string name="help_explanation_3">3. Εάν έχετε εγκατεστημένες εφαρμογές διαχείρισης εργασιών, εκκαθάρισης μνήμης ή εξοικονόμησης ενέργειας (όπως «Battery Saver», «Clean Master» και παρόμοιες εφαρμογές) που αποκλείουν τη λειτουργία στο παρασκήνιο, προσθέστε το Birdays στις εξαιρέσεις.</string>
     <string name="help_email_description">Εάν έχετε οποιεσδήποτε ερωτήσεις ή προτάσεις, επικοινωνήστε μαζί μου στο birdaysapp@gmail.com</string>
-    <string name="send_email">Να στείλετε email</string>
+    <string name="send_email">Αποστολή email</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

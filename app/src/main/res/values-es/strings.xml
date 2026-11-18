@@ -41,15 +41,15 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_settings">Configuración</string>
+    <string name="action_settings">Ajustes</string>
     <string name="action_delete">Eliminar</string>
 
     <!-- NewPersonActivity -->
     <string name="new_record">Nueva entrada</string>
     <string name="add_from_contacts">Añadir desde contactos</string>
-    <string name="open_contacts_error">Es imposible realizar esta acción en este dispositivo</string>
+    <string name="activity_not_found_error">Es imposible realizar esta acción en este dispositivo</string>
     <string name="name">Nombre</string>
-    <string name="error_hint">Por favor, introduzca el nombre</string>
+    <string name="error_hint">Por favor, introduce el nombre</string>
     <string name="phone_number">Número de teléfono</string>
     <string name="pick_date">Elige una fecha</string>
     <string name="wrong_date">Fecha inválida</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Restaurando desde Google Drive…</string>
     <string name="recover_records_error">No se pudieron recuperar los registros</string>
     <string name="records_recovered">Registros recuperados</string>
+    <string name="restore_confirm_title">Restaurar desde copia de seguridad</string>
+    <string name="restore_confirm_message">¿Seguro que deseas restaurar los registros de %1$s? Cantidad de registros: %2$s.</string>
+    <string name="restore_button">Restaurar</string>
+    <string name="restore_unknown">desconocido</string>
+    <string name="upload_error">Error de subida: %s</string>
+    <string name="backup_error">Error de copia de seguridad: %s</string>
+    <string name="auth_error">Error de autenticación: %s</string>
+    <string name="authorization_failed_error">La autorización falló: %s</string>
+    <string name="download_error">Error de descarga: %s</string>
+    <string name="file_not_found">Archivo no encontrado</string>
+    <string name="search_error">Error de búsqueda: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Anuncios</string>
@@ -193,11 +204,15 @@
 
     <!-- HelpActivity -->
     <string name="help_header">¿Por qué no funciona el recordatorio?</string>
-    <string name="help_description">Los dispositivos Android tienen un modo de ahorro de energía que bloquea la ejecución de la app en segundo plano o impide que se inicie automáticamente. Para que las notificaciones funcionen correctamente, sigue estos sencillos pasos:\n\n1. Asegúrate de que las notificaciones están permitidas para la app Birdays (Ajustes &gt; Aplicaciones &gt; Birdays).\n\n2. Si tienes instalados gestores de tareas, apps de limpieza de memoria o de ahorro de energía (como “Battery Saver”, “Clean Master” y similares) que bloquean el funcionamiento en segundo plano, añade Birdays a las excepciones.\n\n3. Desactiva el modo de ahorro de energía para Birdays (Ajustes &gt; Batería &gt; Optimización de batería).</string>
-    <string name="help_settings">Abrir configuración</string>
-    <string name="help_delay_text">Por favor, ten en cuenta que las notificaciones pueden tener un pequeño retraso en algunos dispositivos.</string>
+    <string name="help_description">Los dispositivos Android tienen un modo de ahorro de energía que impide que la aplicación se ejecute en segundo plano o evita que se inicie automáticamente. Para que las notificaciones funcionen correctamente, sigue estos sencillos pasos:</string>
+    <string name="help_explanation_1">1. Asegúrate de que las notificaciones estén permitidas para la aplicación Birdays (Ajustes > Birdays > Notificaciones).</string>
+    <string name="help_delay_text">Ten en cuenta que las notificaciones pueden retrasarse en algunos dispositivos.</string>
+    <string name="help_exact_alarm">Permitir alarmas exactas</string>
+    <string name="help_explanation_2">2. Desactiva el modo de ahorro de energía para Birdays (Ajustes > Birdays > Batería).</string>
+    <string name="help_settings">Abrir ajustes</string>
+    <string name="help_explanation_3">3. Si tienes instaladas aplicaciones de gestión de tareas, limpieza de memoria o ahorro de energía (como «Battery Saver», «Clean Master» y aplicaciones similares) que bloquean el funcionamiento en segundo plano, añade Birdays a las excepciones.</string>
     <string name="help_email_description">Si tienes alguna pregunta o sugerencia, ponte en contacto conmigo en birdaysapp@gmail.com</string>
-    <string name="send_email">Enviar email</string>
+    <string name="send_email">Enviar correo electrónico</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

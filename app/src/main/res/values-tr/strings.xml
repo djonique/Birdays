@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Yeni kayıt</string>
     <string name="add_from_contacts">Kişilerden ekle</string>
-    <string name="open_contacts_error">Cihaz özellikleri nedeniyle işlem yapılamıyor</string>
+    <string name="activity_not_found_error">Cihaz özellikleri nedeniyle işlem yapılamıyor</string>
     <string name="name">Ad</string>
     <string name="error_hint">Lütfen bir ad girin</string>
     <string name="phone_number">Telefon numarası</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Google Drive\'dan geri yükleniyor…</string>
     <string name="recover_records_error">Kayıtlar kurtarılamadı</string>
     <string name="records_recovered">Kayıtlar kurtarıldı</string>
+    <string name="restore_confirm_title">Yedekten geri yükle</string>
+    <string name="restore_confirm_message">Kayıtları %1$s kaynağından geri yüklemek istediğinizden emin misiniz? Kayıt sayısı: %2$s.</string>
+    <string name="restore_button">Geri Yükle</string>
+    <string name="restore_unknown">bilinmiyor</string>
+    <string name="upload_error">Yükleme hatası: %s</string>
+    <string name="backup_error">Yedekleme hatası: %s</string>
+    <string name="auth_error">Kimlik doğrulama hatası: %s</string>
+    <string name="authorization_failed_error">Yetkilendirme başarısız oldu: %s</string>
+    <string name="download_error">İndirme hatası: %s</string>
+    <string name="file_not_found">Dosya bulunamadı</string>
+    <string name="search_error">Arama hatası: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Reklam</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Hatırlatıcı neden çalışmıyor?</string>
-    <string name="help_description">Android cihazlarda, uygulamanın arka planda çalışmasını engelleyen veya otomatik olarak başlamasını önleyen bir güç tasarrufu modu bulunur. Bildirimlerin doğru çalışması için şu basit adımları izleyin:\n\n1. Birdays uygulaması için bildirimlere izin verildiğinden emin olun (Ayarlar > Uygulamalar > Birdays).\n\n2. Arka plan çalışmasını engelleyen görev yöneticileri, bellek temizleyiciler veya güç tasarrufu uygulamaları (ör. “Battery Saver”, “Clean Master” ve benzerleri) yüklediyseniz, Birdays\'i istisnalara ekleyin.\n\n3. Birdays için güç tasarrufu modunu kapatın (Ayarlar > Pil > Pil optimizasyonu).</string>
+    <string name="help_description">Android cihazlarda, uygulamanın arka planda çalışmasını engelleyen veya otomatik olarak başlamasını önleyen bir güç tasarrufu modu bulunur. Bildirimlerin düzgün çalışması için şu basit adımları izleyin:</string>
+    <string name="help_explanation_1">1. Birdays uygulaması için bildirimlere izin verildiğinden emin olun (Ayarlar > Birdays > Bildirimler).</string>
+    <string name="help_delay_text">Bazı cihazlarda bildirimlerin gecikebileceğini lütfen unutmayın.</string>
+    <string name="help_exact_alarm">Tam zamanlı alarmlara izin ver</string>
+    <string name="help_explanation_2">2. Birdays için güç tasarrufu modunu kapatın (Ayarlar > Birdays > Pil).</string>
     <string name="help_settings">Ayarları aç</string>
-    <string name="help_delay_text">Lütfen bazı cihazlarda bildirimlerin gecikebileceğini unutmayın.</string>
-    <string name="help_email_description">Sorularınız veya önerileriniz varsa, lütfen birdaysapp@gmail.com adresinden bana ulaşın</string>
+    <string name="help_explanation_3">3. Arka planda çalışmayı engelleyen görev yöneticileri, bellek temizleme veya güç tasarrufu uygulamaları (“Battery Saver”, “Clean Master” ve benzeri uygulamalar gibi) yüklüyse Birdays uygulamasını istisnalara ekleyin.</string>
+    <string name="help_email_description">Herhangi bir sorunuz veya öneriniz varsa lütfen birdaysapp@gmail.com adresinden benimle iletişime geçin</string>
     <string name="send_email">E-posta gönder</string>
 
     <!-- Famous persons -->

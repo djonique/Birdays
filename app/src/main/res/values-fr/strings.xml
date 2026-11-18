@@ -41,13 +41,13 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_settings">Configuration</string>
+    <string name="action_settings">Paramètres</string>
     <string name="action_delete">Supprimer</string>
 
     <!-- NewPersonActivity -->
     <string name="new_record">Nouvel anniversaire</string>
     <string name="add_from_contacts">Ajouter à partir des contacts</string>
-    <string name="open_contacts_error">Impossible d\'ouvrir les Contacts, vous n\'avez peut-être pas autorisé l\'accès aux contacts pour cette application</string>
+    <string name="activity_not_found_error">Impossible d\'ouvrir les Contacts, vous n\'avez peut-être pas autorisé l\'accès aux contacts pour cette application</string>
     <string name="name">Nom</string>
     <string name="error_hint">Entrez le nom de la personne</string>
     <string name="phone_number">Numéro de téléphone</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Restauration depuis Google Drive…</string>
     <string name="recover_records_error">Impossible de récupérer les enregistrements</string>
     <string name="records_recovered">Enregistrements récupérés</string>
+    <string name="restore_confirm_title">Restaurer depuis la sauvegarde</string>
+    <string name="restore_confirm_message">Voulez-vous vraiment restaurer les enregistrements de %1$s ? Nombre d\'enregistrements : %2$s.</string>
+    <string name="restore_button">Restaurer</string>
+    <string name="restore_unknown">inconnu</string>
+    <string name="upload_error">Erreur de téléchargement (envoi) : %s</string>
+    <string name="backup_error">Erreur de sauvegarde : %s</string>
+    <string name="auth_error">Erreur d\'authentification : %s</string>
+    <string name="authorization_failed_error">Échec de l\'autorisation : %s</string>
+    <string name="download_error">Erreur de téléchargement (réception) : %s</string>
+    <string name="file_not_found">Fichier introuvable</string>
+    <string name="search_error">Erreur de recherche : %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Publicité</string>
@@ -193,11 +204,15 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Pourquoi le rappel ne fonctionne-t-il pas ?</string>
-    <string name="help_description">Les appareils Android disposent d\'un mode d\'économie d\'énergie qui bloque l\'exécution de l\'application en arrière-plan ou empêche son démarrage automatique. Pour que les notifications fonctionnent correctement, suivez ces étapes simples :\n\n1. Vérifiez que les notifications sont autorisées pour l\'application Birdays (Paramètres &gt; Applications &gt; Birdays).\n\n2. Si vous avez installé des gestionnaires de tâches, des applications de nettoyage de la mémoire ou d\'économie d\'énergie (comme « Battery Saver », « Clean Master » et applications similaires) qui bloquent le fonctionnement en arrière-plan, ajoutez Birdays aux exceptions.\n\n3. Désactivez le mode d\'économie d\'énergie pour Birdays (Paramètres &gt; Batterie &gt; Optimisation de la batterie).</string>
-    <string name="help_settings">Ouvrir la configuration</string>
-    <string name="help_delay_text">Veuillez noter que sur certains appareils, les notifications peuvent fonctionner avec un certain retard.</string>
-    <string name="help_email_description">Si vous avez des questions ou des suggestions, veuillez me contacter à birdaysapp@gmail.com</string>
-    <string name="send_email">Envoyer un mail</string>
+    <string name="help_description">Les appareils Android disposent d\'un mode d\'économie d\'énergie qui empêche l\'application de s\'exécuter en arrière-plan ou de démarrer automatiquement. Pour que les notifications fonctionnent correctement, suivez ces étapes simples :</string>
+    <string name="help_explanation_1">1. Assurez-vous que les notifications sont autorisées pour l\'application Birdays (Paramètres > Birdays > Notifications).</string>
+    <string name="help_delay_text">Veuillez noter que les notifications peuvent être retardées sur certains appareils.</string>
+    <string name="help_exact_alarm">Autoriser les alarmes exactes</string>
+    <string name="help_explanation_2">2. Désactivez le mode d\'économie d\'énergie pour Birdays (Paramètres > Birdays > Batterie).</string>
+    <string name="help_settings">Ouvrir les paramètres</string>
+    <string name="help_explanation_3">3. Si vous avez installé des gestionnaires de tâches ou des applications de nettoyage de mémoire et d\'économie d\'énergie (telles que « Battery Saver », « Clean Master » et d\'autres applications similaires) qui bloquent le fonctionnement en arrière-plan, ajoutez Birdays aux exceptions.</string>
+    <string name="help_email_description">Si vous avez des questions ou des suggestions, veuillez me contacter à l\'adresse birdaysapp@gmail.com</string>
+    <string name="send_email">Envoyer un e-mail</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

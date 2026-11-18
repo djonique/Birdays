@@ -67,6 +67,12 @@
     <color name="divider_color">@color/md_theme_outline_variant</color>
 
     <!-- Widget -->
+    <color name="widget_background">#B3000000</color>
     <color name="widget_header_color">#8CF8DF</color>
     <color name="widget_birthday_color">#FFB4AB</color>
+
+    <!-- Scrim and Overlay -->
+    <color name="scrim_transparent">#00000000</color>
+    <color name="scrim_medium">#66000000</color>
+    <color name="scrim_dark">#B3000000</color>
 </resources>

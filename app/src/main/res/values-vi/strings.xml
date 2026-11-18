@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Bản ghi mới</string>
     <string name="add_from_contacts">Thêm từ danh bạ</string>
-    <string name="open_contacts_error">Không thể thực hiện thao tác do tính năng của thiết bị</string>
+    <string name="activity_not_found_error">Không thể thực hiện thao tác do tính năng của thiết bị</string>
     <string name="name">Tên</string>
     <string name="error_hint">Vui lòng nhập tên</string>
     <string name="phone_number">Số điện thoại</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Đang khôi phục từ Google Drive…</string>
     <string name="recover_records_error">Không thể khôi phục bản ghi</string>
     <string name="records_recovered">Đã khôi phục bản ghi</string>
+    <string name="restore_confirm_title">Khôi phục từ bản sao lưu</string>
+    <string name="restore_confirm_message">Bạn có chắc chắn muốn khôi phục bản ghi từ %1$s không? Số lượng bản ghi: %2$s.</string>
+    <string name="restore_button">Khôi phục</string>
+    <string name="restore_unknown">không xác định</string>
+    <string name="upload_error">Lỗi tải lên: %s</string>
+    <string name="backup_error">Lỗi sao lưu: %s</string>
+    <string name="auth_error">Lỗi xác thực: %s</string>
+    <string name="authorization_failed_error">Ủy quyền thất bại: %s</string>
+    <string name="download_error">Lỗi tải xuống: %s</string>
+    <string name="file_not_found">Không tìm thấy tệp</string>
+    <string name="search_error">Lỗi tìm kiếm: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Quảng cáo</string>
@@ -192,11 +203,15 @@
     <string name="privacy_policy">Chính sách quyền riêng tư</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Tại sao nhắc nhở không hoạt động?</string>
-    <string name="help_description">Thiết bị Android có chế độ tiết kiệm pin chặn ứng dụng chạy nền hoặc ngăn ứng dụng tự khởi động. Để thông báo hoạt động chính xác, hãy làm theo các bước đơn giản sau:\n\n1. Đảm bảo ứng dụng Birdays được phép gửi thông báo (Cài đặt > Ứng dụng > Birdays).\n\n2. Nếu bạn đã cài trình quản lý tác vụ, ứng dụng dọn bộ nhớ hoặc tiết kiệm pin (như “Battery Saver”, “Clean Master” và các ứng dụng tương tự) chặn hoạt động nền, hãy thêm Birdays vào danh sách ngoại lệ.\n\n3. Tắt chế độ tiết kiệm pin cho Birdays (Cài đặt > Pin > Tối ưu hóa pin).</string>
-    <string name="help_settings">Mở cài đặt</string>
+    <string name="help_header">Tại sao lời nhắc không hoạt động?</string>
+    <string name="help_description">Các thiết bị Android có chế độ tiết kiệm pin chặn ứng dụng chạy ngầm hoặc ngăn ứng dụng tự động khởi động. Để thông báo hoạt động chính xác, hãy làm theo các bước đơn giản sau:</string>
+    <string name="help_explanation_1">1. Đảm bảo rằng thông báo được cho phép đối với ứng dụng Birdays (Cài đặt > Birdays > Thông báo).</string>
     <string name="help_delay_text">Xin lưu ý rằng thông báo có thể bị trễ trên một số thiết bị.</string>
-    <string name="help_email_description">Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, vui lòng liên hệ với tôi tại birdaysapp@gmail.com</string>
+    <string name="help_exact_alarm">Cho phép báo thức chính xác</string>
+    <string name="help_explanation_2">2. Tắt chế độ tiết kiệm pin cho Birdays (Cài đặt > Birdays > Pin).</string>
+    <string name="help_settings">Mở cài đặt</string>
+    <string name="help_explanation_3">3. Nếu bạn đã cài đặt trình quản lý tác vụ, ứng dụng dọn dẹp bộ nhớ hoặc tiết kiệm pin (như “Battery Saver”, “Clean Master” và các ứng dụng tương tự) chặn hoạt động chạy ngầm, hãy thêm Birdays vào danh sách ngoại lệ.</string>
+    <string name="help_email_description">Nếu bạn có bất kỳ câu hỏi hoặc đề xuất nào, vui lòng liên hệ với tôi qua địa chỉ birdaysapp@gmail.com</string>
     <string name="send_email">Gửi email</string>
 
     <!-- Famous persons -->

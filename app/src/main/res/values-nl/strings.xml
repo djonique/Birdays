@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Nieuw record</string>
     <string name="add_from_contacts">Toevoegen uit contacten</string>
-    <string name="open_contacts_error">Deze actie kan niet worden uitgevoerd vanwege apparaatfuncties</string>
+    <string name="activity_not_found_error">Deze actie kan niet worden uitgevoerd vanwege apparaatfuncties</string>
     <string name="name">Naam</string>
     <string name="error_hint">Voer een naam in</string>
     <string name="phone_number">Telefoonnummer</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Bezig met herstellen vanaf Google Drive…</string>
     <string name="recover_records_error">Herstellen van records mislukt</string>
     <string name="records_recovered">Records hersteld</string>
+    <string name="restore_confirm_title">Herstellen van reservekopie</string>
+    <string name="restore_confirm_message">Weet je zeker dat je records wilt herstellen van %1$s? Aantal records: %2$s.</string>
+    <string name="restore_button">Herstellen</string>
+    <string name="restore_unknown">onbekend</string>
+    <string name="upload_error">Uploadfout: %s</string>
+    <string name="backup_error">Reservekopiefout: %s</string>
+    <string name="auth_error">Authenticatiefout: %s</string>
+    <string name="authorization_failed_error">Autorisatie mislukt: %s</string>
+    <string name="download_error">Downloadfout: %s</string>
+    <string name="file_not_found">Bestand niet gevonden</string>
+    <string name="search_error">Zoekfout: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Reclame</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Waarom werkt de herinnering niet?</string>
-    <string name="help_description">Android-apparaten hebben een energiebesparende modus die voorkomt dat de app op de achtergrond draait of automatisch start. Volg deze eenvoudige stappen om meldingen correct te laten werken:\n\n1. Zorg ervoor dat meldingen zijn toegestaan voor de Birdays-app (Instellingen > Apps > Birdays).\n\n2. Als u taakbeheerders, geheugenopschoners of energiebesparende apps hebt geïnstalleerd (zoals “Battery Saver”, “Clean Master” en vergelijkbare apps) die achtergrondtaken blokkeren, voegt u Birdays toe aan de uitzonderingen.\n\n3. Schakel de energiebesparende modus voor Birdays uit (Instellingen > Batterij > Batterijoptimalisatie).</string>
-    <string name="help_settings">Open instellingen</string>
-    <string name="help_delay_text">Houd er rekening mee dat meldingen op sommige apparaten vertraagd kunnen binnenkomen.</string>
-    <string name="help_email_description">Als u vragen of suggesties hebt, neem dan contact met mij op via birdaysapp@gmail.com</string>
+    <string name="help_description">Android-apparaten hebben een batterijbesparingsmodus die voorkomt dat de app op de achtergrond wordt uitgevoerd of automatisch start. Volg deze eenvoudige stappen om meldingen goed te laten werken:</string>
+    <string name="help_explanation_1">1. Zorg ervoor dat meldingen zijn toegestaan voor de Birdays-app (Instellingen > Birdays > Meldingen).</string>
+    <string name="help_delay_text">Houd er rekening mee dat meldingen op sommige apparaten vertraagd kunnen zijn.</string>
+    <string name="help_exact_alarm">Exacte wekkers toestaan</string>
+    <string name="help_explanation_2">2. Schakel de batterijbesparingsmodus uit voor Birdays (Instellingen > Birdays > Batterij).</string>
+    <string name="help_settings">Instellingen openen</string>
+    <string name="help_explanation_3">3. Als je taakbeheerders of apps voor geheugenopschoning en batterijbesparing hebt geïnstalleerd (zoals “Battery Saver”, “Clean Master” en vergelijkbare apps) die achtergrondactiviteit blokkeren, voeg dan Birdays toe aan de uitzonderingen.</string>
+    <string name="help_email_description">Als je vragen of suggesties hebt, neem dan contact met mij op via birdaysapp@gmail.com</string>
     <string name="send_email">E-mail verzenden</string>
 
     <!-- Famous persons -->

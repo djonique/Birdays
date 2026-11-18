@@ -447,7 +447,7 @@ public class DetailActivity extends AppCompatActivity {
                     Uri.parse(Constants.TEL + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
             startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.activity_not_found_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -460,7 +460,7 @@ public class DetailActivity extends AppCompatActivity {
                     .setData(Uri.parse(Constants.SMSTO + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
             startActivity(Intent.createChooser(intent, null));
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.activity_not_found_error, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -473,7 +473,7 @@ public class DetailActivity extends AppCompatActivity {
                     .setData(Uri.parse(Constants.MAILTO + email));
             startActivity(Intent.createChooser(intent, null));
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.activity_not_found_error, Toast.LENGTH_SHORT).show();
         }
     }
 }

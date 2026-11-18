@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Akalas amaynut</string>
     <string name="add_from_contacts">Rnu seg inermisen</string>
-    <string name="open_contacts_error">Ur yezmir ara ad yekemmel tigawt-a ɣef sebba n timahilin n yibenk</string>
+    <string name="activity_not_found_error">Ur yezmir ara ad yekemmel tigawt-a ɣef sebba n timahilin n yibenk</string>
     <string name="name">Isem</string>
     <string name="error_hint">Ma ulac aɣilif, sekcem isem</string>
     <string name="phone_number">Uṭṭun n tiliɣri</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Ales seg Google Drive…</string>
     <string name="recover_records_error">Ur yezmir ara ad d-yerr ikalasen</string>
     <string name="records_recovered">Ikallasen uɣalen-d</string>
+    <string name="restore_confirm_title">Errured seg unɣel n tɣellist</string>
+    <string name="restore_confirm_message">Tebɣiḍ s tidet ad d-trehreḍ Isekfallen seg %1$s? Amḍan n isekfallen: %2$s.</string>
+    <string name="restore_button">Errured</string>
+    <string name="restore_unknown">ur yettwassen ara</string>
+    <string name="upload_error">Tuccḍa n usali: %s</string>
+    <string name="backup_error">Tuccḍa n unɣel n tɣellist: %s</string>
+    <string name="auth_error">Tuccḍa n usentem: %s</string>
+    <string name="authorization_failed_error">Ur yeddi ara usentem: %s</string>
+    <string name="download_error">Tuccḍa n uzdam: %s</string>
+    <string name="file_not_found">Afaylu ur yettwafɣ ara</string>
+    <string name="search_error">Tuccḍa n unadi: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Adellel</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Acuɣer ur iteddu ara uṭenṭen?</string>
-    <string name="help_description">Ibenkan n Android ɣur-sen askar n uḥraz n tfasa i yessewḥalen asnas ad yeddu deg ugilal neɣ i t-yeswaǧǧen ad yebdu s wudem awurman. Akken ilɣa ad ddun akken iwata, ḍfer isurifen-a:\n\n1. Ḍmen d akken ilɣa ttwasuregen i usnas Birdays (Iɣewwaṛen &gt; Isnasen &gt; Birdays).\n\n2. Ma yella tesbeddeḍ imsefrak n tiwuriwin, imseggamen n tkatut neɣ imseggamen n uḥraz n tfasa (am «Aḥerraz n tbatri», «Clean Master» d wiyaḍ) i yessewḥalen ad yeddu deg ugilal, rnu Birdays ar isurifen.\n\n3. Sens askar n uḥraz n tfasa i Birdays (Iɣewwaṛen &gt; Tbatri &gt; Aseggam n tbatri).</string>
+    <string name="help_description">Ibenkan n Android sɛan askar n usegfer n tezmert i isewḥalen asnas ad yeddu deg ugilal neɣ i t-yettarra ad yekker s wudem awurman. Akken ad ddun ilɣa akken iwata, ḍfer imecwaṛen-a fessusen:</string>
+    <string name="help_explanation_1">1. Wali ma yella ilɣa ttwasirgen i usnas n Birdays (Iɣewwaṛen > Birdays > Ilɣa).</string>
+    <string name="help_delay_text">Ɣur-k, ilɣa zemren ad ttwaɛeṭṭlen deg kra n yibenkan.</string>
+    <string name="help_exact_alarm">Sireg timsarin tiseddiyin</string>
+    <string name="help_explanation_2">2. Sens askar n usegfer n tezmert i Birdays (Iɣewwaṛen > Birdays > Aẓru).</string>
     <string name="help_settings">Ldi iɣewwaṛen</string>
-    <string name="help_delay_text">Ma ulac aɣilif, ẓer d akken kra n yibenkan, ilɣa zemren ur teddun ara imir imir.</string>
-    <string name="help_email_description">Ma tesriḍ tallelt neɣ ɣur-k isteqsiyen neɣ isumer, ma ulac aɣilif nermes-aɣ-d ar birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Ma tesbeddeḍ isnasen n usefrek n twuriwin, asizdeg n tkatut neɣ asegfer n tezmert (am “Battery Saver”, “Clean Master” d yisnasen yettemcabin) i isewḥalen amahil deg ugilal, rnu Birdays ɣer tsuraf.</string>
+    <string name="help_email_description">Ma tesɛiḍ isteqsiyen neɣ isumar, ttxil-k nermes-iyi-d deg birdaysapp@gmail.com</string>
     <string name="send_email">Azen imayl</string>
 
     <!-- Famous persons -->

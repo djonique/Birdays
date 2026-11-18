@@ -10,10 +10,10 @@
     <string name="build_version">Versão da compilação</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">A carregar contactos…</string>
-    <string name="contacts_uploaded">Contactos carregados</string>
-    <string name="loading_contacts_error">Não é possível importar contactos, o formato de data não é o padrão</string>
-    <string name="permission_required">É necessária permissão para importar contactos</string>
+    <string name="loading_contacts">Carregando contatos…</string>
+    <string name="contacts_uploaded">Contatos carregados</string>
+    <string name="loading_contacts_error">Não é possível importar contatos, o formato de data não é o padrão</string>
+    <string name="permission_required">É necessária permissão para importar contatos</string>
     <string name="snackbar_allow_text">Permitir</string>
     <string name="all">Todos</string>
     <string name="famous">Famosos</string>
@@ -41,13 +41,13 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_settings">Definições</string>
+    <string name="action_settings">Configurações</string>
     <string name="action_delete">Eliminar</string>
 
     <!-- NewPersonActivity -->
     <string name="new_record">Novo registo</string>
-    <string name="add_from_contacts">Adicionar a partir dos contactos</string>
-    <string name="open_contacts_error">Não é possível realizar a ação devido às características do dispositivo</string>
+    <string name="add_from_contacts">Adicionar a partir dos contatos</string>
+    <string name="activity_not_found_error">Não é possível realizar a ação devido às características do dispositivo</string>
     <string name="name">Nome</string>
     <string name="error_hint">Por favor, introduza o nome</string>
     <string name="phone_number">Número de telefone</string>
@@ -122,10 +122,10 @@
     </string-array>
 
     <string name="notification_tone">Toque de notificação</string>
-    <string name="ringtone_summary">Escolha um som para a notificação. Por predefinição, é utilizado o toque das definições do dispositivo</string>
+    <string name="ringtone_summary">Escolha um som para a notificação. Por padrão, é usado o toque das configurações do dispositivo</string>
     <string name="silent">Nenhum</string>
     <string name="help">Ajuda</string>
-    <string name="tap_here">Toque aqui se não estiver a receber notificações</string>
+    <string name="tap_here">Toque aqui se não estiver recebendo notificações</string>
 
     <!-- General -->
     <string name="general">Geral</string>
@@ -145,17 +145,17 @@
         <item>Futuro</item>
     </string-array>
 
-    <string name="displayed_age_changes">Tem de reiniciar a aplicação para que estas alterações tenham efeito</string>
+    <string name="displayed_age_changes">Você precisa reiniciar o aplicativo para que estas alterações tenham efeito</string>
     <string name="restart_now">Reiniciar agora</string>
     <string name="later">Mais tarde</string>
     <string name="rate_app">Avaliar a aplicação</string>
-    <string name="share_app">Partilhar aplicação</string>
-    <string name="share_text">"Costuma esquecer-se de felicitar a sua família, amigos ou colegas pelo aniversário? O Birdays irá lembrá-lo de uma data importante!  "</string>
+    <string name="share_app">Compartilhar aplicativo</string>
+    <string name="share_text">"Você costuma esquecer de parabenizar sua família, amigos ou colegas no aniversário deles? O Birdays vai lembrar você de uma data importante!  "</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Sincronização e backup</string>
-    <string name="contacts_import_title">Importar contactos</string>
-    <string name="contacts_import_summary">Toque aqui para importar contactos do seu dispositivo (suporta ISO 8601)</string>
+    <string name="contacts_import_title">Importar contatos</string>
+    <string name="contacts_import_summary">Toque aqui para importar contatos do seu dispositivo (suporta ISO 8601)</string>
     <string name="google_drive_backup">Backup no Google Drive</string>
     <string name="google_drive_backup_summary">Enviar o backup da base de dados para o Google Drive</string>
     <string name="google_drive_backup_progress">A fazer backup para o Google Drive…</string>
@@ -165,26 +165,37 @@
     <string name="google_drive_restore_progress">A restaurar do Google Drive…</string>
     <string name="recover_records_error">Falha ao recuperar registos</string>
     <string name="records_recovered">Registos recuperados</string>
+    <string name="restore_confirm_title">Restaurar do backup</string>
+    <string name="restore_confirm_message">Tem certeza de que deseja restaurar os registros de %1$s? Contagem de registros: %2$s.</string>
+    <string name="restore_button">Restaurar</string>
+    <string name="restore_unknown">desconhecido</string>
+    <string name="upload_error">Erro de upload: %s</string>
+    <string name="backup_error">Erro de backup: %s</string>
+    <string name="auth_error">Erro de autenticação: %s</string>
+    <string name="authorization_failed_error">Falha na autorização: %s</string>
+    <string name="download_error">Erro de download: %s</string>
+    <string name="file_not_found">Arquivo não encontrado</string>
+    <string name="search_error">Erro de pesquisa: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Publicidade</string>
     <string name="about_ad_title">Porque vejo anúncios?</string>
     <string name="about_ad_summary">Todas as receitas publicitárias são destinadas ao desenvolvimento do projeto</string>
     <string name="show_ads">Mostrar anúncios</string>
-    <string name="show_ads_summary">Pode desativar os anúncios assistindo a um curto anúncio em vídeo</string>
+    <string name="show_ads_summary">Você pode desativar os anúncios assistindo a um curto anúncio em vídeo</string>
 
     <!-- Support project -->
     <string name="support_project_category">Apoiar o projeto</string>
     <string name="watch_video_title">Ver um anúncio em vídeo</string>
-    <string name="ad_rewarded_summary">Veja um vídeo curto — a receita é destinada ao desenvolvimento da aplicação</string>
+    <string name="ad_rewarded_summary">Assista a um vídeo curto — a receita é destinada ao desenvolvimento do aplicativo</string>
     <string name="ad_rewarded_unavailable">O vídeo não está disponível neste momento; tente novamente mais tarde</string>
     <string name="ad_disabled_success">Os anúncios foram desativados</string>
-    <string name="ad_watch_full_video_to_disable">Veja o vídeo até ao fim para desativar os anúncios</string>
+    <string name="ad_watch_full_video_to_disable">Assista ao vídeo até o fim para desativar os anúncios</string>
     <string name="donate_title">Fazer uma contribuição</string>
     <string name="donate_summary">Apoio financeiro ao desenvolvimento da aplicação</string>
 
     <!-- About -->
-    <string name="about">Sobre a aplicação</string>
+    <string name="about">Sobre o aplicativo</string>
     <string name="licenses">Licenças</string>
     <string name="software_licenses">Licenças de código aberto</string>
     <string name="third_party_sdks">SDKs de terceiros</string>
@@ -192,12 +203,16 @@
     <string name="privacy_policy">Política de privacidade</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Porque não está o lembrete a funcionar?</string>
-    <string name="help_description">Os dispositivos Android têm um modo de poupança de energia que bloqueia a aplicação de ser executada em segundo plano ou impede o arranque automático. Para que as notificações funcionem corretamente, siga estes passos simples:\n\n1. Certifique-se de que as notificações estão permitidas para a aplicação Birdays (Definições > Aplicações > Birdays).\n\n2. Se tiver gestores de tarefas, aplicações de limpeza de memória ou de poupança de energia instaladas (como “Battery Saver”, “Clean Master” e aplicações semelhantes) que bloqueiem a execução em segundo plano, adicione o Birdays às exceções.\n\n3. Desative o modo de poupança de energia para o Birdays (Definições > Bateria > Otimização da bateria).</string>
-    <string name="help_settings">Abrir definições</string>
-    <string name="help_delay_text">Tenha em atenção que, em alguns dispositivos, as notificações podem sofrer atrasos.</string>
-    <string name="help_email_description">Se tiver dúvidas ou sugestões, contacte-me em birdaysapp@gmail.com</string>
-    <string name="send_email">Enviar email</string>
+    <string name="help_header">Por que o lembrete não está funcionando?</string>
+    <string name="help_description">Os dispositivos Android têm um modo de economia de bateria que impede o aplicativo de ser executado em segundo plano ou evita que ele inicie automaticamente. Para que as notificações funcionem corretamente, siga estas etapas simples:</string>
+    <string name="help_explanation_1">1. Certifique-se de que as notificações estejam permitidas para o aplicativo Birdays (Configurações > Birdays > Notificações).</string>
+    <string name="help_delay_text">Observe que as notificações podem atrasar em alguns dispositivos.</string>
+    <string name="help_exact_alarm">Permitir alarmes exatos</string>
+    <string name="help_explanation_2">2. Desative o modo de economia de bateria para o Birdays (Configurações > Birdays > Bateria).</string>
+    <string name="help_settings">Abrir configurações</string>
+    <string name="help_explanation_3">3. Se você tiver gerenciadores de tarefas ou aplicativos de limpeza de memória e economia de bateria instalados (como “Battery Saver”, “Clean Master” e aplicativos semelhantes) que bloqueiam a operação em segundo plano, adicione o Birdays às exceções.</string>
+    <string name="help_email_description">Se você tiver alguma dúvida ou sugestão, entre em contato comigo pelo e-mail birdaysapp@gmail.com</string>
+    <string name="send_email">Enviar e-mail</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

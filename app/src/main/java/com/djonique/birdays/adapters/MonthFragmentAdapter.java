@@ -188,7 +188,7 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
                             .setData(Uri.parse(Constants.MAILTO + email));
                     context.startActivity(Intent.createChooser(intent, null));
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(context, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, R.string.activity_not_found_error, Toast.LENGTH_SHORT).show();
                 }
             });
         } else {
@@ -205,7 +205,7 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
                             Uri.parse(Constants.TEL + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
                     context.startActivity(intent);
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(context, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, R.string.activity_not_found_error, Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -216,7 +216,7 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
                             .setData(Uri.parse(Constants.SMSTO + (cleanNumber.isEmpty() ? phoneNumber : cleanNumber)));
                     context.startActivity(Intent.createChooser(intent, null));
                 } catch (ActivityNotFoundException e) {
-                    Toast.makeText(context, R.string.open_contacts_error, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, R.string.activity_not_found_error, Toast.LENGTH_SHORT).show();
                 }
             });
         } else {

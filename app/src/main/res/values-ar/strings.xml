@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">سجل جديد</string>
     <string name="add_from_contacts">إضافة من جهات الاتصال</string>
-    <string name="open_contacts_error">تعذر تنفيذ الإجراء بسبب ميزات الجهاز</string>
+    <string name="activity_not_found_error">تعذر تنفيذ الإجراء بسبب ميزات الجهاز</string>
     <string name="name">الاسم</string>
     <string name="error_hint">يرجى إدخال اسم</string>
     <string name="phone_number">رقم الهاتف</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">جارٍ الاستعادة من Google Drive…</string>
     <string name="recover_records_error">تعذر استعادة السجلات</string>
     <string name="records_recovered">تمت استعادة السجلات</string>
+    <string name="restore_confirm_title">الاستعادة من النسخة الاحتياطية</string>
+    <string name="restore_confirm_message">هل أنت متأكد من أنك تريد استعادة السجلات من %1$s؟ عدد السجلات: %2$s.</string>
+    <string name="restore_button">استعادة</string>
+    <string name="restore_unknown">غير معروف</string>
+    <string name="upload_error">خطأ في الرفع: %s</string>
+    <string name="backup_error">خطأ في النسخ الاحتياطي: %s</string>
+    <string name="auth_error">خطأ في المصادقة: %s</string>
+    <string name="authorization_failed_error">فشل التفويض: %s</string>
+    <string name="download_error">خطأ في التنزيل: %s</string>
+    <string name="file_not_found">الملف غير موجود</string>
+    <string name="search_error">خطأ في البحث: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">الإعلانات</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">لماذا لا يعمل التذكير؟</string>
-    <string name="help_description">تحتوي أجهزة Android على وضع لتوفير الطاقة يمنع التطبيق من العمل في الخلفية أو يمنعه من البدء تلقائيًا. لتعمل الإشعارات بشكل صحيح، اتبع هذه الخطوات البسيطة:\n\n1. تأكد من السماح بالإشعارات لتطبيق Birdays (الإعدادات &gt; التطبيقات &gt; Birdays).\n\n2. إذا كانت لديك مديرو مهام أو تطبيقات لتنظيف الذاكرة أو توفير الطاقة (مثل “Battery Saver” و“Clean Master” والتطبيقات المشابهة) تمنع العمل في الخلفية، فأضف Birdays إلى الاستثناءات.\n\n3. أوقف وضع توفير الطاقة لتطبيق Birdays (الإعدادات &gt; البطارية &gt; تحسين البطارية).</string>
-    <string name="help_settings">فتح الإعدادات</string>
+    <string name="help_description">تحتوي أجهزة Android على وضع توفير الطاقة الذي يمنع التطبيق من العمل في الخلفية أو يمنعه من البدء تلقائيًا. لكي تعمل الإشعارات بشكل صحيح، اتبع هذه الخطوات البسيطة:</string>
+    <string name="help_explanation_1">1. تأكد من السماح بالإشعارات لتطبيق Birdays (الإعدادات > Birdays > الإشعارات).</string>
     <string name="help_delay_text">يرجى ملاحظة أن الإشعارات قد تتأخر على بعض الأجهزة.</string>
-    <string name="help_email_description">إذا كانت لديك أي أسئلة أو اقتراحات، يرجى التواصل معي على birdaysapp@gmail.com</string>
+    <string name="help_exact_alarm">السماح بالمنبهات الدقيقة</string>
+    <string name="help_explanation_2">2. قم بإيقاف تشغيل وضع توفير الطاقة لتطبيق Birdays (الإعدادات > Birdays > البطارية).</string>
+    <string name="help_settings">فتح الإعدادات</string>
+    <string name="help_explanation_3">3. إذا كان لديك تطبيقات إدارة المهام أو تنظيف الذاكرة أو توفير الطاقة مثبتة (مثل «Battery Saver» و«Clean Master» والتطبيقات المشابهة) التي تحظر العمل في الخلفية، فأضف Birdays إلى قائمة الاستثناءات.</string>
+    <string name="help_email_description">إذا كانت لديك أي أسئلة أو اقتراحات، يرجى التواصل معي عبر البريد الإلكتروني birdaysapp@gmail.com</string>
     <string name="send_email">إرسال بريد إلكتروني</string>
 
     <!-- Famous persons -->

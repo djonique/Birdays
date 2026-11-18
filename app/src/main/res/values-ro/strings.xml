@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Înregistrare nouă</string>
     <string name="add_from_contacts">Adaugă de la contacte</string>
-    <string name="open_contacts_error">Nu se poate efectua acțiunea din cauza caracteristicilor aparatului</string>
+    <string name="activity_not_found_error">Nu se poate efectua acțiunea din cauza caracteristicilor aparatului</string>
     <string name="name">Nume</string>
     <string name="error_hint">Vă rugăm să introduceți numele</string>
     <string name="phone_number">Numărul de telefon</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Se restaurează din Google Drive…</string>
     <string name="recover_records_error">Nu s-au putut recupera înregistrările</string>
     <string name="records_recovered">Înregistrări recuperate</string>
+    <string name="restore_confirm_title">Restaurare din backup</string>
+    <string name="restore_confirm_message">Sigur doriți să restaurați înregistrările din %1$s? Număr de înregistrări: %2$s.</string>
+    <string name="restore_button">Restaurare</string>
+    <string name="restore_unknown">necunoscut</string>
+    <string name="upload_error">Eroare de încărcare: %s</string>
+    <string name="backup_error">Eroare de backup: %s</string>
+    <string name="auth_error">Eroare de autentificare: %s</string>
+    <string name="authorization_failed_error">Autorizarea a eșuat: %s</string>
+    <string name="download_error">Eroare de descărcare: %s</string>
+    <string name="file_not_found">Fișierul nu a fost găsit</string>
+    <string name="search_error">Eroare de căutare: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Publicitate</string>
@@ -192,12 +203,16 @@
     <string name="privacy_policy">Politica de confidențialitate</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">De ce nu funcționează memento-ul?</string>
-    <string name="help_description">Dispozitivele Android au un mod de economisire a energiei care blochează aplicația să ruleze în fundal sau împiedică pornirea automată. Pentru ca notificările să funcționeze corect, urmați acești pași simpli:\n\n1. Asigurați-vă că notificările sunt permise pentru aplicația Birdays (Setări &gt; Aplicații &gt; Birdays).\n\n2. Dacă aveți instalate manageri de activități, aplicații de curățare a memoriei sau de economisire a energiei (cum ar fi „Battery Saver”, „Clean Master” și aplicații similare) care blochează funcționarea în fundal, adăugați Birdays la excepții.\n\n3. Dezactivați modul de economisire a energiei pentru Birdays (Setări &gt; Baterie &gt; Optimizarea bateriei).</string>
-    <string name="help_settings">Deschideți setările</string>
-    <string name="help_delay_text">Vă rugăm să rețineți că notificările pot fi întârziate pe unele dispozitive.</string>
-    <string name="help_email_description">Dacă aveți întrebări sau sugestii, contactați-mă la birdaysapp@gmail.com</string>
-    <string name="send_email">Trimiteți email</string>
+    <string name="help_header">De ce nu funcționează mementoul?</string>
+    <string name="help_description">Dispozitivele Android au un mod de economisire a energiei care blochează rularea aplicației în fundal sau împiedică pornirea automată a acesteia. Pentru ca notificările să funcționeze corect, urmează acești pași simpli:</string>
+    <string name="help_explanation_1">1. Asigură-te că notificările sunt permise pentru aplicația Birdays (Setări > Birdays > Notificări).</string>
+    <string name="help_delay_text">Te rugăm să reții că notificările pot avea întârzieri pe unele dispozitive.</string>
+    <string name="help_exact_alarm">Permite alarme exacte</string>
+    <string name="help_explanation_2">2. Dezactivează modul de economisire a energiei pentru Birdays (Setări > Birdays > Baterie).</string>
+    <string name="help_settings">Deschide setările</string>
+    <string name="help_explanation_3">3. Dacă ai instalate aplicații de gestionare a sarcinilor, curățare a memoriei sau economisire a energiei (cum ar fi „Battery Saver”, „Clean Master” și aplicații similare) care blochează funcționarea în fundal, adaugă Birdays la excepții.</string>
+    <string name="help_email_description">Dacă ai întrebări sau sugestii, te rog să mă contactezi la birdaysapp@gmail.com</string>
+    <string name="send_email">Trimite e-mail</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Жаңа жазба</string>
     <string name="add_from_contacts">Контактілерден қосу</string>
-    <string name="open_contacts_error">Бұл әрекетті құрылғының ерекшеліктеріне байланысты орындау мүмкін емес</string>
+    <string name="activity_not_found_error">Бұл әрекетті құрылғының ерекшеліктеріне байланысты орындау мүмкін емес</string>
     <string name="name">Аты</string>
     <string name="error_hint">Өтінеміз, атын енгізіңіз</string>
     <string name="phone_number">Телефон нөмірі</string>
@@ -98,10 +98,10 @@
     <string name="disable_button">Өшіру</string>
 
     <!-- Notifications -->
-    <string name="notifications">Хабарламалар</string>
-    <string name="allow_notification">Қолданбаға алдағы туған күндер туралы хабарлама жіберуге рұқсат беріңіз</string>
-    <string name="notifications_time">Хабарлама уақыты</string>
-    <string name="additional_notification">Қосымша хабарлама</string>
+    <string name="notifications">Хабарландырулар</string>
+    <string name="allow_notification">Қолданбаға алдағы туған күндер туралы хабарландыру жіберуге рұқсат беріңіз</string>
+    <string name="notifications_time">Хабарландыру уақыты</string>
+    <string name="additional_notification">Қосымша хабарландыру</string>
 
     <string-array name="additional_notification_entries">
         <item>Ешқашан</item>
@@ -121,11 +121,11 @@
         <item>Екі аптадан кейін</item>
     </string-array>
 
-    <string name="notification_tone">Хабарлама дыбысы</string>
-    <string name="ringtone_summary">Хабарлама дыбысын таңдаңыз. Әдепкіде құрылғы параметрлеріндегі дыбыс пайдаланылады</string>
+    <string name="notification_tone">Хабарландыру дыбысы</string>
+    <string name="ringtone_summary">Хабарландыру дыбысын таңдаңыз. Әдепкіде құрылғы параметрлеріндегі дыбыс пайдаланылады</string>
     <string name="silent">Дыбыссыз</string>
     <string name="help">Көмек</string>
-    <string name="tap_here">Хабарламалар келмей жатса, осында басыңыз</string>
+    <string name="tap_here">Хабарландырулар келмей жатса, осында басыңыз</string>
 
     <!-- General -->
     <string name="general">Жалпы</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">Google Дискінен қалпына келтірілуде…</string>
     <string name="recover_records_error">Жазбаларды қалпына келтіру мүмкін болмады</string>
     <string name="records_recovered">Жазбалар қалпына келтірілді</string>
+    <string name="restore_confirm_title">Резервтік көшірмеден қалпына келтіру</string>
+    <string name="restore_confirm_message">%1$s күнгі жазбаларды қалпына келтіргіңіз келетініне сенімдісіз бе? Жазбалар саны: %2$s.</string>
+    <string name="restore_button">Қалпына келтіру</string>
+    <string name="restore_unknown">белгісіз</string>
+    <string name="upload_error">Жүктеу қатесі: %s</string>
+    <string name="backup_error">Резервтік көшірме жасау қатесі: %s</string>
+    <string name="auth_error">Авторизация қатесі: %s</string>
+    <string name="authorization_failed_error">Авторизация сәтсіз аяқталды: %s</string>
+    <string name="download_error">Файлды жүктеп алу қатесі: %s</string>
+    <string name="file_not_found">Файл табылмады</string>
+    <string name="search_error">Іздеу қатесі: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Жарнама</string>
@@ -192,10 +203,14 @@
     <string name="privacy_policy">Құпиялылық саясаты</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Неге еске салу іске қосылмайды?</string>
-    <string name="help_description">Android құрылғыларында қолданбаның фондық режимде жұмысын блоктайтын немесе автоматты іске қосуға тыйым салатын қуат үнемдеу режимі бар. Хабарламалар дұрыс жұмыс істеуі үшін бірнеше қарапайым әрекетті орындаңыз:\n\n1. Birdays қолданбасына хабарламаларға рұқсат берілгеніне көз жеткізіңіз (Параметрлер &gt; Қолданбалар &gt; Birdays).\n\n2. Егер сізде фондық жұмысты блоктайтын тапсырма менеджерлері, жадты тазалау немесе қуат үнемдеу қолданбалары («Battery Saver», «Clean Master» және сол тектестер) орнатылған болса, Birdays-ті ерекшеліктерге қосыңыз.\n\n3. Birdays үшін қуат үнемдеу режимін өшіріңіз (Параметрлер &gt; Батарея &gt; Қуатты үнемдеу).</string>
+    <string name="help_header">Еске салғыштар неліктен іске қосылмайды?</string>
+    <string name="help_description">Android құрылғыларында қолданбаның фондық режимде жұмыс істеуін бұғаттайтын немесе автоматты түрде іске қосылуына тыйым салатын қуат үнемдеу режимі бар. Хабарландырулар дұрыс жұмыс істеуі үшін бірнеше қарапайым әрекетті орындаңыз:</string>
+    <string name="help_explanation_1">1. Birdays қолданбасы үшін хабарландыруларға рұқсат етілгеніне көз жеткізіңіз (Параметрлер > Birdays > Хабарландырулар).</string>
+    <string name="help_delay_text">Кейбір құрылғыларда хабарландырулар кешігіп келетініне назар аударыңыз.</string>
+    <string name="help_exact_alarm">Нақты дабылдарға рұқсат беру</string>
+    <string name="help_explanation_2">2. Birdays үшін қуат үнемдеу режимін өшіріңіз (Параметрлер > Birdays > Батарея).</string>
     <string name="help_settings">Параметрлерді ашу</string>
-    <string name="help_delay_text">Кейбір құрылғыларда хабарламалар кешігуі мүмкін екенін ескеріңіз.</string>
+    <string name="help_explanation_3">3. Егер сізде фондық режимде жұмыс істеуді бұғаттайтын тапсырмалар диспетчері, жадты тазалауға немесе қуат үнемдеуге арналған қолданбалар («Battery Saver», «Clean Master» және соған ұқсас) орнатылған болса, Birdays қолданбасын ерекшеліктер тізіміне қосыңыз.</string>
     <string name="help_email_description">Барлық сұрақтар мен ұсыныстар бойынша маған birdaysapp@gmail.com поштасына жазыңыз</string>
     <string name="send_email">Хат жіберу</string>
 

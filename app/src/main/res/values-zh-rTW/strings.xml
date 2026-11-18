@@ -47,7 +47,7 @@
     <!-- NewPersonActivity -->
     <string name="new_record">新增記錄</string>
     <string name="add_from_contacts">從聯絡人新增</string>
-    <string name="open_contacts_error">因裝置功能限制，無法執行操作</string>
+    <string name="activity_not_found_error">因裝置功能限制，無法執行操作</string>
     <string name="name">名稱</string>
     <string name="error_hint">請輸入名稱</string>
     <string name="phone_number">電話號碼</string>
@@ -165,6 +165,17 @@
     <string name="google_drive_restore_progress">正在從 Google Drive 還原…</string>
     <string name="recover_records_error">無法還原記錄</string>
     <string name="records_recovered">記錄已還原</string>
+    <string name="restore_confirm_title">從備份還原</string>
+    <string name="restore_confirm_message">確定要從 %1$s 還原記錄嗎？記錄數：%2$s。</string>
+    <string name="restore_button">還原</string>
+    <string name="restore_unknown">未知</string>
+    <string name="upload_error">上傳錯誤：%s</string>
+    <string name="backup_error">備份錯誤：%s</string>
+    <string name="auth_error">驗證錯誤：%s</string>
+    <string name="authorization_failed_error">授權失敗：%s</string>
+    <string name="download_error">下載錯誤：%s</string>
+    <string name="file_not_found">找不到檔案</string>
+    <string name="search_error">搜尋錯誤：%s</string>
 
     <!-- Advertising -->
     <string name="advertising">廣告</string>
@@ -193,10 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">為什麼提醒沒有作用？</string>
-    <string name="help_description">Android 裝置具有省電模式，會阻止應用程式在背景執行，或阻止其自動啟動。若要讓通知正常運作，請依照以下簡單步驟：\n\n1. 確認 Birdays 應用程式已允許通知（設定 > 應用程式 > Birdays）。\n\n2. 如果您安裝了會封鎖背景運作的工作管理員、記憶體清理或省電應用程式（例如「Battery Saver」、「Clean Master」及類似應用程式），請將 Birdays 加入例外清單。\n\n3. 關閉 Birdays 的省電模式（設定 > 電池 > 電池最佳化）。</string>
+    <string name="help_description">Android 裝置具有省電模式，會封鎖應用程式在背景執行或防止其自動啟動。若要讓通知正常運作，請按照以下簡單步驟操作：</string>
+    <string name="help_explanation_1">1. 請確認已允許 Birdays 應用程式傳送通知（設定 > Birdays > 通知）。</string>
+    <string name="help_delay_text">請注意，部分裝置上的通知可能會延遲。</string>
+    <string name="help_exact_alarm">允許設定鬧鐘與提醒</string>
+    <string name="help_explanation_2">2. 關閉 Birdays 的省電模式（設定 > Birdays > 電池）。</string>
     <string name="help_settings">開啟設定</string>
-    <string name="help_delay_text">請注意，某些裝置上的通知可能會延遲。</string>
-    <string name="help_email_description">如果您有任何問題或建議，請寄信至 birdaysapp@gmail.com 與我聯絡</string>
+    <string name="help_explanation_3">3. 如果您安裝了會封鎖背景運作的工作管理員、記憶體清理或省電應用程式（例如「Battery Saver」、「Clean Master」和類似的應用程式），請將 Birdays 加入例外清單。</string>
+    <string name="help_email_description">如果您有任何問題或建議，請透過 birdaysapp@gmail.com 與我聯絡</string>
     <string name="send_email">傳送電子郵件</string>
 
     <!-- Famous persons -->
