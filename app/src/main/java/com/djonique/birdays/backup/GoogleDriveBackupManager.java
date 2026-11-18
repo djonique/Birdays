@@ -192,9 +192,19 @@ public class GoogleDriveBackupManager {
         });
     }
 
+    public static void deleteRestoreTempFile(Context context) {
+        if (context == null) return;
+        java.io.File tempFile = new java.io.File(context.getCacheDir(), RESTORE_FILE_NAME);
+        if (tempFile.exists()) {
+            //noinspection ResultOfMethodCallIgnored
+            tempFile.delete();
+        }
+    }
+
     public void downloadBackup(String accessToken, String fileId, DownloadCallback callback) {
         executor.execute(() -> {
             try {
+                deleteRestoreTempFile(context);
                 Drive driveService = getDriveService(accessToken);
                 java.io.File tempFile = new java.io.File(context.getCacheDir(), RESTORE_FILE_NAME);
                 try (OutputStream outputStream = new FileOutputStream(tempFile)) {
@@ -202,6 +212,7 @@ public class GoogleDriveBackupManager {
                 }
                 mainHandler.post(() -> callback.onSuccess(tempFile));
             } catch (Exception e) {
+                deleteRestoreTempFile(context);
                 Log.e(TAG, "Download backup failed", e);
                 mainHandler.post(() -> callback.onError(e));
             }

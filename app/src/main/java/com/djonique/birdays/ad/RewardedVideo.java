@@ -25,6 +25,8 @@ import com.yandex.mobile.ads.rewarded.RewardedAdEventListener;
 import com.yandex.mobile.ads.rewarded.RewardedAdLoadListener;
 import com.yandex.mobile.ads.rewarded.RewardedAdLoader;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class RewardedVideo {
 
     private final RewardedAdLoader rewardedAdLoader;
@@ -32,7 +34,7 @@ public class RewardedVideo {
     private boolean loading;
 
     public RewardedVideo(@NonNull Context context) {
-        rewardedAdLoader = new RewardedAdLoader(context);
+        rewardedAdLoader = new RewardedAdLoader(context.getApplicationContext());
     }
 
     public void preload() {
@@ -70,6 +72,7 @@ public class RewardedVideo {
         RewardedAd ad = rewardedAd;
         rewardedAd = null;
 
+        final AtomicBoolean terminalCallbackSent = new AtomicBoolean(false);
         final boolean[] rewardEarned = {false};
 
         ad.setAdEventListener(new RewardedAdEventListener() {
@@ -79,18 +82,22 @@ public class RewardedVideo {
 
             @Override
             public void onAdFailedToShow(@NonNull AdError adError) {
-                if (callback != null) {
-                    callback.onAdFailed();
+                if (terminalCallbackSent.compareAndSet(false, true)) {
+                    if (callback != null) {
+                        callback.onAdFailed();
+                    }
+                    preload();
                 }
-                preload();
             }
 
             @Override
             public void onAdDismissed() {
-                if (callback != null) {
-                    callback.onAdDismissed(rewardEarned[0]);
+                if (terminalCallbackSent.compareAndSet(false, true)) {
+                    if (callback != null) {
+                        callback.onAdDismissed(rewardEarned[0]);
+                    }
+                    preload();
                 }
-                preload();
             }
 
             @Override

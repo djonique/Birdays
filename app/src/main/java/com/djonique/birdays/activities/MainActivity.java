@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements
      * One query per typing burst instead of one per keystroke.
      */
     private static final long SEARCH_DEBOUNCE_MS = 250;
+    private static final String STATE_NOTIFICATIONS_PERMISSION_REQUESTED = "STATE_NOTIFICATIONS_PERMISSION_REQUESTED";
+    private static final String STATE_CONTACTS_PERMISSION_REQUEST_PENDING = "STATE_CONTACTS_PERMISSION_REQUEST_PENDING";
+
     private final Handler searchHandler = new Handler(Looper.getMainLooper());
     private CoordinatorLayout container;
     private AppBarLayout appBarLayout;
@@ -110,6 +113,13 @@ public class MainActivity extends AppCompatActivity implements
         viewPager.setOffscreenPageLimit(2);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> tab.setText(pagerAdapter.getPageTitle(position))).attach();
+
+        if (savedInstanceState != null) {
+            notificationsPermissionRequested = savedInstanceState.getBoolean(
+                    STATE_NOTIFICATIONS_PERMISSION_REQUESTED, false);
+            contactsPermissionRequestPending = savedInstanceState.getBoolean(
+                    STATE_CONTACTS_PERMISSION_REQUEST_PENDING, false);
+        }
 
         requestPermissionsSequentially();
 
@@ -326,6 +336,13 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(STATE_NOTIFICATIONS_PERMISSION_REQUESTED, notificationsPermissionRequested);
+        outState.putBoolean(STATE_CONTACTS_PERMISSION_REQUEST_PENDING, contactsPermissionRequestPending);
+    }
+
     private void startNewPersonActivity() {
         startActivity(new Intent(this, NewPersonActivity.class));
         Utils.overrideOpenTransition(this, R.anim.activity_secondary_in, R.anim.activity_primary_out);
@@ -337,6 +354,7 @@ public class MainActivity extends AppCompatActivity implements
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == Constants.NOTIFICATIONS_PERMISSION_CODE) {
+            notificationsPermissionRequested = false;
             container.post(this::checkAndRequestContactsPermission);
         } else if (requestCode == Constants.READ_CONTACTS_PERMISSION_CODE) {
             contactsPermissionRequestPending = false;

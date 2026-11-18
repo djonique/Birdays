@@ -16,18 +16,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioAttributes;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.Settings;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
 import androidx.core.content.ContextCompat;
-import com.djonique.birdays.utils.BirdaysPreferencesManager;
 
 import com.djonique.birdays.R;
 import com.djonique.birdays.activities.DetailActivity;
 import com.djonique.birdays.database.DbHelper;
 import com.djonique.birdays.models.Person;
+import com.djonique.birdays.utils.BirdaysPreferencesManager;
 import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.NamedDaemonThreadFactory;
 
@@ -40,6 +39,13 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     private NotificationManager manager;
     private SharedPreferences preferences;
+
+    private static AudioAttributes notificationAudioAttributes() {
+        return new AudioAttributes.Builder()
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)
+                .build();
+    }
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -62,7 +68,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         PendingIntent pendingIntent = TaskStackBuilder.create(context)
                 .addNextIntentWithParentStack(getResultIntent(context, timeStamp))
-                .getPendingIntent(((int) timeStamp), flags);
+                .getPendingIntent(Long.hashCode(timeStamp), flags);
 
         NotificationCompat.Builder builder = buildNotification(context, name, when);
 
@@ -74,7 +80,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
 
         if (manager != null) {
-            manager.notify((int) timeStamp, notification);
+            manager.notify(Long.hashCode(timeStamp), notification);
         }
 
         rearmNextYear(context, timeStamp);
@@ -129,7 +135,6 @@ public class AlarmReceiver extends BroadcastReceiver {
      * channel; on API 25 and lower the per-notification sound below still applies.
      */
     private void createNotificationChannel(Context context) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return;
         if (manager == null) return;
         if (manager.getNotificationChannel(CHANNEL_ID) != null) return;
 
@@ -142,7 +147,9 @@ public class AlarmReceiver extends BroadcastReceiver {
         manager.createNotificationChannel(channel);
     }
 
-    /** The ringtone selected at the moment the channel is first created; null means "Silent". */
+    /**
+     * The ringtone selected at the moment the channel is first created; null means "Silent".
+     */
     private Uri channelSound() {
         String ringtone = preferences.getString(Constants.RINGTONE_KEY,
                 Settings.System.DEFAULT_NOTIFICATION_URI.toString());
@@ -152,13 +159,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         } catch (Exception e) {
             return Settings.System.DEFAULT_NOTIFICATION_URI;
         }
-    }
-
-    private static AudioAttributes notificationAudioAttributes() {
-        return new AudioAttributes.Builder()
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)
-                .build();
     }
 
     private NotificationCompat.Builder buildNotification(Context context, String title, String text) {

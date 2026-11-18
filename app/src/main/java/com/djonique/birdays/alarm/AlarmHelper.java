@@ -74,7 +74,7 @@ public class AlarmHelper {
         int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context.getApplicationContext(),
-                (int) person.getTimeStamp(), intent, flags);
+                Long.hashCode(person.getTimeStamp()), intent, flags);
 
         setAlarmDependingOnApi(alarmManager, triggerAtMillis, pendingIntent);
     }
@@ -90,7 +90,7 @@ public class AlarmHelper {
 
         long triggerAtMillis = setupCalendarYear(person, additionalNotificationOffset);
 
-        int requestCode = (int) person.getTimeStamp() + REQUEST_CODE_OFFSET;
+        int requestCode = Long.hashCode(person.getTimeStamp()) + REQUEST_CODE_OFFSET;
 
         int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
 
@@ -145,7 +145,7 @@ public class AlarmHelper {
 
         int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, (int) timeStamp, intent, flags);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, Long.hashCode(timeStamp), intent, flags);
 
         if (alarmManager != null) alarmManager.cancel(pendingIntent);
     }
@@ -154,7 +154,7 @@ public class AlarmHelper {
         Intent intent = new Intent(context, AlarmReceiver.class);
         intent.setAction(Constants.ACTION_ADDITIONAL_ALARM);
 
-        int requestCode = (int) timeStamp + REQUEST_CODE_OFFSET;
+        int requestCode = Long.hashCode(timeStamp) + REQUEST_CODE_OFFSET;
 
         int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
 

@@ -363,7 +363,10 @@ public class SettingsActivity extends AppCompatActivity {
                                 new GoogleDriveBackupManager.DownloadCallback() {
                                     @Override
                                     public void onSuccess(File downloadedFile) {
-                                        if (isFinishing() || isDestroyed()) return;
+                                        if (isFinishing() || isDestroyed()) {
+                                            GoogleDriveBackupManager.deleteRestoreTempFile(SettingsActivity.this);
+                                            return;
+                                        }
                                         prepareRestore(metadata, downloadedFile);
                                     }
 
@@ -723,20 +726,32 @@ public class SettingsActivity extends AppCompatActivity {
                     boolean isEnabling = (Boolean) newValue;
                     if (!isEnabling) {
                         if (getActivity() == null) return false;
+                        Context appContext = getActivity().getApplicationContext();
                         if (rewardedVideo == null) {
-                            rewardedVideo = new RewardedVideo(getActivity());
+                            rewardedVideo = new RewardedVideo(appContext);
                             rewardedVideo.preload();
                         }
                         rewardedVideo.show(getActivity(), new RewardedVideo.RewardCallback() {
                             @Override
                             public void onRewarded() {
+                                BirdaysPreferencesManager.getDefaultSharedPreferences(appContext)
+                                        .edit()
+                                        .putBoolean(appContext.getString(R.string.show_ads_key), false)
+                                        .apply();
                             }
 
                             @Override
                             public void onAdDismissed(boolean rewardEarned) {
-                                if (getActivity() == null) return;
                                 if (rewardEarned) {
-                                    preferences.edit().putBoolean(getString(R.string.show_ads_key), false).apply();
+                                    BirdaysPreferencesManager.getDefaultSharedPreferences(appContext)
+                                            .edit()
+                                            .putBoolean(appContext.getString(R.string.show_ads_key), false)
+                                            .apply();
+                                }
+                                if (!isAdded() || getActivity() == null || getActivity().isFinishing() || getActivity().isDestroyed()) {
+                                    return;
+                                }
+                                if (rewardEarned) {
                                     adSwitchPref.setChecked(false);
                                     Toast.makeText(getActivity(), R.string.ad_disabled_success, Toast.LENGTH_SHORT).show();
                                 } else {
@@ -747,7 +762,9 @@ public class SettingsActivity extends AppCompatActivity {
 
                             @Override
                             public void onAdFailed() {
-                                if (getActivity() == null) return;
+                                if (!isAdded() || getActivity() == null || getActivity().isFinishing() || getActivity().isDestroyed()) {
+                                    return;
+                                }
                                 adSwitchPref.setChecked(true);
                                 Toast.makeText(getActivity(), R.string.ad_rewarded_unavailable, Toast.LENGTH_SHORT).show();
                             }

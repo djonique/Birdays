@@ -138,8 +138,11 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
     }
 
     @Override
-    public long getItemId(int i) {
-        return i;
+    public long getItemId(int position) {
+        if (position < 0 || position >= widgetList.size()) {
+            return position;
+        }
+        return widgetList.get(position).getTimeStamp();
     }
 
     @Override

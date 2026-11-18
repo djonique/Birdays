@@ -79,6 +79,18 @@ public class PersonTest {
                 person(43L, dateOf(1990, Calendar.MAY, 15)).hashCode());
     }
 
+    @Test
+    public void hashCode_fiftyDaysApartTimeStamps_doNotCollide() {
+        long firstTimeStamp = 1700000000000L;
+        long fiftyDaysLater = firstTimeStamp + 4294967296L; // 2^32 ms (~49.7 days)
+
+        // Raw (int) cast collides due to 32-bit truncation:
+        assertEquals((int) firstTimeStamp, (int) fiftyDaysLater);
+
+        // Long.hashCode mixes higher and lower 32 bits, avoiding the collision:
+        assertNotEquals(Long.hashCode(firstTimeStamp), Long.hashCode(fiftyDaysLater));
+    }
+
     // ---------------------------------------------------------------- ordering
 
     @Test

@@ -36,7 +36,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -376,16 +378,8 @@ public final class BirdaysRepository {
             SQLiteDatabase database = db.getWritableDatabase();
             AlarmHelper alarmHelper = new AlarmHelper(appContext);
 
-            // Cancel alarms of the records that are about to disappear so one cannot fire for a
-            // person that no longer exists. A scheduling failure is logged, not fatal: the data
-            // itself is still restorable.
-            for (Person person : db.query().getPersons()) {
-                try {
-                    alarmHelper.removeAlarms(person.getTimeStamp());
-                } catch (RuntimeException e) {
-                    Log.w(TAG, "Failed to cancel an alarm before restoring", e);
-                }
-            }
+            // Collect existing persons before transaction so old alarms are untouched if commit fails.
+            List<Person> oldPersons = db.query().getPersons();
 
             database.beginTransaction();
             try {
@@ -398,8 +392,23 @@ public final class BirdaysRepository {
                 database.endTransaction();
             }
 
-            // The rows are committed at this point, so a pending intent that cannot be scheduled
-            // must not turn a successful restore into an error.
+            // Transaction committed successfully. Remove alarms for records that are not in the new backup.
+            Set<Long> newTimeStamps = new HashSet<>();
+            for (Person person : persons) {
+                newTimeStamps.add(person.getTimeStamp());
+            }
+
+            for (Person oldPerson : oldPersons) {
+                if (!newTimeStamps.contains(oldPerson.getTimeStamp())) {
+                    try {
+                        alarmHelper.removeAlarms(oldPerson.getTimeStamp());
+                    } catch (RuntimeException e) {
+                        Log.w(TAG, "Failed to cancel an alarm after restoring", e);
+                    }
+                }
+            }
+
+            // Set/update alarms for all persons in the restored backup.
             for (Person person : persons) {
                 try {
                     alarmHelper.setAlarms(person);

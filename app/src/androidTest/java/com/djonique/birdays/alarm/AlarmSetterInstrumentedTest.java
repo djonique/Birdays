@@ -74,7 +74,7 @@ public class AlarmSetterInstrumentedTest {
         PendingIntent alarm = null;
         long deadline = System.currentTimeMillis() + ALARM_POLL_TIMEOUT_MS;
         while (alarm == null && System.currentTimeMillis() < deadline) {
-            alarm = PendingIntent.getBroadcast(context, (int) person.getTimeStamp(),
+            alarm = PendingIntent.getBroadcast(context, Long.hashCode(person.getTimeStamp()),
                     new Intent(context, AlarmReceiver.class),
                     PendingIntent.FLAG_NO_CREATE | PendingIntent.FLAG_IMMUTABLE);
             if (alarm == null) {
