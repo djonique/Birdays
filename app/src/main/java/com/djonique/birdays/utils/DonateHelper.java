@@ -23,11 +23,12 @@ import com.djonique.birdays.R;
 import java.util.Locale;
 
 /**
- * Opens the donation page with the two pieces of state the page can use: the language the app is
- * currently showing (including a per-app language on Android 13+) and the light/dark theme.
+ * Opens the donation and privacy policy pages with the two pieces of state the pages can use: the
+ * language the app is currently showing (including a per-app language on Android 13+) and the
+ * light/dark theme.
  *
- * <p>The page itself is bilingual, so every language other than Russian, Belarusian and Kazakh
- * opens the English version.</p>
+ * <p>The pages themselves are bilingual, so every language other than Russian, Belarusian and
+ * Kazakh opens the English version.</p>
  */
 public final class DonateHelper {
 
@@ -59,6 +60,7 @@ public final class DonateHelper {
 
         Uri privacyUri = Uri.parse(context.getString(R.string.privacy_policy_link))
                 .buildUpon()
+                .appendQueryParameter("theme", themeParam(context))
                 .appendQueryParameter("lang", languageParam(currentLocale(context)))
                 .build();
 
