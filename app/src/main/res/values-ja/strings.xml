@@ -10,20 +10,20 @@
     <string name="build_version">ビルドバージョン</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">連絡先の読み込み中…</string>
-    <string name="contacts_uploaded">連絡先をアップロードしました</string>
-    <string name="loading_contacts_error">連絡先をインポートできません。標準外の日付形式です</string>
-    <string name="permission_required">連絡先のインポートには許可が必要です</string>
-    <string name="snackbar_allow_text">許可する</string>
+    <string name="loading_contacts">連絡先を読み込み中…</string>
+    <string name="contacts_uploaded">連絡先を読み込みました</string>
+    <string name="loading_contacts_error">連絡先をインポートできません：日付の形式が正しくありません</string>
+    <string name="permission_required">連絡先をインポートするには権限が必要です</string>
+    <string name="snackbar_allow_text">許可</string>
     <string name="all">すべて</string>
     <string name="famous">有名人</string>
     <string name="age">現在の年齢:\u0020</string>
-    <string name="happy_birthday">お誕生日おめでとうございます！</string>
-    <string name="web_search_error">アクションを実行できません。ウェブブラウザをインストールしてください。</string>
-    <string name="delete_record_confirm">%1$sを削除してもよろしいですか？</string>
-    <string name="record_deleted">記録を削除しました</string>
+    <string name="happy_birthday">お誕生日おめでとう！</string>
+    <string name="web_search_error">検索を開けません。ウェブブラウザをインストールしてください</string>
+    <string name="delete_record_confirm">%1$sを削除しますか？</string>
+    <string name="record_deleted">削除しました</string>
     <string name="undo">元に戻す</string>
-    <string name="add_record">記録を追加</string>
+    <string name="add_record">追加</string>
 
     <string-array name="months">
         <item>1月</item>
@@ -45,36 +45,36 @@
     <string name="action_delete">削除</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">新規記録</string>
-    <string name="add_from_contacts">連絡先から追加</string>
-    <string name="activity_not_found_error">デバイスの機能により操作を実行できません</string>
+    <string name="new_record">新規追加</string>
+    <string name="add_from_contacts">連絡先から選択</string>
+    <string name="activity_not_found_error">この端末では操作を実行できません</string>
     <string name="name">名前</string>
     <string name="error_hint">名前を入力してください</string>
     <string name="phone_number">電話番号</string>
     <string name="pick_date">日付を選択</string>
-    <string name="wrong_date">日付が正しくありません</string>
-    <string name="year_unknown">年は不明です</string>
+    <string name="wrong_date">無効な日付です</string>
+    <string name="year_unknown">年不明</string>
     <string name="cancel_button">キャンセル</string>
 
     <!-- DetailActivity -->
     <string name="birthday">誕生日</string>
-    <string name="days_left">次の誕生日までの日数</string>
+    <string name="days_left">次の誕生日まであと何日</string>
     <string name="today">今日</string>
-    <string name="days_since_birth">誕生からの日数</string>
+    <string name="days_since_birth">生まれてからの日数</string>
     <string name="zodiac_sign">星座</string>
     <string name="season_picture">季節の画像</string>
     <string name="calendar">カレンダー</string>
     <string name="call">電話</string>
-    <string name="chat">チャット</string>
+    <string name="chat">メッセージ</string>
     <string name="born_on_this_day">この日に生まれた人</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">編集</string>
-    <string name="record_edited">記録を編集しました</string>
-    <string name="edit_record">記録を編集</string>
+    <string name="editing_label">編集中</string>
+    <string name="record_edited">更新しました</string>
+    <string name="edit_record">編集</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Samsungデバイスでは通知数が500件に制限されています</string>
+    <string name="security_exception">SecurityException: Samsung端末では通知の上限が500件です</string>
     <string name="channel_name">誕生日</string>
 
     <!-- Zodiac signs -->
@@ -92,16 +92,16 @@
     <string name="pisces">魚座</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">アプリのバッテリー最適化を無効にする</string>
-    <string name="optimization_description">アプリを正しく動作させるには、設定を開き、アプリが制限なくバックグラウンドで実行できるようにしてください</string>
-    <string name="do_not_show_again">今後表示しない</string>
-    <string name="disable_button">無効にする</string>
+    <string name="optimization_enabled">Birdaysのバッテリー最適化をオフにする</string>
+    <string name="optimization_description">リマインダーを確実に届けるため、設定からバックグラウンド実行の制限を解除してください</string>
+    <string name="do_not_show_again">再表示しない</string>
+    <string name="disable_button">オフにする</string>
 
     <!-- Notifications -->
     <string name="notifications">通知</string>
-    <string name="allow_notification">アプリが誕生日の通知を送信することを許可します</string>
-    <string name="notifications_time">通知時間</string>
-    <string name="additional_notification">追加通知</string>
+    <string name="allow_notification">誕生日の通知を受け取る</string>
+    <string name="notifications_time">通知の時刻</string>
+    <string name="additional_notification">追加リマインダー</string>
 
     <string-array name="additional_notification_entries">
         <item>なし</item>
@@ -122,15 +122,15 @@
     </string-array>
 
     <string name="notification_tone">通知音</string>
-    <string name="ringtone_summary">通知音を選択します。デフォルトでは端末設定の通知音が使用されます</string>
-    <string name="silent">なし</string>
+    <string name="ringtone_summary">通知音を選択（デフォルトは端末の設定音）</string>
+    <string name="silent">サイレント</string>
     <string name="help">ヘルプ</string>
-    <string name="tap_here">通知が届かない場合はここをタップしてください</string>
+    <string name="tap_here">通知が届かない場合はここをタップ</string>
 
     <!-- General -->
     <string name="general">一般</string>
-    <string name="night_mode">ナイトモード</string>
-    <string name="start_page">開始ページ</string>
+    <string name="night_mode">ダークテーマ</string>
+    <string name="start_page">スタート画面</string>
 
     <string-array name="start_page_entries">
         <item>今月</item>
@@ -142,60 +142,60 @@
 
     <string-array name="displayed_age_entries">
         <item>現在</item>
-        <item>未来</item>
+        <item>次回</item>
     </string-array>
 
-    <string name="displayed_age_changes">これらの変更を有効にするには、アプリを再起動する必要があります</string>
+    <string name="displayed_age_changes">変更を反映するにはアプリを再起動してください</string>
     <string name="restart_now">今すぐ再起動</string>
     <string name="later">後で</string>
     <string name="rate_app">アプリを評価</string>
     <string name="share_app">アプリを共有</string>
-    <string name="share_text">"家族、友人、同僚の誕生日を祝うのをよく忘れていませんか？Birdaysが大切な日を知らせます！  "</string>
+    <string name="share_text">家族や友人、同僚の誕生日をうっかり忘れがち？Birdaysが大切な日をぴったりお知らせします！\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">同期とバックアップ</string>
     <string name="contacts_import_title">連絡先をインポート</string>
-    <string name="contacts_import_summary">端末から連絡先をインポートするにはここをタップしてください（ISO 8601対応）</string>
-    <string name="google_drive_backup">Google Driveバックアップ</string>
-    <string name="google_drive_backup_summary">データベースのバックアップをGoogle Driveにアップロードします</string>
+    <string name="contacts_import_summary">端末から連絡先をインポート（ISO 8601対応）</string>
+    <string name="google_drive_backup">Google Driveにバックアップ</string>
+    <string name="google_drive_backup_summary">データベースのバックアップをGoogle Driveに保存</string>
     <string name="google_drive_backup_progress">Google Driveにバックアップ中…</string>
-    <string name="backup_complete">バックアップが完了しました</string>
+    <string name="backup_complete">バックアップ完了</string>
     <string name="google_drive_restore">Google Driveから復元</string>
-    <string name="google_drive_restore_summary">Google Driveからデータベースを復元します</string>
+    <string name="google_drive_restore_summary">Google Driveからデータベースを復元</string>
     <string name="google_drive_restore_progress">Google Driveから復元中…</string>
-    <string name="recover_records_error">記録を復元できませんでした</string>
-    <string name="records_recovered">記録を復元しました</string>
+    <string name="recover_records_error">復元できませんでした</string>
+    <string name="records_recovered">復元しました</string>
     <string name="restore_confirm_title">バックアップから復元</string>
-    <string name="restore_confirm_message">%1$s からレコードを復元してもよろしいですか？レコード数: %2$s。</string>
+    <string name="restore_confirm_message">%1$s からデータを復元しますか？（件数: %2$s）</string>
     <string name="restore_button">復元</string>
     <string name="restore_unknown">不明</string>
     <string name="upload_error">アップロードエラー: %s</string>
     <string name="backup_error">バックアップエラー: %s</string>
     <string name="auth_error">認証エラー: %s</string>
-    <string name="authorization_failed_error">認可に失敗しました: %s</string>
+    <string name="authorization_failed_error">認可エラー: %s</string>
     <string name="download_error">ダウンロードエラー: %s</string>
     <string name="file_not_found">ファイルが見つかりません</string>
     <string name="search_error">検索エラー: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">広告</string>
-    <string name="about_ad_title">広告が表示されるのはなぜですか？</string>
-    <string name="about_ad_summary">広告収入はすべてプロジェクトの開発に充てられます</string>
+    <string name="about_ad_title">なぜ広告が表示されるの？</string>
+    <string name="about_ad_summary">広告収益はすべてアプリの開発に充てられます</string>
     <string name="show_ads">広告を表示</string>
-    <string name="show_ads_summary">短い動画広告を見ると広告を無効にできます</string>
+    <string name="show_ads_summary">短い動画を見ると広告を非表示にできます</string>
+    <string name="ad_watch_full_video_to_disable">広告を非表示にするには動画を最後までご覧ください</string>
+    <string name="ad_disabled_success">広告を非表示にしました</string>
 
     <!-- Support project -->
-    <string name="support_project_category">プロジェクトを支援</string>
+    <string name="support_project_category">アプリを支援</string>
+    <string name="donate_title">開発者にチップを送る</string>
+    <string name="donate_summary">今後のアップデートの応援に1回限りの支援を送る</string>
     <string name="watch_video_title">動画広告を見る</string>
-    <string name="ad_rewarded_summary">短い動画を見ると、収益がアプリの開発に充てられます</string>
-    <string name="ad_rewarded_unavailable">現在動画を利用できません。後でもう一度お試しください</string>
-    <string name="ad_disabled_success">広告が無効になりました</string>
-    <string name="ad_watch_full_video_to_disable">広告を無効にするには、動画を最後まで視聴してください</string>
-    <string name="donate_title">寄付をする</string>
-    <string name="donate_summary">アプリ開発への資金援助</string>
+    <string name="ad_rewarded_summary">短い広告を見て、無料でアプリを応援</string>
+    <string name="ad_rewarded_unavailable">現在動画を再生できません。しばらくしてからお試しください</string>
 
     <!-- About -->
-    <string name="about">アプリについて</string>
+    <string name="about">アプリ情報</string>
     <string name="licenses">ライセンス</string>
     <string name="software_licenses">オープンソースライセンス</string>
     <string name="third_party_sdks">サードパーティSDK</string>
@@ -203,15 +203,15 @@
     <string name="privacy_policy">プライバシーポリシー</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">リマインダーが機能しないのはなぜですか？</string>
-    <string name="help_description">Androidデバイスには、アプリのバックグラウンド実行や自動起動を制限する省電力モードがあります。通知を正しく機能させるには、次の簡単な手順に従ってください。</string>
-    <string name="help_explanation_1">1. Birdaysアプリの通知が許可されていることを確認します（設定 > Birdays > 通知）。</string>
-    <string name="help_delay_text">一部のデバイスでは通知が遅れる場合がありますのでご注意ください。</string>
+    <string name="help_header">リマインダーが届かないのはなぜ？</string>
+    <string name="help_description">一部のAndroid端末では、バッテリー節約のためにバックグラウンド動作や自動起動が制限されます。通知を正しく受け取るには次の手順をお試しください：</string>
+    <string name="help_explanation_1">1. Birdaysの通知がオンになっているか確認します（設定 &gt; Birdays &gt; 通知）。</string>
+    <string name="help_delay_text">端末によっては通知の到着が遅れることがあります。</string>
     <string name="help_exact_alarm">正確なアラームを許可</string>
-    <string name="help_explanation_2">2. Birdaysの省電力モードをオフにします（設定 > Birdays > バッテリー）。</string>
+    <string name="help_explanation_2">2. Birdaysのバッテリー制限をオフにします（設定 &gt; Birdays &gt; バッテリー）。</string>
     <string name="help_settings">設定を開く</string>
-    <string name="help_explanation_3">3. バックグラウンド動作をブロックするタスクマネージャー、メモリクリーナー、または省電力アプリ（「Battery Saver」「Clean Master」など）をインストールしている場合は、Birdaysを例外に追加してください。</string>
-    <string name="help_email_description">ご質問やご提案がございましたら、birdaysapp@gmail.com までお気軽にお問い合わせください。</string>
+    <string name="help_explanation_3">3. バックグラウンド動作を止めるタスク管理・クリーナー・省電力アプリ（Battery SaverやClean Masterなど）をお使いの場合は、Birdaysを除外リストに追加してください。</string>
+    <string name="help_email_description">ご質問やご意見は birdaysapp@gmail.com までお送りください</string>
     <string name="send_email">メールを送信</string>
 
     <!-- Famous persons -->

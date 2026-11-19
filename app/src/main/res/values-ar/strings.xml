@@ -11,16 +11,16 @@
 
     <!-- MainActivity -->
     <string name="loading_contacts">جارٍ تحميل جهات الاتصال…</string>
-    <string name="contacts_uploaded">تم رفع جهات الاتصال</string>
-    <string name="loading_contacts_error">تعذر استيراد جهات الاتصال، تنسيق التاريخ غير قياسي</string>
+    <string name="contacts_uploaded">تم استيراد جهات الاتصال</string>
+    <string name="loading_contacts_error">تعذر استيراد جهات الاتصال؛ تنسيق التاريخ غير مدعوم</string>
     <string name="permission_required">يلزم منح الإذن لاستيراد جهات الاتصال</string>
     <string name="snackbar_allow_text">السماح</string>
     <string name="all">الكل</string>
     <string name="famous">المشاهير</string>
     <string name="age">العمر الحالي:\u0020</string>
     <string name="happy_birthday">عيد ميلاد سعيد!</string>
-    <string name="web_search_error">تعذر تنفيذ الإجراء، يرجى تثبيت متصفح ويب</string>
-    <string name="delete_record_confirm">هل أنت متأكد من أنك تريد حذف %1$s؟</string>
+    <string name="web_search_error">تعذر فتح الرابط؛ يرجى تثبيت متصفح</string>
+    <string name="delete_record_confirm">هل تريد حذف %1$s؟</string>
     <string name="record_deleted">تم حذف السجل</string>
     <string name="undo">تراجع</string>
     <string name="add_record">إضافة سجل</string>
@@ -47,34 +47,34 @@
     <!-- NewPersonActivity -->
     <string name="new_record">سجل جديد</string>
     <string name="add_from_contacts">إضافة من جهات الاتصال</string>
-    <string name="activity_not_found_error">تعذر تنفيذ الإجراء بسبب ميزات الجهاز</string>
+    <string name="activity_not_found_error">تعذر إتمام الإجراء على هذا الجهاز</string>
     <string name="name">الاسم</string>
-    <string name="error_hint">يرجى إدخال اسم</string>
+    <string name="error_hint">أدخل الاسم</string>
     <string name="phone_number">رقم الهاتف</string>
     <string name="pick_date">اختر التاريخ</string>
-    <string name="wrong_date">تاريخ غير صحيح</string>
-    <string name="year_unknown">لا أعرف السنة</string>
+    <string name="wrong_date">تاريخ غير صالح</string>
+    <string name="year_unknown">السنة غير معروفة</string>
     <string name="cancel_button">إلغاء</string>
 
     <!-- DetailActivity -->
     <string name="birthday">عيد الميلاد</string>
-    <string name="days_left">الأيام المتبقية حتى عيد الميلاد التالي</string>
+    <string name="days_left">الأيام المتبقية لعيد الميلاد القادم</string>
     <string name="today">اليوم</string>
-    <string name="days_since_birth">الأيام منذ الولادة</string>
+    <string name="days_since_birth">الأيام منذ الميلاد</string>
     <string name="zodiac_sign">البرج</string>
     <string name="season_picture">صورة الموسم</string>
     <string name="calendar">التقويم</string>
     <string name="call">اتصال</string>
-    <string name="chat">محادثة</string>
-    <string name="born_on_this_day">وُلد في هذا اليوم</string>
+    <string name="chat">دردشة</string>
+    <string name="born_on_this_day">وُلد في مثل هذا اليوم</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">التحرير</string>
-    <string name="record_edited">تم تحرير السجل</string>
-    <string name="edit_record">تحرير السجل</string>
+    <string name="editing_label">تعديل</string>
+    <string name="record_edited">تم حفظ التعديلات</string>
+    <string name="edit_record">تعديل السجل</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: تحد أجهزة Samsung عدد الإشعارات إلى 500</string>
+    <string name="security_exception">SecurityException: أجهزة Samsung تحد عدد الإشعارات بـ 500</string>
     <string name="channel_name">أعياد الميلاد</string>
 
     <!-- Zodiac signs -->
@@ -92,20 +92,20 @@
     <string name="pisces">الحوت</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">تعطيل تحسين البطارية للتطبيق</string>
-    <string name="optimization_description">لضمان عمل التطبيق بشكل صحيح، افتح الإعدادات واسمح للتطبيق بالعمل في الخلفية دون قيود</string>
-    <string name="do_not_show_again">لا تظهر مرة أخرى</string>
-    <string name="disable_button">تعطيل</string>
+    <string name="optimization_enabled">إيقاف تحسين البطارية</string>
+    <string name="optimization_description">ليعمل التطبيق بسلاسة، افتح الإعدادات واسمح لـ Birdays بالعمل في الخلفية دون قيود</string>
+    <string name="do_not_show_again">عدم الإظهار مرة أخرى</string>
+    <string name="disable_button">إيقاف</string>
 
     <!-- Notifications -->
     <string name="notifications">الإشعارات</string>
-    <string name="allow_notification">السماح للتطبيق بإرسال إشعارات عن أعياد الميلاد القادمة</string>
+    <string name="allow_notification">إرسال إشعارات بأعياد الميلاد القادمة</string>
     <string name="notifications_time">وقت الإشعار</string>
-    <string name="additional_notification">إشعار إضافي</string>
+    <string name="additional_notification">تذكير إضافي</string>
 
     <string-array name="additional_notification_entries">
         <item>أبدًا</item>
-        <item>قبل يوم واحد</item>
+        <item>قبل يوم</item>
         <item>قبل يومين</item>
         <item>قبل 3 أيام</item>
         <item>قبل أسبوع</item>
@@ -122,15 +122,15 @@
     </string-array>
 
     <string name="notification_tone">نغمة الإشعار</string>
-    <string name="ringtone_summary">اختر صوت الإشعار. افتراضيًا، تُستخدم النغمة من إعدادات الجهاز</string>
-    <string name="silent">لا شيء</string>
-    <string name="help">مساعدة</string>
-    <string name="tap_here">اضغط هنا إذا كنت لا تتلقى الإشعارات</string>
+    <string name="ringtone_summary">اختر نغمة الإشعار. الافتراضي هو نغمة الجهاز</string>
+    <string name="silent">صامت</string>
+    <string name="help">المساعدة</string>
+    <string name="tap_here">اضغط هنا إذا لم تصلك الإشعارات</string>
 
     <!-- General -->
     <string name="general">عام</string>
     <string name="night_mode">الوضع الليلي</string>
-    <string name="start_page">صفحة البداية</string>
+    <string name="start_page">شاشة البداية</string>
 
     <string-array name="start_page_entries">
         <item>الشهر الحالي</item>
@@ -142,76 +142,76 @@
 
     <string-array name="displayed_age_entries">
         <item>الحالي</item>
-        <item>المستقبلي</item>
+        <item>القادم</item>
     </string-array>
 
-    <string name="displayed_age_changes">يجب إعادة تشغيل التطبيق لتصبح هذه التغييرات سارية</string>
+    <string name="displayed_age_changes">أعد تشغيل التطبيق لتطبيق التغييرات</string>
     <string name="restart_now">إعادة التشغيل الآن</string>
     <string name="later">لاحقًا</string>
     <string name="rate_app">تقييم التطبيق</string>
     <string name="share_app">مشاركة التطبيق</string>
-    <string name="share_text">"هل تنسى غالبًا تهنئة عائلتك أو أصدقائك أو زملائك في عيد ميلادهم؟ سيذكّرك Birdays بتاريخ مهم!  "</string>
+    <string name="share_text">لن تفوّت عيد ميلاد صديق أو فرد من العائلة بعد الآن. يذكّرك Birdays مسبقًا لتكون مستعدًا دائمًا.\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">المزامنة والنسخ الاحتياطي</string>
     <string name="contacts_import_title">استيراد جهات الاتصال</string>
-    <string name="contacts_import_summary">اضغط هنا لاستيراد جهات الاتصال من جهازك (يدعم ISO 8601)</string>
-    <string name="google_drive_backup">النسخ الاحتياطي إلى Google Drive</string>
-    <string name="google_drive_backup_summary">رفع نسخة احتياطية من قاعدة البيانات إلى Google Drive</string>
+    <string name="contacts_import_summary">استيراد جهات الاتصال من جهازك (يدعم ISO 8601)</string>
+    <string name="google_drive_backup">نسخ احتياطي إلى Google Drive</string>
+    <string name="google_drive_backup_summary">حفظ نسخة احتياطية من قاعدة البيانات على Google Drive</string>
     <string name="google_drive_backup_progress">جارٍ النسخ الاحتياطي إلى Google Drive…</string>
     <string name="backup_complete">اكتمل النسخ الاحتياطي</string>
-    <string name="google_drive_restore">الاستعادة من Google Drive</string>
+    <string name="google_drive_restore">استعادة من Google Drive</string>
     <string name="google_drive_restore_summary">استعادة قاعدة البيانات من Google Drive</string>
     <string name="google_drive_restore_progress">جارٍ الاستعادة من Google Drive…</string>
     <string name="recover_records_error">تعذر استعادة السجلات</string>
     <string name="records_recovered">تمت استعادة السجلات</string>
-    <string name="restore_confirm_title">الاستعادة من النسخة الاحتياطية</string>
-    <string name="restore_confirm_message">هل أنت متأكد من أنك تريد استعادة السجلات من %1$s؟ عدد السجلات: %2$s.</string>
+    <string name="restore_confirm_title">استعادة النسخة الاحتياطية</string>
+    <string name="restore_confirm_message">هل تريد استعادة السجلات من %1$s؟ عدد السجلات: %2$s.</string>
     <string name="restore_button">استعادة</string>
     <string name="restore_unknown">غير معروف</string>
     <string name="upload_error">خطأ في الرفع: %s</string>
     <string name="backup_error">خطأ في النسخ الاحتياطي: %s</string>
     <string name="auth_error">خطأ في المصادقة: %s</string>
-    <string name="authorization_failed_error">فشل التفويض: %s</string>
+    <string name="authorization_failed_error">تعذر التفويض: %s</string>
     <string name="download_error">خطأ في التنزيل: %s</string>
     <string name="file_not_found">الملف غير موجود</string>
     <string name="search_error">خطأ في البحث: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">الإعلانات</string>
-    <string name="about_ad_title">لماذا تظهر لي إعلانات؟</string>
-    <string name="about_ad_summary">تُستخدم جميع إيرادات الإعلانات في تطوير المشروع</string>
-    <string name="show_ads">عرض الإعلانات</string>
-    <string name="show_ads_summary">يمكنك تعطيل الإعلانات بمشاهدة إعلان فيديو قصير</string>
+    <string name="about_ad_title">لماذا تظهر لي الإعلانات؟</string>
+    <string name="about_ad_summary">تُخصَّص جميع عوائد الإعلانات لتطوير التطبيق</string>
+    <string name="show_ads">إظهار الإعلانات</string>
+    <string name="show_ads_summary">شاهد مقطعًا قصيرًا لإيقاف الإعلانات</string>
+    <string name="ad_watch_full_video_to_disable">شاهد المقطع كاملًا لإيقاف الإعلانات</string>
+    <string name="ad_disabled_success">تم إيقاف الإعلانات</string>
 
     <!-- Support project -->
-    <string name="support_project_category">دعم المشروع</string>
+    <string name="support_project_category">دعم التطبيق</string>
+    <string name="donate_title">ادعم المطوّر</string>
+    <string name="donate_summary">قدّم دعمًا لمرة واحدة للمساعدة في التحديثات القادمة</string>
     <string name="watch_video_title">مشاهدة إعلان فيديو</string>
-    <string name="ad_rewarded_summary">شاهد فيديو قصيرًا — تُستخدم الإيرادات في تطوير التطبيق</string>
-    <string name="ad_rewarded_unavailable">الفيديو غير متاح الآن، يرجى المحاولة مرة أخرى لاحقًا</string>
-    <string name="ad_disabled_success">تم تعطيل الإعلانات الآن</string>
-    <string name="ad_watch_full_video_to_disable">شاهد الفيديو حتى النهاية لتعطيل الإعلانات</string>
-    <string name="donate_title">قدّم مساهمة</string>
-    <string name="donate_summary">دعم مالي لتطوير التطبيق</string>
+    <string name="ad_rewarded_summary">ادعم التطبيق مجانًا بمشاهدة إعلان قصير</string>
+    <string name="ad_rewarded_unavailable">الفيديو غير متاح حاليًا، يُرجى المحاولة لاحقًا</string>
 
     <!-- About -->
     <string name="about">حول التطبيق</string>
     <string name="licenses">التراخيص</string>
     <string name="software_licenses">تراخيص المصادر المفتوحة</string>
-    <string name="third_party_sdks">حزم SDK لجهات خارجية</string>
+    <string name="third_party_sdks">حزم SDK التابعة لجهات خارجية</string>
     <string name="menu_github">الشيفرة المصدرية</string>
     <string name="privacy_policy">سياسة الخصوصية</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">لماذا لا يعمل التذكير؟</string>
-    <string name="help_description">تحتوي أجهزة Android على وضع توفير الطاقة الذي يمنع التطبيق من العمل في الخلفية أو يمنعه من البدء تلقائيًا. لكي تعمل الإشعارات بشكل صحيح، اتبع هذه الخطوات البسيطة:</string>
-    <string name="help_explanation_1">1. تأكد من السماح بالإشعارات لتطبيق Birdays (الإعدادات > Birdays > الإشعارات).</string>
-    <string name="help_delay_text">يرجى ملاحظة أن الإشعارات قد تتأخر على بعض الأجهزة.</string>
+    <string name="help_header">لماذا لا تصل التذكيرات؟</string>
+    <string name="help_description">تستخدم بعض أجهزة Android أوضاع توفير الطاقة التي تقيّد عمل التطبيقات في الخلفية أو تمنع تشغيلها تلقائيًا. لكي تعمل الإشعارات بشكل موثوق، اتبع هذه الخطوات:</string>
+    <string name="help_explanation_1">1. فعّل الإشعارات لتطبيق Birdays (الإعدادات &gt; Birdays &gt; الإشعارات).</string>
+    <string name="help_delay_text">قد تتأخر الإشعارات أحيانًا على بعض الأجهزة.</string>
     <string name="help_exact_alarm">السماح بالمنبهات الدقيقة</string>
-    <string name="help_explanation_2">2. قم بإيقاف تشغيل وضع توفير الطاقة لتطبيق Birdays (الإعدادات > Birdays > البطارية).</string>
+    <string name="help_explanation_2">2. أوقف تحسين البطارية أو توفير الطاقة لـ Birdays (الإعدادات &gt; Birdays &gt; البطارية).</string>
     <string name="help_settings">فتح الإعدادات</string>
-    <string name="help_explanation_3">3. إذا كان لديك تطبيقات إدارة المهام أو تنظيف الذاكرة أو توفير الطاقة مثبتة (مثل «Battery Saver» و«Clean Master» والتطبيقات المشابهة) التي تحظر العمل في الخلفية، فأضف Birdays إلى قائمة الاستثناءات.</string>
-    <string name="help_email_description">إذا كانت لديك أي أسئلة أو اقتراحات، يرجى التواصل معي عبر البريد الإلكتروني birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. إذا كنت تستخدم تطبيقات لتنظيف الذاكرة أو إدارة المهام أو توفير الطاقة (مثل «Battery Saver» أو «Clean Master» وغيرها) تحظر العمل في الخلفية، فأضف Birdays إلى قائمة الاستثناءات.</string>
+    <string name="help_email_description">إذا كان لديك أي سؤال أو اقتراح، يسعدني تواصلك عبر البريد الإلكتروني birdaysapp@gmail.com</string>
     <string name="send_email">إرسال بريد إلكتروني</string>
 
     <!-- Famous persons -->

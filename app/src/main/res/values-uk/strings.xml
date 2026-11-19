@@ -11,16 +11,16 @@
 
     <!-- MainActivity -->
     <string name="loading_contacts">Завантаження контактів…</string>
-    <string name="contacts_uploaded">Контакти завантажені</string>
-    <string name="loading_contacts_error">Неможливо імпортувати контакти, нестандартний формат дати</string>
-    <string name="permission_required">Дозвіл потрібен для імпорту контактів</string>
+    <string name="contacts_uploaded">Контакти імпортовано</string>
+    <string name="loading_contacts_error">Не вдалося імпортувати контакти: непідтримуваний формат дати</string>
+    <string name="permission_required">Потрібен дозвіл для імпорту контактів</string>
     <string name="snackbar_allow_text">Дозволити</string>
     <string name="all">Усі</string>
     <string name="famous">Відомі</string>
     <string name="age">Вік:\u0020</string>
     <string name="happy_birthday">З днем народження!</string>
-    <string name="web_search_error">Не вдалося виконати дію, будь ласка, встановіть веб-браузер</string>
-    <string name="delete_record_confirm">Ви дійсно хочете видалити %1$s?</string>
+    <string name="web_search_error">Не вдалося відкрити посилання — встановіть браузер</string>
+    <string name="delete_record_confirm">Видалити %1$s?</string>
     <string name="record_deleted">Запис видалено</string>
     <string name="undo">Скасувати</string>
     <string name="add_record">Додати запис</string>
@@ -47,34 +47,34 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Новий запис</string>
     <string name="add_from_contacts">Додати з контактів</string>
-    <string name="activity_not_found_error">Цю дію неможливо виконати через особливості пристрою</string>
-    <string name="name">Ім\'я</string>
-    <string name="error_hint">Будь ласка, введіть ім\'я</string>
+    <string name="activity_not_found_error">Дія не підтримується на цьому пристрої</string>
+    <string name="name">Ім’я</string>
+    <string name="error_hint">Введіть ім’я</string>
     <string name="phone_number">Номер телефону</string>
-    <string name="pick_date">Оберіть дату</string>
-    <string name="wrong_date">Неправильна дата</string>
-    <string name="year_unknown">Я не знаю рік народження</string>
+    <string name="pick_date">Виберіть дату</string>
+    <string name="wrong_date">Некоректна дата</string>
+    <string name="year_unknown">Рік невідомий</string>
     <string name="cancel_button">Скасувати</string>
 
     <!-- DetailActivity -->
     <string name="birthday">День народження</string>
     <string name="days_left">Днів до наступного дня народження</string>
     <string name="today">Сьогодні</string>
-    <string name="days_since_birth">Днів із моменту народження</string>
+    <string name="days_since_birth">Днів від дня народження</string>
     <string name="zodiac_sign">Знак зодіаку</string>
-    <string name="season_picture">Сезонне зображення</string>
+    <string name="season_picture">Зображення сезону</string>
     <string name="calendar">Календар</string>
     <string name="call">Зателефонувати</string>
     <string name="chat">Написати</string>
-    <string name="born_on_this_day">У цей день народилися</string>
+    <string name="born_on_this_day">Народилися цього дня</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Редагування</string>
-    <string name="record_edited">Запис відредаговано</string>
+    <string name="record_edited">Запис оновлено</string>
     <string name="edit_record">Редагувати запис</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: на пристроях Samsung можна зареєструвати не більше 500 сповіщень</string>
+    <string name="security_exception">SecurityException: на пристроях Samsung ліміт — не більше 500 сповіщень</string>
     <string name="channel_name">Дні народження</string>
 
     <!-- Zodiac signs -->
@@ -92,14 +92,14 @@
     <string name="pisces">Риби</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Вимкніть оптимізацію батареї для застосунку</string>
-    <string name="optimization_description">Щоб застосунок працював коректно, перейдіть у налаштування системи та дозвольте застосунку працювати у фоновому режимі без обмежень</string>
+    <string name="optimization_enabled">Вимкнути оптимізацію батареї</string>
+    <string name="optimization_description">Щоб нагадування працювали без збоїв, відкрийте налаштування та дозвольте Birdays працювати у фоні без обмежень</string>
     <string name="do_not_show_again">Більше не показувати</string>
     <string name="disable_button">Вимкнути</string>
 
     <!-- Notifications -->
     <string name="notifications">Сповіщення</string>
-    <string name="allow_notification">Дозволити застосунку надсилати сповіщення про майбутні дні народження</string>
+    <string name="allow_notification">Надсилати сповіщення про найближчі дні народження</string>
     <string name="notifications_time">Час сповіщення</string>
     <string name="additional_notification">Додаткове сповіщення</string>
 
@@ -122,15 +122,15 @@
     </string-array>
 
     <string name="notification_tone">Звук сповіщення</string>
-    <string name="ringtone_summary">Оберіть звук сповіщення. За замовчуванням використовується звук із налаштувань пристрою</string>
+    <string name="ringtone_summary">Виберіть сигнал сповіщення. Типово використовується звук із налаштувань пристрою</string>
     <string name="silent">Без звуку</string>
-    <string name="help">Допомога</string>
-    <string name="tap_here">Натисніть тут, якщо вам не надходять сповіщення</string>
+    <string name="help">Довідка</string>
+    <string name="tap_here">Натисніть тут, якщо сповіщення не надходять</string>
 
     <!-- General -->
     <string name="general">Загальні</string>
-    <string name="night_mode">Нічний режим</string>
-    <string name="start_page">Початкова сторінка</string>
+    <string name="night_mode">Темна тема</string>
+    <string name="start_page">Початковий екран</string>
 
     <string-array name="start_page_entries">
         <item>Поточний місяць</item>
@@ -142,57 +142,57 @@
 
     <string-array name="displayed_age_entries">
         <item>Поточний</item>
-        <item>Майбутній</item>
+        <item>Наступний</item>
     </string-array>
 
-    <string name="displayed_age_changes">Щоб зміни набули чинності, необхідно перезапустити застосунок</string>
+    <string name="displayed_age_changes">Перезапустіть застосунок, щоб зміни набрали чинності</string>
     <string name="restart_now">Перезапустити зараз</string>
     <string name="later">Пізніше</string>
-    <string name="rate_app">Оцініть застосунок</string>
-    <string name="share_app">Розкажіть про застосунок</string>
-    <string name="share_text">"Забуваєте привітати рідних, друзів чи колег із днем народження? Birdays нагадає вам про важливе свято!  "</string>
+    <string name="rate_app">Оцінити застосунок</string>
+    <string name="share_app">Поділитися застосунком</string>
+    <string name="share_text">Забуваєте привітати рідних, друзів чи колег із днем народження? Birdays нагадає про важливу дату!\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Синхронізація та резервне копіювання</string>
-    <string name="contacts_import_title">Імпортувати контакти</string>
-    <string name="contacts_import_summary">Натисніть, щоб імпортувати контакти з адресної книги (підтримується ISO 8601)</string>
-    <string name="google_drive_backup">Резервна копія в Google Диск</string>
-    <string name="google_drive_backup_summary">Завантажити резервну копію в Google Диск</string>
-    <string name="google_drive_backup_progress">Створення резервної копії в Google Диск…</string>
-    <string name="backup_complete">Резервне копіювання завершено</string>
+    <string name="contacts_import_title">Імпорт контактів</string>
+    <string name="contacts_import_summary">Імпортувати контакти з пристрою (підтримується ISO 8601)</string>
+    <string name="google_drive_backup">Резервна копія на Google Диску</string>
+    <string name="google_drive_backup_summary">Зберегти резервну копію бази на Google Диск</string>
+    <string name="google_drive_backup_progress">Збереження на Google Диск…</string>
+    <string name="backup_complete">Резервну копію збережено</string>
     <string name="google_drive_restore">Відновлення з Google Диска</string>
-    <string name="google_drive_restore_summary">Відновити базу даних з Google Диска</string>
+    <string name="google_drive_restore_summary">Відновити базу даних із Google Диска</string>
     <string name="google_drive_restore_progress">Відновлення з Google Диска…</string>
     <string name="recover_records_error">Не вдалося відновити записи</string>
     <string name="records_recovered">Записи відновлено</string>
-    <string name="restore_confirm_title">Відновлення з резервної копії</string>
-    <string name="restore_confirm_message">Ви дійсно хочете відновити записи від %1$s? Кількість записів: %2$s.</string>
+    <string name="restore_confirm_title">Відновити з резервної копії</string>
+    <string name="restore_confirm_message">Відновити записи від %1$s? Усього записів: %2$s.</string>
     <string name="restore_button">Відновити</string>
     <string name="restore_unknown">невідомо</string>
     <string name="upload_error">Помилка завантаження: %s</string>
     <string name="backup_error">Помилка резервного копіювання: %s</string>
-    <string name="auth_error">Помилка авторизації: %s</string>
-    <string name="authorization_failed_error">Авторизація не вдалася: %s</string>
-    <string name="download_error">Помилка завантаження файлу: %s</string>
+    <string name="auth_error">Помилка входу: %s</string>
+    <string name="authorization_failed_error">Не вдалося виконати вхід: %s</string>
+    <string name="download_error">Помилка завантаження: %s</string>
     <string name="file_not_found">Файл не знайдено</string>
     <string name="search_error">Помилка пошуку: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Реклама</string>
-    <string name="about_ad_title">Чому я бачу рекламу?</string>
-    <string name="about_ad_summary">Увесь дохід від реклами йде на розвиток застосунку</string>
+    <string name="about_ad_title">Чому тут є реклама?</string>
+    <string name="about_ad_summary">Увесь дохід від реклами йде на розвиток проєкту</string>
     <string name="show_ads">Показувати рекламу</string>
-    <string name="show_ads_summary">Рекламу можна вимкнути, переглянувши коротке відео</string>
+    <string name="show_ads_summary">Вимкніть рекламу, переглянувши коротке відео</string>
+    <string name="ad_watch_full_video_to_disable">Додивіться відео до кінця, щоб вимкнути рекламу</string>
+    <string name="ad_disabled_success">Рекламу вимкнено</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Підтримати проєкт</string>
+    <string name="support_project_category">Підтримка проєкту</string>
+    <string name="donate_title">Підтримати розробку</string>
+    <string name="donate_summary">Якщо хочеться сказати «дякую» за застосунок</string>
     <string name="watch_video_title">Переглянути рекламне відео</string>
-    <string name="ad_rewarded_summary">Перегляньте коротке відео — дохід від нього йде на розвиток застосунку</string>
+    <string name="ad_rewarded_summary">Безкоштовний спосіб підтримати проєкт і допомогти його розвитку</string>
     <string name="ad_rewarded_unavailable">Відео зараз недоступне, спробуйте пізніше</string>
-    <string name="ad_disabled_success">Рекламу вимкнено</string>
-    <string name="ad_watch_full_video_to_disable">Додивіться відео до кінця, щоб вимкнути рекламу</string>
-    <string name="donate_title">Зробити внесок</string>
-    <string name="donate_summary">Фінансова підтримка розвитку застосунку</string>
 
     <!-- About -->
     <string name="about">Про застосунок</string>
@@ -203,15 +203,15 @@
     <string name="privacy_policy">Політика конфіденційності</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Чому нагадування не спрацьовують?</string>
-    <string name="help_description">На пристроях Android є режим енергозбереження, який блокує роботу застосунку у фоновому режимі або забороняє автозапуск. Щоб сповіщення працювали коректно, виконайте кілька простих дій:</string>
-    <string name="help_explanation_1">1. Переконайтеся, що для застосунку Birdays дозволені сповіщення (Налаштування > Birdays > Сповіщення).</string>
-    <string name="help_delay_text">Зверніть увагу, що на деяких пристроях сповіщення надходять із затримкою.</string>
+    <string name="help_header">Чому не надходять нагадування?</string>
+    <string name="help_description">На Android є режим енергоощадження, який обмежує роботу застосунків у фоні або заважає автозапуску. Щоб сповіщення надходили вчасно, виконайте прості кроки:</string>
+    <string name="help_explanation_1">1. Перевірте, що для Birdays дозволено сповіщення (Налаштування &gt; Birdays &gt; Сповіщення).</string>
+    <string name="help_delay_text">На деяких пристроях сповіщення можуть надходити із затримкою.</string>
     <string name="help_exact_alarm">Дозволити точні будильники</string>
-    <string name="help_explanation_2">2. Вимкніть режим енергозбереження для Birdays (Налаштування > Birdays > Батарея).</string>
+    <string name="help_explanation_2">2. Вимкніть енергоощадження для Birdays (Налаштування &gt; Birdays &gt; Батарея).</string>
     <string name="help_settings">Відкрити налаштування</string>
-    <string name="help_explanation_3">3. Якщо у вас встановлені менеджери завдань, додатки для очищення пам\'яті або енергозбереження («Battery Saver», «Clean Master» та аналогічні), які блокують роботу у фоновому режимі, додайте Birdays у винятки.</string>
-    <string name="help_email_description">З усіх питань і пропозицій пишіть мені на пошту birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Якщо у вас встановлені диспетчери завдань, програми для очищення пам’яті чи енергоощадження («Battery Saver», «Clean Master» та подібні), які блокують роботу у фоні, додайте Birdays до винятків.</string>
+    <string name="help_email_description">Якщо є запитання чи ідеї, напишіть мені на birdaysapp@gmail.com</string>
     <string name="send_email">Надіслати листа</string>
 
     <!-- Famous persons -->

@@ -11,16 +11,16 @@
 
     <!-- MainActivity -->
     <string name="loading_contacts">Загрузка контактов…</string>
-    <string name="contacts_uploaded">Контакты загружены</string>
-    <string name="loading_contacts_error">Невозможно импортировать контакты, нестандартный формат даты</string>
-    <string name="permission_required">Разрешение необходимо для импорта контактов</string>
+    <string name="contacts_uploaded">Контакты импортированы</string>
+    <string name="loading_contacts_error">Не удалось импортировать контакты: неподдерживаемый формат даты</string>
+    <string name="permission_required">Нужно разрешение для импорта контактов</string>
     <string name="snackbar_allow_text">Разрешить</string>
     <string name="all">Все</string>
     <string name="famous">Известные</string>
     <string name="age">Возраст:\u0020</string>
-    <string name="happy_birthday">С днём рождения!</string>
-    <string name="web_search_error">Не удалось выполнить действие, пожалуйста, установите веб-браузер</string>
-    <string name="delete_record_confirm">Вы действительно хотите удалить %1$s?</string>
+    <string name="happy_birthday">С днем рождения!</string>
+    <string name="web_search_error">Не удалось открыть ссылку — установите браузер</string>
+    <string name="delete_record_confirm">Удалить %1$s?</string>
     <string name="record_deleted">Запись удалена</string>
     <string name="undo">Отменить</string>
     <string name="add_record">Добавить запись</string>
@@ -47,34 +47,34 @@
     <!-- NewPersonActivity -->
     <string name="new_record">Новая запись</string>
     <string name="add_from_contacts">Добавить из контактов</string>
-    <string name="activity_not_found_error">Это действие выполнить невозможно из-за особенностей устройства</string>
+    <string name="activity_not_found_error">Действие не поддерживается на этом устройстве</string>
     <string name="name">Имя</string>
-    <string name="error_hint">Пожалуйста, введите имя</string>
+    <string name="error_hint">Введите имя</string>
     <string name="phone_number">Номер телефона</string>
     <string name="pick_date">Выберите дату</string>
-    <string name="wrong_date">Неверная дата</string>
-    <string name="year_unknown">Я не знаю год рождения</string>
+    <string name="wrong_date">Некорректная дата</string>
+    <string name="year_unknown">Год неизвестен</string>
     <string name="cancel_button">Отмена</string>
 
     <!-- DetailActivity -->
     <string name="birthday">День рождения</string>
     <string name="days_left">Дней до следующего дня рождения</string>
     <string name="today">Сегодня</string>
-    <string name="days_since_birth">Дней с момента рождения</string>
+    <string name="days_since_birth">Дней со дня рождения</string>
     <string name="zodiac_sign">Знак зодиака</string>
-    <string name="season_picture">Сезонное изображение</string>
+    <string name="season_picture">Картинка сезона</string>
     <string name="calendar">Календарь</string>
     <string name="call">Позвонить</string>
     <string name="chat">Написать</string>
-    <string name="born_on_this_day">В этот день родились</string>
+    <string name="born_on_this_day">Родились в этот день</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Редактирование</string>
-    <string name="record_edited">Запись отредактирована</string>
+    <string name="record_edited">Запись обновлена</string>
     <string name="edit_record">Редактировать запись</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: на устройствах Samsung можно зарегистрировать не более 500 уведомлений</string>
+    <string name="security_exception">SecurityException: на устройствах Samsung лимит — не более 500 уведомлений</string>
     <string name="channel_name">Дни рождения</string>
 
     <!-- Zodiac signs -->
@@ -92,14 +92,14 @@
     <string name="pisces">Рыбы</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Отключите оптимизацию батареи для приложения</string>
-    <string name="optimization_description">Чтобы приложение работало корректно, перейдите в настройки системы и разрешите приложению работать в фоновом режиме без ограничений</string>
+    <string name="optimization_enabled">Отключить оптимизацию батареи</string>
+    <string name="optimization_description">Чтобы напоминания работали без сбоев, откройте настройки и разрешите Birdays работать в фоне без ограничений</string>
     <string name="do_not_show_again">Больше не показывать</string>
     <string name="disable_button">Отключить</string>
 
     <!-- Notifications -->
     <string name="notifications">Уведомления</string>
-    <string name="allow_notification">Разрешить приложению присылать уведомления о предстоящих днях рождения</string>
+    <string name="allow_notification">Присылать уведомления о предстоящих днях рождения</string>
     <string name="notifications_time">Время уведомления</string>
     <string name="additional_notification">Дополнительное уведомление</string>
 
@@ -122,15 +122,15 @@
     </string-array>
 
     <string name="notification_tone">Звук уведомления</string>
-    <string name="ringtone_summary">Выберите звук уведомления. По умолчанию используется звук из настроек устройства</string>
+    <string name="ringtone_summary">Выберите сигнал уведомления. По умолчанию берется звук из настроек устройства</string>
     <string name="silent">Без звука</string>
     <string name="help">Помощь</string>
-    <string name="tap_here">Нажмите здесь, если вам не приходят уведомления</string>
+    <string name="tap_here">Нажмите здесь, если уведомления не приходят</string>
 
     <!-- General -->
     <string name="general">Общие</string>
-    <string name="night_mode">Ночной режим</string>
-    <string name="start_page">Начальная страница</string>
+    <string name="night_mode">Темная тема</string>
+    <string name="start_page">Начальный экран</string>
 
     <string-array name="start_page_entries">
         <item>Текущий месяц</item>
@@ -142,57 +142,57 @@
 
     <string-array name="displayed_age_entries">
         <item>Текущий</item>
-        <item>Будущий</item>
+        <item>Следующий</item>
     </string-array>
 
-    <string name="displayed_age_changes">Чтобы изменения вступили в силу, необходимо перезапустить приложение</string>
+    <string name="displayed_age_changes">Перезапустите приложение, чтобы изменения вступили в силу</string>
     <string name="restart_now">Перезапустить сейчас</string>
     <string name="later">Позже</string>
-    <string name="rate_app">Оцените приложение</string>
-    <string name="share_app">Расскажите о приложении</string>
-    <string name="share_text">"Забываете поздравить родных, друзей или коллег с днём рождения? Birdays напомнит вам о важном празднике!  "</string>
+    <string name="rate_app">Оценить приложение</string>
+    <string name="share_app">Поделиться приложением</string>
+    <string name="share_text">Забываете поздравить близких, друзей или коллег с днем рождения? Birdays напомнит о важной дате!\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Синхронизация и резервное копирование</string>
-    <string name="contacts_import_title">Импортировать контакты</string>
-    <string name="contacts_import_summary">Нажмите, чтобы импортировать контакты из адресной книги (поддерживается ISO 8601)</string>
+    <string name="contacts_import_title">Импорт контактов</string>
+    <string name="contacts_import_summary">Импортировать контакты с устройства (поддерживается ISO 8601)</string>
     <string name="google_drive_backup">Бэкап в Google Диск</string>
-    <string name="google_drive_backup_summary">Загрузить резервную копию в Google Диск</string>
-    <string name="google_drive_backup_progress">Создание бэкапа в Google Диск…</string>
+    <string name="google_drive_backup_summary">Сохранить резервную копию в Google Диск</string>
+    <string name="google_drive_backup_progress">Резервное копирование в Google Диск…</string>
     <string name="backup_complete">Резервное копирование завершено</string>
     <string name="google_drive_restore">Восстановление из Google Диска</string>
     <string name="google_drive_restore_summary">Восстановить базу данных с Google Диска</string>
     <string name="google_drive_restore_progress">Восстановление из Google Диска…</string>
     <string name="recover_records_error">Не удалось восстановить записи</string>
     <string name="records_recovered">Записи восстановлены</string>
-    <string name="restore_confirm_title">Восстановление из резервной копии</string>
-    <string name="restore_confirm_message">Вы действительно хотите восстановить записи от %1$s? Количество записей: %2$s.</string>
+    <string name="restore_confirm_title">Восстановить из резервной копии</string>
+    <string name="restore_confirm_message">Восстановить записи от %1$s? Всего записей: %2$s.</string>
     <string name="restore_button">Восстановить</string>
     <string name="restore_unknown">неизвестно</string>
     <string name="upload_error">Ошибка загрузки: %s</string>
     <string name="backup_error">Ошибка резервного копирования: %s</string>
-    <string name="auth_error">Ошибка авторизации: %s</string>
-    <string name="authorization_failed_error">Авторизация не удалась: %s</string>
-    <string name="download_error">Ошибка загрузки файла: %s</string>
+    <string name="auth_error">Ошибка входа: %s</string>
+    <string name="authorization_failed_error">Не удалось выполнить вход: %s</string>
+    <string name="download_error">Ошибка скачивания: %s</string>
     <string name="file_not_found">Файл не найден</string>
     <string name="search_error">Ошибка поиска: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Реклама</string>
     <string name="about_ad_title">Почему я вижу рекламу?</string>
-    <string name="about_ad_summary">Весь доход от рекламы идёт на развитие приложения</string>
+    <string name="about_ad_summary">Весь доход от рекламы идет на развитие приложения</string>
     <string name="show_ads">Показывать рекламу</string>
-    <string name="show_ads_summary">Рекламу можно отключить, посмотрев короткое видео</string>
+    <string name="show_ads_summary">Отключите рекламу, посмотрев короткое видео</string>
+    <string name="ad_watch_full_video_to_disable">Досмотрите видео до конца, чтобы отключить рекламу</string>
+    <string name="ad_disabled_success">Реклама отключена</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Поддержать проект</string>
+    <string name="support_project_category">Поддержка проекта</string>
+    <string name="donate_title">Поддержать разработку</string>
+    <string name="donate_summary">Если хочется сказать «спасибо» за приложение</string>
     <string name="watch_video_title">Посмотреть рекламное видео</string>
-    <string name="ad_rewarded_summary">Посмотрите короткое видео — доход от него идёт на развитие приложения</string>
+    <string name="ad_rewarded_summary">Бесплатный способ поддержать проект и помочь его развитию</string>
     <string name="ad_rewarded_unavailable">Видео сейчас недоступно, попробуйте позже</string>
-    <string name="ad_disabled_success">Реклама отключена</string>
-    <string name="ad_watch_full_video_to_disable">Досмотрите видео до конца, чтобы отключить рекламу</string>
-    <string name="donate_title">Внести вклад</string>
-    <string name="donate_summary">Финансовая поддержка развития приложения</string>
 
     <!-- About -->
     <string name="about">О приложении</string>
@@ -203,15 +203,15 @@
     <string name="privacy_policy">Политика конфиденциальности</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Почему напоминания не срабатывают?</string>
-    <string name="help_description">На устройствах Android есть режим энергосбережения, который блокирует работу приложения в фоновом режиме или запрещает автозапуск. Чтобы уведомления работали корректно, выполните несколько простых действий:</string>
-    <string name="help_explanation_1">1. Убедитесь, что для приложения Birdays разрешены уведомления (Настройки > Birdays > Уведомления).</string>
-    <string name="help_delay_text">Обратите внимание, что на некоторых устройствах уведомления приходят с задержкой.</string>
+    <string name="help_header">Почему не приходят напоминания?</string>
+    <string name="help_description">На Android есть режим энергосбережения, который ограничивает работу приложений в фоне или мешает автозапуску. Чтобы уведомления приходили вовремя, выполните простые шаги:</string>
+    <string name="help_explanation_1">1. Проверьте, что для Birdays разрешены уведомления (Настройки &gt; Birdays &gt; Уведомления).</string>
+    <string name="help_delay_text">На некоторых устройствах уведомления могут приходить с задержкой.</string>
     <string name="help_exact_alarm">Разрешить точные будильники</string>
-    <string name="help_explanation_2">2. Отключите режим энергосбережения для Birdays (Настройки > Birdays > Батарея).</string>
+    <string name="help_explanation_2">2. Отключите экономию энергии для Birdays (Настройки &gt; Birdays &gt; Батарея).</string>
     <string name="help_settings">Открыть настройки</string>
-    <string name="help_explanation_3">3. Если у вас установлены менеджеры задач, приложения для очистки памяти или энергосбережения («Battery Saver», «Clean Master» и аналогичные), которые блокируют работу в фоновом режиме, добавьте Birdays в исключения.</string>
-    <string name="help_email_description">По всем вопросам и предложениям пишите мне на почту birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Если у вас установлены менеджеры задач, приложения для очистки памяти или энергосбережения («Battery Saver», «Clean Master» и подобные), которые блокируют работу приложений в фоновом режиме, добавьте Birdays в исключения.</string>
+    <string name="help_email_description">Если есть вопросы или идеи, напишите мне на birdaysapp@gmail.com</string>
     <string name="send_email">Отправить письмо</string>
 
     <!-- Famous persons -->

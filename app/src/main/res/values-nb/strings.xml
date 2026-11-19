@@ -10,17 +10,17 @@
     <string name="build_version">Byggeversjon</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">Laster inn kontakter…</string>
-    <string name="contacts_uploaded">Kontakter lastet opp</string>
-    <string name="loading_contacts_error">Kunne ikke importere kontakter, ikke-standard datoformat</string>
+    <string name="loading_contacts">Laster kontakter…</string>
+    <string name="contacts_uploaded">Kontakter lastet inn</string>
+    <string name="loading_contacts_error">Kunne ikke importere kontakter: ugyldig datoformat</string>
     <string name="permission_required">Tillatelse kreves for å importere kontakter</string>
     <string name="snackbar_allow_text">Tillat</string>
     <string name="all">Alle</string>
-    <string name="famous">Berømte</string>
+    <string name="famous">Kjente</string>
     <string name="age">Nåværende alder:\u0020</string>
     <string name="happy_birthday">Gratulerer med dagen!</string>
-    <string name="web_search_error">Kunne ikke utføre handlingen, vennligst installer en nettleser</string>
-    <string name="delete_record_confirm">Er du sikker på at du vil slette %1$s?</string>
+    <string name="web_search_error">Kan ikke åpne søk – installer en nettleser</string>
+    <string name="delete_record_confirm">Slette %1$s?</string>
     <string name="record_deleted">Oppføring slettet</string>
     <string name="undo">Angre</string>
     <string name="add_record">Legg til oppføring</string>
@@ -46,14 +46,14 @@
 
     <!-- NewPersonActivity -->
     <string name="new_record">Ny oppføring</string>
-    <string name="add_from_contacts">Legg til fra kontakter</string>
-    <string name="activity_not_found_error">Kunne ikke utføre handlingen på grunn av enhetsfunksjonene</string>
+    <string name="add_from_contacts">Velg fra kontakter</string>
+    <string name="activity_not_found_error">Handlingen støttes ikke på denne enheten</string>
     <string name="name">Navn</string>
-    <string name="error_hint">Vennligst skriv inn et navn</string>
+    <string name="error_hint">Skriv inn et navn</string>
     <string name="phone_number">Telefonnummer</string>
     <string name="pick_date">Velg dato</string>
-    <string name="wrong_date">Feil dato</string>
-    <string name="year_unknown">Jeg vet ikke året</string>
+    <string name="wrong_date">Ugyldig dato</string>
+    <string name="year_unknown">Ukjent år</string>
     <string name="cancel_button">Avbryt</string>
 
     <!-- DetailActivity -->
@@ -65,16 +65,16 @@
     <string name="season_picture">Årstidsbilde</string>
     <string name="calendar">Kalender</string>
     <string name="call">Ring</string>
-    <string name="chat">Chat</string>
-    <string name="born_on_this_day">Født på denne dagen</string>
+    <string name="chat">Melding</string>
+    <string name="born_on_this_day">Født denne dagen</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">Redigering</string>
-    <string name="record_edited">Oppføring redigert</string>
+    <string name="editing_label">Redigerer</string>
+    <string name="record_edited">Oppføring oppdatert</string>
     <string name="edit_record">Rediger oppføring</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Samsung-enheter begrenser antallet varsler til 500</string>
+    <string name="security_exception">SecurityException: Samsung-enheter begrenser antall varsler til 500</string>
     <string name="channel_name">Bursdager</string>
 
     <!-- Zodiac signs -->
@@ -92,16 +92,16 @@
     <string name="pisces">Fiskene</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Deaktiver batterioptimalisering for appen</string>
-    <string name="optimization_description">For at appen skal fungere riktig, åpne Innstillinger og tillat appen å kjøre i bakgrunnen uten begrensninger</string>
-    <string name="do_not_show_again">Ikke vis dette igjen</string>
-    <string name="disable_button">Deaktiver</string>
+    <string name="optimization_enabled">Slå av batterioptimalisering for Birdays</string>
+    <string name="optimization_description">Åpne Innstillinger og tillat bakgrunnsaktivitet uten begrensninger for pålitelige varsler</string>
+    <string name="do_not_show_again">Ikke vis igjen</string>
+    <string name="disable_button">Slå av</string>
 
     <!-- Notifications -->
     <string name="notifications">Varsler</string>
-    <string name="allow_notification">Tillat appen å sende varsler om kommende bursdager</string>
-    <string name="notifications_time">Varseltid</string>
-    <string name="additional_notification">Ekstravarsel</string>
+    <string name="allow_notification">Send varsler om kommende bursdager</string>
+    <string name="notifications_time">Varslingstidspunkt</string>
+    <string name="additional_notification">Ekstra påminnelse</string>
 
     <string-array name="additional_notification_entries">
         <item>Aldri</item>
@@ -122,80 +122,80 @@
     </string-array>
 
     <string name="notification_tone">Varsellyd</string>
-    <string name="ringtone_summary">Velg en varsellyd. Som standard brukes lyden fra enhetsinnstillingene</string>
-    <string name="silent">Ingen</string>
+    <string name="ringtone_summary">Velg varsellyd (standard: enhetens lyd)</string>
+    <string name="silent">Lydløs</string>
     <string name="help">Hjelp</string>
-    <string name="tap_here">Trykk her hvis du ikke mottar varsler</string>
+    <string name="tap_here">Trykk her hvis du ikke får varsler</string>
 
     <!-- General -->
     <string name="general">Generelt</string>
-    <string name="night_mode">Nattmodus</string>
-    <string name="start_page">Startside</string>
+    <string name="night_mode">Mørkt tema</string>
+    <string name="start_page">Startskjerm</string>
 
     <string-array name="start_page_entries">
-        <item>Nåværende måned</item>
+        <item>Denne måneden</item>
         <item>Alle</item>
-        <item>Berømte</item>
+        <item>Kjente</item>
     </string-array>
 
     <string name="displayed_age">Vist alder</string>
 
     <string-array name="displayed_age_entries">
         <item>Nåværende</item>
-        <item>Fremtidig</item>
+        <item>Neste</item>
     </string-array>
 
-    <string name="displayed_age_changes">Du må starte appen på nytt for at disse endringene skal tre i kraft</string>
-    <string name="restart_now">Start på nytt nå</string>
+    <string name="displayed_age_changes">Start appen på nytt for å bruke endringene</string>
+    <string name="restart_now">Start på nytt</string>
     <string name="later">Senere</string>
     <string name="rate_app">Vurder appen</string>
     <string name="share_app">Del appen</string>
-    <string name="share_text">"Glemmer du ofte å gratulere familie, venner eller kolleger med bursdagen? Birdays vil minne deg på en viktig dato!  "</string>
+    <string name="share_text">Glemmer du ofte bursdagen til familie, venner eller kolleger? Birdays minner deg på viktige datoer!\n</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Synkronisering og sikkerhetskopiering</string>
+    <string name="sync_and_backup">Synkronisering og sikkerhetskopi</string>
     <string name="contacts_import_title">Importer kontakter</string>
-    <string name="contacts_import_summary">Trykk her for å importere kontakter fra enheten din (støtter ISO 8601)</string>
-    <string name="google_drive_backup">Sikkerhetskopiering til Google Drive</string>
-    <string name="google_drive_backup_summary">Last opp sikkerhetskopi av databasen til Google Drive</string>
+    <string name="contacts_import_summary">Importer kontakter fra enheten (støtter ISO 8601)</string>
+    <string name="google_drive_backup">Sikkerhetskopier til Google Drive</string>
+    <string name="google_drive_backup_summary">Last opp databasekopi til Google Drive</string>
     <string name="google_drive_backup_progress">Sikkerhetskopierer til Google Drive…</string>
     <string name="backup_complete">Sikkerhetskopi fullført</string>
-    <string name="google_drive_restore">Gjenoppretting fra Google Drive</string>
+    <string name="google_drive_restore">Gjenopprett fra Google Drive</string>
     <string name="google_drive_restore_summary">Gjenopprett database fra Google Drive</string>
     <string name="google_drive_restore_progress">Gjenoppretter fra Google Drive…</string>
-    <string name="recover_records_error">Kunne ikke gjenopprette oppføringene</string>
-    <string name="records_recovered">Oppføringene gjenopprettet</string>
-    <string name="restore_confirm_title">Gjenopprett fra sikkerhetskopi</string>
-    <string name="restore_confirm_message">Er du sikker på at du vil gjenopprette oppføringer fra %1$s? Antall oppføringer: %2$s.</string>
+    <string name="recover_records_error">Kunne ikke gjenopprette oppføringer</string>
+    <string name="records_recovered">Oppføringer gjenopprettet</string>
+    <string name="restore_confirm_title">Gjenopprett sikkerhetskopi</string>
+    <string name="restore_confirm_message">Gjenopprette oppføringer fra %1$s? Oppføringer: %2$s.</string>
     <string name="restore_button">Gjenopprett</string>
     <string name="restore_unknown">ukjent</string>
     <string name="upload_error">Opplastingsfeil: %s</string>
-    <string name="backup_error">Sikkerhetskopieringsfeil: %s</string>
+    <string name="backup_error">Sikkerhetskopifeil: %s</string>
     <string name="auth_error">Autentiseringsfeil: %s</string>
-    <string name="authorization_failed_error">Autorisasjon mislyktes: %s</string>
+    <string name="authorization_failed_error">Autorisasjon feilet: %s</string>
     <string name="download_error">Nedlastingsfeil: %s</string>
-    <string name="file_not_found">Filen ble ikke funnet</string>
+    <string name="file_not_found">Fant ikke filen</string>
     <string name="search_error">Søkefeil: %s</string>
 
     <!-- Advertising -->
-    <string name="advertising">Reklame</string>
+    <string name="advertising">Annonser</string>
     <string name="about_ad_title">Hvorfor ser jeg annonser?</string>
-    <string name="about_ad_summary">Alle reklameinntekter går til utviklingen av prosjektet</string>
+    <string name="about_ad_summary">Alle annonceinntekter går til å utvikle appen</string>
     <string name="show_ads">Vis annonser</string>
-    <string name="show_ads_summary">Du kan deaktivere annonser ved å se en kort videoannonse</string>
+    <string name="show_ads_summary">Se en kort video for å slå av annonser</string>
+    <string name="ad_watch_full_video_to_disable">Se hele videoen for å slå av annonser</string>
+    <string name="ad_disabled_success">Annonser slått av</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Støtt prosjektet</string>
+    <string name="support_project_category">Støtt appen</string>
+    <string name="donate_title">Gi et bidrag til utvikleren</string>
+    <string name="donate_summary">Gi en engangsstøtte til fremtidige oppdateringer</string>
     <string name="watch_video_title">Se en videoannonse</string>
-    <string name="ad_rewarded_summary">Se en kort video – inntektene går til utviklingen av appen</string>
-    <string name="ad_rewarded_unavailable">Videoen er ikke tilgjengelig akkurat nå, prøv igjen senere</string>
-    <string name="ad_disabled_success">Annonser er nå deaktivert</string>
-    <string name="ad_watch_full_video_to_disable">Se videoen til slutt for å deaktivere annonser</string>
-    <string name="donate_title">Gi et bidrag</string>
-    <string name="donate_summary">Økonomisk støtte til appens utvikling</string>
+    <string name="ad_rewarded_summary">Støtt appen gratis ved å se en kort annonse</string>
+    <string name="ad_rewarded_unavailable">Videoen er ikke tilgjengelig nå — prøv igjen senere</string>
 
     <!-- About -->
-    <string name="about">Om appen</string>
+    <string name="about">Om</string>
     <string name="licenses">Lisenser</string>
     <string name="software_licenses">Lisenser for åpen kildekode</string>
     <string name="third_party_sdks">Tredjeparts-SDK-er</string>
@@ -204,14 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Hvorfor virker ikke påminnelsen?</string>
-    <string name="help_description">Android-enheter har en strømsparingsmodus som blokkerer appen fra å kjøre i bakgrunnen eller hindrer den i å starte automatisk. Følg disse enkle trinnene for at varsler skal fungere som de skal:</string>
-    <string name="help_explanation_1">1. Sørg for at varsler er tillatt for Birdays-appen (Innstillinger > Birdays > Varsler).</string>
-    <string name="help_delay_text">Vær oppmerksom på at varsler kan bli forsinket på enkelte enheter.</string>
+    <string name="help_description">Noen Android-enheter begrenser bakgrunnsaktivitet eller autostart for å spare strøm. Følg disse trinnene for at varsler skal fungere som de skal:</string>
+    <string name="help_explanation_1">1. Sjekk at varsler er slått på for Birdays (Innstillinger &gt; Birdays &gt; Varsler).</string>
+    <string name="help_delay_text">På enkelte enheter kan varsler bli forsinket.</string>
     <string name="help_exact_alarm">Tillat nøyaktige alarmer</string>
-    <string name="help_explanation_2">2. Slå av strømsparingsmodus for Birdays (Innstillinger > Birdays > Batteri).</string>
+    <string name="help_explanation_2">2. Slå av strømsparing for Birdays (Innstillinger &gt; Birdays &gt; Batteri).</string>
     <string name="help_settings">Åpne innstillinger</string>
-    <string name="help_explanation_3">3. Hvis du har installert oppgavebehandlere eller apper for minnerensing og strømsparing (som «Battery Saver», «Clean Master» og lignende apper) som blokkerer bakgrunnsaktivitet, må du legge til Birdays i unntakene.</string>
-    <string name="help_email_description">Hvis du har spørsmål eller forslag, kan du kontakte meg på birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Hvis du bruker oppgavebehandlere, minnerensere eller strømspareapper (som «Battery Saver» eller «Clean Master») som blokkerer bakgrunnsaktivitet, legger du til Birdays i unntakene.</string>
+    <string name="help_email_description">Har du spørsmål eller forslag? Send en e-post til birdaysapp@gmail.com</string>
     <string name="send_email">Send e-post</string>
 
     <!-- Famous persons -->

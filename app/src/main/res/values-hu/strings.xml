@@ -7,23 +7,23 @@
 -->
 
 <resources>
-    <string name="build_version">Build-verzió</string>
+    <string name="build_version">Buildverzió</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">Névjegyek betöltése…</string>
-    <string name="contacts_uploaded">Névjegyek feltöltve</string>
-    <string name="loading_contacts_error">Nem sikerült a névjegyeket importálni, a dátumformátum nem szabványos</string>
-    <string name="permission_required">A névjegyek importálásához engedély szükséges</string>
+    <string name="contacts_uploaded">Névjegyek betöltve</string>
+    <string name="loading_contacts_error">Nem sikerült a névjegyek importálása: nem szabványos dátumformátum</string>
+    <string name="permission_required">Engedély szükséges a névjegyek importálásához</string>
     <string name="snackbar_allow_text">Engedélyezés</string>
     <string name="all">Összes</string>
     <string name="famous">Hírességek</string>
-    <string name="age">Aktuális életkor:\u0020</string>
-    <string name="happy_birthday">Boldog Születésnapot!</string>
-    <string name="web_search_error">Nem sikerült végrehajtani a műveletet, telepítse a webböngészőt</string>
-    <string name="delete_record_confirm">Biztosan törli a következőt: %1$s?</string>
-    <string name="record_deleted">Rekord törölve</string>
+    <string name="age">Jelenlegi életkor:\u0020</string>
+    <string name="happy_birthday">Boldog születésnapot!</string>
+    <string name="web_search_error">A művelet nem hajtható végre, telepítsen webböngészőt</string>
+    <string name="delete_record_confirm">Törli ezt: %1$s?</string>
+    <string name="record_deleted">Bejegyzés törölve</string>
     <string name="undo">Visszavonás</string>
-    <string name="add_record">Rekord hozzáadása</string>
+    <string name="add_record">Bejegyzés hozzáadása</string>
 
     <string-array name="months">
         <item>Január</item>
@@ -42,39 +42,39 @@
 
     <!-- Menu -->
     <string name="action_settings">Beállítások</string>
-    <string name="action_delete">Eltávolítás</string>
+    <string name="action_delete">Törlés</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">Új rekord</string>
-    <string name="add_from_contacts">Hozzáadás a névjegyek közül</string>
-    <string name="activity_not_found_error">A műveletet nem sikerült végrehajtani az eszközfunkciók miatt</string>
+    <string name="new_record">Új bejegyzés</string>
+    <string name="add_from_contacts">Hozzáadás a névjegyekből</string>
+    <string name="activity_not_found_error">A művelet nem végezhető el ezen az eszközön</string>
     <string name="name">Név</string>
-    <string name="error_hint">Kérjük, adja meg a nevét</string>
+    <string name="error_hint">Adjon meg egy nevet</string>
     <string name="phone_number">Telefonszám</string>
     <string name="pick_date">Dátum kiválasztása</string>
-    <string name="wrong_date">Hibás dátum</string>
-    <string name="year_unknown">Nem tudom az évet</string>
+    <string name="wrong_date">Érvénytelen dátum</string>
+    <string name="year_unknown">Ismeretlen év</string>
     <string name="cancel_button">Mégse</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Születésnap</string>
     <string name="days_left">Napok a következő születésnapig</string>
     <string name="today">Ma</string>
-    <string name="days_since_birth">Születés óta eltelt napok száma</string>
+    <string name="days_since_birth">Napok a születés óta</string>
     <string name="zodiac_sign">Csillagjegy</string>
     <string name="season_picture">Évszak képe</string>
     <string name="calendar">Naptár</string>
     <string name="call">Hívás</string>
-    <string name="chat">Csevegés</string>
+    <string name="chat">Üzenet</string>
     <string name="born_on_this_day">Ezen a napon született</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Szerkesztés</string>
-    <string name="record_edited">Rekord szerkesztve</string>
-    <string name="edit_record">Rekord szerkesztése</string>
+    <string name="record_edited">Bejegyzés frissítve</string>
+    <string name="edit_record">Bejegyzés szerkesztése</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: a Samsung készülékek 500-ra korlátozzák az értesítések számát</string>
+    <string name="security_exception">SecurityException: a Samsung eszközök 500-ban korlátozzák az értesítések számát</string>
     <string name="channel_name">Születésnapok</string>
 
     <!-- Zodiac signs -->
@@ -92,16 +92,16 @@
     <string name="pisces">Halak</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Az akkumulátor-optimalizálás letiltása az alkalmazás számára</string>
-    <string name="optimization_description">Az alkalmazás megfelelő működéséhez nyissa meg a Beállításokat, és engedélyezze, hogy az alkalmazás korlátozások nélkül fusson a háttérben.</string>
-    <string name="do_not_show_again">Többet ne mutassa</string>
-    <string name="disable_button">Letiltás</string>
+    <string name="optimization_enabled">Akkumulátor-optimalizálás kikapcsolása a Birdayshez</string>
+    <string name="optimization_description">Az emlékeztetők megbízható működéséhez nyissa meg a Beállításokat, és engedélyezze a korlátozás nélküli háttérműködést</string>
+    <string name="do_not_show_again">Ne jelenjen meg többet</string>
+    <string name="disable_button">Kikapcsolás</string>
 
     <!-- Notifications -->
     <string name="notifications">Értesítések</string>
-    <string name="allow_notification">Engedélyezze, hogy az alkalmazás értesítéseket küldjön a közelgő születésnapokról</string>
+    <string name="allow_notification">Értesítések küldése a közelgő születésnapokról</string>
     <string name="notifications_time">Értesítés ideje</string>
-    <string name="additional_notification">Kiegészítő értesítés</string>
+    <string name="additional_notification">További értesítés</string>
 
     <string-array name="additional_notification_entries">
         <item>Soha</item>
@@ -121,19 +121,19 @@
         <item>2 hét múlva</item>
     </string-array>
 
-    <string name="notification_tone">Értesítés hangja</string>
-    <string name="ringtone_summary">Válasszon értesítési hangot. Alapértelmezés szerint az eszköz beállításaiban megadott hangot használja.</string>
-    <string name="silent">Nincs</string>
-    <string name="help">Segítség</string>
-    <string name="tap_here">Érintse meg itt, ha nem kap értesítéseket</string>
+    <string name="notification_tone">Értesítési hang</string>
+    <string name="ringtone_summary">Értesítési hang kiválasztása (alapértelmezett: az eszköz hangja)</string>
+    <string name="silent">Néma</string>
+    <string name="help">Súgó</string>
+    <string name="tap_here">Koppintson ide, ha nem érkeznek értesítések</string>
 
     <!-- General -->
     <string name="general">Általános</string>
-    <string name="night_mode">Éjszakai üzemmód</string>
-    <string name="start_page">Kezdőlap</string>
+    <string name="night_mode">Sötét téma</string>
+    <string name="start_page">Kezdőképernyő</string>
 
     <string-array name="start_page_entries">
-        <item>Jelenlegi hónap</item>
+        <item>Aktuális hónap</item>
         <item>Összes</item>
         <item>Hírességek</item>
     </string-array>
@@ -141,38 +141,38 @@
     <string name="displayed_age">Megjelenített életkor</string>
 
     <string-array name="displayed_age_entries">
-        <item>Aktuális</item>
-        <item>Jövőbeli</item>
+        <item>Jelenlegi</item>
+        <item>Következő</item>
     </string-array>
 
-    <string name="displayed_age_changes">Újra kell indítania az alkalmazást, hogy ezek a módosítások életbe lépjenek</string>
+    <string name="displayed_age_changes">A módosítások érvénybe lépéséhez indítsa újra az alkalmazást</string>
     <string name="restart_now">Újraindítás most</string>
     <string name="later">Később</string>
     <string name="rate_app">Alkalmazás értékelése</string>
     <string name="share_app">Alkalmazás megosztása</string>
-    <string name="share_text">"Gyakran elfelejti felköszönteni a családtagjait, barátait vagy kollégáit a születésnapjukon? A Birdays emlékeztetni fog erre a fontos dátumra!  "</string>
+    <string name="share_text">Gyakran elfelejti felköszönteni családtagjait, barátait vagy kollégáit születésnapjukon? A Birdays időben emlékeztet a fontos dátumra!\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Szinkronizálás és biztonsági mentés</string>
     <string name="contacts_import_title">Névjegyek importálása</string>
-    <string name="contacts_import_summary">Érintse meg itt a névjegyek importálásához a készülékről (támogatja az ISO 8601-et)</string>
+    <string name="contacts_import_summary">Névjegyek importálása az eszközről (ISO 8601 támogatással)</string>
     <string name="google_drive_backup">Google Drive biztonsági mentés</string>
-    <string name="google_drive_backup_summary">Adatbázis biztonsági mentésének feltöltése a Google Drive-ra</string>
+    <string name="google_drive_backup_summary">Adatbázis-mentés feltöltése a Google Drive-ra</string>
     <string name="google_drive_backup_progress">Biztonsági mentés a Google Drive-ra…</string>
     <string name="backup_complete">Biztonsági mentés kész</string>
     <string name="google_drive_restore">Visszaállítás a Google Drive-ról</string>
     <string name="google_drive_restore_summary">Adatbázis visszaállítása a Google Drive-ról</string>
     <string name="google_drive_restore_progress">Visszaállítás a Google Drive-ról…</string>
-    <string name="recover_records_error">Nem sikerült helyreállítani a rekordokat</string>
-    <string name="records_recovered">Rekordok helyreállítva</string>
+    <string name="recover_records_error">Nem sikerült visszaállítani a bejegyzéseket</string>
+    <string name="records_recovered">Bejegyzések visszaállítva</string>
     <string name="restore_confirm_title">Visszaállítás biztonsági mentésből</string>
-    <string name="restore_confirm_message">Biztosan vissza szeretné állítani a rekordokat innen: %1$s? Rekordok száma: %2$s.</string>
+    <string name="restore_confirm_message">Visszaállítja a bejegyzéseket innen: %1$s? Bejegyzések száma: %2$s.</string>
     <string name="restore_button">Visszaállítás</string>
     <string name="restore_unknown">ismeretlen</string>
     <string name="upload_error">Feltöltési hiba: %s</string>
     <string name="backup_error">Biztonsági mentési hiba: %s</string>
     <string name="auth_error">Hitelesítési hiba: %s</string>
-    <string name="authorization_failed_error">A engedélyezés sikertelen: %s</string>
+    <string name="authorization_failed_error">Az engedélyezés sikertelen: %s</string>
     <string name="download_error">Letöltési hiba: %s</string>
     <string name="file_not_found">A fájl nem található</string>
     <string name="search_error">Keresési hiba: %s</string>
@@ -180,38 +180,38 @@
     <!-- Advertising -->
     <string name="advertising">Hirdetések</string>
     <string name="about_ad_title">Miért látok hirdetéseket?</string>
-    <string name="about_ad_summary">A reklámbevétel teljes egészében a projekt fejlesztését szolgálja</string>
+    <string name="about_ad_summary">Minden hirdetési bevétel az app fejlesztését támogatja</string>
     <string name="show_ads">Hirdetések megjelenítése</string>
-    <string name="show_ads_summary">A hirdetések kikapcsolhatók egy rövid videóhirdetés megtekintésével.</string>
+    <string name="show_ads_summary">Nézz meg egy rövid videót a hirdetések kikapcsolásához</string>
+    <string name="ad_watch_full_video_to_disable">Nézd végig a videót a hirdetések kikapcsolásához</string>
+    <string name="ad_disabled_success">Hirdetések kikapcsolva</string>
 
     <!-- Support project -->
-    <string name="support_project_category">A projekt támogatása</string>
+    <string name="support_project_category">Az app támogatása</string>
+    <string name="donate_title">Támogasd a fejlesztőt</string>
+    <string name="donate_summary">Egyszeri támogatás a jövőbeli frissítésekhez</string>
     <string name="watch_video_title">Videóhirdetés megtekintése</string>
-    <string name="ad_rewarded_summary">Nézzen meg egy rövid videót – a bevétel az alkalmazás fejlesztését szolgálja</string>
-    <string name="ad_rewarded_unavailable">A videó jelenleg nem érhető el, kérjük, próbálja újra később</string>
-    <string name="ad_disabled_success">A hirdetések mostantól ki vannak kapcsolva</string>
-    <string name="ad_watch_full_video_to_disable">A hirdetések kikapcsolásához nézze végig a videót</string>
-    <string name="donate_title">Hozzájárulás</string>
-    <string name="donate_summary">Az alkalmazás fejlesztésének anyagi támogatása</string>
+    <string name="ad_rewarded_summary">Támogasd az appot ingyen egy rövid hirdetés megnézésével</string>
+    <string name="ad_rewarded_unavailable">A videó most nem érhető el — próbáld újra később</string>
 
     <!-- About -->
-    <string name="about">Az alkalmazásról</string>
+    <string name="about">Névjegy</string>
     <string name="licenses">Licencek</string>
     <string name="software_licenses">Nyílt forráskódú licencek</string>
     <string name="third_party_sdks">Harmadik féltől származó SDK-k</string>
     <string name="menu_github">Forráskód</string>
-    <string name="privacy_policy">Adatvédelmi irányelvek</string>
+    <string name="privacy_policy">Adatvédelmi szabályzat</string>
 
     <!-- HelpActivity -->
     <string name="help_header">Miért nem működik az emlékeztető?</string>
-    <string name="help_description">Az Android-eszközök rendelkeznek egy energiatakarékos móddal, amely megakadályozza az alkalmazás háttérben történő futását vagy automatikus elindulását. Az értesítések megfelelő működéséhez kövesd ezeket az egyszerű lépéseket:</string>
-    <string name="help_explanation_1">1. Győződj meg arról, hogy az értesítések engedélyezve vannak a Birdays alkalmazáshoz (Beállítások > Birdays > Értesítések).</string>
-    <string name="help_delay_text">Kérjük, vedd figyelembe, hogy egyes eszközökön az értesítések késhetnek.</string>
+    <string name="help_description">Egyes Android-eszközök energiatakarékos módban korlátozzák a háttérben futást vagy az automatikus indítást. Az értesítések megfelelő működéséhez kövesse ezeket a lépéseket:</string>
+    <string name="help_explanation_1">1. Győződjön meg arról, hogy a Birdays értesítései engedélyezve vannak (Beállítások &gt; Birdays &gt; Értesítések).</string>
+    <string name="help_delay_text">Egyes eszközökön az értesítések késhetnek.</string>
     <string name="help_exact_alarm">Pontos ébresztések engedélyezése</string>
-    <string name="help_explanation_2">2. Kapcsold ki az energiatakarékos módot a Birdays esetében (Beállítások > Birdays > Akkumulátor).</string>
+    <string name="help_explanation_2">2. Kapcsolja ki az energiatakarékosságot a Birdays esetén (Beállítások &gt; Birdays &gt; Akkumulátor).</string>
     <string name="help_settings">Beállítások megnyitása</string>
-    <string name="help_explanation_3">3. Ha feladatkezelő, memóriatisztító vagy energiatakarékos alkalmazásokat (például „Battery Saver”, „Clean Master” és hasonló alkalmazásokat) telepítettél, amelyek blokkolják a háttérben történő működést, add hozzá a Birdays alkalmazást a kivételekhez.</string>
-    <string name="help_email_description">Ha bármilyen kérdésed vagy javaslatod van, kérjük, vedd fel velem a kapcsolatot a birdaysapp@gmail.com címen</string>
+    <string name="help_explanation_3">3. Ha olyan feladatkezelő, memóriatisztító vagy energiatakarékos alkalmazást használ (például „Battery Saver” vagy „Clean Master”), amely blokkolja a háttérműködést, vegye fel a Birdays alkalmazást a kivételek közé.</string>
+    <string name="help_email_description">Kérdése vagy javaslata van? Írjon a birdaysapp@gmail.com címre</string>
     <string name="send_email">E-mail küldése</string>
 
     <!-- Famous persons -->

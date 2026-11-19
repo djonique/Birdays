@@ -12,15 +12,15 @@
     <!-- MainActivity -->
     <string name="loading_contacts">Kişiler yükleniyor…</string>
     <string name="contacts_uploaded">Kişiler yüklendi</string>
-    <string name="loading_contacts_error">Kişiler içe aktarılamadı, standart olmayan tarih biçimi</string>
-    <string name="permission_required">Kişileri içe aktarmak için izin gerekiyor</string>
+    <string name="loading_contacts_error">Kişiler içe aktarılamadı: geçersiz tarih biçimi</string>
+    <string name="permission_required">Kişileri içe aktarmak için izin gerekli</string>
     <string name="snackbar_allow_text">İzin ver</string>
     <string name="all">Tümü</string>
-    <string name="famous">Ünlü</string>
-    <string name="age">Geçerli yaş:\u0020</string>
-    <string name="happy_birthday">Doğum Günün Kutlu Olsun!</string>
-    <string name="web_search_error">İşlem yapılamadı, lütfen bir web tarayıcısı yükleyin</string>
-    <string name="delete_record_confirm">%1$s kaydını silmek istediğinizden emin misiniz?</string>
+    <string name="famous">Ünlüler</string>
+    <string name="age">Mevcut yaş:\u0020</string>
+    <string name="happy_birthday">Doğum günün kutlu olsun!</string>
+    <string name="web_search_error">Arama açılamadı — bir tarayıcı yükleyin</string>
+    <string name="delete_record_confirm">%1$s silinsin mi?</string>
     <string name="record_deleted">Kayıt silindi</string>
     <string name="undo">Geri al</string>
     <string name="add_record">Kayıt ekle</string>
@@ -46,35 +46,35 @@
 
     <!-- NewPersonActivity -->
     <string name="new_record">Yeni kayıt</string>
-    <string name="add_from_contacts">Kişilerden ekle</string>
-    <string name="activity_not_found_error">Cihaz özellikleri nedeniyle işlem yapılamıyor</string>
+    <string name="add_from_contacts">Kişilerden seç</string>
+    <string name="activity_not_found_error">Bu işlem bu cihazda desteklenmiyor</string>
     <string name="name">Ad</string>
-    <string name="error_hint">Lütfen bir ad girin</string>
+    <string name="error_hint">Bir ad girin</string>
     <string name="phone_number">Telefon numarası</string>
     <string name="pick_date">Tarih seç</string>
-    <string name="wrong_date">Yanlış tarih</string>
-    <string name="year_unknown">Yılı bilmiyorum</string>
+    <string name="wrong_date">Geçersiz tarih</string>
+    <string name="year_unknown">Yıl bilinmiyor</string>
     <string name="cancel_button">İptal</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Doğum günü</string>
-    <string name="days_left">Bir sonraki doğum gününe kalan gün sayısı</string>
+    <string name="days_left">Sonraki doğum gününe kalan gün</string>
     <string name="today">Bugün</string>
-    <string name="days_since_birth">Doğumdan bu yana geçen gün sayısı</string>
+    <string name="days_since_birth">Doğumdan bu yana geçen gün</string>
     <string name="zodiac_sign">Burç</string>
-    <string name="season_picture">Mevsim resmi</string>
+    <string name="season_picture">Mevsim görseli</string>
     <string name="calendar">Takvim</string>
     <string name="call">Ara</string>
-    <string name="chat">Sohbet</string>
+    <string name="chat">Mesaj</string>
     <string name="born_on_this_day">Bu günde doğanlar</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">Düzenleme</string>
-    <string name="record_edited">Kayıt düzenlendi</string>
+    <string name="editing_label">Düzenleniyor</string>
+    <string name="record_edited">Kayıt güncellendi</string>
     <string name="edit_record">Kaydı düzenle</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Samsung cihazları bildirim sayısını 500 ile sınırlar</string>
+    <string name="security_exception">SecurityException: Samsung cihazlar bildirim sayısını 500 ile sınırlar</string>
     <string name="channel_name">Doğum günleri</string>
 
     <!-- Zodiac signs -->
@@ -92,16 +92,16 @@
     <string name="pisces">Balık</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Uygulama için pil optimizasyonunu devre dışı bırak</string>
-    <string name="optimization_description">Uygulamanın doğru çalışması için Ayarlar\'ı açın ve uygulamanın arka planda kısıtlama olmadan çalışmasına izin verin</string>
+    <string name="optimization_enabled">Birdays için pil optimizasyonunu kapat</string>
+    <string name="optimization_description">Bildirimlerin sorunsuz çalışması için Ayarlar\'ı açıp arka planda kısıtlamasız çalışmaya izin verin</string>
     <string name="do_not_show_again">Bir daha gösterme</string>
-    <string name="disable_button">Devre dışı bırak</string>
+    <string name="disable_button">Kapat</string>
 
     <!-- Notifications -->
     <string name="notifications">Bildirimler</string>
-    <string name="allow_notification">Uygulamanın yaklaşan doğum günleriyle ilgili bildirim göndermesine izin ver</string>
-    <string name="notifications_time">Bildirim zamanı</string>
-    <string name="additional_notification">Ek bildirim</string>
+    <string name="allow_notification">Yaklaşan doğum günleri için bildirim gönder</string>
+    <string name="notifications_time">Bildirim saati</string>
+    <string name="additional_notification">Ek hatırlatıcı</string>
 
     <string-array name="additional_notification_entries">
         <item>Hiçbir zaman</item>
@@ -115,87 +115,87 @@
     <string-array name="additional_notification_delay">
         <item>Bugün</item>
         <item>Yarın</item>
-        <item>2 gün içinde</item>
-        <item>3 gün içinde</item>
-        <item>Bir hafta içinde</item>
-        <item>2 hafta içinde</item>
+        <item>2 gün sonra</item>
+        <item>3 gün sonra</item>
+        <item>1 hafta sonra</item>
+        <item>2 hafta sonra</item>
     </string-array>
 
     <string name="notification_tone">Bildirim sesi</string>
-    <string name="ringtone_summary">Bildirim için bir ses seçin. Varsayılan olarak cihaz ayarlarındaki ses kullanılır</string>
-    <string name="silent">Yok</string>
+    <string name="ringtone_summary">Bildirim sesi seçin (varsayılan: cihaz sesi)</string>
+    <string name="silent">Sessiz</string>
     <string name="help">Yardım</string>
     <string name="tap_here">Bildirim almıyorsanız buraya dokunun</string>
 
     <!-- General -->
     <string name="general">Genel</string>
-    <string name="night_mode">Gece modu</string>
-    <string name="start_page">Başlangıç sayfası</string>
+    <string name="night_mode">Karanlık mod</string>
+    <string name="start_page">Başlangıç ekranı</string>
 
     <string-array name="start_page_entries">
-        <item>Geçerli ay</item>
+        <item>Bu ay</item>
         <item>Tümü</item>
-        <item>Ünlü</item>
+        <item>Ünlüler</item>
     </string-array>
 
-    <string name="displayed_age">Görüntülenen yaş</string>
+    <string name="displayed_age">Gösterilen yaş</string>
 
     <string-array name="displayed_age_entries">
         <item>Mevcut</item>
-        <item>Gelecek</item>
+        <item>Sonraki</item>
     </string-array>
 
-    <string name="displayed_age_changes">Bu değişikliklerin geçerli olması için uygulamayı yeniden başlatmalısınız</string>
+    <string name="displayed_age_changes">Değişikliklerin uygulanması için uygulamayı yeniden başlatın</string>
     <string name="restart_now">Şimdi yeniden başlat</string>
     <string name="later">Daha sonra</string>
     <string name="rate_app">Uygulamayı değerlendir</string>
     <string name="share_app">Uygulamayı paylaş</string>
-    <string name="share_text" tools:ignore="Typos">"Doğum günlerinde ailenizi, arkadaşlarınızı veya meslektaşlarınızı tebrik etmeyi sık sık unutuyor musunuz? Birdays size önemli bir tarihi hatırlatacak!  "</string>
+    <string name="share_text" tools:ignore="Typos">Ailenizin, arkadaşlarınızın veya iş arkadaşlarınızın doğum gününü sık sık unutuyor musunuz? Birdays önemli günleri zamanında hatırlatır!\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Senkronizasyon ve yedekleme</string>
     <string name="contacts_import_title">Kişileri içe aktar</string>
-    <string name="contacts_import_summary">Cihazınızdan kişileri içe aktarmak için buraya dokunun (ISO 8601 destekler)</string>
-    <string name="google_drive_backup">Google Drive yedekleme</string>
+    <string name="contacts_import_summary">Cihazdan kişileri içe aktar (ISO 8601 destekler)</string>
+    <string name="google_drive_backup">Google Drive yedeği</string>
     <string name="google_drive_backup_summary">Veritabanı yedeğini Google Drive\'a yükle</string>
     <string name="google_drive_backup_progress">Google Drive\'a yedekleniyor…</string>
     <string name="backup_complete">Yedekleme tamamlandı</string>
-    <string name="google_drive_restore">Google Drive\'dan geri yükleme</string>
+    <string name="google_drive_restore">Google Drive\'dan geri yükle</string>
     <string name="google_drive_restore_summary">Veritabanını Google Drive\'dan geri yükle</string>
     <string name="google_drive_restore_progress">Google Drive\'dan geri yükleniyor…</string>
-    <string name="recover_records_error">Kayıtlar kurtarılamadı</string>
-    <string name="records_recovered">Kayıtlar kurtarıldı</string>
+    <string name="recover_records_error">Kayıtlar geri yüklenemedi</string>
+    <string name="records_recovered">Kayıtlar geri yüklendi</string>
     <string name="restore_confirm_title">Yedekten geri yükle</string>
-    <string name="restore_confirm_message">Kayıtları %1$s kaynağından geri yüklemek istediğinizden emin misiniz? Kayıt sayısı: %2$s.</string>
-    <string name="restore_button">Geri Yükle</string>
+    <string name="restore_confirm_message">%1$s kaynağından kayıtlar geri yüklensin mi? Kayıt sayısı: %2$s.</string>
+    <string name="restore_button">Geri yükle</string>
     <string name="restore_unknown">bilinmiyor</string>
     <string name="upload_error">Yükleme hatası: %s</string>
     <string name="backup_error">Yedekleme hatası: %s</string>
     <string name="auth_error">Kimlik doğrulama hatası: %s</string>
-    <string name="authorization_failed_error">Yetkilendirme başarısız oldu: %s</string>
+    <string name="authorization_failed_error">Yetkilendirme başarısız: %s</string>
     <string name="download_error">İndirme hatası: %s</string>
     <string name="file_not_found">Dosya bulunamadı</string>
     <string name="search_error">Arama hatası: %s</string>
 
     <!-- Advertising -->
-    <string name="advertising">Reklam</string>
+    <string name="advertising">Reklamlar</string>
     <string name="about_ad_title">Neden reklam görüyorum?</string>
-    <string name="about_ad_summary">Tüm reklam gelirleri projenin geliştirilmesine gider</string>
+    <string name="about_ad_summary">Tüm reklam gelirleri uygulamanın geliştirilmesine aktarılır</string>
     <string name="show_ads">Reklamları göster</string>
-    <string name="show_ads_summary">Kısa bir video reklam izleyerek reklamları devre dışı bırakabilirsiniz</string>
+    <string name="show_ads_summary">Reklamları kapatmak için kısa bir video izle</string>
+    <string name="ad_watch_full_video_to_disable">Reklamları kapatmak için videoyu sonuna kadar izle</string>
+    <string name="ad_disabled_success">Reklamlar kapatıldı</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Projeyi destekle</string>
+    <string name="support_project_category">Uygulamayı destekle</string>
+    <string name="donate_title">Geliştiriciye destek ol</string>
+    <string name="donate_summary">Gelecek güncellemeler için tek seferlik destek bırak</string>
     <string name="watch_video_title">Video reklam izle</string>
-    <string name="ad_rewarded_summary">Kısa bir video izleyin — gelir uygulamanın geliştirilmesine gider</string>
-    <string name="ad_rewarded_unavailable">Video şu anda kullanılamıyor, lütfen daha sonra tekrar deneyin</string>
-    <string name="ad_disabled_success">Reklamlar artık devre dışı</string>
-    <string name="ad_watch_full_video_to_disable">Reklamları devre dışı bırakmak için videoyu sonuna kadar izleyin</string>
-    <string name="donate_title">Katkıda bulun</string>
-    <string name="donate_summary">Uygulamanın geliştirilmesine maddi destek</string>
+    <string name="ad_rewarded_summary">Kısa bir reklam izleyerek uygulamayı ücretsiz destekle</string>
+    <string name="ad_rewarded_unavailable">Video şu anda kullanılamıyor — daha sonra tekrar dene</string>
 
     <!-- About -->
-    <string name="about">Uygulama hakkında</string>
+    <string name="about">Hakkında</string>
     <string name="licenses">Lisanslar</string>
     <string name="software_licenses">Açık kaynak lisansları</string>
     <string name="third_party_sdks">Üçüncü taraf SDK\'lar</string>
@@ -204,14 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">Hatırlatıcı neden çalışmıyor?</string>
-    <string name="help_description">Android cihazlarda, uygulamanın arka planda çalışmasını engelleyen veya otomatik olarak başlamasını önleyen bir güç tasarrufu modu bulunur. Bildirimlerin düzgün çalışması için şu basit adımları izleyin:</string>
-    <string name="help_explanation_1">1. Birdays uygulaması için bildirimlere izin verildiğinden emin olun (Ayarlar > Birdays > Bildirimler).</string>
-    <string name="help_delay_text">Bazı cihazlarda bildirimlerin gecikebileceğini lütfen unutmayın.</string>
+    <string name="help_description">Bazı Android cihazlarda pil tasarrufu için arka plan etkinliği veya otomatik başlatma kısıtlanır. Bildirimlerin düzgün çalışması için şu adımları izleyin:</string>
+    <string name="help_explanation_1">1. Birdays için bildirimlerin açık olduğundan emin olun (Ayarlar &gt; Birdays &gt; Bildirimler).</string>
+    <string name="help_delay_text">Bazı cihazlarda bildirimler gecikebilir.</string>
     <string name="help_exact_alarm">Tam zamanlı alarmlara izin ver</string>
-    <string name="help_explanation_2">2. Birdays için güç tasarrufu modunu kapatın (Ayarlar > Birdays > Pil).</string>
+    <string name="help_explanation_2">2. Birdays için pil tasarrufunu kapatın (Ayarlar &gt; Birdays &gt; Pil).</string>
     <string name="help_settings">Ayarları aç</string>
-    <string name="help_explanation_3">3. Arka planda çalışmayı engelleyen görev yöneticileri, bellek temizleme veya güç tasarrufu uygulamaları (“Battery Saver”, “Clean Master” ve benzeri uygulamalar gibi) yüklüyse Birdays uygulamasını istisnalara ekleyin.</string>
-    <string name="help_email_description">Herhangi bir sorunuz veya öneriniz varsa lütfen birdaysapp@gmail.com adresinden benimle iletişime geçin</string>
+    <string name="help_explanation_3">3. Arka plan etkinliğini engelleyen görev yöneticileri, bellek temizleyiciler veya pil tasarruf uygulamaları (“Battery Saver”, “Clean Master” vb.) kullanıyorsanız Birdays\'i istisnalara ekleyin.</string>
+    <string name="help_email_description">Sorularınız veya önerileriniz varsa birdaysapp@gmail.com adresine yazabilirsiniz</string>
     <string name="send_email">E-posta gönder</string>
 
     <!-- Famous persons -->

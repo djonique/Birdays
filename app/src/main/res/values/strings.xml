@@ -8,24 +8,24 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">Birdays</string>
-    <string name="build_version">Build version</string>
+    <string name="build_version">Version</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">Loading contacts…</string>
-    <string name="contacts_uploaded">Contacts uploaded</string>
-    <string name="loading_contacts_error">Unable to import contacts, nonstandard date format</string>
-    <string name="permission_required">Permission is required for importing contacts</string>
+    <string name="contacts_uploaded">Contacts imported</string>
+    <string name="loading_contacts_error">Couldn\'t import contacts due to an unsupported date format</string>
+    <string name="permission_required">Contacts permission is required to import birthdays</string>
     <string name="snackbar_allow_text">Allow</string>
     <string name="all">All</string>
     <string name="famous">Famous</string>
-    <string name="age">Current age:\u0020</string>
-    <string name="happy_birthday">Happy Birthday!</string>
+    <string name="age">Age:\u0020</string>
+    <string name="happy_birthday">Happy birthday!</string>
     <string name="google_search" translatable="false">https://www.google.com/search?q=</string>
-    <string name="web_search_error">Unable to perform action, please install web browser</string>
-    <string name="delete_record_confirm">Are you sure you want to delete %1$s?</string>
-    <string name="record_deleted">Record deleted</string>
+    <string name="web_search_error">Couldn\'t open search. Please install a web browser.</string>
+    <string name="delete_record_confirm">Delete %1$s?</string>
+    <string name="record_deleted">Deleted</string>
     <string name="undo">Undo</string>
-    <string name="add_record">Add record</string>
+    <string name="add_record">Add birthday</string>
 
     <string-array name="months">
         <item>January</item>
@@ -47,16 +47,16 @@
     <string name="action_delete">Delete</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">New record</string>
+    <string name="new_record">New birthday</string>
     <string name="add_from_contacts">Add from contacts</string>
-    <string name="activity_not_found_error">Unable to perform action due to device features</string>
+    <string name="activity_not_found_error">Couldn\'t complete this action on your device</string>
     <string name="name">Name</string>
-    <string name="error_hint">Please enter a name</string>
+    <string name="error_hint">Enter a name</string>
     <string name="phone_number">Phone number</string>
     <string name="email" translatable="false">Email</string>
-    <string name="pick_date">Pick date</string>
-    <string name="wrong_date">Wrong date</string>
-    <string name="year_unknown">I don\'t know the year</string>
+    <string name="pick_date">Select date</string>
+    <string name="wrong_date">Invalid date</string>
+    <string name="year_unknown">Year unknown</string>
     <string name="ok_button" translatable="false">OK</string>
     <string name="cancel_button">Cancel</string>
 
@@ -66,19 +66,19 @@
     <string name="today">Today</string>
     <string name="days_since_birth">Days since birth</string>
     <string name="zodiac_sign">Zodiac sign</string>
-    <string name="season_picture">Season picture</string>
+    <string name="season_picture">Seasonal theme</string>
     <string name="calendar">Calendar</string>
     <string name="call">Call</string>
-    <string name="chat">Chat</string>
+    <string name="chat">Message</string>
     <string name="born_on_this_day">Born on this day</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Editing</string>
-    <string name="record_edited">Record edited</string>
-    <string name="edit_record">Edit record</string>
+    <string name="record_edited">Saved</string>
+    <string name="edit_record">Edit birthday</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Samsung devices limit the number of notifications to 500</string>
+    <string name="security_exception">SecurityException: Samsung devices limit notifications to 500</string>
     <string name="channel_name">Birthdays</string>
 
     <!-- Zodiac signs -->
@@ -117,20 +117,20 @@
     <string name="privacy_policy_key" translatable="false">privacy_policy_key</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Disable battery optimization for the app</string>
-    <string name="optimization_description">To ensure the app works correctly, open Settings and allow the app to run in the background without restrictions</string>
+    <string name="optimization_enabled">Disable battery optimization</string>
+    <string name="optimization_description">To keep reminders reliable, open Settings and allow Birdays to run unrestricted in the background</string>
     <string name="do_not_show_again">Don\'t show again</string>
     <string name="disable_button">Disable</string>
 
     <!-- Notifications -->
     <string name="notifications">Notifications</string>
-    <string name="allow_notification">Allow the app to send notifications about upcoming birthdays</string>
+    <string name="allow_notification">Get notified about upcoming birthdays</string>
     <string name="notifications_time">Notification time</string>
     <string name="default_time_preference" translatable="false">10:00</string>
-    <string name="additional_notification">Additional notification</string>
+    <string name="additional_notification">Early reminder</string>
 
     <string-array name="additional_notification_entries">
-        <item>Never</item>
+        <item>None</item>
         <item>1 day before</item>
         <item>2 days before</item>
         <item>3 days before</item>
@@ -152,20 +152,20 @@
         <item>Tomorrow</item>
         <item>In 2 days</item>
         <item>In 3 days</item>
-        <item>In a week</item>
+        <item>In 1 week</item>
         <item>In 2 weeks</item>
     </string-array>
 
-    <string name="notification_tone">Notification tone</string>
-    <string name="ringtone_summary">Choose a notification sound. By default, the tone from the device settings is used</string>
-    <string name="silent">None</string>
+    <string name="notification_tone">Notification sound</string>
+    <string name="ringtone_summary">Choose a sound or use your device default</string>
+    <string name="silent">Silent</string>
     <string name="help">Help</string>
-    <string name="tap_here">Tap here if you\'re not receiving notifications</string>
+    <string name="tap_here">Tap here if you aren\'t getting notifications</string>
 
     <!-- General -->
     <string name="general">General</string>
-    <string name="night_mode">Night mode</string>
-    <string name="start_page">Start page</string>
+    <string name="night_mode">Dark theme</string>
+    <string name="start_page">Default tab</string>
 
     <string-array name="start_page_entries">
         <item>Current month</item>
@@ -179,11 +179,11 @@
         <item>2</item>
     </string-array>
 
-    <string name="displayed_age">Displayed age</string>
+    <string name="displayed_age">Age display</string>
 
     <string-array name="displayed_age_entries">
-        <item>Current</item>
-        <item>Future</item>
+        <item>Current age</item>
+        <item>Turning age</item>
     </string-array>
 
     <string-array name="displayed_age_entry_values" translatable="false">
@@ -191,77 +191,77 @@
         <item>1</item>
     </string-array>
 
-    <string name="displayed_age_changes">You must restart the app for these changes to take effect</string>
+    <string name="displayed_age_changes">Restart the app to apply this change</string>
     <string name="restart_now">Restart now</string>
     <string name="later">Later</string>
-    <string name="rate_app">Rate app</string>
-    <string name="share_app">Share app</string>
-    <string name="share_text">"Do you often forget to congratulate your family, friends, or colleagues on their birthday? Birdays will remind you of an important date!  "</string>
+    <string name="rate_app">Rate Birdays</string>
+    <string name="share_app">Share Birdays</string>
+    <string name="share_text">Never miss a friend\'s or family member\'s birthday again. Birdays reminds you ahead of time so you\'re always ready.\n</string>
     <string name="play_market_app_link" translatable="false">https://play.google.com/store/apps/details?id=com.djonique.birdays</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Synchronization and backup</string>
-    <string name="contacts_import_title">Import contacts</string>
-    <string name="contacts_import_summary">Tap here to import contacts from your device (supports ISO 8601)</string>
-    <string name="google_drive_backup">Google Drive Backup</string>
-    <string name="google_drive_backup_summary">Upload database backup to Google Drive</string>
+    <string name="sync_and_backup">Backup &amp; sync</string>
+    <string name="contacts_import_title">Import from contacts</string>
+    <string name="contacts_import_summary">Import birthdays from device contacts (ISO 8601)</string>
+    <string name="google_drive_backup">Back up to Google Drive</string>
+    <string name="google_drive_backup_summary">Save your birthday list to Google Drive</string>
     <string name="google_drive_backup_progress">Backing up to Google Drive…</string>
     <string name="backup_complete">Backup complete</string>
-    <string name="google_drive_restore">Google Drive Restore</string>
-    <string name="google_drive_restore_summary">Restore database from Google Drive</string>
+    <string name="google_drive_restore">Restore from Google Drive</string>
+    <string name="google_drive_restore_summary">Restore your birthday list from a Google Drive backup</string>
     <string name="google_drive_restore_progress">Restoring from Google Drive…</string>
-    <string name="recover_records_error">Failed to recover records</string>
-    <string name="records_recovered">Records recovered</string>
-    <string name="restore_confirm_title">Restore from backup</string>
-    <string name="restore_confirm_message">Are you sure you want to restore records from %1$s? Record count: %2$s.</string>
+    <string name="recover_records_error">Couldn\'t restore birthdays</string>
+    <string name="records_recovered">Birthdays restored</string>
+    <string name="restore_confirm_title">Restore backup?</string>
+    <string name="restore_confirm_message">Restore birthdays from %1$s (%2$s entries)?</string>
     <string name="restore_button">Restore</string>
     <string name="restore_unknown">unknown</string>
-    <string name="upload_error">Upload error: %s</string>
-    <string name="backup_error">Backup error: %s</string>
-    <string name="auth_error">Auth error: %s</string>
-    <string name="authorization_failed_error">Authorization failed: %s</string>
-    <string name="download_error">Download error: %s</string>
-    <string name="file_not_found">File not found</string>
-    <string name="search_error">Search error: %s</string>
+    <string name="upload_error">Upload failed: %s</string>
+    <string name="backup_error">Backup failed: %s</string>
+    <string name="auth_error">Sign-in error: %s</string>
+    <string name="authorization_failed_error">Sign-in failed: %s</string>
+    <string name="download_error">Download failed: %s</string>
+    <string name="file_not_found">Backup file not found</string>
+    <string name="search_error">Search failed: %s</string>
 
     <!-- Advertising -->
-    <string name="advertising">Advertising</string>
-    <string name="about_ad_title">Why do I see ads?</string>
-    <string name="about_ad_summary">All advertising revenue goes toward the development of the project</string>
+    <string name="advertising">Ads</string>
+    <string name="about_ad_title">Why am I seeing ads?</string>
+    <string name="about_ad_summary">All ad revenue goes toward developing the app</string>
     <string name="show_ads">Show ads</string>
-    <string name="show_ads_summary">You can disable ads by watching a short video ad</string>
+    <string name="show_ads_summary">Watch a short video to disable ads</string>
+    <string name="ad_watch_full_video_to_disable">Watch the full video to disable ads</string>
+    <string name="ad_disabled_success">Ads disabled</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Support the project</string>
-    <string name="watch_video_title">Watch a video ad</string>
-    <string name="ad_rewarded_summary">Watch a short video — the revenue goes toward developing the app</string>
-    <string name="ad_rewarded_unavailable">Video is not available right now, please try again later</string>
-    <string name="ad_disabled_success">Ads are now disabled</string>
-    <string name="ad_watch_full_video_to_disable">Watch the video to the end to disable ads</string>
-    <string name="donate_title">Make a contribution</string>
-    <string name="donate_summary">Financial support for the app\'s development</string>
+    <string name="support_project_category">Support the app</string>
+    <string name="donate_title">Tip the developer</string>
+    <string name="donate_summary">Leave a one-time tip to support future updates</string>
     <string name="donate_url" translatable="false">https://djonique.github.io/Birdays/donate.html</string>
+    <string name="watch_video_title">Watch a video ad</string>
+    <string name="ad_rewarded_summary">Support the app for free by watching a short ad</string>
+    <string name="ad_rewarded_unavailable">Video is not available right now, please try again later</string>
 
     <!-- About -->
     <string name="about">About</string>
     <string name="licenses">Licenses</string>
     <string name="software_licenses">Open-source licenses</string>
     <string name="third_party_sdks">Third-party SDKs</string>
-    <string name="menu_github">Source code</string>
+    <string name="menu_github">View source on GitHub</string>
     <string name="github_url" translatable="false">https://github.com/djonique/Birdays</string>
-    <string name="privacy_policy">Privacy policy</string>
+    <string name="privacy_policy">Privacy Policy</string>
     <string name="privacy_policy_link" translatable="false">https://djonique.github.io/Birdays</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Why isn\'t the reminder working?</string>
-    <string name="help_description">Android devices have a power-saving mode that blocks the app from running in the background or prevents it from starting automatically. To make notifications work correctly, follow these simple steps:</string>
-    <string name="help_explanation_1">1. Make sure notifications are allowed for the Birdays app (Settings > Birdays > Notifications).</string>
-    <string name="help_delay_text">Please note that notifications may be delayed on some devices.</string>
+    <string name="help_header">Reminders not working?</string>
+    <string name="help_description">Android power-saving features can stop the app from running in the background or starting at boot. Try these steps to fix notifications:</string>
+    <string name="help_explanation_1">1. Make sure notifications are enabled for Birdays (Settings &gt; Birdays &gt; Notifications).</string>
+    <string name="help_delay_text">Notifications may be delayed on some devices.</string>
     <string name="help_exact_alarm">Allow exact alarms</string>
-    <string name="help_explanation_2">2. Turn off power-saving mode for Birdays (Settings > Birdays > Battery).</string>
+    <string name="help_explanation_2">2. Disable battery restrictions for Birdays (Settings &gt; Birdays &gt; Battery).</string>
     <string name="help_settings">Open settings</string>
-    <string name="help_explanation_3">3. If you have task managers, memory-cleaning or power-saving apps installed (such as “Battery Saver”, “Clean Master” and similar apps) that block background operation, add Birdays to the exceptions.</string>
-    <string name="help_email_description">If you have any questions or suggestions, please contact me at birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. If you use task killers, cleaner apps, or battery optimizers (like Battery Saver or Clean Master) that block background activity, add Birdays to the allowlist or exceptions.</string>
+    <string name="help_email_description">Questions or feedback? Reach out at birdaysapp@gmail.com</string>
     <string name="send_email">Send email</string>
     <string name="birdays_email" translatable="false">birdaysapp@gmail.com</string>
 

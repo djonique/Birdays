@@ -7,23 +7,23 @@
 -->
 
 <resources>
-    <string name="build_version">Build-versie</string>
+    <string name="build_version">Buildversie</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">Contacten aan het laden…</string>
-    <string name="contacts_uploaded">Contacten geüpload</string>
-    <string name="loading_contacts_error">Contacten kunnen niet worden geïmporteerd: niet-standaard datumnotatie</string>
-    <string name="permission_required">Toestemming om contactpersonen te importeren is vereist</string>
+    <string name="loading_contacts">Contacten laden…</string>
+    <string name="contacts_uploaded">Contacten geladen</string>
+    <string name="loading_contacts_error">Kan contacten niet importeren: ongeldig datumformaat</string>
+    <string name="permission_required">Toestemming nodig om contacten te importeren</string>
     <string name="snackbar_allow_text">Toestaan</string>
-    <string name="all">Alle</string>
-    <string name="famous">Beroemd</string>
+    <string name="all">Alles</string>
+    <string name="famous">Bekend</string>
     <string name="age">Huidige leeftijd:\u0020</string>
-    <string name="happy_birthday">Gefeliciteerd met uw verjaardag!</string>
-    <string name="web_search_error">Kan de actie niet uitvoeren, installeer de webbrowser</string>
-    <string name="delete_record_confirm">Weet u zeker dat u %1$s wilt verwijderen?</string>
-    <string name="record_deleted">Record is verwijderd</string>
+    <string name="happy_birthday">Gefeliciteerd!</string>
+    <string name="web_search_error">Kan zoeken niet openen — installeer een webbrowser</string>
+    <string name="delete_record_confirm">%1$s verwijderen?</string>
+    <string name="record_deleted">Vermelding verwijderd</string>
     <string name="undo">Ongedaan maken</string>
-    <string name="add_record">Record toevoegen</string>
+    <string name="add_record">Vermelding toevoegen</string>
 
     <string-array name="months">
         <item>Januari</item>
@@ -45,15 +45,15 @@
     <string name="action_delete">Verwijderen</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">Nieuw record</string>
-    <string name="add_from_contacts">Toevoegen uit contacten</string>
-    <string name="activity_not_found_error">Deze actie kan niet worden uitgevoerd vanwege apparaatfuncties</string>
+    <string name="new_record">Nieuwe vermelding</string>
+    <string name="add_from_contacts">Kiezen uit contacten</string>
+    <string name="activity_not_found_error">Deze actie wordt op dit apparaat niet ondersteund</string>
     <string name="name">Naam</string>
-    <string name="error_hint">Voer een naam in</string>
+    <string name="error_hint">Vul een naam in</string>
     <string name="phone_number">Telefoonnummer</string>
-    <string name="pick_date">Selecteer datum</string>
-    <string name="wrong_date">Verkeerde datum</string>
-    <string name="year_unknown">Ik weet het jaar niet</string>
+    <string name="pick_date">Kies een datum</string>
+    <string name="wrong_date">Ongeldige datum</string>
+    <string name="year_unknown">Jaar onbekend</string>
     <string name="cancel_button">Annuleren</string>
 
     <!-- DetailActivity -->
@@ -63,15 +63,15 @@
     <string name="days_since_birth">Dagen sinds geboorte</string>
     <string name="zodiac_sign">Sterrenbeeld</string>
     <string name="season_picture">Seizoensafbeelding</string>
-    <string name="calendar">Kalender</string>
+    <string name="calendar">Agenda</string>
     <string name="call">Bellen</string>
-    <string name="chat">Chat</string>
-    <string name="born_on_this_day">Op deze dag geboren</string>
+    <string name="chat">Bericht</string>
+    <string name="born_on_this_day">Geboren op deze dag</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Bewerken</string>
-    <string name="record_edited">Record bewerkt</string>
-    <string name="edit_record">Record bewerken</string>
+    <string name="record_edited">Vermelding bijgewerkt</string>
+    <string name="edit_record">Vermelding bewerken</string>
 
     <!-- Alarm -->
     <string name="security_exception">SecurityException: Samsung-apparaten beperken het aantal meldingen tot 500</string>
@@ -92,85 +92,85 @@
     <string name="pisces">Vissen</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Schakel batterijoptimalisatie voor de app uit</string>
-    <string name="optimization_description">Om te zorgen dat de app correct werkt, opent u Instellingen en staat u toe dat de app op de achtergrond zonder beperkingen wordt uitgevoerd</string>
-    <string name="do_not_show_again">Niet meer tonen</string>
-    <string name="disable_button">Uitschakelen</string>
+    <string name="optimization_enabled">Batterij-optimalisatie voor Birdays uitzetten</string>
+    <string name="optimization_description">Open Instellingen en sta onbeperkte achtergrondactiviteit toe zodat meldingen betrouwbaar werken</string>
+    <string name="do_not_show_again">Niet meer weergeven</string>
+    <string name="disable_button">Uitzetten</string>
 
     <!-- Notifications -->
     <string name="notifications">Meldingen</string>
-    <string name="allow_notification">Sta de app toe meldingen over aankomende verjaardagen te sturen</string>
+    <string name="allow_notification">Meldingen sturen over aankomende verjaardagen</string>
     <string name="notifications_time">Meldingstijd</string>
-    <string name="additional_notification">Extra melding</string>
+    <string name="additional_notification">Extra herinnering</string>
 
     <string-array name="additional_notification_entries">
         <item>Nooit</item>
-        <item>1 dag ervoor</item>
-        <item>2 dagen ervoor</item>
-        <item>3 dagen ervoor</item>
-        <item>1 week ervoor</item>
-        <item>2 weken ervoor</item>
+        <item>1 dag van tevoren</item>
+        <item>2 dagen van tevoren</item>
+        <item>3 dagen van tevoren</item>
+        <item>1 week van tevoren</item>
+        <item>2 weken van tevoren</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
         <item>Vandaag</item>
         <item>Morgen</item>
-        <item>In 2 dagen</item>
-        <item>In 3 dagen</item>
-        <item>In een week</item>
-        <item>In 2 weken</item>
+        <item>Over 2 dagen</item>
+        <item>Over 3 dagen</item>
+        <item>Over 1 week</item>
+        <item>Over 2 weken</item>
     </string-array>
 
     <string name="notification_tone">Meldingstoon</string>
-    <string name="ringtone_summary">Kies een toon voor meldingen. Standaard wordt de apparaattoon gebruikt</string>
-    <string name="silent">Geen</string>
+    <string name="ringtone_summary">Kies een meldingstoon (standaard: apparaatgeluid)</string>
+    <string name="silent">Stil</string>
     <string name="help">Hulp</string>
-    <string name="tap_here">Tik hier als u geen meldingen ontvangt</string>
+    <string name="tap_here">Tik hier als je geen meldingen krijgt</string>
 
     <!-- General -->
     <string name="general">Algemeen</string>
-    <string name="night_mode">Nachtmodus</string>
-    <string name="start_page">Startpagina</string>
+    <string name="night_mode">Donker thema</string>
+    <string name="start_page">Startscherm</string>
 
     <string-array name="start_page_entries">
         <item>Deze maand</item>
-        <item>Alle</item>
-        <item>Beroemd</item>
+        <item>Alles</item>
+        <item>Bekend</item>
     </string-array>
 
-    <string name="displayed_age">Getoonde leeftijd</string>
+    <string name="displayed_age">Weergegeven leeftijd</string>
 
     <string-array name="displayed_age_entries">
         <item>Huidige</item>
-        <item>Toekomst</item>
+        <item>Volgende</item>
     </string-array>
 
-    <string name="displayed_age_changes">U moet de app opnieuw starten om deze wijzigingen door te voeren</string>
-    <string name="restart_now">Nu opnieuw opstarten</string>
+    <string name="displayed_age_changes">Start de app opnieuw op om de wijzigingen toe te passen</string>
+    <string name="restart_now">Opnieuw opstarten</string>
     <string name="later">Later</string>
     <string name="rate_app">App beoordelen</string>
     <string name="share_app">App delen</string>
-    <string name="share_text">"Vergeet u vaak uw familie, vrienden of collega\'s te feliciteren met hun verjaardag? Birdays herinnert u aan een belangrijke datum!  "</string>
+    <string name="share_text">Vergeet je vaak familie, vrienden of collega\'s te feliciteren met hun verjaardag? Birdays herinnert je op tijd aan belangrijke data!\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Synchronisatie en back-up</string>
     <string name="contacts_import_title">Contacten importeren</string>
-    <string name="contacts_import_summary">Tik hier om contacten van uw apparaat te importeren (ondersteunt ISO 8601)</string>
-    <string name="google_drive_backup">Google Drive-back-up</string>
-    <string name="google_drive_backup_summary">Upload een databaseback-up naar Google Drive</string>
-    <string name="google_drive_backup_progress">Bezig met back-up naar Google Drive…</string>
+    <string name="contacts_import_summary">Contacten van je apparaat importeren (ondersteunt ISO 8601)</string>
+    <string name="google_drive_backup">Back-up naar Google Drive</string>
+    <string name="google_drive_backup_summary">Upload een back-up van de database naar Google Drive</string>
+    <string name="google_drive_backup_progress">Back-up maken naar Google Drive…</string>
     <string name="backup_complete">Back-up voltooid</string>
-    <string name="google_drive_restore">Google Drive-herstel</string>
-    <string name="google_drive_restore_summary">Herstel de database vanaf Google Drive</string>
-    <string name="google_drive_restore_progress">Bezig met herstellen vanaf Google Drive…</string>
-    <string name="recover_records_error">Herstellen van records mislukt</string>
-    <string name="records_recovered">Records hersteld</string>
-    <string name="restore_confirm_title">Herstellen van reservekopie</string>
-    <string name="restore_confirm_message">Weet je zeker dat je records wilt herstellen van %1$s? Aantal records: %2$s.</string>
-    <string name="restore_button">Herstellen</string>
+    <string name="google_drive_restore">Terugzetten vanaf Google Drive</string>
+    <string name="google_drive_restore_summary">Zet de database terug vanaf Google Drive</string>
+    <string name="google_drive_restore_progress">Terugzetten vanaf Google Drive…</string>
+    <string name="recover_records_error">Kan vermeldingen niet terugzetten</string>
+    <string name="records_recovered">Vermeldingen teruggezet</string>
+    <string name="restore_confirm_title">Back-up terugzetten</string>
+    <string name="restore_confirm_message">Vermeldingen terugzetten vanaf %1$s? Vermeldingen: %2$s.</string>
+    <string name="restore_button">Terugzetten</string>
     <string name="restore_unknown">onbekend</string>
     <string name="upload_error">Uploadfout: %s</string>
-    <string name="backup_error">Reservekopiefout: %s</string>
+    <string name="backup_error">Back-upfout: %s</string>
     <string name="auth_error">Authenticatiefout: %s</string>
     <string name="authorization_failed_error">Autorisatie mislukt: %s</string>
     <string name="download_error">Downloadfout: %s</string>
@@ -178,41 +178,41 @@
     <string name="search_error">Zoekfout: %s</string>
 
     <!-- Advertising -->
-    <string name="advertising">Reclame</string>
+    <string name="advertising">Advertenties</string>
     <string name="about_ad_title">Waarom zie ik advertenties?</string>
-    <string name="about_ad_summary">Alle advertentie-inkomsten gaan naar de ontwikkeling van het project</string>
+    <string name="about_ad_summary">Alle advertentie-inkomsten gaan naar de ontwikkeling van de app</string>
     <string name="show_ads">Advertenties tonen</string>
-    <string name="show_ads_summary">U kunt advertenties uitschakelen door een korte videoadvertentie te bekijken</string>
+    <string name="show_ads_summary">Bekijk een korte video om advertenties uit te zetten</string>
+    <string name="ad_watch_full_video_to_disable">Bekijk de hele video om advertenties uit te zetten</string>
+    <string name="ad_disabled_success">Advertenties uitgezet</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Steun het project</string>
-    <string name="watch_video_title">Bekijk een videoadvertentie</string>
-    <string name="ad_rewarded_summary">Bekijk een korte video — de opbrengst gaat naar de ontwikkeling van de app</string>
-    <string name="ad_rewarded_unavailable">Video is momenteel niet beschikbaar. Probeer het later opnieuw</string>
-    <string name="ad_disabled_success">Advertenties zijn nu uitgeschakeld</string>
-    <string name="ad_watch_full_video_to_disable">Bekijk de video tot het einde om advertenties uit te schakelen</string>
-    <string name="donate_title">Draag bij</string>
-    <string name="donate_summary">Financiële steun voor de ontwikkeling van de app</string>
+    <string name="support_project_category">Steun de app</string>
+    <string name="donate_title">Steun de maker</string>
+    <string name="donate_summary">Doe een eenmalige bijdrage voor toekomstige updates</string>
+    <string name="watch_video_title">Video-advertentie bekijken</string>
+    <string name="ad_rewarded_summary">Steun de app gratis door een korte advertentie te bekijken</string>
+    <string name="ad_rewarded_unavailable">Video is nu niet beschikbaar — probeer het later opnieuw</string>
 
     <!-- About -->
-    <string name="about">Over de app</string>
+    <string name="about">Over</string>
     <string name="licenses">Licenties</string>
-    <string name="software_licenses">Open-source licenties</string>
+    <string name="software_licenses">Open-sourcelicenties</string>
     <string name="third_party_sdks">SDK\'s van derden</string>
     <string name="menu_github">Broncode</string>
     <string name="privacy_policy">Privacybeleid</string>
 
     <!-- HelpActivity -->
     <string name="help_header">Waarom werkt de herinnering niet?</string>
-    <string name="help_description">Android-apparaten hebben een batterijbesparingsmodus die voorkomt dat de app op de achtergrond wordt uitgevoerd of automatisch start. Volg deze eenvoudige stappen om meldingen goed te laten werken:</string>
-    <string name="help_explanation_1">1. Zorg ervoor dat meldingen zijn toegestaan voor de Birdays-app (Instellingen > Birdays > Meldingen).</string>
-    <string name="help_delay_text">Houd er rekening mee dat meldingen op sommige apparaten vertraagd kunnen zijn.</string>
+    <string name="help_description">Sommige Android-apparaten beperken achtergrondactiviteit of automatisch opstarten om batterij te besparen. Volg deze stappen zodat meldingen goed werken:</string>
+    <string name="help_explanation_1">1. Controleer of meldingen aan staan voor Birdays (Instellingen &gt; Birdays &gt; Meldingen).</string>
+    <string name="help_delay_text">Op sommige apparaten kunnen meldingen vertraagd zijn.</string>
     <string name="help_exact_alarm">Exacte wekkers toestaan</string>
-    <string name="help_explanation_2">2. Schakel de batterijbesparingsmodus uit voor Birdays (Instellingen > Birdays > Batterij).</string>
+    <string name="help_explanation_2">2. Zet batterijbesparing uit voor Birdays (Instellingen &gt; Birdays &gt; Batterij).</string>
     <string name="help_settings">Instellingen openen</string>
-    <string name="help_explanation_3">3. Als je taakbeheerders of apps voor geheugenopschoning en batterijbesparing hebt geïnstalleerd (zoals “Battery Saver”, “Clean Master” en vergelijkbare apps) die achtergrondactiviteit blokkeren, voeg dan Birdays toe aan de uitzonderingen.</string>
-    <string name="help_email_description">Als je vragen of suggesties hebt, neem dan contact met mij op via birdaysapp@gmail.com</string>
-    <string name="send_email">E-mail verzenden</string>
+    <string name="help_explanation_3">3. Gebruik je taakbeheerders, geheugenopruimers of batterijbespaarders (zoals “Battery Saver” of “Clean Master”) die achtergrondactiviteit blokkeren, zet Birdays dan op de uitzonderingenlijst.</string>
+    <string name="help_email_description">Vragen of suggesties? Stuur een mail naar birdaysapp@gmail.com</string>
+    <string name="send_email">E-mail sturen</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

@@ -7,20 +7,20 @@
 -->
 
 <resources>
-    <string name="build_version">Phiên bản bản dựng</string>
+    <string name="build_version">Bản dựng</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">Đang tải danh bạ…</string>
-    <string name="contacts_uploaded">Đã tải danh bạ lên</string>
-    <string name="loading_contacts_error">Không thể nhập danh bạ, định dạng ngày không chuẩn</string>
-    <string name="permission_required">Cần có quyền để nhập danh bạ</string>
+    <string name="contacts_uploaded">Đã tải danh bạ</string>
+    <string name="loading_contacts_error">Không thể nhập danh bạ: định dạng ngày không hợp lệ</string>
+    <string name="permission_required">Cần cấp quyền để nhập danh bạ</string>
     <string name="snackbar_allow_text">Cho phép</string>
     <string name="all">Tất cả</string>
     <string name="famous">Nổi tiếng</string>
     <string name="age">Tuổi hiện tại:\u0020</string>
     <string name="happy_birthday">Chúc mừng sinh nhật!</string>
-    <string name="web_search_error">Không thể thực hiện thao tác, vui lòng cài đặt trình duyệt web</string>
-    <string name="delete_record_confirm">Bạn có chắc chắn muốn xóa %1$s không?</string>
+    <string name="web_search_error">Không thể mở tìm kiếm — hãy cài trình duyệt</string>
+    <string name="delete_record_confirm">Xóa %1$s?</string>
     <string name="record_deleted">Đã xóa bản ghi</string>
     <string name="undo">Hoàn tác</string>
     <string name="add_record">Thêm bản ghi</string>
@@ -46,35 +46,35 @@
 
     <!-- NewPersonActivity -->
     <string name="new_record">Bản ghi mới</string>
-    <string name="add_from_contacts">Thêm từ danh bạ</string>
-    <string name="activity_not_found_error">Không thể thực hiện thao tác do tính năng của thiết bị</string>
+    <string name="add_from_contacts">Chọn từ danh bạ</string>
+    <string name="activity_not_found_error">Thiết bị này không hỗ trợ thao tác này</string>
     <string name="name">Tên</string>
-    <string name="error_hint">Vui lòng nhập tên</string>
+    <string name="error_hint">Nhập tên</string>
     <string name="phone_number">Số điện thoại</string>
     <string name="pick_date">Chọn ngày</string>
     <string name="wrong_date">Ngày không hợp lệ</string>
-    <string name="year_unknown">Tôi không biết năm sinh</string>
+    <string name="year_unknown">Không rõ năm sinh</string>
     <string name="cancel_button">Hủy</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Sinh nhật</string>
-    <string name="days_left">Số ngày đến sinh nhật tiếp theo</string>
+    <string name="days_left">Ngày đến sinh nhật tiếp theo</string>
     <string name="today">Hôm nay</string>
-    <string name="days_since_birth">Số ngày kể từ khi sinh</string>
+    <string name="days_since_birth">Ngày kể từ lúc sinh</string>
     <string name="zodiac_sign">Cung hoàng đạo</string>
     <string name="season_picture">Ảnh theo mùa</string>
     <string name="calendar">Lịch</string>
     <string name="call">Gọi</string>
-    <string name="chat">Trò chuyện</string>
+    <string name="chat">Nhắn tin</string>
     <string name="born_on_this_day">Sinh vào ngày này</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">Đang chỉnh sửa</string>
-    <string name="record_edited">Đã chỉnh sửa bản ghi</string>
-    <string name="edit_record">Chỉnh sửa bản ghi</string>
+    <string name="editing_label">Đang sửa</string>
+    <string name="record_edited">Đã cập nhật bản ghi</string>
+    <string name="edit_record">Sửa bản ghi</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Thiết bị Samsung giới hạn số lượng thông báo ở mức 500</string>
+    <string name="security_exception">SecurityException: thiết bị Samsung giới hạn số thông báo ở mức 500</string>
     <string name="channel_name">Sinh nhật</string>
 
     <!-- Zodiac signs -->
@@ -92,24 +92,24 @@
     <string name="pisces">Song Ngư</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Tắt tối ưu hóa pin cho ứng dụng</string>
-    <string name="optimization_description">Để đảm bảo ứng dụng hoạt động chính xác, hãy mở Cài đặt và cho phép ứng dụng chạy nền không bị hạn chế</string>
-    <string name="do_not_show_again">Không hiển thị lại</string>
+    <string name="optimization_enabled">Tắt tối ưu pin cho Birdays</string>
+    <string name="optimization_description">Mở Cài đặt và cho phép chạy nền không giới hạn để thông báo hoạt động ổn định</string>
+    <string name="do_not_show_again">Không hiện lại</string>
     <string name="disable_button">Tắt</string>
 
     <!-- Notifications -->
     <string name="notifications">Thông báo</string>
-    <string name="allow_notification">Cho phép ứng dụng gửi thông báo về các sinh nhật sắp tới</string>
-    <string name="notifications_time">Thời gian thông báo</string>
-    <string name="additional_notification">Thông báo bổ sung</string>
+    <string name="allow_notification">Gửi thông báo về sinh nhật sắp tới</string>
+    <string name="notifications_time">Giờ thông báo</string>
+    <string name="additional_notification">Nhắc thêm</string>
 
     <string-array name="additional_notification_entries">
         <item>Không bao giờ</item>
-        <item>1 ngày trước</item>
-        <item>2 ngày trước</item>
-        <item>3 ngày trước</item>
-        <item>1 tuần trước</item>
-        <item>2 tuần trước</item>
+        <item>Trước 1 ngày</item>
+        <item>Trước 2 ngày</item>
+        <item>Trước 3 ngày</item>
+        <item>Trước 1 tuần</item>
+        <item>Trước 2 tuần</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
@@ -117,23 +117,23 @@
         <item>Ngày mai</item>
         <item>Sau 2 ngày</item>
         <item>Sau 3 ngày</item>
-        <item>Sau một tuần</item>
+        <item>Sau 1 tuần</item>
         <item>Sau 2 tuần</item>
     </string-array>
 
-    <string name="notification_tone">Âm thanh thông báo</string>
-    <string name="ringtone_summary">Chọn âm thanh thông báo. Theo mặc định, âm thanh từ cài đặt thiết bị sẽ được sử dụng</string>
-    <string name="silent">Không có</string>
+    <string name="notification_tone">Âm thông báo</string>
+    <string name="ringtone_summary">Chọn âm thông báo (mặc định: âm của thiết bị)</string>
+    <string name="silent">Tắt tiếng</string>
     <string name="help">Trợ giúp</string>
-    <string name="tap_here">Nhấn vào đây nếu bạn không nhận được thông báo</string>
+    <string name="tap_here">Nhấn vào đây nếu không nhận được thông báo</string>
 
     <!-- General -->
     <string name="general">Chung</string>
-    <string name="night_mode">Chế độ ban đêm</string>
-    <string name="start_page">Trang bắt đầu</string>
+    <string name="night_mode">Chế độ tối</string>
+    <string name="start_page">Màn hình chính</string>
 
     <string-array name="start_page_entries">
-        <item>Tháng hiện tại</item>
+        <item>Tháng này</item>
         <item>Tất cả</item>
         <item>Nổi tiếng</item>
     </string-array>
@@ -142,60 +142,60 @@
 
     <string-array name="displayed_age_entries">
         <item>Hiện tại</item>
-        <item>Tương lai</item>
+        <item>Tiếp theo</item>
     </string-array>
 
-    <string name="displayed_age_changes">Bạn phải khởi động lại ứng dụng để các thay đổi này có hiệu lực</string>
-    <string name="restart_now">Khởi động lại ngay</string>
+    <string name="displayed_age_changes">Khởi động lại ứng dụng để áp dụng thay đổi</string>
+    <string name="restart_now">Khởi động lại</string>
     <string name="later">Để sau</string>
     <string name="rate_app">Đánh giá ứng dụng</string>
     <string name="share_app">Chia sẻ ứng dụng</string>
-    <string name="share_text">"Bạn có thường quên chúc mừng sinh nhật người thân, bạn bè hoặc đồng nghiệp không? Birdays sẽ nhắc bạn về một ngày quan trọng!  "</string>
+    <string name="share_text">Bạn hay quên chúc sinh nhật người thân, bạn bè hay đồng nghiệp? Birdays sẽ nhắc bạn vào những ngày quan trọng!\n</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Đồng bộ hóa và sao lưu</string>
+    <string name="sync_and_backup">Đồng bộ và sao lưu</string>
     <string name="contacts_import_title">Nhập danh bạ</string>
-    <string name="contacts_import_summary">Nhấn vào đây để nhập danh bạ từ thiết bị (hỗ trợ ISO 8601)</string>
-    <string name="google_drive_backup">Sao lưu Google Drive</string>
+    <string name="contacts_import_summary">Nhập danh bạ từ thiết bị (hỗ trợ ISO 8601)</string>
+    <string name="google_drive_backup">Sao lưu lên Google Drive</string>
     <string name="google_drive_backup_summary">Tải bản sao lưu cơ sở dữ liệu lên Google Drive</string>
     <string name="google_drive_backup_progress">Đang sao lưu lên Google Drive…</string>
-    <string name="backup_complete">Sao lưu hoàn tất</string>
+    <string name="backup_complete">Đã sao lưu xong</string>
     <string name="google_drive_restore">Khôi phục từ Google Drive</string>
     <string name="google_drive_restore_summary">Khôi phục cơ sở dữ liệu từ Google Drive</string>
     <string name="google_drive_restore_progress">Đang khôi phục từ Google Drive…</string>
     <string name="recover_records_error">Không thể khôi phục bản ghi</string>
     <string name="records_recovered">Đã khôi phục bản ghi</string>
-    <string name="restore_confirm_title">Khôi phục từ bản sao lưu</string>
-    <string name="restore_confirm_message">Bạn có chắc chắn muốn khôi phục bản ghi từ %1$s không? Số lượng bản ghi: %2$s.</string>
+    <string name="restore_confirm_title">Khôi phục bản sao lưu</string>
+    <string name="restore_confirm_message">Khôi phục bản ghi từ %1$s? Bản ghi: %2$s.</string>
     <string name="restore_button">Khôi phục</string>
-    <string name="restore_unknown">không xác định</string>
+    <string name="restore_unknown">không rõ</string>
     <string name="upload_error">Lỗi tải lên: %s</string>
     <string name="backup_error">Lỗi sao lưu: %s</string>
     <string name="auth_error">Lỗi xác thực: %s</string>
-    <string name="authorization_failed_error">Ủy quyền thất bại: %s</string>
+    <string name="authorization_failed_error">Xác quyền thất bại: %s</string>
     <string name="download_error">Lỗi tải xuống: %s</string>
     <string name="file_not_found">Không tìm thấy tệp</string>
     <string name="search_error">Lỗi tìm kiếm: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Quảng cáo</string>
-    <string name="about_ad_title">Tại sao tôi thấy quảng cáo?</string>
-    <string name="about_ad_summary">Toàn bộ doanh thu quảng cáo được dùng để phát triển dự án</string>
-    <string name="show_ads">Hiển thị quảng cáo</string>
-    <string name="show_ads_summary">Bạn có thể tắt quảng cáo bằng cách xem một đoạn quảng cáo video ngắn</string>
+    <string name="about_ad_title">Vì sao tôi thấy quảng cáo?</string>
+    <string name="about_ad_summary">Toàn bộ doanh thu quảng cáo dành cho việc phát triển ứng dụng</string>
+    <string name="show_ads">Hiện quảng cáo</string>
+    <string name="show_ads_summary">Xem video ngắn để tắt quảng cáo</string>
+    <string name="ad_watch_full_video_to_disable">Xem hết video để tắt quảng cáo</string>
+    <string name="ad_disabled_success">Đã tắt quảng cáo</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Ủng hộ dự án</string>
+    <string name="support_project_category">Ủng hộ ứng dụng</string>
+    <string name="donate_title">Ủng hộ nhà phát triển</string>
+    <string name="donate_summary">Gửi khoản ủng hộ một lần cho các bản cập nhật sắp tới</string>
     <string name="watch_video_title">Xem quảng cáo video</string>
-    <string name="ad_rewarded_summary">Xem một video ngắn — doanh thu sẽ được dùng để phát triển ứng dụng</string>
-    <string name="ad_rewarded_unavailable">Hiện không có video, vui lòng thử lại sau</string>
-    <string name="ad_disabled_success">Đã tắt quảng cáo</string>
-    <string name="ad_watch_full_video_to_disable">Xem hết video để tắt quảng cáo</string>
-    <string name="donate_title">Đóng góp</string>
-    <string name="donate_summary">Hỗ trợ tài chính cho việc phát triển ứng dụng</string>
+    <string name="ad_rewarded_summary">Ủng hộ ứng dụng miễn phí bằng cách xem quảng cáo ngắn</string>
+    <string name="ad_rewarded_unavailable">Hiện chưa có video — hãy thử lại sau</string>
 
     <!-- About -->
-    <string name="about">Giới thiệu ứng dụng</string>
+    <string name="about">Giới thiệu</string>
     <string name="licenses">Giấy phép</string>
     <string name="software_licenses">Giấy phép mã nguồn mở</string>
     <string name="third_party_sdks">SDK bên thứ ba</string>
@@ -203,15 +203,15 @@
     <string name="privacy_policy">Chính sách quyền riêng tư</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Tại sao lời nhắc không hoạt động?</string>
-    <string name="help_description">Các thiết bị Android có chế độ tiết kiệm pin chặn ứng dụng chạy ngầm hoặc ngăn ứng dụng tự động khởi động. Để thông báo hoạt động chính xác, hãy làm theo các bước đơn giản sau:</string>
-    <string name="help_explanation_1">1. Đảm bảo rằng thông báo được cho phép đối với ứng dụng Birdays (Cài đặt > Birdays > Thông báo).</string>
-    <string name="help_delay_text">Xin lưu ý rằng thông báo có thể bị trễ trên một số thiết bị.</string>
+    <string name="help_header">Vì sao lời nhắc không hoạt động?</string>
+    <string name="help_description">Một số thiết bị Android giới hạn chạy ngầm hoặc tự khởi động để tiết kiệm pin. Hãy làm theo các bước sau để thông báo hoạt động đúng:</string>
+    <string name="help_explanation_1">1. Kiểm tra xem thông báo đã được bật cho Birdays chưa (Cài đặt &gt; Birdays &gt; Thông báo).</string>
+    <string name="help_delay_text">Trên một số thiết bị, thông báo có thể đến muộn hơn.</string>
     <string name="help_exact_alarm">Cho phép báo thức chính xác</string>
-    <string name="help_explanation_2">2. Tắt chế độ tiết kiệm pin cho Birdays (Cài đặt > Birdays > Pin).</string>
+    <string name="help_explanation_2">2. Tắt tiết kiệm pin cho Birdays (Cài đặt &gt; Birdays &gt; Pin).</string>
     <string name="help_settings">Mở cài đặt</string>
-    <string name="help_explanation_3">3. Nếu bạn đã cài đặt trình quản lý tác vụ, ứng dụng dọn dẹp bộ nhớ hoặc tiết kiệm pin (như “Battery Saver”, “Clean Master” và các ứng dụng tương tự) chặn hoạt động chạy ngầm, hãy thêm Birdays vào danh sách ngoại lệ.</string>
-    <string name="help_email_description">Nếu bạn có bất kỳ câu hỏi hoặc đề xuất nào, vui lòng liên hệ với tôi qua địa chỉ birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Nếu bạn dùng trình quản lý tác vụ, trình dọn bộ nhớ hoặc ứng dụng tiết kiệm pin (như “Battery Saver”, “Clean Master”) chặn chạy ngầm, hãy thêm Birdays vào danh sách loại trừ.</string>
+    <string name="help_email_description">Có câu hỏi hoặc góp ý? Gửi email tới birdaysapp@gmail.com</string>
     <string name="send_email">Gửi email</string>
 
     <!-- Famous persons -->

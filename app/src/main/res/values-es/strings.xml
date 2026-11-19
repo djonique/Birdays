@@ -12,18 +12,18 @@
     <!-- MainActivity -->
     <string name="loading_contacts">Cargando contactos…</string>
     <string name="contacts_uploaded">Contactos cargados</string>
-    <string name="loading_contacts_error">No se han podido importar los contactos: el formato de fecha no es estándar.</string>
-    <string name="permission_required">Se necesita conceder permiso para importar de Contactos</string>
+    <string name="loading_contacts_error">No se pudieron importar los contactos: formato de fecha no válido</string>
+    <string name="permission_required">Se necesita permiso para importar contactos</string>
     <string name="snackbar_allow_text">Permitir</string>
     <string name="all">Todos</string>
     <string name="famous">Famosos</string>
     <string name="age">Edad actual:\u0020</string>
-    <string name="happy_birthday">¡Feliz Cumpleaños!</string>
-    <string name="web_search_error">Incapaz de realizar la acción, por favor, instale el navegador web</string>
-    <string name="delete_record_confirm">¿Seguro que quieres eliminar a %1$s?</string>
-    <string name="record_deleted">Entrada eliminada</string>
+    <string name="happy_birthday">¡Feliz cumpleaños!</string>
+    <string name="web_search_error">No se puede abrir la búsqueda; instala un navegador web</string>
+    <string name="delete_record_confirm">¿Eliminar a %1$s?</string>
+    <string name="record_deleted">Registro eliminado</string>
     <string name="undo">Deshacer</string>
-    <string name="add_record">Añadir entrada</string>
+    <string name="add_record">Añadir registro</string>
 
     <string-array name="months">
         <item>Enero</item>
@@ -45,36 +45,36 @@
     <string name="action_delete">Eliminar</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">Nueva entrada</string>
-    <string name="add_from_contacts">Añadir desde contactos</string>
-    <string name="activity_not_found_error">Es imposible realizar esta acción en este dispositivo</string>
+    <string name="new_record">Nuevo registro</string>
+    <string name="add_from_contacts">Elegir de Contactos</string>
+    <string name="activity_not_found_error">No se puede realizar esta acción en este dispositivo</string>
     <string name="name">Nombre</string>
-    <string name="error_hint">Por favor, introduce el nombre</string>
-    <string name="phone_number">Número de teléfono</string>
-    <string name="pick_date">Elige una fecha</string>
-    <string name="wrong_date">Fecha inválida</string>
-    <string name="year_unknown">No sé el año</string>
+    <string name="error_hint">Escribe un nombre</string>
+    <string name="phone_number">Teléfono</string>
+    <string name="pick_date">Elegir fecha</string>
+    <string name="wrong_date">Fecha no válida</string>
+    <string name="year_unknown">Año desconocido</string>
     <string name="cancel_button">Cancelar</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Cumpleaños</string>
     <string name="days_left">Días hasta el próximo cumpleaños</string>
     <string name="today">Hoy</string>
-    <string name="days_since_birth">Días desde su nacimiento</string>
-    <string name="zodiac_sign">Signo del Zodiaco</string>
-    <string name="season_picture">Foto de temporada</string>
+    <string name="days_since_birth">Días desde el nacimiento</string>
+    <string name="zodiac_sign">Signo del zodiaco</string>
+    <string name="season_picture">Imagen de temporada</string>
     <string name="calendar">Calendario</string>
     <string name="call">Llamar</string>
-    <string name="chat">Chat</string>
-    <string name="born_on_this_day">Nacidos en este día</string>
+    <string name="chat">Mensaje</string>
+    <string name="born_on_this_day">Nacidos este día</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Editando</string>
-    <string name="record_edited">Entrada editada</string>
-    <string name="edit_record">Editar entrada</string>
+    <string name="record_edited">Registro actualizado</string>
+    <string name="edit_record">Editar registro</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: los dispositivos Samsung limitan el número de notificaciones a 500</string>
+    <string name="security_exception">SecurityException: los dispositivos Samsung limitan las notificaciones a 500</string>
     <string name="channel_name">Cumpleaños</string>
 
     <!-- Zodiac signs -->
@@ -92,16 +92,16 @@
     <string name="pisces">Piscis</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Desactivar la optimización de batería para la app</string>
-    <string name="optimization_description">Para asegurarte de que la app funciona correctamente, abre Ajustes y permite que la app se ejecute en segundo plano sin restricciones</string>
+    <string name="optimization_enabled">Desactiva la optimización de batería para Birdays</string>
+    <string name="optimization_description">Para que los recordatorios lleguen bien, abre Ajustes y permite que la app funcione en segundo plano sin restricciones</string>
     <string name="do_not_show_again">No volver a mostrar</string>
-    <string name="disable_button">Deshabilitar</string>
+    <string name="disable_button">Desactivar</string>
 
     <!-- Notifications -->
     <string name="notifications">Notificaciones</string>
-    <string name="allow_notification">Permitir que la app te envíe notificaciones de próximos cumpleaños</string>
-    <string name="notifications_time">Tiempo de la notificación</string>
-    <string name="additional_notification">Notificación adicional</string>
+    <string name="allow_notification">Recibir notificaciones de próximos cumpleaños</string>
+    <string name="notifications_time">Hora de notificación</string>
+    <string name="additional_notification">Aviso adicional</string>
 
     <string-array name="additional_notification_entries">
         <item>Nunca</item>
@@ -117,20 +117,20 @@
         <item>Mañana</item>
         <item>En 2 días</item>
         <item>En 3 días</item>
-        <item>En una semana</item>
+        <item>En 1 semana</item>
         <item>En 2 semanas</item>
     </string-array>
 
-    <string name="notification_tone">Tono de la notificación</string>
-    <string name="ringtone_summary">Elige un tono para las notificaciones. Por defecto se usará el tono del dispositivo</string>
-    <string name="silent">Ninguno</string>
+    <string name="notification_tone">Tono de notificación</string>
+    <string name="ringtone_summary">Elige un tono de aviso (por defecto se usa el del dispositivo)</string>
+    <string name="silent">Silencio</string>
     <string name="help">Ayuda</string>
-    <string name="tap_here">Toca aquí si no estás recibiendo notificaciones</string>
+    <string name="tap_here">Toca aquí si no recibes notificaciones</string>
 
     <!-- General -->
     <string name="general">General</string>
-    <string name="night_mode">Modo nocturno</string>
-    <string name="start_page">Página de inicio</string>
+    <string name="night_mode">Tema oscuro</string>
+    <string name="start_page">Pantalla de inicio</string>
 
     <string-array name="start_page_entries">
         <item>Mes actual</item>
@@ -142,60 +142,60 @@
 
     <string-array name="displayed_age_entries">
         <item>Actual</item>
-        <item>Futura</item>
+        <item>Próxima</item>
     </string-array>
 
-    <string name="displayed_age_changes">Debes reiniciar la aplicación para que los cambios surtan efecto</string>
+    <string name="displayed_age_changes">Reinicia la aplicación para aplicar los cambios</string>
     <string name="restart_now">Reiniciar ahora</string>
-    <string name="later">Después</string>
-    <string name="rate_app">Valorar la app</string>
+    <string name="later">Más tarde</string>
+    <string name="rate_app">Valorar app</string>
     <string name="share_app">Compartir app</string>
-    <string name="share_text">\"¿Sueles olvidar felicitar a tus familiares, amigos o compañeros en su cumpleaños? ¡Birdays te recordará una fecha importante!  \"</string>
+    <string name="share_text">¿Sueles olvidar los cumpleaños de tu familia, amigos o compañeros? ¡Birdays te avisa a tiempo!\n</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Sincronización y copia de seguridad</string>
+    <string name="sync_and_backup">Sincronización y copias de seguridad</string>
     <string name="contacts_import_title">Importar contactos</string>
-    <string name="contacts_import_summary">Pulsa aquí para importar los contactos de tu dispositivo (compatible con ISO 8601)</string>
+    <string name="contacts_import_summary">Importa los contactos de tu dispositivo (compatible con ISO 8601)</string>
     <string name="google_drive_backup">Copia de seguridad en Google Drive</string>
-    <string name="google_drive_backup_summary">Subir la copia de seguridad de la base de datos a Google Drive</string>
-    <string name="google_drive_backup_progress">Realizando copia de seguridad en Google Drive…</string>
+    <string name="google_drive_backup_summary">Guarda una copia de la base de datos en Google Drive</string>
+    <string name="google_drive_backup_progress">Guardando copia en Google Drive…</string>
     <string name="backup_complete">Copia de seguridad completada</string>
     <string name="google_drive_restore">Restaurar desde Google Drive</string>
-    <string name="google_drive_restore_summary">Restaurar la base de datos desde Google Drive</string>
+    <string name="google_drive_restore_summary">Restaura la base de datos desde Google Drive</string>
     <string name="google_drive_restore_progress">Restaurando desde Google Drive…</string>
     <string name="recover_records_error">No se pudieron recuperar los registros</string>
     <string name="records_recovered">Registros recuperados</string>
-    <string name="restore_confirm_title">Restaurar desde copia de seguridad</string>
-    <string name="restore_confirm_message">¿Seguro que deseas restaurar los registros de %1$s? Cantidad de registros: %2$s.</string>
+    <string name="restore_confirm_title">Restaurar copia de seguridad</string>
+    <string name="restore_confirm_message">¿Restaurar los registros de %1$s? Registros: %2$s.</string>
     <string name="restore_button">Restaurar</string>
-    <string name="restore_unknown">desconocido</string>
-    <string name="upload_error">Error de subida: %s</string>
-    <string name="backup_error">Error de copia de seguridad: %s</string>
+    <string name="restore_unknown">desconocida</string>
+    <string name="upload_error">Error al subir: %s</string>
+    <string name="backup_error">Error en la copia de seguridad: %s</string>
     <string name="auth_error">Error de autenticación: %s</string>
-    <string name="authorization_failed_error">La autorización falló: %s</string>
-    <string name="download_error">Error de descarga: %s</string>
-    <string name="file_not_found">Archivo no encontrado</string>
-    <string name="search_error">Error de búsqueda: %s</string>
+    <string name="authorization_failed_error">Error de autorización: %s</string>
+    <string name="download_error">Error al descargar: %s</string>
+    <string name="file_not_found">No se encontró el archivo</string>
+    <string name="search_error">Error al buscar: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Anuncios</string>
     <string name="about_ad_title">¿Por qué veo anuncios?</string>
-    <string name="about_ad_summary">Todos los ingresos publicitarios se destinan al desarrollo del proyecto</string>
+    <string name="about_ad_summary">Todos los ingresos publicitarios se destinan a mejorar la app</string>
     <string name="show_ads">Mostrar anuncios</string>
-    <string name="show_ads_summary">Puedes desactivar los anuncios viendo un breve anuncio en vídeo</string>
+    <string name="show_ads_summary">Mira un vídeo corto para desactivar los anuncios</string>
+    <string name="ad_watch_full_video_to_disable">Mira el vídeo entero para desactivar los anuncios</string>
+    <string name="ad_disabled_success">Anuncios desactivados</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Apoyar el proyecto</string>
-    <string name="watch_video_title">Ver un anuncio en vídeo</string>
-    <string name="ad_rewarded_summary">Mira un vídeo breve: los ingresos se destinan al desarrollo de la app</string>
-    <string name="ad_rewarded_unavailable">El vídeo no está disponible en este momento; inténtalo de nuevo más tarde</string>
-    <string name="ad_disabled_success">Los anuncios están desactivados</string>
-    <string name="ad_watch_full_video_to_disable">Mira el vídeo hasta el final para desactivar los anuncios</string>
-    <string name="donate_title">Hacer una contribución</string>
-    <string name="donate_summary">Apoyo económico para el desarrollo de la app</string>
+    <string name="support_project_category">Apoyar la app</string>
+    <string name="donate_title">Invitar al creador</string>
+    <string name="donate_summary">Deja una aportación puntual para futuras actualizaciones</string>
+    <string name="watch_video_title">Ver un anuncio de vídeo</string>
+    <string name="ad_rewarded_summary">Apoya la app gratis viendo un anuncio corto</string>
+    <string name="ad_rewarded_unavailable">El vídeo no está disponible ahora; inténtalo más tarde</string>
 
     <!-- About -->
-    <string name="about">Acerca de la app</string>
+    <string name="about">Acerca de</string>
     <string name="licenses">Licencias</string>
     <string name="software_licenses">Licencias de código abierto</string>
     <string name="third_party_sdks">SDK de terceros</string>
@@ -203,16 +203,16 @@
     <string name="privacy_policy">Política de privacidad</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">¿Por qué no funciona el recordatorio?</string>
-    <string name="help_description">Los dispositivos Android tienen un modo de ahorro de energía que impide que la aplicación se ejecute en segundo plano o evita que se inicie automáticamente. Para que las notificaciones funcionen correctamente, sigue estos sencillos pasos:</string>
-    <string name="help_explanation_1">1. Asegúrate de que las notificaciones estén permitidas para la aplicación Birdays (Ajustes > Birdays > Notificaciones).</string>
-    <string name="help_delay_text">Ten en cuenta que las notificaciones pueden retrasarse en algunos dispositivos.</string>
+    <string name="help_header">¿Por qué no llegan los avisos?</string>
+    <string name="help_description">Algunos dispositivos Android limitan el segundo plano o el inicio automático para ahorrar batería. Sigue estos pasos para que las notificaciones funcionen bien:</string>
+    <string name="help_explanation_1">1. Comprueba que las notificaciones estén activadas para Birdays (Ajustes &gt; Birdays &gt; Notificaciones).</string>
+    <string name="help_delay_text">En algunos dispositivos las notificaciones pueden llegar con retraso.</string>
     <string name="help_exact_alarm">Permitir alarmas exactas</string>
-    <string name="help_explanation_2">2. Desactiva el modo de ahorro de energía para Birdays (Ajustes > Birdays > Batería).</string>
+    <string name="help_explanation_2">2. Desactiva el ahorro de batería para Birdays (Ajustes &gt; Birdays &gt; Batería).</string>
     <string name="help_settings">Abrir ajustes</string>
-    <string name="help_explanation_3">3. Si tienes instaladas aplicaciones de gestión de tareas, limpieza de memoria o ahorro de energía (como «Battery Saver», «Clean Master» y aplicaciones similares) que bloquean el funcionamiento en segundo plano, añade Birdays a las excepciones.</string>
-    <string name="help_email_description">Si tienes alguna pregunta o sugerencia, ponte en contacto conmigo en birdaysapp@gmail.com</string>
-    <string name="send_email">Enviar correo electrónico</string>
+    <string name="help_explanation_3">3. Si usas apps de limpieza, gestión de tareas o ahorro de batería (como «Battery Saver» o «Clean Master») que bloquean el segundo plano, añade Birdays a las excepciones.</string>
+    <string name="help_email_description">¿Tienes dudas o sugerencias? Escríbeme a birdaysapp@gmail.com</string>
+    <string name="send_email">Enviar correo</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

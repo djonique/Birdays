@@ -11,19 +11,19 @@
 
     <!-- MainActivity -->
     <string name="loading_contacts">Caricamento contatti…</string>
-    <string name="contacts_uploaded">Contatti caricati</string>
-    <string name="loading_contacts_error">Impossibile importare i contatti, formato data non standard</string>
+    <string name="contacts_uploaded">Contatti importati</string>
+    <string name="loading_contacts_error">Impossibile importare i contatti: formato data non valido</string>
     <string name="permission_required">È necessaria l\'autorizzazione per importare i contatti</string>
     <string name="snackbar_allow_text">Consenti</string>
     <string name="all">Tutti</string>
     <string name="famous">Famosi</string>
     <string name="age">Età attuale:\u0020</string>
     <string name="happy_birthday">Buon compleanno!</string>
-    <string name="web_search_error">Impossibile eseguire l\'azione, installare un browser web</string>
-    <string name="delete_record_confirm">Sei sicuro di voler eliminare %1$s?</string>
-    <string name="record_deleted">Record eliminato</string>
-    <string name="undo">Disfa</string>
-    <string name="add_record">Aggiungi record</string>
+    <string name="web_search_error">Impossibile aprire la ricerca: installa un browser web</string>
+    <string name="delete_record_confirm">Eliminare %1$s?</string>
+    <string name="record_deleted">Scheda eliminata</string>
+    <string name="undo">Annulla</string>
+    <string name="add_record">Aggiungi scheda</string>
 
     <string-array name="months">
         <item>Gennaio</item>
@@ -45,15 +45,15 @@
     <string name="action_delete">Elimina</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">Nuovo record</string>
-    <string name="add_from_contacts">Aggiungi dai contatti</string>
-    <string name="activity_not_found_error">Impossibile eseguire l\'azione a causa delle caratteristiche del dispositivo</string>
+    <string name="new_record">Nuova scheda</string>
+    <string name="add_from_contacts">Scegli dai contatti</string>
+    <string name="activity_not_found_error">Impossibile eseguire l\'azione su questo dispositivo</string>
     <string name="name">Nome</string>
     <string name="error_hint">Inserisci un nome</string>
     <string name="phone_number">Numero di telefono</string>
     <string name="pick_date">Scegli una data</string>
     <string name="wrong_date">Data non valida</string>
-    <string name="year_unknown">Non conosco l\'anno</string>
+    <string name="year_unknown">Anno sconosciuto</string>
     <string name="cancel_button">Annulla</string>
 
     <!-- DetailActivity -->
@@ -62,16 +62,16 @@
     <string name="today">Oggi</string>
     <string name="days_since_birth">Giorni dalla nascita</string>
     <string name="zodiac_sign">Segno zodiacale</string>
-    <string name="season_picture">Immagine della stagione</string>
+    <string name="season_picture">Immagine di stagione</string>
     <string name="calendar">Calendario</string>
     <string name="call">Chiama</string>
-    <string name="chat">Chat</string>
+    <string name="chat">Messaggio</string>
     <string name="born_on_this_day">Nato in questo giorno</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Modifica</string>
-    <string name="record_edited">Record modificato</string>
-    <string name="edit_record">Modifica record</string>
+    <string name="record_edited">Scheda aggiornata</string>
+    <string name="edit_record">Modifica scheda</string>
 
     <!-- Alarm -->
     <string name="security_exception">SecurityException: i dispositivi Samsung limitano il numero di notifiche a 500</string>
@@ -92,16 +92,16 @@
     <string name="pisces">Pesci</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Disattiva l\'ottimizzazione della batteria per l\'app</string>
-    <string name="optimization_description">Per garantire il corretto funzionamento dell\'app, apri le Impostazioni e consenti all\'app di essere eseguita in background senza restrizioni</string>
+    <string name="optimization_enabled">Disattiva l\'ottimizzazione della batteria per Birdays</string>
+    <string name="optimization_description">Per far funzionare bene i promemoria, apri le Impostazioni e consenti l\'esecuzione in background senza limiti</string>
     <string name="do_not_show_again">Non mostrare più</string>
     <string name="disable_button">Disattiva</string>
 
     <!-- Notifications -->
     <string name="notifications">Notifiche</string>
-    <string name="allow_notification">Consenti all\'app di inviare notifiche sui compleanni imminenti</string>
+    <string name="allow_notification">Ricevi notifiche per i compleanni in arrivo</string>
     <string name="notifications_time">Ora di notifica</string>
-    <string name="additional_notification">Notifica aggiuntiva</string>
+    <string name="additional_notification">Avviso aggiuntivo</string>
 
     <string-array name="additional_notification_entries">
         <item>Mai</item>
@@ -117,20 +117,20 @@
         <item>Domani</item>
         <item>Tra 2 giorni</item>
         <item>Tra 3 giorni</item>
-        <item>Tra una settimana</item>
-        <item>Tra due settimane</item>
+        <item>Tra 1 settimana</item>
+        <item>Tra 2 settimane</item>
     </string-array>
 
-    <string name="notification_tone">Tono di notifica</string>
-    <string name="ringtone_summary">Scegli un suono di notifica. Per impostazione predefinita viene usato il tono delle impostazioni del dispositivo</string>
-    <string name="silent">Nessuno</string>
+    <string name="notification_tone">Suono di notifica</string>
+    <string name="ringtone_summary">Scegli un suono per le notifiche (predefinito: quello del dispositivo)</string>
+    <string name="silent">Silenzioso</string>
     <string name="help">Aiuto</string>
     <string name="tap_here">Tocca qui se non ricevi notifiche</string>
 
     <!-- General -->
     <string name="general">Generale</string>
-    <string name="night_mode">Modalità notturna</string>
-    <string name="start_page">Pagina iniziale</string>
+    <string name="night_mode">Tema scuro</string>
+    <string name="start_page">Schermata iniziale</string>
 
     <string-array name="start_page_entries">
         <item>Mese corrente</item>
@@ -138,64 +138,64 @@
         <item>Famosi</item>
     </string-array>
 
-    <string name="displayed_age">Età visualizzata</string>
+    <string name="displayed_age">Età mostrata</string>
 
     <string-array name="displayed_age_entries">
         <item>Attuale</item>
-        <item>Futura</item>
+        <item>Prossima</item>
     </string-array>
 
-    <string name="displayed_age_changes">Devi riavviare l\'app affinché queste modifiche abbiano effetto</string>
+    <string name="displayed_age_changes">Riavvia l\'app per applicare le modifiche</string>
     <string name="restart_now">Riavvia ora</string>
     <string name="later">Più tardi</string>
     <string name="rate_app">Valuta l\'app</string>
     <string name="share_app">Condividi l\'app</string>
-    <string name="share_text">"Dimentichi spesso di fare gli auguri di compleanno a familiari, amici o colleghi? Birdays ti ricorderà una data importante!  "</string>
+    <string name="share_text">Dimentichi spesso di fare gli auguri a familiari, amici o colleghi? Birdays ti ricorda le date importanti!\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Sincronizzazione e backup</string>
     <string name="contacts_import_title">Importa contatti</string>
-    <string name="contacts_import_summary">Tocca qui per importare i contatti dal dispositivo (supporta ISO 8601)</string>
+    <string name="contacts_import_summary">Importa i contatti dal dispositivo (supporta ISO 8601)</string>
     <string name="google_drive_backup">Backup su Google Drive</string>
     <string name="google_drive_backup_summary">Carica il backup del database su Google Drive</string>
-    <string name="google_drive_backup_progress">Backup su Google Drive in corso…</string>
+    <string name="google_drive_backup_progress">Backup su Google Drive…</string>
     <string name="backup_complete">Backup completato</string>
-    <string name="google_drive_restore">Ripristino da Google Drive</string>
+    <string name="google_drive_restore">Ripristina da Google Drive</string>
     <string name="google_drive_restore_summary">Ripristina il database da Google Drive</string>
-    <string name="google_drive_restore_progress">Ripristino da Google Drive in corso…</string>
-    <string name="recover_records_error">Impossibile recuperare i record</string>
-    <string name="records_recovered">Record recuperati</string>
-    <string name="restore_confirm_title">Ripristina dal backup</string>
-    <string name="restore_confirm_message">Sei sicuro di voler ripristinare i record da %1$s? Numero di record: %2$s.</string>
+    <string name="google_drive_restore_progress">Ripristino da Google Drive…</string>
+    <string name="recover_records_error">Impossibile ripristinare le schede</string>
+    <string name="records_recovered">Schede ripristinate</string>
+    <string name="restore_confirm_title">Ripristina backup</string>
+    <string name="restore_confirm_message">Ripristinare le schede da %1$s? Schede: %2$s.</string>
     <string name="restore_button">Ripristina</string>
     <string name="restore_unknown">sconosciuto</string>
     <string name="upload_error">Errore di caricamento: %s</string>
     <string name="backup_error">Errore di backup: %s</string>
     <string name="auth_error">Errore di autenticazione: %s</string>
     <string name="authorization_failed_error">Autorizzazione non riuscita: %s</string>
-    <string name="download_error">Errore di download: %s</string>
+    <string name="download_error">Errore di scaricamento: %s</string>
     <string name="file_not_found">File non trovato</string>
     <string name="search_error">Errore di ricerca: %s</string>
 
     <!-- Advertising -->
-    <string name="advertising">Pubblicità</string>
-    <string name="about_ad_title">Perché vedo annunci?</string>
-    <string name="about_ad_summary">Tutti i ricavi pubblicitari sono destinati allo sviluppo del progetto</string>
+    <string name="advertising">Annunci</string>
+    <string name="about_ad_title">Perché vedo degli annunci?</string>
+    <string name="about_ad_summary">Tutti i ricavi pubblicitari finanziano lo sviluppo dell\'app</string>
     <string name="show_ads">Mostra annunci</string>
-    <string name="show_ads_summary">Puoi disattivare gli annunci guardando un breve video pubblicitario</string>
+    <string name="show_ads_summary">Guarda un breve video per disattivare gli annunci</string>
+    <string name="ad_watch_full_video_to_disable">Guarda il video per intero per disattivare gli annunci</string>
+    <string name="ad_disabled_success">Annunci disattivati</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Sostieni il progetto</string>
-    <string name="watch_video_title">Guarda un video pubblicitario</string>
-    <string name="ad_rewarded_summary">Guarda un breve video: i ricavi contribuiscono allo sviluppo dell\'app</string>
-    <string name="ad_rewarded_unavailable">Il video non è disponibile al momento, riprova più tardi</string>
-    <string name="ad_disabled_success">Gli annunci sono stati disattivati</string>
-    <string name="ad_watch_full_video_to_disable">Guarda il video fino alla fine per disattivare gli annunci</string>
-    <string name="donate_title">Dai un contributo</string>
-    <string name="donate_summary">Supporto economico allo sviluppo dell\'app</string>
+    <string name="support_project_category">Sostieni l\'app</string>
+    <string name="donate_title">Offri un caffè allo sviluppatore</string>
+    <string name="donate_summary">Lascia un contributo una tantum per i prossimi aggiornamenti</string>
+    <string name="watch_video_title">Guarda un annuncio video</string>
+    <string name="ad_rewarded_summary">Sostieni l\'app gratis guardando un breve annuncio</string>
+    <string name="ad_rewarded_unavailable">Video non disponibile al momento — riprova più tardi</string>
 
     <!-- About -->
-    <string name="about">Informazioni sull\'app</string>
+    <string name="about">Informazioni</string>
     <string name="licenses">Licenze</string>
     <string name="software_licenses">Licenze open source</string>
     <string name="third_party_sdks">SDK di terze parti</string>
@@ -203,15 +203,15 @@
     <string name="privacy_policy">Informativa sulla privacy</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Perché il promemoria non funziona?</string>
-    <string name="help_description">I dispositivi Android dispongono di una modalità di risparmio energetico che impedisce all\'app di essere eseguita in background o ne blocca l\'avvio automatico. Per far funzionare correttamente le notifiche, segui questi semplici passaggi:</string>
-    <string name="help_explanation_1">1. Assicurati che le notifiche siano consentite per l\'app Birdays (Impostazioni > Birdays > Notifiche).</string>
-    <string name="help_delay_text">Tieni presente che su alcuni dispositivi le notifiche potrebbero subire dei ritardi.</string>
+    <string name="help_header">Perché il promemoria non arriva?</string>
+    <string name="help_description">Alcuni dispositivi Android limitano il background o l\'avvio automatico per risparmiare batteria. Segui questi passaggi per far funzionare bene le notifiche:</string>
+    <string name="help_explanation_1">1. Controlla che le notifiche siano attive per Birdays (Impostazioni &gt; Birdays &gt; Notifiche).</string>
+    <string name="help_delay_text">Su alcuni dispositivi le notifiche possono arrivare in ritardo.</string>
     <string name="help_exact_alarm">Consenti sveglie e promemoria</string>
-    <string name="help_explanation_2">2. Disattiva la modalità di risparmio energetico per Birdays (Impostazioni > Birdays > Batteria).</string>
+    <string name="help_explanation_2">2. Disattiva il risparmio energetico per Birdays (Impostazioni &gt; Birdays &gt; Batteria).</string>
     <string name="help_settings">Apri impostazioni</string>
-    <string name="help_explanation_3">3. Se hai installato app per la gestione delle attività, la pulizia della memoria o il risparmio energetico (come “Battery Saver”, “Clean Master” e app simili) che bloccano il funzionamento in background, aggiungi Birdays alle eccezioni.</string>
-    <string name="help_email_description">Se hai domande o suggerimenti, contattami all\'indirizzo birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Se usi app per la gestione attività, la pulizia memoria o il risparmio energetico (come “Battery Saver” o “Clean Master”) che bloccano il background, aggiungi Birdays alle eccezioni.</string>
+    <string name="help_email_description">Hai domande o suggerimenti? Scrivimi a birdaysapp@gmail.com</string>
     <string name="send_email">Invia email</string>
 
     <!-- Famous persons -->

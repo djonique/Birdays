@@ -12,15 +12,15 @@
     <!-- MainActivity -->
     <string name="loading_contacts">Контактілер жүктелуде…</string>
     <string name="contacts_uploaded">Контактілер жүктелді</string>
-    <string name="loading_contacts_error">Контактілерді импорттау мүмкін емес, күн пішімі стандартты емес</string>
+    <string name="loading_contacts_error">Контактілерді импорттау мүмкін емес: күн пішімі сәйкес келмейді</string>
     <string name="permission_required">Контактілерді импорттау үшін рұқсат қажет</string>
     <string name="snackbar_allow_text">Рұқсат беру</string>
     <string name="all">Барлығы</string>
     <string name="famous">Танымалдар</string>
-    <string name="age">Жасы:\u0020</string>
+    <string name="age">Қазіргі жасы:\u0020</string>
     <string name="happy_birthday">Туған күніңізбен!</string>
-    <string name="web_search_error">Әрекетті орындау мүмкін болмады, өтінеміз, веб-браузер орнатыңыз</string>
-    <string name="delete_record_confirm">Сіз шынымен %1$s жазбасын жойғыңыз келе ме?</string>
+    <string name="web_search_error">Іздеуді ашу мүмкін емес — веб-браузер орнатыңыз</string>
+    <string name="delete_record_confirm">%1$s жазбасын жою керек пе?</string>
     <string name="record_deleted">Жазба жойылды</string>
     <string name="undo">Болдырмау</string>
     <string name="add_record">Жазба қосу</string>
@@ -46,35 +46,35 @@
 
     <!-- NewPersonActivity -->
     <string name="new_record">Жаңа жазба</string>
-    <string name="add_from_contacts">Контактілерден қосу</string>
-    <string name="activity_not_found_error">Бұл әрекетті құрылғының ерекшеліктеріне байланысты орындау мүмкін емес</string>
+    <string name="add_from_contacts">Контактілерден таңдау</string>
+    <string name="activity_not_found_error">Бұл әрекетті құрылғыда орындау мүмкін емес</string>
     <string name="name">Аты</string>
-    <string name="error_hint">Өтінеміз, атын енгізіңіз</string>
+    <string name="error_hint">Атын енгізіңіз</string>
     <string name="phone_number">Телефон нөмірі</string>
-    <string name="pick_date">Күнді таңдаңыз</string>
+    <string name="pick_date">Күнді таңдау</string>
     <string name="wrong_date">Қате күн</string>
-    <string name="year_unknown">Мен туған жылымды білмеймін</string>
+    <string name="year_unknown">Жылы белгісіз</string>
     <string name="cancel_button">Бас тарту</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Туған күн</string>
-    <string name="days_left">Келесі туған күнге дейінгі күндер</string>
+    <string name="days_left">Келесі туған күнге дейін</string>
     <string name="today">Бүгін</string>
-    <string name="days_since_birth">Туған күннен бергі күндер</string>
+    <string name="days_since_birth">Туғаннан бергі күндер</string>
     <string name="zodiac_sign">Зодиак белгісі</string>
     <string name="season_picture">Маусымдық сурет</string>
     <string name="calendar">Күнтізбе</string>
-    <string name="call">Қоңырау шалу</string>
+    <string name="call">Қоңырау</string>
     <string name="chat">Жазу</string>
-    <string name="born_on_this_day">Осы күні дүниеге келгендер</string>
+    <string name="born_on_this_day">Осы күні туғандар</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Өңдеу</string>
-    <string name="record_edited">Жазба өңделді</string>
+    <string name="record_edited">Жазба жаңартылды</string>
     <string name="edit_record">Жазбаны өңдеу</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Samsung құрылғыларында 500-ден көп хабарламаны тіркеуге болмайды</string>
+    <string name="security_exception">SecurityException: Samsung құрылғыларында хабарландыру саны 500-мен шектелген</string>
     <string name="channel_name">Туған күндер</string>
 
     <!-- Zodiac signs -->
@@ -83,7 +83,7 @@
     <string name="gemini">Егіздер</string>
     <string name="cancer">Шаян</string>
     <string name="leo">Арыстан</string>
-    <string name="virgo">Бике</string>
+    <string name="virgo">Бикеш</string>
     <string name="libra">Таразы</string>
     <string name="scorpio">Сарышаян</string>
     <string name="sagittarius">Мерген</string>
@@ -92,24 +92,24 @@
     <string name="pisces">Балықтар</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Қолданба үшін батарея оңтайландыруын өшіріңіз</string>
-    <string name="optimization_description">Қолданба дұрыс жұмыс істеуі үшін жүйе параметрлеріне өтіп, қолданбаға шектеусіз фондық режимде жұмыс істеуге рұқсат беріңіз</string>
-    <string name="do_not_show_again">Басқа көрсетпеу</string>
+    <string name="optimization_enabled">Birdays үшін батарея оңтайландыруын өшіру</string>
+    <string name="optimization_description">Еске салғыштар уақытылы келуі үшін параметрлерді ашып, қолданбаның фондық жұмысына шектеуді алып тастаңыз</string>
+    <string name="do_not_show_again">Қайта көрсетпеу</string>
     <string name="disable_button">Өшіру</string>
 
     <!-- Notifications -->
     <string name="notifications">Хабарландырулар</string>
-    <string name="allow_notification">Қолданбаға алдағы туған күндер туралы хабарландыру жіберуге рұқсат беріңіз</string>
+    <string name="allow_notification">Алдағы туған күндер туралы хабарландыру жіберу</string>
     <string name="notifications_time">Хабарландыру уақыты</string>
-    <string name="additional_notification">Қосымша хабарландыру</string>
+    <string name="additional_notification">Қосымша еске салғыш</string>
 
     <string-array name="additional_notification_entries">
         <item>Ешқашан</item>
         <item>1 күн бұрын</item>
         <item>2 күн бұрын</item>
         <item>3 күн бұрын</item>
-        <item>Бір апта бұрын</item>
-        <item>Екі апта бұрын</item>
+        <item>1 апта бұрын</item>
+        <item>2 апта бұрын</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
@@ -117,23 +117,23 @@
         <item>Ертең</item>
         <item>Бүрсігүні</item>
         <item>3 күннен кейін</item>
-        <item>Бір аптадан кейін</item>
-        <item>Екі аптадан кейін</item>
+        <item>1 аптадан кейін</item>
+        <item>2 аптадан кейін</item>
     </string-array>
 
     <string name="notification_tone">Хабарландыру дыбысы</string>
-    <string name="ringtone_summary">Хабарландыру дыбысын таңдаңыз. Әдепкіде құрылғы параметрлеріндегі дыбыс пайдаланылады</string>
+    <string name="ringtone_summary">Хабарландыру дыбысын таңдаңыз (әдепкі: құрылғы дыбысы)</string>
     <string name="silent">Дыбыссыз</string>
     <string name="help">Көмек</string>
-    <string name="tap_here">Хабарландырулар келмей жатса, осында басыңыз</string>
+    <string name="tap_here">Хабарландыру келмесе, осында басыңыз</string>
 
     <!-- General -->
     <string name="general">Жалпы</string>
-    <string name="night_mode">Түнгі режим</string>
-    <string name="start_page">Бастапқы бет</string>
+    <string name="night_mode">Қараңғы тақырып</string>
+    <string name="start_page">Басты экран</string>
 
     <string-array name="start_page_entries">
-        <item>Ағымдағы ай</item>
+        <item>Осы ай</item>
         <item>Барлығы</item>
         <item>Танымалдар</item>
     </string-array>
@@ -141,58 +141,58 @@
     <string name="displayed_age">Көрсетілетін жас</string>
 
     <string-array name="displayed_age_entries">
-        <item>Ағымдағы</item>
-        <item>Болашақ</item>
+        <item>Қазіргі</item>
+        <item>Келесі</item>
     </string-array>
 
-    <string name="displayed_age_changes">Өзгерістер күшіне енуі үшін қолданбаны қайта іске қосу қажет</string>
-    <string name="restart_now">Қазір қайта іске қосу</string>
+    <string name="displayed_age_changes">Өзгеріс күшіне енуі үшін қолданбаны қайта іске қосыңыз</string>
+    <string name="restart_now">Қайта іске қосу</string>
     <string name="later">Кейінірек</string>
-    <string name="rate_app">Қолданбаны бағалаңыз</string>
-    <string name="share_app">Қолданба туралы айтыңыз</string>
-    <string name="share_text">"Туыстарыңызды, достарыңызды немесе әріптестеріңізді туған күнмен құттықтауды ұмытып қаласыз ба? Birdays маңызды мерекені еске салады!  "</string>
+    <string name="rate_app">Қолданбаны бағалау</string>
+    <string name="share_app">Қолданбамен бөлісу</string>
+    <string name="share_text">Жақындарыңыз бен әріптестеріңіздің туған күнін ұмытып кете бересіз бе? Birdays маңызды күнді уақытында еске салады!\n</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Синхрондау және резервтік көшірмелеу</string>
+    <string name="sync_and_backup">Синхрондау және резервтік көшірме</string>
     <string name="contacts_import_title">Контактілерді импорттау</string>
-    <string name="contacts_import_summary">Телефон кітапшасынан контактілерді импорттау үшін басыңыз (ISO 8601 қолданылады)</string>
+    <string name="contacts_import_summary">Құрылғыдан контактілерді импорттау (ISO 8601 қолдауымен)</string>
     <string name="google_drive_backup">Google Дискіге резервтік көшірме</string>
-    <string name="google_drive_backup_summary">Резервтік көшірмені Google Дискіге жүктеу</string>
-    <string name="google_drive_backup_progress">Google Дискіге резервтік көшірме жасалуда…</string>
-    <string name="backup_complete">Резервтік көшірмелеу аяқталды</string>
-    <string name="google_drive_restore">Google Дискінен қалпына келтіру</string>
-    <string name="google_drive_restore_summary">Дерекқорды Google Дискінен қалпына келтіру</string>
-    <string name="google_drive_restore_progress">Google Дискінен қалпына келтірілуде…</string>
-    <string name="recover_records_error">Жазбаларды қалпына келтіру мүмкін болмады</string>
+    <string name="google_drive_backup_summary">Дерекқордың резервтік көшірмесін Google Дискіге жүктеу</string>
+    <string name="google_drive_backup_progress">Google Дискіге сақталуда…</string>
+    <string name="backup_complete">Резервтік көшірме дайын</string>
+    <string name="google_drive_restore">Google Дискіден қалпына келтіру</string>
+    <string name="google_drive_restore_summary">Дерекқорды Google Дискіден қалпына келтіру</string>
+    <string name="google_drive_restore_progress">Google Дискіден қалпына келтірілуде…</string>
+    <string name="recover_records_error">Жазбаларды қалпына келтіру сәтсіз аяқталды</string>
     <string name="records_recovered">Жазбалар қалпына келтірілді</string>
     <string name="restore_confirm_title">Резервтік көшірмеден қалпына келтіру</string>
-    <string name="restore_confirm_message">%1$s күнгі жазбаларды қалпына келтіргіңіз келетініне сенімдісіз бе? Жазбалар саны: %2$s.</string>
+    <string name="restore_confirm_message">%1$s күнгі жазбалар қалпына келтірілсін бе? Жазбалар: %2$s.</string>
     <string name="restore_button">Қалпына келтіру</string>
     <string name="restore_unknown">белгісіз</string>
     <string name="upload_error">Жүктеу қатесі: %s</string>
-    <string name="backup_error">Резервтік көшірме жасау қатесі: %s</string>
+    <string name="backup_error">Резервтік көшірме қатесі: %s</string>
     <string name="auth_error">Авторизация қатесі: %s</string>
-    <string name="authorization_failed_error">Авторизация сәтсіз аяқталды: %s</string>
-    <string name="download_error">Файлды жүктеп алу қатесі: %s</string>
+    <string name="authorization_failed_error">Авторизация сәтсіз: %s</string>
+    <string name="download_error">Жүктеп алу қатесі: %s</string>
     <string name="file_not_found">Файл табылмады</string>
     <string name="search_error">Іздеу қатесі: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Жарнама</string>
-    <string name="about_ad_title">Неге жарнама көріп тұрмын?</string>
-    <string name="about_ad_summary">Жарнамадан түскен барлық кіріс қолданбаны дамытуға жұмсалады</string>
-    <string name="show_ads">Жарнаманы көрсету</string>
-    <string name="show_ads_summary">Жарнаманы қысқа бейне көріп өшіруге болады</string>
+    <string name="about_ad_title">Жарнама неге көрсетіледі?</string>
+    <string name="about_ad_summary">Жарнамадан түскен қаражат жобаны дамытуға бағытталады</string>
+    <string name="show_ads">Жарнама көрсету</string>
+    <string name="show_ads_summary">Қысқа бейнеролик көріп, жарнаманы уақытша өшіріңіз</string>
+    <string name="ad_watch_full_video_to_disable">Жарнаманы өшіру үшін бейнені соңына дейін көріңіз</string>
+    <string name="ad_disabled_success">Жарнама өшірілді</string>
 
     <!-- Support project -->
     <string name="support_project_category">Жобаны қолдау</string>
-    <string name="watch_video_title">Жарнамалық бейнені көру</string>
-    <string name="ad_rewarded_summary">Қысқа бейне көріңіз — одан түскен кіріс қолданбаны дамытуға жұмсалады</string>
-    <string name="ad_rewarded_unavailable">Бейне қазір қолжетімсіз, кейінірек қайталап көріңіз</string>
-    <string name="ad_disabled_success">Жарнама өшірілді</string>
-    <string name="ad_watch_full_video_to_disable">Жарнаманы өшіру үшін бейнені соңына дейін көріңіз</string>
-    <string name="donate_title">Үлес қосу</string>
-    <string name="donate_summary">Қолданбаны дамытуды қаржылай қолдау</string>
+    <string name="donate_title">Әзірлеуді қолдау</string>
+    <string name="donate_summary">Қолданба үшін «рахмет» айтқыңыз келсе</string>
+    <string name="watch_video_title">Жарнамалық бейнеролик көру</string>
+    <string name="ad_rewarded_summary">Жобаны қолдап, дамуына үлес қосудың тегін тәсілі</string>
+    <string name="ad_rewarded_unavailable">Бейне қазір қолжетімсіз — кейінірек қайталап көріңіз</string>
 
     <!-- About -->
     <string name="about">Қолданба туралы</string>
@@ -203,15 +203,15 @@
     <string name="privacy_policy">Құпиялылық саясаты</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Еске салғыштар неліктен іске қосылмайды?</string>
-    <string name="help_description">Android құрылғыларында қолданбаның фондық режимде жұмыс істеуін бұғаттайтын немесе автоматты түрде іске қосылуына тыйым салатын қуат үнемдеу режимі бар. Хабарландырулар дұрыс жұмыс істеуі үшін бірнеше қарапайым әрекетті орындаңыз:</string>
-    <string name="help_explanation_1">1. Birdays қолданбасы үшін хабарландыруларға рұқсат етілгеніне көз жеткізіңіз (Параметрлер > Birdays > Хабарландырулар).</string>
-    <string name="help_delay_text">Кейбір құрылғыларда хабарландырулар кешігіп келетініне назар аударыңыз.</string>
+    <string name="help_header">Еске салғыштар неге келмейді?</string>
+    <string name="help_description">Кейбір Android құрылғылары батареяны үнемдеу үшін фондық жұмысты немесе автоіске қосылуды шектейді. Хабарландырулар дұрыс келуі үшін мына қадамдарды орындаңыз:</string>
+    <string name="help_explanation_1">1. Birdays үшін хабарландырулар рұқсат етілгенін тексеріңіз (Параметрлер &gt; Birdays &gt; Хабарландырулар).</string>
+    <string name="help_delay_text">Кейбір құрылғыларда хабарландыру кешігіп келуі мүмкін.</string>
     <string name="help_exact_alarm">Нақты дабылдарға рұқсат беру</string>
-    <string name="help_explanation_2">2. Birdays үшін қуат үнемдеу режимін өшіріңіз (Параметрлер > Birdays > Батарея).</string>
+    <string name="help_explanation_2">2. Birdays үшін қуат үнемдеуді өшіріңіз (Параметрлер &gt; Birdays &gt; Батарея).</string>
     <string name="help_settings">Параметрлерді ашу</string>
-    <string name="help_explanation_3">3. Егер сізде фондық режимде жұмыс істеуді бұғаттайтын тапсырмалар диспетчері, жадты тазалауға немесе қуат үнемдеуге арналған қолданбалар («Battery Saver», «Clean Master» және соған ұқсас) орнатылған болса, Birdays қолданбасын ерекшеліктер тізіміне қосыңыз.</string>
-    <string name="help_email_description">Барлық сұрақтар мен ұсыныстар бойынша маған birdaysapp@gmail.com поштасына жазыңыз</string>
+    <string name="help_explanation_3">3. Фондық жұмысты бұғаттайтын тапсырма менеджері, тазалағыш немесе батарея үнемдегіш қолданбалар (мысалы, «Battery Saver», «Clean Master») болса, Birdays-ті ерекшеліктерге қосыңыз.</string>
+    <string name="help_email_description">Сұрақ немесе ұсыныс болса, birdaysapp@gmail.com поштасына жазыңыз</string>
     <string name="send_email">Хат жіберу</string>
 
     <!-- Famous persons -->

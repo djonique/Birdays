@@ -7,21 +7,21 @@
 -->
 
 <resources>
-    <string name="build_version">Bersyon ng pagkakagawa</string>
+    <string name="build_version">Bersyon</string>
 
     <!-- MainActivity -->
-    <string name="loading_contacts">Naglo-load ng mga kontak…</string>
-    <string name="contacts_uploaded">Na-upload ang mga kontak</string>
-    <string name="loading_contacts_error">Hindi ma-import ang mga kontak, hindi karaniwang format ng petsa</string>
-    <string name="permission_required">Kailangan ng pahintulot para sa pag-import ng mga kontak</string>
+    <string name="loading_contacts">Naglo-load ng mga contact…</string>
+    <string name="contacts_uploaded">Na-load ang mga contact</string>
+    <string name="loading_contacts_error">Hindi ma-import ang mga contact: hindi tugma ang format ng petsa</string>
+    <string name="permission_required">Kailangan ng pahintulot para mag-import ng mga contact</string>
     <string name="snackbar_allow_text">Payagan</string>
     <string name="all">Lahat</string>
-    <string name="famous">Tanyag</string>
-    <string name="age">Kasalukuyang edad:\u0020</string>
+    <string name="famous">Kilala</string>
+    <string name="age">Edad:\u0020</string>
     <string name="happy_birthday">Maligayang kaarawan!</string>
-    <string name="web_search_error">Hindi maisagawa ang aksyon, paki-install ang web browser</string>
-    <string name="delete_record_confirm">Sigurado ka bang gusto mong burahin ang %1$s?</string>
-    <string name="record_deleted">Nabura na ang tala</string>
+    <string name="web_search_error">Hindi mabuksan ang paghahanap — mag-install ng web browser</string>
+    <string name="delete_record_confirm">Buburahin ba si %1$s?</string>
+    <string name="record_deleted">Nabura ang tala</string>
     <string name="undo">I-undo</string>
     <string name="add_record">Magdagdag ng tala</string>
 
@@ -46,35 +46,35 @@
 
     <!-- NewPersonActivity -->
     <string name="new_record">Bagong tala</string>
-    <string name="add_from_contacts">Magdagdag mula sa mga kontak</string>
-    <string name="activity_not_found_error">Hindi maisagawa ang aksyon dahil sa mga feature ng device</string>
+    <string name="add_from_contacts">Piliin sa Mga Contact</string>
+    <string name="activity_not_found_error">Hindi magawa ang aksyong ito sa device mo</string>
     <string name="name">Pangalan</string>
-    <string name="error_hint">Pakilagyan ng pangalan</string>
-    <string name="phone_number">Numero ng telepono</string>
+    <string name="error_hint">Maglagay ng pangalan</string>
+    <string name="phone_number">Numero sa telepono</string>
     <string name="pick_date">Pumili ng petsa</string>
-    <string name="wrong_date">Mali ang petsa</string>
-    <string name="year_unknown">Hindi ko alam ang taon</string>
+    <string name="wrong_date">Hindi wastong petsa</string>
+    <string name="year_unknown">Walang taon</string>
     <string name="cancel_button">Kanselahin</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Kaarawan</string>
-    <string name="days_left">Mga araw hanggang sa susunod na kaarawan</string>
+    <string name="days_left">Mga araw bago ang susunod na kaarawan</string>
     <string name="today">Ngayon</string>
-    <string name="days_since_birth">Mga araw mula noong ipinanganak</string>
-    <string name="zodiac_sign">Tanda ng sodyak</string>
+    <string name="days_since_birth">Mga araw mula nang ipanganak</string>
+    <string name="zodiac_sign">Zodiac sign</string>
     <string name="season_picture">Larawan ng panahon</string>
     <string name="calendar">Kalendaryo</string>
-    <string name="call">Tawag</string>
-    <string name="chat">Chat</string>
+    <string name="call">Tawagan</string>
+    <string name="chat">Mag-message</string>
     <string name="born_on_this_day">Ipinanganak sa araw na ito</string>
 
     <!-- EditActivity -->
-    <string name="editing_label">Ini-edit</string>
-    <string name="record_edited">Na-edit na ang tala</string>
+    <string name="editing_label">Ine-edit</string>
+    <string name="record_edited">Na-update ang tala</string>
     <string name="edit_record">I-edit ang tala</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Nililimitahan ng mga Samsung device ang bilang ng notification sa 500</string>
+    <string name="security_exception">SecurityException: Nililimitahan ng mga Samsung device ang notification sa 500</string>
     <string name="channel_name">Mga kaarawan</string>
 
     <!-- Zodiac signs -->
@@ -92,16 +92,16 @@
     <string name="pisces">Pisces</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">I-disable ang battery optimization para sa app</string>
-    <string name="optimization_description">Para matiyak na gumagana nang tama ang app, buksan ang Mga setting at payagan ang app na tumakbo sa background nang walang mga paghihigpit</string>
-    <string name="do_not_show_again">Huwag nang ipakita muli</string>
-    <string name="disable_button">I-disable</string>
+    <string name="optimization_enabled">I-off ang battery optimization para sa Birdays</string>
+    <string name="optimization_description">Para gumana nang maayos ang mga paalala, buksan ang Mga setting at hayaang tumakbo ang app sa background nang walang limitasyon</string>
+    <string name="do_not_show_again">Huwag nang ipakita ulit</string>
+    <string name="disable_button">I-off</string>
 
     <!-- Notifications -->
     <string name="notifications">Mga notification</string>
-    <string name="allow_notification">Payagan ang app na magpadala ng mga notification tungkol sa mga nalalapit na kaarawan</string>
+    <string name="allow_notification">Magpadala ng notification para sa mga paparating na kaarawan</string>
     <string name="notifications_time">Oras ng notification</string>
-    <string name="additional_notification">Karagdagang notification</string>
+    <string name="additional_notification">Karagdagang paalala</string>
 
     <string-array name="additional_notification_entries">
         <item>Hindi kailanman</item>
@@ -117,101 +117,101 @@
         <item>Bukas</item>
         <item>Sa 2 araw</item>
         <item>Sa 3 araw</item>
-        <item>Sa isang linggo</item>
+        <item>Sa 1 linggo</item>
         <item>Sa 2 linggo</item>
     </string-array>
 
     <string name="notification_tone">Tunog ng notification</string>
-    <string name="ringtone_summary">Pumili ng tunog para sa notification. Bilang default, gagamitin ang tone mula sa mga setting ng device</string>
-    <string name="silent">Wala</string>
+    <string name="ringtone_summary">Pumili ng tunog para sa notification (default ang tunog ng device)</string>
+    <string name="silent">Walang tunog</string>
     <string name="help">Tulong</string>
-    <string name="tap_here">I-tap dito kung hindi ka tumatanggap ng mga notification</string>
+    <string name="tap_here">I-tap dito kung hindi dumarating ang mga notification</string>
 
     <!-- General -->
     <string name="general">Pangkalahatan</string>
-    <string name="night_mode">Night mode</string>
-    <string name="start_page">Panimulang pahina</string>
+    <string name="night_mode">Dark theme</string>
+    <string name="start_page">Simulang screen</string>
 
     <string-array name="start_page_entries">
         <item>Kasalukuyang buwan</item>
         <item>Lahat</item>
-        <item>Tanyag</item>
+        <item>Kilala</item>
     </string-array>
 
-    <string name="displayed_age">Ipapakitang edad</string>
+    <string name="displayed_age">Ipinapakitang edad</string>
 
     <string-array name="displayed_age_entries">
         <item>Kasalukuyan</item>
-        <item>Hinaharap</item>
+        <item>Susunod</item>
     </string-array>
 
-    <string name="displayed_age_changes">Kailangan mong i-restart ang app para magkabisa ang mga pagbabagong ito</string>
+    <string name="displayed_age_changes">I-restart ang app para magkabisa ang mga pagbabago</string>
     <string name="restart_now">I-restart ngayon</string>
     <string name="later">Mamaya</string>
     <string name="rate_app">I-rate ang app</string>
     <string name="share_app">Ibahagi ang app</string>
-    <string name="share_text">Madalas ka bang makalimot na batiin ang iyong pamilya, kaibigan, o kasamahan sa kanilang kaarawan? Paaalalahanan ka ng Birdays sa mahalagang petsa!  </string>
+    <string name="share_text">Madalas mo bang makalimutan ang birthday ng pamilya, kaibigan, o katrabaho mo? Ipaaalala sa\'yo ng Birdays ang mahalagang araw nila!\n</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Synchronisasyon at backup</string>
-    <string name="contacts_import_title">I-import ang mga kontak</string>
-    <string name="contacts_import_summary">I-tap dito para mag-import ng mga kontak mula sa iyong device (sumusuporta sa ISO 8601)</string>
+    <string name="sync_and_backup">Sync at backup</string>
+    <string name="contacts_import_title">I-import ang mga contact</string>
+    <string name="contacts_import_summary">Mag-import ng mga contact mula sa device mo (sumusuporta sa ISO 8601)</string>
     <string name="google_drive_backup">Backup sa Google Drive</string>
-    <string name="google_drive_backup_summary">I-upload ang backup ng database sa Google Drive</string>
+    <string name="google_drive_backup_summary">I-save ang backup ng database sa Google Drive</string>
     <string name="google_drive_backup_progress">Nagba-backup sa Google Drive…</string>
-    <string name="backup_complete">Kumpleto ang backup</string>
-    <string name="google_drive_restore">Restore mula sa Google Drive</string>
-    <string name="google_drive_restore_summary">I-restore ang database mula sa Google Drive</string>
+    <string name="backup_complete">Kumpleto na ang backup</string>
+    <string name="google_drive_restore">I-restore mula sa Google Drive</string>
+    <string name="google_drive_restore_summary">Ibalik ang database mula sa Google Drive</string>
     <string name="google_drive_restore_progress">Nagre-restore mula sa Google Drive…</string>
-    <string name="recover_records_error">Bigo ang pag-recover ng mga tala</string>
-    <string name="records_recovered">Na-recover ang mga tala</string>
+    <string name="recover_records_error">Hindi naibalik ang mga tala</string>
+    <string name="records_recovered">Naibalik ang mga tala</string>
     <string name="restore_confirm_title">I-restore mula sa backup</string>
-    <string name="restore_confirm_message">Sigurado ka bang gusto mong i-restore ang mga tala mula sa %1$s? Bilang ng mga tala: %2$s.</string>
+    <string name="restore_confirm_message">I-restore ang mga tala mula sa %1$s? Mga tala: %2$s.</string>
     <string name="restore_button">I-restore</string>
     <string name="restore_unknown">hindi alam</string>
     <string name="upload_error">Error sa pag-upload: %s</string>
     <string name="backup_error">Error sa backup: %s</string>
-    <string name="auth_error">Error sa authentication: %s</string>
-    <string name="authorization_failed_error">Nabigo ang awtorisasyon: %s</string>
+    <string name="auth_error">Error sa pag-sign in: %s</string>
+    <string name="authorization_failed_error">Nabigo ang pahintulot: %s</string>
     <string name="download_error">Error sa pag-download: %s</string>
-    <string name="file_not_found">Hindi nahanap ang file</string>
-    <string name="search_error">Error sa paghanap: %s</string>
+    <string name="file_not_found">Hindi nakita ang file</string>
+    <string name="search_error">Error sa paghahanap: %s</string>
 
     <!-- Advertising -->
-    <string name="advertising">Advertising</string>
-    <string name="about_ad_title">Bakit ako nakakakita ng mga ad?</string>
-    <string name="about_ad_summary">Ang lahat ng kita sa advertising ay napupunta sa pagpapaunlad ng proyekto</string>
+    <string name="advertising">Mga Ad</string>
+    <string name="about_ad_title">Bakit may nakikita akong mga ad?</string>
+    <string name="about_ad_summary">Napupunta sa pagpapaunlad ng app ang lahat ng kita sa ad</string>
     <string name="show_ads">Ipakita ang mga ad</string>
-    <string name="show_ads_summary">Maaari mong i-disable ang mga ad sa pamamagitan ng panonood ng maikling video ad</string>
+    <string name="show_ads_summary">Manood ng maikling video para i-off ang mga ad</string>
+    <string name="ad_watch_full_video_to_disable">Tapusin ang video para i-off ang mga ad</string>
+    <string name="ad_disabled_success">Naka-off na ang mga ad</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Suportahan ang proyekto</string>
+    <string name="support_project_category">Suportahan ang app</string>
+    <string name="donate_title">Magbigay ng tip sa developer</string>
+    <string name="donate_summary">Mag-iwan ng one-time tip para sa mga susunod na update</string>
     <string name="watch_video_title">Manood ng video ad</string>
-    <string name="ad_rewarded_summary">Manood ng maikling video — ang kita ay napupunta sa pagpapaunlad ng app</string>
-    <string name="ad_rewarded_unavailable">Hindi available ang video ngayon, pakisubukang muli mamaya</string>
-    <string name="ad_disabled_success">Naka-disable na ang mga ad</string>
-    <string name="ad_watch_full_video_to_disable">Panoorin ang video hanggang dulo para ma-disable ang mga ad</string>
-    <string name="donate_title">Magbigay ng kontribusyon</string>
-    <string name="donate_summary">Suportang pinansyal para sa pagpapaunlad ng app</string>
+    <string name="ad_rewarded_summary">Suportahan ang app nang libre sa panonood ng maikling ad</string>
+    <string name="ad_rewarded_unavailable">Hindi available ang video ngayon — pakisubukan ulit mamaya</string>
 
     <!-- About -->
     <string name="about">Tungkol sa app</string>
     <string name="licenses">Mga lisensya</string>
-    <string name="software_licenses">Mga lisensya ng open-source</string>
+    <string name="software_licenses">Mga open-source license</string>
     <string name="third_party_sdks">Mga third-party SDK</string>
     <string name="menu_github">Source code</string>
-    <string name="privacy_policy">Patakaran sa Privacy</string>
+    <string name="privacy_policy">Patakaran sa privacy</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Bakit hindi gumagana ang paalala?</string>
-    <string name="help_description">May power-saving mode ang mga Android device na pumipigil sa app na tumakbo sa background o pumipigil dito na awtomatikong magsimula. Para gumana nang maayos ang mga notification, sundin ang mga simpleng hakbang na ito:</string>
-    <string name="help_explanation_1">1. Tiyaking pinapayagan ang mga notification para sa Birdays app (Mga Setting > Birdays > Mga Notification).</string>
-    <string name="help_delay_text">Pakitandaan na maaaring maantala ang mga notification sa ilang device.</string>
+    <string name="help_header">Bakit hindi dumarating ang paalala?</string>
+    <string name="help_description">Nililimitahan ng battery saver sa ilang Android device ang pagtakbo sa background o auto-start. Sundin ang mga hakbang na ito para gumana nang maayos ang mga notification:</string>
+    <string name="help_explanation_1">1. Tiyaking naka-on ang mga notification para sa Birdays (Mga setting &gt; Birdays &gt; Mga notification).</string>
+    <string name="help_delay_text">Puwedeng maantala ang mga notification sa ilang device.</string>
     <string name="help_exact_alarm">Payagan ang mga eksaktong alarm</string>
-    <string name="help_explanation_2">2. I-off ang power-saving mode para sa Birdays (Mga Setting > Birdays > Baterya).</string>
+    <string name="help_explanation_2">2. I-off ang battery saver para sa Birdays (Mga setting &gt; Birdays &gt; Baterya).</string>
     <string name="help_settings">Buksan ang mga setting</string>
-    <string name="help_explanation_3">3. Kung mayroon kang mga naka-install na task manager, memory-cleaning, o power-saving app (gaya ng “Battery Saver”, “Clean Master”, at mga katulad na app) na humaharang sa paggana sa background, idagdag ang Birdays sa mga exception.</string>
-    <string name="help_email_description">Kung mayroon kang anumang mga tanong o mungkahi, mangyaring makipag-ugnayan sa akin sa birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Kung gumagamit ka ng task manager, cleaner, o battery saver app (tulad ng “Battery Saver” o “Clean Master”) na humaharang sa background, idagdag ang Birdays sa mga exception.</string>
+    <string name="help_email_description">May tanong o mungkahi? Mag-email sa birdaysapp@gmail.com</string>
     <string name="send_email">Magpadala ng email</string>
 
     <!-- Famous persons -->

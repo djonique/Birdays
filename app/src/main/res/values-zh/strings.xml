@@ -7,21 +7,21 @@
 -->
 
 <resources>
-    <string name="build_version">编译版本</string>
+    <string name="build_version">构建版本</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">正在加载联系人…</string>
-    <string name="contacts_uploaded">联系人已上传</string>
-    <string name="loading_contacts_error">无法导入联系人，不是标准的日期格式</string>
-    <string name="permission_required">导入联系人需要权限</string>
+    <string name="contacts_uploaded">联系人已加载</string>
+    <string name="loading_contacts_error">无法导入联系人：日期格式不支持</string>
+    <string name="permission_required">导入联系人需要相应权限</string>
     <string name="snackbar_allow_text">允许</string>
     <string name="all">全部</string>
     <string name="famous">名人</string>
     <string name="age">当前年龄:\u0020</string>
     <string name="happy_birthday">生日快乐！</string>
-    <string name="web_search_error">无法执行操作，请安装网页浏览器</string>
-    <string name="delete_record_confirm">确定要删除 %1$s 吗？</string>
-    <string name="record_deleted">记录已删除</string>
+    <string name="web_search_error">无法打开搜索，请安装浏览器</string>
+    <string name="delete_record_confirm">删除 %1$s 吗？</string>
+    <string name="record_deleted">已删除记录</string>
     <string name="undo">撤销</string>
     <string name="add_record">添加记录</string>
 
@@ -46,31 +46,31 @@
 
     <!-- NewPersonActivity -->
     <string name="new_record">新建记录</string>
-    <string name="add_from_contacts">从联系人添加</string>
-    <string name="activity_not_found_error">由于设备功能而无法执行操作</string>
+    <string name="add_from_contacts">从联系人选择</string>
+    <string name="activity_not_found_error">此设备不支持该操作</string>
     <string name="name">姓名</string>
     <string name="error_hint">请输入姓名</string>
     <string name="phone_number">电话号码</string>
     <string name="pick_date">选择日期</string>
-    <string name="wrong_date">错误的日期</string>
-    <string name="year_unknown">我不知道年份</string>
+    <string name="wrong_date">日期无效</string>
+    <string name="year_unknown">年份未知</string>
     <string name="cancel_button">取消</string>
 
     <!-- DetailActivity -->
     <string name="birthday">生日</string>
-    <string name="days_left">到下个生日的天数</string>
+    <string name="days_left">距离下个生日的天数</string>
     <string name="today">今天</string>
-    <string name="days_since_birth">出生后的天数</string>
+    <string name="days_since_birth">出生天数</string>
     <string name="zodiac_sign">星座</string>
     <string name="season_picture">季节图片</string>
     <string name="calendar">日历</string>
-    <string name="call">呼叫</string>
-    <string name="chat">聊天</string>
-    <string name="born_on_this_day">在这一天出生</string>
+    <string name="call">拨号</string>
+    <string name="chat">发消息</string>
+    <string name="born_on_this_day">同日出生</string>
 
     <!-- EditActivity -->
     <string name="editing_label">编辑中</string>
-    <string name="record_edited">记录已编辑</string>
+    <string name="record_edited">已更新记录</string>
     <string name="edit_record">编辑记录</string>
 
     <!-- Alarm -->
@@ -92,24 +92,24 @@
     <string name="pisces">双鱼座</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">为应用关闭电池优化</string>
-    <string name="optimization_description">为确保应用正常运行，请打开设置并允许应用在后台不受限制地运行</string>
-    <string name="do_not_show_again">不再显示</string>
-    <string name="disable_button">禁用</string>
+    <string name="optimization_enabled">关闭 Birdays 的电池优化</string>
+    <string name="optimization_description">打开“设置”并允许无限制后台运行，以确保提醒准时送达</string>
+    <string name="do_not_show_again">不再提示</string>
+    <string name="disable_button">关闭</string>
 
     <!-- Notifications -->
     <string name="notifications">通知</string>
-    <string name="allow_notification">允许应用程序发送即将到来的生日通知</string>
+    <string name="allow_notification">发送即将到来的生日通知</string>
     <string name="notifications_time">通知时间</string>
-    <string name="additional_notification">附加通知</string>
+    <string name="additional_notification">额外提醒</string>
 
     <string-array name="additional_notification_entries">
         <item>从不</item>
-        <item>1天前</item>
-        <item>2天前</item>
-        <item>3天前</item>
-        <item>1周前</item>
-        <item>2周前</item>
+        <item>提前 1 天</item>
+        <item>提前 2 天</item>
+        <item>提前 3 天</item>
+        <item>提前 1 周</item>
+        <item>提前 2 周</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
@@ -122,97 +122,97 @@
     </string-array>
 
     <string name="notification_tone">通知铃声</string>
-    <string name="ringtone_summary">选择通知的声音。默认使用设备设置的铃声</string>
-    <string name="silent">无</string>
+    <string name="ringtone_summary">选择通知铃声（默认使用设备铃声）</string>
+    <string name="silent">静音</string>
     <string name="help">帮助</string>
-    <string name="tap_here">如果没有收到通知，请点击此处</string>
+    <string name="tap_here">收不到通知？点此查看</string>
 
     <!-- General -->
     <string name="general">通用</string>
-    <string name="night_mode">夜间模式</string>
-    <string name="start_page">首页</string>
+    <string name="night_mode">深色模式</string>
+    <string name="start_page">起始页</string>
 
     <string-array name="start_page_entries">
-        <item>这个月</item>
+        <item>本月</item>
         <item>全部</item>
         <item>名人</item>
     </string-array>
 
-    <string name="displayed_age">显示的年龄</string>
+    <string name="displayed_age">显示年龄</string>
 
     <string-array name="displayed_age_entries">
         <item>当前</item>
-        <item>未来</item>
+        <item>即将</item>
     </string-array>
 
-    <string name="displayed_age_changes">要让更改生效，你必须重新启动应用程序</string>
+    <string name="displayed_age_changes">重启应用后生效</string>
     <string name="restart_now">立即重启</string>
     <string name="later">稍后</string>
-    <string name="rate_app">为本软件评分</string>
-    <string name="share_app">分享</string>
-    <string name="share_text">"你是否经常忘记祝家人、朋友或同事生日快乐？Birdays 会提醒你这个重要的日子！"</string>
+    <string name="rate_app">给应用评分</string>
+    <string name="share_app">分享应用</string>
+    <string name="share_text">经常忘记给家人、朋友或同事送出生日祝福？Birdays 帮你记住每一个重要日子！\n</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">同步和备份</string>
+    <string name="sync_and_backup">同步与备份</string>
     <string name="contacts_import_title">导入联系人</string>
-    <string name="contacts_import_summary">点击此处从设备中导入联系人 (支持 ISO 8601)</string>
+    <string name="contacts_import_summary">从设备导入联系人（支持 ISO 8601）</string>
     <string name="google_drive_backup">Google Drive 备份</string>
     <string name="google_drive_backup_summary">将数据库备份上传到 Google Drive</string>
     <string name="google_drive_backup_progress">正在备份到 Google Drive…</string>
     <string name="backup_complete">备份完成</string>
-    <string name="google_drive_restore">Google Drive 恢复</string>
+    <string name="google_drive_restore">从 Google Drive 恢复</string>
     <string name="google_drive_restore_summary">从 Google Drive 恢复数据库</string>
     <string name="google_drive_restore_progress">正在从 Google Drive 恢复…</string>
-    <string name="recover_records_error">恢复记录失败</string>
-    <string name="records_recovered">记录已恢复</string>
+    <string name="recover_records_error">无法恢复记录</string>
+    <string name="records_recovered">已恢复记录</string>
     <string name="restore_confirm_title">从备份恢复</string>
-    <string name="restore_confirm_message">确定要从 %1$s 恢复记录吗？记录数：%2$s。</string>
+    <string name="restore_confirm_message">要从 %1$s 恢复记录吗？记录数：%2$s。</string>
     <string name="restore_button">恢复</string>
     <string name="restore_unknown">未知</string>
-    <string name="upload_error">上传错误：%s</string>
-    <string name="backup_error">备份错误：%s</string>
-    <string name="auth_error">认证错误：%s</string>
+    <string name="upload_error">上传失败：%s</string>
+    <string name="backup_error">备份失败：%s</string>
+    <string name="auth_error">认证失败：%s</string>
     <string name="authorization_failed_error">授权失败：%s</string>
-    <string name="download_error">下载错误：%s</string>
-    <string name="file_not_found">未找到文件</string>
-    <string name="search_error">搜索错误：%s</string>
+    <string name="download_error">下载失败：%s</string>
+    <string name="file_not_found">找不到文件</string>
+    <string name="search_error">搜索失败：%s</string>
 
     <!-- Advertising -->
     <string name="advertising">广告</string>
-    <string name="about_ad_title">为什么我会看到广告？</string>
-    <string name="about_ad_summary">所有广告收入都用于项目开发</string>
+    <string name="about_ad_title">为什么会看到广告？</string>
+    <string name="about_ad_summary">所有广告收入均用于应用开发</string>
     <string name="show_ads">显示广告</string>
-    <string name="show_ads_summary">观看一段短视频广告即可关闭广告</string>
+    <string name="show_ads_summary">观看短视频即可关闭广告</string>
+    <string name="ad_watch_full_video_to_disable">看完完整视频即可关闭广告</string>
+    <string name="ad_disabled_success">已关闭广告</string>
 
     <!-- Support project -->
-    <string name="support_project_category">支持项目</string>
+    <string name="support_project_category">支持应用</string>
+    <string name="donate_title">打赏开发者</string>
+    <string name="donate_summary">一次性支持，助力后续更新</string>
     <string name="watch_video_title">观看视频广告</string>
-    <string name="ad_rewarded_summary">观看一段短视频——收入将用于应用开发</string>
-    <string name="ad_rewarded_unavailable">视频当前不可用，请稍后重试</string>
-    <string name="ad_disabled_success">广告已关闭</string>
-    <string name="ad_watch_full_video_to_disable">请观看完整视频以关闭广告</string>
-    <string name="donate_title">进行捐助</string>
-    <string name="donate_summary">为应用开发提供资金支持</string>
+    <string name="ad_rewarded_summary">观看短广告，免费支持应用</string>
+    <string name="ad_rewarded_unavailable">视频暂时无法播放，请稍后再试</string>
 
     <!-- About -->
-    <string name="about">关于应用程序</string>
-    <string name="licenses">许可证</string>
-    <string name="software_licenses">开源许可证</string>
+    <string name="about">关于</string>
+    <string name="licenses">许可协议</string>
+    <string name="software_licenses">开源许可协议</string>
     <string name="third_party_sdks">第三方 SDK</string>
     <string name="menu_github">源代码</string>
     <string name="privacy_policy">隐私政策</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">为什么提醒不起作用？</string>
-    <string name="help_description">Android 设备具有省电模式，该模式会阻止应用在后台运行或防止其自动启动。为使通知正常工作，请按照以下简单步骤操作：</string>
-    <string name="help_explanation_1">1. 确保允许 Birdays 应用发送通知（设置 > Birdays > 通知）。</string>
-    <string name="help_delay_text">请注意，某些设备上的通知可能会延迟。</string>
-    <string name="help_exact_alarm">允许设置闹钟和提醒</string>
-    <string name="help_explanation_2">2. 关闭 Birdays 的省电模式（设置 > Birdays > 电池）。</string>
+    <string name="help_header">为什么提醒没有生效？</string>
+    <string name="help_description">部分 Android 设备会通过省电策略限制后台运行或自启动。按以下步骤操作，可确保通知正常送达：</string>
+    <string name="help_explanation_1">1. 确认已允许 Birdays 发送通知（设置 &gt; Birdays &gt; 通知）。</string>
+    <string name="help_delay_text">部分设备上的通知可能会有延迟。</string>
+    <string name="help_exact_alarm">允许精确闹钟</string>
+    <string name="help_explanation_2">2. 关闭 Birdays 的省电限制（设置 &gt; Birdays &gt; 电池）。</string>
     <string name="help_settings">打开设置</string>
-    <string name="help_explanation_3">3. 如果您安装了阻止后台运行的任务管理器、内存清理或省电应用（例如“Battery Saver”、“Clean Master”及类似应用），请将 Birdays 添加到例外列表中。</string>
-    <string name="help_email_description">如果您有任何问题或建议，请通过 birdaysapp@gmail.com 与我联系</string>
-    <string name="send_email">发送电子邮件</string>
+    <string name="help_explanation_3">3. 若安装了阻止后台运行的任务管理器、内存清理或省电工具（如“Battery Saver”、“Clean Master”等），请将 Birdays 加入白名单/例外。</string>
+    <string name="help_email_description">如有疑问或建议，欢迎发送邮件至 birdaysapp@gmail.com</string>
+    <string name="send_email">发送邮件</string>
 
     <!-- Famous persons -->
     <!-- 1 january -->

@@ -11,17 +11,17 @@
 
     <!-- MainActivity -->
     <string name="loading_contacts">正在載入聯絡人…</string>
-    <string name="contacts_uploaded">聯絡人已上傳</string>
-    <string name="loading_contacts_error">無法匯入聯絡人，日期格式非標準</string>
+    <string name="contacts_uploaded">聯絡人已載入</string>
+    <string name="loading_contacts_error">無法匯入聯絡人：日期格式不支援</string>
     <string name="permission_required">匯入聯絡人需要權限</string>
     <string name="snackbar_allow_text">允許</string>
     <string name="all">全部</string>
     <string name="famous">知名</string>
     <string name="age">目前年齡:\u0020</string>
     <string name="happy_birthday">生日快樂！</string>
-    <string name="web_search_error">無法執行操作，請安裝網頁瀏覽器</string>
-    <string name="delete_record_confirm">確定要刪除 %1$s 嗎？</string>
-    <string name="record_deleted">記錄已刪除</string>
+    <string name="web_search_error">無法開啟搜尋，請安裝瀏覽器</string>
+    <string name="delete_record_confirm">刪除 %1$s 嗎？</string>
+    <string name="record_deleted">已刪除記錄</string>
     <string name="undo">復原</string>
     <string name="add_record">新增記錄</string>
 
@@ -46,14 +46,14 @@
 
     <!-- NewPersonActivity -->
     <string name="new_record">新增記錄</string>
-    <string name="add_from_contacts">從聯絡人新增</string>
-    <string name="activity_not_found_error">因裝置功能限制，無法執行操作</string>
+    <string name="add_from_contacts">從聯絡人選擇</string>
+    <string name="activity_not_found_error">此裝置不支援這項操作</string>
     <string name="name">名稱</string>
     <string name="error_hint">請輸入名稱</string>
     <string name="phone_number">電話號碼</string>
     <string name="pick_date">選擇日期</string>
-    <string name="wrong_date">日期錯誤</string>
-    <string name="year_unknown">我不知道年份</string>
+    <string name="wrong_date">日期無效</string>
+    <string name="year_unknown">年份未知</string>
     <string name="cancel_button">取消</string>
 
     <!-- DetailActivity -->
@@ -65,16 +65,16 @@
     <string name="season_picture">季節圖片</string>
     <string name="calendar">日曆</string>
     <string name="call">通話</string>
-    <string name="chat">聊天</string>
-    <string name="born_on_this_day">出生於這一天</string>
+    <string name="chat">傳訊息</string>
+    <string name="born_on_this_day">同日出生</string>
 
     <!-- EditActivity -->
     <string name="editing_label">編輯中</string>
-    <string name="record_edited">記錄已編輯</string>
+    <string name="record_edited">已更新記錄</string>
     <string name="edit_record">編輯記錄</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException：三星裝置限制通知數量為 500</string>
+    <string name="security_exception">SecurityException：三星裝置限制通知數量為 500 則</string>
     <string name="channel_name">生日</string>
 
     <!-- Zodiac signs -->
@@ -92,24 +92,24 @@
     <string name="pisces">雙魚座</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">為應用程式停用電池最佳化</string>
-    <string name="optimization_description">為確保應用程式正常運作，請開啟設定並允許應用程式在背景不受限制地執行</string>
-    <string name="do_not_show_again">不要再顯示</string>
+    <string name="optimization_enabled">停用 Birdays 的電池最佳化</string>
+    <string name="optimization_description">開啟「設定」並允許不受限制在背景執行，確保提醒準時送達</string>
+    <string name="do_not_show_again">不再顯示</string>
     <string name="disable_button">停用</string>
 
     <!-- Notifications -->
     <string name="notifications">通知</string>
-    <string name="allow_notification">允許應用程式傳送即將到來的生日通知</string>
+    <string name="allow_notification">傳送即將到來的生日通知</string>
     <string name="notifications_time">通知時間</string>
-    <string name="additional_notification">額外通知</string>
+    <string name="additional_notification">額外提醒</string>
 
     <string-array name="additional_notification_entries">
         <item>從不</item>
-        <item>1 天前</item>
-        <item>2 天前</item>
-        <item>3 天前</item>
-        <item>1 週前</item>
-        <item>2 週前</item>
+        <item>提前 1 天</item>
+        <item>提前 2 天</item>
+        <item>提前 3 天</item>
+        <item>提前 1 週</item>
+        <item>提前 2 週</item>
     </string-array>
 
     <string-array name="additional_notification_delay">
@@ -122,15 +122,15 @@
     </string-array>
 
     <string name="notification_tone">通知鈴聲</string>
-    <string name="ringtone_summary">選擇通知音效。預設會使用裝置設定中的鈴聲</string>
-    <string name="silent">無</string>
+    <string name="ringtone_summary">選擇通知音效（預設使用裝置鈴聲）</string>
+    <string name="silent">靜音</string>
     <string name="help">說明</string>
-    <string name="tap_here">如果沒有收到通知，請點此</string>
+    <string name="tap_here">收不到通知？點此查看</string>
 
     <!-- General -->
     <string name="general">一般</string>
-    <string name="night_mode">夜間模式</string>
-    <string name="start_page">起始頁面</string>
+    <string name="night_mode">深色模式</string>
+    <string name="start_page">起始畫面</string>
 
     <string-array name="start_page_entries">
         <item>本月</item>
@@ -142,31 +142,31 @@
 
     <string-array name="displayed_age_entries">
         <item>目前</item>
-        <item>未來</item>
+        <item>即將</item>
     </string-array>
 
-    <string name="displayed_age_changes">您必須重新啟動應用程式，這些變更才會生效</string>
+    <string name="displayed_age_changes">重新啟動應用程式後生效</string>
     <string name="restart_now">立即重新啟動</string>
     <string name="later">稍後</string>
     <string name="rate_app">評價應用程式</string>
     <string name="share_app">分享應用程式</string>
-    <string name="share_text">您是否經常忘記祝賀家人、朋友或同事生日？Birdays 會提醒您重要的日期！</string>
+    <string name="share_text">經常忘記祝賀家人、朋友或同事生日嗎？Birdays 會提醒您重要的日子！\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">同步與備份</string>
     <string name="contacts_import_title">匯入聯絡人</string>
-    <string name="contacts_import_summary">點此從裝置匯入聯絡人（支援 ISO 8601）</string>
+    <string name="contacts_import_summary">從裝置匯入聯絡人（支援 ISO 8601）</string>
     <string name="google_drive_backup">Google Drive 備份</string>
     <string name="google_drive_backup_summary">將資料庫備份上傳至 Google Drive</string>
     <string name="google_drive_backup_progress">正在備份至 Google Drive…</string>
     <string name="backup_complete">備份完成</string>
-    <string name="google_drive_restore">Google Drive 還原</string>
+    <string name="google_drive_restore">從 Google Drive 還原</string>
     <string name="google_drive_restore_summary">從 Google Drive 還原資料庫</string>
     <string name="google_drive_restore_progress">正在從 Google Drive 還原…</string>
     <string name="recover_records_error">無法還原記錄</string>
-    <string name="records_recovered">記錄已還原</string>
+    <string name="records_recovered">已還原記錄</string>
     <string name="restore_confirm_title">從備份還原</string>
-    <string name="restore_confirm_message">確定要從 %1$s 還原記錄嗎？記錄數：%2$s。</string>
+    <string name="restore_confirm_message">要從 %1$s 還原記錄嗎？記錄數：%2$s。</string>
     <string name="restore_button">還原</string>
     <string name="restore_unknown">未知</string>
     <string name="upload_error">上傳錯誤：%s</string>
@@ -180,22 +180,22 @@
     <!-- Advertising -->
     <string name="advertising">廣告</string>
     <string name="about_ad_title">為什麼我會看到廣告？</string>
-    <string name="about_ad_summary">所有廣告收益都會用於專案開發</string>
+    <string name="about_ad_summary">所有廣告收益都會用於應用程式開發</string>
     <string name="show_ads">顯示廣告</string>
-    <string name="show_ads_summary">您可以觀看一段短影片廣告來停用廣告</string>
+    <string name="show_ads_summary">觀看短影片即可停用廣告</string>
+    <string name="ad_watch_full_video_to_disable">看完完整影片即可停用廣告</string>
+    <string name="ad_disabled_success">已停用廣告</string>
 
     <!-- Support project -->
-    <string name="support_project_category">支持專案</string>
+    <string name="support_project_category">支持應用程式</string>
+    <string name="donate_title">贊助開發者</string>
+    <string name="donate_summary">留下單次贊助，協助未來的更新</string>
     <string name="watch_video_title">觀看影片廣告</string>
-    <string name="ad_rewarded_summary">觀看短影片，收益將用於應用程式開發</string>
-    <string name="ad_rewarded_unavailable">目前無法播放影片，請稍後再試</string>
-    <string name="ad_disabled_success">廣告已停用</string>
-    <string name="ad_watch_full_video_to_disable">請將影片觀看完畢以停用廣告</string>
-    <string name="donate_title">贊助支持</string>
-    <string name="donate_summary">以財務支持應用程式開發</string>
+    <string name="ad_rewarded_summary">觀看短廣告，免費支持應用程式</string>
+    <string name="ad_rewarded_unavailable">影片目前無法播放，請稍後再試</string>
 
     <!-- About -->
-    <string name="about">關於應用程式</string>
+    <string name="about">關於</string>
     <string name="licenses">授權條款</string>
     <string name="software_licenses">開放原始碼授權條款</string>
     <string name="third_party_sdks">第三方 SDK</string>
@@ -204,14 +204,14 @@
 
     <!-- HelpActivity -->
     <string name="help_header">為什麼提醒沒有作用？</string>
-    <string name="help_description">Android 裝置具有省電模式，會封鎖應用程式在背景執行或防止其自動啟動。若要讓通知正常運作，請按照以下簡單步驟操作：</string>
-    <string name="help_explanation_1">1. 請確認已允許 Birdays 應用程式傳送通知（設定 > Birdays > 通知）。</string>
-    <string name="help_delay_text">請注意，部分裝置上的通知可能會延遲。</string>
-    <string name="help_exact_alarm">允許設定鬧鐘與提醒</string>
-    <string name="help_explanation_2">2. 關閉 Birdays 的省電模式（設定 > Birdays > 電池）。</string>
+    <string name="help_description">部分 Android 裝置會透過省電模式封鎖背景執行或防止自動啟動。請按照以下步驟操作，讓通知正常運作：</string>
+    <string name="help_explanation_1">1. 請確認已允許 Birdays 傳送通知（設定 &gt; Birdays &gt; 通知）。</string>
+    <string name="help_delay_text">部分裝置上的通知可能會延遲。</string>
+    <string name="help_exact_alarm">允許設定精準鬧鐘</string>
+    <string name="help_explanation_2">2. 關閉 Birdays 的省電模式（設定 &gt; Birdays &gt; 電池）。</string>
     <string name="help_settings">開啟設定</string>
-    <string name="help_explanation_3">3. 如果您安裝了會封鎖背景運作的工作管理員、記憶體清理或省電應用程式（例如「Battery Saver」、「Clean Master」和類似的應用程式），請將 Birdays 加入例外清單。</string>
-    <string name="help_email_description">如果您有任何問題或建議，請透過 birdaysapp@gmail.com 與我聯絡</string>
+    <string name="help_explanation_3">3. 若您安裝了會封鎖背景運作的工作管理員、記憶體清理或省電應用程式（例如「Battery Saver」、「Clean Master」等），請將 Birdays 加入例外清單。</string>
+    <string name="help_email_description">如有任何問題或建議，歡迎來信至 birdaysapp@gmail.com</string>
     <string name="send_email">傳送電子郵件</string>
 
     <!-- Famous persons -->

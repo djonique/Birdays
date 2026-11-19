@@ -7,23 +7,23 @@
 -->
 
 <resources>
-    <string name="build_version">Έκδοση build</string>
+    <string name="build_version">Έκδοση</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">Φόρτωση επαφών…</string>
-    <string name="contacts_uploaded">Οι επαφές έχουν φορτωθεί</string>
-    <string name="loading_contacts_error">Δεν είναι δυνατή η εισαγωγή επαφών, μη τυπική μορφή ημερομηνίας</string>
-    <string name="permission_required">Απαιτείται άδεια για την εισαγωγή επαφών</string>
-    <string name="snackbar_allow_text">Επιτρέπω</string>
+    <string name="contacts_uploaded">Οι επαφές φορτώθηκαν</string>
+    <string name="loading_contacts_error">Δεν ήταν δυνατή η εισαγωγή επαφών λόγω μη έγκυρης μορφής ημερομηνίας</string>
+    <string name="permission_required">Απαιτείται άδεια πρόσβασης στις επαφές</string>
+    <string name="snackbar_allow_text">Επιτρέψτε</string>
     <string name="all">Όλα</string>
     <string name="famous">Διάσημοι</string>
-    <string name="age">Τρέχουσα ηλικία:\u0020</string>
-    <string name="happy_birthday">Χαρούμενα γενέθλια!</string>
-    <string name="web_search_error">Δεν είναι δυνατή η εκτέλεση ενέργειας, εγκαταστήστε το πρόγραμμα περιήγησης ιστού</string>
-    <string name="delete_record_confirm">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1$s;</string>
-    <string name="record_deleted">Η εγγραφή διαγράφηκε</string>
+    <string name="age">Ηλικία:\u0020</string>
+    <string name="happy_birthday">Χρόνια πολλά!</string>
+    <string name="web_search_error">Δεν είναι δυνατή η αναζήτηση — εγκαταστήστε ένα πρόγραμμα περιήγησης</string>
+    <string name="delete_record_confirm">Διαγραφή του «%1$s»;</string>
+    <string name="record_deleted">Η καταχώριση διαγράφηκε</string>
     <string name="undo">Αναίρεση</string>
-    <string name="add_record">Προσθήκη εγγραφής</string>
+    <string name="add_record">Προσθήκη καταχώρισης</string>
 
     <string-array name="months">
         <item>Ιανουάριος</item>
@@ -45,16 +45,16 @@
     <string name="action_delete">Διαγραφή</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">Νέα εγγραφή</string>
-    <string name="add_from_contacts">Προσθήκη από τις επαφές</string>
-    <string name="activity_not_found_error">Δεν είναι δυνατή η εκτέλεση ενέργειας λόγω των λειτουργιών της συσκευής</string>
+    <string name="new_record">Νέα καταχώριση</string>
+    <string name="add_from_contacts">Επιλογή από επαφές</string>
+    <string name="activity_not_found_error">Δεν είναι δυνατή η εκτέλεση της ενέργειας σε αυτή τη συσκευή</string>
     <string name="name">Όνομα</string>
-    <string name="error_hint">Εισαγάγετε το όνομα</string>
-    <string name="phone_number">Τηλεφωνικό νούμερο</string>
-    <string name="pick_date">Επιλέξτε ημερομηνία</string>
-    <string name="wrong_date">Λάθος ημερομηνία</string>
-    <string name="year_unknown">Δεν ξέρω το χρόνο</string>
-    <string name="cancel_button">Άκυρο</string>
+    <string name="error_hint">Εισαγάγετε ένα όνομα</string>
+    <string name="phone_number">Τηλέφωνο</string>
+    <string name="pick_date">Επιλογή ημερομηνίας</string>
+    <string name="wrong_date">Μη έγκυρη ημερομηνία</string>
+    <string name="year_unknown">Άγνωστο έτος</string>
+    <string name="cancel_button">Ακύρωση</string>
 
     <!-- DetailActivity -->
     <string name="birthday">Γενέθλια</string>
@@ -62,19 +62,19 @@
     <string name="today">Σήμερα</string>
     <string name="days_since_birth">Ημέρες από τη γέννηση</string>
     <string name="zodiac_sign">Ζώδιο</string>
-    <string name="season_picture">Εικόνα σεζόν</string>
+    <string name="season_picture">Εικόνα εποχής</string>
     <string name="calendar">Ημερολόγιο</string>
     <string name="call">Κλήση</string>
-    <string name="chat">Κουβέντα</string>
-    <string name="born_on_this_day">Γεννήθηκε αυτή τη μέρα</string>
+    <string name="chat">Μήνυμα</string>
+    <string name="born_on_this_day">Γεννήθηκε σαν σήμερα</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Επεξεργασία</string>
-    <string name="record_edited">Η εγγραφή επεξεργάστηκε</string>
-    <string name="edit_record">Επεξεργασία εγγραφής</string>
+    <string name="record_edited">Η καταχώριση ενημερώθηκε</string>
+    <string name="edit_record">Επεξεργασία καταχώρισης</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: Οι συσκευές Samsung περιορίζουν τον αριθμό των ειδοποιήσεων σε 500</string>
+    <string name="security_exception">SecurityException: Οι συσκευές Samsung περιορίζουν τις ειδοποιήσεις έως 500</string>
     <string name="channel_name">Γενέθλια</string>
 
     <!-- Zodiac signs -->
@@ -92,16 +92,16 @@
     <string name="pisces">Ιχθύες</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Απενεργοποιήστε τη βελτιστοποίηση μπαταρίας για την εφαρμογή</string>
-    <string name="optimization_description">Για να διασφαλίσετε τη σωστή λειτουργία της εφαρμογής, ανοίξτε τις Ρυθμίσεις και επιτρέψτε στην εφαρμογή να εκτελείται στο παρασκήνιο χωρίς περιορισμούς</string>
+    <string name="optimization_enabled">Απενεργοποιήστε τη βελτιστοποίηση μπαταρίας για το Birdays</string>
+    <string name="optimization_description">Για να έρχονται σωστά οι υπενθυμίσεις, ανοίξτε τις Ρυθμίσεις και επιτρέψτε τη λειτουργία στο παρασκήνιο χωρίς περιορισμούς</string>
     <string name="do_not_show_again">Να μην εμφανιστεί ξανά</string>
     <string name="disable_button">Απενεργοποίηση</string>
 
     <!-- Notifications -->
     <string name="notifications">Ειδοποιήσεις</string>
-    <string name="allow_notification">Αφήστε την εφαρμογή να στείλει ειδοποιήσεις για τα επερχόμενα γενέθλια</string>
-    <string name="notifications_time">Χρόνος ειδοποίησης</string>
-    <string name="additional_notification">Πρόσθετη ειδοποίηση</string>
+    <string name="allow_notification">Ειδοποιήσεις για επερχόμενα γενέθλια</string>
+    <string name="notifications_time">Ώρα ειδοποίησης</string>
+    <string name="additional_notification">Επιπλέον ειδοποίηση</string>
 
     <string-array name="additional_notification_entries">
         <item>Ποτέ</item>
@@ -117,20 +117,20 @@
         <item>Αύριο</item>
         <item>Σε 2 ημέρες</item>
         <item>Σε 3 ημέρες</item>
-        <item>Σε μία εβδομάδα</item>
+        <item>Σε 1 εβδομάδα</item>
         <item>Σε 2 εβδομάδες</item>
     </string-array>
 
     <string name="notification_tone">Ήχος ειδοποίησης</string>
-    <string name="ringtone_summary">Επιλέξτε έναν ήχο για ειδοποίηση. Από προεπιλογή χρησιμοποιείται ο τόνος από τις ρυθμίσεις της συσκευής</string>
-    <string name="silent">Καμία</string>
+    <string name="ringtone_summary">Επιλογή ήχου ειδοποίησης (προεπιλογή: ήχος συσκευής)</string>
+    <string name="silent">Χωρίς ήχο</string>
     <string name="help">Βοήθεια</string>
     <string name="tap_here">Πατήστε εδώ αν δεν λαμβάνετε ειδοποιήσεις</string>
 
     <!-- General -->
-    <string name="general">Γενικός</string>
-    <string name="night_mode">Νυχτερινή λειτουργία</string>
-    <string name="start_page">Αρχική σελίδα</string>
+    <string name="general">Γενικά</string>
+    <string name="night_mode">Σκούρο θέμα</string>
+    <string name="start_page">Αρχική οθόνη</string>
 
     <string-array name="start_page_entries">
         <item>Τρέχων μήνας</item>
@@ -138,80 +138,80 @@
         <item>Διάσημοι</item>
     </string-array>
 
-    <string name="displayed_age">Εμφανισμένη ηλικία</string>
+    <string name="displayed_age">Εμφάνιση ηλικίας</string>
 
     <string-array name="displayed_age_entries">
         <item>Τρέχουσα</item>
-        <item>Μελλοντική</item>
+        <item>Επόμενη</item>
     </string-array>
 
-    <string name="displayed_age_changes">Πρέπει να κάνετε επανεκκίνηση της εφαρμογής για να εφαρμοστούν αυτές οι αλλαγές</string>
+    <string name="displayed_age_changes">Απαιτείται επανεκκίνηση της εφαρμογής για να εφαρμοστούν οι αλλαγές</string>
     <string name="restart_now">Επανεκκίνηση τώρα</string>
     <string name="later">Αργότερα</string>
-    <string name="rate_app">Βαθμολόγησε την εφαρμογή</string>
+    <string name="rate_app">Αξιολόγηση εφαρμογής</string>
     <string name="share_app">Κοινοποίηση εφαρμογής</string>
-    <string name="share_text">"Συχνά ξεχνάτε να συγχαρείτε την οικογένεια, τους φίλους ή τους συναδέλφους σας για τα γενέθλιά τους; Το Birdays θα σας υπενθυμίσει μια σημαντική ημερομηνία!  "</string>
+    <string name="share_text">Ξεχνάτε εύκολα τα γενέθλια φίλων, συγγενών ή συναδέλφων; Το Birdays θα σας τα θυμίζει πάντα στην ώρα τους!\n</string>
 
     <!-- Synchronization and backup -->
-    <string name="sync_and_backup">Συγχρονισμός και δημιουργία αντιγράφων ασφαλείας</string>
+    <string name="sync_and_backup">Συγχρονισμός και αντίγραφα ασφαλείας</string>
     <string name="contacts_import_title">Εισαγωγή επαφών</string>
-    <string name="contacts_import_summary">Πατήστε εδώ για να εισαγάγετε επαφές από τη συσκευή σας (υποστηρίζει ISO 8601)</string>
-    <string name="google_drive_backup">Δημιουργία αντιγράφου ασφαλείας στο Google Drive</string>
-    <string name="google_drive_backup_summary">Μεταφόρτωση αντιγράφου ασφαλείας βάσης δεδομένων στο Google Drive</string>
+    <string name="contacts_import_summary">Εισαγωγή επαφών από τη συσκευή (υποστηρίζει ISO 8601)</string>
+    <string name="google_drive_backup">Αντίγραφο ασφαλείας στο Google Drive</string>
+    <string name="google_drive_backup_summary">Αποθήκευση αντιγράφου βάσης δεδομένων στο Google Drive</string>
     <string name="google_drive_backup_progress">Δημιουργία αντιγράφου ασφαλείας στο Google Drive…</string>
-    <string name="backup_complete">Η δημιουργία αντιγράφων ασφαλείας ολοκληρώθηκε</string>
-    <string name="google_drive_restore">Επαναφορά από Google Drive</string>
+    <string name="backup_complete">Το αντίγραφο ασφαλείας ολοκληρώθηκε</string>
+    <string name="google_drive_restore">Επαναφορά από το Google Drive</string>
     <string name="google_drive_restore_summary">Επαναφορά βάσης δεδομένων από το Google Drive</string>
     <string name="google_drive_restore_progress">Επαναφορά από το Google Drive…</string>
-    <string name="recover_records_error">Αποτυχία ανάκτησης εγγραφών</string>
-    <string name="records_recovered">Οι εγγραφές ανακτήθηκαν</string>
-    <string name="restore_confirm_title">Επαναφορά από αντίγραφο ασφαλείας</string>
-    <string name="restore_confirm_message">Είστε σίγουροι ότι θέλετε να επαναφέρετε εγγραφές από %1$s; Αριθμός εγγραφών: %2$s.</string>
+    <string name="recover_records_error">Αποτυχία επαναφοράς καταχωρίσεων</string>
+    <string name="records_recovered">Οι καταχωρίσεις επαναφέρθηκαν</string>
+    <string name="restore_confirm_title">Επαναφορά αντιγράφου ασφαλείας</string>
+    <string name="restore_confirm_message">Επαναφορά καταχωρίσεων από %1$s; Καταχωρίσεις: %2$s.</string>
     <string name="restore_button">Επαναφορά</string>
     <string name="restore_unknown">άγνωστο</string>
-    <string name="upload_error">Σφάλμα μεταφόρτωσης: %s</string>
+    <string name="upload_error">Σφάλμα αποστολής: %s</string>
     <string name="backup_error">Σφάλμα αντιγράφου ασφαλείας: %s</string>
     <string name="auth_error">Σφάλμα ελέγχου ταυτότητας: %s</string>
-    <string name="authorization_failed_error">Η εξουσιοδότηση απέτυχε: %s</string>
+    <string name="authorization_failed_error">Αποτυχία εξουσιοδότησης: %s</string>
     <string name="download_error">Σφάλμα λήψης: %s</string>
     <string name="file_not_found">Το αρχείο δεν βρέθηκε</string>
     <string name="search_error">Σφάλμα αναζήτησης: %s</string>
 
     <!-- Advertising -->
-    <string name="advertising">Διαφήμιση</string>
+    <string name="advertising">Διαφημίσεις</string>
     <string name="about_ad_title">Γιατί βλέπω διαφημίσεις;</string>
-    <string name="about_ad_summary">Όλα τα έσοδα από τη διαφήμιση διατίθενται για την ανάπτυξη του έργου</string>
+    <string name="about_ad_summary">Όλα τα έσοδα από τις διαφημίσεις διατίθενται για την ανάπτυξη της εφαρμογής</string>
     <string name="show_ads">Εμφάνιση διαφημίσεων</string>
-    <string name="show_ads_summary">Μπορείτε να απενεργοποιήσετε τις διαφημίσεις παρακολουθώντας μια σύντομη διαφήμιση βίντεο</string>
+    <string name="show_ads_summary">Δες ένα σύντομο βίντεο για να απενεργοποιήσεις τις διαφημίσεις</string>
+    <string name="ad_watch_full_video_to_disable">Δες ολόκληρο το βίντεο για να απενεργοποιήσεις τις διαφημίσεις</string>
+    <string name="ad_disabled_success">Οι διαφημίσεις απενεργοποιήθηκαν</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Υποστηρίξτε το έργο</string>
-    <string name="watch_video_title">Παρακολουθήστε μια διαφήμιση βίντεο</string>
-    <string name="ad_rewarded_summary">Παρακολουθήστε ένα σύντομο βίντεο — τα έσοδα διατίθενται για την ανάπτυξη της εφαρμογής</string>
-    <string name="ad_rewarded_unavailable">Το βίντεο δεν είναι διαθέσιμο αυτή τη στιγμή, δοκιμάστε ξανά αργότερα</string>
-    <string name="ad_disabled_success">Οι διαφημίσεις είναι πλέον απενεργοποιημένες</string>
-    <string name="ad_watch_full_video_to_disable">Παρακολουθήστε το βίντεο μέχρι το τέλος για να απενεργοποιήσετε τις διαφημίσεις</string>
-    <string name="donate_title">Κάντε μια συνεισφορά</string>
-    <string name="donate_summary">Οικονομική υποστήριξη για την ανάπτυξη της εφαρμογής</string>
+    <string name="support_project_category">Υποστήριξη εφαρμογής</string>
+    <string name="donate_title">Κέρασε τον δημιουργό</string>
+    <string name="donate_summary">Άφησε μια εφάπαξ υποστήριξη για τις επόμενες ενημερώσεις</string>
+    <string name="watch_video_title">Παρακολούθηση διαφημιστικού βίντεο</string>
+    <string name="ad_rewarded_summary">Στήριξε την εφαρμογή δωρεάν βλέποντας μια σύντομη διαφήμιση</string>
+    <string name="ad_rewarded_unavailable">Το βίντεο δεν είναι διαθέσιμο τώρα — δοκίμασε ξανά αργότερα</string>
 
     <!-- About -->
-    <string name="about">Σχετικά με την εφαρμογή</string>
+    <string name="about">Σχετικά</string>
     <string name="licenses">Άδειες</string>
-    <string name="software_licenses">Άδειες ανοιχτού κώδικα</string>
+    <string name="software_licenses">Άδειες λογισμικού ανοιχτού κώδικα</string>
     <string name="third_party_sdks">SDK τρίτων</string>
-    <string name="menu_github">Κωδικός πηγής</string>
+    <string name="menu_github">Πηγαίος κώδικας</string>
     <string name="privacy_policy">Πολιτική απορρήτου</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Γιατί δεν λειτουργεί η υπενθύμιση;</string>
-    <string name="help_description">Οι συσκευές Android διαθέτουν λειτουργία εξοικονόμησης ενέργειας που εμποδίζει την εφαρμογή να εκτελείται στο παρασκήνιο ή αποτρέπει την αυτόματη εκκίνησή της. Για να λειτουργούν σωστά οι ειδοποιήσεις, ακολουθήστε αυτά τα απλά βήματα:</string>
-    <string name="help_explanation_1">1. Βεβαιωθείτε ότι επιτρέπονται οι ειδοποιήσεις για την εφαρμογή Birdays (Ρυθμίσεις > Birdays > Ειδοποιήσεις).</string>
-    <string name="help_delay_text">Λάβετε υπόψη ότι οι ειδοποιήσεις ενδέχεται να καθυστερούν σε ορισμένες συσκευές.</string>
+    <string name="help_header">Γιατί δεν έρχονται οι υπενθυμίσεις;</string>
+    <string name="help_description">Πολλές συσκευές Android περιορίζουν τη λειτουργία στο παρασκήνιο ή την αυτόματη εκκίνηση για εξοικονόμηση μπαταρίας. Ακολουθήστε αυτά τα βήματα:</string>
+    <string name="help_explanation_1">1. Βεβαιωθείτε ότι οι ειδοποιήσεις για το Birdays είναι ενεργές (Ρυθμίσεις &gt; Birdays &gt; Ειδοποιήσεις).</string>
+    <string name="help_delay_text">Σε ορισμένες συσκευές οι ειδοποιήσεις ενδέχεται να φτάνουν με καθυστέρηση.</string>
     <string name="help_exact_alarm">Να επιτρέπονται τα ακριβή ξυπνητήρια</string>
-    <string name="help_explanation_2">2. Απενεργοποιήστε τη λειτουργία εξοικονόμησης ενέργειας για το Birdays (Ρυθμίσεις > Birdays > Μπαταρία).</string>
+    <string name="help_explanation_2">2. Απενεργοποιήστε τον περιορισμό μπαταρίας για το Birdays (Ρυθμίσεις &gt; Birdays &gt; Μπαταρία).</string>
     <string name="help_settings">Άνοιγμα ρυθμίσεων</string>
-    <string name="help_explanation_3">3. Εάν έχετε εγκατεστημένες εφαρμογές διαχείρισης εργασιών, εκκαθάρισης μνήμης ή εξοικονόμησης ενέργειας (όπως «Battery Saver», «Clean Master» και παρόμοιες εφαρμογές) που αποκλείουν τη λειτουργία στο παρασκήνιο, προσθέστε το Birdays στις εξαιρέσεις.</string>
-    <string name="help_email_description">Εάν έχετε οποιεσδήποτε ερωτήσεις ή προτάσεις, επικοινωνήστε μαζί μου στο birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Αν χρησιμοποιείτε εφαρμογές καθαρισμού ή εξοικονόμησης μπαταρίας (π.χ. Battery Saver, Clean Master), προσθέστε το Birdays στις εξαιρέσεις.</string>
+    <string name="help_email_description">Για απορίες ή προτάσεις, στείλτε μήνυμα στο birdaysapp@gmail.com</string>
     <string name="send_email">Αποστολή email</string>
 
     <!-- Famous persons -->

@@ -7,23 +7,23 @@
 -->
 
 <resources>
-    <string name="build_version">Versi kompilasi</string>
+    <string name="build_version">Versi build</string>
 
     <!-- MainActivity -->
     <string name="loading_contacts">Memuat kontak…</string>
-    <string name="contacts_uploaded">Kontak diunggah</string>
-    <string name="loading_contacts_error">Tidak dapat mengimpor kontak, format tanggal tidak standar</string>
+    <string name="contacts_uploaded">Kontak dimuat</string>
+    <string name="loading_contacts_error">Gagal mengimpor kontak: format tanggal tidak sesuai</string>
     <string name="permission_required">Izin diperlukan untuk mengimpor kontak</string>
     <string name="snackbar_allow_text">Izinkan</string>
     <string name="all">Semua</string>
-    <string name="famous">Terkenal</string>
-    <string name="age">Umur sekarang:\u0020</string>
-    <string name="happy_birthday">Selamat Ulang Tahun!</string>
-    <string name="web_search_error">Tidak dapat melakukan tindakan, silakan pasang penjelajah web</string>
-    <string name="delete_record_confirm">Apakah Anda yakin ingin menghapus %1$s?</string>
-    <string name="record_deleted">Catatan dihapus</string>
+    <string name="famous">Tokoh</string>
+    <string name="age">Usia saat ini:\u0020</string>
+    <string name="happy_birthday">Selamat ulang tahun!</string>
+    <string name="web_search_error">Tidak dapat membuka pencarian — pasang peramban web</string>
+    <string name="delete_record_confirm">Hapus %1$s?</string>
+    <string name="record_deleted">Data dihapus</string>
     <string name="undo">Urungkan</string>
-    <string name="add_record">Tambah catatan</string>
+    <string name="add_record">Tambah data</string>
 
     <string-array name="months">
         <item>Januari</item>
@@ -41,19 +41,19 @@
     </string-array>
 
     <!-- Menu -->
-    <string name="action_settings">Pengaturan</string>
+    <string name="action_settings">Setelan</string>
     <string name="action_delete">Hapus</string>
 
     <!-- NewPersonActivity -->
-    <string name="new_record">Catatan baru</string>
-    <string name="add_from_contacts">Tambahkan dari kontak</string>
-    <string name="activity_not_found_error">Tidak dapat melakukan tindakan karena fitur perangkat</string>
+    <string name="new_record">Data baru</string>
+    <string name="add_from_contacts">Pilih dari Kontak</string>
+    <string name="activity_not_found_error">Tindakan ini tidak dapat dilakukan di perangkat ini</string>
     <string name="name">Nama</string>
-    <string name="error_hint">Silakan masukkan nama</string>
+    <string name="error_hint">Masukkan nama</string>
     <string name="phone_number">Nomor telepon</string>
     <string name="pick_date">Pilih tanggal</string>
-    <string name="wrong_date">Tanggal salah</string>
-    <string name="year_unknown">Saya tidak tahu tahunnya</string>
+    <string name="wrong_date">Tanggal tidak valid</string>
+    <string name="year_unknown">Tahun tidak diketahui</string>
     <string name="cancel_button">Batal</string>
 
     <!-- DetailActivity -->
@@ -64,51 +64,51 @@
     <string name="zodiac_sign">Zodiak</string>
     <string name="season_picture">Gambar musim</string>
     <string name="calendar">Kalender</string>
-    <string name="call">Panggilan</string>
-    <string name="chat">Obrolan</string>
-    <string name="born_on_this_day">Lahir hari ini</string>
+    <string name="call">Telepon</string>
+    <string name="chat">Pesan</string>
+    <string name="born_on_this_day">Lahir di tanggal ini</string>
 
     <!-- EditActivity -->
     <string name="editing_label">Mengedit</string>
-    <string name="record_edited">Catatan diedit</string>
-    <string name="edit_record">Edit catatan</string>
+    <string name="record_edited">Data diperbarui</string>
+    <string name="edit_record">Edit data</string>
 
     <!-- Alarm -->
-    <string name="security_exception">SecurityException: perangkat Samsung membatasi jumlah notifikasi hingga 500</string>
+    <string name="security_exception">SecurityException: perangkat Samsung membatasi notifikasi hingga 500</string>
     <string name="channel_name">Ulang tahun</string>
 
     <!-- Zodiac signs -->
     <string name="aries">Aries</string>
     <string name="taurus">Taurus</string>
     <string name="gemini">Gemini</string>
-    <string name="cancer">Kanser</string>
+    <string name="cancer">Cancer</string>
     <string name="leo">Leo</string>
     <string name="virgo">Virgo</string>
     <string name="libra">Libra</string>
-    <string name="scorpio">Skorpio</string>
-    <string name="sagittarius">Sagitarius</string>
-    <string name="capricorn">Kaprikornus</string>
-    <string name="aquarius">Akuarius</string>
-    <string name="pisces">Pises</string>
+    <string name="scorpio">Scorpio</string>
+    <string name="sagittarius">Sagittarius</string>
+    <string name="capricorn">Capricorn</string>
+    <string name="aquarius">Aquarius</string>
+    <string name="pisces">Pisces</string>
 
     <!-- SettingsActivity -->
-    <string name="optimization_enabled">Nonaktifkan optimasi baterai untuk aplikasi</string>
-    <string name="optimization_description">Untuk memastikan aplikasi berfungsi dengan benar, buka Setelan dan izinkan aplikasi berjalan di latar belakang tanpa batasan</string>
+    <string name="optimization_enabled">Nonaktifkan optimasi baterai untuk Birdays</string>
+    <string name="optimization_description">Agar pengingat berjalan lancar, buka Setelan dan izinkan aplikasi berjalan di latar belakang tanpa batasan</string>
     <string name="do_not_show_again">Jangan tampilkan lagi</string>
     <string name="disable_button">Nonaktifkan</string>
 
     <!-- Notifications -->
     <string name="notifications">Notifikasi</string>
-    <string name="allow_notification">Izinkan aplikasi mengirim notifikasi tentang ulang tahun yang akan datang</string>
+    <string name="allow_notification">Kirim notifikasi untuk ulang tahun yang akan datang</string>
     <string name="notifications_time">Waktu notifikasi</string>
-    <string name="additional_notification">Notifikasi tambahan</string>
+    <string name="additional_notification">Pengingat tambahan</string>
 
     <string-array name="additional_notification_entries">
         <item>Tidak pernah</item>
-        <item>Sehari sebelumnya</item>
+        <item>1 hari sebelumnya</item>
         <item>2 hari sebelumnya</item>
         <item>3 hari sebelumnya</item>
-        <item>Seminggu sebelumnya</item>
+        <item>1 minggu sebelumnya</item>
         <item>2 minggu sebelumnya</item>
     </string-array>
 
@@ -117,85 +117,85 @@
         <item>Besok</item>
         <item>Dalam 2 hari</item>
         <item>Dalam 3 hari</item>
-        <item>Dalam seminggu</item>
+        <item>Dalam 1 minggu</item>
         <item>Dalam 2 minggu</item>
     </string-array>
 
     <string name="notification_tone">Nada notifikasi</string>
-    <string name="ringtone_summary">Pilih nada notifikasi. Secara bawaan, nada dari pengaturan perangkat digunakan</string>
-    <string name="silent">Tidak ada</string>
+    <string name="ringtone_summary">Pilih nada notifikasi (bawaan: nada perangkat)</string>
+    <string name="silent">Hening</string>
     <string name="help">Bantuan</string>
-    <string name="tap_here">Ketuk di sini jika Anda tidak menerima notifikasi</string>
+    <string name="tap_here">Ketuk di sini jika notifikasi tidak masuk</string>
 
     <!-- General -->
     <string name="general">Umum</string>
-    <string name="night_mode">Mode malam</string>
-    <string name="start_page">Halaman awal</string>
+    <string name="night_mode">Tema gelap</string>
+    <string name="start_page">Layar utama</string>
 
     <string-array name="start_page_entries">
-        <item>Bulan sekarang</item>
+        <item>Bulan ini</item>
         <item>Semua</item>
-        <item>Terkenal</item>
+        <item>Tokoh</item>
     </string-array>
 
-    <string name="displayed_age">Tampilkan umur</string>
+    <string name="displayed_age">Usia yang ditampilkan</string>
 
     <string-array name="displayed_age_entries">
-        <item>Sekarang</item>
-        <item>Masa depan</item>
+        <item>Saat ini</item>
+        <item>Berikutnya</item>
     </string-array>
 
-    <string name="displayed_age_changes">Anda harus memulai ulang aplikasi agar perubahan ini berlaku</string>
-    <string name="restart_now">Mulai ulang sekarang</string>
+    <string name="displayed_age_changes">Mulai ulang aplikasi agar perubahan diterapkan</string>
+    <string name="restart_now">Mulai ulang</string>
     <string name="later">Nanti</string>
-    <string name="rate_app">Beri nilai</string>
+    <string name="rate_app">Beri rating</string>
     <string name="share_app">Bagikan aplikasi</string>
-    <string name="share_text">"Apakah Anda sering lupa mengucapkan selamat kepada keluarga, teman, atau kolega pada hari ulang tahun mereka? Birdays akan mengingatkan Anda pada tanggal penting!  "</string>
+    <string name="share_text">Sering lupa mengucapkan ulang tahun ke keluarga, teman, atau rekan kerja? Birdays siap mengingatkan di hari penting!\n</string>
 
     <!-- Synchronization and backup -->
     <string name="sync_and_backup">Sinkronisasi dan cadangan</string>
     <string name="contacts_import_title">Impor kontak</string>
-    <string name="contacts_import_summary">Ketuk di sini untuk mengimpor kontak dari perangkat Anda (mendukung ISO 8601)</string>
-    <string name="google_drive_backup">Cadangan Google Drive</string>
+    <string name="contacts_import_summary">Impor kontak dari perangkat (mendukung ISO 8601)</string>
+    <string name="google_drive_backup">Cadangkan ke Google Drive</string>
     <string name="google_drive_backup_summary">Unggah cadangan basis data ke Google Drive</string>
     <string name="google_drive_backup_progress">Mencadangkan ke Google Drive…</string>
-    <string name="backup_complete">Cadangan selesai</string>
+    <string name="backup_complete">Pencadangan selesai</string>
     <string name="google_drive_restore">Pulihkan dari Google Drive</string>
     <string name="google_drive_restore_summary">Pulihkan basis data dari Google Drive</string>
     <string name="google_drive_restore_progress">Memulihkan dari Google Drive…</string>
-    <string name="recover_records_error">Gagal memulihkan catatan</string>
-    <string name="records_recovered">Catatan dipulihkan</string>
-    <string name="restore_confirm_title">Pulihkan dari cadangan</string>
-    <string name="restore_confirm_message">Apakah Anda yakin ingin memulihkan catatan dari %1$s? Jumlah catatan: %2$s.</string>
+    <string name="recover_records_error">Gagal memulihkan data</string>
+    <string name="records_recovered">Data dipulihkan</string>
+    <string name="restore_confirm_title">Pulihkan cadangan</string>
+    <string name="restore_confirm_message">Pulihkan data dari %1$s? Jumlah data: %2$s.</string>
     <string name="restore_button">Pulihkan</string>
     <string name="restore_unknown">tidak diketahui</string>
-    <string name="upload_error">Kesalahan unggah: %s</string>
-    <string name="backup_error">Kesalahan pencadangan: %s</string>
-    <string name="auth_error">Kesalahan otentikasi: %s</string>
+    <string name="upload_error">Gagal mengunggah: %s</string>
+    <string name="backup_error">Gagal mencadangkan: %s</string>
+    <string name="auth_error">Gagal autentikasi: %s</string>
     <string name="authorization_failed_error">Otorisasi gagal: %s</string>
-    <string name="download_error">Kesalahan unduh: %s</string>
-    <string name="file_not_found">Berkas tidak ditemukan</string>
-    <string name="search_error">Kesalahan pencarian: %s</string>
+    <string name="download_error">Gagal mengunduh: %s</string>
+    <string name="file_not_found">File tidak ditemukan</string>
+    <string name="search_error">Gagal mencari: %s</string>
 
     <!-- Advertising -->
     <string name="advertising">Iklan</string>
     <string name="about_ad_title">Mengapa saya melihat iklan?</string>
-    <string name="about_ad_summary">Semua pendapatan iklan digunakan untuk pengembangan proyek</string>
+    <string name="about_ad_summary">Semua pendapatan iklan digunakan untuk pengembangan aplikasi</string>
     <string name="show_ads">Tampilkan iklan</string>
-    <string name="show_ads_summary">Anda dapat menonaktifkan iklan dengan menonton iklan video singkat</string>
+    <string name="show_ads_summary">Tonton video singkat untuk menonaktifkan iklan</string>
+    <string name="ad_watch_full_video_to_disable">Tonton video sampai selesai untuk menonaktifkan iklan</string>
+    <string name="ad_disabled_success">Iklan dinonaktifkan</string>
 
     <!-- Support project -->
-    <string name="support_project_category">Dukung proyek</string>
+    <string name="support_project_category">Dukung aplikasi</string>
+    <string name="donate_title">Beri tip untuk pengembang</string>
+    <string name="donate_summary">Beri dukungan satu kali untuk membantu pembaruan berikutnya</string>
     <string name="watch_video_title">Tonton iklan video</string>
-    <string name="ad_rewarded_summary">Tonton video singkat — pendapatannya digunakan untuk mengembangkan aplikasi</string>
-    <string name="ad_rewarded_unavailable">Video tidak tersedia saat ini, silakan coba lagi nanti</string>
-    <string name="ad_disabled_success">Iklan sekarang dinonaktifkan</string>
-    <string name="ad_watch_full_video_to_disable">Tonton video hingga selesai untuk menonaktifkan iklan</string>
-    <string name="donate_title">Beri kontribusi</string>
-    <string name="donate_summary">Dukungan finansial untuk pengembangan aplikasi</string>
+    <string name="ad_rewarded_summary">Dukung aplikasi secara gratis dengan menonton iklan singkat</string>
+    <string name="ad_rewarded_unavailable">Video belum tersedia saat ini — coba lagi nanti</string>
 
     <!-- About -->
-    <string name="about">Tentang aplikasi</string>
+    <string name="about">Tentang</string>
     <string name="licenses">Lisensi</string>
     <string name="software_licenses">Lisensi sumber terbuka</string>
     <string name="third_party_sdks">SDK pihak ketiga</string>
@@ -203,15 +203,15 @@
     <string name="privacy_policy">Kebijakan privasi</string>
 
     <!-- HelpActivity -->
-    <string name="help_header">Mengapa pengingat tidak berfungsi?</string>
-    <string name="help_description">Perangkat Android memiliki mode hemat daya yang memblokir aplikasi berjalan di latar belakang atau mencegahnya mulai secara otomatis. Agar notifikasi berfungsi dengan baik, ikuti langkah-langkah sederhana berikut:</string>
-    <string name="help_explanation_1">1. Pastikan notifikasi diizinkan untuk aplikasi Birdays (Setelan > Birdays > Notifikasi).</string>
-    <string name="help_delay_text">Harap perhatikan bahwa notifikasi mungkin tertunda di beberapa perangkat.</string>
-    <string name="help_exact_alarm">Izinkan alarm yang tepat</string>
-    <string name="help_explanation_2">2. Nonaktifkan mode hemat daya untuk Birdays (Setelan > Birdays > Baterai).</string>
+    <string name="help_header">Kenapa pengingat tidak muncul?</string>
+    <string name="help_description">Beberapa perangkat Android membatasi proses latar belakang atau mulai otomatis untuk menghemat baterai. Ikuti langkah berikut agar notifikasi berjalan lancar:</string>
+    <string name="help_explanation_1">1. Pastikan notifikasi diaktifkan untuk Birdays (Setelan &gt; Birdays &gt; Notifikasi).</string>
+    <string name="help_delay_text">Di sebagian perangkat, notifikasi bisa datang terlambat.</string>
+    <string name="help_exact_alarm">Izinkan alarm tepat waktu</string>
+    <string name="help_explanation_2">2. Matikan penghemat baterai untuk Birdays (Setelan &gt; Birdays &gt; Baterai).</string>
     <string name="help_settings">Buka setelan</string>
-    <string name="help_explanation_3">3. Jika Anda menginstal aplikasi pengelola tugas, pembersih memori, atau penghemat daya (seperti “Battery Saver”, “Clean Master”, dan aplikasi serupa) yang memblokir operasi latar belakang, tambahkan Birdays ke pengecualian.</string>
-    <string name="help_email_description">Jika Anda memiliki pertanyaan atau saran, silakan hubungi saya di birdaysapp@gmail.com</string>
+    <string name="help_explanation_3">3. Jika Anda memakai aplikasi pengelola tugas, pembersih memori, atau penghemat baterai (seperti “Battery Saver”, “Clean Master”, atau sejenisnya) yang memblokir latar belakang, tambahkan Birdays ke pengecualian.</string>
+    <string name="help_email_description">Punya pertanyaan atau saran? Hubungi saya di birdaysapp@gmail.com</string>
     <string name="send_email">Kirim email</string>
 
     <!-- Famous persons -->
