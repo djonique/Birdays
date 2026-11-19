@@ -86,7 +86,7 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
     @Override
     public RemoteViews getViewAt(int i) {
         RemoteViews view = new RemoteViews(context.getPackageName(),
-                R.layout.description_widget_list_view);
+                R.layout.widget_list_view_layout);
 
         if (i < 0 || i >= widgetList.size()) return view;
 

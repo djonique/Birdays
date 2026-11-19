@@ -164,7 +164,7 @@ public class AllFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         displayedAge = BirdaysPreferencesManager.getDefaultSharedPreferences(context)
                 .getString(Constants.DISPLAYED_AGE_KEY, "0");
         if (viewType == TYPE_PERSON) {
-            View view = LayoutInflater.from(context).inflate(R.layout.description_list_view, parent, false);
+            View view = LayoutInflater.from(context).inflate(R.layout.list_view_all_fragment, parent, false);
             return new ListViewHolder(view);
         } else {
             View separator = LayoutInflater.from(context).inflate(R.layout.model_separator, parent, false);

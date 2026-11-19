@@ -48,7 +48,7 @@ public class FamousFragmentAdapter extends RecyclerView.Adapter<FamousFragmentAd
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View view = LayoutInflater.from(context).inflate(R.layout.description_famous_list_view,
+        View view = LayoutInflater.from(context).inflate(R.layout.list_view_famous_fragment,
                 parent, false);
         return new ListViewHolder(view);
     }

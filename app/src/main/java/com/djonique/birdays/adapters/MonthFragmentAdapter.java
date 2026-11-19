@@ -129,12 +129,12 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
         context = parent.getContext();
 
         if (viewType == TYPE_AD) {
-            View view = LayoutInflater.from(context).inflate(R.layout.native_ad_card, parent, false);
+            View view = LayoutInflater.from(context).inflate(R.layout.card_view_native_ad, parent, false);
             return new AdViewHolder(view);
         }
 
         View view = LayoutInflater.from(context).inflate(
-                R.layout.description_card_view, parent, false);
+                R.layout.card_view_description, parent, false);
         return new CardViewHolder(view);
     }
 

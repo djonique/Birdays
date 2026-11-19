@@ -125,6 +125,10 @@ android {
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
+
             // Release builds require real ad unit ids; debug keeps the demo fallback above.
             def rewardedAdId = releaseVariantRequested
                     ? requireReleaseAdId('YandexRewardedAdUnitIdRelease')

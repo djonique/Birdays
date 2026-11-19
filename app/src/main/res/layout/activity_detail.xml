@@ -228,7 +228,7 @@
 
                 <include
                     android:id="@+id/native_ad_card"
-                    layout="@layout/native_ad_card"
+                    layout="@layout/card_view_native_ad"
                     android:visibility="gone" />
 
                 <com.google.android.material.card.MaterialCardView style="@style/cardViewStyle">
