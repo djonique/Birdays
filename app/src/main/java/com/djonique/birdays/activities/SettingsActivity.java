@@ -113,9 +113,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         authorizationLauncher =
                 registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), result -> {
-                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    Intent data = result.getData();
+                    if (data != null) {
                         try {
-                            String accessToken = getBackupManager().getAccessTokenFromIntent(result.getData());
+                            String accessToken = getBackupManager().getAccessTokenFromIntent(data);
                             if (accessToken != null) {
                                 if (pendingAction == Action.BACKUP) {
                                     executeBackupWithToken(accessToken);
@@ -123,15 +124,12 @@ public class SettingsActivity extends AppCompatActivity {
                                     executeRestoreWithToken(accessToken);
                                 }
                             } else {
-                                Log.e(TAG, "Access token is null from authorization intent result");
-                                Toast.makeText(this, getString(R.string.authorization_failed_error) + " (Access token is null)", Toast.LENGTH_LONG).show();
+                                Toast.makeText(this, getString(R.string.authorization_failed_error, "Access token is null"), Toast.LENGTH_LONG).show();
                             }
                         } catch (Exception e) {
-                            Log.e(TAG, "Failed to extract authorization result from intent", e);
-                            Toast.makeText(this, getString(R.string.authorization_failed_error) + ": " + e.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, getString(R.string.authorization_failed_error, e.getMessage()), Toast.LENGTH_LONG).show();
                         }
                     } else if (result.getResultCode() != RESULT_CANCELED) {
-                        Log.w(TAG, "Authorization IntentSender failed with resultCode: " + result.getResultCode());
                         Toast.makeText(this, R.string.authorization_failed_error, Toast.LENGTH_SHORT).show();
                     }
                     pendingAction = Action.NONE;
@@ -318,7 +316,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onError(Exception e) {
                 dismissProgressDialog();
                 pendingAction = Action.NONE;
-                Toast.makeText(SettingsActivity.this, getString(R.string.authorization_failed_error) + e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, getString(R.string.authorization_failed_error, e.getMessage()), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -397,7 +395,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onError(Exception e) {
                 dismissProgressDialog();
                 pendingAction = Action.NONE;
-                Toast.makeText(SettingsActivity.this, getString(R.string.authorization_failed_error) + e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, getString(R.string.authorization_failed_error, e.getMessage()), Toast.LENGTH_LONG).show();
             }
         });
     }

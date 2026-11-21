@@ -86,14 +86,14 @@ def requireReleaseAdId = { String key ->
 
 android {
     namespace = 'com.djonique.birdays'
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.djonique.birdays"
         minSdk = 26
         targetSdk = 36
-        versionCode 20
-        versionName "2.0.0"
+        versionCode 24
+        versionName "2.0.4"
         vectorDrawables.useSupportLibrary = true
         resValue "string", "version_name", versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -139,7 +139,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             ndk {
-                debugSymbolLevel 'SYMBOL_TABLE'
+                debugSymbolLevel 'FULL'
             }
 
             // Release builds require real ad unit ids; debug keeps the demo fallback above.
