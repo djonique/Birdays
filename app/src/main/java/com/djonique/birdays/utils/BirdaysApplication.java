@@ -7,11 +7,15 @@
 package com.djonique.birdays.utils;
 
 import android.app.Application;
+import android.content.pm.ApplicationInfo;
+import android.util.Log;
 
 import com.djonique.birdays.repository.BirdaysRepository;
 import com.yandex.mobile.ads.common.YandexAds;
 
 public class BirdaysApplication extends Application {
+
+    private static final String TAG = "BirdaysAds";
 
     private static boolean activityVisible;
 
@@ -30,8 +34,13 @@ public class BirdaysApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        YandexAds.initialize(this, () -> {
-        });
+        boolean debuggable = (getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        // Debug builds get the SDK logs and the on-ad integration indicator; release builds stay
+        // quiet and rely on the app's own "BirdaysAds" failure logs.
+        YandexAds.enableLogging(debuggable);
+        YandexAds.enableDebugErrorIndicator(debuggable);
+        YandexAds.initialize(this, () -> Log.i(TAG, "Yandex Mobile Ads initialized: "
+                + YandexAds.getLibraryVersion()));
     }
 
     /**

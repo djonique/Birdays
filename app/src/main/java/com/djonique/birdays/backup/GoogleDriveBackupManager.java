@@ -9,13 +9,17 @@ package com.djonique.birdays.backup;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
+import com.djonique.birdays.utils.NamedDaemonThreadFactory;
 import com.google.android.gms.auth.api.identity.AuthorizationClient;
 import com.google.android.gms.auth.api.identity.AuthorizationRequest;
+import com.google.android.gms.auth.api.identity.AuthorizationResult;
 import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Scope;
 import com.google.api.client.http.FileContent;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -28,8 +32,6 @@ import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 
-import com.djonique.birdays.utils.NamedDaemonThreadFactory;
-
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Collections;
@@ -40,9 +42,13 @@ import java.util.concurrent.Executors;
 public class GoogleDriveBackupManager {
 
     private static final String TAG = "GoogleDriveBackup";
-    /** Name of the file inside the Drive app-data folder; part of the published backup format. */
+    /**
+     * Name of the file inside the Drive app-data folder; part of the published backup format.
+     */
     private static final String BACKUP_FILE_NAME = "database_backup.xml";
-    /** Local cache file for a downloaded backup; never reused for an upload. */
+    /**
+     * Local cache file for a downloaded backup; never reused for an upload.
+     */
     private static final String RESTORE_FILE_NAME = "backup_restore.xml";
     private static final String MIME_TYPE_XML = "application/xml";
 
@@ -53,6 +59,34 @@ public class GoogleDriveBackupManager {
 
     public GoogleDriveBackupManager(Context context) {
         this.context = context.getApplicationContext();
+    }
+
+    /**
+     * Writes the caller's {@code appProperties} (the record count) onto the uploaded file. The XML
+     * is already in Drive when this runs, so a failure is only logged: the backup counts as
+     * successful and the restore falls back to counting the records in the downloaded file.
+     */
+    private static void storeAppProperties(Drive driveService, String fileId,
+                                           Map<String, String> appProperties) {
+        if (appProperties == null || appProperties.isEmpty()) {
+            return;
+        }
+        try {
+            File metadata = new File();
+            metadata.setAppProperties(appProperties);
+            driveService.files().update(fileId, metadata).setFields("id").execute();
+        } catch (Exception e) {
+            Log.w(TAG, "Backup uploaded, but appProperties could not be stored", e);
+        }
+    }
+
+    public static void deleteRestoreTempFile(Context context) {
+        if (context == null) return;
+        java.io.File tempFile = new java.io.File(context.getCacheDir(), RESTORE_FILE_NAME);
+        if (tempFile.exists()) {
+            //noinspection ResultOfMethodCallIgnored
+            tempFile.delete();
+        }
     }
 
     /**
@@ -86,6 +120,12 @@ public class GoogleDriveBackupManager {
                     Log.e(TAG, "Authorization failed with exception", e);
                     mainHandler.post(() -> callback.onError(e));
                 });
+    }
+
+    public String getAccessTokenFromIntent(Intent data) throws ApiException {
+        AuthorizationResult authorizationResult = Identity.getAuthorizationClient(context)
+                .getAuthorizationResultFromIntent(data);
+        return authorizationResult.getAccessToken();
     }
 
     private Drive getDriveService(String accessToken) {
@@ -141,25 +181,6 @@ public class GoogleDriveBackupManager {
         });
     }
 
-    /**
-     * Writes the caller's {@code appProperties} (the record count) onto the uploaded file. The XML
-     * is already in Drive when this runs, so a failure is only logged: the backup counts as
-     * successful and the restore falls back to counting the records in the downloaded file.
-     */
-    private static void storeAppProperties(Drive driveService, String fileId,
-                                           Map<String, String> appProperties) {
-        if (appProperties == null || appProperties.isEmpty()) {
-            return;
-        }
-        try {
-            File metadata = new File();
-            metadata.setAppProperties(appProperties);
-            driveService.files().update(fileId, metadata).setFields("id").execute();
-        } catch (Exception e) {
-            Log.w(TAG, "Backup uploaded, but appProperties could not be stored", e);
-        }
-    }
-
     public void findLatestBackup(String accessToken, FindBackupCallback callback) {
         executor.execute(() -> {
             try {
@@ -190,15 +211,6 @@ public class GoogleDriveBackupManager {
                 mainHandler.post(() -> callback.onError(e));
             }
         });
-    }
-
-    public static void deleteRestoreTempFile(Context context) {
-        if (context == null) return;
-        java.io.File tempFile = new java.io.File(context.getCacheDir(), RESTORE_FILE_NAME);
-        if (tempFile.exists()) {
-            //noinspection ResultOfMethodCallIgnored
-            tempFile.delete();
-        }
     }
 
     public void downloadBackup(String accessToken, String fileId, DownloadCallback callback) {

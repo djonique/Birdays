@@ -113,14 +113,26 @@ public class SettingsActivity extends AppCompatActivity {
 
         authorizationLauncher =
                 registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), result -> {
-                    if (result.getResultCode() == RESULT_OK) {
-                        if (pendingAction == Action.BACKUP) {
-                            performCloudBackup();
-                        } else if (pendingAction == Action.RESTORE) {
-                            performCloudRestore();
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        try {
+                            String accessToken = getBackupManager().getAccessTokenFromIntent(result.getData());
+                            if (accessToken != null) {
+                                if (pendingAction == Action.BACKUP) {
+                                    executeBackupWithToken(accessToken);
+                                } else if (pendingAction == Action.RESTORE) {
+                                    executeRestoreWithToken(accessToken);
+                                }
+                            } else {
+                                Log.e(TAG, "Access token is null from authorization intent result");
+                                Toast.makeText(this, getString(R.string.authorization_failed_error) + " (Access token is null)", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+                            Log.e(TAG, "Failed to extract authorization result from intent", e);
+                            Toast.makeText(this, getString(R.string.authorization_failed_error) + ": " + e.getMessage(), Toast.LENGTH_LONG).show();
                         }
-                    } else {
-                        Toast.makeText(this, R.string.cancel_button, Toast.LENGTH_SHORT).show();
+                    } else if (result.getResultCode() != RESULT_CANCELED) {
+                        Log.w(TAG, "Authorization IntentSender failed with resultCode: " + result.getResultCode());
+                        Toast.makeText(this, R.string.authorization_failed_error, Toast.LENGTH_SHORT).show();
                     }
                     pendingAction = Action.NONE;
                 });
@@ -287,42 +299,7 @@ public class SettingsActivity extends AppCompatActivity {
         manager.requestAuthorization(this, new GoogleDriveBackupManager.AuthorizationCallback() {
             @Override
             public void onSuccess(String accessToken) {
-                pendingAction = Action.NONE;
-                // Export reads the whole table and writes XML; it used to run on the main thread.
-                BirdaysRepository.getInstance(SettingsActivity.this).createBackupFile(
-                        new BirdaysRepository.Callback<>() {
-                            @Override
-                            public void onSuccess(ExportHelper.Backup backup) {
-                                if (isFinishing() || isDestroyed()) return;
-                                manager.uploadBackup(accessToken, backup.getFile(),
-                                        backup.getAppProperties(),
-                                        new GoogleDriveBackupManager.UploadCallback() {
-                                            @Override
-                                            public void onSuccess() {
-                                                if (isFinishing() || isDestroyed()) return;
-                                                dismissProgressDialog();
-                                                Toast.makeText(SettingsActivity.this,
-                                                        R.string.backup_complete, Toast.LENGTH_LONG).show();
-                                            }
-
-                                            @Override
-                                            public void onError(Exception e) {
-                                                if (isFinishing() || isDestroyed()) return;
-                                                dismissProgressDialog();
-                                                Toast.makeText(SettingsActivity.this,
-                                                        R.string.upload_error + e.getMessage(), Toast.LENGTH_LONG).show();
-                                            }
-                                        });
-                            }
-
-                            @Override
-                            public void onError(Throwable t) {
-                                if (isFinishing() || isDestroyed()) return;
-                                dismissProgressDialog();
-                                Toast.makeText(SettingsActivity.this,
-                                        R.string.backup_error + t.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        });
+                executeBackupWithToken(accessToken);
             }
 
             @Override
@@ -333,7 +310,7 @@ public class SettingsActivity extends AppCompatActivity {
                     authorizationLauncher.launch(request);
                 } catch (Exception e) {
                     pendingAction = Action.NONE;
-                    Toast.makeText(SettingsActivity.this, R.string.auth_error + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingsActivity.this, getString(R.string.auth_error) + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -341,9 +318,53 @@ public class SettingsActivity extends AppCompatActivity {
             public void onError(Exception e) {
                 dismissProgressDialog();
                 pendingAction = Action.NONE;
-                Toast.makeText(SettingsActivity.this, R.string.authorization_failed_error + e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, getString(R.string.authorization_failed_error) + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void executeBackupWithToken(String accessToken) {
+        if (progressDialog == null) {
+            showProgressDialog(getString(R.string.google_drive_backup_progress));
+        }
+        GoogleDriveBackupManager manager = getBackupManager();
+        BirdaysRepository.getInstance(SettingsActivity.this).createBackupFile(
+                new BirdaysRepository.Callback<>() {
+                    @Override
+                    public void onSuccess(ExportHelper.Backup backup) {
+                        if (isFinishing() || isDestroyed()) return;
+                        manager.uploadBackup(accessToken, backup.getFile(),
+                                backup.getAppProperties(),
+                                new GoogleDriveBackupManager.UploadCallback() {
+                                    @Override
+                                    public void onSuccess() {
+                                        if (isFinishing() || isDestroyed()) return;
+                                        dismissProgressDialog();
+                                        pendingAction = Action.NONE;
+                                        Toast.makeText(SettingsActivity.this,
+                                                R.string.backup_complete, Toast.LENGTH_LONG).show();
+                                    }
+
+                                    @Override
+                                    public void onError(Exception e) {
+                                        if (isFinishing() || isDestroyed()) return;
+                                        dismissProgressDialog();
+                                        pendingAction = Action.NONE;
+                                        Toast.makeText(SettingsActivity.this,
+                                                getString(R.string.upload_error) + e.getMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        if (isFinishing() || isDestroyed()) return;
+                        dismissProgressDialog();
+                        pendingAction = Action.NONE;
+                        Toast.makeText(SettingsActivity.this,
+                                getString(R.string.backup_error) + t.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 
     public void performCloudRestore() {
@@ -355,44 +376,7 @@ public class SettingsActivity extends AppCompatActivity {
         manager.requestAuthorization(this, new GoogleDriveBackupManager.AuthorizationCallback() {
             @Override
             public void onSuccess(String accessToken) {
-                pendingAction = Action.NONE;
-                manager.findLatestBackup(accessToken, new GoogleDriveBackupManager.FindBackupCallback() {
-                    @Override
-                    public void onFound(BackupMetadata metadata) {
-                        manager.downloadBackup(accessToken, metadata.getFileId(),
-                                new GoogleDriveBackupManager.DownloadCallback() {
-                                    @Override
-                                    public void onSuccess(File downloadedFile) {
-                                        if (isFinishing() || isDestroyed()) {
-                                            GoogleDriveBackupManager.deleteRestoreTempFile(SettingsActivity.this);
-                                            return;
-                                        }
-                                        prepareRestore(metadata, downloadedFile);
-                                    }
-
-                                    @Override
-                                    public void onError(Exception e) {
-                                        if (isFinishing() || isDestroyed()) return;
-                                        dismissProgressDialog();
-                                        Toast.makeText(SettingsActivity.this, R.string.download_error + e.getMessage(), Toast.LENGTH_LONG).show();
-                                    }
-                                });
-                    }
-
-                    @Override
-                    public void onNotFound() {
-                        if (isFinishing() || isDestroyed()) return;
-                        dismissProgressDialog();
-                        Toast.makeText(SettingsActivity.this, R.string.file_not_found, Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        if (isFinishing() || isDestroyed()) return;
-                        dismissProgressDialog();
-                        Toast.makeText(SettingsActivity.this, R.string.search_error + e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
+                executeRestoreWithToken(accessToken);
             }
 
             @Override
@@ -405,7 +389,7 @@ public class SettingsActivity extends AppCompatActivity {
                     authorizationLauncher.launch(request);
                 } catch (Exception e) {
                     pendingAction = Action.NONE;
-                    Toast.makeText(SettingsActivity.this, R.string.auth_error + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingsActivity.this, getString(R.string.auth_error) + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -413,7 +397,54 @@ public class SettingsActivity extends AppCompatActivity {
             public void onError(Exception e) {
                 dismissProgressDialog();
                 pendingAction = Action.NONE;
-                Toast.makeText(SettingsActivity.this, R.string.authorization_failed_error + e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, getString(R.string.authorization_failed_error) + e.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void executeRestoreWithToken(String accessToken) {
+        if (progressDialog == null) {
+            showProgressDialog(getString(R.string.google_drive_restore_progress));
+        }
+        GoogleDriveBackupManager manager = getBackupManager();
+        manager.findLatestBackup(accessToken, new GoogleDriveBackupManager.FindBackupCallback() {
+            @Override
+            public void onFound(BackupMetadata metadata) {
+                manager.downloadBackup(accessToken, metadata.getFileId(),
+                        new GoogleDriveBackupManager.DownloadCallback() {
+                            @Override
+                            public void onSuccess(File downloadedFile) {
+                                if (isFinishing() || isDestroyed()) {
+                                    GoogleDriveBackupManager.deleteRestoreTempFile(SettingsActivity.this);
+                                    return;
+                                }
+                                prepareRestore(metadata, downloadedFile);
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                if (isFinishing() || isDestroyed()) return;
+                                dismissProgressDialog();
+                                pendingAction = Action.NONE;
+                                Toast.makeText(SettingsActivity.this, getString(R.string.download_error) + e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+            }
+
+            @Override
+            public void onNotFound() {
+                if (isFinishing() || isDestroyed()) return;
+                dismissProgressDialog();
+                pendingAction = Action.NONE;
+                Toast.makeText(SettingsActivity.this, R.string.file_not_found, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                if (isFinishing() || isDestroyed()) return;
+                dismissProgressDialog();
+                pendingAction = Action.NONE;
+                Toast.makeText(SettingsActivity.this, getString(R.string.search_error) + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -38,10 +38,18 @@ def getProp(Properties props, String key, String defaultValue) {
 def getAdUnitId(Properties props, String key, String defaultValue) {
     // Ad unit ids belong to the developer's local setup, not to the signing config. Prefer
     // local.properties (already git-ignored) and keep keystore.properties as a fallback so
-    // existing checkouts keep working.
-    def value = localProperties.containsKey(key)
-            ? localProperties[key]
-            : (props.containsKey(key) ? props[key] : defaultValue)
+    // existing checkouts keep working. A -P<key>=... property wins for a single build, which is
+    // handy for trying the production ad units in a debug build.
+    def value
+    if (project.hasProperty(key)) {
+        value = project.property(key).toString()
+    } else if (localProperties.containsKey(key)) {
+        value = localProperties[key]
+    } else if (props.containsKey(key)) {
+        value = props[key]
+    } else {
+        value = defaultValue
+    }
     return value.replace('"', '')
 }
 
@@ -59,9 +67,14 @@ def releaseVariantRequested = gradle.startParameter.taskNames.any {
  * loaded above.</p>
  */
 def requireReleaseAdId = { String key ->
-    def rawValue = localProperties.containsKey(key)
-            ? localProperties[key]
-            : (keystoreProperties.containsKey(key) ? keystoreProperties[key] : null)
+    def rawValue
+    if (project.hasProperty(key)) {
+        rawValue = project.property(key)
+    } else if (localProperties.containsKey(key)) {
+        rawValue = localProperties[key]
+    } else if (keystoreProperties.containsKey(key)) {
+        rawValue = keystoreProperties[key]
+    }
     def value = rawValue == null ? '' : rawValue.toString().replace('"', '').trim()
     if (value.isEmpty() || value.startsWith('demo-')) {
         throw new GradleException("Birdays: release ad unit id '" + key + "' is missing or still "
@@ -79,7 +92,7 @@ android {
         applicationId = "com.djonique.birdays"
         minSdk = 26
         targetSdk = 36
-        versionCode 19
+        versionCode 20
         versionName "2.0.0"
         vectorDrawables.useSupportLibrary = true
         resValue "string", "version_name", versionName

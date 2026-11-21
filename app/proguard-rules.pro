@@ -10,15 +10,16 @@
 -keep class com.djonique.birdays.models.** { *; }
 
 # Google API Client & Drive API
--keep class com.google.api.services.drive.model.** { <fields>; <methods>; }
--keep class com.google.api.client.json.** { <fields>; <methods>; }
+# Preserve fields annotated with @Key for JSON parsing via reflection
+-keepclassmembers class * {
+    @com.google.api.client.util.Key <fields>;
+}
 -dontwarn com.google.api.client.**
+-dontwarn com.google.api.services.drive.**
+-dontwarn javax.naming.**
+-dontwarn org.ietf.jgss.**
+-dontwarn org.apache.http.**
 
-# Yandex Mobile Ads SDK
-# Keep only the public packages the app references; the SDK ships its own consumer rules for
-# its internal and mediation code, which must not be pinned here.
--keep class com.yandex.mobile.ads.common.** { *; }
--keep class com.yandex.mobile.ads.banner.** { *; }
--keep class com.yandex.mobile.ads.rewarded.** { *; }
--keep class com.yandex.mobile.ads.nativeads.** { *; }
--dontwarn com.yandex.mobile.ads.**
+# Yandex Mobile Ads SDK: built-in consumer rules in com.yandex.android:mobileads AAR
+# handle internal and mediation requirements automatically.
+

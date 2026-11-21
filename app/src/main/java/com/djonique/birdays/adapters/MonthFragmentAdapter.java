@@ -33,6 +33,7 @@ import com.djonique.birdays.utils.Constants;
 import com.djonique.birdays.utils.Utils;
 import com.yandex.mobile.ads.nativeads.NativeAd;
 import com.yandex.mobile.ads.nativeads.NativeAdView;
+import com.yandex.mobile.ads.nativeads.NativeAdViewBinder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -140,9 +141,17 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
-        if (holder.getItemViewType() == TYPE_AD) {
-            NativeAdHelper.bindNativeAd((NativeAdView) holder.itemView, nativeAd);
-            holder.itemView.setVisibility(View.VISIBLE);
+        if (holder instanceof AdViewHolder adViewHolder) {
+            NativeAd ad = nativeAd;
+            if (ad == null) {
+                adViewHolder.itemView.setVisibility(View.GONE);
+                return;
+            }
+            // The row is hidden when binding fails (for example when the creative carries an asset
+            // the layout cannot render): leaving an empty card is worse than no ad row.
+            boolean bound = NativeAdHelper.bindNativeAd(
+                    (NativeAdView) adViewHolder.itemView, adViewHolder.binder, ad);
+            adViewHolder.itemView.setVisibility(bound ? View.VISIBLE : View.GONE);
             return;
         }
 
@@ -320,8 +329,15 @@ public class MonthFragmentAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
 
     static class AdViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * Built once: a binder refers to the views of this holder and does not change between
+         * binds. It still covers every asset the SDK can deliver.
+         */
+        final NativeAdViewBinder binder;
+
         AdViewHolder(View itemView) {
             super(itemView);
+            binder = NativeAdHelper.createBinder((NativeAdView) itemView);
         }
     }
 }

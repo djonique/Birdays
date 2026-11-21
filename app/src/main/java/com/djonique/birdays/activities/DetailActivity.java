@@ -280,9 +280,9 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onAdFailedToLoad(@NonNull AdRequestError adRequestError) {
                 if (isFinishing() || isDestroyed()) return;
-                if (BuildConfig.DEBUG) {
-                    Log.e("DetailActivity", "Native ad failed to load: code=" + adRequestError.getCode() + ", desc=" + adRequestError.getDescription());
-                }
+                Log.w("BirdaysAds", "Detail native ad failed to load: code="
+                        + adRequestError.getCode() + ", description="
+                        + adRequestError.getDescription());
                 nativeAdView.setVisibility(View.GONE);
             }
         });

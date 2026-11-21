@@ -179,6 +179,7 @@
                 title: "Поддержать проект",
                 heading: "☕ Поддержать разработку",
                 description: "Выберите удобный сервис для доната. Спасибо за то, что помогаете развитию приложения!",
+                yookassaName: "Юkassa",
                 yookassaSub: "Для карт РФ и СБП",
                 lavaSub: "Весь мир • Без регистрации",
                 boostySub: "Требует регистрации"
@@ -187,6 +188,7 @@
                 title: "Support the Project",
                 heading: "☕ Support Development",
                 description: "Choose a convenient donation service. Thank you for helping improve the app!",
+                yookassaName: "YooKassa",
                 yookassaSub: "Russian cards & SBP",
                 lavaSub: "Worldwide • No sign-up",
                 boostySub: "Requires registration"
@@ -233,6 +235,7 @@
             document.getElementById('page-title').innerText = t.title;
             document.getElementById('heading').innerText = t.heading;
             document.getElementById('description').innerText = t.description;
+            document.getElementById('text-yookassa').innerText = t.yookassaName;
             document.getElementById('sub-yookassa').innerText = t.yookassaSub;
             document.getElementById('sub-lava').innerText = t.lavaSub;
             document.getElementById('sub-boosty').innerText = t.boostySub;
@@ -264,7 +267,7 @@
             <div class="donate-buttons">
                 <!-- Button 1: YooKassa -->
                 <a href="TODO_LINK" class="btn btn-yookassa" target="_blank" rel="noopener">
-                    ЮKassa
+                    <span id="text-yookassa">Юkassa</span>
                     <span id="sub-yookassa" class="btn-subtitle">Для карт РФ и СБП</span>
                 </a>
 

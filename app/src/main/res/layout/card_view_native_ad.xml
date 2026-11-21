@@ -62,11 +62,18 @@
                             android:textAppearance="@style/TextAppearance.Birdays.TitleMedium"
                             android:textColor="?android:attr/textColorPrimary" />
 
+                        <ImageView
+                            android:id="@+id/native_ad_favicon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:contentDescription="@null" />
+
                         <TextView
                             android:id="@+id/native_ad_domain"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
+                            android:layout_marginStart="4dp"
                             android:textAppearance="@style/TextAppearance.Birdays.Caption"
                             android:textColor="?android:attr/textColorSecondary" />
 
@@ -96,6 +103,44 @@
                         android:maxLines="2"
                         android:textAppearance="@style/TextAppearance.Birdays.BodyMedium"
                         android:textColor="?android:attr/textColorSecondary" />
+
+                    <!--
+                        Optional assets. The Yandex SDK calls bindNativeAd() with a failure when the
+                        ad carries an asset for which no view was supplied, which is why every asset
+                        type has a view here even though demo ads usually render only a few of them.
+                    -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/native_ad_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.Birdays.Caption"
+                            android:textColor="?android:attr/textColorSecondary" />
+
+                        <com.djonique.birdays.views.RatingView
+                            android:id="@+id/native_ad_rating"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:stepSize="0.1" />
+
+                        <TextView
+                            android:id="@+id/native_ad_review_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:textAppearance="@style/TextAppearance.Birdays.Caption"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <ImageView
