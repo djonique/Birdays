@@ -7,6 +7,14 @@
 
 ---
 
+## 📱 Screenshots
+
+| All birthdays | Famous birthdays | Home screen widget | Person details |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/01-all-light.png" width="200" alt="All birthdays grouped by month"> | <img src="docs/screenshots/02-famous-light.png" width="200" alt="Birthdays of famous people"> | <img src="docs/screenshots/03-widget.jpg" width="200" alt="Home screen widget with upcoming birthdays"> | <img src="docs/screenshots/04-detail-dark.jpg" width="200" alt="Person details screen in dark theme"> |
+
+---
+
 ## 🚀 What's New in the Latest Update
 
 Birdays has been completely modernized after nearly 10 years of inactivity to meet modern Android standards:
