@@ -354,7 +354,11 @@ public final class BirdaysRepository {
                     if (!Utils.isPersonAlreadyInDb(person, existing)) {
                         db.addRecord(person);
                         existing.add(person);
-                        alarmHelper.setAlarms(person);
+                        try {
+                            alarmHelper.setAlarms(person);
+                        } catch (Exception e) {
+                            Log.w(TAG, "Could not schedule alarm for imported person: " + person.getName(), e);
+                        }
                         inserted++;
                     }
                 }

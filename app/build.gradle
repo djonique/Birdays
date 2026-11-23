@@ -92,8 +92,8 @@ android {
         applicationId = "com.djonique.birdays"
         minSdk = 26
         targetSdk = 36
-        versionCode 24
-        versionName "2.0.4"
+        versionCode 25
+        versionName "2.0.5"
         vectorDrawables.useSupportLibrary = true
         resValue "string", "version_name", versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

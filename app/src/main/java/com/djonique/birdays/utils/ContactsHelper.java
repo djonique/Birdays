@@ -40,11 +40,17 @@ public final class ContactsHelper {
                 ContactsContract.Contacts._ID + " = ?",
                 new String[]{id}, null)) {
             if (nameCursor != null && nameCursor.moveToFirst()) {
-                name = nameCursor.getString(
-                        nameCursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
+                int index = nameCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
+                if (index == -1) {
+                    index = nameCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME_PRIMARY);
+                }
+                if (index != -1) {
+                    name = nameCursor.getString(index);
+                }
             }
+        } catch (Exception ignored) {
         }
-        return name;
+        return name != null ? name : "";
     }
 
     /**
@@ -58,11 +64,14 @@ public final class ContactsHelper {
                 ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
                 new String[]{id}, null)) {
             if (phoneCursor != null && phoneCursor.moveToFirst()) {
-                phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndexOrThrow
-                        (ContactsContract.CommonDataKinds.Phone.NUMBER));
+                int index = phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+                if (index != -1) {
+                    phoneNumber = phoneCursor.getString(index);
+                }
             }
+        } catch (Exception ignored) {
         }
-        return phoneNumber;
+        return phoneNumber != null ? phoneNumber : "";
     }
 
     /**
@@ -76,11 +85,14 @@ public final class ContactsHelper {
                 ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = ?",
                 new String[]{id}, null)) {
             if (emailCursor != null && emailCursor.moveToFirst()) {
-                email = emailCursor.getString(
-                        emailCursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Email.DATA));
+                int index = emailCursor.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA);
+                if (index != -1) {
+                    email = emailCursor.getString(index);
+                }
             }
+        } catch (Exception ignored) {
         }
-        return email;
+        return email != null ? email : "";
     }
 
     /**
@@ -100,10 +112,22 @@ public final class ContactsHelper {
         try (Cursor cursor = getContactsCursor(contentResolver)) {
             if (cursor == null) return contacts;
 
+            int idIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Event.CONTACT_ID);
+            if (idIndex == -1) idIndex = cursor.getColumnIndex(ContactsContract.Data.CONTACT_ID);
+
+            int nameIndex = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
+            if (nameIndex == -1) nameIndex = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME_PRIMARY);
+
+            int dateIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Event.START_DATE);
+            if (dateIndex == -1) dateIndex = cursor.getColumnIndex(ContactsContract.Data.DATA1);
+
             while (cursor.moveToNext()) {
-                String id = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Event.CONTACT_ID));
-                String name = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
-                String dateString = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Event.START_DATE));
+                String id = (idIndex != -1) ? cursor.getString(idIndex) : null;
+                String name = (nameIndex != -1) ? cursor.getString(nameIndex) : null;
+                String dateString = (dateIndex != -1) ? cursor.getString(dateIndex) : null;
+
+                if (name == null || dateString == null) continue;
+
                 long date;
                 try {
                     date = Utils.formatDateToLong(dateString);
@@ -113,12 +137,13 @@ public final class ContactsHelper {
                 if (date == 0) continue;
 
                 boolean yearUnknown = Utils.isYearUnknown(dateString);
-                String phoneNumber = phoneNumbers.getOrDefault(id, "");
-                String email = emails.getOrDefault(id, "");
+                String phoneNumber = (id != null) ? phoneNumbers.getOrDefault(id, "") : "";
+                String email = (id != null) ? emails.getOrDefault(id, "") : "";
 
                 Person person = new Person(name, date, yearUnknown, phoneNumber, email);
                 contacts.add(person);
             }
+        } catch (Exception ignored) {
         }
         return contacts;
     }

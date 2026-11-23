@@ -65,56 +65,43 @@ public class PagerAdapter extends FragmentStateAdapter {
         return months[Calendar.getInstance().get(Calendar.MONTH)];
     }
 
-    private <T extends Fragment> T findFragment(@NonNull Class<T> fragmentClass) {
-        for (Fragment fragment : fragmentManager.getFragments()) {
-            if (fragmentClass.isInstance(fragment)) {
-                return fragmentClass.cast(fragment);
-            }
-        }
-        return null;
-    }
-
     public void search(String text) {
-        AllFragment allFragment = findFragment(AllFragment.class);
-        if (allFragment != null) {
-            allFragment.findPerson(text);
-        }
-        MonthFragment monthFragment = findFragment(MonthFragment.class);
-        if (monthFragment != null) {
-            monthFragment.findPerson(text);
+        for (Fragment fragment : fragmentManager.getFragments()) {
+            if (fragment instanceof AllFragment allFragment) {
+                allFragment.findPerson(text);
+            } else if (fragment instanceof MonthFragment monthFragment) {
+                monthFragment.findPerson(text);
+            }
         }
     }
 
     public void addPersonsFromDb() {
-        MonthFragment monthFragment = findFragment(MonthFragment.class);
-        if (monthFragment != null) {
-            monthFragment.addMonthPersonsFromDb();
-        }
-        AllFragment allFragment = findFragment(AllFragment.class);
-        if (allFragment != null) {
-            allFragment.addAllPersonsFromDb();
+        for (Fragment fragment : fragmentManager.getFragments()) {
+            if (fragment instanceof MonthFragment monthFragment) {
+                monthFragment.addMonthPersonsFromDb();
+            } else if (fragment instanceof AllFragment allFragment) {
+                allFragment.addAllPersonsFromDb();
+            }
         }
     }
 
     public void addPerson(Person person) {
-        MonthFragment monthFragment = findFragment(MonthFragment.class);
-        if (monthFragment != null) {
-            monthFragment.addPerson(person);
-        }
-        AllFragment allFragment = findFragment(AllFragment.class);
-        if (allFragment != null) {
-            allFragment.addPerson(person, true);
+        for (Fragment fragment : fragmentManager.getFragments()) {
+            if (fragment instanceof MonthFragment monthFragment) {
+                monthFragment.addPerson(person);
+            } else if (fragment instanceof AllFragment allFragment) {
+                allFragment.addPerson(person, true);
+            }
         }
     }
 
     public void deletePerson(long timeStamp) {
-        MonthFragment monthFragment = findFragment(MonthFragment.class);
-        if (monthFragment != null) {
-            monthFragment.deleteRecord(timeStamp);
-        }
-        AllFragment allFragment = findFragment(AllFragment.class);
-        if (allFragment != null) {
-            allFragment.deletePerson(timeStamp);
+        for (Fragment fragment : fragmentManager.getFragments()) {
+            if (fragment instanceof MonthFragment monthFragment) {
+                monthFragment.deleteRecord(timeStamp);
+            } else if (fragment instanceof AllFragment allFragment) {
+                allFragment.deletePerson(timeStamp);
+            }
         }
     }
 
@@ -123,13 +110,12 @@ public class PagerAdapter extends FragmentStateAdapter {
      * only need the item: the adapters animate the insertion like any other add.
      */
     public void restorePerson(Person person) {
-        MonthFragment monthFragment = findFragment(MonthFragment.class);
-        if (monthFragment != null) {
-            monthFragment.addPerson(person);
-        }
-        AllFragment allFragment = findFragment(AllFragment.class);
-        if (allFragment != null) {
-            allFragment.addPerson(person, false);
+        for (Fragment fragment : fragmentManager.getFragments()) {
+            if (fragment instanceof MonthFragment monthFragment) {
+                monthFragment.addPerson(person);
+            } else if (fragment instanceof AllFragment allFragment) {
+                allFragment.addPerson(person, false);
+            }
         }
     }
 }

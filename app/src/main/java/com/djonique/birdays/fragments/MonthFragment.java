@@ -86,6 +86,10 @@ public class MonthFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (adapter == null) return;
+        if (getActivity() != null) {
+            activity = (MainActivity) getActivity();
+            addMonthPersonsFromDb();
+        }
         // Ads are switched off on the settings screen, which does not recreate this fragment, so
         // the preference is re-read every time the screen comes back. Without this the ad row
         // would stay bound until the process is restarted.

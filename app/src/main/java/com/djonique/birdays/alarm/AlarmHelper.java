@@ -60,6 +60,8 @@ public class AlarmHelper {
                 ((Activity) context).runOnUiThread(() ->
                         Toast.makeText(context, R.string.security_exception, Toast.LENGTH_LONG).show());
             }
+        } catch (Exception e) {
+            Log.w(TAG, "Failed to schedule alarm for " + (person != null ? person.getName() : "null"), e);
         }
     }
 
@@ -115,8 +117,13 @@ public class AlarmHelper {
             } else {
                 alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
             }
-        } catch (SecurityException e) {
-            alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
+        } catch (Exception e) {
+            Log.w(TAG, "Exact alarm failed, falling back to inexact alarm", e);
+            try {
+                alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
+            } catch (Exception ex) {
+                Log.w(TAG, "Inexact alarm also failed", ex);
+            }
         }
     }
 
