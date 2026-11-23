@@ -552,10 +552,11 @@ public class Utils {
     public static void applySystemBarsInsets(View rootView, View topView, View bottomMarginView, View bottomPaddingView) {
         if (rootView == null) return;
         ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, windowInsets) -> {
-            // Combine system bars and the display cutout: in landscape the navigation bar and
-            // the camera cutout sit on the side, so the content has to keep clear of both.
+            // Combine system bars, IME (keyboard), and the display cutout so that the layout
+            // adjusts padding and margins when the soft keyboard is visible.
             Insets insets = windowInsets.getInsets(
                     WindowInsetsCompat.Type.systemBars()
+                            | WindowInsetsCompat.Type.ime()
                             | WindowInsetsCompat.Type.displayCutout());
             if (topView != null) {
                 Object tag = topView.getTag(R.id.tag_initial_top_padding);
