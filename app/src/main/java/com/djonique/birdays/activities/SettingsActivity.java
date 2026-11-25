@@ -900,7 +900,7 @@ public class SettingsActivity extends AppCompatActivity {
                     try {
                         executor.execute(() -> {
                             final AlarmHelper alarmHelper = new AlarmHelper(appContext);
-                            try (DbHelper dbHelper = new DbHelper(appContext)) {
+                            try (DbHelper dbHelper = DbHelper.getInstance(appContext)) {
                                 List<Person> persons = dbHelper.query().getPersons();
                                 for (Person person : persons) {
                                     if (isChecked) {
@@ -961,7 +961,7 @@ public class SettingsActivity extends AppCompatActivity {
             try {
                 executor.execute(() -> {
                     final AlarmHelper alarmHelper = new AlarmHelper(appContext);
-                    try (DbHelper dbHelper = new DbHelper(appContext)) {
+                    try (DbHelper dbHelper = DbHelper.getInstance(appContext)) {
                         for (Person person : dbHelper.query().getPersons()) {
                             alarmHelper.removeAlarms(person.getTimeStamp());
                             alarmHelper.setAlarms(person);

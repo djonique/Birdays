@@ -37,7 +37,7 @@ public class WidgetViewsFactory implements RemoteViewsService.RemoteViewsFactory
 
     @Override
     public void onCreate() {
-        dbHelper = new DbHelper(context);
+        dbHelper = DbHelper.getInstance(context);
         widgetList = new ArrayList<>();
     }
 

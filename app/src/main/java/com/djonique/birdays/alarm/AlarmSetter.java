@@ -53,7 +53,7 @@ public class AlarmSetter extends BroadcastReceiver {
      * otherwise update the existing alarm with the same identity.
      */
     public static void rescheduleAll(Context context) {
-        try (DbHelper dbHelper = new DbHelper(context)) {
+        try (DbHelper dbHelper = DbHelper.getInstance(context)) {
             AlarmHelper alarmHelper = new AlarmHelper(context);
             List<Person> persons = dbHelper.query().getPersons();
             for (Person person : persons) {

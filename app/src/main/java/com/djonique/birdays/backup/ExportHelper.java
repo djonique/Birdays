@@ -43,7 +43,7 @@ public class ExportHelper {
         File file = new File(context.getCacheDir(), UPLOAD_FILE_NAME);
         List<Person> persons;
 
-        try (DbHelper dbHelper = new DbHelper(context)) {
+        try (DbHelper dbHelper = DbHelper.getInstance(context)) {
             persons = dbHelper.query().getPersons();
         }
 

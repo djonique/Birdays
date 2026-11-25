@@ -99,7 +99,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 Executors.newSingleThreadExecutor(new NamedDaemonThreadFactory("alarm-rearm"));
 
         executor.execute(() -> {
-            try (DbHelper dbHelper = new DbHelper(context)) {
+            try (DbHelper dbHelper = DbHelper.getInstance(context)) {
                 Person person = dbHelper.query().getPerson(timeStamp);
                 if (person != null) {
                     new AlarmHelper(context).setAlarms(person);

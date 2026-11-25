@@ -168,7 +168,7 @@ public final class BirdaysRepository {
 
     public void getPersons(@Nullable Callback<List<Person>> callback) {
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 return db.query().getPersons();
             }
         }, callback);
@@ -176,7 +176,7 @@ public final class BirdaysRepository {
 
     public void getPerson(long timeStamp, @Nullable Callback<Person> callback) {
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 return db.query().getPerson(timeStamp);
             }
         }, callback);
@@ -186,7 +186,7 @@ public final class BirdaysRepository {
 
     public void getThisMonthPersons(@Nullable Callback<List<Person>> callback) {
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 return db.query().getThisMonthPersons();
             }
         }, callback);
@@ -196,7 +196,7 @@ public final class BirdaysRepository {
                               @Nullable Callback<List<Person>> callback) {
         final String like = "%" + (query == null ? "" : query.trim()) + "%";
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 if (currentMonthOnly) {
                     return db.query().getSearchMonthPerson(DbHelper.SELECTION_LIKE_NAME,
                             new String[]{like}, DbHelper.COLUMN_NAME);
@@ -209,7 +209,7 @@ public final class BirdaysRepository {
 
     public void getFamousBornThisDay(long day, @Nullable Callback<List<Person>> callback) {
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 return db.query().getFamousBornThisDay(day);
             }
         }, callback);
@@ -217,7 +217,7 @@ public final class BirdaysRepository {
 
     public void addPerson(@NonNull Person person, @Nullable Callback<Person> callback) {
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 db.addRecord(person);
             }
             new AlarmHelper(appContext).setAlarms(person);
@@ -229,7 +229,7 @@ public final class BirdaysRepository {
 
     public void updatePerson(@NonNull Person person, @Nullable Callback<Person> callback) {
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 db.updateRecord(person);
             }
             AlarmHelper alarmHelper = new AlarmHelper(appContext);
@@ -241,7 +241,7 @@ public final class BirdaysRepository {
 
     public void removePerson(long timeStamp, @Nullable Callback<Boolean> callback) {
         execute(() -> {
-            try (DbHelper db = new DbHelper(appContext)) {
+            try (DbHelper db = DbHelper.getInstance(appContext)) {
                 db.removeRecord(timeStamp);
             }
             new AlarmHelper(appContext).removeAlarms(timeStamp);
@@ -344,7 +344,7 @@ public final class BirdaysRepository {
      */
     private int insertNewPersons(List<Person> persons) {
         int inserted = 0;
-        try (DbHelper db = new DbHelper(appContext)) {
+        try (DbHelper db = DbHelper.getInstance(appContext)) {
             List<Person> existing = db.query().getPersons();
             SQLiteDatabase database = db.getWritableDatabase();
             database.beginTransaction();
@@ -378,7 +378,7 @@ public final class BirdaysRepository {
     private int replaceWithBackup(List<Person> persons) {
         validateBackup(persons);
 
-        try (DbHelper db = new DbHelper(appContext)) {
+        try (DbHelper db = DbHelper.getInstance(appContext)) {
             SQLiteDatabase database = db.getWritableDatabase();
             AlarmHelper alarmHelper = new AlarmHelper(appContext);
 

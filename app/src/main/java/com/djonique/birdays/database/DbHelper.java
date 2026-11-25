@@ -55,8 +55,24 @@ public class DbHelper extends SQLiteOpenHelper implements AutoCloseable {
             + COLUMN_NAME + " TEXT, "
             + COLUMN_DATE + " INTEGER"
             + ");";
+    private static volatile DbHelper instance;
+
     private final Context context;
     private DbQueryManager dbQueryManager;
+
+    public static DbHelper getInstance(Context context) {
+        DbHelper local = instance;
+        if (local == null) {
+            synchronized (DbHelper.class) {
+                local = instance;
+                if (local == null) {
+                    local = new DbHelper(context.getApplicationContext());
+                    instance = local;
+                }
+            }
+        }
+        return local;
+    }
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DATABASE_VERSION);
@@ -137,6 +153,12 @@ public class DbHelper extends SQLiteOpenHelper implements AutoCloseable {
     }
 
     @Override
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.enableWriteAheadLogging();
+    }
+
+    @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion < 2) {
             migrateToV2(db, context);
@@ -187,6 +209,8 @@ public class DbHelper extends SQLiteOpenHelper implements AutoCloseable {
     @Override
     public synchronized void close() {
         dbQueryManager = null;
-        super.close();
+        if (this != instance) {
+            super.close();
+        }
     }
 }
